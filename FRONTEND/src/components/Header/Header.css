@@ -2,6 +2,7 @@
     width: 100%;
     height: 4rem;
     border-bottom: 1px solid black;
+    /* background-color: #12162e; */
 }
 .nav-div{
     display: flex;
@@ -18,18 +19,22 @@
 .page_links > div{
     margin: 0 2rem;
 }
-a{
-    text-decoration: none;
-    color: black;
-    font-size: 1.5rem;
-}
-a:hover{
-    text-decoration: underline;
-}
+
 .contact-btn{
     border-radius:5px;
     font-size: 1.5rem;
+    padding: 0.2rem 1rem;
+    background-color: #12162e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background:linear-gradient(to right, #e9b857, #e9dc4e);
 }
+
+.navbar_logo{
+    width: 150px;
+}
+
 .navbar_logo img{
     width: 4rem;
 }

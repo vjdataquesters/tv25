@@ -11,5 +11,12 @@
 }
 
 .h2_div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin: 0 5rem;
+}
+
+.h2_div img{
+    width: 30rem;
 }

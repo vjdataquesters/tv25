@@ -7,7 +7,9 @@ export default function Root(){
     return (
         <div className="root-element">
             <Header />
-            <Outlet />
+            <div className="outlet" style={{minHeight:"1000px"}}>
+                <Outlet />
+            </div>
             <Footer />
         </div>
     )
