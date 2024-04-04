@@ -1,0 +1,15 @@
+/* .home{
+    margin: 1rem 3rem 2rem 3rem;
+} */
+
+.h1_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 5cm ;
+}
+
+.h2_div{
+    margin: 0 5rem;
+}
