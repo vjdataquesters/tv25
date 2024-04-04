@@ -10,19 +10,31 @@ body{
     color: #333;
 }
 
-
-
-h1{
-    font-size: 3rem;
-    margin-bottom: 1rem;
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+a:hover{
+    text-decoration: underline;
 }
 
-h2{
+h1{
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
-p{
-    font-size: 1rem;
+h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
+
+p{
+    font-size: 1.2rem;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
 /* adds padding to whole container */

@@ -1,7 +1,8 @@
 export default function About() {
     return (
-        <>
-            <h1>About</h1>
-        </>
+        <div className="about">
+            <h2>VJDQ</h2>
+            {/* about page */}
+        </div>
     )
 }
