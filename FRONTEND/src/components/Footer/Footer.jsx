@@ -7,19 +7,22 @@ export default function Footer() {
                     <p>©2024 VJDQ. All rights reserved</p>
                 </div>
                 <div className="profiles">
+                    {/* linkedin */}
                     <a href="https://www.linkedin.com/company/vj-data-questers/" target="_blank" rel="noreferrer">
                         <img src="https://img.icons8.com/fluency/48/linkedin.png" alt="linkedin" />
                     </a>
-                    <a href="https://www.linkedin.com/company/vj-data-questers/" target="_blank" rel="noreferrer">
+                    {/* insta */}
+                    <a href="https://www.instagram.com/vjdataquesters.club/" target="_blank" rel="noreferrer">
                         <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram-new" />
                     </a>
+                    {/* mail */}
                     <a href="mailto:vjdataquesters@gmail.com" target="_blank" rel="noreferrer">
                         <img src="https://img.icons8.com/fluency/48/gmail-new.png" alt="gmail-new" />
                     </a>
-                    {/* twitter -x */}
-                    <a href="#">
+                    {/* twitter -x is not  */}
+                    {/* <a href="#">
                         <img src="https://img.icons8.com/fluency/48/twitter.png" alt="twitter" />
-                    </a>
+                    </a> */}
                 </div>
             </div>
         </div>
