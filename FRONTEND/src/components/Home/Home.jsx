@@ -28,10 +28,18 @@ export default function Home() {
         {
             title: "Competitions",
             imgURL:"https://img.icons8.com/external-flaticons-lineal-color-flat-icons/48/external-competitions-dance-flaticons-lineal-color-flat-icons.png"
+        },
+        {
+            title: "Guest lectures",
+            imgURL:"https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-seminar-activism-flaticons-flat-flat-icons-2.png"
+        },
+        {
+            title: "Fun events",
+            imgURL:"https://img.icons8.com/cotton/64/events--v2.png"
         }
     ]
 
-
+    
     return (
         <div className="home">
             <div className="h1_div">

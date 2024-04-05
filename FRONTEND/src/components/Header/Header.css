@@ -2,9 +2,7 @@
     width: 100%;
     height: 4rem;
     border-bottom: 1px solid black;
-    background:transparent;
     z-index: 1000;
-    backdrop-filter: blur(10px);
     background-color: #12162e;
 }
 .nav-div{
@@ -35,7 +33,7 @@
     color: white;
     border: none;
     cursor: pointer;
-    background:linear-gradient(to right, #e9b857, #e9dc4e);
+    background: radial-gradient(100% 100% at 100% 0, #4c63e5 0, #1f2fa9 100%);
 }
 
 .navbar_logo{
