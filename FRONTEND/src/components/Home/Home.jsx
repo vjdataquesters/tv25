@@ -6,6 +6,7 @@ import img3 from "../../assets/homeimages/img3.jpg"
 import img4 from "../../assets/homeimages/img4.jpg"
 import img5 from "../../assets/homeimages/img5.jpg"
 import img6 from "../../assets/homeimages/img6.jpg"
+import Particle from '../Particle'
 
 const homeimages = [img1, img2, img3, img4, img5, img6]
 
@@ -43,6 +44,7 @@ export default function Home() {
     return (
         <div className="home">
             <div className="h1_div">
+            <Particle/>
                 <h1>VJ Data Questers</h1>
                 <h4>VNR VJIET, hyderabad</h4>
                 <br />

@@ -1,9 +1,13 @@
-export default function Team(){
-    console.log("Team");
+
+import './Team.css'
+
+export default function Team() {
     return (
-        <>
-        <h2>Who are we?</h2>
-        <p>The people behind DQ</p>
-        </>
+        <div className="team">
+            <div className="team-div">
+                <h2>Who are we?</h2>
+                <p>The people behind DQ</p>
+            </div>
+        </div>
     )
 }

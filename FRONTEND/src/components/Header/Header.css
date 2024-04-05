@@ -12,16 +12,16 @@
     margin: 0 2rem;
     height: 100%;
 }
-.page_links{
+.nav-menu{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.page_links > div{
+.nav-menu > li{
     margin: 0 2rem;
 }
 
-.page_links > div > a{
+.nav-menu p{
     color: white;
 }
 
@@ -42,4 +42,57 @@
 
 .navbar_logo img{
     width: 4rem;
+}
+
+.header-bars{
+    display: none;
+}
+
+
+@media screen and (max-width: 1040px){
+    .header-bars{
+        display: flex;
+        width: 35px;
+    }
+    .navbar{
+        padding: 0 1.5rem;
+
+    }
+    .nav-div{
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+    }
+    .nav-menu{
+        position: absolute;
+        flex-direction: column;
+        justify-content: start;
+        top: 70px;
+        right: -100%;
+        width: 40%;
+        height: 100vh;
+        background: var(--primary);
+        transition: all 1s;
+        z-index: 10;
+        border-left: 1px solid rgba(0, 0, 0, 0.5);
+    }
+
+    .contact{
+        display: none;
+    }
+    .nav-menu li{
+        padding: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-menu .nav-item:active{
+        background-color: var(--secondary);
+        opacity: 0.2;
+    }
+
+    .nav-menu.active{
+        right: 0;
+    }
+
+
 }
