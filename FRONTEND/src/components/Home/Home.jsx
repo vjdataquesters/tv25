@@ -1,5 +1,15 @@
 import "./Home.css"
 import { Link } from "react-router-dom";
+import img1 from "../../assets/homeimages/img1.jpg"
+import img2 from "../../assets/homeimages/img2.jpg"
+import img3 from "../../assets/homeimages/img3.jpg"
+import img4 from "../../assets/homeimages/img4.jpg"
+import img5 from "../../assets/homeimages/img5.jpg"
+import img6 from "../../assets/homeimages/img6.jpg"
+import img7 from "../../assets/homeimages/img7.jpg"
+
+const homeimages = [img1, img2, img3, img4, img5, img6, img7]
+
 export default function Home() {
 
     const data = [
@@ -29,6 +39,8 @@ export default function Home() {
             <div className="h1_div">
                 <h1>VJ Data Questers</h1>
                 <h4>VNR VJIET, hyderabad</h4>
+                <br />
+                <h3>LEARN IMPLEMENT COLLABORATE</h3>
             </div>
             <div className="h2_div">
                 <div className="h2-left">
@@ -55,7 +67,13 @@ export default function Home() {
             </div>
             <div className="h4_div">
                 <h2>Glimpses</h2>
-                {/* images in grid */}
+                <div className="h4-images">
+                    {
+                        homeimages.map((img, index) => (
+                            <img src={img} key={index} className="h4-img" alt="" />
+                        ))
+                    }
+                </div>
             </div>
         </div>
     )

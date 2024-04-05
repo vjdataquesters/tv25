@@ -7,16 +7,73 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 0 5cm ;
+    background-image: url('landing-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    color: white;
 }
 
 .h2_div{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     margin: 0 5rem;
 }
 
 .h2_div img{
-    width: 30rem;
+    width: 25rem;
+    margin: 3rem 3rem;
+}
+
+.h2-right{
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    margin: 0 3rem;
+    width: 40rem;
+}
+
+.h3_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 3rem 3rem;
+}
+
+.h3_cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin: 3rem 3rem;
+}
+
+.h3_card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    border: 1px solid lightgray;
+}
+
+.h4_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 3rem 3rem;
+}
+
+.h4-images{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.h4-img{
+    width: 100px;
 }
