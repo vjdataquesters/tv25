@@ -1,49 +1,33 @@
 import "./Events.css";
-import { Link } from "react-router-dom";
+import  events from "./events-info.js";
+import { Link, useNavigate } from "react-router-dom";
+import {useState} from "react";
 export default function Events() {
-  const events = [
-    {
-      name: "VJ DATA QUESTERS ORIENTATION 2023",
-      description:
-        "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      Date: "23-11-2023",
-      Venue: "APJ AUDITORIUM",
-      link: "/events/VjdqOrientation2023",
-    },
-    {
-      name: "HIT - THE 1ST CHASE ",
-      description:
-        "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      Date: "11-02-2023",
-      Venue: "online",
-    },
-    {
-      name: "BLOG-A-THON",
-      description:
-        "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      name: "A GUEST LECTURE ON DATA SCIENCE JOURNEY IN 2023",
-      description:
-        "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      Date: "08-02-2023",
-      Venue: "KS Audi",
-    }
-  ];
+  const navigate = useNavigate();
+  const [clicked, setClicked] = useState(false);
+  function handleClick(){
+    setClicked(true);
+  }
   return (
-    <>
+    <div className="events">
       <h1>Events</h1>
       <div className="event-box-cont">
-        {events.map((event, index) => (
-          <div key={index} className="event-box">
+        {events[0].map((event, index) => (
+          <div key={index} className="event-box" onClick={()=>navigate(event.link)} >
             <h2>{event.name}</h2>
             <p>{event.description}</p>
-            <Link to={event.link}>
-              <button className="know-more-btn">Know more</button>
-            </Link>
           </div>
         ))}
       </div>
-    </>
+      <div className="past-events">
+        <h2>Past Events</h2>
+        <div className="event-box-cont">
+          {/* should show buttons of events2022,etc */}
+          <button onClick={handleClick(true)}>  
+            2022
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
