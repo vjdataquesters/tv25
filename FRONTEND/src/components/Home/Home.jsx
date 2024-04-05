@@ -6,30 +6,28 @@ import img3 from "../../assets/homeimages/img3.jpg"
 import img4 from "../../assets/homeimages/img4.jpg"
 import img5 from "../../assets/homeimages/img5.jpg"
 import img6 from "../../assets/homeimages/img6.jpg"
-import img7 from "../../assets/homeimages/img7.jpg"
 
-const homeimages = [img1, img2, img3, img4, img5, img6, img7]
+const homeimages = [img1, img2, img3, img4, img5, img6]
 
 export default function Home() {
 
     const data = [
         {
-            title: "Data Science Workshops"
+            title: "Data Science Workshops",
+            imgURL:"https://img.icons8.com/external-flaticons-lineal-color-flat-icons/48/external-data-science-data-analytics-flaticons-lineal-color-flat-icons-5.png"
         },
         {
-            title: "Hackathons"
+            title: "Hackathons",
+            imgURL:"https://img.icons8.com/external-flaticons-lineal-color-flat-icons/48/external-hackathon-ux-and-ui-icons-flaticons-lineal-color-flat-icons-2.png"
+
         },
         {
-            title: "Projects"
+            title: "Webinars",
+            imgURL:"https://img.icons8.com/color/48/video-conference.png"
         },
         {
-            title: "Internships"
-        },
-        {
-            title: "Webinars"
-        },
-        {
-            title: "Competitions"
+            title: "Competitions",
+            imgURL:"https://img.icons8.com/external-flaticons-lineal-color-flat-icons/48/external-competitions-dance-flaticons-lineal-color-flat-icons.png"
         }
     ]
 
@@ -54,11 +52,12 @@ export default function Home() {
                 </div>
             </div>
             <div className="h3_div">
-                <h2>What we do</h2>
+                <h2>What we do?</h2>
                 <div className="h3_cards">
                     {
-                        data.map((d) => (
-                            <div className="h3_card">
+                        data.map((d,index) => (
+                            <div key={index} className="h3_card">
+                            <img width="58" height="58" src={d.imgURL} alt="img"/>
                                 <h3>{d.title}</h3>
                             </div>
                         ))
@@ -70,7 +69,9 @@ export default function Home() {
                 <div className="h4-images">
                     {
                         homeimages.map((img, index) => (
+                            <div key={index} className={"gallery__item--"+(index+1)}>
                             <img src={img} key={index} className="h4-img" alt="" />
+                            </div>
                         ))
                     }
                 </div>

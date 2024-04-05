@@ -3,10 +3,9 @@
     height: 4rem;
     border-bottom: 1px solid black;
     background:transparent;
-    position: absolute;
     z-index: 1000;
     backdrop-filter: blur(10px);
-    /* background-color: #12162e; */
+    background-color: #12162e;
 }
 .nav-div{
     display: flex;
