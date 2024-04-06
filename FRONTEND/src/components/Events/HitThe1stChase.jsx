@@ -7,7 +7,7 @@ export default function HitThe1stChase() {
     return(
         <div className="events">
       <div className="event-div">
-        <h1>HIT - THE 1ST CHASE </h1>
+        <h2>HIT - THE 1ST CHASE </h2>
         <p><span className="bold">Date:</span> 11-02-2023</p>
         <p><span className="bold">Venue:</span> online</p>
         <p><span className="bold">Timings:</span> 3:00 pm - 4:00 pm </p>

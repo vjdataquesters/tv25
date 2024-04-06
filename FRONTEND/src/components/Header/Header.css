@@ -1,9 +1,9 @@
 .navbar{
     width: 100%;
     height: 4rem;
-    border-bottom: 1px solid black;
-    z-index: 1000;
+    z-index: 100;
     background-color: #12162e;
+    position: fixed;
 }
 .nav-div{
     display: flex;
@@ -27,8 +27,8 @@
 
 .contact-btn{
     border-radius:5px;
-    font-size: 1.5rem;
-    padding: 0.2rem 1rem;
+    font-size: 1.2rem;
+    padding: 0.2rem 0.5rem;
     background-color: #12162e;
     color: white;
     border: none;
@@ -67,14 +67,15 @@
         position: absolute;
         flex-direction: column;
         justify-content: start;
-        top: 70px;
+        top: 4rem;
         right: -100%;
         width: 40%;
         height: 100vh;
-        background: var(--primary);
+        background: rgb(67, 67, 82);
         transition: all 1s;
         z-index: 10;
         border-left: 1px solid rgba(0, 0, 0, 0.5);
+        display: none;
     }
 
     .contact{
@@ -92,6 +93,7 @@
 
     .nav-menu.active{
         right: 0;
+        display: block;
     }
 
 

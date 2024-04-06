@@ -7,6 +7,7 @@ import HitThe1stChase from "./components/Events/HitThe1stChase";
 import Team from "./components/Team/Team";
 import Root from "./components/Root";
 
+
 function App() {
   let router = createBrowserRouter([
     {

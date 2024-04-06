@@ -32,5 +32,6 @@ const events2023 = [
       link: "/events/BlogAThon",
     },
   ];
+  
   const events2022=[]
   export default [events2023,events2022];
