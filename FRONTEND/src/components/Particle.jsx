@@ -22,18 +22,14 @@ const Particle = () => {
       fpsLimit: 120,
       interactivity: {
         events: {
-          onClick: {
+          onHover: {
             enable: true,
-            mode: "push",
-          }
-          
+            mode: "repulse",
+          },
         },
         modes: {
-          push: {
-            quantity: 1,
-          },
           repulse: {
-            distance: 100,
+            distance: 50,
             duration: 0.4,
           },
         },
@@ -57,7 +53,7 @@ const Particle = () => {
           density: {
             enable: true,
           },
-          value:100,
+          value:200,
         },
         opacity: {
           value: 0.7,
@@ -66,7 +62,7 @@ const Particle = () => {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 2 },
+          value: { min: 1, max: 4 },
         },
       },
       detectRetina: true,

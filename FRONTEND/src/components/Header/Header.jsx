@@ -1,6 +1,6 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
-import Bars from "../../assets/bars.png"
+import Bars from "../../assets/bars.svg"
 import React from "react";
 
 const Header = () => {

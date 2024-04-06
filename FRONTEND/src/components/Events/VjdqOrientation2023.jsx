@@ -8,7 +8,7 @@ export default function VjdqOrientation2023() {
   return (
     <div className="events">
       <div className="event-div">
-        <h1>VJ DATA QUESTERS ORIENTATION 2023</h1>
+        <h2>VJ DATA QUESTERS ORIENTATION 2023</h2>
         <p><span className="bold">Date: </span>23-11-2023 </p>
         <p><span className="bold">Venue:</span> APJ AUDITORIUM</p>
         <p><span className="bold">Timings:</span> 9:00 am - 2:00 pm</p>

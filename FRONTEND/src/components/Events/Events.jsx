@@ -12,7 +12,7 @@ export default function Events() {
   }
   return (
     <div className="events">
-      <h1>Events of the year {year}</h1>
+      <h2>Events of the year {year}</h2>
       <div className="events-buttons">
         <button onClick={handleClick}>2023</button>
         <button onClick={handleClick}>2022</button>
