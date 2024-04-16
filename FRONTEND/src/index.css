@@ -53,7 +53,3 @@ body::-webkit-scrollbar {
     flex: 1;
     /* padding-top: ; */
 }
-
-body::--webkit-scrollbar {
-    display: none;
-}

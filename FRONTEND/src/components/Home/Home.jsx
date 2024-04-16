@@ -6,7 +6,7 @@ import img3 from "../../assets/homeimages/img3.jpg"
 import img4 from "../../assets/homeimages/img4.jpg"
 import img5 from "../../assets/homeimages/img5.jpg"
 import img6 from "../../assets/homeimages/img6.jpg"
-import Particle from '../Particle'
+import Landing from "./Landing";
 
 const homeimages = [img1, img2, img3, img4, img5, img6]
 
@@ -43,14 +43,8 @@ export default function Home() {
     
     return (
         <div className="home">
-            <div className="h1_div">
-            <Particle/>
-                <h1>VJ Data Questers</h1>
-                <h4>VNR VJIET, hyderabad</h4>
-                <br />
-                <h3>LEARN IMPLEMENT COLLABORATE</h3>
-            </div>
-            <div className="h2_div">
+            <Landing />
+            <div className="h2-div">
                 <div className="h2-left">
                     <img src="dq_logo.png" alt="" />
                 </div>
@@ -61,12 +55,12 @@ export default function Home() {
                     <Link to='about'> <button>Know More</button> </Link>
                 </div>
             </div>
-            <div className="h3_div">
+            <div className="h3-div">
                 <h2>What we do?</h2>
-                <div className="h3_cards">
+                <div className="h3-cards">
                     {
                         data.map((d,index) => (
-                            <div key={index} className="h3_card">
+                            <div key={index} className="h3-card">
                             <img width="58" height="58" src={d.imgURL} alt="img"/>
                                 <h3>{d.title}</h3>
                             </div>
@@ -74,7 +68,7 @@ export default function Home() {
                     }
                 </div>
             </div>
-            <div className="h4_div">
+            <div className="h4-div">
                 <h2>Glimpses</h2>
                 <div className="h4-images">
                     {

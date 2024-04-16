@@ -6,17 +6,16 @@ import React from "react";
 const Header = () => {
 
     const [menu, setMenu] = React.useState(false)
-    const handleBarsClick = ()=> setMenu(!menu)
+    const handleBarsClick = () => setMenu(!menu)
 
     return (
         <div className="navbar">
-            <div className={menu ? 'nav-div active':'nav-div'}>
-                <span className="navbar_logo">
-                    <Link to='/'>
-                        <img src="dq_logo.png" alt="logo" />
-                    </Link>
-                </span>
-               
+            {/* header */}
+            <div className="nav-div">
+                {/* container */}
+                <div>
+                    {/* div required to maintain flex */}
+                </div>
                 <ul className={menu ? "nav-menu active" : "nav-menu"}>
                     <li className="nav-item">
                         <Link to="/" onClick={handleBarsClick} className='nav-link'>
@@ -38,12 +37,15 @@ const Header = () => {
                             <p>Team</p>
                         </Link>
                     </li>
+                    <li className="contact">
+                        {/* link to permanently opened g form - temporarily */}
+                        <a href="/" rel="noreferrer">
+                            <button className="contact-btn">contact us</button>
+                        </a>
+                    </li>
+
                 </ul>
 
-                <div className="contact">
-                    <button className="contact-btn">contact us</button>
-                </div>
-                
                 <div className="header-bars" onClick={handleBarsClick}>
                     <img src={Bars} alt="" />
                 </div>

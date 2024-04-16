@@ -30,7 +30,7 @@ const Particle = () => {
         modes: {
           repulse: {
             distance: 50,
-            duration: 0.4,
+            duration: 0.1,
           },
         },
       },
@@ -56,13 +56,13 @@ const Particle = () => {
           value:200,
         },
         opacity: {
-          value: 0.7,
+          value: 0.5,
         },
         shape: {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 4 },
+          value: { min: 1, max: 2 },
         },
       },
       detectRetina: true,
