@@ -4,7 +4,7 @@ export default function Footer() {
         <div className="footer">
             <div className="footer-div">
                 <div className="footer-left">
-                    <p>©2024 VJDQ. All rights reserved</p>
+                    <p>VJDQ 2024</p>
                 </div>
                 <div className="profiles">
                     {/* linkedin */}
@@ -23,6 +23,11 @@ export default function Footer() {
                     {/* <a href="#">
                         <img src="https://img.icons8.com/fluency/48/twitter.png" alt="twitter" />
                     </a> */}
+
+                    {/* github */}
+                    <a href="https://github.com/vjdataquesters" target="_blank" rel="noreferrer">
+                        <img src="https://img.icons8.com/fluency/48/github.png" alt="github" />
+                    </a>
                 </div>
             </div>
         </div>
