@@ -9,20 +9,14 @@ export default function Landing() {
 
         <div className="h1-div">
             {/* <Particle className="particles"/> */}
-
-
-
             <div className="landing-info">
                 <div className="landing-logo">
-                    <span>
                         <img src="dq_logo.png" alt="" />
-                    </span>
                 </div>
 
                 <div className="landing-text">
                     <h1>VJ Data Questers</h1>
                     <h3>VNR VJIET, hyderabad</h3>
-                    <br />
                     <p>LEARN IMPLEMENT COLLABORATE</p>
                 </div>
             </div>
