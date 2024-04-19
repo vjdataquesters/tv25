@@ -42,7 +42,7 @@ export default function Home() {
         }
     ]
 
-    
+
     return (
         <div className="home">
             <Landing />
@@ -62,24 +62,26 @@ export default function Home() {
             </Reveal>
 
             <Reveal>
-                <div className="h3-div animate-div">
+                <div className="h3-div">
                     <h2>What we do?</h2>
-                    <div className="h3-cards animate-div">
+                    <div className="h3-cards">
                         {
                             data.map((d, index) => (
-                                <div key={index} className="h3-card animate-div">
-                                    <img width="58" height="58" src={d.imgURL} alt="img" />
-                                    <h3>{d.title}</h3>
-                                </div>
+                               
+                                    <div key={index} className="h3-card">
+                                        <img src={d.imgURL} alt="img" />
+                                        <h3 >{d.title}</h3>
+                                    </div>
+                                
                             ))
                         }
                     </div>
                 </div>
             </Reveal>
             <Reveal>
-                <div className="h4-div animate-div">
+                <div className="h4-div">
                     <h2>Glimpses</h2>
-                    <div className="h4-images animate-div">
+                    <div className="h4-images">
                         {
                             homeimages.map((img, index) => (
                                 <div key={index} className={"gallery__item--" + (index + 1)}>

@@ -1,7 +1,7 @@
 import "./Events.css";
-import img1 from "../../assets/HitThe1stChase/img1.png";
-import img2 from "../../assets/HitThe1stChase/img2.png";
-import img3 from "../../assets/HitThe1stChase/img3.png";
+// import img1 from "../../assets/HitThe1stChase/img1.png";
+// import img2 from "../../assets/HitThe1stChase/img2.png";
+// import img3 from "../../assets/HitThe1stChase/img3.png";
 export default function HitThe1stChase() {
     const images = [img1,img2,img3];
     return(

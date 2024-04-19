@@ -16,7 +16,7 @@ export default function Team() {
                         <Reveal>
 
                         <div key={index} className="team-member">
-                            <img src={'teamImages/' + member.image} alt={member.name} />
+                            <img src={'teamImages/' + member.image} style={{maxWidth: "10px"}} alt={member.name} />
                             <h3>{member.name}</h3>
                             <p>{member.role}</p>
                         </div>

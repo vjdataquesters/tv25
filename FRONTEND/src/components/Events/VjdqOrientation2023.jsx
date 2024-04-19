@@ -1,8 +1,8 @@
 import "./Events.css";
-import img1 from "../../assets/vjdqOrientation2023/img1.png";
-import img2 from "../../assets/vjdqOrientation2023/img2.png";
-import img3 from "../../assets/vjdqOrientation2023/img3.png";
-import img4 from "../../assets/vjdqOrientation2023/img4.png";
+// import img1 from "../../assets/vjdqOrientation2023/img1.png";
+// import img2 from "../../assets/vjdqOrientation2023/img2.png";
+// import img3 from "../../assets/vjdqOrientation2023/img3.png";
+// import img4 from "../../assets/vjdqOrientation2023/img4.png";
 export default function VjdqOrientation2023() {
   const images = [img2, img3, img4, img1];
   return (
