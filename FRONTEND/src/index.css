@@ -6,7 +6,8 @@
 }
 
 body {
-    background-image: url('https://tympanus.net/Development/ImageExpansionTypography/img/noise.png');
+    /* background-image: url('https://tympanus.net/Development/ImageExpansionTypography/img/noise.png'); */
+    background-image: url('noise1.png');
 }
 
 a {
@@ -35,7 +36,7 @@ h2 {
 }
 
 h3{
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
 }
 
@@ -72,6 +73,22 @@ body::-webkit-scrollbar {
     h3 {
       font-size: 1.2rem;
       line-height: 1.2;
+      margin: 0 auto;
+    }
+    p{
+        font-size: 1rem;
+    }
+  
+  }
+
+  @media screen and (max-width:440px) {
+    h3 {
+      font-size: 1rem;
+      line-height: 1;
+      margin: 0 auto;
+    }
+    p{
+        font-size: 1rem;
     }
   
   }

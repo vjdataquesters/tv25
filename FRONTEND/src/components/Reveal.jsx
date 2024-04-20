@@ -16,22 +16,19 @@ const Reveal = ({ children }) => {
         }
     }, [isInView]);
     return (
-        <div
-        style={{position:"relative", overflow:"hidden"}}
+        <motion.div
+            ref={ref}
+            variants={{
+                hidden: { opacity: 0, y: 75 },
+                visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            animate={mainControls}
+            transition={{ duration: 0.5, delay: 0.1 }}
         >
-            <motion.div
-                ref={ref}
-                variants={{
-                    hidden: { opacity: 0, y: 75 },
-                    visible: { opacity: 1, y: 0 },
-                }}
-                initial="hidden"
-                animate={mainControls}
-                transition={{ duration: 0.5, delay: 0.1 }}
-            >
-                {children}
-            </motion.div>
-        </div>
+            {children}
+        </motion.div>
+
     );
 }
 
