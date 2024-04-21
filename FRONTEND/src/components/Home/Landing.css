@@ -51,6 +51,12 @@
         display: none;
     }
 }
+@media screen and (max-width: 440px) {
+    .landing-info .landing-text{
+        margin: 0;
+    }
+}
+
 
 @keyframes moveInCircle {
     0% {
