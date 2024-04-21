@@ -18,7 +18,7 @@ export default function Event() {
                 <p><span className="bold">Timings:</span> {event.Timings} </p>
                 <h3>Pics of the event</h3>
                 <div className="gallery">
-                    <div className="slider">
+                    <div className="event-slider">
                         <div className="slides" >
                             {event.Pics.map((img, index) => (
                                 <div key={index}>
