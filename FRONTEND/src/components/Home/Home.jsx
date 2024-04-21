@@ -1,16 +1,11 @@
 import "./Home.css"
 import { Link } from "react-router-dom";
 
-import img1 from "../../assets/homeimages/img1.jpg"
-import img2 from "../../assets/homeimages/img2.jpg"
-import img3 from "../../assets/homeimages/img3.jpg"
-import img4 from "../../assets/homeimages/img4.jpg"
-import img5 from "../../assets/homeimages/img5.jpg"
-import img6 from "../../assets/homeimages/img6.jpg"
+
 import Landing from "./Landing";
 import Reveal from "../Reveal";
+import Carousel from "./Carousel";
 
-const homeimages = [img1, img2, img3, img4, img5, img6]
 
 export default function Home() {
 
@@ -78,7 +73,7 @@ export default function Home() {
                     </div>
                 </div>
             </Reveal>
-            <Reveal>
+            {/* <Reveal>
                 <div className="h4-div">
                     <h2>Glimpses</h2>
                     <div className="h4-images">
@@ -91,7 +86,14 @@ export default function Home() {
                         }
                     </div>
                 </div>
+            </Reveal> */}
+            <Reveal>
+                <div className="h4-div">
+                    <h2>Glimpses</h2>
+                    <Carousel />
+                </div>
             </Reveal>
+
         </div>
     )
 }
