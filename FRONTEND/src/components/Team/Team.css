@@ -1,4 +1,74 @@
 .team{
     margin-top: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+}
+.faculty-div{
+    margin:1rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap ;
+    width: 80%;
+}
+.faculty-member{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 2rem;
 }
 
+.faculty-member img{
+    width: 12rem;
+    border-radius: 50%;
+    margin: 1rem 0.5rem;
+}
+@media screen and (max-width: 1000px){
+    .faculty-member:nth-child(1){
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .faculty-member img{
+        width: 8rem;
+    }
+    .faculty-member{
+        margin: 0.5rem;
+    }
+}
+
+.team-div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+    width: 75%;
+    margin: 1rem;
+}
+.team-member img{
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 50%;
+    margin: 1rem;
+}
+.team-member{
+    margin: 1rem;
+}
+@media screen and (max-width: 440px){
+    .team-div{
+        width: 100%;
+    }
+    .team-member img{
+        width: 5rem;
+        height: 5rem;
+    }
+    .team-member{
+        margin: 0.5rem;
+    }
+}
