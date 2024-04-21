@@ -1,25 +1,35 @@
 import './Team.css'
 import React from 'react'
-import data from './TeamData'
+import { faculty, team } from './TeamData'
 import Reveal from '../Reveal';
 
 export default function Team() {
     return (
         <div className="team">
+            <h2>Who are we?</h2>
+            <p>The people behind DQ</p>
             <div className="faculty-div">
-                <h2>Who are we?</h2>
-                <p>The people behind DQ</p>
+                {
+                    faculty.map((member, index) => {
+                        return (
+                            <div key={index} className="faculty-member">
+                                <img src={member.image} alt={member.name} />
+                                <h3>{member.name}</h3>
+                                <p>{member.role}</p>
+                            </div>
+                        );
+                    })
+                }
             </div>
             <div className="team-div">
-                {data.map((member, index) => {
+                {team.map((member, index) => {
                     return (
-                        <Reveal>
-
-                        <div key={index} className="team-member">
-                            <img src={'teamImages/' + member.image} style={{maxWidth: "10px"}} alt={member.name} />
-                            <h3>{member.name}</h3>
-                            <p>{member.role}</p>
-                        </div>
+                        <Reveal key={index}>
+                            <div key={index} className="team-member">
+                                <img src={member.image ? 'teamImages/' + member.image : "https://picsum.photos/200"} alt={member.name} />
+                                <a href={member.linkedin}> <p>{member.name}</p> </a>
+                                <p>{member.role || "idk"}</p>
+                            </div>
                         </Reveal>
                     );
                 })}

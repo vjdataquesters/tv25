@@ -24,7 +24,7 @@ export default function Home() {
             imgURL: "https://img.icons8.com/color/48/video-conference.png"
         },
         {
-            title: "Competitions",
+            title: "Contests",
             imgURL: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/48/external-competitions-dance-flaticons-lineal-color-flat-icons.png"
         },
         {

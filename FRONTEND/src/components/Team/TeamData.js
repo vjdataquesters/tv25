@@ -1,69 +1,86 @@
-const teamdata = [
+export const faculty = [
+    {
+        name: "Mr. Raja Sekar",
+        role: "HOD",
+        image: "https://picsum.photos/200"
+    },
+    {
+        name: "Mr. Veeranjaneyulu",
+        role: "Coordinator",
+        image: "https://picsum.photos/200"
+    },
+    {
+        name: "Mrs. Sunanda",
+        role: "Coordinator",
+        image: "https://picsum.photos/200"
+    }
+]
+export const team = [
     {
         name: "Maneesh Kumar",
-        role: "Founder",
-        image: "maneesh.png",
-        linkedin: "https://www.linkedin.com/in/bonagiri-maneesh-kumar-488462241?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        role: "Chair",
+        image: "",
+        linkedin: "https://www.linkedin.com/in/bonagiri-maneesh-kumar-488462241"
     },
     {
         name: "MANASWINI",
         role: "",
         image: "manaswini.png",
-        linkedin: "https://www.linkedin.com/in/manaswini-k-3a8b5b1a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        linkedin: "https://www.linkedin.com/in/manaswini-k-3a8b5b1a6"
     },
     {
         name: "Rohan",
         role: "",
-        image: "rohan.png",
-        linkedin: "https://www.linkedin.com/in/rohan-kumar-9b8b5b1a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        image: "",
+        linkedin: "https://www.linkedin.com/in/rohan-kumar-9b8b5b1a6"
     },
     {
         name: "Sindhu Bhargavi",
         role: "",
         image: "sindhu.png",
-        linkedin: "https://www.linkedin.com/in/sindhu-bhargavi-vuppla-0a5862249?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        linkedin: "https://www.linkedin.com/in/sindhu-bhargavi-vuppla-0a5862249"
     },
     {
         name: "Hansika",
         role: "",
         image: "hansika.png",
-        linkedin: "https://www.linkedin.com/in/hansika-naknamoni-50996a263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        linkedin: "https://www.linkedin.com/in/hansika-naknamoni-50996a263"
     },
     {
         name: "Rohith",
         role: "",
         image: "rohith.png",
-        linkedin: "https://www.linkedin.com/in/adaparohithreddy?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+        linkedin: "https://www.linkedin.com/in/adaparohithreddy"
     },
     {
         name: "Avinash",
         role: "",
         image: "avinash.png",
-        linkedin: "https://www.linkedin.com/in/avinash-gudikandula-1578b5262?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        linkedin: "https://www.linkedin.com/in/avinash-gudikandula-1578b5262"
     },
     {
         name: "Kushal Aeshala",
         role: "",
         image: "kushal.png",
-        linkedin: "https://www.linkedin.com/in/kushal-aeshala-199bb8263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        linkedin: "https://www.linkedin.com/in/kushal-aeshala-199bb8263"
     },
     {
-        name: "Chandana V",
+        name: "Chandana",
         role: "",
         image: "chandana.png",
-        linkedin: "https://www.linkedin.com/in/chandanav27?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+        linkedin: "https://www.linkedin.com/in/chandanav27"
     },
     {
         name: "Abhisek Kumar",
         role: "",
         image: "abhishek.png",
-        linkedin: "https://www.linkedin.com/in/abhisek-kumar-413976263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        linkedin: "https://www.linkedin.com/in/abhisek-kumar-413976263"
     },
     {
         name: "Timothy Babu",
         role: "",
         image: "timothy.png",
-        linkedin: "https://www.linkedin.com/in/ramagalla-thimothi-babu-702972263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        linkedin: "https://www.linkedin.com/in/ramagalla-thimothi-babu-702972263"
     },
     {
         name: "Shaji Affan",
@@ -81,7 +98,7 @@ const teamdata = [
         name: "Akshaya Gampa",
         role: "",
         image: "akshaya.png",
-        linkedin: "https://www.linkedin.com/in/akshaya-gampa-2870b8255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        linkedin: "https://www.linkedin.com/in/akshaya-gampa-2870b8255"
     },
     {
         name: "Vedasri Gunti",
@@ -90,16 +107,16 @@ const teamdata = [
         linkedin: "https://www.linkedin.com/in/vedasri-gunti-73b7b4263"
     },
     {
-        name: "Hima Sameera Nandigama",
+        name: "Hima Sameera",
         role: "",
-        image: "sameera.png",
+        image: "",
         linkedin: "https://www.linkedin.com/in/hima-sameera-nandigama-bb99a2254/"
     },
     {
         name: "SAI PRAJWAL",
         role: "",
         image: "prajwal.png",
-        linkedin: "https://www.linkedin.com/in/sai-prajwal-547650229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+        linkedin: "https://www.linkedin.com/in/sai-prajwal-547650229"
     },
     {
         name: "MANOJ",
@@ -108,7 +125,7 @@ const teamdata = [
         linkedin: "www.linkedin.com/in/manoj-bojja-4442652ab"
     },
     {
-        name: "T Rishith",
+        name: "Rishith",
         role: "",
         image: "rishith.png",
         linkedin: "https://www.linkedin.com/in/t-rishith/"
@@ -116,8 +133,8 @@ const teamdata = [
     {
         name: "Anirudh",
         role: "",
-        image: "https://via.placeholder.com/150",
-        linkedin: "https://www.linkedin.com/in/anirudh-reddy-600a0b245?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        image: "",
+        linkedin: "https://www.linkedin.com/in/anirudh-reddy-600a0b245"
     },
     {
         name: "Bhargavi sree",
@@ -129,7 +146,7 @@ const teamdata = [
         name: "Charan",
         role: "",
         image: "charan.png",
-        linkedin: "https://www.linkedin.com/in/charan-adapa-178389219?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        linkedin: "https://www.linkedin.com/in/charan-adapa-178389219"
     },
     {
         name: "Roshini Reddy",
@@ -140,8 +157,8 @@ const teamdata = [
     {
         name: "Hema Sree",
         role: "",
-        image: "hema.png",
-        linkedin: "https://www.linkedin.com/in/hemaree?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        image: "",
+        linkedin: "https://www.linkedin.com/in/hemaree"
     },
     {
         name: "Sindhu Priya",
@@ -153,9 +170,6 @@ const teamdata = [
         name: "Sree Keerthi",
         role: "",
         image: "keerthi.png",
-        linkedin: "https://www.linkedin.com/in/sree-keerthi-kolla-a66306247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        linkedin: "https://www.linkedin.com/in/sree-keerthi-kolla-a66306247"
     }
 ];
-
-
-export default teamdata;
