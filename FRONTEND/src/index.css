@@ -6,8 +6,8 @@
 }
 
 body {
-    /* background-image: url('https://tympanus.net/Development/ImageExpansionTypography/img/noise.png'); */
-    background-image: url('noise1.png');
+    background-image: url('https://tympanus.net/Development/ImageExpansionTypography/img/noise.png');
+/*     background-image: url('noise1.png'); */
 }
 
 a {
