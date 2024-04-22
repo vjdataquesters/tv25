@@ -21,18 +21,17 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: auto;
+  margin: 1.5rem auto;
   z-index: 10;
   width: 70%;
 }
 
 .h2-div img {
-  width: 100%;
+  width: 24vw;
 }
 
 .h2-left {
-  margin: 3rem 3rem 0 0;
-  width: 50rem;
+  margin-right:3rem;
 }
 
 .h2-right {
@@ -47,7 +46,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 2rem auto;
+  margin: 1rem auto;
   z-index: 10;
   width: 80%;
 }
@@ -80,7 +79,94 @@
   margin-right: 2rem;
 }
 
+.h4-div h2{
+  margin: 0;
+}
+.h4-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem auto ;
+  width: 80vw;
+  z-index: 10;
+}
+
+/* caurasel */
+
+.c-div{
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-carousel{
+  margin: auto;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.slider-track{
+  display: flex;
+  width: calc(350px * 6);
+  animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll{
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(calc(-250px * 3));
+  }
+
+}
+
+.slide{
+  height: 280px;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  transition: ease-in-out 0.8s;
+}
+
+.slider-track:hover{
+  animation-play-state: paused;
+}
+
+.slide:hover{
+  transform: scale(1.05);
+}
+
+.slide > img{
+  width: 100%;
+  height: 70%;
+  border-radius: 5px  ;
+}
+
+
 @media screen and (max-width: 1080px){
+  .h2-div {
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .h2-div img{
+    max-width: 20rem;
+    margin: 0 auto;
+  }
+  .h2-left {
+    margin: 3rem auto;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    width: 80%;
+  }
+  .h2-right {
+    align-items: center;
+  }
   .h3-div{
     width: 100%;
     margin-top: 2rem;
@@ -100,164 +186,8 @@
   }
 }
 
-
-.h4-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 0 auto ;
-  width: 80vw;
-  z-index: 10;
-}
-
-
-/* glimpse css
-.h4-images {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 5vw);
-  grid-gap: 1rem;
-}
-
-.h4-img {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-  display: block;
-}
-
-.gallery__item--1 {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 3;
-}
-
-.gallery__item--2 {
-  grid-column-start: 3;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 3;
-}
-
-.gallery__item--3 {
-  grid-column-start: 5;
-  grid-column-end: 9;
-  grid-row-start: 1;
-  grid-row-end: 6;
-
-}
-
-.gallery__item--4 {
-  grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row-start: 3;
-  grid-row-end: 6;
-
-}
-
-.gallery__item--5 {
-  grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row-start: 6;
-  grid-row-end: 9;
-}
-
-.gallery__item--6 {
-  grid-column-start: 5;
-  grid-column-end: 9;
-  grid-row-start: 6;
-  grid-row-end: 9;
-} */
-
-/* caurasel */
-
-.c-div{
-  width: 100%;
-  overflow: hidden;
-}
-
-.slider{
-  height: 300px;
-  margin: auto;
-  position: relative;
-  width: 80%;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-}
-
-.slider-track{
-  display: flex;
-  width: calc(300px * 6);
-  animation: scroll 30s linear infinite;
-}
-
-@keyframes scroll{
-  0%{
-    transform: translateX(0);
-  }
-  100%{
-    transform: translateX(calc(-250px * 3));
-  }
-
-}
-
-.slide{
-  height: 250px;
-  width: 400px;
-  display: flex;
-  align-items: center;
-  padding: 15px;
-  transition: ease-in-out 0.3s;
-}
-
-.slider-track:hover{
-  animation-play-state: paused;
-}
-
-.slide:hover{
-  transform: scale(1.05);
-}
-
-.slide > img{
-  width: 100%;
-  height: 70%;
-  border-radius: 5px  ;
-}
-
-
 @media screen and (max-width: 868px) {
-  .h2-div {
-    flex-wrap: wrap;
-    width: 90%;
-    margin: 0;
-  }
-
-  .h2-div {
-    width: 80%;
-    margin: 0 auto;
-  }
-
-  .h2-left {
-    margin: 3rem 0 0 0;
-    display: flex;
-    align-items: center;
-    width: 80%;
-  }
-
-  .h2-right {
-    align-items: center;
-  }
-
-  .h4-div {
-    margin: 0 auto 3rem auto;
-  }
-
   .h4-images {
     gap: 0.2rem;
   }
-
 }
