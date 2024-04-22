@@ -1,63 +1,36 @@
 .events {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 4rem 0;
-    padding: 1rem 10rem;
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    padding-top: 5rem;
 }
 
 .event-box {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.upcoming-evnets, .past-events {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2rem;
+
 }
 
 .event-card {
-    margin: 1rem;
     padding: 1rem;
-    width: 25vw;
-    height: 75vh;
-    border-radius: 5px;
+    width: 500px ;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid black;
     &:hover {
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
     }
 }
 
 
-@media screen and (max-width: 978px){
-    .events{
-        padding: 0;
-    }
-    .event-box {
-        grid-template-columns: 1fr 1fr;
-
-    }
-    .event-card{
-        width: 100%;
-        margin: 0;
-        min-height: 60vh;
-    }
-}
-@media screen and (max-width: 768px){
-    .event-card{
-        min-height: 40vh;
-    }
-    
-}
-@media screen and (max-width: 440px){
-    .event-box{
-        grid-template-columns: 1fr;
-    }
-    .event-card{
-        width: 95%;
-        margin: auto;
-    }
-}
 
 
 

@@ -27,7 +27,7 @@ export default function Team() {
                         <Reveal key={index}>
                             <div key={index} className="team-member">
                                 <img src={member.image ? 'teamImages/' + member.image : "https://picsum.photos/200"} alt={member.name} />
-                                <a href={member.linkedin}> <p>{member.name}</p> </a>
+                                <a href={member.linkedin} target='_blank'> <p>{member.name}</p> </a>
                                 <p>{member.role || "idk"}</p>
                             </div>
                         </Reveal>

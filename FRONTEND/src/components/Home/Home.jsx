@@ -73,20 +73,6 @@ export default function Home() {
                     </div>
                 </div>
             </Reveal>
-            {/* <Reveal>
-                <div className="h4-div">
-                    <h2>Glimpses</h2>
-                    <div className="h4-images">
-                        {
-                            homeimages.map((img, index) => (
-                                <div key={index} className={"gallery__item--" + (index + 1)}>
-                                    <img src={img} key={index} className="h4-img" alt="" />
-                                </div>
-                            ))
-                        }
-                    </div>
-                </div>
-            </Reveal> */}
             <Reveal>
                 <div className="h4-div">
                     <h2>Glimpses</h2>

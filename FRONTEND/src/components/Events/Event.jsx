@@ -5,7 +5,20 @@ import events from "./events-info.js";
 export default function Event() {
 
     const {eventname} = useParams();
-    const e = events[1].find(event => event.eventId === eventname);
+
+    let e = null;
+
+    e = events.upcoming.find(e => e.eventId === eventname);
+    if (!e) {
+        Object.values(events.past).forEach(yearEvents => {
+            const foundEvent = yearEvents.find(e => e.eventId === eventname);
+            if (foundEvent) {
+                e = foundEvent;
+                return;
+            }
+        });
+    }
+    
     const event = e.page;
     
     
