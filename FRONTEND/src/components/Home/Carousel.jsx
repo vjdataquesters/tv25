@@ -8,7 +8,7 @@ function Carousel() {
     
     return (
         <div className="c-div">
-            <div className="slider">
+            <div className="slider-carousel">
                 <div className="slider-track">
                     {images && images.map((img, index) => (
                         <div key={index} className="slide">
