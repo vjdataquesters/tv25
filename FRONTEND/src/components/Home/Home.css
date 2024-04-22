@@ -75,8 +75,9 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
 
-.h3-card img {
+.h3-card > img {
   margin-right: 2rem;
+  width: 3rem;
 }
 
 .h4-div h2{
@@ -110,15 +111,18 @@
 .slider-track{
   display: flex;
   width: calc(350px * 6);
-  animation: scroll 30s linear infinite;
+  animation: scroll 20s ease-in-out infinite;
 }
 
 @keyframes scroll{
   0%{
     transform: translateX(0);
   }
-  100%{
+  50%{
     transform: translateX(calc(-250px * 3));
+  }
+  100%{
+    transform: translateX(0);
   }
 
 }
@@ -129,7 +133,7 @@
   display: flex;
   align-items: center;
   padding: 0 15px;
-  transition: ease-in-out 0.8s;
+  transition: ease-in-out 0.2s;
 }
 
 .slider-track:hover{
@@ -137,7 +141,7 @@
 }
 
 .slide:hover{
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .slide > img{
@@ -146,6 +150,7 @@
   border-radius: 5px  ;
 }
 
+/* media queries */
 
 @media screen and (max-width: 1080px){
   .h2-div {

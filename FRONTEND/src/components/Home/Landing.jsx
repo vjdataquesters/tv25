@@ -1,4 +1,4 @@
-import Particle from '../Particle';
+
 import './Landing.css';
 
 
@@ -8,7 +8,6 @@ export default function Landing() {
     return (
 
         <div className="h1-div">
-            {/* <Particle className="particles"/> */}
             <div className="landing-info">
                 <div className="landing-logo">
                         <img src="dq_logo.png" alt="" />

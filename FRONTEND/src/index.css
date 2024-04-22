@@ -9,6 +9,7 @@
 body {
     background-image: url('https://tympanus.net/Development/ImageExpansionTypography/img/noise.png');
 /*     background-image: url('noise1.png'); */
+    user-select: none;
 }
 
 a {

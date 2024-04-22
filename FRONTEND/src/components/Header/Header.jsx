@@ -37,13 +37,12 @@ const Header = () => {
                             <p>Team</p>
                         </Link>
                     </li>
-                    <li className="contact">
-                        {/* link to permanently opened g form - temporarily */}
-                        <a href="/" rel="noreferrer">
-                            <button className="contact-btn">contact us</button>
-                        </a>
+                    <li className="nav-item">
+                        <Link to="contact" onClick={handleBarsClick} className='nav-link'>
+                            <p>Contact</p>
+                        </Link>
                     </li>
-
+                    
                 </ul>
 
                 <div className="header-bars" onClick={handleBarsClick}>
