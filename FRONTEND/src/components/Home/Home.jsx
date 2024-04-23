@@ -43,7 +43,7 @@ export default function Home() {
             <Landing />
 
             <Reveal>
-                <div className="h2-div animate-div">
+                <div className="h2-div">
                     <div className="h2-left">
                         <img src="dq_logo.png" alt="" />
                     </div>
@@ -56,8 +56,9 @@ export default function Home() {
                 </div>
             </Reveal>
 
-            <Reveal>
                 <div className="h3-div">
+            <Reveal>
+            <div className="h3-div">
                     <h2>What we do?</h2>
                     <div className="h3-cards">
                         {
@@ -69,14 +70,18 @@ export default function Home() {
                             ))
                         }
                     </div>
-                </div>
+                    </div>
             </Reveal>
+                </div>
+        
+                <div className="h4-div">
             <Reveal>
                 <div className="h4-div">
                     <h2>Glimpses</h2>
                     <Carousel />
                 </div>
             </Reveal>
+                </div>
 
         </div>
     )
