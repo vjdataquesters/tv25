@@ -1,7 +1,7 @@
 .events {
-    width: 70%;
+    width: 85%;
     height: 100%;
-    margin: auto;
+    margin: 1rem auto;
     padding-top: 5rem;
 }
 
@@ -18,10 +18,15 @@
     gap: 2rem;
 
 }
-
+.past-events-cont{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
 .event-card {
     padding: 1rem;
-    width: 500px ;
+    width: 400px ;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -30,6 +35,12 @@
     }
 }
 
+.event-card > p{
+    color: black
+}
+.event-card > *{
+    margin: 0.4rem 0;
+}
 
 
 
