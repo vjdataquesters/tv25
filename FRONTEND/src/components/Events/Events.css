@@ -26,13 +26,17 @@
 }
 .event-card {
     padding: 1rem;
-    width: 500px ;
+    width: 400px ;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     &:hover {
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
     }
+}
+
+.event-card > p{
+    color: black
 }
 .event-card > *{
     margin: 0.4rem 0;

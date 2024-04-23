@@ -7,10 +7,17 @@ import Reveal from "../Reveal.jsx";
 export default function Events() {
 
   const [pastevents, setPastevents] = useState(events.past.e2024);
+  const [year, setyear] = useState(2024);
 
   console.log(events)
   const navigate = useNavigate();
 
+  const handlebuttonclick = (e) => {
+    setPastevents(events.past[e])
+    if (e === 'e2024') setyear(2024)
+    else if (e === 'e2023') setyear(2023)
+    else if (e === 'e2022') setyear(2022)
+  }
   return (
     <div className="events">
       <h1>Events</h1>
@@ -25,8 +32,8 @@ export default function Events() {
                   events.upcoming.map((event, index) => (
                     <Reveal key={index}>
                       <div className="event-card" key={index} onClick={() => navigate(event.link)} >
-                        <img src={event.image} style={{ maxWidth: "95%", margin: "0 auto" }} alt={event.name} />
-                        <h3>{event.name}</h3>
+                        <img src={event.image} style={{ maxWidth: "100%"}} alt={event.name} />
+                        <h2>{event.name}</h2>
                         <p>{event.Date}</p>
                         <p>{event.description}</p>
                       </div>
@@ -42,23 +49,26 @@ export default function Events() {
           <h2>Past Events</h2>
           <div className="year-buttons">
             {Object.keys(events.past).map((year) => (
-              <button key={year} onClick={() => setPastevents(events.past[year])}>{year.slice(1)}</button>
+              <button key={year} onClick={() => handlebuttonclick(year)}>{year.slice(1)}</button>
             ))}
           </div>
           {
             Object.keys(pastevents).length === 0 ? <h3>No past events</h3> :
-            <div className="past-events-cont">
-              {pastevents.map((event, index) => (
-                <Reveal key={index}>
-                  <div className="event-card" key={index} onClick={() => navigate(event.link)}>
-                    <img src={event.image} style={{ maxWidth: "95%", margin: "0 auto" }} alt={event.name} />
-                    <h3>{event.name}</h3>
-                    <p>{event.Date}</p>
-                    <p>{event.description}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
+              <>
+                <h2>Events of year {year}</h2>
+                <div className="past-events-cont">
+                  {pastevents.map((event, index) => (
+                    <Reveal key={index}>
+                      <div className="event-card" key={index} onClick={() => navigate(event.link)}>
+                        <img src={event.image} style={{ maxWidth: "100%"}} alt={event.name} />
+                        <h2>{event.name}</h2>
+                        <p>{event.Date}</p>
+                        <p>{event.description}</p>
+                      </div>
+                    </Reveal>
+                  ))}
+                </div>
+              </>
           }
         </div>
       </div>
