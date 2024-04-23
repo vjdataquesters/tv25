@@ -62,12 +62,10 @@ export default function Home() {
                     <div className="h3-cards">
                         {
                             data.map((d, index) => (
-                               
-                                    <div key={index} className="h3-card">
-                                        <img src={d.imgURL} alt="img" />
-                                        <h3 >{d.title}</h3>
-                                    </div>
-                                
+                                <div key={index} className="h3-card">
+                                    <img src={d.imgURL} alt="img" />
+                                    <h3>{d.title}</h3>
+                                </div>
                             ))
                         }
                     </div>

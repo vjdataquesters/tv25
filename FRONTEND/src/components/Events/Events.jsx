@@ -6,7 +6,7 @@ import Reveal from "../Reveal.jsx";
 
 export default function Events() {
 
-  const [pastevents, setPastevents] = useState(events.past.e2022);
+  const [pastevents, setPastevents] = useState(events.past.e2024);
 
   console.log(events)
   const navigate = useNavigate();
@@ -47,7 +47,8 @@ export default function Events() {
           </div>
           {
             Object.keys(pastevents).length === 0 ? <h3>No past events</h3> :
-              pastevents.map((event, index) => (
+            <div className="past-events-cont">
+              {pastevents.map((event, index) => (
                 <Reveal key={index}>
                   <div className="event-card" key={index} onClick={() => navigate(event.link)}>
                     <img src={event.image} style={{ maxWidth: "95%", margin: "0 auto" }} alt={event.name} />
@@ -56,7 +57,8 @@ export default function Events() {
                     <p>{event.description}</p>
                   </div>
                 </Reveal>
-              ))
+              ))}
+            </div>
           }
         </div>
       </div>
