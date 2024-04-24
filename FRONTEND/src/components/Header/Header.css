@@ -1,23 +1,10 @@
 .navbar {
-    /*
-background-color: #000000;
-*/
     width: 100%;
     z-index: 102;
     height: 4rem;
     position: fixed;
-
-    --size: 4px;
-    --m: 0.4 --p: calc(var(--m) * var(--size));
-    --R: calc(var(--size) * sqrt(var(--m) * var(--m) + 1));
-
-mask:
-  radial-gradient(var(--R) at 50% calc(100% - (var(--size) + var(--p))), #000 99%, #0000 101%)
-    calc(50% - 2 * var(--size)) 0 / calc(4 * var(--size)) 100%,
-  radial-gradient(var(--R) at 50% calc(100% + var(--p)), #0000 99%, #000 101%)
-    50% calc(100% - var(--size)) / calc(4 * var(--size)) 100% repeat-x;
-background: linear-gradient(90deg, red, blue);
-
+    background-color: #0f323f;
+    background-image: url('https://tympanus.net/Development/ImageExpansionTypography/img/noise.png');
 }
 .navbar .nav-div{
     display: flex;

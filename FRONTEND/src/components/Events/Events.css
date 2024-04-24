@@ -22,7 +22,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .event-card {
     padding: 1rem;
@@ -42,20 +42,43 @@
     margin: 0.4rem 0;
 }
 
+.events-btn{
+    margin-right: 1rem;
+    width: 100px;
+    height: 35px;
+    font-style: bold;
+    font-size: 1.2rem;
+    border: none;
+    background-color: #0f323f;
+    color: white;
+    &:hover{
+        background-color: whitesmoke;
+        color: #0f323f;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
+    }
+}
+
 
 
 
 /* event css */
 
 .event-div {
-    margin: 1rem 0 3rem 0;
-    width: 80%;
+    margin: auto;
+    width: 90%;
 }
 
 .gallery {
     margin: 1rem;
 }
 
+.event-div > p{
+    color: black;
+}
+
+.event-div > h3{
+    color: black;
+}
 .event-slider {
     width: 60%;
     /* sets the width of  */
