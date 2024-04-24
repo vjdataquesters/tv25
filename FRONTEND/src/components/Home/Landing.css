@@ -9,6 +9,7 @@
     left: 0;
     justify-content: center;
     align-items: center;
+    background-image: url('https://tympanus.net/Development/ImageExpansionTypography/img/noise.png');
 }
 .landing-info h1{
     text-align: center;
@@ -37,7 +38,7 @@
 
 :root {
     --color-bg1: rgb(18, 7, 142);
-    --color-bg2: rgb(0, 0, 0);
+    --color-bg2: #0f323f;
     --color1: 18, 113, 255;
     --color2: 221, 74, 255;
     --color3: 100, 220, 255;
@@ -108,7 +109,8 @@
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+    background: linear-gradient(180deg, blue, #0f323f);
+
     top: 0;
     left: 0;
 
