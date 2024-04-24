@@ -10,6 +10,7 @@
     justify-content: center;
     align-items: center;
     background-image: url('https://tympanus.net/Development/ImageExpansionTypography/img/noise.png');
+    
 }
 .landing-info h1{
     text-align: center;
@@ -39,11 +40,9 @@
 :root {
     --color-bg1: rgb(18, 7, 142);
     --color-bg2: #0f323f;
-    --color1: 18, 113, 255;
-    --color2: 221, 74, 255;
-    --color3: 100, 220, 255;
-    --color4: 200, 50, 50;
-    --color5: 180, 180, 50;
+    --color1: 6, 68, 79;
+    --color2: 19, 94, 103;
+    --color4: 119, 176, 170;
     --color-interactive: 140, 100, 255;
     --circle-size: 50%;
     --blending: hard-light;
@@ -109,7 +108,7 @@
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(180deg, blue, #0f323f);
+    background: linear-gradient(180deg,  #0f323f 18%, #135168 100%);
 
     top: 0;
     left: 0;
@@ -159,7 +158,7 @@
         mix-blend-mode: var(--blending);
         width: var(--circle-size);
         height: var(--circle-size);
-        top: calc(50% - var(--circle-size) / 2);
+        top: calc(50% - var(--circle-size) / 1);
         left: calc(50% - var(--circle-size) / 2);
         transform-origin: calc(50% - 200px);
         animation: moveHorizontal 40s ease infinite;

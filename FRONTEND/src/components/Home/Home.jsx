@@ -42,7 +42,21 @@ export default function Home() {
         <div className="home">
             <Landing />
 
+            {/* <div className="vis-mis-cont">
+                <Reveal>
+                    <div className="vision">
+                        <h2>Our Vision</h2>
+                        <p>Our vision is to create a community of data enthusiasts who are passionate about data science and its applications. We aim to provide a platform for students to learn, explore and implement data science concepts.</p>
+                    </div>
+                    <div className="mission">
+                        <h2>Our Mission</h2>
+                        <p>Our mission is to provide a platform for students to learn, explore and implement data science concepts. We aim to create a community of data enthusiasts who are passionate about data science and its applications.</p>
+                    </div>
+                </Reveal>
+            </div> */}
+
             <div className="h2-div-cont">
+            <div className="iuarfn">
                 <Reveal>
                     <div className="h2-div">
                         <div className="h2-left">
@@ -54,12 +68,12 @@ export default function Home() {
                             <h2>About VJDQ</h2>
                             <p>Our vision is to create a community of data enthusiasts who are passionate about data science and its applications. We aim to provide a platform for students to learn, explore and implement data science concepts.</p>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ullam enim placeat commodi voluptatibus culpa, deserunt obcaecati temporibus. Veritatis maiores numquam molestias autem aperiam dicta quam obcaecati optio alias aut!</p>
-                            <Link to='about'> <button>Know More</button> </Link>
+                            <Link to='about'> <button className="know-more-btn">Know More</button> </Link>
                         </div>
                     </div>
                 </Reveal>
             </div>
-
+            </div>
             <div className="h3-div-cont">
                 <Reveal>
                     <div className="h3-div">

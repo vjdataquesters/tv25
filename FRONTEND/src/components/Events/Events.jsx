@@ -49,7 +49,7 @@ export default function Events() {
           <h2>Past Events</h2>
           <div className="year-buttons">
             {Object.keys(events.past).map((year) => (
-              <button key={year} onClick={() => handlebuttonclick(year)}>{year.slice(1)}</button>
+              <button key={year} className="events-btn" onClick={() => handlebuttonclick(year)}>{year.slice(1)}</button>
             ))}
           </div>
           {
