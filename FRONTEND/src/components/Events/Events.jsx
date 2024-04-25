@@ -28,18 +28,20 @@ export default function Events() {
             events.upcoming.length !== 0 && (
               <>
                 <h2>Upcoming Events</h2>
-                {
-                  events.upcoming.map((event, index) => (
-                    <Reveal key={index}>
-                      <div className="event-card" key={index} onClick={() => navigate(event.link)} >
-                        <img src={event.image} style={{ maxWidth: "100%"}} alt={event.name} />
-                        <h2>{event.name}</h2>
-                        <p>{event.Date}</p>
-                        <p>{event.description}</p>
-                      </div>
-                    </Reveal>
-                  ))
-                }
+                <div className="upcoming-events-cont">
+                  {
+                    events.upcoming.map((event, index) => (
+                      <Reveal key={index}>
+                        <div className="event-card" key={index} onClick={() => navigate(event.link)} >
+                          <img src={event.image} style={{ maxWidth: "100%" }} alt={event.name} />
+                          <h2>{event.name}</h2>
+                          <p>{event.Date}</p>
+                          <p>{event.description}</p>
+                        </div>
+                      </Reveal>
+                    ))
+                  }
+                </div>
               </>
             )
           }
@@ -53,14 +55,14 @@ export default function Events() {
             ))}
           </div>
           {
-            Object.keys(pastevents).length === 0 ? <h3>No past events</h3> :
+            Object.keys(pastevents).length === 0 ? <p>No events in year {year}</p> :
               <>
                 <h2>Events of year {year}</h2>
                 <div className="past-events-cont">
                   {pastevents.map((event, index) => (
                     <Reveal key={index}>
                       <div className="event-card" key={index} onClick={() => navigate(event.link)}>
-                        <img src={event.image} style={{ maxWidth: "100%"}} alt={event.name} />
+                        <img src={event.image} style={{ maxWidth: "100%" }} alt={event.name} />
                         <h2>{event.name}</h2>
                         <p>{event.Date}</p>
                         <p>{event.description}</p>

@@ -19,6 +19,24 @@ const events = {
       description:
         "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       link: "/events/guestLecture",
+    },
+    {
+      name: "BLOG-A-THON",
+      eventId: "blogAThon",
+      image: "/events/HitThe1stChase/img1.png",
+      Date: "",
+      Venue: "online",
+      page: {
+        name: "BLOG-A-THON",
+        Date: "",
+        Venue: "online",
+        Timings: "",
+        Pics: ['/events/BlogAThon/img1.png', '/events/BlogAThon/img2.png', '/events/BlogAThon/img3.png', '/events/BlogAThon/img4.png'],
+        Outcome: "Through this event we made our juniors to solve problems on reasoning, aptitude, puzzles and technical questions. We first released a clue in our official Instagram page based on that they are directed to the next clue which is another Instagram page. These clues are provided in the form of questions or puzzles. In this process they may have loops and redirections according to the map. The first person who reaches the destination is the winner of the game. We got total of 300 registrations and 150 among them are participated in the event.",
+      },
+      description:
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      link: "/events/blogAThon",
     }
   ],
 
