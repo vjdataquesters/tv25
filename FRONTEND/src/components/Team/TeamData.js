@@ -1,7 +1,7 @@
 export const faculty = [
     {
-        name: "Mr. Raja Sekar",
-        role: "HOD",
+        name: "Dr. Raja Sekar",
+        role: "Head Of Department",
         image: "https://picsum.photos/200"
     },
     {
