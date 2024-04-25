@@ -37,7 +37,7 @@ export default function Event() {
                                 <div key={index}>
                                     <img id={"slide-" + (index + 1)} src={img} alt={event.name} />
                                 </div>
-                            ))}
+                            ))} 
                         </div>
                     </div>
                 </div>

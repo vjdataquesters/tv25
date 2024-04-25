@@ -22,7 +22,9 @@
     justify-content: center;
     margin: 1rem 2rem;
 }
-
+.faculty-member h3{
+    color: black;
+}
 .faculty-member img{
     width: 12rem;
     border-radius: 50%;

@@ -8,9 +8,10 @@ export default function Landing() {
     return (
 
         <div className="h1-div">
+           
             <div className="landing-info">
                 <div className="landing-logo">
-                        <img src="dq_logo.png" alt="" />
+                    <img src="dq_logo.png" alt="" />
                 </div>
 
                 <div className="landing-text">
@@ -35,6 +36,8 @@ export default function Landing() {
                     <div className="g2"></div>
                     <div className="g4"></div>
                 </div>
+            </div>
+            <div className="graph-grid">
             </div>
 
         </div>

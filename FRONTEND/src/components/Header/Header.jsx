@@ -23,7 +23,7 @@ const Header = () => {
                         </Link>
                     </li>
                     <li className="about-dropdown">
-                        <p onClick={handleaboutclick} className="dropbtn">About🔽</p>
+                        <p onClick={handleaboutclick} className="dropbtn">About ▾</p>
                         <ul className="dropdown-content">
                             <li>
                                 <Link to="about" onClick={handleBarsClick} className='nav-link'>

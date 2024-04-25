@@ -40,7 +40,7 @@
 :root {
     --color-bg1: rgb(18, 7, 142);
     --color-bg2: #0f323f;
-    --color1: 6, 68, 79;
+    --color1: 85, 125, 121;
     --color2: 19, 94, 103;
     --color4: 119, 176, 170;
     --color-interactive: 140, 100, 255;
@@ -102,6 +102,14 @@
     }
 }
 
+.graph-grid{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-image: url('graph-grid.png');
+    opacity: 0.1;
+   
+}
 
 .gradient-bg {
     width: 100vw;
@@ -154,7 +162,7 @@
 
     .g4 {
         position: absolute;
-        background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+        background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
         mix-blend-mode: var(--blending);
         width: var(--circle-size);
         height: var(--circle-size);
