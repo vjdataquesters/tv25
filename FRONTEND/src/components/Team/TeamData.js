@@ -181,16 +181,5 @@ export const team = [
         role: "Social media head",
         image: "sameera.png",
         linkedin: "https://www.linkedin.com/in/hima-sameera-nandigama-bb99a2254/"
-    },
-    // {
-    //     name: "Rohan",
-    //     role: "",
-    //     image: "",
-    //     linkedin: "https://www.linkedin.com/in/rohan-kumar-9b8b5b1a6"
-    // },
-    
-    
-    
-    
-    
+    }  
 ];

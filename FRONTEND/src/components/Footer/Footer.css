@@ -11,3 +11,19 @@
     width: 30px;
     margin:0 5px;
 }
+
+.footer-name1{
+    display: none;
+}
+.footer-name2{
+    display: block;
+}
+
+@media screen and (max-width: 768px){
+    .footer-name1{
+        display: block;
+    }
+    .footer-name2{
+        display: none;
+    }
+}
