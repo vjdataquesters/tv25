@@ -81,7 +81,7 @@
     
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 800px){
     .upcoming-events-cont, .past-events-cont{
         justify-content: center;
     }
@@ -176,11 +176,6 @@
         justify-content: center;
         align-items: center;
     }
-
-    .event-div {
-        width: 80%;
-    }
-
     .slider {
         width: 100%;
         height: 40vh;
