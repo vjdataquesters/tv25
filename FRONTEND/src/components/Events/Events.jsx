@@ -32,7 +32,7 @@ export default function Events() {
                   {
                     events.upcoming.map((event, index) => (
                       <Reveal key={index}>
-                        <div className="event-card" key={index} onClick={() => navigate(event.link)} >
+                        <div className="event-card" onClick={() => navigate(event.link)} >
                           <img src={event.image} style={{ maxWidth: "100%" }} alt={event.name} />
                           <h2>{event.name}</h2>
                           <p>{event.Date}</p>
@@ -50,8 +50,8 @@ export default function Events() {
         <div className="past-events">
           <h2>Past Events</h2>
           <div className="year-buttons">
-            {Object.keys(events.past).map((year) => (
-              <button key={year} className="events-btn" onClick={() => handlebuttonclick(year)}>{year.slice(1)}</button>
+            {Object.keys(events.past).map((eventyear) => (
+              <button key={eventyear} className={year.toString() === eventyear.slice(1) ? "events-btn active" : "events-btn"}  onClick={() => handlebuttonclick(eventyear)}>{eventyear.slice(1)}</button>
             ))}
           </div>
           {
@@ -61,7 +61,7 @@ export default function Events() {
                 <div className="past-events-cont">
                   {pastevents.map((event, index) => (
                     <Reveal key={index}>
-                      <div className="event-card" key={index} onClick={() => navigate(event.link)}>
+                      <div className="event-card" onClick={() => navigate(event.link)}>
                         <img src={event.image} style={{ maxWidth: "100%" }} alt={event.name} />
                         <h2>{event.name}</h2>
                         <p>{event.Date}</p>

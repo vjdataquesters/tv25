@@ -26,9 +26,11 @@ export default function Event() {
         <div className="events">
             <div className="event-div">
                 <h2>{event.name}</h2>
+                <br />
                 <p><span className="bold">Date:</span> {event.Date} </p>
                 <p><span className="bold">Venue:</span> {event.Venue} </p>
                 <p><span className="bold">Timings:</span> {event.Timings} </p>
+                <br />
                 <h3>Pics of the event</h3>
                 <div className="gallery">
                     <div className="event-slider">
@@ -41,6 +43,7 @@ export default function Event() {
                         </div>
                     </div>
                 </div>
+                <br />
                 {
                     event.Winners && (
                         <>
@@ -49,11 +52,12 @@ export default function Event() {
                         </>
                     )
                 }
-
+                <br />
                 <h3> Outcome:</h3>
                 <p>
                     {event.Outcome}
                 </p>
+                <br />
             </div>
         </div>
     )

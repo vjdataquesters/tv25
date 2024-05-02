@@ -66,6 +66,12 @@
     }
 }
 
+.events-btn.active{
+    background-color: whitesmoke;
+    color: #0f323f;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
+}
+
 @media screen and (max-width: 868px) {
     .events {
         width: 90%;
@@ -87,6 +93,14 @@
     }
 }
 
+@media screen and (max-width: 400px){
+    .events-btn{
+        width: 90px;
+        height: 30px;
+        margin: 0 0.5rem 1rem 0;
+    }
+}
+
 
 
 
@@ -94,7 +108,7 @@
 
 .event-div {
     margin: auto;
-    width: 90%;
+    width: 100%;
 }
 
 .gallery {
@@ -168,6 +182,9 @@
     height: 100%;
 }
 
+.bold{
+    font-weight: 600;
+}
 
 @media screen and (max-width: 868px) {
     .event-box-cont {
