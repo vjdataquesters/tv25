@@ -5,12 +5,12 @@ export const faculty = [
         image: "hod.png"
     },
     {
-        name: "Mr. Veeranjaneyulu",
+        name: "Mrs. Sunanda",
         role: "Coordinator",
-        image: ""
+        image: "sunanda.png"
     },
     {
-        name: "Mrs. Sunanda",
+        name: "Mr. Veeranjaneyulu",
         role: "Coordinator",
         image: ""
     }
