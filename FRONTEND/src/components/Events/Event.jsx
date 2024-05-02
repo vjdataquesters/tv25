@@ -45,7 +45,7 @@ export default function Event() {
                     event.Winners && (
                         <>
                             <h3>Winners:</h3>
-                            <p style={{whiteSpace: "pre-wrap"}}>{event.Winners}</p>
+                            <p style={{whiteSpace: "pre-wrap", "word-break": "break-all"}}>{event.Winners}</p>
                         </>
                     )
                 }

@@ -3,7 +3,7 @@ const events = {
 
   upcoming: [
     {
-      name: "Technovistaaaaa",
+      name: "Technovista",
       eventId: "technovista2024",
       image: "/events/Technovista2024/img1.png",
       Date: "",
@@ -132,7 +132,7 @@ const events = {
           Venue: "A201, C106, B112/1",
           Timings: "10:00am to 12:00pm",
           Pics: ['/events/BlogAThon2023/img1.png', '/events/BlogAThon2023/img2.png', '/events/BlogAThon2023/img3.png'],
-          Winners: "Total Participants in First Round: 142 Teams\nTotal Participants in Second Round: 51 Teams\n\nSoftware Blog Winners\n1st place:\nQuantum computing - RS \nhttps://medium.com/@siddharthakumargade2910/quantum-computing-a2db46ecb09a\n\n2nd Place:\nBiometric and security A deep dive - Anikalla Sarika Reddy \nhttps://medium.com/@sarikareddyanikalla178/biometric-advanced-way-of-security-3ba2d6b98fbd\n\nHardware Blog Winners\n1st Place: \nHydroponics A soilless revolution - SS \nhttps://medium.com/p/2b06aa5c94a0/edit\n\n2nd Place: \nGround vehicle system - Baeverse \nhttps://medium.com/@22071a0250/ground-vehicle-systems-a-glimpse-into-the-wheels-of-innovation-1c2bef35d95f\n\n",
+          Winners: "Total Participants in First Round: 142 Teams\nTotal Participants in Second Round: 51 Teams\n\nSoftware Blog Winners\n1st place: \nQuantum computing - RS \nhttps://medium.com/@siddharthakumargade2910/quantum-computing-a2db46ecb09a\n\n2nd Place:\nBiometric and security A deep dive - Anikalla Sarika Reddy \nhttps://medium.com/@sarikareddyanikalla178/biometric-advanced-way-of-security-3ba2d6b98fbd\n\nHardware Blog Winners\n1st Place: \nHydroponics A soilless revolution - SS \nhttps://medium.com/p/2b06aa5c94a0/edit\n\n2nd Place: \nGround vehicle system - Baeverse \nhttps://medium.com/@22071a0250/ground-vehicle-systems-a-glimpse-into-the-wheels-of-innovation-1c2bef35d95f\n\n",
           Outcome: "The BLOG-A-THON attracted a significant number of participants, showcasing the enthusiasm for technical writing among the audience. Participants explored various technical subjects and presented them in unique and creative ways, enriching the overall knowledge base. The competition provided a valuable platform for participants to improve their writing and communication skills, particularly under pressure. Participants and judges alike expressed appreciation for the format and objectives of the BLOG-A-THON highlighting its contribution to the fest."
         },
         description:
