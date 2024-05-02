@@ -2,17 +2,17 @@ export const faculty = [
     {
         name: "Dr. Raja Sekar",
         role: "Head Of Department",
-        image: "https://picsum.photos/200"
+        image: "hod.png"
     },
     {
         name: "Mr. Veeranjaneyulu",
         role: "Coordinator",
-        image: "https://picsum.photos/200"
+        image: ""
     },
     {
         name: "Mrs. Sunanda",
         role: "Coordinator",
-        image: "https://picsum.photos/200"
+        image: ""
     }
 ]
 export const team = [

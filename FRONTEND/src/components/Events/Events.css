@@ -28,7 +28,7 @@
 }
 .event-card {
     padding: 1rem;
-    max-width: 350px;
+    max-width: 380px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
