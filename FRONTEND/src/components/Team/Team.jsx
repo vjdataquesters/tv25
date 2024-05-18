@@ -6,7 +6,7 @@ import Reveal from '../Reveal';
 export default function Team() {
     return (
         <div className="team">
-            <h2>Who are we?</h2>
+            <h1>Who are we?</h1>
             <p>The people behind DQ</p>
             <div className="faculty-div">
                 {
@@ -26,9 +26,9 @@ export default function Team() {
                     return (
                         <Reveal key={index}>
                             <div key={index} className="team-member">
+                                <p className='post-p'>{member.role || "idk"}</p>
                                 <img src={member.image ? 'teamImages/' + member.image : "https://picsum.photos/200"} alt={member.name} />
-                                <a href={member.linkedin} target='_blank'> <p>{member.name}</p> </a>
-                                <p>{member.role || "idk"}</p>
+                                <a href={member.linkedin} target='_blank'> <p className='member-name'>{member.name}</p> </a>
                             </div>
                         </Reveal>
                     );
