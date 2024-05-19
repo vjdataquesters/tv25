@@ -6,54 +6,12 @@
     justify-content: center;
     text-align: center;
     width: 100%;
-
 }
 .team p{
     color: #000;
 }
-.faculty-div{
-    margin:1rem 1.5rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap:wrap ;
-    width: 80%;
-}
-.faculty-member{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem 2rem;
-}
-.faculty-member h3{
-    color: black;
-}
-.faculty-member img{
-    width: 12rem;
-    border-radius: 50%;
-    margin: 1rem 0.5rem;
-}
-
-.faculty-member p{
-    color: black;
-}
 .team-member p{
     color: black;
-}
-
-@media screen and (max-width: 1000px){
-    .faculty-member:nth-child(1){
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 520px){
-    .faculty-member img{
-        width: 8rem;
-    }
-    .faculty-member{
-        margin: 0.5rem;
-    }
 }
 
 .team-div{
@@ -99,10 +57,6 @@
 .team-member img{
     margin: 0 auto;
 }
-.team-member:hover .member-name {
-    color: #fff;
-    box-shadow: inset -150px 0 0 0 rgba(21,94,121,0.8);
-}
 @media screen and (max-width: 500px){
     .team-div{
         width: 100%;
@@ -112,6 +66,18 @@
         height: 5rem;
     }
     .team-member{
+        width: 10rem;
         margin: 0.5rem;
+    }
+    .post-p{
+        width: auto;
+    }
+    .faculty-member{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1000px){
+    .faculty-member{
+        width: 50%;
     }
 }
