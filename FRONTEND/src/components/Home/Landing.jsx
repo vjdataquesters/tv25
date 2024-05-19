@@ -1,18 +1,17 @@
-
+import { motion, useScroll } from "framer-motion"
 import './Landing.css';
 
 
 export default function Landing() {
 
-
+    const { scrollYProgress } = useScroll();
     return (
 
-        <div className="h1-div">
-           
+        <div className="h1-div">           
             <div className="landing-info">
-                <div className="landing-logo">
-                    <img src="dq_logo.png" alt="" />
-                </div>
+                <motion.div className="landing-logo" >
+                    <img src="dq_logo.png" alt="dq_logo" />
+                </motion.div>
 
                 <div className="landing-text">
                     <h1>VJ Data Questers</h1>

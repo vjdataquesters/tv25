@@ -4,7 +4,6 @@ import About from "./components/About/About";
 import Events from "./components/Events/Events";
 import Event from "./components/Events/Event";
 import Team from "./components/Team/Team";
-import Contact from "./components/Contact/Contact";
 import Root from "./components/Root";
 
 
@@ -33,10 +32,6 @@ function App() {
         {
           path: "events/:eventname",
           element: <Event/>
-        },
-        {
-          path: "contact",
-          element: <Contact/>
         }
       ],
     },

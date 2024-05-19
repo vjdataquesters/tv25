@@ -33,7 +33,7 @@
     flex-direction: column;
     justify-content: space-between;
     &:hover {
-        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
+        box-shadow: #00000040 0px 25px 50px -12px;
     }
 }
 

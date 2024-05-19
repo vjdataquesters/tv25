@@ -3,14 +3,13 @@ import { motion, useInView, useAnimation } from "framer-motion";
 
 const Reveal = ({ children }) => {
     const ref = useRef(null);
+    
     const isInView = useInView(ref, { once: true });
-
     const mainControls = useAnimation();
     const slideControls = useAnimation();
 
     useEffect(() => {
         if (isInView) {
-            //fire animation
             mainControls.start("visible");
             slideControls.start("visible");
         }
