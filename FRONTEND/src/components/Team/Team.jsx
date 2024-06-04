@@ -22,14 +22,16 @@ export default function Team() {
         {faculty.map((member, index) => {
           return (
             <motion.div
-            key={index}
-            className="team-member faculty-member"
-            variants={cardVariants}
-            initial="initial"
-            whileHover="hover"
-            whileTap="tap">
-                <p className="post-p">{member.role}</p>
+              key={index}
+              className="faculty-member team-member"
+              variants={cardVariants}
+              initial="initial"
+              whileHover="hover"
+              whileTap="tap">
+
+              <p className="post-p">{member.role}</p>
               <img
+                className="faculty-img"
                 src={
                   member.image
                     ? "teamImages/" + member.image

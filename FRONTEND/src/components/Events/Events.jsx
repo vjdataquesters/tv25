@@ -6,17 +6,29 @@ import Reveal from "../Reveal.jsx";
 
 export default function Events() {
 
-  const [pastevents, setPastevents] = useState(events.past.e2024);
-  const [year, setyear] = useState(2024);
+  const [pastevents, setPastevents] = useState(
+    localStorage.getItem("year") ? events.past[`e${localStorage.getItem("year")}`] : events.past.e2024
+  );
+  const [year, setyear] = useState(
+    localStorage.getItem("year") ? parseInt(localStorage.getItem("year")) : 2024
+  );
 
-  console.log(events)
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
 
   const handlebuttonclick = (e) => {
     setPastevents(events.past[e])
-    if (e === 'e2024') setyear(2024)
-    else if (e === 'e2023') setyear(2023)
-    else if (e === 'e2022') setyear(2022)
+    if (e === 'e2024') {
+      setyear(2024)
+      localStorage.setItem("year", 2024)
+    }
+    else if (e === 'e2023') {
+      setyear(2023)
+      localStorage.setItem("year", 2023)
+    }
+    else if (e === 'e2022') {
+      setyear(2022)
+      localStorage.setItem("year", 2022)
+    }
   }
   return (
     <div className="events">
