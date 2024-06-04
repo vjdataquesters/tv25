@@ -5,7 +5,7 @@ import Events from "./components/Events/Events";
 import Event from "./components/Events/Event";
 import Team from "./components/Team/Team";
 import Root from "./components/Root";
-
+import Testimonials from "./components/About/Testimonials"
 
 function App() {
   let router = createBrowserRouter([
@@ -20,6 +20,10 @@ function App() {
         {
           path: "about",
           element: <About />,
+        },
+        {
+          path: "testimonials",
+          element: <Testimonials />,
         },
         {
           path: "events",

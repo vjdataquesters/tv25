@@ -134,7 +134,7 @@ const events = {
           Outcome: "The BLOG-A-THON attracted a significant number of participants, showcasing the enthusiasm for technical writing among the audience. Participants explored various technical subjects and presented them in unique and creative ways, enriching the overall knowledge base. The competition provided a valuable platform for participants to improve their writing and communication skills, particularly under pressure. Participants and judges alike expressed appreciation for the format and objectives of the BLOG-A-THON highlighting its contribution to the fest."
         },
         description:
-          "The Event BLOG-A-THON is conducted as part of the Convergence on 14th,15th of December. The BLOG-A-THON was a two-round competition aimed at encouraging participants to express their technical knowledge and passion through creative writing.",
+          "The Event BLOG-A-THON is conducted as part of the Convergence on 14th, 15th of December. The BLOG-A-THON was a two-round competition aimed at encouraging participants to express their technical knowledge and passion through creative writing.",
         link: "/events/blogAThon",
       },
       {

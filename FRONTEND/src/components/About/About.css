@@ -1,3 +1,73 @@
 .about{
+    margin: 0 auto; 
     margin-top: 4.5rem;
+    width: 85%;
+}
+.about h1{
+    text-align: center;
+}
+.about p{
+    color: #000 ;
+}
+.about-1{
+    /* padding: 0 auto; */
+    background: linear-gradient(180deg, #0f323f 18%, #135168 100%);
+}
+.vis-mis{
+    display: flex;
+    padding:1rem 0;
+    gap: 1rem;
+}
+.vision, .mission{
+    padding: 1rem;
+    width: 50%;
+}
+
+.vision:hover, .mission:hover{
+    backdrop-filter: blur(2px);
+}
+
+/* testimonials page */
+.testimonials{
+    width: 80%;
+    margin:0 auto;
+    margin-top: 4.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.testimonial{
+    display: flex;
+    padding: 3rem;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    gap: 3rem;
+}
+
+.testimonial:hover{
+    backdrop-filter: blur(2px);
+}
+
+.tleft{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+.tleft p{
+    color: #000;
+}
+
+.tright p{
+    color: #000;
+}
+
+.tleft > img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
 }
