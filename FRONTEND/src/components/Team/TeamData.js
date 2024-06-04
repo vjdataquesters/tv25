@@ -12,7 +12,7 @@ export const faculty = [
     {
         name: "Mr. Veeranjaneyulu",
         role: "Coordinator",
-        image: ""
+        image: "veeru.png"
     }
 ]
 export const team = [
@@ -181,5 +181,23 @@ export const team = [
         role: "Social media head",
         image: "sameera.png",
         linkedin: "https://www.linkedin.com/in/hima-sameera-nandigama-bb99a2254/"
-    }  
+    },
+    {
+        name: "Karthik Salikanthi",
+        role: "Event Coverage/Editing",
+        image: "karthik.png",
+        linkedin: "https://www.linkedin.com/in/karthik-salikanti"
+    },
+    {
+        name: "Prashanthi",
+        role: "Event Coverage/Editing",
+        image: "prashanthi.png",
+        linkedin: "https://www.linkedin.com/in/prasanthi-battina-463a63228"
+    },
+    {
+        name: "Rama Devi",
+        role: "Event Coverage/Editing",
+        image: "ramadevi.png",
+        linkedin: "https://www.linkedin.com/in/rama-devi-patibandla-592b86255"
+    },
 ];
