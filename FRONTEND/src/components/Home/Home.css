@@ -28,10 +28,10 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: 0 auto;
+  margin: 0rem auto;
   z-index: 10;
   width: 80%;
- 
+  
 }
 
 .h2-right h2{
@@ -39,7 +39,6 @@
 }
 .h2-right p{
   color: #fff;
-  text-align: justify;
 }
 .h2-div img {
   width: 24vw;

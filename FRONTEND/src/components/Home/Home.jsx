@@ -86,17 +86,12 @@ export default function Home() {
               <div className="h2-right">
                 <h2>About VJDQ</h2>
                 <p>
-                  Our vision is to create a community of data enthusiasts who
-                  are passionate about data science and its applications. We aim
-                  to provide a platform for students to learn, explore and
-                  implement data science concepts.
+                  Welcome to our Data Science Club, the premier hub for data science enthusiasts at our college. Established with the vision of driving innovation and collaboration, our club serves as the central point for all data science-related activities on campus. We provide comprehensive guidance on projects, offer certifications for both students and faculty, and keep our members informed about the latest industry trends and real-world applications of data science.
+
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Inventore ullam enim placeat commodi voluptatibus culpa,
-                  deserunt obcaecati temporibus. Veritatis maiores numquam
-                  molestias autem aperiam dicta quam obcaecati optio alias aut!
-                </p>{" "}
+                Our club hosts a variety of events, including expert-led guest lectures, hands-on workshops, and collaborative projects, ensuring a dynamic and engaging learning environment. By fostering strong connections with industry leaders, we bridge the gap between academic knowledge and practical experience, preparing our members to excel in the ever-evolving field of data science. Join us in our mission to uphold the highest standards of academic and technical integrity, and be part of a community dedicated to shaping the future of data science.
+                </p>
                 <Link to="about">
                   <motion.button
                     className="know-more-btn"
@@ -105,7 +100,7 @@ export default function Home() {
                     whileTap={{ scale: 0.9 }}
                   >
                     Know More
-                  </motion.button>{" "}
+                  </motion.button>
                 </Link>
               </div>
             </div>
