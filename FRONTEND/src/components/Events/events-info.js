@@ -25,6 +25,24 @@ const events = {
   past: {
     e2024: [
       {
+        name: "DATA VISUALIZATION USING TABLEAU",
+        eventId: "tableau2k24",
+        image: "/events/Tableau2k24/img1.png",
+        Date: "21-03-2024",
+        Venue: "P Block, p-401,402",
+        page: {
+          name: "DATA VISUALIZATION USING TABLEAU",
+          Date: "21-03-2024",
+          Venue: "P Block, p-401,402",
+          Timings: "10:00 am - 4:30 pm",
+          Pics: ['/events/Tableau2k24/img1.png', '/events/Tableau2k24/img2.png', '/events/Tableau2k24/img3.png', '/events/Tableau2k24/img4.png'],
+          Outcome: "The workshop aims to equip second-year college students with the fundamental skills to create compelling and informative data visualizations using Tableau. By participating in this workshop, students will: \n● Understand the importance of data visualization and its impact on communication.\n● Gain proficiency in connecting Tableau to various data sources.\n● Master the creation of well-structured and informative dashboards.\n● Learn best practices for designing dashboards that effectively communicate insights.\n● Become familiar with and be able to create basic visualization types, including bar charts, line charts, and pie charts.\n",
+        },
+        description:
+          "VJ DATA QUESTERS conducted a workshop on Data Visualization using Tableau for 2nd year Data Science students. The workshop was conducted by Mr. Gullapalli Sathar",
+        link: "/events/tableau2k24",
+      },
+      {
         name: "HIT -  THE SECOND CHASE",
         eventId: "hitThe2ndChase",
         image: "/events/HitThe2ndChase/img1.png",
@@ -37,7 +55,7 @@ const events = {
           Timings: "4:00 pm - 7:00 pm",
           Pics: ['/events/HitThe2ndChase/img1.png', '/events/HitThe2ndChase/img2.png', '/events/HitThe2ndChase/img3.png'],
           Winners: "1st Maneesh Vemula (23071A04B0)\n2nd Parthu (23071A6647)\n3rd Gajawada Rohith (22071A7215)\n4th Mahesh Kumar (23071A05GB)\n",
-          Outcome: "Through this event we made our juniors to solve problems on reasoning, aptitude, puzzles and  technical questions. We first released a clue in our official Instagram page based on that they  are directed to the next clue which is another Instagram page. These clues are provided in the  form of questions or puzzles. In this process they may have loops and redirections according to the map. The first person who reaches the destination is the winner of the game. We got total of  352 registrations.",
+          Outcome: "<strong>Promote Problem-Solving Skills</strong>: The event will challenge participants to improve their problem-solving abilities through various activities, including reasoning, aptitude tests, puzzles, and technical questions. \n<strong>Foster Critical Thinking</strong>: By presenting participants with questions and puzzles, the event will encourage critical thinking and analytical reasoning. This will help them approach problems from different angles and develop effective solutions. \n<strong>Test Technical Knowledge</strong>: The event will include technical questions to assess participants' understanding and proficiency in relevant subject areas. This will encourage continuous learning and knowledge acquisition.",
         },
         description:
           "We VJ DATA QUESTERS conducted a HIT-THE SECOND CHASE for students of 1st and 2nd years of our college, to find the final treasure",
@@ -101,26 +119,6 @@ const events = {
         link: "/events/hitThe1stChase",
       },
       {
-
-        name: "VJ DATA QUESTERS ORIENTATION 2023",
-        eventId: "vjdqOrientation2023",
-        image: "/events/VjdqOrientation2023/image.png",
-        Date: "23-11-2023",
-        Venue: "APJ AUDITORIUM",
-        page: {
-          name: "VJ DATA QUESTERS ORIENTATION 2023",
-          Date: "23-11-2023",
-          Venue: "APJ AUDITORIUM",
-          Timings: "9:00 am - 2:00 pm",
-          Pics: ['/events/VjdqOrientation2023/img1.png', '/events/VjdqOrientation2023/img2.png', '/events/VjdqOrientation2023/img4.png'],
-          Outcome: "Through this event we made our juniors to solve problems on reasoning, aptitude, puzzles and  technical questions. We first released a clue in our official Instagram page based on that they  are directed to the next clue which is another Instagram page. These clues are provided in the  form of questions or puzzles. In this process they may have loops and redirections according to  the map. The first person who reaches the destination is the winner of the game. We got total of  300 registrations and 150 among them are participated in the event.",
-
-        },
-        description:
-          "We VJ DATA QUESTERS hosted an ORIENTATION for  1st year students of our college. ",
-        link: "/events/vjdqOrientation2023",
-      },
-      {
         name: "BLOG-A-THON",
         eventId: "blogAThon",
         image: "/events/BlogAThon2023/img1.png",
@@ -138,7 +136,26 @@ const events = {
         description:
           "The Event BLOG-A-THON is conducted as part of the Convergence on 14th,15th of December. The BLOG-A-THON was a two-round competition aimed at encouraging participants to express their technical knowledge and passion through creative writing.",
         link: "/events/blogAThon",
-      }
+      },
+      {
+
+        name: "VJ DATA QUESTERS ORIENTATION 2023",
+        eventId: "vjdqOrientation2023",
+        image: "/events/VjdqOrientation2023/image.png",
+        Date: "23-11-2023",
+        Venue: "APJ AUDITORIUM",
+        page: {
+          name: "VJ DATA QUESTERS ORIENTATION 2023",
+          Date: "23-11-2023",
+          Venue: "APJ AUDITORIUM",
+          Timings: "9:00 am - 2:00 pm",
+          Pics: ['/events/VjdqOrientation2023/img1.png', '/events/VjdqOrientation2023/img2.png', '/events/VjdqOrientation2023/img3.png', '/events/VjdqOrientation2023/img4.png'],
+          Outcome: "\n<strong>Introducing the Club</strong> : Ensure that new members understand the purpose, mission, and activities of the club.\n<strong>Fostering a Sense of Community</strong>: Help new members feel welcome and integrated by facilitating introductions and encouraging participation in icebreaker activities.\n<strong>Providing Information</strong>: Share essential information about club meetings, events, membership requirements, and expectations (attendance, participation, dues/fees).\n<strong>Explaining Opportunities for Involvement</strong>: Inform new members about the various ways they can get involved, such as joining committees, volunteering for events, or running for leadership positions.\n<strong>Promoting Engagement</strong>: Encourage new members to ask questions, share their interests, and provide feedback.\n",
+        },
+        description:
+          "VJ DATA QUESTERS hosted an ORIENTATION for 2023 1st year students of our college. ",
+        link: "/events/vjdqOrientation2023",
+      },
     ],
     e2022: [
       

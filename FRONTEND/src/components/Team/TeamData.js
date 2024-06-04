@@ -48,7 +48,7 @@ export const team = [
         linkedin: "https://www.linkedin.com/in/t-rishith/"
     },
     {
-        name: "MANOJ",
+        name: "Manoj",
         role: "Student cooordinator",
         image: "manoj.png",
         linkedin: "www.linkedin.com/in/manoj-bojja-4442652ab"
@@ -60,7 +60,7 @@ export const team = [
         linkedin: "https://www.linkedin.com/in/sindhu-priya-yadlapati/"
     },
     {
-        name: "MANASWINI",
+        name: "Manaswini",
         role: "Design head",
         image: "manaswini.png",
         linkedin: "https://www.linkedin.com/in/manaswini-k-3a8b5b1a6"
@@ -133,7 +133,7 @@ export const team = [
         linkedin: "https://www.linkedin.com/in/shaji-affan-209bb1263"
     },
     {
-        name: "SAI PRAJWAL",
+        name: "Sai Prajwal",
         role: "PR head",
         image: "prajwal.png",
         linkedin: "https://www.linkedin.com/in/sai-prajwal-547650229"

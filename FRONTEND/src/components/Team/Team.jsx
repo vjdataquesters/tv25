@@ -54,7 +54,6 @@ export default function Team() {
                 variants={cardVariants}
                 initial="initial"
                 whileHover="hover"
-                whileTap="tap"
                 unselectable="on"
               >
                 <p className="post-p">{member.role || "idk"}</p>
@@ -66,7 +65,7 @@ export default function Team() {
                   }
                   alt={member.name}
                 />
-                <a href={member.linkedin}>
+                <a href={member.linkedin} target="_blank">
                   <p className="member-name">{member.name}</p>
                 </a>
               </motion.div>

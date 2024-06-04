@@ -54,9 +54,7 @@ export default function Event() {
                 }
                 <br />
                 <h3> Outcome:</h3>
-                <p>
-                    {event.Outcome}
-                </p>
+                <p style={{whiteSpace: "pre-wrap", "word-break": "break-all"}} dangerouslySetInnerHTML={{ __html: event.Outcome }} />
                 <br />
             </div>
         </div>
