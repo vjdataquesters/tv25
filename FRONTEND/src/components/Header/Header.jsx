@@ -54,7 +54,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link to="about" onClick={handleBarsClick} className="nav-link">
+                <Link to="testimonials" onClick={handleBarsClick} className="nav-link">
                   <motion.p variants={LiVariants} whileHover="hover" whileTap="hover">
                     Testimonials
                   </motion.p>

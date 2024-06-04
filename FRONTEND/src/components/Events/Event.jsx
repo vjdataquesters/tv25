@@ -48,13 +48,13 @@ export default function Event() {
                     event.Winners && (
                         <>
                             <h3>Winners:</h3>
-                            <p style={{whiteSpace: "pre-wrap", "word-break": "break-all"}}>{event.Winners}</p>
+                            <p style={{whiteSpace: "pre-wrap"}}>{event.Winners}</p>
                         </>
                     )
                 }
                 <br />
                 <h3> Outcome:</h3>
-                <p style={{whiteSpace: "pre-wrap", "word-break": "break-all"}} dangerouslySetInnerHTML={{ __html: event.Outcome }} />
+                <p style={{whiteSpace: "pre-wrap",}} dangerouslySetInnerHTML={{ __html: event.Outcome }} />
                 <br />
             </div>
         </div>
