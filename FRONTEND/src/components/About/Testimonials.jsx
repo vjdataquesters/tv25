@@ -9,16 +9,15 @@ export default function Testimonials() {
         return (
           <div
             className="testimonial"
-            style={{ flexDirection: index % 2 === 0 ? "row" : "row-reverse" }}
+            // style={{ flexDirection: index % 2 === 0 ? "row" : "row-reverse" }}
             key={index}
           >
             <div className="tleft">
               <img src={t.image} alt="" />
-              <p>{t.name}</p>
-              <p>{t.role}</p>
             </div>
             <div className="tright">
               <p>{t.statement}</p>
+              <p className="testP">- {t.name} ({t.role})</p>
             </div>
           </div>
         );

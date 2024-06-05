@@ -21,10 +21,22 @@
 .vision, .mission{
     padding: 1rem;
     width: 50%;
+    border-radius: 2rem;
+    border: 2px solid rgba(0, 0, 0, 0.153);
 }
 
 .vision:hover, .mission:hover{
     backdrop-filter: blur(2px);
+    background-color: rgba(115, 115, 115, 0.058);
+}
+
+@media screen and (max-width: 568px){
+    .vis-mis{
+        flex-direction: column;
+    }
+    .vision, .mission{
+        width: 100%;
+    }
 }
 
 /* testimonials page */
@@ -42,20 +54,26 @@
 .testimonial{
     display: flex;
     padding: 3rem;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 1rem;
     gap: 3rem;
+    flex-direction: row;
+    border-radius: 2rem;
 }
+
+
+/* .testimonial:nth-child(2){
+} */
 
 .testimonial:hover{
     backdrop-filter: blur(2px);
+    background-color: rgba(115, 115, 115, 0.058);
 }
 
 .tleft{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;    
+    align-items: center; 
+    text-align: center;   
 }
 
 .tleft p{
@@ -67,7 +85,32 @@
 }
 
 .tleft > img{
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
+}
+
+.tright{
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.testP{
+    text-align: right;
+    margin-top: 5px;
+    font: italic;
+}
+
+@media screen and (max-width: 1028px){
+    .testimonials{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .testimonial{
+        flex-direction: column;
+        padding: 1rem;
+    }
 }
