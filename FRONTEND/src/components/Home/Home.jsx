@@ -76,11 +76,12 @@ export default function Home() {
       animate="animate"
     >
       <Landing />
+
       <div className="h2-div-cont">
         <div className="iuarfn">
           <Reveal>
             <div className="h2-div">
-              <div className="h2-left">
+              <div className="h2-left w-full">
                 <img src="dq_logo.png" alt="" />
               </div>
               <div className="h2-right">
