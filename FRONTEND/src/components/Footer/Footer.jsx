@@ -1,4 +1,9 @@
 import "./Footer.css";
+import { FaRegCopyright } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+
 export default function Footer() {
     return (
         <div className="footer">
@@ -6,24 +11,18 @@ export default function Footer() {
                 <div className="footer-left">
                     <p className="footer-name1">VJDQ</p>
                     <p className="footer-name2">VJ Data Questers All Rights Reserved</p>
+                    <FaRegCopyright size={15} color="white" />
                 </div>
-                <div className="profiles">
-                    {/* linkedin */}
+                <div className="profiles flex flex-row">
                     <a href="https://www.linkedin.com/company/vj-data-questers/" target="_blank" rel="noreferrer">
-                        <img src="https://img.icons8.com/fluency/48/linkedin.png" alt="linkedin" />
+                        <FaLinkedin size={24} color="white"/>
                     </a>
-                    {/* insta */}
                     <a href="https://www.instagram.com/vjdataquesters.club/" target="_blank" rel="noreferrer">
-                        <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram-new" />
+                        <FaInstagramSquare size={24} color="white"/>
                     </a>
-                    {/* mail */}
                     <a href="mailto:vjdataquesters@gmail.com" target="_blank" rel="noreferrer">
-                        <img src="https://img.icons8.com/fluency/48/gmail-new.png" alt="gmail-new" />
+                        <MdEmail size={24} color="white"/>
                     </a>
-                    {/* twitter -x is not  */}
-                    {/* <a href="#">
-                        <img src="https://img.icons8.com/fluency/48/twitter.png" alt="twitter" />
-                    </a> */}
                 </div>
             </div>
         </div>

@@ -7,9 +7,16 @@
     align-items: center;
     background-image: url('https://tympanus.net/Development/ImageExpansionTypography/img/noise.png');
 }
-.profiles > a > img{
+.profiles > a {
     width: 30px;
-    margin:0 5px;
+    margin: 0 5px;
+}
+
+.footer-left{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
 }
 
 .footer-name1{
