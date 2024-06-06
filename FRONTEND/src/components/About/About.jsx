@@ -91,8 +91,6 @@ export default function About() {
                     </Reveal>
                 </div>
             </div>
-            <img src="https://github.com/vjdataquesters/Website/assets/166021772/b370ce70-cf92-403b-a30e-9c17bb3d46b4" alt="" />
-
             <div  id='foundersblock'>
                 Founders block
                 <p>
