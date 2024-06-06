@@ -2,7 +2,7 @@ import "./Footer.css";
 import { FaRegCopyright } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import { SiGmail } from "react-icons/si";
 
 export default function Footer() {
     return (
@@ -13,15 +13,15 @@ export default function Footer() {
                     <p className="footer-name2">VJ Data Questers All Rights Reserved</p>
                     <FaRegCopyright size={15} color="white" />
                 </div>
-                <div className="profiles flex flex-row">
+                <div className="profiles flex flex-row items-center">
                     <a href="https://www.linkedin.com/company/vj-data-questers/" target="_blank" rel="noreferrer">
-                        <FaLinkedin size={24} color="white"/>
+                        <FaLinkedin size={30} color="#ffffffd4"/>
                     </a>
                     <a href="https://www.instagram.com/vjdataquesters.club/" target="_blank" rel="noreferrer">
-                        <FaInstagramSquare size={24} color="white"/>
+                        <FaInstagramSquare size={30} color="#ffffffd4"/>
                     </a>
                     <a href="mailto:vjdataquesters@gmail.com" target="_blank" rel="noreferrer">
-                        <MdEmail size={24} color="white"/>
+                        <SiGmail size={30} color="#ffffffd4"/>
                     </a>
                 </div>
             </div>

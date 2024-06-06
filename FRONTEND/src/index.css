@@ -76,30 +76,8 @@ body::-webkit-scrollbar {
     animation: fade-out 1s 2s forwards 1 normal;
 }
 
-
-
-#loading>img {
-    width: 300px;
-    animation: pulse 1s infinite;
-    background-color: transparent;
-}
-
 #loading-none {
     display: none;
-}
-
-@keyframes pulse {
-    0% {
-       opacity: 0.6;
-    }
-
-    50% {
-       opacity: 1;
-    }
-
-    100% {
-        opacity: 0.6;
-    }
 }
 
 @keyframes fade-out {
