@@ -3,13 +3,3 @@
     color: #000 ;
 }
 
-
-
-@media screen and (max-width: 568px){
-    .vis-mis{
-        flex-direction: column;
-    }
-    .vision, .mission{
-        width: 100%;
-    }
-}

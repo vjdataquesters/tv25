@@ -11,8 +11,8 @@ export default function Team() {
     hover: {
       scale: 1.025,
       boxShadow: "0px 48px 100px 0px #110c2e26",
-    },
-    tap: { scale: 0.8 },
+      backdropFilter: "blur(20px)",
+    }
   };
   return (
     <div className="team">
@@ -23,15 +23,15 @@ export default function Team() {
           return (
             <motion.div
               key={index}
-              className="faculty-member team-member"
+              className="faculty-member team-member "
               variants={cardVariants}
               initial="initial"
               whileHover="hover"
-              whileTap="tap">
+              whileTap="hover">
 
               <p className="post-p">{member.role}</p>
               <img
-                className="faculty-img"
+                className="faculty-img w-48 h-48 rounded-[20%] m-4"
                 src={
                   member.image
                     ? "teamImages/" + member.image
@@ -54,10 +54,12 @@ export default function Team() {
                 variants={cardVariants}
                 initial="initial"
                 whileHover="hover"
+                whileTap="hover"
                 unselectable="on"
               >
                 <p className="post-p">{member.role || "idk"}</p>
                 <img
+                  className="faculty-img w-40 h-40 rounded-[20%] m-4"
                   src={
                     member.image
                       ? "teamImages/" + member.image

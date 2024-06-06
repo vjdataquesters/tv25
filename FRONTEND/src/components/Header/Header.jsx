@@ -14,6 +14,14 @@ const Header = () => {
       },
     },
   };
+  const DropVariants = {
+    hover: {
+      textShadow: "0px 0px 4px #fff",
+      transition: {
+        duration: 0.2,
+      },
+    },
+  };
   const [menu, setMenu] = useState(false);
   const [about, setAbout] = useState(false);
   const handleBarsClick = () => setMenu(!menu);
@@ -48,15 +56,22 @@ const Header = () => {
             <ul className="dropdown-content">
               <li>
                 <Link to="about" onClick={handleBarsClick} className="nav-link">
-                  <motion.p variants={LiVariants} whileHover="hover" whileTap="hover">
+                  <motion.p variants={DropVariants} whileHover="hover" whileTap="hover">
                     About us
                   </motion.p>
                 </Link>
               </li>
               <li>
                 <Link to="testimonials" onClick={handleBarsClick} className="nav-link">
-                  <motion.p variants={LiVariants} whileHover="hover" whileTap="hover">
+                  <motion.p variants={DropVariants} whileHover="hover" whileTap="hover">
                     Testimonials
+                  </motion.p>
+                </Link>
+              </li>
+              <li>
+                <Link to="about#foundersblock" className="nav-link">
+                  <motion.p variants={DropVariants} whileHover="hover" whileTap="hover">
+                    Founders block
                   </motion.p>
                 </Link>
               </li>
