@@ -38,7 +38,7 @@ function App() {
           element: <Event/>
         },
         {
-          path: "events/technovista",
+          path: "events/TECHNOVISTA",
           element: <Technovista/>
         }
       ],

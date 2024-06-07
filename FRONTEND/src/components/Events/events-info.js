@@ -2,24 +2,24 @@
 const events = {
 
   upcoming: [
-    // {
-    //   name: "Technovista",
-    //   eventId: "technovista2024",
-    //   image: "/events/Technovista2024/img1.png",
-    //   Date: "June 10th - 12th 2024",
-    //   Venue: "VNR",
-    //   page: {
-    //     name: "Technovista",
-    //     Date: " June 10th - 12th ",
-    //     Venue: "VNR VJIET",
-    //     Timings: "9am - 5pm",
-    //     Pics: ["/events/Technovista2024/img1.png",'/events/Technovista2024/img3.png'],
-    //     Outcome: "",
-    //   },
-    //   description:
-    //     "A Collaborative tech fest conducted by VJ DataQuesters and VJ Garuda Vigilance",
-    //   link: "/events/technovista2024",
-    // },
+    {
+      name: "Technovista",
+      eventId: "technovista2024",
+      image: "/events/Technovista2024/img1.png",
+      Date: "June 10th - 12th 2024",
+      Venue: "VNR",
+      page: {
+        name: "Technovista",
+        Date: " June 10th - 12th ",
+        Venue: "VNR VJIET",
+        Timings: "9am - 5pm",
+        Pics: ["/events/Technovista2024/img1.png",'/events/Technovista2024/img3.png'],
+        Outcome: "",
+      },
+      description:
+        "A Collaborative tech fest conducted by VJ DataQuesters and VJ Garuda Vigilance",
+      link: "/events/TECHNOVISTA",
+    },
   ],
 
   past: {

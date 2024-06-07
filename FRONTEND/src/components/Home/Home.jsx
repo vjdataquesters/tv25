@@ -138,6 +138,14 @@ export default function Home() {
           </div>
         </Reveal>
       </div>
+
+      <Link to='events/TECHNOVISTA'>
+        <div onClick={()=>console.log('hai')} className="fixed z-[101] bottom-12 right-8 p-4 bg-black/20 border border-black/50 shadow-2xl rounded-lg backdrop-blur-sm ">
+            <h1 className='text-white m-auto text-lg sm:text-2xl'>TECHNOVISTA</h1>
+            <p className='text-right '>View -&gt;</p>
+        </div>
+      </Link>
+      
     </motion.div>
   );
 }
