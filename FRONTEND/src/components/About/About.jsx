@@ -32,11 +32,11 @@ export default function About() {
             </div>
             <div className='flex flex-row flex-wrap items-center justify-center gap-10 sm:gap-20 '>
                 <div className='text-center '>
-                    <p className='text-2xl font-semibold'> 200+ </p>
+                    <p className='text-2xl font-semibold'> 130+ </p>
                     <p className='text-xl'> Members</p>
                 </div>
                 <div className='text-center '>
-                    <p className='text-2xl font-semibold'> 15+ </p>
+                    <p className='text-2xl font-semibold'> 10+ </p>
                     <p className='text-xl '> Events</p>
                 </div>
                 <div className='text-center  '>
