@@ -6,15 +6,15 @@ const events = {
       name: "Technovista",
       eventId: "technovista2024",
       image: "/events/Technovista2024/img1.png",
-      Date: "",
+      Date: "June 10th - 12th 2024",
       Venue: "VNR",
       page: {
-        name: "Technovistaaaaa",
-        Date: "",
-        Venue: "VNR",
-        Timings: "",
-        Pics: ['/events/Technovista2024/img3.png', '/events/Technovista2024/img2.png', '/events/Technovista2024/img4.png'],
-        Outcome: "lorem one billion",
+        name: "Technovista",
+        Date: " June 10th - 12th ",
+        Venue: "VNR VJIET",
+        Timings: "9am - 5pm",
+        Pics: ["/events/Technovista2024/img1.png",'/events/Technovista2024/img3.png'],
+        Outcome: "",
       },
       description:
         "A Collaborative tech fest conducted by VJ DataQuesters and VJ Garuda Vigilance",
@@ -156,10 +156,10 @@ const events = {
           "VJ DATA QUESTERS hosted an ORIENTATION for 2023 1st year students of our college. ",
         link: "/events/vjdqOrientation2023",
       },
-    ],
-    e2022: [
-      
     ]
+    // e2022: [
+      
+    // ]
   }
 
 };

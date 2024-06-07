@@ -25,10 +25,10 @@ export default function Events() {
       setyear(2023)
       localStorage.setItem("year", 2023)
     }
-    else if (e === 'e2022') {
-      setyear(2022)
-      localStorage.setItem("year", 2022)
-    }
+    // else if (e === 'e2022') {
+    //   setyear(2022)
+    //   localStorage.setItem("year", 2022)
+    // }
   }
   return (
     <div className="events">
