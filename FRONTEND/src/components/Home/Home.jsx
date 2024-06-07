@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Landing from "./Landing";
 import Reveal from "../Reveal";
 import Carousel from "./Carousel";
+import { MdOutlineSwitchAccessShortcut } from "react-icons/md";
 
 export default function Home() {
   const buttonVariants = {
@@ -111,18 +112,18 @@ export default function Home() {
       <div className="h3-div-cont">
         <Reveal>
           <div className="h3-div">
-            <h2>What we do?</h2>
+            <h2 className="text-3xl">What we do?</h2>
             <div className="h3-cards">
               {data.map((d, index) => (
                 <motion.div
                   key={index}
-                  className="h3-card"
+                  className="h3-card "
                   variants={cardVariants}
                   whileHover="hover"
                   whileTap="tap"
                 >
                   <img src={d.imgURL} alt="img" />
-                  <h3>{d.title}</h3>
+                  <h3 className="text-md sm:text-xl text-black font-semibold">{d.title}</h3>
                 </motion.div>
               ))}
             </div>
@@ -133,16 +134,18 @@ export default function Home() {
       <div className="h4-div-cont">
         <Reveal>
           <div className="h4-div">
-            <h2>Glimpses</h2>
+            <h2 className="text-3xl">Glimpses</h2>
             <Carousel />
           </div>
         </Reveal>
       </div>
 
       <Link to='events/TECHNOVISTA'>
-        <div onClick={()=>console.log('hai')} className="fixed z-[101] bottom-12 right-8 p-4 bg-black/20 border border-black/50 shadow-2xl rounded-lg backdrop-blur-sm ">
-            <h1 className='text-white m-auto text-lg sm:text-2xl'>TECHNOVISTA</h1>
-            <p className='text-right '>View -&gt;</p>
+        <div onClick={()=>console.log('hai')} className="fixed z-[101] bottom-12 right-8 p-4 bg-black/40 border border-black/50 shadow-2xl rounded-lg backdrop-blur-sm ">
+            <h1 className='text-white m-auto text-lg sm:text-2xl'>𝕋𝔼ℂℍℕ𝕆𝕍𝕀𝕊𝕋𝔸</h1>
+            <span className="flex justify-end items-center gap-1">
+              <p className='text-right '>View </p> <MdOutlineSwitchAccessShortcut size={20} color="white"/>
+            </span>
         </div>
       </Link>
       

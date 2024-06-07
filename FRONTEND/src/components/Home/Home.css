@@ -70,18 +70,6 @@
   margin-top: 2rem;
 }
 
-.h3-div h2{
-  color: #000;
-}
-.h3-div h3{
-  color:#000;
-}
-.h3-card h3{
-  color:#000;
-}
-.h3-div-cont{
-  width: 100%;
-}
 .h3-div{
   background-color: #fff;
   background-image: url('https://tympanus.net/Development/ImageExpansionTypography/img/noise.png');
@@ -100,11 +88,7 @@
   width: 100%;
   margin: 2rem 0;
 }
-.h3-cards h3{
-  margin:0;
-  font-weight: 600;
-  font-size: 1rem;
-}
+
 .h3-card {
   display: flex;
   align-items: center;

@@ -11,19 +11,18 @@ export default function Team() {
     hover: {
       scale: 1.025,
       boxShadow: "0px 48px 100px 0px #110c2e26",
-      backdropFilter: "blur(20px)",
     }
   };
   return (
     <div className="team">
-      <h1>Who are we?</h1>
+      <h1 className="font-semibold ">Who are we?</h1>
       <p>The people behind DQ</p>
       <div className="team-div" >
         {faculty.map((member, index) => {
           return (
             <motion.div
               key={index}
-              className="faculty-member team-member "
+              className="faculty-member team-member bg-black/5 hover:bg-black/10 shadow-lg hover:backdrop-blur-lg"
               variants={cardVariants}
               initial="initial"
               whileHover="hover"
@@ -50,7 +49,7 @@ export default function Team() {
             <Reveal key={index}>
               <motion.div
                 key={index}
-                className="team-member"
+                className="team-member bg-black/5 hover:bg-black/10 shadow-lg hover:backdrop-blur-lg"
                 variants={cardVariants}
                 initial="initial"
                 whileHover="hover"

@@ -14,9 +14,9 @@ export default function Landing() {
                 </motion.div>
 
                 <div className="landing-text">
-                    <h1>VJ Data Questers</h1>
+                    <h1 className="font-semibold">VJ Data Questers</h1>
                     <h3>VNR VJIET, hyderabad</h3>
-                    <p>LEARN IMPLEMENT COLLABORATE</p>
+                    <p className="mt-1">LEARN | IMPLEMENT | COLLABORATE</p>
                 </div>
             </div>
 
