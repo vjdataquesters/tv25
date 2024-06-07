@@ -3,7 +3,6 @@ import events from "./events-info.js";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Reveal from "../Reveal.jsx";
-
 export default function Events() {
 
   const [pastevents, setPastevents] = useState(
@@ -35,7 +34,7 @@ export default function Events() {
       <h1>Events</h1>
       <div className="event-box">
         <div className="upcoming-events">
-
+      
           {
             events.upcoming.length !== 0 && (
               <>
@@ -46,7 +45,7 @@ export default function Events() {
                       <Reveal key={index}>
                         <div className="event-card" onClick={() => navigate(event.link)} >
                           <img src={event.image} style={{ maxWidth: "100%" }} alt={event.name} />
-                          <h2>{event.name}</h2>
+                          <h2 className='font-semibold'>{event.name}</h2>
                           <p>{event.Date}</p>
                           <p>{event.description}</p>
                         </div>
@@ -75,7 +74,7 @@ export default function Events() {
                     <Reveal key={index}>
                       <div className="event-card" onClick={() => navigate(event.link)}>
                         <img src={event.image} style={{ maxWidth: "100%" }} alt={event.name} />
-                        <h2>{event.name}</h2>
+                        <h2 className='font-semibold'>{event.name}</h2>
                         <p>{event.Date}</p>
                         <p>{event.description}</p>
                       </div>

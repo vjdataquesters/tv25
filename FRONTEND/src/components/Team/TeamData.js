@@ -18,7 +18,7 @@ export const faculty = [
 export const team = [
     {
         name: "Maneesh Kumar",
-        role: "Chair",
+        role: "Chair Person",
         image: "maneesh.jpg",
         linkedin: "https://www.linkedin.com/in/bonagiri-maneesh-kumar-488462241"
     },

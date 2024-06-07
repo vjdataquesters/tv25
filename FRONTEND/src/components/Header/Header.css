@@ -68,10 +68,10 @@
 }
 .dropdown-content a {
     color: black;
-    padding: 10px 14px;
+    padding: 20px 14px;
     text-decoration: none;
     display: block;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 .nav-link:hover{
     text-decoration: none;
@@ -105,7 +105,7 @@
             transition: all 0.5s;
             z-index: 10;
             border-left: 1px solid rgba(0, 0, 0, 0.5);
-            border-top: 1px solid black;
+            border-top: 1px solid rgba(0, 0, 0, 0.5);
         }
     
         .nav-div ul {
@@ -120,7 +120,7 @@
     
         .nav-item{
             padding: 1.2rem 0.5rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         }
     
         .dropdown-content li{
@@ -130,8 +130,5 @@
             position: absolute;
             right: 40vw;
             top: 4rem;
-        }
-        .dropdown-content a{
-            padding: 6px 10px;
         }
     }

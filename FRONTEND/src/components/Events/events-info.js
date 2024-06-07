@@ -18,7 +18,7 @@ const events = {
       },
       description:
         "A Collaborative tech fest conducted by VJ DataQuesters and VJ Garuda Vigilance",
-      link: "/events/technovista2024",
+      link: "/events/TECHNOVISTA",
     },
   ],
 
