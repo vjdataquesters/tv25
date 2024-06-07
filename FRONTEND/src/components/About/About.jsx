@@ -91,16 +91,14 @@ export default function About() {
                     </Reveal>
                 </div>
             </div>
-            <img src="https://github.com/vjdataquesters/Website/assets/166021772/b370ce70-cf92-403b-a30e-9c17bb3d46b4" alt="" />
-
-            <div  id='foundersblock'>
+            {/* <div  id='foundersblock'>
                 Founders block
                 <p>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate adipisci at nulla provident asperiores. Hic magni, rem nulla illum quas corporis blanditiis ea exercitationem nam facilis? Sit maxime modi ab?
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore repudiandae eum incidunt illum enim perferendis nam quaerat et numquam pariatur beatae recusandae nesciunt facilis, cum iste, labore aspernatur ab quam.
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis adipisci aliquid dolores dicta quos? Alias numquam illo ipsa a asperiores voluptas, incidunt reiciendis placeat rem culpa, ad explicabo et soluta?
                 </p>
-            </div>
+            </div> */}
         </div>
 
     )

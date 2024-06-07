@@ -68,13 +68,13 @@ const Header = () => {
                   </motion.p>
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="about#foundersblock" className="nav-link">
                   <motion.p variants={DropVariants} whileHover="hover" whileTap="hover">
                     Founders block
                   </motion.p>
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </li>
           <li className="nav-item">
