@@ -3,7 +3,6 @@ import events from "./events-info.js";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Reveal from "../Reveal.jsx";
-
 export default function Events() {
 
   const [pastevents, setPastevents] = useState(
@@ -35,7 +34,7 @@ export default function Events() {
       <h1>Events</h1>
       <div className="event-box">
         <div className="upcoming-events">
-
+      
           {
             events.upcoming.length !== 0 && (
               <>

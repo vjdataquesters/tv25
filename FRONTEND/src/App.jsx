@@ -6,7 +6,7 @@ import Event from "./components/Events/Event";
 import Team from "./components/Team/Team";
 import Root from "./components/Root";
 import Testimonials from "./components/About/Testimonials"
-
+import Technovista from "./components/Events/Technovista";
 function App() {
   let router = createBrowserRouter([
     {
@@ -36,6 +36,10 @@ function App() {
         {
           path: "events/:eventname",
           element: <Event/>
+        },
+        {
+          path: "events/technovista",
+          element: <Technovista/>
         }
       ],
     },
