@@ -12,13 +12,11 @@ export default function Landing() {
                 <motion.div className="landing-logo" >
                     <img src="dq_logo.png" alt="dq_logo" />
                 </motion.div>
-                <div className="">
-                    <div className="landing-text box">
+                    <div className="landing-text box shadow-xl">
                         <h1 className="font-semibold">VJ Data Questers</h1>
                         <h3>VNR VJIET, hyderabad</h3>
                         <p className="mt-1">LEARN | IMPLEMENT | COLLABORATE</p>
                     </div>
-                </div>
             </div>
 
             <div className="gradient-bg">

@@ -177,25 +177,21 @@
 }
 
 .box {
-    width: 60vmin;
-    height: 50vmin;
     display: grid;
     place-content: center;
     color: white;
     text-shadow: 0 1px 0 #000;
+    padding: 2rem;
     
     --border-angle: 0turn; /* For animation. */
     --main-bg: conic-gradient(
       from var(--border-angle),
-      #213,
-      #112 5%,
-      #112 60%,
-      #213 95%
+      #0f323f00,
+      #0f323f00 95%
     );
-    
-    border: solid 5px transparent;
-    border-radius: 2em;
-    --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+    background-image: url('/graph-grid/graph-grid.png');
+    border: solid 1px transparent;
+    --gradient-border: conic-gradient(from var(--border-angle), transparent 0%,transparent 98%, rgba(255, 255, 255, 0)99%);
     
     background: 
       var(--main-bg) padding-box, /* Padding-box clips this background into the overall element except the border. */
@@ -203,7 +199,6 @@
       var(--main-bg) border-box; /* Duplicate main background to fill in behind the gradient border. */
     
     background-position: center center;
-  
     animation: bg-spin 3s linear infinite;
   }
   
@@ -211,10 +206,6 @@
     to {
       --border-angle: 1turn;
     }
-  }
-  
-  .box:hover {
-    animation-play-state: paused;
   }
   
   @property --border-angle {
