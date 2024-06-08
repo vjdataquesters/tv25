@@ -13,7 +13,7 @@ export default function About() {
     const [mem, setMem] = useState(200); // Example value
     const [events, setEvents] = useState(10); // Example value
     const [core, setCore] = useState(30); // Example value
-    const [alumni, setAlumni] = useState(30); // Example value
+    const [alumni, setAlumni] = useState(60); // Example value
 
     const boxVariants = {
         initial: {
@@ -37,49 +37,51 @@ export default function About() {
     }, [location]);
 
     return (
-        <div className="about my-[4.5rem] mx-auto flex flex-col gap-10 scroll-smooth">
-            <div className='w-[85%] m-auto'>
-                <div className='py-4'>
-                    <h1 className='text-center text-3xl font-extrabold sm:text-5xl'>The hub for data science enthusiasts</h1>
-                    <p className='text-center text-md sm:text-xl'>Driving innovation and collaboration through projects, certifications, and industry insights.</p>
+        <div className="about mx-auto mt-[4.5rem] flex flex-col scroll-smooth">
+            <div className='min-h-[calc(100vh-4.5rem)] py-10 sm:py-16 flex flex-col justify-between '>
+                <div className='w-[85%] mx-auto '>
+                    <div className=''>
+                        <h1 className='text-center text-4xl font-extrabold sm:text-7xl'>The hub for data science enthusiasts</h1>
+                        <p className='text-center text-md sm:text-xl'>Driving innovation and collaboration through projects, certifications, and industry insights.</p>
+                    </div>
                 </div>
-            </div>
-            <div className='flex flex-row flex-wrap items-center justify-center gap-10 sm:gap-20'>
-                <motion.div className='text-center w-36'>
-                    <CountUp className='text-5xl font-semibold' end={mem} duration={5} suffix= "+"/>
-                    <p className='sm:text-xl'> Members</p>
+                <div className='flex flex-row flex-wrap items-center justify-center gap-10 sm:gap-20'>
+                    <motion.div className='text-center w-36'>
+                        <CountUp className='text-5xl sm:text-7xl font-semibold' end={mem} duration={5} suffix="+" />
+                        <p className='sm:text-xl'> Members</p>
+                    </motion.div>
+                    <div className='text-center w-36'>
+                        <CountUp className='text-5xl sm:text-7xl font-semibold' end={events} duration={5} suffix="+" />
+                        <p className='sm:text-xl'> Events</p>
+                    </div>
+                    <div className='text-center w-36'>
+                        <CountUp className='text-5xl sm:text-7xl font-semibold' end={core} duration={5} suffix="+" />
+                        <p className='sm:text-xl'> Core members</p>
+                    </div>
+                    <div className='text-center w-36'>
+                        <CountUp className='text-5xl sm:text-7xl font-semibold' end={alumni} duration={5} suffix="+" />
+                        <p className='sm:text-xl'> Alumni</p>
+                    </div>
+                </div>
+
+                <motion.div className='m-auto my-4 flex gap-8 items-center px-6 py-4 border-black/40 border-2 rounded-lg' variants={boxVariants} initial="initial" whileHover="hover" whileTap="hover">
+                    <p>Follow us on</p>
+                    <div className='flex flex-row gap-4 justify-evenly items-center'>
+                        <a href="https://www.linkedin.com/company/vj-data-questers/" target="_blank" rel="noreferrer">
+                            <img src="https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png&color=000000" className='w-10' alt="" />
+                        </a>
+                        <a href="https://www.instagram.com/vjdataquesters.club/" target="_blank" rel="noreferrer">
+                            <img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000" className='w-10' alt="" />
+                        </a>
+                        <a href="mailto:vjdataquesters@gmail.com" target="_blank" rel="noreferrer">
+                            <img src="https://img.icons8.com/?size=100&id=P7UIlhbpWzZm&format=png&color=000000" className='w-10' alt="" />
+                        </a>
+                    </div>
                 </motion.div>
-                <div className='text-center w-36'>
-                    <CountUp className='text-5xl font-semibold' end={events} duration={5} suffix= "+" />
-                    <p className='sm:text-xl'> Events</p>
-                </div>
-                <div className='text-center w-36'>
-                    <CountUp className='text-5xl font-semibold' end={core} duration={5} suffix= "+" />
-                    <p className='sm:text-xl'> Core members</p>
-                </div>
-                <div className='text-center w-36'>
-                    <CountUp className='text-5xl font-semibold' end={alumni} duration={5} suffix= "+" />
-                    <p className='sm:text-xl'> Alumni</p>
-                </div>
             </div>
 
-            <motion.div className='m-auto my-4 flex gap-8 items-center px-6 py-4 border-black/40 border-2 rounded-lg' variants={boxVariants} initial="initial" whileHover="hover" whileTap="hover">
-                <p>Follow us on</p>
-                <div className='flex flex-row gap-4 justify-evenly items-center'>
-                    <a href="https://www.linkedin.com/company/vj-data-questers/" target="_blank" rel="noreferrer">
-                        <FaLinkedin size={32} />
-                    </a>
-                    <a href="https://www.instagram.com/vjdataquesters.club/" target="_blank" rel="noreferrer">
-                        <FaInstagramSquare size={32} />
-                    </a>
-                    <a href="mailto:vjdataquesters@gmail.com" target="_blank" rel="noreferrer">
-                        <SiGmail size={32} />
-                    </a>
-                </div>
-            </motion.div>
-
-            <div className='about-content flex items-center flex-col py-16 bg-[#0e303d]'>
-                <motion.div className='w-[85%] px-4 py-4 mb-6 border border-white/40 rounded-2xl' variants={boxVariants} initial="initial" whileHover="hover" whileTap="hover">
+            <div className='about-content flex items-center flex-col py-16 '>
+                <motion.div className='w-[85%] px-4 py-4 mb-6 border border-white/40  rounded-2xl bg-[#0e303d]' variants={boxVariants} initial="initial" whileHover="hover" whileTap="hover">
                     <h2 className='text-white'>About us</h2>
                     <Reveal>
                         <p className='text-md text-white'>
@@ -91,8 +93,8 @@ export default function About() {
                     </Reveal>
                 </motion.div>
 
-                <div className='flex flex-col w-[85%] sm:flex-row gap-6 mb-8'>
-                    <motion.div className="mission w-full sm:w-1/2 p-4 rounded-xl border border-white/40 hover:backdrop-blur-sm" variants={boxVariants} initial="initial" whileHover="hover" whileTap="hover">
+                <div className='flex flex-col w-[85%] sm:flex-row gap-6 mb-8 '>
+                    <motion.div className="mission w-full sm:w-1/2 p-4 rounded-xl border border-white/40 hover:backdrop-blur-sm bg-[#0e303d]" variants={boxVariants} initial="initial" whileHover="hover" whileTap="hover">
                         <Reveal>
                             <h2 className='text-white'>Vision</h2>
                             <p className='text-md'>
@@ -102,7 +104,7 @@ export default function About() {
                             <p>{"‎"}</p>
                         </Reveal>
                     </motion.div>
-                    <motion.div className="mission w-full sm:w-1/2 p-4 rounded-xl border border-white/40 hover:backdrop-blur-sm" variants={boxVariants} initial="initial" whileHover="hover" whileTap="hover">
+                    <motion.div className="mission w-full sm:w-1/2 p-4 rounded-xl border  border-white/40 hover:backdrop-blur-sm bg-[#0e303d]" variants={boxVariants} initial="initial" whileHover="hover" whileTap="hover">
                         <Reveal>
                             <h2 className='text-white'>Mission</h2>
                             <p className='text-md text-white'>

@@ -45,7 +45,7 @@ export const team = [
         name: "Rishith",
         role: "Student cooordinator",
         image: "rishith.png",
-        linkedin: "https://www.linkedin.com/in/t-rishith/"
+        linkedin: ""
     },
     {
         name: "Manoj",
@@ -63,7 +63,7 @@ export const team = [
         name: "Manaswini",
         role: "Design head",
         image: "manaswini.png",
-        linkedin: "https://www.linkedin.com/in/manaswini-k-3a8b5b1a6"
+        linkedin: "https://www.linkedin.com/in/manaswini-veludandi-164527255"
     },
     {
         name: "Akshaya Gampa",

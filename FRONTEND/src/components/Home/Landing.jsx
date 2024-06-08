@@ -7,16 +7,17 @@ export default function Landing() {
     const { scrollYProgress } = useScroll();
     return (
 
-        <div className="h1-div">           
+        <div className="h1-div">
             <div className="landing-info">
                 <motion.div className="landing-logo" >
                     <img src="dq_logo.png" alt="dq_logo" />
                 </motion.div>
-
-                <div className="landing-text">
-                    <h1 className="font-semibold">VJ Data Questers</h1>
-                    <h3>VNR VJIET, hyderabad</h3>
-                    <p className="mt-1">LEARN | IMPLEMENT | COLLABORATE</p>
+                <div className="">
+                    <div className="landing-text box">
+                        <h1 className="font-semibold">VJ Data Questers</h1>
+                        <h3>VNR VJIET, hyderabad</h3>
+                        <p className="mt-1">LEARN | IMPLEMENT | COLLABORATE</p>
+                    </div>
                 </div>
             </div>
 

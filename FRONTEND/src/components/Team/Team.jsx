@@ -22,7 +22,7 @@ export default function Team() {
           return (
             <motion.div
               key={index}
-              className="faculty-member team-member bg-black/5 hover:bg-black/10 shadow-lg hover:backdrop-blur-lg"
+              className="faculty-member team-member bg-black/5 hover:bg-black/10 shadow-lg"
               variants={cardVariants}
               initial="initial"
               whileHover="hover"
@@ -49,7 +49,7 @@ export default function Team() {
             <Reveal key={index}>
               <motion.div
                 key={index}
-                className="team-member bg-black/5 hover:bg-black/10 shadow-lg hover:backdrop-blur-lg"
+                className="team-member bg-black/5 hover:bg-black/10 shadow-2lg"
                 variants={cardVariants}
                 initial="initial"
                 whileHover="hover"
