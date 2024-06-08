@@ -26,7 +26,7 @@ export const team = [
         name: "Vipin Rangu",
         role: "President",
         image: "vipin.png",
-        linkedin: "www.linkedin.com/in/vipin-rangu"
+        linkedin: "https://www.linkedin.com/in/vipin-rangu"
     },
     {
         name: "Sindhu Bhargavi",
@@ -51,7 +51,7 @@ export const team = [
         name: "Manoj",
         role: "Student cooordinator",
         image: "manoj.png",
-        linkedin: "www.linkedin.com/in/manoj-bojja-4442652ab"
+        linkedin: "https://www.linkedin.com/in/manoj-bojja-4442652ab"
     },
     {
         name: "Sindhu Priya",
