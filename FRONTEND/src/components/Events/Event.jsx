@@ -24,7 +24,7 @@ export default function Event() {
     
     return (
         <div className="events">
-            <div className="event-div">
+            <div className="event-div ">
                 <h2>{event.name}</h2>
                 <br />
                 <p><span className="bold">Date:</span> {event.Date} </p>
@@ -32,12 +32,12 @@ export default function Event() {
                 <p><span className="bold">Timings:</span> {event.Timings} </p>
                 <br />
                 <h3>Pics of the event</h3>
-                <div className="gallery">
-                    <div className="event-slider">
-                        <div className="slides" >
+                <div className="gallery rounded-md">
+                    <div className="event-slider rounded-md shadow-2xl">
+                        <div className="slides border border-black rounded-md" >
                             {event.Pics.map((img, index) => (
                                 <div key={index}>
-                                    <img id={"slide-" + (index + 1)} src={img} alt={event.name} />
+                                    <img className="mx-auto aspect-video w-[80vw] lg:w-[40vw] rounded-md" id={"slide-" + (index + 1)} src={img} alt={event.name} />
                                 </div>
                             ))} 
                         </div>

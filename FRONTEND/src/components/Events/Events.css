@@ -164,8 +164,8 @@
     width: 100%;
     margin-right: 50px;
     border-radius: 10px;
-    background: #0f323f;
-    background: linear-gradient(124deg, rgba(15,50,63,1) 5%, rgba(21,94,121,1) 50%);
+    background: transparent;
+    /* background: linear-gradient(124deg, rgba(15,50,63,1) 5%, rgba(21,94,121,1) 50%); */
     transform-origin: center center;
     transform: scale(1);
     transition: transform 0.5s;

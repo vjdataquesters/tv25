@@ -26,7 +26,7 @@ export const team = [
         name: "Vipin Rangu",
         role: "President",
         image: "vipin.png",
-        linkedin: "www.linkedin.com/in/vipin-rangu"
+        linkedin: "https://www.linkedin.com/in/vipin-rangu"
     },
     {
         name: "Sindhu Bhargavi",
@@ -45,13 +45,13 @@ export const team = [
         name: "Rishith",
         role: "Student cooordinator",
         image: "rishith.png",
-        linkedin: "https://www.linkedin.com/in/t-rishith/"
+        linkedin: ""
     },
     {
         name: "Manoj",
         role: "Student cooordinator",
         image: "manoj.png",
-        linkedin: "www.linkedin.com/in/manoj-bojja-4442652ab"
+        linkedin: "https://www.linkedin.com/in/manoj-bojja-4442652ab"
     },
     {
         name: "Sindhu Priya",
@@ -63,7 +63,7 @@ export const team = [
         name: "Manaswini",
         role: "Design head",
         image: "manaswini.png",
-        linkedin: "https://www.linkedin.com/in/manaswini-k-3a8b5b1a6"
+        linkedin: "https://www.linkedin.com/in/manaswini-veludandi-164527255"
     },
     {
         name: "Akshaya Gampa",
