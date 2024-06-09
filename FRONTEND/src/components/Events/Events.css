@@ -165,7 +165,7 @@
 }
 
 .slides::-webkit-scrollbar-track {
-    background: transparent;
+    background: rgba(17, 29, 52, 0.591);
 }
 
 .slides>div {
@@ -259,7 +259,7 @@
 
 /* colors */
 :root {
-    --primary: #1d8cf8;
+    --primary: #1d816f;
     --body-bg: #1e1e2f;
     --timeline-before-bg: #222a42;
     --timeline-body-bg: #27293d;

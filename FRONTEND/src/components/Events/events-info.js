@@ -72,7 +72,7 @@ const events = {
           Venue: "online",
           Timings: "4:00 pm - 7:00 pm",
           Pics: ['/events/HitThe2ndChase/img1.png', '/events/HitThe2ndChase/img2.png', '/events/HitThe2ndChase/img3.png'],
-          Winners: "1st Maneesh Vemula (23071A04B0)\n2nd Parthu (23071A6647)\n3rd Gajawada Rohith (22071A7215)\n4th Mahesh Kumar (23071A05GB)\n",
+          Winners: "<b>1st</b> Maneesh Vemula (23071A04B0)\n<b>2nd</b> Parthu (23071A6647)\n<b>3rd</b> Gajawada Rohith (22071A7215)\n<b>4th</b> Mahesh Kumar (23071A05GB)\n",
           Outcome: "<strong>Promote Problem-Solving Skills</strong>: The event will challenge participants to improve their problem-solving abilities through various activities, including reasoning, aptitude tests, puzzles, and technical questions. \n<strong>Foster Critical Thinking</strong>: By presenting participants with questions and puzzles, the event will encourage critical thinking and analytical reasoning. This will help them approach problems from different angles and develop effective solutions. \n<strong>Test Technical Knowledge</strong>: The event will include technical questions to assess participants' understanding and proficiency in relevant subject areas. This will encourage continuous learning and knowledge acquisition.",
         },
         description:
@@ -93,7 +93,7 @@ const events = {
           Venue: "A201, C106, B112/1",
           Timings: "10:00am to 12:00pm",
           Pics: ['/events/BlogAThon2023/img1.png', '/events/BlogAThon2023/img2.png', '/events/BlogAThon2023/img3.png'],
-          Winners: "Total Participants in First Round: 142 Teams\nTotal Participants in Second Round: 51 Teams\n\nSoftware Blog Winners\n1st place: \nQuantum computing - RS \nhttps://medium.com/@siddharthakumargade2910/quantum-computing-a2db46ecb09a\n\n2nd Place:\nBiometric and security A deep dive - Anikalla Sarika Reddy \nhttps://medium.com/@sarikareddyanikalla178/biometric-advanced-way-of-security-3ba2d6b98fbd\n\nHardware Blog Winners\n1st Place: \nHydroponics A soilless revolution - SS \nhttps://medium.com/p/2b06aa5c94a0/edit\n\n2nd Place: \nGround vehicle system - Baeverse \nhttps://medium.com/@22071a0250/ground-vehicle-systems-a-glimpse-into-the-wheels-of-innovation-1c2bef35d95f\n\n",
+          Winners: "<b>Total Participants in First Round:</b> 142 Teams\n<b>Total Participants in Second Round:</b> 51 Teams\n\n<b>Software Blog Winners\n1st place:</b> \nQuantum computing - RS \nhttps://medium.com/@siddharthakumargade2910/quantum-computing-a2db46ecb09a\n\n<b>2nd Place:</b>\nBiometric and security A deep dive - Anikalla Sarika Reddy \nhttps://medium.com/@sarikareddyanikalla178/biometric-advanced-way-of-security-3ba2d6b98fbd\n\n<b>Hardware Blog Winners\n1st Place:</b> \nHydroponics A soilless revolution - SS \nhttps://medium.com/p/2b06aa5c94a0/edit\n\n<b>2nd Place:</b> \nGround vehicle system - Baeverse \nhttps://medium.com/@22071a0250/ground-vehicle-systems-a-glimpse-into-the-wheels-of-innovation-1c2bef35d95f\n\n",
           Outcome: "The BLOG-A-THON attracted a significant number of participants, showcasing the enthusiasm for technical writing among the audience. Participants explored various technical subjects and presented them in unique and creative ways, enriching the overall knowledge base. The competition provided a valuable platform for participants to improve their writing and communication skills, particularly under pressure. Participants and judges alike expressed appreciation for the format and objectives of the BLOG-A-THON highlighting its contribution to the fest."
         },
         description:
@@ -131,7 +131,7 @@ const events = {
           Venue: "online",
           Timings: "3:00 pm - 4:00 pm",
           Pics: ['/events/HitThe1stChase/img1.png', '/events/HitThe1stChase/img4.png', '/events/HitThe1stChase/img2.png', '/events/HitThe1stChase/img3.png'],
-          Winners: "1st,2nd and 3rd are awarded with cash prize of 700,500,300 respectively.\nWINNER- Shruthika Sunku (CSE-AIML)\n1st RUNNER UP- G.Tanishq (CSE-CYS)\n2nd RUNNER UP- Rishith Kumar Reddy(CSE-AIML)",
+          Winners: "<b>1st,2nd and 3rd are awarded with cash prize of 700,500,300 respectively</b>.\n<b>WINNER-</b> Shruthika Sunku (CSE-AIML)\n<b>1st RUNNER UP</b>- G.Tanishq (CSE-CYS)\n<b>2nd RUNNER UP-</b> Rishith Kumar Reddy(CSE-AIML)",
           Outcome: "Through this event we made our juniors to solve problems on reasoning, aptitude, puzzles and technical questions. We first released a clue in our official Instagram page based on that they are directed to the next clue which is another Instagram page. These clues are provided in the form of questions or puzzles. In this process they may have loops and redirections according to the map. The first person who reaches the destination is the winner of the game. We got total of 300 registrations and 150 among them are participated in the event.",
         },
         description:

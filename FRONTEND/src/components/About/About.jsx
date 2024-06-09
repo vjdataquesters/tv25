@@ -39,30 +39,30 @@ export default function About() {
                 <div className='w-[85%] mx-auto '>
                     <div className=''>
                         <h1 className='text-center text-4xl font-extrabold sm:text-7xl'>The hub for data science enthusiasts</h1>
-                        <p className='text-center text-md sm:text-xl'>Driving innovation and collaboration through projects, certifications, and industry insights.</p>
+                        <p className='text-center text-black text-md sm:text-xl'>Driving innovation and collaboration through projects, certifications, and industry insights.</p>
                     </div>
                 </div>
-                <div className='flex flex-row flex-wrap items-center justify-center gap-10 sm:gap-20'>
+                <div className='flex flex-row flex-wrap items-center justify-center gap-10 sm:gap-20 bg-[#0f323f] w-[85%] mx-auto py-8 rounded-2xl'>
                     <motion.div className='text-center w-36'>
-                        <CountUp className='text-5xl sm:text-7xl font-semibold' end={mem} duration={5} suffix="+" />
-                        <p className='sm:text-xl'> Members</p>
+                        <CountUp className='text-white text-5xl sm:text-7xl font-semibold' end={mem} duration={5} suffix="+" />
+                        <p className='text-white sm:text-xl'> Members</p>
                     </motion.div>
                     <div className='text-center w-36'>
-                        <CountUp className='text-5xl sm:text-7xl font-semibold' end={events} duration={5} suffix="+" />
-                        <p className='sm:text-xl'> Events</p>
+                        <CountUp className='text-white text-5xl sm:text-7xl font-semibold' end={events} duration={5} suffix="+" />
+                        <p className='text-white sm:text-xl'> Events</p>
                     </div>
                     <div className='text-center w-36'>
-                        <CountUp className='text-5xl sm:text-7xl font-semibold' end={core} duration={5} suffix="+" />
-                        <p className='sm:text-xl'> Core members</p>
+                        <CountUp className='text-white text-5xl sm:text-7xl font-semibold' end={core} duration={5} suffix="+" />
+                        <p className='text-white sm:text-xl'> Core members</p>
                     </div>
                     <div className='text-center w-36'>
-                        <CountUp className='text-5xl sm:text-7xl font-semibold' end={alumni} duration={5} suffix="+" />
-                        <p className='sm:text-xl'> Alumni</p>
+                        <CountUp className='text-white text-5xl sm:text-7xl font-semibold' end={alumni} duration={5} suffix="+" />
+                        <p className='text-white sm:text-xl'> Alumni</p>
                     </div>
                 </div>
 
                 <motion.div className='m-auto my-4 flex gap-8 items-center px-6 py-4 border-black/40 border-2 rounded-lg' variants={boxVariants} initial="initial" whileHover="hover" whileTap="hover">
-                    <p>Follow us on</p>
+                    <p className='text-black'>Follow us on</p>
                     <div className='flex flex-row gap-4 justify-evenly items-center'>
                         <a href="https://www.linkedin.com/company/vj-data-questers/" target="_blank" rel="noreferrer">
                             <img src="https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png&color=000000" className='w-10' alt="" />
@@ -79,7 +79,7 @@ export default function About() {
 
             <div className='about-content flex items-center flex-col pt-16 '>
                 <motion.div className='w-[85%] px-4 py-4 mb-6 border border-white/40  rounded-2xl bg-[#0e303d]' variants={boxVariants} initial="initial" whileHover="hover" whileTap="hover">
-                    <h2 className='text-white'>About us</h2>
+                    <h2 className='text-white underline decoration-2 nderline-offset-2'>About us</h2>
                     <Reveal>
                         <p className='text-md text-white'>
                             Welcome to our Data Science Club, the premier hub for data science enthusiasts at our college. Established with the vision of driving innovation and collaboration, our club serves as the central point for all data science-related activities on campus. We provide comprehensive guidance on projects, offer certifications for both students and faculty, and keep our members informed about the latest industry trends and real-world applications of data science.
@@ -93,7 +93,7 @@ export default function About() {
                 <div className='flex flex-col w-[85%] sm:flex-row gap-6 mb-8 '>
                     <motion.div className="mission w-full sm:w-1/2 p-4 rounded-xl border border-white/40 hover:backdrop-blur-sm bg-[#0e303d]" variants={boxVariants} initial="initial" whileHover="hover" whileTap="hover">
                         <Reveal>
-                            <h2 className='text-white'>Vision</h2>
+                            <h2 className='text-white underline decoration-2 nderline-offset-1'>Vision</h2>
                             <p className='text-md'>
                                 To be the foremost hub for Data Science excellence, continually driving innovation and collaboration within our college community. We strive to create an environment where students and faculty can engage deeply with cutting-edge research and practical applications of Data Science. By fostering strong connections with industry leaders, we aim to bridge the gap between academic knowledge and real-world practice. Our vision includes being a leader in disseminating the latest trends and advancements in Data Science. Ultimately, we aspire to empower our members to be at the forefront of technological advancements and research in Data Science.
                             </p>
@@ -103,7 +103,7 @@ export default function About() {
                     </motion.div>
                     <motion.div className="mission w-full sm:w-1/2 p-4 rounded-xl border  border-white/40 hover:backdrop-blur-sm bg-[#0e303d]" variants={boxVariants} initial="initial" whileHover="hover" whileTap="hover">
                         <Reveal>
-                            <h2 className='text-white'>Mission</h2>
+                            <h2 className='text-white underline decoration-2 nderline-offset-1'>Mission</h2>
                             <p className='text-md text-white'>
                                 Our mission is to sustain and expand a thriving Data Science community by offering comprehensive guidance on various projects and providing certifications for students and faculty. We are dedicated to keeping our members abreast of industry trends and the practical implications of data in the real world through regular workshops, seminars, and guest lectures. By promoting active participation and collaboration, we aim to foster a culture of continuous learning and innovation. We ensure access to cutting-edge resources and tools that enable our members to excel in their data-driven endeavors. Our commitment is to uphold the highest standards of academic and technical integrity, preparing our members to lead and succeed in the dynamic field of Data Science.
                             </p>
@@ -118,23 +118,25 @@ export default function About() {
                         <img src="/teamImages/sravanthi.jpg" className="w-[350px] h-auto !min-w-[200px] !min-h-[200px] rounded-[10%]" />
                         <div>
                         <a href="https://www.linkedin.com/in/sravanthi-rayani-535a01228/" target="_blank">
-                            <p className='text-3xl'>Rayani Sravanthi</p>
+                            <p className='text-3xl text-black'>Rayani Sravanthi</p>
                         </a>
-                            <p>Dept. of CSE-(CyS,DS) & (AI&DS)</p>
-                            <p> Batch 2020-2024</p>
+                            <p className='text-black'>Dept. of CSE-(CyS,DS) & (AI&DS)</p>
+                            <p className='text-black'> Batch 2020-2024</p>
                         </div>
                     </div>
                     <div className='founders-content border-2 border-black rounded-xl lg:w-8/12 p-4 h-[500px] overflow-y-scroll overflow-x-hidden'>
-                        <p className=''>
-                            One of the most difficult yet rewarding experiences of my life was founding a club while I was in college. As a sophomore who was deeply interested in data science. There was not a single student group focused on data science. I decided to start the VJ DATA QUESTERS Club (VJDQ) with the help of our department, motivated by my desire to have a real influence.
+                        <p className='text-black whitespace-pre-wrap'>
+                            One of the most difficult yet rewarding experiences of my life was founding a club while I was in college. As a sophomore who was deeply interested in data science. There was not a single student group focused on data science. I decided to start the VJ DATA QUESTERS Club (VJDQ) with the help of our department, motivated by my desire to have a real influence.{"\n"}
                             With a lot of resolve and a distinct vision, the trip got underway. I put together a proposal to be given to the student activities office, wrote a mission statement, and listed the objectives of the organization. Convincing the administration of the club's potential influence and motivating students to join was a difficult first step.
-                            But what drove me was a deep-seated conviction that small steps taken by many could result in big changes.
+                            But what drove me was a deep-seated conviction that small steps taken by many could result in big changes.{"\n"}
                             The next important step is to assemble a committed team. I reached out to colleagues who were passionate like me and gave them important roles in the club. We generated ideas and created an activity schedule together. Every event was painstakingly organized to guarantee optimal participation and influence.
                             To keep club members motivated and involved, a combination of acknowledgment, passion, and human connection is needed. I made it a point to recognize everyone's participation, no matter how tiny, and to celebrate our group's accomplishments. Frequent meetings provided members with an opportunity to discuss ideas, express problems, and foster a sense of camaraderie in addition to planning and logistics.
                             Everyone felt appreciated and motivated to participate because of the encouraging atmosphere we fostered.
-                            Our ability to reach and interact with a larger audience was greatly enhanced by social media. We highlighted our lessons learned, promoted events, and shared updates via a variety of media. Our internet presence improved the club's visibility on campus and helped draw in new members.
+                            Our ability to reach and interact with a larger audience was greatly enhanced by social media. We highlighted our lessons learned, promoted events, and shared updates via a variety of media. Our internet presence improved the club's visibility on campus and helped draw in new members.{"\n"}
                             Our development was greatly aided by the administration's and the faculty's support. Through exhibiting the benefits of our work and proving our dedication, we were able to obtain funds and resources that allowed us to plan bigger events and take on more challenging initiatives. Faculty members offered their time to serve as advisors, offering advice and putting us in touch with outside organizations and subject matter experts.
+                            {"\n"}
                             Reflecting on this journey, I am immensely proud of what the VJ DATA QUESTERS Club has achieved. From a fledgling idea to a vibrant, impactful organization, the club's success is a testament to the power of passion, perseverance, and collaboration. My motivation was fueled by the belief that together, we could make a difference. This belief not only drove me but also inspired countless others to join and support our mission.
+                            {"\n"}
                             Looking ahead, the VJDQ is poised to continue its growth and impact. New leaders have emerged, bringing fresh ideas and energy. The foundation we built will support future initiatives, ensuring that our commitment to our club endures. Founding this club has been a transformative experience, teaching me invaluable lessons in leadership, teamwork, and the profound impact of collective action.
                         </p>
                     </div>
