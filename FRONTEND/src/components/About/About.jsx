@@ -35,28 +35,28 @@ export default function About() {
 
     return (
         <div className="about mx-auto mt-[4.5rem] flex flex-col scroll-smooth">
-            <div className='min-h-[calc(100vh-4.5rem)] py-12 sm:py-16 flex flex-col justify-between '>
+            <div className='min-h-[calc(100vh-4.5rem)] py-4 sm:py-16 flex flex-col justify-start gap-8 lg:justify-between'>
                 <div className='w-[85%] mx-auto '>
                     <div className=''>
-                        <h1 className='text-center text-4xl font-extrabold sm:text-7xl'>The hub for data science enthusiasts</h1>
+                        <h1 className='text-center text-4xl font-extrabold lg:text-7xl'>The hub for data science enthusiasts</h1>
                         <p className='text-center text-black text-md sm:text-xl'>Driving innovation and collaboration through projects, certifications, and industry insights.</p>
                     </div>
                 </div>
-                <div className='flex flex-row flex-wrap items-center justify-center gap-10 sm:gap-20 bg-[#0f323f] w-[85%] mx-auto py-8 rounded-2xl'>
+                <div className='flex flex-row flex-wrap items-center justify-center gap-8 sm:gap-20 bg-[#0f323f] w-[85%] mx-auto py-8 rounded-2xl'>
                     <motion.div className='text-center w-36'>
-                        <CountUp className='text-white text-5xl sm:text-7xl font-semibold' end={mem} duration={5} suffix="+" />
+                        <CountUp className='text-white text-5xl sm:text-7xl font-semibold' end={mem} duration={8} suffix="+" />
                         <p className='text-white sm:text-xl'> Members</p>
                     </motion.div>
                     <div className='text-center w-36'>
-                        <CountUp className='text-white text-5xl sm:text-7xl font-semibold' end={events} duration={5} suffix="+" />
+                        <CountUp className='text-white text-5xl sm:text-7xl font-semibold' end={events} duration={8} suffix="+" />
                         <p className='text-white sm:text-xl'> Events</p>
                     </div>
                     <div className='text-center w-36'>
-                        <CountUp className='text-white text-5xl sm:text-7xl font-semibold' end={core} duration={5} suffix="+" />
+                        <CountUp className='text-white text-5xl sm:text-7xl font-semibold' end={core} duration={8} suffix="+" />
                         <p className='text-white sm:text-xl'> Core members</p>
                     </div>
                     <div className='text-center w-36'>
-                        <CountUp className='text-white text-5xl sm:text-7xl font-semibold' end={alumni} duration={5} suffix="+" />
+                        <CountUp className='text-white text-5xl sm:text-7xl font-semibold' end={alumni} duration={8} suffix="+" />
                         <p className='text-white sm:text-xl'> Alumni</p>
                     </div>
                 </div>
@@ -77,10 +77,10 @@ export default function About() {
                 </motion.div>
             </div>
 
-            <div className='about-content flex items-center flex-col pt-16 '>
+            <div className='about-content flex items-center flex-col pt-2'>
                 <motion.div className='w-[85%] px-4 py-4 mb-6 border border-white/40  rounded-2xl bg-[#0e303d]' variants={boxVariants} initial="initial" whileHover="hover" whileTap="hover">
-                    <h2 className='text-white underline decoration-2 nderline-offset-2'>About us</h2>
                     <Reveal>
+                    <h2 className='text-white underline decoration-2 nderline-offset-2'>About us</h2>
                         <p className='text-md text-white'>
                             Welcome to our Data Science Club, the premier hub for data science enthusiasts at our college. Established with the vision of driving innovation and collaboration, our club serves as the central point for all data science-related activities on campus. We provide comprehensive guidance on projects, offer certifications for both students and faculty, and keep our members informed about the latest industry trends and real-world applications of data science.
                         </p>
@@ -111,7 +111,7 @@ export default function About() {
                     </motion.div>
                 </div>
             </div>
-            <div className='w-[90%] lg:w-[85%] pt-[4.5rem] px-4 mx-auto mb-8 min-h-[calc(100vh-4.5rem)]' id="foundersBlock">
+            <div className='w-[90%] lg:w-[85%] px-4 py-20 mx-auto mb-8 min-h-[calc(100vh-4.5rem)]' id="foundersBlock">
                 <h2 className="text-4xl font-semibold">Founder of the club</h2>
                 <div className='flex flex-col lg:flex-row gap-4 py-8'>
                     <div className='w-full lg:w-4/12 flex flex-col justify-start items-center gap-8'>

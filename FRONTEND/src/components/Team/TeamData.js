@@ -12,7 +12,7 @@ export const faculty = [
         linkedin:"https://www.linkedin.com/in/sunandapratap/"
     },
     {
-        name: "Mr. P. veeranjaneyulu",
+        name: "Mr. P. Veeranjaneyulu",
         role: "Coordinator",
         image: "veeru.png",
         linkedin:""

@@ -72,7 +72,7 @@ export default function Technovista() {
             <div className="w-[90%] sm:w-[80%] min-h-screen mt-20 m-auto ">
                 <div className="flex flex-col justify-center items-center gap-10 min-h-[calc(100vh-4.5rem)]">
 
-                    <h1 className="text-center text-5xl sm:text-7xl font-semibold neonText">𝕋𝔼ℂℍℕ𝕆𝕍𝕀𝕊𝕋𝔸</h1>
+                    <h1 className="text-center text-5xl sm:text-7xl neonText">𝕋𝔼ℂℍℕ𝕆𝕍𝕀𝕊𝕋𝔸</h1>
                     <div className="mt-4 w-full flex flex-col lg:flex-row gap-8 sm:gap-12 items-center lg:items-start">
                         <img src="/events/Technovista2024/img1.png" className="w-full lg:w-1/2 shadow-xl" alt="" />
                         <div>
