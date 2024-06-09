@@ -6,13 +6,13 @@ export default function Technovista() {
         {
             title: "Guest Lecture",
             description: "",
-            time: "9:00 A.M. - 10:00 A.M. \n10th June 2024 \nKS AUDITORIUM"
+            time: "11:00 A.M. - 10:00 A.M. \n10th June 2024 \nKS AUDITORIUM"
         },
         {
             title: "Red Teaming",
             description: "Prove your red teaming skills by hacking into the contest machine. Any online resource can be used (YouTube, chatgpt,etc…) the first to gain admin access to the machine wins the contest. There will also be live demonstration of pentesting at the beginning. This event is more like a workshop and practise it has multiple easy, medium and hard vulnerabilities to be exploited points will be given on the level of exploited vulnerabilities and winner will be decided by points first then submission time next",
             image: "/events/Technovista2024/redteaming.png",
-            time: "9:00 A.M. - 1:00 P.M. \n10th June 2024 \nC-105 , C-106, B-005, B-006, B-112/1, B-112/2",
+            time: "10:00 A.M. - 1:00 P.M. \n10th June 2024 \nC-105 , C-106, B-005, B-006, B-112/1, B-112/2",
         },
         {
             title: "Tech Elocution",
@@ -47,7 +47,7 @@ export default function Technovista() {
             title: "Game of Threats",
             description: "Calling all cyber defenders and data enthusiasts! 💻 The Game of Threats is upon you! This electrifying event throws down a thrilling challenge with four mind-bending rounds: Hangman, Code Breaker, Word Scramble, and Memory Game. 🧠 Sharpen your skills, challenge your friends, and claim ultimate glory! 🏆 Compete for a chance to win incredible prizes. 💰 Don't miss this electrifying opportunity to showcase your talent in the digital arena! Let’s play, learn, and secure the Digital world!",
             image: "/events/Technovista2024/threats.png",
-            time: "10:00 A.M. - 4:40 P.M. \n12th June 2024 \nSinti Stage"
+            time: "10:00 A.M. - 4:40 P.M. \n12th June 2024 \nOpen air auditorium (a.k.a sinti stage)"
         },
         {
             title: "Cyber Hunt",
@@ -77,7 +77,7 @@ export default function Technovista() {
                         <img src="/events/Technovista2024/img1.png" className="w-full lg:w-1/2 shadow-xl" alt="" />
                         <div>
                             <h2 className="text-2xl py-2">On 10th, 11th, 12th of June 2024 at <span className="font-semibold">VNRVJIET</span></h2>
-                            <p className="text-black text-[18px] sm:text-xl">TechnoVista is a premier collaborative event organized by the Data Science and Cyber Security Clubs, offering a diverse range of activities including a coding contest, cyber hunt, red teaming exercise, case study competition, hackathon, project expo, tech elocution, and guest lectures. This event aims to foster innovation, enhance technical skills, and provide networking opportunities for students, professionals, and tech enthusiasts. Participants can engage in competitive and educational activities, showcase their projects, and gain insights from industry experts, making TechnoVista a unique platform for learning, growth, and collaboration in the fields of data science and cybersecurity.</p>
+                            <p className="text-black text-[18px] sm:text-xl">TechnoVista is a premier collaborative event organized by the Data Science and Cyber Security Clubs, offering a diverse range of activities including a coding contest, cyber hunt, red teaming exercise, case study competition, hackathon, project expo, tech elocution, and guest lectures. This event aims to foster innovation, enhance technical skills, and provide networking opportunities for students, professionals, and tech enthusiasts. Participants can engage in competitive and educational activities, showcase their projects, and gain insights from industry experts, making TechnoVista a unique platform for learning, growth, and collaboration in the fields of data science and cybersecurity.</p>
                         </div>
                     </div>
 
@@ -90,20 +90,21 @@ export default function Technovista() {
                         <div className="timeline">
                             {
                                 data.map((item, index) => {
-                                    return (
-                                        <Reveal>
-                                            <div className="timeline-container primary" key={index}>
-                                                <div className="timeline-icon">
-                                                    {index + 1}
+                                    return (<div key={index}>   
+                                            <Reveal>
+                                                <div className="timeline-container primary" >
+                                                    <div className="timeline-icon">
+                                                        {index + 1}
+                                                    </div>
+                                                    <div className="timeline-body">
+                                                        <h4 className="timeline-title"><span className="badge">{item?.title}</span></h4>
+                                                        <p className="timeline-subtitle">{item?.time}</p>
+                                                        <p>{item?.description}</p>
+                                                        <p >{item?.venue}</p>
+                                                    </div>
                                                 </div>
-                                                <div className="timeline-body">
-                                                    <h4 className="timeline-title"><span class="badge">{item?.title}</span></h4>
-                                                    <p className="timeline-subtitle">{item?.time}</p>
-                                                    <p>{item?.description}</p>
-                                                    <p >{item?.venue}</p>
-                                                </div>
-                                            </div>
-                                        </Reveal>
+                                            </Reveal>
+                                    </div>
                                     )
                                 })
                             }

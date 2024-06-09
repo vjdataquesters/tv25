@@ -16,6 +16,24 @@ const testimonials = [
         role: "Coordinator",
         image: "teamImages/veeru.png",
         statement: "VJ DATA QUESTERS has set a high standard for data science engagement within our college. As a faculty coordinator, I am continually impressed by the club’s ability to blend academic rigor with practical industry insights. The club offers a structured pathway for students and faculty to deepen their expertise in data science through meticulously designed projects and certifications.\n",
+    },
+    {
+        name:"Srilekha",
+        role:"Alumini",
+        image:"teamImages/srilekha.jpg",
+        statement:"Being a part of VJ Data Questers has been an incredibly rewarding experience. As the president of the club, I've had the opportunity to dive deep into the world of data, exploring everything from fundamental statistical methods to cutting-edge machine learning techniques. The club offers a perfect blend of theoretical knowledge and practical application, allowing us to work on real-world projects that have honed my analytical skills. \nOne of the standout aspects of the club is the community. The members are passionate, driven, and always willing to lend a hand or share insights.Not only in terms of works,the team members had a great emotional bond too. \nThe workshops, knowledge sharing sessions, competitions such as Logo making and blog a thon and seminars organized by the club have featured industry professionals and academic experts, providing us with invaluable exposure to the latest trends and technologies in data science.\nMoreover, the club's collaborative environment has fostered my growth not only professionally but also personally.The club has  taught me the importance of effective communication and teamwork, organizing skills that are crucial in any professional setting.\nOverall, being a part of VJDQ was a  transformative journey. It has equipped me with the technical experience,many unforgettable memories and ever lasting bonds.I hope that club reaches many mile stones and expands to a greater level so that it is accessible to everyone who is interested in data science"
+    },
+    {
+        name:"Saketh",
+        role:"Alumini",
+        image:"teamImages/saketh.jpg",
+        statement:"Being part of our Data Science Club has truly transformed my journey. It's a dynamic hub where we come together to explore the depths of data science. Through interactive workshops, collaborative projects, and thought-provoking conversations, I've sharpened my abilities in data analysis, machine learning, and data visualization. The camaraderie among members fosters an environment ripe for learning and development, making it an invaluable resource for anyone eager to dive into the world of data science."
+    },
+    {
+        name:"Shaheen",
+        role:"Alumini",
+        image:"teamImages/shaheen.jpg",
+        statement:"As the founding batch of the VJ Data Questers in our BTech program, we've had an incredible journey filled with learning and fun. We kicked off with logo designing and instahunt, which were both educational and enjoyable. Our gatherings, where we brainstormed, collaborated, and created innovative activities in the Data Science domain for the students of our department. Lectures from our HOD sir inspired us and broadened our horizons. The camaraderie and enthusiasm in our club were unparalleled, making each activity memorable. We take pride in the friendships we've forged, the knowledge we've shared and the work which is being done by our juniors currently. The VJ DQ Club has truly been a cornerstone of our department, setting a strong foundation for future batches."
     }
 ]
 

@@ -1,10 +1,8 @@
-import { motion, useScroll } from "framer-motion"
+import { motion } from "framer-motion"
 import './Landing.css';
 
 
 export default function Landing() {
-
-    const { scrollYProgress } = useScroll();
     return (
 
         <div className="h1-div">
@@ -15,7 +13,7 @@ export default function Landing() {
                     <div className="landing-text box ">
                         <h1 className="font-semibold">VJ Data Questers</h1>
                         <h3>VNR VJIET, hyderabad</h3>
-                        <p className="mt-1">LEARN | IMPLEMENT | COLLABORATE</p>
+                        <p className="mt-1">COLLABORATE | EVOLVE | CONQUER </p>
                     </div>
             </div>
 
