@@ -34,6 +34,18 @@ const testimonials = [
         role:"Alumini",
         image:"teamImages/shaheen.jpg",
         statement:"As the founding batch of the VJ Data Questers in our BTech program, we've had an incredible journey filled with learning and fun. We kicked off with logo designing and instahunt, which were both educational and enjoyable. Our gatherings, where we brainstormed, collaborated, and created innovative activities in the Data Science domain for the students of our department. Lectures from our HOD sir inspired us and broadened our horizons. The camaraderie and enthusiasm in our club were unparalleled, making each activity memorable. We take pride in the friendships we've forged, the knowledge we've shared and the work which is being done by our juniors currently. The VJ DQ Club has truly been a cornerstone of our department, setting a strong foundation for future batches."
+    },
+    {
+        name:"Neeraj Ashish",
+        role:"Alumini",
+        image:"teamImages/neeraj.png",
+        statement:"It has been a wonderful experience working in VJ Data Questers as Technical Head. Although I wish I could contribute to more events, I have been extremely satisfied with the successful conduction of HIT, the first chase. The process from ideation to execution, was extremely fun to work with such amazing people. There was always room open to discuss creative ideas for the hardcore technical events to make it more exciting. Nevertheless, I hope this creativity and the essence of the club (data science) pass on."
+    },
+    {
+        name:"Shreyana",
+        role:"Alumini",
+        image:"teamImages/shreyana.png",
+        statement:"Joining VJ DataQuesters has been one of the most enriching experiences of my college life. As a member of the design team, I had the incredible opportunity to contribute to making numerous events more visually appealing and engaging through our innovative ideas. Collaborating with juniors who poured their heart and soul into the club was not only inspiring but also a testament to the dedication and passion that defines VJ DataQuesters. This club has truly allowed me to grow both creatively and personally, and I am grateful for the chance to be a part of such an extraordinary group."
     }
 ]
 

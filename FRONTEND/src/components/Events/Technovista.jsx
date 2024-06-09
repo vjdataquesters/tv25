@@ -99,7 +99,7 @@ export default function Technovista() {
                                                     <div className="timeline-body">
                                                         <h4 className="timeline-title"><span className="badge">{item?.title}</span></h4>
                                                         <p className="timeline-subtitle">{item?.time}</p>
-                                                        <p>{item?.description}</p>
+                                                        <p className='max-h-60 overflow-y-scroll py-1 md:max-h-96 md:overflow-y-visible'>{item?.description}</p>
                                                         <p >{item?.venue}</p>
                                                     </div>
                                                 </div>

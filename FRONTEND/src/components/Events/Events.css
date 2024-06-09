@@ -66,20 +66,18 @@
     height: 35px;
     font-style: bold;
     font-size: 1.2rem;
-    border: none;
-    background-color: #0f323f;
-    color: white;
-
+    border: 2px solid black;
+    color: black;
     &:hover {
-        background-color: whitesmoke;
-        color: #0f323f;
+        background-color: #0f323f87;
+        color: white;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
     }
 }
 
 .events-btn.active {
-    background-color: whitesmoke;
-    color: #0f323f;
+    background-color: #0f323f;
+    color: white;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
 }
 
