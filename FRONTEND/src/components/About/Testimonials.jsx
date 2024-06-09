@@ -15,7 +15,7 @@ export default function Testimonials() {
             <div
               className={`testimonial p-4 md:p-12 flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-12 rounded-xl bg-[#27293d] shadow-md hover:shadow-[16px_16px_20px] hover:shadow-black/80  transition-all duration-300 ease-in-out`}>
               <div className="tleft w-full flex flex-col justify-center items-center text-center">
-                <img src={t.image} alt="" className="w-[200px] h-[200px] !min-w-[200px] !min-h-[200px] rounded-full" />
+                <img src={t.image} alt="" className="w-[200px] h-[200px] !min-w-[200px] !min-h-[200px] border border-white rounded-full" />
               </div>
               <div className="tright border-white border p-4 rounded-lg">
                 <p className={t.name === 'Srilekha' ? "testimonials px-1 overflow-y-scroll overflow-x-hidden text-white h-[14rem]" : "text-white"} >{t.statement}</p>

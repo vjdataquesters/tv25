@@ -5,6 +5,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 const Header = () => {
+  const [menu, setMenu] = useState(false);
+  const [about, setAbout] = useState(false);
+  const handleBarsClick = () => setMenu(!menu);
+  const handleaboutclick = () => setAbout(about);
+
   const LiVariants = {
     hover: {
       scale: 1.1,
@@ -22,10 +27,7 @@ const Header = () => {
       },
     },
   };
-  const [menu, setMenu] = useState(false);
-  const [about, setAbout] = useState(false);
-  const handleBarsClick = () => setMenu(!menu);
-  const handleaboutclick = () => setAbout(about);
+  
   return (
     <div className="navbar">
       {/* header */}
@@ -45,7 +47,9 @@ const Header = () => {
             // whileHover="hover"
           >
             <motion.p
-              onClick={handleaboutclick}
+              onClick={() => {
+                handleaboutclick();
+              }}
               className="dropbtn"
               variants={LiVariants}
               whileHover="hover"
@@ -69,7 +73,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className="hover:bg-[#0e4256]">
-                <Link to="about#foundersBlock" className="nav-link">
+                <Link to="about#foundersBlock" onClick={handleBarsClick} className="nav-link">
                   <motion.p variants={DropVariants} whileHover="hover" whileTap="hover">
                     Founders block
                   </motion.p>
