@@ -10,11 +10,13 @@
     justify-content: center;
     align-items: center;
     background-image: url('https://tympanus.net/Development/ImageExpansionTypography/img/noise.png');
-    
+
 }
-.landing-info h1{
+
+.landing-info h1 {
     text-align: center;
 }
+
 .landing-info .landing-logo {
     & img {
         width: 70%;
@@ -36,6 +38,7 @@
     font-size: 2.26rem;
     text-transform: uppercase;
 }
+
 :root {
     --color-bg1: rgb(18, 7, 142);
     --color-bg2: #0f323f;
@@ -52,8 +55,9 @@
         display: none;
     }
 }
+
 @media screen and (max-width: 440px) {
-    .landing-info .landing-text{
+    .landing-info .landing-text {
         margin: 0;
     }
 }
@@ -101,13 +105,13 @@
     }
 }
 
-.graph-grid{
+.graph-grid {
     width: 100vw;
     height: 100vh;
     position: absolute;
     background-image: url('/graph-grid/graph-grid.png');
     opacity: 0.1;
-   
+
 }
 
 .gradient-bg {
@@ -115,7 +119,7 @@
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(180deg,  #0f323f 18%, #135168 100%);
+    background: linear-gradient(180deg, #0f323f 18%, #135168 100%);
 
     top: 0;
     left: 0;
@@ -181,35 +185,40 @@
     place-content: center;
     color: white;
     text-shadow: 0 1px 0 #000;
-    padding: 2rem;
-    
-    --border-angle: 0turn; /* For animation. */
+    padding: 1rem;
+
+    --border-angle: 0turn;
+    /* For animation. */
     --main-bg: conic-gradient(
       from var(--border-angle),
-      #0f323f00,
-      #0f323f00 95%
+      #0f3846,
+      #0f3846 5%,
+      #0f3846 60%,
+      #0f3846 95%
     );
     background-image: url('/graph-grid/graph-grid.png');
-    border: solid 1px transparent;
-    --gradient-border: conic-gradient(from var(--border-angle), transparent 0%,transparent 98%, rgba(255, 255, 255, 0)99%);
-    
-    background: 
-      var(--main-bg) padding-box, /* Padding-box clips this background into the overall element except the border. */
-      var(--gradient-border) border-box, /* Border-box extends this background to the border space. */
-      var(--main-bg) border-box; /* Duplicate main background to fill in behind the gradient border. */
-    
+    border: solid 1.5px transparent;
+    --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, rgb(255, 255, 255), rgb(255, 255, 255) 99%, transparent);
+
+    background:
+        var(--main-bg) padding-box,
+        var(--gradient-border) border-box,
+        var(--main-bg) border-box;
     background-position: center center;
     animation: bg-spin 3s linear infinite;
-  }
-  
-  @keyframes bg-spin {
+}
+
+
+
+
+@keyframes bg-spin {
     to {
-      --border-angle: 1turn;
+        --border-angle: 1turn;
     }
-  }
-  
-  @property --border-angle {
+}
+
+@property --border-angle {
     syntax: "<angle>";
     inherits: true;
     initial-value: 0turn;
-  }
+}
