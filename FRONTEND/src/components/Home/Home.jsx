@@ -112,7 +112,7 @@ export default function Home() {
       <div className="h3-div-cont">
         <Reveal>
           <div className="h3-div">
-            <h2 className="text-3xl">What we do?</h2>
+            <h2 className="text-3xl font-semibold">What we do?</h2>
             <div className="h3-cards">
               {data.map((d, index) => (
                 <motion.div
@@ -123,7 +123,7 @@ export default function Home() {
                   whileTap="tap"
                 >
                   <img src={d.imgURL} alt="img" />
-                  <h3 className="text-md sm:text-xl text-black font-semibold">{d.title}</h3>
+                  <h3 className="text-sm sm:text-xl text-black font-semibold">{d.title}</h3>
                 </motion.div>
               ))}
             </div>

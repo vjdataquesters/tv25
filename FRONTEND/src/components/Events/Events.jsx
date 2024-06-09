@@ -31,7 +31,7 @@ export default function Events() {
   }
   return (
     <div className="events">
-      <h1>Events</h1>
+      <h1 className="font-semibold">Events</h1>
       <div className="event-box">
         <div className="upcoming-events">
       
