@@ -25,16 +25,16 @@ export default function Event() {
     return (
         <div className="events">
             <div className="event-div">
-                <h2>{event.name}</h2>
+                <h2 className="font-semibold">{event.name}</h2>
                 <br />
-                <p><span className="bold">Date:</span> {event.Date} </p>
-                <p><span className="bold">Venue:</span> {event.Venue} </p>
-                <p><span className="bold">Timings:</span> {event.Timings} </p>
+                <p><span className="font-semibold">Date:</span> {event.Date} </p>
+                <p><span className="font-semibold">Venue:</span> {event.Venue} </p>
+                <p><span className="font-semibold">Timings:</span> {event.Timings} </p>
                 <br />
-                <h3>Pics of the event</h3>
+                <h3 className="font-semibold">Pics of the event</h3>
                 <div className="gallery rounded-md">
                     <div className="event-slider rounded-md shadow-2xl">
-                        <div className="slides border border-black rounded-md" >
+                        <div className="slides border-2 border-black rounded-md" >
                             {event.Pics.map((img, index) => (
                                 <div key={index}>
                                     <img className="mx-auto aspect-video w-[80vw] lg:w-[40vw] rounded-md" id={"slide-" + (index + 1)} src={img} alt={event.name} />
@@ -47,14 +47,14 @@ export default function Event() {
                 {
                     event.Winners && (
                         <>
-                            <h3>Winners:</h3>
-                            <p style={{whiteSpace: "pre-wrap"}}>{event.Winners}</p>
+                            <h3 className="font-semibold">Winners:</h3>
+                            <p style={{whiteSpace: "pre-wrap"}} dangerouslySetInnerHTML={{ __html: event.Winners }}></p>
                         </>
                     )
                 }
                 <br />
-                <h3> Outcome:</h3>
-                <p style={{whiteSpace: "pre-wrap",}} dangerouslySetInnerHTML={{ __html: event.Outcome }} />
+                <h3 className="font-semibold"> Outcome:</h3>
+                <p style={{whiteSpace: "pre-wrap"}} dangerouslySetInnerHTML={{ __html: event.Outcome }}></p>
                 <br />
             </div>
         </div>
