@@ -18,7 +18,7 @@ export default function Testimonials() {
                 <img src={t.image} alt="" className="w-[200px] h-[200px] !min-w-[200px] !min-h-[200px] rounded-full" />
               </div>
               <div className="tright border-white border p-4 rounded-lg">
-                <p className="text-white">{t.statement}</p>
+                <p className={t.name === 'Srilekha' ? "testimonials px-1 overflow-y-scroll overflow-x-hidden text-white h-[14rem]" : "text-white"} >{t.statement}</p>
                 <p className="testP text-white text-right mt-1 italic">- {t.name} ({t.role})</p>
               </div>
             </div>
