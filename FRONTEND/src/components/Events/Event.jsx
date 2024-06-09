@@ -24,7 +24,7 @@ export default function Event() {
     
     return (
         <div className="events">
-            <div className="event-div ">
+            <div className="event-div">
                 <h2>{event.name}</h2>
                 <br />
                 <p><span className="bold">Date:</span> {event.Date} </p>

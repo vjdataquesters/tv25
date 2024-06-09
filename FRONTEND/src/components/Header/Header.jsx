@@ -54,27 +54,27 @@ const Header = () => {
               About ▾
             </motion.p>
             <ul className="dropdown-content">
-              <li>
+              <li className='border-b border-white/20 hover:bg-[#0e4256]'>
                 <Link to="about" onClick={handleBarsClick} className="nav-link">
                   <motion.p variants={DropVariants} whileHover="hover" whileTap="hover">
                     About us
                   </motion.p>
                 </Link>
               </li>
-              <li>
+              <li className="border-b border-white/20 hover:bg-[#0e4256]">
                 <Link to="testimonials" onClick={handleBarsClick} className="nav-link">
                   <motion.p variants={DropVariants} whileHover="hover" whileTap="hover">
                     Testimonials
                   </motion.p>
                 </Link>
               </li>
-              {/* <li>
-                <Link to="about#foundersblock" className="nav-link">
+              <li className="hover:bg-[#0e4256]">
+                <Link to="about#foundersBlock" className="nav-link">
                   <motion.p variants={DropVariants} whileHover="hover" whileTap="hover">
                     Founders block
                   </motion.p>
                 </Link>
-              </li> */}
+              </li>
             </ul>
           </li>
           <li className="nav-item">

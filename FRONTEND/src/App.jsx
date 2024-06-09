@@ -7,6 +7,7 @@ import Team from "./components/Team/Team";
 import Root from "./components/Root";
 import Testimonials from "./components/About/Testimonials"
 import Technovista from "./components/Events/Technovista";
+import { Analytics } from "@vercel/analytics/react"
 function App() {
   let router = createBrowserRouter([
     {
@@ -47,6 +48,7 @@ function App() {
 
   return (
     <>
+      <Analytics />
       <RouterProvider router={router} />
     </>
   );

@@ -38,7 +38,7 @@ export default function About() {
 
     return (
         <div className="about mx-auto mt-[4.5rem] flex flex-col scroll-smooth">
-            <div className='min-h-[calc(100vh-4.5rem)] py-10 sm:py-16 flex flex-col justify-between '>
+            <div className='min-h-[calc(100vh-4.5rem)] py-12 sm:py-16 flex flex-col justify-between '>
                 <div className='w-[85%] mx-auto '>
                     <div className=''>
                         <h1 className='text-center text-4xl font-extrabold sm:text-7xl'>The hub for data science enthusiasts</h1>
@@ -80,7 +80,7 @@ export default function About() {
                 </motion.div>
             </div>
 
-            <div className='about-content flex items-center flex-col py-16 '>
+            <div className='about-content flex items-center flex-col pt-16 '>
                 <motion.div className='w-[85%] px-4 py-4 mb-6 border border-white/40  rounded-2xl bg-[#0e303d]' variants={boxVariants} initial="initial" whileHover="hover" whileTap="hover">
                     <h2 className='text-white'>About us</h2>
                     <Reveal>
@@ -112,6 +112,33 @@ export default function About() {
                             </p>
                         </Reveal>
                     </motion.div>
+                </div>
+            </div>
+            <div className='w-[90%] lg:w-[85%] pt-[4.5rem] px-4 mx-auto mb-8 min-h-[calc(100vh-4.5rem)]' id="foundersBlock">
+                <h2 className="text-4xl font-semibold">Founder of the club</h2>
+                <div className='flex flex-col lg:flex-row gap-4 py-8'>
+                    <div className='w-full lg:w-4/12 flex flex-col justify-start items-center gap-8'>
+                        <img src="/teamImages/sravanthi.jpg" className="w-[350px] h-auto !min-w-[200px] !min-h-[200px] rounded-[10%]" />
+                        <div className=''>
+                            <p className='text-3xl'>Sravanthi</p>
+                            <p>Dept of CSE-DS,AIDS,CYS</p>
+                            <p> Batch 2020-2024</p>
+                        </div>
+                    </div>
+                    <div className='founders-content border-2 border-black rounded-xl lg:w-8/12 p-4 h-[500px] overflow-y-scroll overflow-x-hidden'>
+                        <p className=''>
+                            One of the most difficult yet rewarding experiences of my life was founding a club while I was in college. As a sophomore who was deeply interested in data science. There was not a single student group focused on data science. I decided to start the VJ DATA QUESTERS Club (VJDQ) with the help of our department, motivated by my desire to have a real influence.
+                            With a lot of resolve and a distinct vision, the trip got underway. I put together a proposal to be given to the student activities office, wrote a mission statement, and listed the objectives of the organization. Convincing the administration of the club's potential influence and motivating students to join was a difficult first step.
+                            But what drove me was a deep-seated conviction that small steps taken by many could result in big changes.
+                            The next important step is to assemble a committed team. I reached out to colleagues who were passionate like me and gave them important roles in the club. We generated ideas and created an activity schedule together. Every event was painstakingly organized to guarantee optimal participation and influence.
+                            To keep club members motivated and involved, a combination of acknowledgment, passion, and human connection is needed. I made it a point to recognize everyone's participation, no matter how tiny, and to celebrate our group's accomplishments. Frequent meetings provided members with an opportunity to discuss ideas, express problems, and foster a sense of camaraderie in addition to planning and logistics.
+                            Everyone felt appreciated and motivated to participate because of the encouraging atmosphere we fostered.
+                            Our ability to reach and interact with a larger audience was greatly enhanced by social media. We highlighted our lessons learned, promoted events, and shared updates via a variety of media. Our internet presence improved the club's visibility on campus and helped draw in new members.
+                            Our development was greatly aided by the administration's and the faculty's support. Through exhibiting the benefits of our work and proving our dedication, we were able to obtain funds and resources that allowed us to plan bigger events and take on more challenging initiatives. Faculty members offered their time to serve as advisors, offering advice and putting us in touch with outside organizations and subject matter experts.
+                            Reflecting on this journey, I am immensely proud of what the VJ DATA QUESTERS Club has achieved. From a fledgling idea to a vibrant, impactful organization, the club's success is a testament to the power of passion, perseverance, and collaboration. My motivation was fueled by the belief that together, we could make a difference. This belief not only drove me but also inspired countless others to join and support our mission.
+                            Looking ahead, the VJDQ is poised to continue its growth and impact. New leaders have emerged, bringing fresh ideas and energy. The foundation we built will support future initiatives, ensuring that our commitment to our club endures. Founding this club has been a transformative experience, teaching me invaluable lessons in leadership, teamwork, and the profound impact of collective action.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
