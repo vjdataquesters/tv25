@@ -1,8 +1,5 @@
 import './About.css';
 import Reveal from '../Reveal';
-import { FaLinkedin } from "react-icons/fa";
-import { FaInstagramSquare } from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from "framer-motion";
@@ -119,9 +116,11 @@ export default function About() {
                 <div className='flex flex-col lg:flex-row gap-4 py-8'>
                     <div className='w-full lg:w-4/12 flex flex-col justify-start items-center gap-8'>
                         <img src="/teamImages/sravanthi.jpg" className="w-[350px] h-auto !min-w-[200px] !min-h-[200px] rounded-[10%]" />
-                        <div className=''>
-                            <p className='text-3xl'>Sravanthi</p>
-                            <p>Dept of CSE-DS,AIDS,CYS</p>
+                        <div>
+                        <a href="https://www.linkedin.com/in/sravanthi-rayani-535a01228/" target="_blank">
+                            <p className='text-3xl'>Rayani Sravanthi</p>
+                        </a>
+                            <p>Dept. of CSE-(CyS,DS) & (AI&DS)</p>
                             <p> Batch 2020-2024</p>
                         </div>
                     </div>

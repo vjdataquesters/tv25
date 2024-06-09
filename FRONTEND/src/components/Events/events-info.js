@@ -41,7 +41,25 @@ const events = {
         description:
           "VJ DATA QUESTERS conducted a workshop on Data Visualization using Tableau for 2nd year Data Science students. The workshop was conducted by Mr. Gullapalli Sathar",
         link: "/events/tableau2k24",
-      },
+        },
+      {
+            name: "LTI Mind Tree DS Guest Lecture",
+            eventId: "ltiGuestLecture2024",
+            image: "/events/LtiMindTreeDS2024/img1.png",
+            Date: "20-03-2024",
+            Venue: "APJ Abdul kalam Auditorium",
+            page: {
+              name: "LTI Mind Tree DS Guest Lecture",
+              Date: "20-03-2024",
+              Venue: "APJ Abdul kalam Auditorium",
+              Timings: "11:00 am - 12:30 pm",
+              Pics: ['/events/LtiMindTreeDS2024/img2.png', '/events/LtiMindTreeDS2024/img3.png', '/events/LtiMindTreeDS2024/img4.png', '/events/LtiMindTreeDS2024/img5.png'],
+              Outcome: "The Data Science workshop was a hit! participants got a taste of Data Science's complete insights from What is Data? to Life Cycle of Data Science. Thanks to the faculty and student coordinators, participants left buzzing with ideas and excited about the roles in Data Science. We express our sincere appreciation for joining the technical event we aim to provifde awareness to attendees on Data Science we are heartful for the successful participation of attendees.",
+            },
+            description:
+              "We VJ DATA QUESTERS organised a Guest lecture on oppurtunities in Data Science for 3rd-year Data Science students.The Guest Lecture was organised by Mrs. Dr. N. Sunanda and Mr. P. Veeranjaneyulu, our faculty coordinators.",
+            link: "/events/ltiGuestLecture2024",
+        },
       {
         name: "HIT -  THE SECOND CHASE",
         eventId: "hitThe2ndChase",
@@ -61,63 +79,8 @@ const events = {
           "We VJ DATA QUESTERS conducted a HIT-THE SECOND CHASE for students of 1st and 2nd years of our college, to find the final treasure",
         link: "/events/hitThe2ndChase",
       },
-      {
-        name: "LTI Mind Tree DS Guest Lecture",
-        eventId: "ltiGuestLecture2024",
-        image: "/events/LtiMindTreeDS2024/img1.png",
-        Date: "20-03-2024",
-        Venue: "APJ Abdul kalam Auditorium",
-        page: {
-          name: "LTI Mind Tree DS Guest Lecture",
-          Date: "20-03-2024",
-          Venue: "APJ Abdul kalam Auditorium",
-          Timings: "11:00 am - 12:30 pm",
-          Pics: ['/events/LtiMindTreeDS2024/img2.png', '/events/LtiMindTreeDS2024/img3.png', '/events/LtiMindTreeDS2024/img4.png', '/events/LtiMindTreeDS2024/img5.png'],
-          Outcome: "The Data Science workshop was a hit! participants got a taste of Data Science's complete insights from What is Data? to Life Cycle of Data Science. Thanks to the faculty and student coordinators, participants left buzzing with ideas and excited about the roles in Data Science. We express our sincere appreciation for joining the technical event we aim to provifde awareness to attendees on Data Science we are heartful for the successful participation of attendees.",
-        },
-        description:
-          "We VJ DATA QUESTERS organised a Guest lecture on oppurtunities in Data Science for 3rd-year Data Science students.The Guest Lecture was organised by Mrs. Dr. N. Sunanda and Mr. P. Veeranjaneyulu, our faculty coordinators.",
-        link: "/events/ltiGuestLecture2024",
-      }
     ],
     e2023: [
-      {
-        name: "A GUEST LECTURE ON DATA SCIENCE JOURNEY IN 2023",
-        eventId: "guestLecture2023",
-        image: "/events/GuestLectureDS2023/img1.png",
-        Date: "08-02-2023",
-        Venue: "KS Auditorium",
-        page: {
-          name: "A GUEST LECTURE ON DATA SCIENCE JOURNEY IN 2023",
-          Date: "08-02-2023",
-          Venue: "KS Audi",
-          Timings: "10:00 am - 12:00 pm",
-          Pics: ['/events/GuestLectureDS2023/img1.png', '/events/GuestLectureDS2023/img2.png', '/events/GuestLectureDS2023/img3.png'],
-          Outcome: "This guest lecture on data science provided attendees with new insights into the field and its applications. This can help them deepen their understanding of data science and gain a better appreciation of its importance. The guest lecture had inspired attendees to pursue a career or further education in data science. They may gain a better understanding of the potential impact of data science in various industries and be motivated to explore opportunities in the field. This guest lecture can be an excellent opportunity to meet other professionals who are working on data science. Attendees can network with the speaker.",
-        },
-        description:
-          "We VJ DATA QUESTERS conducted a Guest lecture on data science journey in 2023 for students of 1st , 2nd and 3rd  years data science students of our college , to know the career in data science",
-        link: "/events/guestLecture2023",
-      },
-      {
-        name: "HIT - THE 1ST CHASE ",
-        eventId: "hitThe1stChase",
-        image: "/events/HitThe1stChase/img1.png",
-        Date: "11-02-2023",
-        Venue: "online",
-        page: {
-          name: "HIT - THE 1ST CHASE ",
-          Date: "11-02-2023",
-          Venue: "online",
-          Timings: "3:00 pm - 4:00 pm",
-          Pics: ['/events/HitThe1stChase/img1.png', '/events/HitThe1stChase/img4.png', '/events/HitThe1stChase/img2.png', '/events/HitThe1stChase/img3.png'],
-          Winners: "1st,2nd and 3rd are awarded with cash prize of 700,500,300 respectively.\nWINNER- Shruthika Sunku (CSE-AIML)\n1st RUNNER UP- G.Tanishq (CSE-CYS)\n2nd RUNNER UP- Rishith Kumar Reddy(CSE-AIML)",
-          Outcome: "Through this event we made our juniors to solve problems on reasoning, aptitude, puzzles and technical questions. We first released a clue in our official Instagram page based on that they are directed to the next clue which is another Instagram page. These clues are provided in the form of questions or puzzles. In this process they may have loops and redirections according to the map. The first person who reaches the destination is the winner of the game. We got total of 300 registrations and 150 among them are participated in the event.",
-        },
-        description:
-          "VJ DATA QUESTERS conducted a HIT-THE FIRST CHASE for students of 1st and 2nd years of our college , to find the final treasure",
-        link: "/events/hitThe1stChase",
-      },
       {
         name: "BLOG-A-THON",
         eventId: "blogAThon",
@@ -155,6 +118,43 @@ const events = {
         description:
           "VJ DATA QUESTERS hosted an ORIENTATION for 2023 1st year students of our college. ",
         link: "/events/vjdqOrientation2023",
+      },
+      {
+        name: "HIT - THE 1ST CHASE ",
+        eventId: "hitThe1stChase",
+        image: "/events/HitThe1stChase/img1.png",
+        Date: "11-02-2023",
+        Venue: "online",
+        page: {
+          name: "HIT - THE 1ST CHASE ",
+          Date: "11-02-2023",
+          Venue: "online",
+          Timings: "3:00 pm - 4:00 pm",
+          Pics: ['/events/HitThe1stChase/img1.png', '/events/HitThe1stChase/img4.png', '/events/HitThe1stChase/img2.png', '/events/HitThe1stChase/img3.png'],
+          Winners: "1st,2nd and 3rd are awarded with cash prize of 700,500,300 respectively.\nWINNER- Shruthika Sunku (CSE-AIML)\n1st RUNNER UP- G.Tanishq (CSE-CYS)\n2nd RUNNER UP- Rishith Kumar Reddy(CSE-AIML)",
+          Outcome: "Through this event we made our juniors to solve problems on reasoning, aptitude, puzzles and technical questions. We first released a clue in our official Instagram page based on that they are directed to the next clue which is another Instagram page. These clues are provided in the form of questions or puzzles. In this process they may have loops and redirections according to the map. The first person who reaches the destination is the winner of the game. We got total of 300 registrations and 150 among them are participated in the event.",
+        },
+        description:
+          "VJ DATA QUESTERS conducted a HIT-THE FIRST CHASE for students of 1st and 2nd years of our college , to find the final treasure",
+        link: "/events/hitThe1stChase",
+      },
+      {
+        name: "A GUEST LECTURE ON DATA SCIENCE JOURNEY IN 2023",
+        eventId: "guestLecture2023",
+        image: "/events/GuestLectureDS2023/img1.png",
+        Date: "08-02-2023",
+        Venue: "KS Auditorium",
+        page: {
+          name: "A GUEST LECTURE ON DATA SCIENCE JOURNEY IN 2023",
+          Date: "08-02-2023",
+          Venue: "KS Audi",
+          Timings: "10:00 am - 12:00 pm",
+          Pics: ['/events/GuestLectureDS2023/img1.png', '/events/GuestLectureDS2023/img2.png', '/events/GuestLectureDS2023/img3.png'],
+          Outcome: "This guest lecture on data science provided attendees with new insights into the field and its applications. This can help them deepen their understanding of data science and gain a better appreciation of its importance. The guest lecture had inspired attendees to pursue a career or further education in data science. They may gain a better understanding of the potential impact of data science in various industries and be motivated to explore opportunities in the field. This guest lecture can be an excellent opportunity to meet other professionals who are working on data science. Attendees can network with the speaker.",
+        },
+        description:
+          "We VJ DATA QUESTERS conducted a Guest lecture on data science journey in 2023 for students of 1st , 2nd and 3rd  years data science students of our college , to know the career in data science",
+        link: "/events/guestLecture2023",
       },
     ]
     // e2022: [

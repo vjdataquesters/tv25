@@ -1,18 +1,21 @@
 export const faculty = [
     {
-        name: "Dr. Raja Sekar",
+        name: "Dr.M.Raja Sekar",
         role: "Head Of Department",
-        image: "hod.png"
+        image: "hod.png",
+        linkedin:"https://www.linkedin.com/in/mummalaneni-rajasekar-9a1964178/"
     },
     {
-        name: "Mrs. Sunanda",
+        name: "Dr.N.Sunanda",
         role: "Coordinator",
-        image: "sunanda.png"
+        image: "sunanda.png",
+        linkedin:"https://www.linkedin.com/in/sunandapratap/"
     },
     {
-        name: "Mr. Veeranjaneyulu",
+        name: "Mr.P.veeranjaneyulu",
         role: "Coordinator",
-        image: "veeru.png"
+        image: "veeru.png",
+        linkedin:""
     }
 ]
 export const team = [

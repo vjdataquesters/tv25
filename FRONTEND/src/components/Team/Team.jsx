@@ -38,7 +38,9 @@ export default function Team() {
                 }
                 alt={member.name}
               />
+              <a href={member.linkedin} target="_blank">
               <p className="member-name">{member.name}</p>
+              </a>
             </motion.div>
           );
         })}
