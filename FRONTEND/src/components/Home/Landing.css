@@ -1,4 +1,4 @@
-.landing-info {
+/* .landing-info {
     z-index: 100;
     width: 100vw;
     height: 100vh;
@@ -22,9 +22,9 @@
         width: 70%;
         height: auto;
     }
-}
+} */
 
-.landing-info .landing-text {
+/* .landing-info .landing-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,7 +37,8 @@
     margin: 2rem 4rem;
     font-size: 2.26rem;
     text-transform: uppercase;
-}
+} */
+
 
 :root {
     --color-bg1: rgb(18, 7, 142);
@@ -105,14 +106,14 @@
     }
 }
 
-.graph-grid {
+/* .graph-grid {
     width: 100vw;
     height: 100vh;
     position: absolute;
     background-image: url('/graph-grid/graph-grid.png');
     opacity: 0.1;
 
-}
+} */
 
 .gradient-bg {
     width: 100vw;
@@ -188,7 +189,6 @@
     padding: 1rem;
 
     --border-angle: 0turn;
-    /* For animation. */
     --main-bg: conic-gradient(
       from var(--border-angle),
       #0f3846,
@@ -205,7 +205,7 @@
         var(--gradient-border) border-box,
         var(--main-bg) border-box;
     background-position: center center;
-    animation: bg-spin 3s linear infinite;
+    animation: bg-spin 5s linear infinite;
 }
 
 
