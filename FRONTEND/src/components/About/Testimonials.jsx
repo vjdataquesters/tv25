@@ -1,16 +1,15 @@
 import testimonials from "./testimonial.js";
-import './About.css';
 import Reveal from "../Reveal.jsx";
 
 export default function Testimonials() {
   return (
-    <div className="testimonials w-full lg:w-[85%] mx-auto mt-[4.5rem] flex flex-col gap-8 p-8 ">
-      <h2 className="text-center text-5xl font-semibold">Testimonials</h2>
+    <div className="testimonials w-full lg:w-[85%] mx-auto mt-[4.5rem] flex flex-col gap-8 p-8 mb-10">
+      <h2 className="text-center text-4xl sm:text-5xl font-semibold">Testimonials</h2>
       {testimonials.map((t, index) => {
         return (
           <div key={index}>
-            {index === 0 && <h2 className="text-4xl underline mb-6 pl-2">What our faculty coordinators say..</h2> }
-            {index === 3 &&  <h2 className="text-4xl underline mb-6 pl-2">What our alumni say..</h2>}
+            {index === 0 && <h2 className="text-xl sm:text-2xl underline mb-6 pl-2 ">What our faculty coordinators say..</h2> }
+            {index === 3 &&  <h2 className="text-xl sm:text-2xl underline mb-6 pl-2">What our alumni say..</h2>}
           <Reveal>
             <div
               className={`testimonial p-4 md:p-12 flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-12 rounded-xl bg-[#27293d] shadow-md hover:shadow-[16px_16px_20px] hover:shadow-black/80  transition-all duration-300 ease-in-out`}>

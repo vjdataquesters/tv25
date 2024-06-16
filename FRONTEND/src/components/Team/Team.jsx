@@ -1,4 +1,4 @@
-import "./Team.css";
+
 import { faculty, team } from "./TeamData";
 import Reveal from "../Reveal";
 import { motion } from "framer-motion";
@@ -11,26 +11,26 @@ export default function Team() {
     hover: {
       scale: 1.025,
       boxShadow: "0px 48px 100px 0px #110c2e26",
-    }
+    },
   };
   return (
-    <div className="team">
-      <h1 className="font-semibold ">Who are we?</h1>
+    <div className="team mt-20 w-full text-center">
+      <h1 className="font-semibold text-3xl">Who are we?</h1>
       <p>The people behind DQ</p>
-      <div className="team-div" >
+      <div className="team-div mx-auto flex flex-wrap justify-center mt-8 w-[80%] m-4">
         {faculty.map((member, index) => {
           return (
             <motion.div
               key={index}
-              className="faculty-member team-member bg-black/10 hover:bg-black/15 transitiona-all duration-300 ease-in-out"
+              className="team-member  flex flex-col jsutify-around m-4 p-2 min-w-[17rem] min-h-60  rounded-2xl bg-black/10 hover:bg-black/15 transitiona-all duration-300 ease-in-out"
               variants={cardVariants}
               initial="initial"
               whileHover="hover"
-              whileTap="hover">
-
-              <p className="post-p">{member.role}</p>
+              whileTap="hover"
+            >
+              <p className="text-left p-[2px] w-full mb-2 text-lg">{member.role}</p>
               <img
-                className="faculty-img w-48 h-48 rounded-[20%] m-4"
+                className="w-48 h-48 rounded-[20%] m-4 mx-auto my-0"
                 src={
                   member.image
                     ? "teamImages/" + member.image
@@ -39,28 +39,32 @@ export default function Team() {
                 alt={member.name}
               />
               <a href={member.linkedin} target="_blank">
-              <p className="member-name">{member.name}</p>
+                <p className="px-[2px] text-right w-full mt-2 transition-all hover:underline">
+                  {member.name}
+                </p>
               </a>
             </motion.div>
           );
         })}
       </div>
-      <div className="team-div">
+      <div className="team-div mx-auto flex flex-wrap justify-center mt-8 w-[80%] m-4">
         {team.map((member, index) => {
           return (
             <Reveal key={index}>
               <motion.div
                 key={index}
-                className="team-member bg-black/5 hover:bg-black/10"
+                className="team-member flex flex-col jsutify-around m-4 p-2 min-w-[17rem] min-h-60  rounded-2xl bg-black/10 hover:bg-black/15 transitiona-all duration-300 ease-in-out"
                 variants={cardVariants}
                 initial="initial"
                 whileHover="hover"
                 whileTap="hover"
                 unselectable="on"
               >
-                <p className="post-p">{member.role || "idk"}</p>
+                <p className="text-left p-[2px] w-full mb-2 text-lg">
+                  {member.role || "idk"}
+                </p>
                 <img
-                  className="faculty-img w-40 h-40 rounded-[20%] m-4"
+                  className="w-48 h-48 rounded-[20%] m-4 mx-auto my-0 "
                   src={
                     member.image
                       ? "teamImages/" + member.image
@@ -69,7 +73,9 @@ export default function Team() {
                   alt={member.name}
                 />
                 <a href={member.linkedin} target="_blank">
-                  <p className="member-name">{member.name}</p>
+                  <p className="px-[2px] text-right w-full mt-2 transition-all hover:underline">
+                    {member.name}
+                  </p>
                 </a>
               </motion.div>
             </Reveal>
