@@ -23,21 +23,21 @@ export default function Event() {
     
     
     return (
-        <div className="events">
-            <div className="event-div">
-                <h2 className="font-semibold">{event.name}</h2>
+        <div className="events pt-20">
+            <div className="event-div m-auto w-[90%]">
+                <h2 className="font-semibold text-5xl">{event.name}</h2>
                 <br />
-                <p><span className="font-semibold">Date:</span> {event.Date} </p>
-                <p><span className="font-semibold">Venue:</span> {event.Venue} </p>
-                <p><span className="font-semibold">Timings:</span> {event.Timings} </p>
+                <p><span className="font-semibold text-xl">Date:</span> {event.Date} </p>
+                <p><span className="font-semibold text-xl">Venue:</span> {event.Venue} </p>
+                <p><span className="font-semibold text-xl">Timings:</span> {event.Timings} </p>
                 <br />
-                <h3 className="font-semibold">Pics of the event</h3>
-                <div className="gallery rounded-md">
-                    <div className="event-slider rounded-md shadow-2xl">
-                        <div className="slides border-2 border-black rounded-md" >
+                <h3 className="font-semibold text-2xl">Pics of the event</h3>
+                <div className="gallery rounded-md m-4">
+                    <div className="event-slider rounded-md shadow-2xl w-full h-[30vh] sm:w-3/5 sm:h-96 mx-auto">
+                        <div className="slides border-2 h-full  border-black rounded-md flex overflow-x-auto" >
                             {event.Pics.map((img, index) => (
                                 <div key={index}>
-                                    <img className="mx-auto aspect-video w-[80vw] lg:w-[40vw] rounded-md" id={"slide-" + (index + 1)} src={img} alt={event.name} />
+                                    <img className="mx-auto aspect-video w-[80vw] lg:w-[40vw] rounded-md " id={"slide-" + (index + 1)} src={img} alt={event.name} />
                                 </div>
                             ))} 
                         </div>
@@ -47,14 +47,14 @@ export default function Event() {
                 {
                     event.Winners && (
                         <>
-                            <h3 className="font-semibold">Winners:</h3>
-                            <p style={{whiteSpace: "pre-wrap"}} dangerouslySetInnerHTML={{ __html: event.Winners }}></p>
+                            <h3 className="font-semibold text-3xl">Winners:</h3>
+                            <p className="text-base sm:text-lg overflow-x-scroll sm:overflow-x-hidden" style={{whiteSpace: "pre-wrap"}} dangerouslySetInnerHTML={{ __html: event.Winners }}></p>
                         </>
                     )
                 }
                 <br />
-                <h3 className="font-semibold"> Outcome:</h3>
-                <p style={{whiteSpace: "pre-wrap"}} dangerouslySetInnerHTML={{ __html: event.Outcome }}></p>
+                <h3 className="font-semibold text-3xl"> Outcome:</h3>
+                <p className="text-base sm:text-lg " style={{whiteSpace: "pre-wrap"}} dangerouslySetInnerHTML={{ __html: event.Outcome }}></p>
                 <br />
             </div>
         </div>

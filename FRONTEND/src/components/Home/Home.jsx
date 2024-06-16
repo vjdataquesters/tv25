@@ -71,35 +71,44 @@ export default function Home() {
 
   return (
     <motion.div
-      className="home"
+      className="home flex flex-col justify-center items-center"
       variants={homeVariants}
       initial="initial"
       animate="animate"
     >
       <Landing />
 
-      <div className="h2-div-cont">
-        <div className="iuarfn">
+      <div className="h2-div-cont w-full px-4 pb-16">
+        <div className="iuarfn z-[100] bg-[url('https://tympanus.net/Development/ImageExpansionTypography/img/noise.png')]">
           <Reveal>
-            <div className="h2-div">
-              <div className="h2-left w-full">
-                <img src="dq_logo.png" alt="" />
+            <div className="h2-div flex flex-col lg:flex-row  justify-evenly items-center mx-auto z-10 text-justify sm:text-left w-[90%] sm:w-4/5">
+              <div className="h2-left w-4/5 lg:w-full m-0 lg:mr-12 ">
+                <img
+                  src="dq_logo.png"
+                  className="w-full" //fix this
+                  alt=""
+                />
               </div>
-              <div className="h2-right">
-                <h2>About VJDQ</h2>
-                <p>
-                  Welcome to our Data Science Club, the premier hub for data science enthusiasts at our college. Established with the vision of driving innovation and collaboration, our club serves as the central point for all data science-related activities on campus. We provide comprehensive guidance on projects, offer certifications for both students and faculty, and keep our members informed about the latest industry trends and real-world applications of data science.
 
+              <div className="h2-right flex flex-col justify-center m-0">
+                <h2 className="text-white pb-3 text-center text-2xl font-semibold">About VJDQ</h2>
+                <p className="text-white text-base sm:text-lg leading-5">
+                  Welcome to our Data Science Club, the premier hub for data
+                  science enthusiasts at our college. Established with the
+                  vision of driving innovation and collaboration, our club
+                  serves as the central point for all data science-related
+                  activities on campus. We provide comprehensive guidance on
+                  projects, offer certifications for both students and faculty,
+                  and keep our members informed about the latest industry trends
+                  and real-world applications of data science.
                 </p>
-                {/* <p>
-                Our club hosts a variety of events, including expert-led guest lectures, hands-on workshops, and collaborative projects, ensuring a dynamic and engaging learning environment. By fostering strong connections with industry leaders, we bridge the gap between academic knowledge and practical experience, preparing our members to excel in the ever-evolving field of data science. Join us in our mission to uphold the highest standards of academic and technical integrity, and be part of a community dedicated to shaping the future of data science.
-                </p> */}
+
                 <Link to="about">
                   <motion.button
-                    className="know-more-btn"
+                    className="rounded-sm w-28 h-8 bg-white text-black border-none cursor-pointer text-base italic mt-8"
                     variants={buttonVariants}
                     whileHover="hover"
-                    whileTap={{ scale: 0.9 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     Know More
                   </motion.button>
@@ -109,21 +118,24 @@ export default function Home() {
           </Reveal>
         </div>
       </div>
-      <div className="h3-div-cont">
+
+      <div className="h3-div-cont my-4">
         <Reveal>
-          <div className="h3-div">
-            <h2 className="text-3xl font-semibold">What we do?</h2>
-            <div className="h3-cards">
+          <div className="w-full lg:w-4/5 mx-auto  text-center bg-white bg-[url('https://tympanus.net/Development/ImageExpansionTypography/img/noise.png')] ">
+            <h2 className="text-3xl font-semibold ">What we do?</h2>
+            <div className="h3-cards flex flex-row flex-wrap items-center justify-center gap-4 w-full my-8 mx-0">
               {data.map((d, index) => (
                 <motion.div
                   key={index}
-                  className="h3-card "
+                  className="h3-card flex w-40 h-16 sm:w-60 sm:h-20 px-2 sm:p-4 items-center justify-evenly border border-black/50 rounded-lg  bg-white shadow-2xl"
                   variants={cardVariants}
                   whileHover="hover"
                   whileTap="tap"
                 >
-                  <img src={d.imgURL} alt="img" />
-                  <h3 className="text-sm sm:text-xl text-black font-semibold">{d.title}</h3>
+                  <img src={d.imgURL} alt="img" className="w-[20%]" />
+                  <h3 className="text-sm sm:text-xl text-black font-semibold">
+                    {d.title}
+                  </h3>
                 </motion.div>
               ))}
             </div>
@@ -131,24 +143,25 @@ export default function Home() {
         </Reveal>
       </div>
 
-      <div className="h4-div-cont">
+      <div className="h4-div-cont bg-[#0f323f] w-full bg-[url('https://tympanus.net/Development/ImageExpansionTypography/img/noise.png')] p-1 pt-4">
         <Reveal>
-          <div className="h4-div">
-            <h2 className="text-3xl">Glimpses</h2>
+          <div className="h4-div flex flex-col justify-center items-center mt-16 mb-4 mx-auto w-[80vw] z-10">
+            <h2 className="text-3xl text-white m-0">Glimpses</h2>
             <Carousel />
           </div>
         </Reveal>
       </div>
 
-      <Link to='events/TECHNOVISTA'>
+
+      {/* Present event promo div */}
+      {/* <Link to='events/TECHNOVISTA'>
         <div onClick={()=>console.log('hai')} className="fixed z-[101] bottom-12 right-8 p-4 bg-black/40 border border-black/50 shadow-2xl rounded-lg backdrop-blur-sm ">
             <h1 className='text-white m-auto text-lg sm:text-2xl'>𝕋𝔼ℂℍℕ𝕆𝕍𝕀𝕊𝕋𝔸</h1>
             <span className="flex justify-end items-center gap-1">
               <p className='text-right '>View </p> <MdOutlineSwitchAccessShortcut size={20} color="white"/>
             </span>
         </div>
-      </Link>
-      
+      </Link> */}
     </motion.div>
   );
 }

@@ -27,13 +27,13 @@ const Header = () => {
       },
     },
   };
-  
+  //DONT CONVERT TO TAILWIND CSS - BECAUSE OF SIDEBAR   
   return (
     <div className="navbar">
       {/* header */}
       <div className="nav-div">
         <div>{/* div required to maintain flex */}</div>
-        <ul className={menu ? "nav-menu active" : "nav-menu"}>
+        <ul className={menu ? "nav-menu active text-lg" : "nav-menu text-lg"}>
           <li className="nav-item">
             <Link to="/" onClick={handleBarsClick} className="nav-link">
               <motion.p variants={LiVariants} whileHover="hover" whileTap="hover">
