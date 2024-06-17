@@ -67,7 +67,7 @@ export default function Events() {
               <button
                 key={eventyear}
 
-                className={`mx-4 w-24 h-9 font-bold text-lg border-2 border-black text-black  hover:text-white hover:shadow-md transition-all ${
+                className={`mx-4 w-24 h-9 font-bold text-lg border-2 border-black text-black shadow-[5px_5px_1px_0px] hover:shadow-none  transition-all ${
                   year.toString() === eventyear.slice(1) ?
                   "bg-[#0f323f] text-white" : "bg-white"
                 } `}
