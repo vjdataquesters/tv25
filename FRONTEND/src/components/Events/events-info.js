@@ -1,5 +1,23 @@
 const events = {
-  upcoming: [],
+  upcoming: [
+    {
+      name:"Tableau mastery : senior edition",
+      eventId:"tableauMastery",
+      image:"/events/TableauMastery/img1.png",
+      Date:"26-06-2024",
+      Venue: "To be announced",
+      page: {
+        name: "Tableau mastery : senior edition",
+        Date: "26-06-2024",
+        Venue: "To be announced",
+        Timings: "10:00 am - 4:30 pm",
+        Pics :[],
+        outcome: "",
+      },
+      description: "VJ DATA QUESTERS is conducting a workshop on Tableau Mastery for 3rd year students. The workshop will be conducted by Mr. Gullapalli Sathar.",
+      link: "/events/tableauMastery",
+    }
+  ],
 
   past: {
     e2024: [
