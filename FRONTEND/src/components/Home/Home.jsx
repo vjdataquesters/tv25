@@ -154,14 +154,14 @@ export default function Home() {
 
 
       {/* Present event promo div */}
-      {/* <Link to='events/TECHNOVISTA'>
-        <div onClick={()=>console.log('hai')} className="fixed z-[101] bottom-12 right-8 p-4 bg-black/40 border border-black/50 shadow-2xl rounded-lg backdrop-blur-sm ">
-            <h1 className='text-white m-auto text-lg sm:text-2xl'>𝕋𝔼ℂℍℕ𝕆𝕍𝕀𝕊𝕋𝔸</h1>
+      <Link to='events/tableauMastery'>
+        <div onClick={()=>console.log('hai')} className="fixed z-[101] bottom-6 right-4 p-2 bg-black/40 border border-black/50 shadow-2xl rounded-sm backdrop-blur-sm ">
+            <h1 className='text-white m-auto text-lg sm:text-2xl'>TABLEAU MASTERY</h1>
             <span className="flex justify-end items-center gap-1">
-              <p className='text-right '>View </p> <MdOutlineSwitchAccessShortcut size={20} color="white"/>
+              <p className='text-right text-white'>View </p> <MdOutlineSwitchAccessShortcut size={20} color="white"/>
             </span>
         </div>
-      </Link> */}
+      </Link>
     </motion.div>
   );
 }

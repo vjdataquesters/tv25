@@ -36,22 +36,22 @@ export default function Events() {
         <div className="upcoming-events pt-6">
           {events.upcoming.length !== 0 && (
             <>
-              <h2 className="text-4xl">Upcoming Events</h2>
-              <div className="upcoming-events-cont flex flex-wrap justify-start gap-8 p-4">
+              <h2 className="text-3xl">Events of year {year}</h2>
+              <div className="past-events-cont flex flex-wrap justify-start gap-8 my-4">
                 {events.upcoming.map((event, index) => (
                   <Reveal key={index}>
                     <div
                       className="event-card p-4 max-w-[400px] shadow-2xl bg-gray-100 flex flex-col justify-between hover:shadow-[0px_25px_50px_-12px] transition-all hover:backdrop-blur-sm hover:bg-gray-200 cursor-pointer"
                       onClick={() => navigate(event.link)}
                     >
-                      {/* <img
+                      <img
                         src={event.image}
                         style={{ maxWidth: "100%" }}
                         alt={event.name}
-                      /> */}
+                      />
                       <h2 className="font-semibold text-2xl">{event.name}</h2>
                       <p className="italic">{event.Date}</p>
-                      <p>{event.description}</p>
+                      <p className="text-lg mt-2">{event.description}</p>
                     </div>
                   </Reveal>
                 ))}
