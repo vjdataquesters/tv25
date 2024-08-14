@@ -1,28 +1,29 @@
 const events = {
-  upcoming: [
-    // {
-    //   name:"Tableau mastery : senior edition",
-    //   eventId:"tableauMastery",
-    //   image:"/events/Technovista2024/img1.png",
-    //   date:"26-06-2024",
-    //   venue: "PEB",
-    //   page: {
-    //     name: "Tableau mastery : Senior Edition",
-    //     date: "26-06-2024",
-    //     venue: "PEB Block",
-    //     timings: "10:00 am - 4:30 pm",
-    //     pics: [
-    //       "/events/Technovista2024/img1.png",
-    //       "/events/Technovista2024/img3.png",
-    //     ],
-    //     outcome: "",
-    //     register: "https://google.com",
-    //   },
-    //   description: "Join the VJ DataQuesters' workshop on Tableau for CSDS, AIDS, and CYS 3rd-year students. Enhance your data visualization skills with hands-on experience and expert guidance. Don't miss out!",
-    //   link: "/events/tableauMastery",
-    // }
-  ],
+  // upcoming: [
+  //   {
+  //     name:"Tableau mastery : senior edition",
+  //     eventId:"tableauMastery",
+  //     image:"/events/Technovista2024/img1.png",
+  //     date:"26-06-2024",
+  //     venue: "PEB",
+  //     page: {
+  //       name: "Tableau mastery : Senior Edition",
+  //       date: "26-06-2024",
+  //       venue: "PEB Block",
+  //       timings: "10:00 am - 4:30 pm",
+  //       pics: [
+  //         "/events/Technovista2024/img1.png",
+  //         "/events/Technovista2024/img3.png",
+  //       ],
+  //       outcome: "",
+  //       register: "https://google.com",
+  //     },
+  //     description: "Join the VJ DataQuesters' workshop on Tableau for CSDS, AIDS, and CYS 3rd-year students. Enhance your data visualization skills with hands-on experience and expert guidance. Don't miss out!",
+  //     link: "/events/tableauMastery",
+  //   }
+  // ],
 
+  
   past: {
     e2024: [
       {
