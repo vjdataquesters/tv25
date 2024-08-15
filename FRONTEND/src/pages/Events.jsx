@@ -1,8 +1,8 @@
-import "./Events.css";
-import events from "./events-info.js";
+import "../components/Events/Events.css";
+import events from "../components/Events/events-info.js";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import Reveal from "../Reveal.jsx";
+import Reveal from "../components/Reveal.jsx";
 export default function Events() {
   const [pastevents, setPastevents] = useState(
     localStorage.getItem("year")

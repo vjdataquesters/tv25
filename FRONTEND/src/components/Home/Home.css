@@ -1,5 +1,4 @@
-
-.h2-div-cont {
+.clip-art-1 {
   background: linear-gradient(180deg, #135168 10%, #0f323f 100%);
   clip-path: polygon(
     100% 0%,
@@ -11,7 +10,7 @@
     5.33% 93.7%,
     6.67% 93.25%,
     8% 92.82%,
-    9.33% 92.4%,
+    9.33% 92.4%,  
     10.67% 92%,
     12% 91.62%,
     13.33% 91.27%,
@@ -83,7 +82,7 @@
   );
 }
 
-.h4-div-cont {
+.clip-art-2 {
   clip-path: polygon(
     100% 100%,
     0% 100%,
@@ -166,7 +165,6 @@
   );
 }
 
-
 .c-div {
   width: 100%;
   overflow: hidden;
@@ -221,20 +219,14 @@
   border-radius: 5px;
 }
 
-
-
-
-
-
-
 @media screen and (max-width: 868px) {
   .h4-images {
     gap: 0.2rem;
   }
 }
 
-@media screen and (max-width: 440px) {
-  .h2-div-cont {
+@media screen and (max-width: 1000px) {
+  .clip-art-1 {
     clip-path: polygon(
       100% 0%,
       0% 0%,
@@ -291,7 +283,7 @@
       100% 95.98%
     );
   }
-  .h4-div-cont {
+  .clip-art-2 {
     clip-path: polygon(
       100% 100%,
       0% 100%,

@@ -154,7 +154,6 @@
     #0f3846 60%,
     #0f3846 95%
   );
-  background-image: url("/graph-grid/graph-grid.png");
   border: solid 1.5px transparent;
   --gradient-border: conic-gradient(
     from var(--border-angle),

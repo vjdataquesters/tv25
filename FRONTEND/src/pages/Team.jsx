@@ -1,5 +1,5 @@
-import { faculty, team } from "./TeamData";
-import Reveal from "../Reveal";
+import { faculty, team } from "../data/TeamData";
+import Reveal from "../components/Reveal";
 import { motion } from "framer-motion";
 export default function Team() {
   const cardVariants = {
