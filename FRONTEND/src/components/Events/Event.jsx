@@ -1,6 +1,6 @@
 import "./Events.css";
 import { useParams } from "react-router-dom";
-import events from "./events-info.js";
+import events from "../../data/events-info.js";
 
 export default function Event() {
   const { eventname } = useParams();

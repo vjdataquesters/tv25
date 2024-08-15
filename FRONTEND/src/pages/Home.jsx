@@ -38,7 +38,7 @@ export default function Home() {
 
       <Glimpses />
 
-      {/* <PromoDiv /> */}
+      <PromoDiv />
       
     </motion.div>
   );
