@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import Events from "./components/Events/Events";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Events from "./pages/Events";
 import Event from "./components/Events/Event";
-import Team from "./components/Team/Team";
+import Team from "./pages/Team";
 import Root from "./components/Root";
-import Testimonials from "./components/About/Testimonials";
+import Testimonials from "./pages/Testimonials";
 import Technovista from "./components/Events/Technovista";
 import { Analytics } from "@vercel/analytics/react";
 

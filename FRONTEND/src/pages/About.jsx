@@ -1,4 +1,4 @@
-import Reveal from "../Reveal";
+import Reveal from "../components/Reveal";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -6,10 +6,12 @@ import CountUp from "react-countup";
 
 export default function About() {
   const location = useLocation();
-  const [mem, setMem] = useState(200); 
-  const [events, setEvents] = useState(10); 
-  const [core, setCore] = useState(30); 
-  const [alumni, setAlumni] = useState(60); 
+  const counter = {
+    mem: 100,
+    events: 10,
+    core: 30,
+    alumni: 50,
+  }
 
   const boxVariants = {
     initial: {
@@ -47,38 +49,38 @@ export default function About() {
           </div>
         </div>
         <div className="flex flex-row flex-wrap items-center justify-center gap-8 sm:gap-20 bg-[#0f323f] w-[85%] mx-auto py-8 rounded-2xl">
-          <motion.div className="text-center w-36">
+          <div className="text-center min-w-32">
             <CountUp
               className="text-white text-5xl sm:text-7xl font-semibold"
-              end={mem}
-              duration={8}
+              end={counter.mem}
+              duration={9}
               suffix="+"
             />
             <p className="text-white sm:text-xl"> Members</p>
-          </motion.div>
-          <div className="text-center w-36">
+          </div>
+          <div className="text-center min-w-32">
             <CountUp
               className="text-white text-5xl sm:text-7xl font-semibold"
-              end={events}
-              duration={8}
+              end={counter.events}
+              duration={9}
               suffix="+"
             />
             <p className="text-white sm:text-xl"> Events</p>
           </div>
-          <div className="text-center w-36">
+          <div className="text-center min-w-32">
             <CountUp
               className="text-white text-5xl sm:text-7xl font-semibold"
-              end={core}
-              duration={8}
+              end={counter.core}
+              duration={9}
               suffix="+"
             />
             <p className="text-white sm:text-xl"> Core members</p>
           </div>
-          <div className="text-center w-36">
+          <div className="text-center min-w-32">
             <CountUp
               className="text-white text-5xl sm:text-7xl font-semibold"
-              end={alumni}
-              duration={8}
+              end={counter.alumni}
+              duration={9}
               suffix="+"
             />
             <p className="text-white sm:text-xl"> Alumni</p>
@@ -86,7 +88,7 @@ export default function About() {
         </div>
 
         <motion.div
-          className="m-auto my-4 flex gap-6 items-center px-6 py-4 border-black/40 border-2 rounded-lg"
+          className="m-auto my-4 flex gap-6 items-center px-6 py-4 border-black/00 border-2 rounded-lg"
           variants={boxVariants}
           initial="initial"
           whileHover="hover"
@@ -251,7 +253,7 @@ export default function About() {
               <p className="text-black text-lg"> Batch 2020-2024</p>
             </div>
           </div>
-          <div className="founders-content lg:w-8/12 p-4 h-[500px]  border border-black rounded-lg  overflow-y-scroll overflow-x-hidden">
+          <div className="founders-content lg:w-8/12 p-4 h-[500px]  border border-black/20 rounded-lg  overflow-y-scroll overflow-x-hidden">
             <p className="text-black text-base sm:text-lg whitespace-pre-wrap text-justify">
               One of the most difficult yet rewarding experiences of my life was
               founding a club while I was in college. As a sophomore who was

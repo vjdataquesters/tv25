@@ -25,7 +25,6 @@ const events = {
 
 
   
-  
   past: {
     e2024: [
       {

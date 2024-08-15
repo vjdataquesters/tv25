@@ -5,7 +5,7 @@ export default function Loading(props) {
     animate: {
       opacity: [0.5, 1, 0.7],
       transition: {
-        duration: 0.7,
+        duration: 0.5,
         repeat: Infinity,
       },
     },
