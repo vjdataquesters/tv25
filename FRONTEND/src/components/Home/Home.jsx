@@ -9,9 +9,7 @@ import { MdOutlineSwitchAccessShortcut } from "react-icons/md";
 export default function Home() {
   const buttonVariants = {
     hover: {
-      scale: 1.21,
-      originX: 0,
-      transition: {},
+      scale: 1.05,
     },
   };
   const cardVariants = {
@@ -91,7 +89,9 @@ export default function Home() {
               </div>
 
               <div className="h2-right flex flex-col justify-center m-0">
-                <h2 className="text-white pb-3 text-center text-2xl font-semibold">About VJDQ</h2>
+                <h2 className="text-white pb-3 text-center text-2xl font-semibold">
+                  About VJDQ
+                </h2>
                 <p className="text-white text-base sm:text-lg leading-5">
                   Welcome to our Data Science Club, the premier hub for data
                   science enthusiasts at our college. Established with the
@@ -151,7 +151,6 @@ export default function Home() {
           </div>
         </Reveal>
       </div>
-
 
       {/* Present event promo div */}
       {/* <Link to='events/tableauMastery'>

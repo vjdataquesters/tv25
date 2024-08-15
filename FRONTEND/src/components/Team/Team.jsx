@@ -1,4 +1,3 @@
-
 import { faculty, team } from "./TeamData";
 import Reveal from "../Reveal";
 import { motion } from "framer-motion";
@@ -28,7 +27,9 @@ export default function Team() {
               whileHover="hover"
               whileTap="hover"
             >
-              <p className="text-left p-[2px] w-full mb-2 text-lg">{member.role}</p>
+              <p className="text-left p-[2px] w-full mb-2 text-lg">
+                {member.role}
+              </p>
               <img
                 className="w-48 h-48 rounded-[20%] m-4 mx-auto my-0"
                 src={

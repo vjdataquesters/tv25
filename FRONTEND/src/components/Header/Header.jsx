@@ -27,7 +27,7 @@ const Header = () => {
       },
     },
   };
-  //DONT CONVERT TO TAILWIND CSS - BECAUSE OF SIDEBAR   
+  //DONT CONVERT TO TAILWIND CSS - BECAUSE OF SIDEBAR
   return (
     <div className="navbar">
       {/* header */}
@@ -36,7 +36,11 @@ const Header = () => {
         <ul className={menu ? "nav-menu active text-lg" : "nav-menu text-lg"}>
           <li className="nav-item">
             <Link to="/" onClick={handleBarsClick} className="nav-link">
-              <motion.p variants={LiVariants} whileHover="hover" whileTap="hover">
+              <motion.p
+                variants={LiVariants}
+                whileHover="hover"
+                whileTap="hover"
+              >
                 Home
               </motion.p>
             </Link>
@@ -58,23 +62,43 @@ const Header = () => {
               About ▾
             </motion.p>
             <ul className="dropdown-content">
-              <li className='border-b border-white/20 hover:bg-[#0e4256]'>
+              <li className="border-b border-white/20 hover:bg-[#0e4256]">
                 <Link to="about" onClick={handleBarsClick} className="nav-link">
-                  <motion.p variants={DropVariants} whileHover="hover" whileTap="hover">
+                  <motion.p
+                    variants={DropVariants}
+                    whileHover="hover"
+                    whileTap="hover"
+                  >
                     About us
                   </motion.p>
                 </Link>
               </li>
               <li className="border-b border-white/20 hover:bg-[#0e4256]">
-                <Link to="testimonials" onClick={handleBarsClick} className="nav-link">
-                  <motion.p variants={DropVariants} whileHover="hover" whileTap="hover">
+                <Link
+                  to="testimonials"
+                  onClick={handleBarsClick}
+                  className="nav-link"
+                >
+                  <motion.p
+                    variants={DropVariants}
+                    whileHover="hover"
+                    whileTap="hover"
+                  >
                     Testimonials
                   </motion.p>
                 </Link>
               </li>
               <li className="hover:bg-[#0e4256]">
-                <Link to="about#foundersBlock" onClick={handleBarsClick} className="nav-link">
-                  <motion.p variants={DropVariants} whileHover="hover" whileTap="hover">
+                <Link
+                  to="about#foundersBlock"
+                  onClick={handleBarsClick}
+                  className="nav-link"
+                >
+                  <motion.p
+                    variants={DropVariants}
+                    whileHover="hover"
+                    whileTap="hover"
+                  >
                     Founders block
                   </motion.p>
                 </Link>
@@ -83,14 +107,22 @@ const Header = () => {
           </li>
           <li className="nav-item">
             <Link to="events" onClick={handleBarsClick} className="nav-link">
-              <motion.p variants={LiVariants} whileHover="hover" whileTap="hover">
+              <motion.p
+                variants={LiVariants}
+                whileHover="hover"
+                whileTap="hover"
+              >
                 Events
               </motion.p>
             </Link>
           </li>
           <li className="nav-item">
             <Link to="team" onClick={handleBarsClick} className="nav-link">
-              <motion.p variants={LiVariants} whileHover="hover" whileTap="hover">
+              <motion.p
+                variants={LiVariants}
+                whileHover="hover"
+                whileTap="hover"
+              >
                 Team
               </motion.p>
             </Link>
