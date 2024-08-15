@@ -18,7 +18,7 @@ const events = {
         register: "https://forms.gle/h16fiJjPaoW3Yrcj7",
       },
       description: "Join the VJ DataQuesters'  Sneaky Memer, our social media event where your creativity and technical skills collide!Submit your funniest meme ideas, and see them featured on our official page!  Don't miss out!",
-      link: "/events/SneakyMemer",
+      link: "/events/sneakyMemer",
     }
         
   ],
