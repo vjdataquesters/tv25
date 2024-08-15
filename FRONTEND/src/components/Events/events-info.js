@@ -1,28 +1,30 @@
 const events = {
-  // upcoming: [
-  //   {
-  //     name:"Tableau mastery : senior edition",
-  //     eventId:"tableauMastery",
-  //     image:"/events/Technovista2024/img1.png",
-  //     date:"26-06-2024",
-  //     venue: "PEB",
-  //     page: {
-  //       name: "Tableau mastery : Senior Edition",
-  //       date: "26-06-2024",
-  //       venue: "PEB Block",
-  //       timings: "10:00 am - 4:30 pm",
-  //       pics: [
-  //         "/events/Technovista2024/img1.png",
-  //         "/events/Technovista2024/img3.png",
-  //       ],
-  //       outcome: "",
-  //       register: "https://google.com",
-  //     },
-  //     description: "Join the VJ DataQuesters' workshop on Tableau for CSDS, AIDS, and CYS 3rd-year students. Enhance your data visualization skills with hands-on experience and expert guidance. Don't miss out!",
-  //     link: "/events/tableauMastery",
-  //   }
-  // ],
+  upcoming: [
+    {
+      name:"Sneaky Memer",
+      eventId:"sneakyMemer",
+      image:"/events/SneakyMemer/img1.png",
+      date:"Since August 9th 2024",
+      venue: "Online",
+      page: {
+        name: "Sneaky Memer",
+        date: "Since August 9th 2024",
+        venue: "Instagram",
+        // timings: "10:00 am - 4:30 pm",
+        pics: [
+          "/events/SneakyMemer/img1.png",
+        ],
+        outcome: "",
+        register: "https://forms.gle/h16fiJjPaoW3Yrcj7",
+      },
+      description: "Join the VJ DataQuesters'  Sneaky Memer, our social media event where your creativity and technical skills collide!Submit your funniest meme ideas, and see them featured on our official page!  Don't miss out!",
+      link: "/events/SneakyMemer",
+    }
+        
+  ],
 
+
+  
   
   past: {
     e2024: [
