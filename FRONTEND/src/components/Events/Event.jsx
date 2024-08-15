@@ -41,7 +41,7 @@ export default function Event() {
             <h3 className="font-semibold text-2xl">Pics of the event</h3>
             <div className="gallery rounded-md m-4">
               <div className="event-slider rounded-md shadow-2xl w-full h-[30vh] sm:w-3/5 sm:h-96 mx-auto">
-                <div className="slides border-2 h-full  border-black rounded-md flex overflow-x-auto">
+                <div className="slides border h-full  border-gray-600/20 rounded-md flex overflow-x-auto">
                   {event.pics.map((img, index) => (
                     <div key={index}>
                       <img
@@ -82,7 +82,9 @@ export default function Event() {
             <h1 className="text-2xl mt-6 mb-4">Register Now !!!</h1>
             <a href={event.register} target="_blank">
               {" "}
-              <button className="px-8 py-2 text-yellow-400 text-2xl border-2 border-black bg-black italic rounded-sm active:bg-white active:border-2 active:border-black active:text-black">REGISTER</button>{" "}
+              <button className="px-8 py-2 text-yellow-400 text-2xl border-2 border-black bg-black italic rounded-sm active:bg-white active:border-2 active:border-black active:text-black">
+                REGISTER
+              </button>{" "}
             </a>
           </div>
         )}

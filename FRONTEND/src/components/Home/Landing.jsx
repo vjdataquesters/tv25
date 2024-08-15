@@ -5,15 +5,18 @@ export default function Landing() {
   return (
     <div className="h1-div flex flex-col justify-center items-center bg-center h-screen w-full">
       <div className="landing-info z-[100] w-screen h-screen flex flex-row justify-center items-center gap-20 absolute top-0 left-0 bg-[url('https://tympanus.net/Development/ImageExpansionTypography/img/noise.png')]">
-
         <motion.div className="landing-logo">
           <img src="dq_logo.png" alt="dq_logo" className="w-[70%]" />
         </motion.div>
 
         <div className="landing-text box w-[90%] sm:w-auto flex flex-col justify-center items-center opacity-80 select-none text-white mx-16 my-8 text-4xl uppercase">
-          <h1 className="font-semibold text-center text-3xl sm:text-5xl my-3 md:my-6">VJ Data Questers</h1>
+          <h1 className="font-semibold text-center text-3xl sm:text-5xl my-3 md:my-6">
+            VJ Data Questers
+          </h1>
           <p className="text-base sm:text-xl">VNR VJIET, hyderabad</p>
-          <p className="mt-1 text-xs sm:text-sm text-center">Differentiated by inputs / Integrated by outputs</p>
+          <p className="mt-1 text-xs sm:text-sm text-center">
+            Differentiated by inputs / Integrated by outputs
+          </p>
         </div>
       </div>
 

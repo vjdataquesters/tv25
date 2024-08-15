@@ -5,9 +5,10 @@ import Events from "./components/Events/Events";
 import Event from "./components/Events/Event";
 import Team from "./components/Team/Team";
 import Root from "./components/Root";
-import Testimonials from "./components/About/Testimonials"
+import Testimonials from "./components/About/Testimonials";
 import Technovista from "./components/Events/Technovista";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+
 function App() {
   let router = createBrowserRouter([
     {
@@ -36,12 +37,12 @@ function App() {
         },
         {
           path: "events/:eventname",
-          element: <Event/>
+          element: <Event />,
         },
         {
           path: "events/TECHNOVISTA",
-          element: <Technovista/>
-        }
+          element: <Technovista />,
+        },
       ],
     },
   ]);

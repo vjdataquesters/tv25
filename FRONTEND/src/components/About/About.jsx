@@ -1,4 +1,3 @@
-
 import Reveal from "../Reveal";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -7,10 +6,10 @@ import CountUp from "react-countup";
 
 export default function About() {
   const location = useLocation();
-  const [mem, setMem] = useState(200); // Example value
-  const [events, setEvents] = useState(10); // Example value
-  const [core, setCore] = useState(30); // Example value
-  const [alumni, setAlumni] = useState(60); // Example value
+  const [mem, setMem] = useState(200); 
+  const [events, setEvents] = useState(10); 
+  const [core, setCore] = useState(30); 
+  const [alumni, setAlumni] = useState(60); 
 
   const boxVariants = {
     initial: {
@@ -228,8 +227,6 @@ export default function About() {
         </div>
       </div>
 
-
-
       <div
         className="w-[90%] lg:w-[85%] px-4 py-20 mx-auto mb-2 min-h-[calc(100vh-4.5rem)]"
         id="foundersBlock"
@@ -248,7 +245,9 @@ export default function About() {
               >
                 <p className="text-3xl text-black">Rayani Sravanthi</p>
               </a>
-              <p className="text-black text-xl mt-2">Dept. of CSE-(CyS,DS) & AI&DS</p>
+              <p className="text-black text-xl mt-2">
+                Dept. of CSE-(CyS,DS) & AI&DS
+              </p>
               <p className="text-black text-lg"> Batch 2020-2024</p>
             </div>
           </div>

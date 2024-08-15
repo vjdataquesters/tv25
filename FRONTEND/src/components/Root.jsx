@@ -19,9 +19,9 @@ export default function Root() {
       <Loading load={load} />
       <Header />
       <ScrollToTop />
-        <div className="outlet">
-          <Outlet />
-        </div>
+      <div className="outlet">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );
