@@ -80,12 +80,14 @@ export default function Event() {
         {event.register && (
           <div className="my-10 w-full text-center">
             <h1 className="text-2xl mt-6 mb-4">Register Now !!!</h1>
-            <a href={event.register} target="_blank">
-              {" "}
-              <button className="px-8 py-2 text-yellow-400 text-2xl border-2 border-black bg-black italic rounded-sm active:bg-white active:border-2 active:border-black active:text-black">
-                REGISTER
-              </button>{" "}
-            </a>
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSeK8VVFHNDJf84_MPiWryVybIN-cZS6KByLol6RM45H9-JjGA/viewform?embedded=true"
+              width="640"
+              height="1959"
+              className="mx-auto"
+            >
+              Loading…
+            </iframe>
           </div>
         )}
       </div>

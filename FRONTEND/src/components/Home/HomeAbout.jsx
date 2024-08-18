@@ -18,7 +18,7 @@ export const HomeAbout = () => {
           </div>
 
           <div className="w-11/12 lg:w-7/12 pb-20 lg:pt-4">
-            <h2 className="text-white pb-3 text-center text-2xl font-semibold flex flex-row items-start justify-center">
+            <h2 className="text-white pb-3 text-center text-3xl font-semibold flex flex-row items-start justify-center">
               About VJDQ{" "}
               <img
                 src="dq_logo.png"
