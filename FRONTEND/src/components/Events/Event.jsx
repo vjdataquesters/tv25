@@ -80,14 +80,16 @@ export default function Event() {
         {event.register && (
           <div className="my-10 w-full text-center">
             <h1 className="text-2xl mt-6 mb-4">Register Now !!!</h1>
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSeK8VVFHNDJf84_MPiWryVybIN-cZS6KByLol6RM45H9-JjGA/viewform?embedded=true"
-              width="640"
-              height="1959"
-              className="mx-auto"
-            >
-              Loading…
-            </iframe>
+            <div style={{ position: "relative", paddingBottom: "150%", height: 0, overflow: "hidden", maxWidth: "100%" }}>
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSeK8VVFHNDJf84_MPiWryVybIN-cZS6KByLol6RM45H9-JjGA/viewform?embedded=true"
+                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: 0 }}
+                allowfullscreen
+                loading="lazy"
+              >
+                Loading…
+              </iframe>
+            </div>
           </div>
         )}
       </div>
