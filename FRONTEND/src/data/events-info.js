@@ -1,32 +1,53 @@
 const events = {
   upcoming: [
     {
-      name:"Sneaky Memer",
-      eventId:"sneakyMemer",
-      image:"/events/SneakyMemer/img1.png",
-      date:"Since August 9th 2024",
-      venue: "Online",
+      name:"Profolio",
+      eventId:"profolio",
+      image:"/events/Profolio/img1.png",
+      date:"August 27th 2024",
+      venue: "To be announced",
       page: {
-        name: "Sneaky Memer",
+        name: "Profolio",
         date: "Since August 9th 2024",
-        venue: "Instagram",
-        // timings: "10:00 am - 4:30 pm",
+        venue: "To be announced",
+        timings: "10:00 AM to 4:40 PM",
         pics: [
-          "/events/SneakyMemer/img1.png",
+          "/events/Profolio/img1.png",
         ],
         outcome: "",
         register: "https://forms.gle/h16fiJjPaoW3Yrcj7",
       },
-      description: "Join the VJ DataQuesters'  Sneaky Memer, our social media event where your creativity and technical skills collide!Submit your funniest meme ideas, and see them featured on our official page!  Don't miss out!",
-      link: "/events/sneakyMemer",
+      description: "The Portfolio Creation Event offers students a chance to develop and present professional portfolios using identical data sets. Judging focuses on quality and professionalism, providing valuable experience and feedback in a crucial career skill.",
+      link: "/events/profolio",
     }
         
   ],
-
-
   
   past: {
     e2024: [
+      {
+        name:"Sneaky Memer",
+        eventId:"sneakyMemer",
+        image:"/events/SneakyMemer/img1.png",
+        date:"Since August 9th 2024",
+        venue: "Online",
+        page: {
+          name: "Sneaky Memer",
+          date: "Since August 9th 2024",
+          venue: "Instagram",
+          timings: "All day",
+          pics: [
+            "/events/SneakyMemer/img1.png",
+            "/events/SneakyMemer/img2.png",
+            "/events/SneakyMemer/img3.png",
+          ],
+          winners:"<b>1st</b> Srinikethan(23071A67A2)\n<b>2nd</b> Balaji (22071A6796)\n",
+          outcome: "The Sneaky Memer event is designed to engage students in a creative and educational experience by integrating humor with technical knowledge. Through this event, participants will:\n● Enhance their creative skills by contributing original meme ideas that will be shared on our social media platforms.\n● Gain recognition for their creativity and wit as their memes are featured and attributed to them.\n● Deepen their understanding of data science and AI by participating in interactive quizzes posted on our stories.\n● Foster a sense of community and healthy competition as they strive to be among the first to correctly answer quiz questions.\n● Build a stronger connection with our social media presence, contributing to an active and engaged online community.",
+          // register: "https://forms.gle/h16fiJjPaoW3Yrcj7",
+        },
+        description: "Join the VJ DataQuesters'  Sneaky Memer, our social media event where your creativity and technical skills collide!Submit your funniest meme ideas, and see them featured on our official page!  Don't miss out!",
+        link: "/events/sneakyMemer",
+      },
       {
         name: "Technovista",
         eventId: "technovista2024",

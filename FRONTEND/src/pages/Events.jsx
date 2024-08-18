@@ -36,7 +36,7 @@ export default function Events() {
         <div className="upcoming-events pt-6">
           {events.upcoming.length !== 0 && (
             <>
-              <h2 className="text-3xl">Events of year {year}</h2>
+              <h2 className="text-3xl">Events of year 2024</h2>
               <div className="past-events-cont flex flex-wrap justify-start gap-8 my-4">
                 {events.upcoming.map((event, index) => (
                   <Reveal key={index}>
