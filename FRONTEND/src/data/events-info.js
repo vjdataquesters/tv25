@@ -8,7 +8,7 @@ const events = {
       venue: "To be announced",
       page: {
         name: "Profolio",
-        date: "Since August 9th 2024",
+        date: "August 27th 2024",
         venue: "To be announced",
         timings: "10:00 AM to 4:40 PM",
         pics: [

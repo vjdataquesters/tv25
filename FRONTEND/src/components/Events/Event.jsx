@@ -38,7 +38,7 @@ export default function Event() {
 
         {event.pics && (
           <div className="my-6">
-            <h3 className="font-semibold text-2xl">Pics of the event</h3>
+            {/* <h3 className="font-semibold text-2xl">Pics of the event</h3> */}
             <div className="gallery rounded-md m-4">
               <div className="event-slider rounded-md shadow-2xl w-full h-[30vh] sm:w-3/5 sm:h-96 mx-auto">
                 <div className="slides border h-full  border-gray-600/20 rounded-md flex overflow-x-auto">
