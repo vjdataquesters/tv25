@@ -1,9 +1,9 @@
 export const faculty = [
   {
-    name: "Dr. M. Raja Sekar",
+    name: "Dr.T.Sunil Kumar",
     role: "Head Of Department",
     image: "hod.png",
-    linkedin: "https://www.linkedin.com/in/mummalaneni-rajasekar-9a1964178/",
+    linkedin: "https://www.linkedin.com/in/sunil-kumar-517a8715/",
   },
   {
     name: "Dr. N. Sunanda",

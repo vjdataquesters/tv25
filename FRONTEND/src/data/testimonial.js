@@ -1,6 +1,6 @@
 const testimonials = [
   {
-    name: "Dr. M. Raja Sekar",
+    name: "Dr.T.Sunil Kumar",
     role: "Head Of Department",
     image: "teamImages/hod.png",
     statement:
