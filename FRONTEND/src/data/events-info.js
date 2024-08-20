@@ -15,7 +15,7 @@ const events = {
           "/events/Profolio/img1.png",
         ],
         outcome: "",
-        register: "https://forms.gle/h16fiJjPaoW3Yrcj7",
+        register: "https://docs.google.com/forms/d/e/1FAIpQLSeK8VVFHNDJf84_MPiWryVybIN-cZS6KByLol6RM45H9-JjGA/viewform?embedded=true",
       },
       description: "The Portfolio Creation Event offers students a chance to develop and present professional portfolios using identical data sets. Judging focuses on quality and professionalism, providing valuable experience and feedback in a crucial career skill.",
       link: "/events/profolio",
