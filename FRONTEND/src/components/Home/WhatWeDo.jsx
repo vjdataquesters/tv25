@@ -57,9 +57,8 @@ export const WhatWeDo = () => {
         <h2 className="text-3xl font-semibold ">What we do?</h2>
         <div className="flex flex-row flex-wrap items-center justify-center gap-4 w-full my-8 mx-0">
           {data.map((d, index) => (
-            <Link to={d?.example}>
+            <Link to={d?.example} key={index}>
               <motion.div
-                key={index}
                 className="h3-card flex w-40 h-16 sm:w-60 sm:h-20 px-2 sm:p-4 items-center justify-evenly border border-black/50 rounded-lg  bg-white shadow-2xl"
                 variants={cardVariants}
                 whileHover="hover"

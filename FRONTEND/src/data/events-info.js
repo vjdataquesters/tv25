@@ -19,6 +19,26 @@ const events = {
       },
       description: "The Portfolio Creation Event offers students a chance to develop and present professional portfolios using identical data sets. Judging focuses on quality and professionalism, providing valuable experience and feedback in a crucial career skill.",
       link: "/events/profolio",
+    },
+    {
+      name:"SIH 2024",
+      eventId:"sih2024",
+      image:"/events/SIH2024/img1.png",
+      date:"August 30th 2024",
+      venue: "Patrons Bhavan",
+      page: {
+        name: "SIH 2024",
+        date: "August 30th 2024",
+        venue: "Patrons Bhavan",
+        timings: "09:00 AM to 5:00 PM",
+        pics: [
+          "/events/SIH2024/img1.png",
+        ],
+        outcome: "",
+        register: "https://forms.gle/odWZTNgKkLVraaFC8",
+      },
+      description: "The internal round of Smart India Hackathon (SIH) commences, organized with VJ Data Questers and Krithomedh. Teams will address real-world challenges. This national competition showcases student innovation and problem-solving prowess.",
+      link: "/events/sih2024",
     }
         
   ],
