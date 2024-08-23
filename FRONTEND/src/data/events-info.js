@@ -24,11 +24,11 @@ const events = {
       name:"SIH 2024",
       eventId:"sih2024",
       image:"/events/SIH2024/img1.png",
-      date:"August 30th 2024",
+      date:"August 31th 2024",
       venue: "Patrons Bhavan",
       page: {
         name: "SIH 2024",
-        date: "August 30th 2024",
+        date: "August 31th 2024",
         venue: "Patrons Bhavan",
         timings: "09:00 AM to 5:00 PM",
         pics: [
