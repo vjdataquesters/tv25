@@ -37,9 +37,12 @@ export default function Home() {
       <WhatWeDo />
 
       <Glimpses />
-
-      <PromoDiv />
-      
+<div className="fixed z-[101] bottom-6 right-4 ">
+  
+        <PromoDiv eventName="Profolio" eventStatus="Not done" eventLink="events/profolio"/>
+        <PromoDiv eventName="Sneaky Memer" eventStatus="done" eventLink="events/sneakyMemer"/>
+  
+</div>
     </motion.div>
   );
 }
