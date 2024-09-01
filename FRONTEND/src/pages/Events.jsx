@@ -24,24 +24,20 @@ export default function Events() {
       setyear(2023);
       localStorage.setItem("year", 2023);
     }
-    // else if (e === 'e2022') {
-    //   setyear(2022)
-    //   localStorage.setItem("year", 2022)
-    // }
   };
   return (
-    <div className="events w-[85%] h-full mb-20 my-4 mx-auto pt-20">
-      <h1 className="font-semibold text-5xl">Events</h1>
-      <div className="event-box w-full">
-        <div className="upcoming-events pt-6">
+    <div className="max-w-5xl md:max-w-[90%] h-full mb-20 my-4 mx-auto pt-20 px-4">
+      <h1 className="font-semibold text-4xl">Events</h1>
+      <div className="w-full">
+        <div className="pt-6">
           {events.upcoming.length !== 0 && (
             <>
-              <h2 className="text-3xl">Events of year 2024</h2>
-              <div className="past-events-cont flex flex-wrap justify-start gap-8 my-4">
+              <h2 className="text-2xl">Events of year 2024</h2>
+              <div className="flex flex-wrap justify-start gap-8 my-4">
                 {events.upcoming.map((event, index) => (
                   <Reveal key={index}>
                     <div
-                      className="event-card p-4 max-w-[400px] shadow-2xl bg-gray-100 flex flex-col justify-between hover:shadow-[0px_25px_50px_-12px] transition-all hover:backdrop-blur-sm hover:bg-gray-200 cursor-pointer"
+                      className="p-4 max-w-[400px] shadow-2xl bg-gray-100 flex flex-col justify-between hover:shadow-[0px_25px_50px_-12px] transition-all hover:backdrop-blur-sm hover:bg-gray-200 cursor-pointer"
                       onClick={() => navigate(event.link)}
                     >
                       <img
@@ -60,9 +56,9 @@ export default function Events() {
           )}
         </div>
 
-        <div className="past-events flex flex-col flex-wrap gap-8 pt-6">
-          <h2 className="text-4xl">Past Events</h2>
-          <div className="year-buttons">
+        <div className=" flex flex-col flex-wrap gap-8 pt-6">
+          <h2 className="text-3xl">Past Events</h2>
+          <div>
             {Object.keys(events.past).map((eventyear) => (
               <button
                 key={eventyear}
@@ -81,7 +77,7 @@ export default function Events() {
             <p>No events in year {year}</p>
           ) : (
             <>
-              <h2 className="text-3xl">Events of year {year}</h2>
+              <h2 className="text-2xl">Events of year {year}</h2>
               <div className="past-events-cont flex flex-wrap justify-start gap-8">
                 {pastevents.map((event, index) => (
                   <Reveal key={index}>
