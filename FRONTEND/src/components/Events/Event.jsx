@@ -1,13 +1,17 @@
 import "./Events.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import events from "../../data/events-info.js";
+import { FaArrowLeft } from "react-icons/fa6";
+
 
 export default function Event() {
   const { eventname } = useParams();
 
   let e = null;
-
+  //find event in upcoming events array
   e = events.upcoming.find((e) => e.eventId === eventname);
+
+  // if event is not found, then find it in past events object - so much trouble shit
   if (!e) {
     Object.values(events.past).forEach((yearEvents) => {
       const foundEvent = yearEvents.find((e) => e.eventId === eventname);
@@ -18,21 +22,25 @@ export default function Event() {
     });
   }
 
-  const event = e.page;
-  console.log(event);
+  const event = e;
 
   return (
-    <div className="events pt-20">
-      <div className="event-div m-auto w-[90%]">
-        <h2 className="font-semibold text-3xl mb-4">{event.name}</h2>
+    <div className="pt-20">
+      <div className="event-div mx-auto max-w-6xl px-4">
+        <div className="flex flex-row justify-between">
+          <h2 className="font-semibold text-3xl mb-4">{event.name}</h2>
+          <Link to='/events' className="cursor-pointer ">
+            <FaArrowLeft size={20} className="text-black"/>
+          </Link>
+        </div>
         <p>
-          <span className="font-semibold text-xl">Date:</span> {event.date}{" "}
+          <span className="font-semibold text-lg">Date:</span> {event.date}{" "}
         </p>
         <p>
-          <span className="font-semibold text-xl">Venue:</span> {event.venue}{" "}
+          <span className="font-semibold text-lg">Venue:</span> {event.venue}{" "}
         </p>
         <p>
-          <span className="font-semibold text-xl">Timings:</span>{" "}
+          <span className="font-semibold text-lg">Timings:</span>{" "}
           {event.timings}{" "}
         </p>
 
@@ -40,7 +48,7 @@ export default function Event() {
           <div className="my-6">
             {/* <h3 className="font-semibold text-2xl">Pics of the event</h3> */}
             <div className="gallery rounded-md m-4">
-              <div className="event-slider rounded-md shadow-2xl w-full h-[30vh] sm:w-3/5 sm:h-96 mx-auto">
+              <div className="event-slider rounded-md shadow-2xl w-full h-[30vh] max-w-3xl sm:h-96 mx-auto">
                 <div className="slides border h-full  border-gray-600/20 rounded-md flex overflow-x-auto">
                   {event.pics.map((img, index) => (
                     <div key={index}>
@@ -59,7 +67,7 @@ export default function Event() {
         )}
         {event.winners && (
           <div className="my-10">
-            <h3 className="font-semibold text-3xl">Winners:</h3>
+            <h3 className="font-semibold text-2xl">Winners:</h3>
             <p
               className="text-base sm:text-lg overflow-x-scroll sm:overflow-x-hidden"
               style={{ whiteSpace: "pre-wrap" }}
@@ -69,7 +77,7 @@ export default function Event() {
         )}
         {event.outcome && (
           <div className="my-10">
-            <h3 className="font-semibold text-3xl"> Outcome:</h3>
+            <h3 className="font-semibold text-2xl"> Outcome:</h3>
             <p
               className="text-base sm:text-lg "
               style={{ whiteSpace: "pre-wrap" }}
@@ -80,7 +88,9 @@ export default function Event() {
         {event.register && (
           <div className="my-10 w-full text-center">
             <a href={event.register} target="_blank">
-              <h1 className="text-2xl mt-6 mb-4 text-blue-500 underline">Register Now !!!</h1>
+              <h1 className="text-2xl mt-6 mb-4 text-blue-500 underline">
+                Register Now !!!
+              </h1>
               <p className="text-sm italic ">fill out the gform</p>
             </a>
             <div

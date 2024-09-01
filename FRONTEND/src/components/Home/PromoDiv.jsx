@@ -21,7 +21,7 @@ export const PromoDiv = (props) => {
           </div>
         </div>
         <div className="bg-black/40 border border-black/50 rounded-r-lg px-2 py-1 w-full">
-          <h1 className="text-white text-lg sm:text-2xl leading-none text-right">
+          <h1 className="text-white text-lg leading-7 text-right">
             {props.eventName}
           </h1>
           <span className="flex justify-end items-center ">
