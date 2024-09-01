@@ -26,7 +26,7 @@ const events = {
         eventId: "profolio",
         image: "/events/Profolio/img1.png",
         date: "August 27th 2024",
-        venue: "B005, B006, P401, P401, C106 labs",
+        venue: "B005, B006, P401, P402, C106 labs",
         timings: "10:00 AM to 4:40 PM",
         pics: ["/events/Profolio/img2.png", "/events/Profolio/img3.png", "/events/Profolio/img4.png", "/events/Profolio/img5.png", "/events/Profolio/img6.png"],
         winners: "<b>1st</b> Gandham Jayaditya - https://jayadityagandham9.wixstudio.io/jayaditya\n<b>2nd</b> Mudiam Nehal Reddy - https://portfolio-bay-xi-27.vercel.app\n<b>3rd</b> Sai abhijith - https://sai-abhijith.vercel.app/\n<b>4th</b> Sai Abhi Varshini - https://alex-portfolio-gold.vercel.app/ \n<b>5th</b> Kunta Varshith Reddy - https://varshithreddykunta.wixsite.com/varshith\n",
