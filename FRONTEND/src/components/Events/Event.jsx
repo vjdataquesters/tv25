@@ -87,37 +87,50 @@ export default function Event() {
         )}
         {event.register && (
           <div className="my-10 w-full text-center">
-            <a href={event.register} target="_blank">
-              <h1 className="text-2xl mt-6 mb-4 text-blue-500 underline">
-                Register Now !!!
-              </h1>
-              <p className="text-sm italic ">fill out the gform</p>
-            </a>
-            <div
-              style={{
-                position: "relative",
-                paddingBottom: "150%",
-                height: 0,
-                overflow: "hidden",
-                maxWidth: "100%",
-              }}
-            >
-              <iframe
-                src={event.register}
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  border: 0,
-                }}
-                allowfullscreen
-                loading="lazy"
-              >
-                Loading…
-              </iframe>
-            </div>
+            {event?.isGFormEmbeddable ? (
+              <>
+                <a href={event.register} target="_blank">
+                  <h1 className="text-2xl mt-6 mb-4 text-blue-500 underline">
+                    Register Now !!!
+                  </h1>
+                  <p className="text-sm italic ">fill out the gform</p>
+                </a>
+                <div
+                  style={{
+                    position: "relative",
+                    paddingBottom: "150%",
+                    height: 0,
+                    overflow: "hidden",
+                    maxWidth: "100%",
+                  }}
+                >
+                  <iframe
+                    src={event.register}
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      border: 0,
+                    }}
+                    allowfullscreen
+                    loading="lazy"
+                  >
+                    Loading…
+                  </iframe>
+                </div>
+              </>
+            ):(
+              <>
+                <a href={event.register} target="_blank">
+                  <h1 className="text-2xl mt-6 mb-4 text-blue-500 underline">
+                    Register Now !!!
+                  </h1>
+                  <p className="text-sm italic ">click here to register</p>
+                </a>
+              </>
+            )}
           </div>
         )}
       </div>

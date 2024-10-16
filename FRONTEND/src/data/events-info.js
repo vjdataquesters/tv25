@@ -1,6 +1,7 @@
 // Event format
-// name, eventId, image, date, venue, timings, pics, winners, outcome, register, description, link
-
+// name, eventId, image, date, venue, timings, pics, winners, outcome, register, description, link, isGFormEmbeddable
+// isGFormEmbeddable is a boolean value that tells whether the event has a google form or not
+// it is not embeddable if it contains "file upload" feature
 const events = {
   upcoming: [
     {
@@ -14,7 +15,9 @@ const events = {
       outcome:"",
       register:"https://docs.google.com/forms/d/e/1FAIpQLSc7JB5a9yvN8Xvz8lsng2FpTLuYJkm6UWyqPjzn-k2v8cpJfg/viewform",
       description:"We are organizing a workshop on Tableau for 3rd-year students. Led by Mr. G. Sathar and Sai Vignesh, it enhances students' ability to transform data into insights. Participants will explore Tableau's features, learning to create interactive dashboards and effectively communicate data-driven stories.",
-      link:"/events/tableau-senior-track"
+      link:"/events/tableau-senior-track",
+      isGFormEmbeddable : true, 
+
     },
     {
       name: "GET SET PY",
@@ -28,6 +31,7 @@ const events = {
       register: "https://docs.google.com/forms/d/e/1FAIpQLScOUxYMQyb-j2XGP1g6IPR6zocaQl14X9BNm5W8BuUQiV_Jwg/viewform",
       description:"Join Get Set Py, a two-day Python bootcamp for 2nd-year students! Master data analysis with NumPy and Pandas, learn data cleaning, create stunning visualizations, and build a machine learning project from scratch. Compete for prizes and earn a certificate under expert guidance.",
       link: "/events/getsetpy",
+      isGFormEmbeddable : false,
     },
   ],
   past: {
