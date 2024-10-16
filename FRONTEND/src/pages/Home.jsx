@@ -35,13 +35,18 @@ export default function Home() {
       <WhatWeDo />
 
       <Glimpses />
-{/*       <div className="fixed z-[101] bottom-6 right-4 ">
+      <div className="fixed z-[101] bottom-6 right-4 ">
         <PromoDiv
-          eventName="Sneaky Memer"
-          eventStatus="done"
-          eventLink="events/sneakyMemer"
+          eventName="Mastering Tableau"
+          eventStatus="ongoing"
+          eventLink="events/tableau-senior-track"
         />
-      </div> */}
+        <PromoDiv
+          eventName="Get Set Py"
+          eventStatus="ongoing"
+          eventLink="events/getsetpy"
+        />
+      </div>
     </motion.div>
   );
 }

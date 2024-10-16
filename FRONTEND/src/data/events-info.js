@@ -7,16 +7,28 @@ const events = {
       name: "GET SET PY",
       eventId: "getsetpy",
       image: "/events/GetSetPy/img1.png",
-      date: "October 25-26 2024",
+      date: "October 25th & 26th 2024",
       venue: "APJ Abdul Kalam Auditorium",
       timings: "10:00 AM to 4:40 PM",
       pics: ["/events/GetSetPy/img1.png"],
       outcome: "",
-      // register: "https://vjdataquesters.vercel.app",
+      register: "https://forms.gle/gSjQG1dBVGs7FYXE8",
       description:
         "Join Get Set Py, a two-day Python bootcamp for 2nd-year students! Master data analysis with NumPy and Pandas, learn data cleaning, create stunning visualizations, and build a machine learning project from scratch. Compete for prizes and earn a certificate under expert guidance.",
       link: "/events/getsetpy",
     },
+    {
+      name:"Mastering Tableau: Senior Track ",
+      eventId:"tableau-senior-track",
+      image:"/events/TableauSeniorTrack/img1.png",
+      date:"October 19th 2024",
+      venue:"PEB seminar hall",
+      timings:"10:00 AM to 4:30 PM",
+      pics:["/events/TableauSeniorTrack/img1.png"],
+      outcome:"",
+      register:"https://docs.google.com/forms/d/e/1FAIpQLSc7JB5a9yvN8Xvz8lsng2FpTLuYJkm6UWyqPjzn-k2v8cpJfg/viewform",
+      description:"We are organizing a workshop on Tableau for 3rd-year students. Led by Mr. G. Sathar and Sai Vignesh, it enhances students' ability to transform data into insights. Participants will explore Tableau's features, learning to create interactive dashboards and effectively communicate data-driven stories.",
+    }
   ],
   past: {
     e2024: [
