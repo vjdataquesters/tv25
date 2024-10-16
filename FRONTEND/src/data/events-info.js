@@ -39,7 +39,7 @@ const events = {
         eventId: "profolio",
         image: "/events/Profolio/img1.png",
         date: "August 27th 2024",
-        venue: "B005, B006, P401, P401, C106 labs",
+        venue: "B005, B006, P401, P402, C106 labs",
         timings: "10:00 AM to 4:40 PM",
         pics: [
           "/events/Profolio/img2.png",
