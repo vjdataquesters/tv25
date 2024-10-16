@@ -4,23 +4,36 @@
 const events = {
   upcoming: [
     {
-      name: "SIH 2024",
-      eventId: "sih2024",
-      image: "/events/SIH2024/img1.png",
-      date: "August 31th 2024",
-      venue: "Patrons Bhavan",
-      timings: "09:00 AM to 5:00 PM",
-      pics: ["/events/SIH2024/img1.png"],
+      name: "GET SET PY",
+      eventId: "getsetpy",
+      image: "/events/GetSetPy/img1.png",
+      date: "October 25-26 2024",
+      venue: "APJ Abdul Kalam Auditorium",
+      timings: "10:00 AM to 4:40 PM",
+      pics: ["/events/GetSetPy/img1.png"],
       outcome: "",
-      // register: "https://forms.gle/odWZTNgKkLVraaFC8",
+      // register: "https://vjdataquesters.vercel.app",
       description:
-        "The internal round of Smart India Hackathon (SIH) commences, organized with VJ Data Questers and Krithomedh. Teams will address real-world challenges. This national competition showcases student innovation and problem-solving prowess.",
-      link: "/events/sih2024",
+        "Join Get Set Py, a two-day Python bootcamp for 2nd-year students! Master data analysis with NumPy and Pandas, learn data cleaning, create stunning visualizations, and build a machine learning project from scratch. Compete for prizes and earn a certificate under expert guidance.",
+      link: "/events/getsetpy",
     },
   ],
-
   past: {
     e2024: [
+      {
+        name: "SIH 2024",
+        eventId: "sih2024",
+        image: "/events/SIH2024/img1.png",
+        date: "August 31th 2024",
+        venue: "Patrons Bhavan",
+        timings: "09:00 AM to 5:00 PM",
+        pics: ["/events/SIH2024/img1.png"],
+        outcome: "",
+        // register: "https://forms.gle/odWZTNgKkLVraaFC8",
+        description:
+          "The internal round of Smart India Hackathon (SIH) commences, organized with VJ Data Questers and Krithomedh. Teams will address real-world challenges. This national competition showcases student innovation and problem-solving prowess.",
+        link: "/events/sih2024",
+      },
       {
         name: "Profolio",
         eventId: "profolio",
@@ -28,9 +41,17 @@ const events = {
         date: "August 27th 2024",
         venue: "B005, B006, P401, P401, C106 labs",
         timings: "10:00 AM to 4:40 PM",
-        pics: ["/events/Profolio/img2.png", "/events/Profolio/img3.png", "/events/Profolio/img4.png", "/events/Profolio/img5.png", "/events/Profolio/img6.png"],
-        winners: "<b>1st</b> Gandham Jayaditya - https://jayadityagandham9.wixstudio.io/jayaditya\n<b>2nd</b> Mudiam Nehal Reddy - https://portfolio-bay-xi-27.vercel.app\n<b>3rd</b> Sai abhijith - https://sai-abhijith.vercel.app/\n<b>4th</b> Sai Abhi Varshini - https://alex-portfolio-gold.vercel.app/ \n<b>5th</b> Kunta Varshith Reddy - https://varshithreddykunta.wixsite.com/varshith\n",
-        outcome: "<b>Event Overview</b>\n●Showcase their skills\n●Network with peers\n●Gain exposure\n\n <b>Event Objectives</b>\n●Promote creativity and innovation in the field of web design\n●Recognize and reward outstanding portfolio websites\n●Foster a collaborative and supportive community among designers.\n●Inspire and motivate aspiring designers to pursue their passion for web design\n\nNo of Students Registered: <b>190</b>\nNo of Students Participated: <b>119</b>",
+        pics: [
+          "/events/Profolio/img2.png",
+          "/events/Profolio/img3.png",
+          "/events/Profolio/img4.png",
+          "/events/Profolio/img5.png",
+          "/events/Profolio/img6.png",
+        ],
+        winners:
+          "<b>1st</b> Gandham Jayaditya - https://jayadityagandham9.wixstudio.io/jayaditya\n<b>2nd</b> Mudiam Nehal Reddy - https://portfolio-bay-xi-27.vercel.app\n<b>3rd</b> Sai abhijith - https://sai-abhijith.vercel.app/\n<b>4th</b> Sai Abhi Varshini - https://alex-portfolio-gold.vercel.app/ \n<b>5th</b> Kunta Varshith Reddy - https://varshithreddykunta.wixsite.com/varshith\n",
+        outcome:
+          "<b>Event Overview</b>\n●Showcase their skills\n●Network with peers\n●Gain exposure\n\n <b>Event Objectives</b>\n●Promote creativity and innovation in the field of web design\n●Recognize and reward outstanding portfolio websites\n●Foster a collaborative and supportive community among designers.\n●Inspire and motivate aspiring designers to pursue their passion for web design\n\nNo of Students Registered: <b>190</b>\nNo of Students Participated: <b>119</b>",
         // register: "https://docs.google.com/forms/d/e/1FAIpQLSeK8VVFHNDJf84_MPiWryVybIN-cZS6KByLol6RM45H9-JjGA/viewform?embedded=true",
         description:
           "The Portfolio Creation Event offers students a chance to develop and present professional portfolios using identical data sets. Judging focuses on quality and professionalism, providing valuable experience and feedback in a crucial career skill.",
