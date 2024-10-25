@@ -1,7 +1,7 @@
 import "./Events.css";
 import { Link, useParams } from "react-router-dom";
 import events from "../../data/events-info.js";
-import { FaArrowLeft } from "react-icons/fa6";
+import { FaArrowLeft, FaDownload } from "react-icons/fa6";
 
 
 export default function Event() {
@@ -30,7 +30,7 @@ export default function Event() {
         <div className="flex flex-row justify-between">
           <h2 className="font-semibold text-3xl mb-4">{event.name}</h2>
           <Link to='/events' className="cursor-pointer ">
-            <FaArrowLeft size={20} className="text-black"/>
+            <FaArrowLeft size={20} className="text-black" />
           </Link>
         </div>
         <p>
@@ -121,7 +121,7 @@ export default function Event() {
                   </iframe>
                 </div>
               </>
-            ):(
+            ) : (
               <>
                 <a href={event.register} target="_blank">
                   <h1 className="text-2xl mt-6 mb-4 text-blue-500 underline">
@@ -131,6 +131,31 @@ export default function Event() {
                 </a>
               </>
             )}
+          </div>
+        )}
+        {event.externalDownloads && (
+          <div className="my-10">
+            <h3 className="font-semibold text-2xl mb-6">Workshop Material:</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {Object.entries(event.externalDownloads).map(([title, downloadUrl], index) => (
+                <div 
+                  key={index} 
+                  className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow"
+                >
+                  <h4 className="font-medium text-lg mb-3">{title}</h4>
+                  <a 
+                    href={downloadUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download
+                    className="inline-flex items-center gap-2 bg-[#0f323f] text-white px-4 py-2 rounded-md"
+                  >
+                    <FaDownload size={16} />
+                    Download Now
+                  </a>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
