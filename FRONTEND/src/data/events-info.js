@@ -5,21 +5,6 @@
 const events = {
   upcoming: [
     {
-      name:"Mastering Tableau: Senior Track ",
-      eventId:"tableau-senior-track",
-      image:"/events/TableauSeniorTrack/img1.png",
-      date:"October 19th 2024",
-      venue:"PEB seminar hall",
-      timings:"10:00 AM to 4:30 PM",
-      pics:["/events/TableauSeniorTrack/img1.png"],
-      outcome:"",
-      register:"https://docs.google.com/forms/d/e/1FAIpQLSc7JB5a9yvN8Xvz8lsng2FpTLuYJkm6UWyqPjzn-k2v8cpJfg/viewform",
-      description:"We are organizing a workshop on Tableau for 3rd-year students. Led by Mr. G. Sathar and Sai Vignesh, it enhances students' ability to transform data into insights. Participants will explore Tableau's features, learning to create interactive dashboards and effectively communicate data-driven stories.",
-      link:"/events/tableau-senior-track",
-      isGFormEmbeddable : true, 
-
-    },
-    {
       name: "GET SET PY",
       eventId: "getsetpy",
       image: "/events/GetSetPy/img1.png",
@@ -28,14 +13,34 @@ const events = {
       timings: "10:00 AM to 4:40 PM",
       pics: ["/events/GetSetPy/img1.png"],
       outcome: "",
-      register: "https://docs.google.com/forms/d/e/1FAIpQLScOUxYMQyb-j2XGP1g6IPR6zocaQl14X9BNm5W8BuUQiV_Jwg/viewform",
-      description:"Join Get Set Py, a two-day Python bootcamp for 2nd-year students! Master data analysis with NumPy and Pandas, learn data cleaning, create stunning visualizations, and build a machine learning project from scratch. Compete for prizes and earn a certificate under expert guidance.",
+      // register: "https://docs.google.com/forms/d/e/1FAIpQLScOUxYMQyb-j2XGP1g6IPR6zocaQl14X9BNm5W8BuUQiV_Jwg/viewform",
+      description: "Join Get Set Py, a two-day Python bootcamp for 2nd-year students! Master data analysis with NumPy and Pandas, learn data cleaning, create stunning visualizations, and build a machine learning project from scratch. Compete for prizes and earn a certificate under expert guidance.",
       link: "/events/getsetpy",
-      isGFormEmbeddable : false,
+      isGFormEmbeddable: false,
+      externalDownloads: {
+        "Python Installation Guide": "https://raw.githubusercontent.com/vjdataquesters/getsetpy/b4b4d1a2859b89e3f85e2fd332a2ab08b999a103/Python%20Installation%20Guide.pdf",
+        "Numpy Material": "/Numpy.ipynb",
+        // "Pandas Material": "https://github.com"
+      }
     },
   ],
   past: {
     e2024: [
+      {
+        name: "Mastering Tableau: Senior Track ",
+        eventId: "tableau-senior-track",
+        image: "/events/TableauSeniorTrack/img1.png",
+        date: "October 19th 2024",
+        venue: "PEB seminar hall",
+        timings: "10:00 AM to 4:30 PM",
+        pics: ["/events/TableauSeniorTrack/img1.png"],
+        outcome: "",
+        // register: "https://docs.google.com/forms/d/e/1FAIpQLSc7JB5a9yvN8Xvz8lsng2FpTLuYJkm6UWyqPjzn-k2v8cpJfg/viewform",
+        description: "We are organizing a workshop on Tableau for 3rd-year students. Led by Mr. G. Sathar and Sai Vignesh, it enhances students' ability to transform data into insights. Participants will explore Tableau's features, learning to create interactive dashboards and effectively communicate data-driven stories.",
+        link: "/events/tableau-senior-track",
+        isGFormEmbeddable: true,
+  
+      },
       {
         name: "SIH 2024",
         eventId: "sih2024",

@@ -37,11 +37,6 @@ export default function Home() {
       <Glimpses />
       <div className="fixed z-[101] bottom-6 right-4 ">
         <PromoDiv
-          eventName="Mastering Tableau"
-          eventStatus="ongoing"
-          eventLink="events/tableau-senior-track"
-        />
-        <PromoDiv
           eventName="Get Set Py"
           eventStatus="ongoing"
           eventLink="events/getsetpy"
