@@ -140,7 +140,7 @@ export default function Event() {
               {Object.entries(event.externalDownloads).map(([title, downloadUrl], index) => (
                 <div 
                   key={index} 
-                  className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow"
+                  className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow"
                 >
                   <h4 className="font-medium text-lg mb-3">{title}</h4>
                   <a 

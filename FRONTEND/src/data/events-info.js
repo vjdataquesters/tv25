@@ -20,7 +20,7 @@ const events = {
       externalDownloads: {
         "Python Installation Guide": "https://raw.githubusercontent.com/vjdataquesters/getsetpy/b4b4d1a2859b89e3f85e2fd332a2ab08b999a103/Python%20Installation%20Guide.pdf",
         "Numpy Material": "/Numpy.ipynb",
-        // "Pandas Material": "https://github.com"
+        "Pandas Material": "/Pandas.ipynb"
       }
     },
   ],
