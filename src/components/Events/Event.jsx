@@ -3,15 +3,12 @@ import { Link, useParams } from "react-router-dom";
 import events from "../../data/events-info.js";
 import { FaArrowLeft, FaDownload } from "react-icons/fa6";
 
-
 export default function Event() {
   const { eventname } = useParams();
 
   let e = null;
-  //find event in upcoming events array
   e = events.upcoming.find((e) => e.eventId === eventname);
 
-  // if event is not found, then find it in past events object - so much trouble shit
   if (!e) {
     Object.values(events.past).forEach((yearEvents) => {
       const foundEvent = yearEvents.find((e) => e.eventId === eventname);
@@ -29,7 +26,7 @@ export default function Event() {
       <div className="event-div mx-auto max-w-6xl px-4">
         <div className="flex flex-row justify-between">
           <h2 className="font-semibold text-3xl mb-4">{event.name}</h2>
-          <Link to='/events' className="cursor-pointer ">
+          <Link to="/events" className="cursor-pointer ">
             <FaArrowLeft size={20} className="text-black" />
           </Link>
         </div>
@@ -137,24 +134,41 @@ export default function Event() {
           <div className="my-10">
             <h3 className="font-semibold text-2xl mb-6">Workshop Material:</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {Object.entries(event.externalDownloads).map(([title, downloadUrl], index) => (
-                <div 
-                  key={index} 
-                  className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow"
-                >
-                  <h4 className="font-medium text-lg mb-3">{title}</h4>
-                  <a 
-                    href={downloadUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    download
-                    className="inline-flex items-center gap-2 bg-[#0f323f] text-white px-4 py-2 rounded-md"
+              {Object.entries(event.externalDownloads).map(
+                ([title, downloadUrl], index) => (
+                  <div
+                    key={index}
+                    className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow"
                   >
-                    <FaDownload size={16} />
-                    Download Now
-                  </a>
-                </div>
-              ))}
+                    <h4 className="font-medium text-lg mb-3">{title}</h4>
+                    <button
+                      onClick={async () => {
+                        try {
+                          const response = await fetch(downloadUrl);
+                          const filename = downloadUrl.split("/").pop();
+                          const blob = await response.blob();
+                          const url = window.URL.createObjectURL(blob);
+                          const a = document.createElement("a");
+                          a.style.display = "none";
+                          a.href = url;
+                          a.download = filename;
+                          document.body.appendChild(a);
+                          a.click();
+                          document.body.removeChild(a);
+                          window.URL.revokeObjectURL(url);
+                        } catch (err) {
+                          console.error("Download failed:", err);
+                          alert("Failed to download. Please try again.");
+                        }
+                      }}
+                      className="inline-flex items-center gap-2 bg-[#0f323f] text-white px-4 py-2 rounded-md"
+                    >
+                      <FaDownload size={16} />
+                      Download Now
+                    </button>
+                  </div>
+                )
+              )}
             </div>
           </div>
         )}
