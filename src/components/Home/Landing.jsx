@@ -52,7 +52,7 @@ export default function Landing() {
 
       <GradientBackground />
 
-      <div className="absolute inset-0 opacity-10 bg-[url('/graph-grid/graph-grid.png')]"></div>
+      <div className="absolute inset-0 opacity-10 bg-[url('/graph-grid.png')]"></div>
     </div>
   );
 }
