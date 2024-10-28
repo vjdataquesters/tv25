@@ -35,13 +35,14 @@ export default function Home() {
       <WhatWeDo />
 
       <Glimpses />
-      <div className="fixed z-[101] bottom-6 right-4 ">
+
+      {/* <div className="fixed z-[101] bottom-6 right-4 ">
         <PromoDiv
           eventName="Get Set Py"
           eventStatus="ongoing"
           eventLink="events/getsetpy"
         />
-      </div>
+      </div> */}
     </motion.div>
   );
 }

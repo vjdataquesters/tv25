@@ -1,12 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import Reveal from "../Reveal";
-const buttonVariants = {
-  hover: {
-    scale: 1.05,
-  },
-};
 
 export const HomeAbout = () => {
   return (

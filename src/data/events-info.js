@@ -1,5 +1,5 @@
 // Event format
-// name, eventId, image, date, venue, timings, pics, winners, outcome, register, description, link, isGFormEmbeddable
+// name, eventId, image, date, venue, timings, pics, winners, outcome, register, description, link, isGFormEmbeddable, externalDownloads
 // isGFormEmbeddable is a boolean value that tells whether the event has a google form or not
 // it is not embeddable if it contains "file upload" feature
 const events = {
