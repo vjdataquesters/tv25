@@ -45,8 +45,8 @@ function App() {
           element: <Technovista />,
         },
         {
-          path: "intake",
-          element: <Redirect to="https://dq-domains.vercel.app" />,
+          path: "haildq",
+          element: <Redirect to="https://dq-domains.vercel.app/" />,
         },
       ],
     },
