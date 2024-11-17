@@ -7,7 +7,7 @@ const testimonials = [
       "I am immensely proud of VJ DATA QUESTERS, our premier data science club that has established itself as the central hub for all data science activities at our college. This club exemplifies excellence in fostering innovation, collaboration, and continuous learning. Through comprehensive guidance on projects, certifications for both students and faculty, and insightful guest lectures and workshops, VJ DATA QUESTERS has successfully bridged the gap between academic knowledge and real-world industry practices.",
   },
   {
-    name: "Rajasekar",
+    name: "Dr.M.Raja Sekar",
     role: "Professor, Dept of CSE-CyS, DS and AI&DS",
     image: "teamImages/raja.png",
     statement:
