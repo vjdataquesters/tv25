@@ -9,7 +9,7 @@ const testimonials = [
   {
     name: "Rajasekar",
     role: "Ex HOD",
-    image: "teamImages/rajasekar.png",
+    image: "teamImages/raja.png",
     statement:
       "VJ DATA QUESTERS has been instrumental in fostering a culture of data science excellence within our college. The club's commitment to providing a platform for students and faculty to engage with cutting-edge data science technologies is commendable. I am proud of the club's achievements and look forward to its continued success in the future.",
   },
