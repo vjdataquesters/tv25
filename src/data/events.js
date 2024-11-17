@@ -2,34 +2,40 @@
 // name, eventId, image, date, venue, timings, pics, winners, outcome, register, description, link, isGFormEmbeddable, externalDownloads
 // isGFormEmbeddable is a boolean value that tells whether the event has a google form or not
 // it is not embeddable if it contains "file upload" feature
+
 const events = {
-  upcoming: [
-    {
-      name: "GET SET PY",
-      eventId: "getsetpy",
-      image: "/events/GetSetPy/img1.png",
-      date: "October 25th & 26th 2024",
-      venue: "APJ Abdul Kalam Auditorium",
-      timings: "10:00 AM to 4:40 PM",
-      pics: ["/events/GetSetPy/img1.png"],
-      outcome: "",
-      // register: "https://docs.google.com/forms/d/e/1FAIpQLScOUxYMQyb-j2XGP1g6IPR6zocaQl14X9BNm5W8BuUQiV_Jwg/viewform",
-      description:
-        "Join Get Set Py, a two-day Python bootcamp for 2nd-year students! Master data analysis with NumPy and Pandas, learn data cleaning, create stunning visualizations, and build a machine learning project from scratch. Compete for prizes and earn a certificate under expert guidance.",
-      link: "/events/getsetpy",
-      isGFormEmbeddable: false,
-      externalDownloads: {
-        "Python Installation Guide":
-          "https://raw.githubusercontent.com/vjdataquesters/getsetpy/refs/heads/main/Python%20Installation%20Guide.pdf",
-        "Numpy Material":
-          "https://raw.githubusercontent.com/vjdataquesters/getsetpy/refs/heads/main/Numpy.ipynb",
-        "Pandas Material":
-          "https://raw.githubusercontent.com/vjdataquesters/getsetpy/refs/heads/main/Pandas.ipynb",
-      },
-    },
-  ],
+  upcoming: [],
   past: {
     e2024: [
+      {
+        name: "GET SET PY",
+        eventId: "getsetpy",
+        image: "/events/GetSetPy/img1.png",
+        date: "October 25th & 26th 2024",
+        venue: "APJ Abdul Kalam Auditorium",
+        timings: "10:00 AM to 4:40 PM",
+        pics: [
+          "/events/GetSetPy/img1.png",
+          "/events/GetSetPy/img2.png",
+          "/events/GetSetPy/img3.png",
+          "/events/GetSetPy/img4.png",
+        ],
+        outcome:
+          "GET SET PY - A Hands-on Journey with Python was a two-day interactive workshop conducted on October 25th and 26th at the APJ Abdul Kalam Auditorium. Led by Mr. Mahammad Jebibulla, an experienced software developer, the event provided students with practical skills in Python and its applications in data science and machine learning. The objectives of event were: \n\n● To introduce students to Python programming and its applications in data science and machine learning\n● To provide hands-on experience with Python libraries like Numpy and Pandas\n● To enhance students' programming skills and problem-solving abilities\n● To familiarize participants with machine learning basics, including linear regression.\n ● To guide participants through building simple applications using Streamlit and Flask. \n",
+        // register: "https://docs.google.com/forms/d/e/1FAIpQLScOUxYMQyb-j2XGP1g6IPR6zocaQl14X9BNm5W8BuUQiV_Jwg/viewform",
+        description:
+          "The event “GET SET PY - A Hands-on Journey with Python” was held on October 25th and 26th from 10:00 AM to 4:40 PM at the APJ Abdul Kalam Auditorium. The two day workshop featured Mr. Mahammad Jebibulla, a Software Developer with expertise in Machine Learning and Python-based development.",
+        link: "/events/getsetpy",
+        isGFormEmbeddable: false,
+        externalDownloads: {
+          "Python Installation Guide":
+            "https://raw.githubusercontent.com/vjdataquesters/getsetpy/refs/heads/main/Python%20Installation%20Guide.pdf",
+          "Numpy Material":
+            "https://raw.githubusercontent.com/vjdataquesters/getsetpy/refs/heads/main/Numpy.ipynb",
+          "Pandas Material":
+            "https://raw.githubusercontent.com/vjdataquesters/getsetpy/refs/heads/main/Pandas.ipynb",
+        },
+      },
       {
         name: "Mastering Tableau: Senior Track ",
         eventId: "tableau-senior-track",
@@ -37,11 +43,17 @@ const events = {
         date: "October 19th 2024",
         venue: "PEB seminar hall",
         timings: "10:00 AM to 4:30 PM",
-        pics: ["/events/TableauSeniorTrack/img1.png"],
-        outcome: "",
+        pics: [
+          "/events/TableauSeniorTrack/img1.png",
+          "/events/TableauSeniorTrack/img2.png",
+          "/events/TableauSeniorTrack/img3.png",
+          "/events/TableauSeniorTrack/img4.png",
+        ],
+        outcome:
+          "With over 120 participants, the event was a huge success. The participants learned Tableau and Power BI, Data Visualization, and Dashboard Creation. Student feedback was overwhelmingly positive, with many expressing interest in future events. The primary objectives of Mastering Tableau: Senior Track event were\n● Gain practical experience in data visualization tools like Tableau and Power-Bi\n● confidently apply these tools for effective data interpretation and presentation.\n● To strengthen participants' foundational knowledge in data analysis and visualization, \n● Enhance their skills in data analysis and interpretation\n",
         // register: "https://docs.google.com/forms/d/e/1FAIpQLSc7JB5a9yvN8Xvz8lsng2FpTLuYJkm6UWyqPjzn-k2v8cpJfg/viewform",
         description:
-          "We are organizing a workshop on Tableau for 3rd-year students. Led by Mr. G. Sathar and Sai Vignesh, it enhances students' ability to transform data into insights. Participants will explore Tableau's features, learning to create interactive dashboards and effectively communicate data-driven stories.",
+          "Mastering Tableau: Senior Track was a full-day event held on October 19, 2024, from 10:00 a.m. to 4:30 p.m. at VNRVJIET, in P-401 P-402 labs. This hands-on event was structured to enhance the skills of senior students and professionals in data visualization, focusing on the practical application of Power BI and Tableau.",
         link: "/events/tableau-senior-track",
         isGFormEmbeddable: true,
       },

@@ -8,6 +8,7 @@ import Root from "./components/Root";
 import Testimonials from "./pages/Testimonials";
 import Technovista from "./components/Events/Technovista";
 import { Analytics } from "@vercel/analytics/react";
+import Redirect from "./components/Redirect";
 
 function App() {
   let router = createBrowserRouter([
@@ -42,6 +43,10 @@ function App() {
         {
           path: "events/TECHNOVISTA",
           element: <Technovista />,
+        },
+        {
+          path: "intake",
+          element: <Redirect to="https://dq-intake.vercel.app" />,
         },
       ],
     },

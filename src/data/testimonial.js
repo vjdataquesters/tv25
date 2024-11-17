@@ -1,10 +1,17 @@
 const testimonials = [
   {
-    name: "Dr.T.Sunil Kumar",
+    name: "Dr. T. Sunil Kumar",
     role: "Head Of Department",
     image: "teamImages/hod.png",
     statement:
       "I am immensely proud of VJ DATA QUESTERS, our premier data science club that has established itself as the central hub for all data science activities at our college. This club exemplifies excellence in fostering innovation, collaboration, and continuous learning. Through comprehensive guidance on projects, certifications for both students and faculty, and insightful guest lectures and workshops, VJ DATA QUESTERS has successfully bridged the gap between academic knowledge and real-world industry practices.",
+  },
+  {
+    name: "Rajasekar",
+    role: "Ex HOD",
+    image: "teamImages/rajasekar.png",
+    statement:
+      "VJ DATA QUESTERS has been instrumental in fostering a culture of data science excellence within our college. The club's commitment to providing a platform for students and faculty to engage with cutting-edge data science technologies is commendable. I am proud of the club's achievements and look forward to its continued success in the future.",
   },
   {
     name: "Dr. N. Sunanda",

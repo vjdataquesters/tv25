@@ -15,7 +15,7 @@ export default function Testimonials() {
                 What our faculty coordinators say..
               </h2>
             )}
-            {index === 3 && (
+            {index === 4 && (
               <h2 className="text-xl sm:text-2xl underline mb-6 pl-2">
                 What our alumni say..
               </h2>
@@ -36,8 +36,8 @@ export default function Testimonials() {
                 <div className="border-white border p-4 rounded-lg">
                   <p
                     className={
-                      index >= 3
-                        ? "px-1 overflow-y-scroll overflow-x-hidden text-white h-[10rem]"
+                      index >= 4
+                        ? "px-1 overflow-y-scroll overflow-x-hidden text-white h-[10rem] small-scrollbar"
                         : "text-white"
                     }
                   >
