@@ -1,4 +1,4 @@
-import { faculty, team } from "../data/TeamData";
+import { faculty, team } from "../data/team";
 import Reveal from "../components/Reveal";
 import { motion } from "framer-motion";
 export default function Team() {

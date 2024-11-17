@@ -1,5 +1,5 @@
 import "../components/Events/Events.css";
-import events from "../data/events-info.js";
+import events from "../data/events.js";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Reveal from "../components/Reveal.jsx";

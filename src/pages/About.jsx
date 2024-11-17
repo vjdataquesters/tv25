@@ -7,11 +7,11 @@ import CountUp from "react-countup";
 export default function About() {
   const location = useLocation();
   const counter = {
-    mem: 100,
-    events: 10,
-    core: 30,
+    mem: 250,
+    events: 15,
+    core: 60,
     alumni: 50,
-  }
+  };
 
   const boxVariants = {
     initial: {
@@ -35,7 +35,7 @@ export default function About() {
   }, [location]);
 
   return (
-    <div className="about mx-auto mt-[4.5rem] flex flex-col scroll-smooth">
+    <div className="mx-auto mt-[4.5rem] flex flex-col scroll-smooth">
       <div className="min-h-[calc(100vh-4.5rem)] py-4 sm:py-16 flex flex-col justify-start gap-8 lg:justify-between">
         <div className="w-[85%] mx-auto ">
           <div className="">
@@ -43,7 +43,7 @@ export default function About() {
               The hub for data science enthusiasts
             </h1>
             <p className="text-center text-black text-md sm:text-xl">
-              Driving innovation and collaboration through projects,
+              Driving innovation and collaboration through projects, hackathons
               certifications, and industry insights.
             </p>
           </div>
@@ -133,7 +133,7 @@ export default function About() {
         </motion.div>
       </div>
 
-      <div className="about-content flex items-center flex-col pt-2">
+      <div className="flex items-center flex-col pt-2">
         <motion.div
           className="w-[85%] px-4 py-4 mb-6 border border-white/40  rounded-2xl bg-[#0e303d]"
           variants={boxVariants}
@@ -253,7 +253,7 @@ export default function About() {
               <p className="text-black text-lg"> Batch 2020-2024</p>
             </div>
           </div>
-          <div className="founders-content lg:w-8/12 p-4 h-[500px]  border border-black/20 rounded-lg  overflow-y-scroll overflow-x-hidden">
+          <div className="lg:w-8/12 p-4 h-[500px]  border border-black/20 rounded-lg  overflow-y-scroll overflow-x-hidden small-scrollbar">
             <p className="text-black text-base sm:text-lg whitespace-pre-wrap text-justify">
               One of the most difficult yet rewarding experiences of my life was
               founding a club while I was in college. As a sophomore who was

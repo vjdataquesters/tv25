@@ -1,6 +1,6 @@
 import "./Events.css";
 import { Link, useParams } from "react-router-dom";
-import events from "../../data/events-info.js";
+import events from "../../data/events.js";
 import { FaArrowLeft, FaDownload } from "react-icons/fa6";
 
 export default function Event() {

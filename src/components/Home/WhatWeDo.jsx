@@ -53,7 +53,7 @@ export const WhatWeDo = () => {
   ];
   return (
     <Reveal>
-      <div className="w-full lg:w-4/5 mx-auto my-6 text-center bg-white bg-[url('https://tympanus.net/Development/ImageExpansionTypography/img/noise.png')] ">
+      <div className="w-full lg:w-4/5 mx-auto my-6 text-center">
         <h2 className="text-3xl font-semibold ">What we do?</h2>
         <div className="flex flex-row flex-wrap items-center justify-center gap-4 w-full my-8 mx-0">
           {data.map((d, index) => (
