@@ -46,7 +46,7 @@ function App() {
         },
         {
           path: "intake",
-          element: <Redirect to="https://dq-intake.vercel.app" />,
+          element: <Redirect to="https://dq-domains.vercel.app" />,
         },
       ],
     },
