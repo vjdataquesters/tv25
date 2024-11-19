@@ -36,13 +36,13 @@ export default function Home() {
 
       <Glimpses />
 
-      <div className="fixed z-[101] bottom-6 right-4 ">
+      {/* <div className="fixed z-[101] bottom-6 right-4 ">
         <PromoDiv
           eventName="DQ Know your domains"
           eventStatus="ongoing"
           eventLink="https://vjdataquesters.vercel.app/know-your-domains"
         />
-      </div>
+      </div> */}
     </motion.div>
   );
 }
