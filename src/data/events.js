@@ -4,7 +4,22 @@
 // it is not embeddable if it contains "file upload" feature
 
 const events = {
-  upcoming: [],
+  upcoming: [
+    {
+      name: "Tech Debate",
+      eventId: "techdebate",
+      image: "/events/TechDebate/img1.png",
+      date: "November 26th 2024",
+      venue: "APJ Abdul Kalam Auditorium",
+      timings: "10:00 AM to 4:40 PM",
+      pics: ["/events/TechDebate/img1.png"],
+      outcome: "",
+      // register: "https://docs.google.com/forms/d/e/1FAIpQLScOUxYMQyb-j2XGP1g6IPR6zocaQl14X9BNm5W8BuUQiV_Jwg/viewform",
+      description: "Tech debate",
+      link: "/events/techdebate",
+      isGFormEmbeddable: false,
+    },
+  ],
   past: {
     e2024: [
       {
