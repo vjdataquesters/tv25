@@ -18,7 +18,7 @@ export const faculty = [
     linkedin: "",
   },
 ];
-export const team = [
+export const coreteam = [
   {
     name: "Maneesh Kumar",
     role: "Chair Person",
@@ -202,5 +202,146 @@ export const team = [
     role: "Event Coverage/Editing",
     image: "ramadevi.png",
     linkedin: "https://www.linkedin.com/in/rama-devi-patibandla-592b86255",
+  },
+];
+
+export const actionteam = [
+  {
+    email: "saicharan73966@gmail.com",
+    name: "Sai Charan",
+    domain: "PR",
+    linkedin: "https://www.linkedin.com/in/saicharanmurari/",
+    image: "charan.png",
+  },
+  {
+    email: "goudmvardhan@gmail.com",
+    name: "VARDHAN GOUD",
+    domain: "PR",
+    linkedin:
+      "https://www.linkedin.com/in/mula-vardhan-goud-81753b290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    image: "vardhan.png",
+  },
+  {
+    email: "snigdhakandula23@gmail.com",
+    name: "Snigdha Kandula",
+    domain: "PR",
+    linkedin: "https://www.linkedin.com/in/snigdha-k-275673275/",
+    image: "snigdha.png",
+  },
+  {
+    email: "karamshettys@gmail.com",
+    name: "Sathvik Karamshetty",
+    domain: "Event Organization",
+    linkedin: "https://www.linkedin.com/in/sathvikkaramshetty",
+    image: "sathvik.png",
+  },
+  {
+    email: "kokkisanipun2004@gmail.com",
+    name: "KOKKISA NIPUN",
+    domain: "Event Organization",
+    linkedin: "https://www.linkedin.com/in/nipun-kokkisa-269195261",
+    image: "nipun.png",
+  },
+  {
+    email: "22071a67c1@vnrvjiet.in",
+    name: "Srihastha",
+    domain: "Event Organization",
+    linkedin: "https://www.linkedin.com/in/srihastha-tirunagari-127a21274",
+    image: "hastha.png",
+  },
+  {
+    email: "pashikantivaishnavi2005@gmail.com",
+    name: "Vaishnavi Pashikanti",
+    domain: "Design",
+    linkedin:
+      "https://www.linkedin.com/in/vaishnavipashikanti?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    image: "vaishnavi.png",
+  },
+  {
+    email: "hiteshvarmakarukuri@gmail.com",
+    name: "HITESH VARMA KARUKURI",
+    domain: "Design",
+    linkedin: "https://www.linkedin.com/in/hitesh-varma-karukuri-73b792256/",
+    image: "hitesh.png",
+  },
+  {
+    email: "pranathichilka@gmail.com",
+    name: "Pranathi Chilka",
+    domain: "Design",
+    linkedin: "https://www.linkedin.com/in/pranathi-chilka-6746a7243/",
+    image: "pranathi.png",
+  },
+  {
+    email: "veruturikarthikeya@gmail.com",
+    name: "Karthikeya",
+    domain: "Technical",
+    linkedin: "https://linkedin.com/in/karthikeyaveruturi",
+    image: "me.png",
+  },
+  {
+    email: "saiyudhinallapuneni@gmail.com",
+    name: "Sai Yudhi",
+    domain: "Technical",
+    linkedin: "Sai Yudhi Nallapuneni",
+    image: "yudhi.png",
+  },
+  {
+    email: "sathwikabachu05@gmail.com",
+    name: "Sathwika Bachu",
+    domain: "Technical",
+    linkedin: "https://www.linkedin.com/in/sathwika-bachu-733620259/",
+    image: "sathwika.png",
+  },
+  {
+    email: "charanakonda95@gmail.com",
+    name: "Charana Konda",
+    domain: "Technical",
+    linkedin: "Charana Konda",
+    image: "charana.png",
+  },
+  {
+    email: "puvvalabhanusatish@gmail.com",
+    name: "BHANU SATISH",
+    domain: "Social Media",
+    linkedin:
+      "https://www.linkedin.com/in/bhanu-satish-puvvala?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    image: "bhanu.png",
+  },
+  {
+    email: "sathulurivimal@gmail.com",
+    name: "Vimal",
+    domain: "Social Media",
+    linkedin: "http://linkedin.com/in/vimal-sathuluri-165852272",
+    image: "vimal.png",
+  },
+
+  {
+    email: "akhileshwaranumula2509@gmail.com",
+    name: "Akhileshwar Anumula",
+    domain: "Event Coverage",
+    linkedin: "https://www.linkedin.com/in/akhileshwar-anumula-8a2760252/",
+    image: "akhil.png",
+  },
+  {
+    email: "avisurabhi21@gmail.com",
+    name: "Avinash Surabhi",
+    domain: "Event Coverage",
+    linkedin:
+      "https://www.linkedin.com/in/avinash-surabhi-2b9b1b25a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    image: "avinash.png",
+  },
+  {
+    email: "adhichiru634@gmail.com",
+    name: "Adithya Kadukuntla",
+    domain: "Treasury",
+    linkedin: "https://www.linkedin.com/in/adithya-kadukuntla-a60534265",
+    image: "adithya.png",
+  },
+  {
+    email: "bandibindusree@gmail.com",
+    name: "BANDI BINDU SREE",
+    domain: "Treasury",
+    linkedin: "https://www.linkedin.com/in/b-bindu-sree-reddy-182592275",
+    image: "bindu.png",
   },
 ];
