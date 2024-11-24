@@ -1,88 +1,84 @@
-import { faculty, team } from "../data/team";
+import { faculty, coreteam, actionteam } from "../data/team";
 import Reveal from "../components/Reveal";
-import { motion } from "framer-motion";
-export default function Team() {
-  const cardVariants = {
-    intial: {
-      scale: 1,
-      boxShadow: "none",
-    },
-    hover: {
-      scale: 1.025,
-      boxShadow: "0px 48px 100px 0px #110c2e26",
-    },
-  };
+
+const PersonDiv = ({ name, role, image, linkedin }) => {
   return (
-    <div className="team mt-20 w-full text-center">
-      <h1 className="font-semibold text-3xl">Who are we?</h1>
-      <p>The people behind DQ</p>
-      <div className="team-div mx-auto flex flex-wrap justify-center mt-8 w-[80%] m-4">
-        {faculty.map((member, index) => {
-          return (
-            <motion.div
+    <div className="flex flex-col justify-around m-4 p-4 min-w-[17rem] min-h-60 rounded-2xl bg-gray-100 hover:bg-gray-200 transition-all duration-300">
+      <p className="text-left p-[2px] w-full mb-2 text-lg font-medium">
+        {role}
+      </p>
+      <img
+        className="w-52 h-52 rounded-[20%] mx-auto"
+        src={image ? image : "https://picsum.photos/200"}
+        alt={name}
+      />
+      <a href={linkedin} target="_blank" rel="noopener noreferrer">
+        <p className="px-[2px] text-right w-full mt-2 hover:underline">
+          {name}
+        </p>
+      </a>
+    </div>
+  );
+};
+
+export default function Team() {
+  return (
+    <div className="w-full py-20 px-4 text-center">
+      <section className="mb-16">
+        <h1 className="font-semibold text-3xl mb-2">Who are we?</h1>
+        <p className="text-lg text-gray-600 mb-8">The people behind DQ</p>
+        <div className="mx-auto flex flex-wrap justify-center max-w-7xl">
+          {faculty.map((member, index) => (
+            <PersonDiv
               key={index}
-              className="team-member  flex flex-col jsutify-around m-4 p-2 min-w-[17rem] min-h-60  rounded-2xl bg-black/10 hover:bg-black/15 transitiona-all duration-300 ease-in-out"
-              variants={cardVariants}
-              initial="initial"
-              whileHover="hover"
-              whileTap="hover"
-            >
-              <p className="text-left p-[2px] w-full mb-2 text-lg">
-                {member.role}
-              </p>
-              <img
-                className="w-48 h-48 rounded-[20%] m-4 mx-auto my-0"
-                src={
-                  member.image
-                    ? "teamImages/" + member.image
-                    : "https://picsum.photos/200"
-                }
-                alt={member.name}
-              />
-              <a href={member.linkedin} target="_blank">
-                <p className="px-[2px] text-right w-full mt-2 transition-all hover:underline">
-                  {member.name}
-                </p>
-              </a>
-            </motion.div>
-          );
-        })}
-      </div>
-      <div className="team-div mx-auto flex flex-wrap justify-center mt-8 w-[80%] m-4">
-        {team.map((member, index) => {
-          return (
+              name={member.name}
+              role={member.role}
+              image={member.image ? `teamImages/${member.image}` : undefined}
+              linkedin={member.linkedin}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-16">
+        <h1 className="font-semibold text-3xl mb-8" id="coreteam">
+          Core Team
+        </h1>
+        <div className="mx-auto flex flex-wrap justify-center max-w-7xl">
+          {coreteam.map((member, index) => (
             <Reveal key={index}>
-              <motion.div
-                key={index}
-                className="team-member flex flex-col jsutify-around m-4 p-2 min-w-[17rem] min-h-60  rounded-2xl bg-black/10 hover:bg-black/15 transitiona-all duration-300 ease-in-out"
-                variants={cardVariants}
-                initial="initial"
-                whileHover="hover"
-                whileTap="hover"
-                unselectable="on"
-              >
-                <p className="text-left p-[2px] w-full mb-2 text-lg">
-                  {member.role || "idk"}
-                </p>
-                <img
-                  className="w-48 h-48 rounded-[20%] m-4 mx-auto my-0 "
-                  src={
-                    member.image
-                      ? "teamImages/" + member.image
-                      : "https://picsum.photos/200"
-                  }
-                  alt={member.name}
-                />
-                <a href={member.linkedin} target="_blank">
-                  <p className="px-[2px] text-right w-full mt-2 transition-all hover:underline">
-                    {member.name}
-                  </p>
-                </a>
-              </motion.div>
+              <PersonDiv
+                name={member.name}
+                role={member.role || "Team Member"}
+                image={member.image ? `teamImages/${member.image}` : undefined}
+                linkedin={member.linkedin}
+              />
             </Reveal>
-          );
-        })}
-      </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h1 className="font-semibold text-3xl mb-8" id="actionteam">
+          Action Team
+        </h1>
+        <div className="mx-auto flex flex-wrap justify-center max-w-7xl">
+          {actionteam.map((member, index) => (
+            <Reveal key={index}>
+              <PersonDiv
+                name={member.name}
+                role={member.domain || "Team Member"}
+                image={
+                  member.image
+                    ? `teamImages/actionteam/${member.image}`
+                    : undefined
+                }
+                linkedin={member.linkedin}
+              />
+            </Reveal>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
