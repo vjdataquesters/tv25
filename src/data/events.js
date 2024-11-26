@@ -5,20 +5,20 @@
 
 const events = {
   upcoming: [
-    // {
-    //   name: "Tech Debate",
-    //   eventId: "techdebate",
-    //   image: "/events/TechDebate/img1.png",
-    //   date: "November 26th 2024",
-    //   venue: "APJ Abdul Kalam Auditorium",
-    //   timings: "10:00 AM to 4:40 PM",
-    //   pics: ["/events/TechDebate/img1.png"],
-    //   outcome: "",
-    //   // register: "https://docs.google.com/forms/d/e/1FAIpQLScOUxYMQyb-j2XGP1g6IPR6zocaQl14X9BNm5W8BuUQiV_Jwg/viewform",
-    //   description: "Tech debate",
-    //   link: "/events/techdebate",
-    //   isGFormEmbeddable: false,
-    // },
+    {
+      name: "Competative Codex",
+      eventId: "compcodex",
+      image: "/events/CompCodex/img1.jpg",
+      date: "November 27th 2024",
+      venue: "Online",
+      timings: "8PM to 9:30 PM",
+      pics: ["/events/CompCodex/img1.jpg"],
+      outcome: "",
+      register: "https://forms.gle/HcYfsE8CG6cZZAUH8",
+      isGFormEmbeddable: true,
+      description: "Coding Compation for 1st year students of VNRVJIET",
+      link: "/events/compcodex",
+    },
   ],
   past: {
     e2024: [
