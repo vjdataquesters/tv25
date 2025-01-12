@@ -19,6 +19,7 @@ export default function Loading(props) {
         className="size-80"
         variants={loadingVariants}
         animate={loadingVariants.animate}
+        draggable={false}
       />
     </div>
   );

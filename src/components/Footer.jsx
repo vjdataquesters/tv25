@@ -1,10 +1,7 @@
-import { FaRegCopyright } from "react-icons/fa6";
-
 export default function Footer() {
   return (
-    <div className="bg-[#0f323f] p-2 text-center flex justify-around items-center bg-[url('https://tympanus.net/Development/ImageExpansionTypography/img/noise.png')]">
+    <div className="bg-[#0f323f] p-2 text-center flex justify-around items-center ">
       <div className="flex justify-around items-center gap-2">
-        <FaRegCopyright size={15} color="white" />
         <p className="block sm:hidden text-white">VJDQ</p>
         <p className="hidden sm:block text-white">
           VJ Data Questers All Rights Reserved

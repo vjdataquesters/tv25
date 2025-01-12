@@ -23,33 +23,34 @@ export default function About() {
     },
   };
 
-  useEffect(() => {
-    if (location.hash) {
-      let element = document.getElementById(location.hash.slice(1));
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    } else {
-      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    }
-  }, [location]);
+  // useEffect(() => {
+  //   if (location.hash) {
+  //     let element = document.getElementById(location.hash.slice(1));
+  //     if (element) {
+  //       element.scrollIntoView({ behavior: "smooth" });
+  //     }
+  //   } else {
+  //     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  //   }
+  // }, [location]);
 
   return (
-    <div className="mx-auto mt-[4.5rem] flex flex-col scroll-smooth">
+    <div className="mx-auto mt-[4.5rem] scroll-smooth">
+
+      {/* Counting Component */}
       <div className="min-h-[calc(100vh-4.5rem)] py-4 sm:py-16 flex flex-col justify-start gap-8 lg:justify-between">
-        <div className="w-[85%] mx-auto ">
-          <div className="">
-            <h1 className="text-center text-4xl font-extrabold lg:text-7xl">
-              The hub for data science enthusiasts
-            </h1>
-            <p className="text-center text-black text-md sm:text-xl">
-              Driving innovation and collaboration through projects, hackathons
-              certifications, and industry insights.
-            </p>
-          </div>
+        <div className="mx-auto ">
+          <h1 className="text-center text-4xl lg:text-8xl font-extrabold ">
+            The hub for Data Science Enthusiasts
+          </h1>
+          <p className="text-center text-black text-md sm:text-xl">
+            Driving innovation and collaboration through projects, hackathons
+            certifications, and industry insights.
+          </p>
         </div>
-        <div className="flex flex-row flex-wrap items-center justify-center gap-8 sm:gap-20 bg-[#0f323f] w-[85%] mx-auto py-8 rounded-2xl">
-          <div className="text-center min-w-32">
+
+        <div className="w-11/12 lg:w-9/12 grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-16 bg-[#0f323f] mx-auto p-8 rounded-2xl">
+          <div className="text-center">
             <CountUp
               className="text-white text-5xl sm:text-7xl font-semibold"
               end={counter.mem}
@@ -58,7 +59,7 @@ export default function About() {
             />
             <p className="text-white sm:text-xl"> Members</p>
           </div>
-          <div className="text-center min-w-32">
+          <div className="text-center">
             <CountUp
               className="text-white text-5xl sm:text-7xl font-semibold"
               end={counter.events}
@@ -67,7 +68,7 @@ export default function About() {
             />
             <p className="text-white sm:text-xl"> Events</p>
           </div>
-          <div className="text-center min-w-32">
+          <div className="text-center">
             <CountUp
               className="text-white text-5xl sm:text-7xl font-semibold"
               end={counter.core}
@@ -76,7 +77,7 @@ export default function About() {
             />
             <p className="text-white sm:text-xl"> Core members</p>
           </div>
-          <div className="text-center min-w-32">
+          <div className="text-center">
             <CountUp
               className="text-white text-5xl sm:text-7xl font-semibold"
               end={counter.alumni}
@@ -88,7 +89,7 @@ export default function About() {
         </div>
 
         <motion.div
-          className="m-auto my-4 flex gap-6 items-center px-6 py-4 border-black/00 border-2 rounded-lg"
+          className="m-auto my-4 flex gap-4 items-center px-6 py-4 border-black/10 border-2 rounded-lg"
           variants={boxVariants}
           initial="initial"
           whileHover="hover"
@@ -133,104 +134,89 @@ export default function About() {
         </motion.div>
       </div>
 
-      <div className="flex items-center flex-col pt-2">
-        <motion.div
-          className="w-[85%] px-4 py-4 mb-6 border border-white/40  rounded-2xl bg-[#0e303d]"
-          variants={boxVariants}
-          initial="initial"
-          whileHover="hover"
-          whileTap="hover"
+      {/* About us */}
+      <div className="flex items-center flex-col pt-2 px-2">
+        <div
+          className="max-w-7xl px-4 py-4 mb-4 border border-white/40  rounded-2xl bg-[#0e303d]"
         >
-          <Reveal>
-            <h2 className="text-white text-3xl underline decoration-2 underline-offset-2">
-              About us
+          <h2 className="text-white text-3xl underline decoration-2 underline-offset-2">
+            About us
+          </h2>
+          <p className="text-base sm:text-lg text-white whitespace-pre-wrap lg:text-justify">
+            Welcome to our Data Science Club, the premier hub for data science
+            enthusiasts at our college. Established with the vision of driving
+            innovation and collaboration, our club serves as the central point
+            for all data science-related activities on campus. We provide
+            comprehensive guidance on projects, offer certifications for both
+            students and faculty, and keep our members informed about the
+            latest industry trends and real-world applications of data
+            science.
+          </p>
+          <p className="text-base sm:text-lg text-white whitespace-pre-wrap mt-1 lg:text-justify">
+            {"\t \t"}
+            Our club hosts a variety of events, including expert-led guest
+            lectures, hands-on workshops, and collaborative projects, ensuring
+            a dynamic and engaging learning environment. By fostering strong
+            connections with industry leaders, we bridge the gap between
+            academic knowledge and practical experience, preparing our members
+            to excel in the ever-evolving field of data science. Join us in
+            our mission to uphold the highest standards of academic and
+            technical integrity, and be part of a community dedicated to
+            shaping the future of data science.
+          </p>
+        </div>
+
+        <div className="flex flex-col max-w-7xl sm:flex-row gap-4 mb-6">
+          <div
+            className="w-full sm:w-1/2 p-4 rounded-xl border border-white/40 hover:backdrop-blur-sm bg-[#0e303d]"
+          >
+            <h2 className="text-white text-3xl underline decoration-2 underline-offset-1">
+              Vision
             </h2>
             <p className="text-base sm:text-lg text-white whitespace-pre-wrap lg:text-justify">
-              Welcome to our Data Science Club, the premier hub for data science
-              enthusiasts at our college. Established with the vision of driving
-              innovation and collaboration, our club serves as the central point
-              for all data science-related activities on campus. We provide
-              comprehensive guidance on projects, offer certifications for both
-              students and faculty, and keep our members informed about the
-              latest industry trends and real-world applications of data
-              science.
+              To be the foremost hub for Data Science excellence, continually
+              driving innovation and collaboration within our college
+              community. We strive to create an environment where students and
+              faculty can engage deeply with cutting-edge research and
+              practical applications of Data Science. By fostering strong
+              connections with industry leaders, we aim to bridge the gap
+              between academic knowledge and real-world practice.{"\n"} Our
+              vision includes being a leader in disseminating the latest
+              trends and advancements in Data Science. Ultimately, we aspire
+              to empower our members to be at the forefront of technological
+              advancements and research in Data Science.
             </p>
-            <p className="text-base sm:text-lg text-white whitespace-pre-wrap mt-1 lg:text-justify">
-              {"\t \t"}
-              Our club hosts a variety of events, including expert-led guest
-              lectures, hands-on workshops, and collaborative projects, ensuring
-              a dynamic and engaging learning environment. By fostering strong
-              connections with industry leaders, we bridge the gap between
-              academic knowledge and practical experience, preparing our members
-              to excel in the ever-evolving field of data science. Join us in
-              our mission to uphold the highest standards of academic and
-              technical integrity, and be part of a community dedicated to
-              shaping the future of data science.
-            </p>
-          </Reveal>
-        </motion.div>
+            <p>{"‎"}</p>
+          </div>
+          <div
+            className="w-full sm:w-1/2 p-4 rounded-xl border  border-white/40 hover:backdrop-blur-sm bg-[#0e303d]"
 
-        <div className="flex flex-col w-[85%] sm:flex-row gap-6 mb-8 ">
-          <motion.div
-            className="mission w-full sm:w-1/2 p-4 rounded-xl border border-white/40 hover:backdrop-blur-sm bg-[#0e303d]"
-            variants={boxVariants}
-            initial="initial"
-            whileHover="hover"
-            whileTap="hover"
           >
-            <Reveal>
-              <h2 className="text-white text-3xl underline decoration-2 underline-offset-1">
-                Vision
-              </h2>
-              <p className="text-base sm:text-lg text-white whitespace-pre-wrap lg:text-justify">
-                To be the foremost hub for Data Science excellence, continually
-                driving innovation and collaboration within our college
-                community. We strive to create an environment where students and
-                faculty can engage deeply with cutting-edge research and
-                practical applications of Data Science. By fostering strong
-                connections with industry leaders, we aim to bridge the gap
-                between academic knowledge and real-world practice.{"\n"} Our
-                vision includes being a leader in disseminating the latest
-                trends and advancements in Data Science. Ultimately, we aspire
-                to empower our members to be at the forefront of technological
-                advancements and research in Data Science.
-              </p>
-              <p>{"‎"}</p>
-            </Reveal>
-          </motion.div>
-          <motion.div
-            className="mission w-full sm:w-1/2 p-4 rounded-xl border  border-white/40 hover:backdrop-blur-sm bg-[#0e303d]"
-            variants={boxVariants}
-            initial="initial"
-            whileHover="hover"
-            whileTap="hover"
-          >
-            <Reveal>
-              <h2 className="text-white text-3xl underline decoration-2 nderline-offset-1">
-                Mission
-              </h2>
-              <p className="text-base sm:text-lg text-white whitespace-pre-wrap lg:text-justify">
-                Our mission is to sustain and expand a thriving Data Science
-                community by offering comprehensive guidance on various projects
-                and providing certifications for students and faculty. We are
-                dedicated to keeping our members abreast of industry trends and
-                the practical implications of data in the real world through
-                regular workshops, seminars, and guest lectures. By promoting
-                active participation and collaboration, we aim to foster a
-                culture of continuous learning and innovation.{"\n"} We ensure
-                access to cutting-edge resources and tools that enable our
-                members to excel in their data-driven endeavors. Our commitment
-                is to uphold the highest standards of academic and technical
-                integrity, preparing our members to lead and succeed in the
-                dynamic field of Data Science.
-              </p>
-            </Reveal>
-          </motion.div>
+            <h2 className="text-white text-3xl underline decoration-2 nderline-offset-1">
+              Mission
+            </h2>
+            <p className="text-base sm:text-lg text-white whitespace-pre-wrap lg:text-justify">
+              Our mission is to sustain and expand a thriving Data Science
+              community by offering comprehensive guidance on various projects
+              and providing certifications for students and faculty. We are
+              dedicated to keeping our members abreast of industry trends and
+              the practical implications of data in the real world through
+              regular workshops, seminars, and guest lectures. By promoting
+              active participation and collaboration, we aim to foster a
+              culture of continuous learning and innovation.{"\n"} We ensure
+              access to cutting-edge resources and tools that enable our
+              members to excel in their data-driven endeavors. Our commitment
+              is to uphold the highest standards of academic and technical
+              integrity, preparing our members to lead and succeed in the
+              dynamic field of Data Science.
+            </p>
+          </div>
         </div>
       </div>
 
+      {/* Founders Block Component */}
       <div
-        className="w-[90%] lg:w-[85%] px-4 py-20 mx-auto mb-2 min-h-[calc(100vh-4.5rem)]"
+        className="max-w-7xl px-4 py-20 mx-auto mb-2 min-h-[calc(100vh-4.5rem)]"
         id="foundersBlock"
       >
         <h2 className="text-4xl font-semibold">Founder of the club</h2>
@@ -253,6 +239,8 @@ export default function About() {
               <p className="text-black text-lg"> Batch 2020-2024</p>
             </div>
           </div>
+
+
           <div className="lg:w-8/12 p-4 h-[500px]  border border-black/20 rounded-lg  overflow-y-scroll overflow-x-hidden small-scrollbar">
             <p className="text-black text-base sm:text-lg whitespace-pre-wrap text-justify">
               One of the most difficult yet rewarding experiences of my life was

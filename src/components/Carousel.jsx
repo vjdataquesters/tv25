@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 
 import "./Home.css";
 
@@ -19,7 +19,7 @@ function Carousel() {
           {images &&
             images.map((img, index) => (
               <div key={index} className="slide">
-                <img src={img} alt="" />
+                <img src={img} alt="Carousel image" draggable={false} />
               </div>
             ))}
         </div>

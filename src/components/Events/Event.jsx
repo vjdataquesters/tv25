@@ -1,7 +1,7 @@
 import "./Events.css";
 import { Link, useParams } from "react-router-dom";
 import events from "../../data/events.js";
-import { FaArrowLeft, FaDownload } from "react-icons/fa6";
+import { ArrowLeft, Download } from "lucide-react";
 
 export default function Event() {
   const { eventname } = useParams();
@@ -23,11 +23,11 @@ export default function Event() {
 
   return (
     <div className="pt-20">
-      <div className="event-div mx-auto max-w-6xl px-4">
+      <div className="event-div mx-auto max-w-7xl px-4">
         <div className="flex flex-row justify-between">
           <h2 className="font-semibold text-3xl mb-4">{event.name}</h2>
           <Link to="/events" className="cursor-pointer ">
-            <FaArrowLeft size={20} className="text-black" />
+            <ArrowLeft size={20} className="text-black" />
           </Link>
         </div>
         <p>
@@ -40,10 +40,13 @@ export default function Event() {
           <span className="font-semibold text-lg">Timings:</span>{" "}
           {event.timings}{" "}
         </p>
+        <p>
+          <span className="font-semibold text-lg">Desciption:</span>{" "}
+          {event.description}{" "}
+        </p>
 
         {event.pics && (
           <div className="my-6">
-            {/* <h3 className="font-semibold text-2xl">Pics of the event</h3> */}
             <div className="gallery rounded-md m-4">
               <div className="event-slider rounded-md shadow-2xl w-full h-[30vh] max-w-3xl sm:h-96 mx-auto">
                 <div className="slides border h-full  border-gray-600/20 rounded-md flex overflow-x-auto">
@@ -163,7 +166,7 @@ export default function Event() {
                       }}
                       className="inline-flex items-center gap-2 bg-[#0f323f] text-white px-4 py-2 rounded-md"
                     >
-                      <FaDownload size={16} />
+                      <Download size={16} />
                       Download Now
                     </button>
                   </div>

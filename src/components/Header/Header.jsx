@@ -10,15 +10,6 @@ const Header = () => {
   const handleBarsClick = () => setMenu(!menu);
   const handleaboutclick = () => setAbout(about);
 
-  const LiVariants = {
-    hover: {
-      scale: 1.1,
-      textShadow: "0px 0px 4px #fff",
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
   const DropVariants = {
     hover: {
       textShadow: "0px 0px 4px #fff",
@@ -34,29 +25,22 @@ const Header = () => {
         <ul className={menu ? "nav-menu active text-lg" : "nav-menu text-lg"}>
           <li className="nav-item">
             <Link to="/" onClick={handleBarsClick} className="nav-link">
-              <motion.p
-                variants={LiVariants}
-                whileHover="hover"
-                whileTap="hover"
-              >
+              <p className="hover:text-[#9d9d9d]">
                 Home
-              </motion.p>
+              </p>
             </Link>
           </li>
           <li
-            className=" nav-item about-dropdown"
+            className="nav-item about-dropdown"
           >
-            <motion.p
+            <p
               onClick={() => {
                 handleaboutclick();
               }}
-              className="dropbtn"
-              variants={LiVariants}
-              whileHover="hover"
-              whileTap="hover"
+              className="dropbtn hover:text-[#9d9d9d]"
             >
               About ▾
-            </motion.p>
+            </p>
             <ul className="dropdown-content">
               <li className="border-b border-white/20 hover:bg-[#0e4256]">
                 <Link to="about" onClick={handleBarsClick} className="nav-link">
@@ -103,24 +87,16 @@ const Header = () => {
           </li>
           <li className="nav-item">
             <Link to="events" onClick={handleBarsClick} className="nav-link">
-              <motion.p
-                variants={LiVariants}
-                whileHover="hover"
-                whileTap="hover"
-              >
+              <p className="hover:text-[#9d9d9d]">
                 Events
-              </motion.p>
+              </p>
             </Link>
           </li>
           <li className="nav-item">
             <Link to="team" onClick={handleBarsClick} className="nav-link">
-              <motion.p
-                variants={LiVariants}
-                whileHover="hover"
-                whileTap="hover"
-              >
+              <p className="hover:text-[#9d9d9d]">
                 Team
-              </motion.p>
+              </p>
             </Link>
           </li>
         </ul>
