@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import {
-  MdOutlineEmojiEvents,
-  MdEventNote,
-  MdOutlineSwitchAccessShortcut,
-} from "react-icons/md";
+  FireExtinguisher,
+  Notebook,
+  SwitchCamera,
+} from "lucide-react";
+
 
 export const PromoDiv = (props) => {
   return (
@@ -14,9 +15,9 @@ export const PromoDiv = (props) => {
         <div className="bg-black/40 border border-black/50 mr-[3px] flex align-middle rounded-l-lg px-1 py-1">
           <div className="my-auto ">
             {props.eventStatus == "done" ? (
-              <MdOutlineEmojiEvents size={28} color="white" />
+              <FireExtinguisher size={28} color="white" />
             ) : (
-              <MdEventNote size={28} color="white" />
+              <Notebook size={28} color="white" />
             )}
           </div>
         </div>
@@ -26,7 +27,7 @@ export const PromoDiv = (props) => {
           </h1>
           <span className="flex justify-end items-center ">
             <p className="text-white text-left">View </p>
-            <MdOutlineSwitchAccessShortcut size={20} color="white" />
+            <SwitchCamera size={20} color="white" />
           </span>
         </div>
       </div>

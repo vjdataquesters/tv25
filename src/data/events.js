@@ -3,6 +3,27 @@
 // isGFormEmbeddable is a boolean value that tells whether the event has a google form or not
 // it is not embeddable if it contains "file upload" feature
 
+/**
+ * interface Event {
+ *    name: string;
+ *    eventId: string;
+ *    image: string;
+ *    date: string;
+ *    venue: string;
+ *    timings: string;
+ *    pics: string[];
+ *    winners?: string;
+ *    outcome?: string;
+ *    register?: string;
+ *    description: string;
+ *    link: string;
+ *    isGFormEmbeddable: boolean;
+ *    externalDownloads?: {
+ *     [key: string]: string; // download file pointer
+ *    }  
+ * }
+ */
+
 const events = {
   upcoming: [
     // {

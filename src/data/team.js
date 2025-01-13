@@ -1,6 +1,6 @@
 export const faculty = [
   {
-    name: "Dr.T.Sunil Kumar",
+    name: "Dr. T. Sunil Kumar",
     role: "Head Of Department",
     image: "hod.png",
     linkedin: "https://www.linkedin.com/in/sunil-kumar-517a8715/",
@@ -211,7 +211,7 @@ export const actionteam = [
     name: "Sai Charan",
     domain: "PR",
     linkedin: "https://www.linkedin.com/in/saicharanmurari/",
-    image: "charan.png",
+    image: "charan26.png",
   },
   {
     email: "goudmvardhan@gmail.com",
@@ -328,7 +328,7 @@ export const actionteam = [
     domain: "Event Coverage",
     linkedin:
       "https://www.linkedin.com/in/avinash-surabhi-2b9b1b25a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    image: "avinash.png",
+    image: "avi.png",
   },
   {
     email: "adhichiru634@gmail.com",

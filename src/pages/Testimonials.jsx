@@ -22,9 +22,8 @@ export default function Testimonials() {
             )}
             <Reveal>
               <div
-                className={`p-4 md:p-12 flex flex-col ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                } gap-12 rounded-xl bg-[#1e4b5b] shadow-md hover:shadow-[16px_16px_20px] hover:shadow-black/80  transition-all duration-300 ease-in-out`}
+                className={`p-4 md:p-12 flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  } gap-12 rounded-xl bg-[#1e4b5b] shadow-md hover:shadow-[16px_16px_20px] hover:shadow-black/80  transition-all duration-300 ease-in-out`}
               >
                 <div className="w-full flex flex-col justify-center items-center text-center">
                   <img
