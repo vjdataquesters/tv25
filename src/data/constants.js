@@ -9,7 +9,7 @@ export const whatwedo = [
       title: "Hackathons",
       imgURL:
         "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/48/external-hackathon-ux-and-ui-icons-flaticons-lineal-color-flat-icons-2.png",
-      example: "/events/TECHNOVISTA",
+      example: "/events/tv24",
     },
     {
       title: "Webinars",

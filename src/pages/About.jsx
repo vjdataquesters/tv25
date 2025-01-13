@@ -23,16 +23,16 @@ export default function About() {
     },
   };
 
-  // useEffect(() => {
-  //   if (location.hash) {
-  //     let element = document.getElementById(location.hash.slice(1));
-  //     if (element) {
-  //       element.scrollIntoView({ behavior: "smooth" });
-  //     }
-  //   } else {
-  //     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  //   }
-  // }, [location]);
+  useEffect(() => {
+    if (location.hash) {
+      let element = document.getElementById(location.hash.slice(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+  }, [location]);
 
   return (
     <div className="mx-auto mt-[4.5rem] scroll-smooth">

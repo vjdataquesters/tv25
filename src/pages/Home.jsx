@@ -12,7 +12,7 @@ export default function Home() {
       <div className="h-screen w-full">
         <div className="z-10 w-full absolute h-full flex flex-row justify-evenly items-center">
           <motion.div className="hidden lg:block ">
-            <img src="dq_logo.png" alt="Data Questers logo" className="max-w-sm" draggable={false} />
+            <img src="logo.png" alt="Data Questers logo" className="max-w-sm" draggable={false} />
           </motion.div>
 
           <div className="box max-w-[90%] sm:w-auto flex flex-col justify-center items-center opacity-80 select-none text-white">
@@ -27,14 +27,14 @@ export default function Home() {
 
         </div>
         <GlowBackground />
-        <div className="absolute inset-0 opacity-10 bg-[url('/graph-grid.png')]"></div>
+        <div className="absolute inset-0 opacity-10 bg-[url('/grid.png')]"></div>
       </div>
 
       {/* About section */}
       <div className="clip-art-1">
         <div className="z-10 text-justify sm:text-left max-w-5xl mx-auto">
           <div className="lg:hidden">
-            <img src="dq_logo.png" className="max-w-64 mx-auto" />
+            <img src="logo.png" className="max-w-64 mx-auto" />
           </div>
 
           <div className="px-2 pb-20 lg:pt-4">

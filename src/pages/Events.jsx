@@ -4,29 +4,15 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Reveal from "../components/Reveal.jsx";
 export default function Events() {
-
-
-  const [pastevents, setPastevents] = useState(
-    localStorage.getItem("year")
-      ? events.past[`e${localStorage.getItem("year")}`]
-      : events.past.e2024
-  );
-  const [year, setyear] = useState(
-    localStorage.getItem("year") ? parseInt(localStorage.getItem("year")) : 2024
-  );
-
+  const [pastevents, setPastevents] = useState(events.past.e2024);
+  const [year, setyear] = useState(2024);
   const navigate = useNavigate();
 
   const handlebuttonclick = (e) => {
     setPastevents(events.past[e]);
-    if (e === "e2024") {
-      setyear(2024);
-      localStorage.setItem("year", 2024);
-    } else if (e === "e2023") {
-      setyear(2023);
-      localStorage.setItem("year", 2023);
-    }
+    setyear(e.slice(1));
   };
+
   return (
     <div className="max-w-5xl md:max-w-[90%] h-full mb-20 my-4 mx-auto pt-20 px-4">
       <h1 className="font-semibold text-4xl">Events</h1>
@@ -47,6 +33,7 @@ export default function Events() {
                         src={event.image}
                         style={{ maxWidth: "100%" }}
                         alt={event.name}
+                        draggable={false}
                       />
                       <h2 className="font-semibold text-2xl">{event.name}</h2>
                       <p className="italic">{event.Date}</p>
@@ -92,6 +79,7 @@ export default function Events() {
                         src={event.image}
                         style={{ maxWidth: "100%" }}
                         alt={event.name}
+                        draggable={false}
                       />
                       <h2 className="font-semibold text-2xl py-1">{event.name}</h2>
                       <p className="italic">{event.Date}</p>
