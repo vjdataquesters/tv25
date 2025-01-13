@@ -13,23 +13,18 @@ function Carousel() {
   ];
 
   return (
-    <Swiper
-      modules={[Pagination]}
-      pagination={{ clickable: true }}
-      spaceBetween={20}
-      className="w-full max-w-5xl md:h-[32rem] mx-auto rounded-lg overflow-hidden py-8"
-    >
-      {images.map((pic, index) => (
-        <SwiperSlide key={index}>
-          <img
-            src={pic}
-            alt={`${event.name} - Image ${index + 1}`}
-            className="w-full h-full"
-            draggable={false}
-          />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div className="c-div">
+      <div className="slider-carousel">
+        <div className="slider-track">
+          {images &&
+            images.map((img, index) => (
+              <div key={index} className="slide">
+                <img src={img} alt="Carousel image" draggable={false} />
+              </div>
+            ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
