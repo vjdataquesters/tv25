@@ -30,7 +30,7 @@ const events = {
     {
       name: "Competative Codex",
       eventId: "compcodex",
-      image: "/events/CompCodex/img1.jpg",
+      image: "/events/Profolio/img1.png",
       date: "November 27th 2024",
       venue: "Online",
       category:"Coding Contest",

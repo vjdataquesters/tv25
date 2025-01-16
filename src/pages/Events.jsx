@@ -40,12 +40,16 @@ export default function Events() {
               className="hidden md:block"
             >
               <div class="transform translate-y-8">
-                <div class="bg-[#0f323f] p-4 rounded-lg  hover:scale-[1.1] transition-all duration-500">
+                <div class="bg-[#ffffff] p-4 rounded-lg  hover:scale-[1.1] transition-all duration-500 text-[#0f323f]">
                   <div class=" bg-neutral-700 rounded-md mb-4">
-                    <img src={recentEvent1.image} className="object-fill"></img>
+                    <img
+                      src={recentEvent1.image}
+                      className="object-fill rounded"
+                      alt="recent-event-1"
+                    ></img>
                   </div>
                   <h3 class="font-semibold">{recentEvent1.name}</h3>
-                  <p class="text-sm text-gray-300">{recentEvent1.date}</p>
+                  <p class="text-sm text-gray-300 text-[#0f323f]">{recentEvent1.date}</p>
                 </div>
               </div>
             </button>
@@ -56,7 +60,11 @@ export default function Events() {
               <div class="transform -translate-y-8">
                 <div class="bg-[#0f323f] p-4 rounded-lg hover:scale-[1.1] transition-all duration-500">
                   <div class=" bg-neutral-700 rounded-md mb-4">
-                    <img src={recentEvent2.image} className="object-fill"></img>
+                    <img
+                      src={recentEvent2.image}
+                      className="object-fill"
+                      alt="recent-event-2"
+                    ></img>
                   </div>
                   <h3 class="font-semibold">{recentEvent2.name}</h3>
                   <p class="text-sm text-gray-300">{recentEvent2.date}</p>
@@ -66,45 +74,47 @@ export default function Events() {
           </div>
         </div>
       </section>
-      <div className="max-w-5xl md:max-w-[90%] h-full mb-20 my-4 mx-auto pt-20 px-4">
+      <div className="max-w-5xl md:max-w-[90%] h-full mb-20 my-4 mx-auto px-4">
         <div className="w-full">
           <div className="pt-6">
             {/* Upcoming events */}
             {events.upcoming.length !== 0 && (
               <>
                 <h2 className="text-4xl text-center mb-7">Upcoming Events</h2>
-                <div className="flex flex-wrap jusUpcomingtify-start gap-8 my-4 pb-6">
-                  {events.upcoming.map((event, index) => (
-                    <Reveal key={index}>
-                      <div
-                        className="p-4 max-w-[400px] shadow-2xl bg-gray-100 flex flex-col justify-between hover:shadow-[0px_25px_50px_-12px] transition-all hover:backdrop-blur-sm hover:bg-gray-200 cursor-pointer"
-                        onClick={() => navigate(event.link)}
-                      >
-                        <img
-                          src={event.image}
-                          style={{ maxWidth: "100%" }}
-                          alt={event.name}
-                          draggable={false}
-                        />
-                        <h2 className="font-semibold text-2xl">{event.name}</h2>
-                        <p className="italic">{event?.Date}</p>
-                        {event.isGFormEmbeddable && <h2>Tap to register</h2>}
-                        <p className="text-lg mt-2">{event.description}</p>
-                      </div>
-                    </Reveal>
-                  ))}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    {events.upcoming.map((event, index) => (
+                      <Reveal key={index}>
+                        <div
+                          className="p-4 max-w-[400px] shadow-2xl bg-gray-100 flex flex-col justify-between hover:shadow-[0px_25px_50px_-12px] transition-all hover:backdrop-blur-sm hover:bg-gray-200 cursor-pointer"
+                          onClick={() => navigate(event.link)}
+                        >
+                          <img
+                            src={event.image}
+                            style={{ maxWidth: "100%" }}
+                            alt={event.name}
+                            draggable={false}
+                          />
+                          <h2 className="font-semibold text-2xl">
+                            {event.name}
+                          </h2>
+                          <p className="italic">{event?.Date}</p>
+                          {event.isGFormEmbeddable && <h2>Tap to register</h2>}
+                          <p className="text-lg mt-2">{event.description}</p>
+                        </div>
+                      </Reveal>
+                    ))}
                 </div>
               </>
             )}
           </div>
 
           <div className="flex flex-col flex-wrap gap-5">
-            <h2 className="text-3xl">Past Events</h2>
-            <div>
+            <h2 className="text-4xl text-center">Past Events</h2>
+            <div className="text-center mt-3">
               {Object.keys(events.past).map((eventyear) => (
                 <button
                   key={eventyear}
-                  className={`mx-4 w-24 h-9 font-bold text-lg border-2 border-black text-black shadow-[5px_5px_1px_0px] hover:shadow-none  transition-all rounded-md  ${
+                  className={`text-center mx-4 w-24 h-9 font-bold text-lg border-2 border-black text-black shadow-[5px_5px_5px_0px] hover:shadow-none  transition-all rounded-md  ${
                     year.toString() === eventyear.slice(1)
                       ? "bg-[#0f323f] text-white"
                       : "bg-white"
@@ -121,7 +131,7 @@ export default function Events() {
               <>
                 {/* Past events */}
                 <h2 className="text-2xl">Events of year {year}</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
                   {pastevents.map((event, index) => (
                     <Reveal key={index}>
                       <div
