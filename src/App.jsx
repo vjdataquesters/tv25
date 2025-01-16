@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoad(false);
-    }, 1000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -24,7 +24,7 @@ function App() {
   return (
     <Router>
       <Analytics />
-      <Loading load={load} />
+      <Loading load ={load} />
       <Header />
       <ScrollToTop />
       <div className="flex flex-col min-h-screen bg-blue-50/70">

@@ -7,10 +7,10 @@
  * interface Event {
  *    name: string;
  *    eventId: string;
+ *    category: string;
  *    image: string;
  *    date: string;
  *    venue: string;
- *    category: string;
  *    timings: string;
  *    pics: string[];
  *    winners?: string;
@@ -21,19 +21,29 @@
  *    isGFormEmbeddable: boolean;
  *    externalDownloads?: {
  *     [key: string]: string; // download file pointer
- *    }  
+ *    }
  * }
  */
+
+// type of category shall be restricted to the specified values
+
+// type EventCategory = 
+//   | 'Workshop'
+//   | 'Hackathon'
+//   | 'Fun Event'
+//   | 'Creative competition'
+//   | 'Technical Fest'
+//   | 'Guest Lecture';
 
 const events = {
   upcoming: [
     {
       name: "Competative Codex",
       eventId: "compcodex",
-      image: "/events/Profolio/img1.png",
+      category: "Coding Contest",
+      image: "/events/Codex/img1.png",
       date: "November 27th 2024",
       venue: "Online",
-      category:"Coding Contest",
       timings: "8PM to 9:30 PM",
       pics: ["/events/CompCodex/img1.jpg"],
       outcome: "",
@@ -48,6 +58,7 @@ const events = {
       {
         name: "GET SET PY",
         eventId: "getsetpy",
+        category: "Workshop",
         image: "/events/GetSetPy/img1.png",
         date: "October 25th & 26th 2024",
         venue: "APJ Abdul Kalam Auditorium",
@@ -77,6 +88,7 @@ const events = {
       {
         name: "Mastering Tableau: Senior Track ",
         eventId: "tableau-senior-track",
+        category: "Workshop",
         image: "/events/TableauSeniorTrack/img1.png",
         date: "October 19th 2024",
         venue: "PEB seminar hall",
@@ -98,6 +110,7 @@ const events = {
       {
         name: "SIH 2024",
         eventId: "sih2024",
+        category: "Hackathon",
         image: "/events/SIH2024/img1.png",
         date: "August 31th 2024",
         venue: "Patrons Bhavan",
@@ -112,6 +125,7 @@ const events = {
       {
         name: "Profolio",
         eventId: "profolio",
+        category: "Workshop",
         image: "/events/Profolio/img1.png",
         date: "August 27th 2024",
         venue: "B005, B006, P401, P402, C106 labs",
@@ -135,6 +149,7 @@ const events = {
       {
         name: "Sneaky Memer",
         eventId: "sneakyMemer",
+        category: "Fun Event",
         image: "/events/SneakyMemer/img1.png",
         date: "Since August 9th 2024",
         venue: "Online",
@@ -156,6 +171,7 @@ const events = {
       {
         name: "Technovista",
         eventId: "technovista2024",
+        category: "Technical Fest",
         image: "/events/Technovista2024/img1.png",
         date: "June 10th - 12th 2024",
         venue: "VNR",
@@ -172,6 +188,7 @@ const events = {
       {
         name: "DATA VISUALIZATION USING TABLEAU",
         eventId: "tableau2k24",
+        category: "Workshop",
         image: "/events/Tableau2k24/img1.png",
         date: "21-03-2024",
         venue: "P Block, p-401,402",
@@ -191,6 +208,7 @@ const events = {
       {
         name: "LTI Mind Tree DS Guest Lecture",
         eventId: "ltiGuestLecture2024",
+        category: "Guest Lecture",
         image: "/events/LtiMindTreeDS2024/img1.png",
         date: "20-03-2024",
         venue: "APJ Abdul kalam Auditorium",
@@ -210,6 +228,7 @@ const events = {
       {
         name: "HIT -  THE SECOND CHASE",
         eventId: "hitThe2ndChase",
+        category: "Fun Event",
         image: "/events/HitThe2ndChase/img1.png",
         date: "11-02-2024",
         venue: "online",
@@ -232,6 +251,7 @@ const events = {
       {
         name: "BLOG-A-THON",
         eventId: "blogAThon",
+        category: "Creative competition",
         image: "/events/BlogAThon2023/img1.png",
         date: "15-12-2023",
         venue: "A201, C106, B112/1",
@@ -252,6 +272,7 @@ const events = {
       {
         name: "VJ DATA QUESTERS ORIENTATION 2023",
         eventId: "vjdqOrientation2023",
+        category: "Fun Event",
         image: "/events/VjdqOrientation2023/image.png",
         date: "23-11-2023",
         venue: "APJ AUDITORIUM",
@@ -271,6 +292,7 @@ const events = {
       {
         name: "HIT - THE 1ST CHASE ",
         eventId: "hitThe1stChase",
+        category: "Fun Event",
         image: "/events/HitThe1stChase/img1.png",
         date: "11-02-2023",
         venue: "online",
@@ -292,6 +314,7 @@ const events = {
       {
         name: "A GUEST LECTURE ON DATA SCIENCE JOURNEY IN 2023",
         eventId: "guestLecture2023",
+        category: "Guest Lecture",
         image: "/events/GuestLectureDS2023/img1.png",
         date: "08-02-2023",
         venue: "KS Auditorium",
