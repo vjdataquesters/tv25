@@ -10,6 +10,7 @@
  *    image: string;
  *    date: string;
  *    venue: string;
+ *    category: string;
  *    timings: string;
  *    pics: string[];
  *    winners?: string;
@@ -26,20 +27,21 @@
 
 const events = {
   upcoming: [
-    // {
-    //   name: "Competative Codex",
-    //   eventId: "compcodex",
-    //   image: "/events/CompCodex/img1.jpg",
-    //   date: "November 27th 2024",
-    //   venue: "Online",
-    //   timings: "8PM to 9:30 PM",
-    //   pics: ["/events/CompCodex/img1.jpg"],
-    //   outcome: "",
-    //   // register: "https://forms.gle/HcYfsE8CG6cZZAUH8",
-    //   // isGFormEmbeddable: true,
-    //   description: "Coding Compation for 1st year students of VNRVJIET",
-    //   link: "/events/compcodex",
-    // },
+    {
+      name: "Competative Codex",
+      eventId: "compcodex",
+      image: "/events/CompCodex/img1.jpg",
+      date: "November 27th 2024",
+      venue: "Online",
+      category:"Coding Contest",
+      timings: "8PM to 9:30 PM",
+      pics: ["/events/CompCodex/img1.jpg"],
+      outcome: "",
+      // register: "https://forms.gle/HcYfsE8CG6cZZAUH8",
+      isGFormEmbeddable: true,
+      description: "Coding Compation for 1st year students of VNRVJIET",
+      link: "/events/compcodex",
+    },
   ],
   past: {
     e2024: [
