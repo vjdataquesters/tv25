@@ -9,15 +9,8 @@ export default function Events() {
   const [pastevents, setPastevents] = useState(events.past[recentYear]);
   const [year, setyear] = useState(recentYear.slice(1));
   const navigate = useNavigate();
-  const recentEvent1 = events.past[recentYear][0];
-  const previousYears = "e" + (recentYear.slice(1) - 1);
-  // console.log("prev " + recentEvent1);
-  const recentEvent2 =
-    events.past[recentYear][1] || events.past[previousYears][0];
 
-  const [itemsPerRow, setItemsPerRow] = useState(1);
-
-  const handlebuttonclick = (e) => {
+  const handleYearChange = (e) => {
     setPastevents(events.past[e]);
     setyear(e.slice(1));
   };
@@ -25,12 +18,12 @@ export default function Events() {
   return (
     <>
       {/*Event highlights*/}
-      <section className="flex clip-art-1 pt-20 pl-10 pr-5 md:py-24 md:px-7 h-2/3 w-full gap-4">
-        <div className=" w-full md:w-2/3 ">
-          <h1 className="text-3xl pb-12 sm:text-5xl sm:pb-4 md:text-6xl md:pb-3 font-bold text-white">
+      <section className="clip-art-1 min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] flex items-center justify-center px-4 sm:px-6 md:px-8">
+        <div className=" w-full md:w-2/3 pb-5">
+          <h1 className="text-4xl sm:text-5xl pb-4 sm:pb-4 md:text-6xl md:pb-3 font-bold text-white">
             Discover Amazing Events we Organized
           </h1>
-          <p className="text-xl text-white hidden sm:block sm:text-lg md:pb-none pr-3">
+          <p className="text-sm text-white sm:block sm:text-lg md:pb-none pr-3">
             Explore the diverse range of events we've hosted, designed to
             inspire, educate, and bring our community together
           </p>
@@ -46,7 +39,7 @@ export default function Events() {
                 <h2 className="text-4xl text-center font-bold mb-7 ">
                   Upcoming Events
                 </h2>
-                <div className={`grid ${getGridCols} gap-6 pb-8 `}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pb-8">
                   {events.upcoming.map((event, index) => (
                     <Reveal key={index}>
                       <div
@@ -68,7 +61,9 @@ export default function Events() {
                           <h2 className="text-2xl font-semibold mb-2 ">
                             {event.name}
                           </h2>
-                          <p className="italic">{event.Date}</p>
+                          <p className="text-gray-500 font-light font-['Roboto']">
+                            {event.date}
+                          </p>
                           <p className="text-lg mt-2">{event.description}</p>
                         </div>
                       </div>
@@ -90,7 +85,7 @@ export default function Events() {
                       ? "bg-[#0f323f] text-white"
                       : "bg-white"
                   } `}
-                  onClick={() => handlebuttonclick(eventyear)}
+                  onClick={() => handleYearChange(eventyear)}
                 >
                   {eventyear.slice(1)}
                 </button>
@@ -124,7 +119,9 @@ export default function Events() {
                           <h2 className="text-2xl font-semibold mb-2 ">
                             {event.name}
                           </h2>
-                          <p className="italic">{event.Date}</p>
+                          <p className="text-gray-500 font-light font-['Roboto']">
+                            {event.date}
+                          </p>
                           <p className="text-lg mt-2">{event.description}</p>
                         </div>
                       </div>
@@ -137,9 +134,9 @@ export default function Events() {
         </div>
       </div>
       {/* category section */}
-      <div className="max-w-5xl md:max-w-[90%] h-full mb-20 my-4 mx-auto px-4 border border-black">
+      {/* <div className="max-w-5xl md:max-w-[90%] h-full mb-20 my-4 mx-auto px-4 border border-black">
         <h1></h1>
-      </div>
+      </div> */}
     </>
   );
 }
