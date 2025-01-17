@@ -8,7 +8,7 @@ const Image = ({ name, role, image, linkedin }) => {
         {role}
       </p>
       <img
-        className="w-52 h-52 rounded-3xl mx-auto grayscale hover:grayscale-0 transition-all duration-300"
+        className="w-52 h-52 rounded-3xl mx-auto transition-all duration-300"
         src={image ? image : "https://picsum.photos/200"}
         alt={name + " image"}
         draggable={false}
