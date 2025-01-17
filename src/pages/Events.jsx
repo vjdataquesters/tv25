@@ -1,9 +1,8 @@
 import "../components/Events/Events.css";
 import events from "../data/events.js";
 import { useNavigate } from "react-router-dom";
-import { useRef, useState, useEffect } from "react";
+import { useState } from "react";
 import Reveal from "../components/Reveal.jsx";
-import Flashcard from "../components/FlashCard.jsx";
 
 export default function Events() {
   const recentYear = Object.keys(events.past)[0];
@@ -18,29 +17,6 @@ export default function Events() {
 
   const [itemsPerRow, setItemsPerRow] = useState(1);
 
-  useEffect(() => {
-    const updateItemsPerRow = () => {
-      if (window.innerWidth >= 1024) {
-        setItemsPerRow(3);
-      } else if (window.innerWidth >= 768) {
-        setItemsPerRow(2);
-      } else {
-        setItemsPerRow(1);
-      }
-    };
-
-    updateItemsPerRow();
-    window.addEventListener("resize", updateItemsPerRow);
-
-    return () => {
-      window.removeEventListener("resize", updateItemsPerRow);
-    };
-  }, []);
-  const getGridCols = `grid-cols-${itemsPerRow}`;
-  const [showAll, setShowAll] = useState(false);
-  const toggleViewMore = () => setShowAll(!showAll);
-  const visibleItems = showAll ? pastevents : pastevents.slice(0, itemsPerRow);
-
   const handlebuttonclick = (e) => {
     setPastevents(events.past[e]);
     setyear(e.slice(1));
@@ -49,35 +25,15 @@ export default function Events() {
   return (
     <>
       {/*Event highlights*/}
-      <section className="flex clip-art-default md:clip-art-3 pt-20 pl-10 pr-5 md:p-28 h-2/3 w-full gap-4">
-        <div className=" w-full md:w-1/2 ">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+      <section className="flex clip-art-1 pt-20 pl-10 pr-5 md:py-24 md:px-7 h-2/3 w-full gap-4">
+        <div className=" w-full md:w-2/3 ">
+          <h1 className="text-3xl pb-12 sm:text-5xl sm:pb-4 md:text-6xl md:pb-3 font-bold text-white">
             Discover Amazing Events we Organized
           </h1>
-          <p className="text-xl text-white hidden sm:block pb-12 :pb-none pr-3">
+          <p className="text-xl text-white hidden sm:block sm:text-lg md:pb-none pr-3">
             Explore the diverse range of events we've hosted, designed to
             inspire, educate, and bring our community together
           </p>
-        </div>
-        <div className=" w-1/2 text-white ">
-          <div class="grid lg:grid-cols-2 md:lg:grid-cols-2 gap-6 pb-9">
-            <button
-              onClick={() => navigate(recentEvent1.link)}
-              className="hidden md:block"
-            >
-              <div class="transform translate-y-8">
-                <Flashcard event={recentEvent1} />
-              </div>
-            </button>
-            <button
-              onClick={() => navigate(recentEvent2.link)}
-              className="hidden lg:block"
-            >
-              <div class="transform -translate-y-8">
-                <Flashcard event={recentEvent2} />
-              </div>
-            </button>
-          </div>
         </div>
       </section>
       {/* Display by year */}
@@ -106,7 +62,7 @@ export default function Events() {
                         />
 
                         <div className="p-7 pt-0">
-                          <span class="inline-block px-3 py-1 bg-[#0f323f] text-white text-sm rounded-full mt-4 mb-2">
+                          <span className="inline-block px-3 py-1 bg-[#0f323f] text-white text-sm rounded-full mt-4 mb-2">
                             {event.category}
                           </span>
                           <h2 className="text-2xl font-semibold mb-2 ">
@@ -146,8 +102,8 @@ export default function Events() {
               <>
                 {/* Past events */}
                 <h2 className="text-2xl">Events of year {year}</h2>
-                <div className={`grid ${getGridCols} gap-6 pb-8 `}>
-                  {visibleItems.map((event, index) => (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pb-8">
+                  {pastevents.map((event, index) => (
                     <Reveal key={index}>
                       <div
                         className="max-w-[400px] rounded-lg h-full shadow-2xl bg-gray-100 hover:shadow-[0px_25px_50px_-12px] transition-all duration-500 hover:backdrop-blur-sm hover:bg-gray-200 cursor-pointer"
@@ -162,7 +118,7 @@ export default function Events() {
                         />
 
                         <div className="p-7 pt-0">
-                          <span class="inline-block px-3 py-1 bg-[#0f323f] text-white text-sm rounded-full mt-4 mb-2">
+                          <span className="inline-block px-3 py-1 bg-[#0f323f] text-white text-sm rounded-full mt-4 mb-2">
                             {event.category}
                           </span>
                           <h2 className="text-2xl font-semibold mb-2 ">
@@ -174,14 +130,6 @@ export default function Events() {
                       </div>
                     </Reveal>
                   ))}
-                </div>
-                <div className="flex justify-center ">
-                  <button
-                    onClick={toggleViewMore}
-                    className=" bg-[#0f323f] text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl font-semibold"
-                  >
-                    {showAll ? "View Less" : "View All Events"}
-                  </button>
                 </div>
               </>
             )}

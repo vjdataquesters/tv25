@@ -37,21 +37,21 @@
 
 const events = {
   upcoming: [
-    {
-      name: "Competative Codex",
-      eventId: "compcodex",
-      category: "Coding Contest",
-      image: "/events/Codex/img1.png",
-      date: "November 27th 2024",
-      venue: "Online",
-      timings: "8PM to 9:30 PM",
-      pics: ["/events/CompCodex/img1.jpg"],
-      outcome: "",
-      // register: "https://forms.gle/HcYfsE8CG6cZZAUH8",
-      isGFormEmbeddable: true,
-      description: "Coding Compation for 1st year students of VNRVJIET",
-      link: "/events/compcodex",
-    },
+    // {
+    //   name: "Competative Codex",
+    //   eventId: "compcodex",
+    //   category: "Coding Contest",
+    //   image: "/events/Codex/img1.png",
+    //   date: "November 27th 2024",
+    //   venue: "Online",
+    //   timings: "8PM to 9:30 PM",
+    //   pics: ["/events/CompCodex/img1.jpg"],
+    //   outcome: "",
+    //   // register: "https://forms.gle/HcYfsE8CG6cZZAUH8",
+    //   isGFormEmbeddable: true,
+    //   description: "Coding Compation for 1st year students of VNRVJIET",
+    //   link: "/events/compcodex",
+    // },
   ],
   past: {
     e2024: [
@@ -183,7 +183,7 @@ const events = {
         outcome: "",
         description:
           "TechnoVista is a premier collaborative event organized by the Data Science and Cyber Security Clubs, offering a diverse range of activities including a coding contest, cyber hunt, red teaming exercise, case study competition, hackathon, project expo, tech elocution, and guest lectures.",
-        link: "/events/TECHNOVISTA",
+        link: "/events/tv24",
       },
       {
         name: "DATA VISUALIZATION USING TABLEAU",
