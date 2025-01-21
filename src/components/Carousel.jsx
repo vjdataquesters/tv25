@@ -1,16 +1,12 @@
 import React from "react";
-
 import "./Home.css";
+import events from "../data/events";
 
 function Carousel() {
-  const images = [
-    "/home-1.jpg",
-    "/home-2.jpg",
-    "/home-3.jpg",
-    "/home-4.jpg",
-    "/home-5.jpg",
-    "/home-6.jpg",
-  ];
+  const recentYear = Object.keys(events.past)[0];
+  const images = events.past[recentYear].map((event) =>
+    event.pics[1] ? event.pics[1] : event.pics[0]
+  );
 
   return (
     <div className="c-div">
@@ -19,7 +15,12 @@ function Carousel() {
           {images &&
             images.map((img, index) => (
               <div key={index} className="slide">
-                <img src={img} alt="Carousel image" draggable={false} />
+                <img
+                  src={img}
+                  alt="Carousel image"
+                  draggable={false}
+                  className="aspect-auto"
+                />
               </div>
             ))}
         </div>

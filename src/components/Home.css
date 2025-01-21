@@ -180,7 +180,7 @@
 
 .slider-track {
   display: flex;
-  width: calc(350px * 6);
+  width: calc(450px * 6);
   animation: scroll 20s ease-in-out infinite;
 }
 
