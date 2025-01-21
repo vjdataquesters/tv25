@@ -1,19 +1,25 @@
 import React from "react";
 import "./Home.css";
 import events from "../data/events";
+import { useState, useEffect } from "react";
 
 function Carousel() {
-  const recentYear = Object.keys(events.past)[0];
-  const images = events.past[recentYear].map((event) =>
-    event.pics[1] ? event.pics[1] : event.pics[0]
-  );
+  const [carouselImages, setCarouselImages] = useState([]);
+
+  useEffect(() => {
+    const recentYear = Object.keys(events.past)[0];
+    const image = events.past[recentYear]
+      .map((event) => event.pics[1] || event.pics[0])
+      .slice(0, 6);
+    setCarouselImages(image);
+  }, []);
 
   return (
     <div className="c-div">
       <div className="slider-carousel">
         <div className="slider-track">
-          {images &&
-            images.map((img, index) => (
+          {carouselImages &&
+            carouselImages.map((img, index) => (
               <div key={index} className="slide">
                 <img
                   src={img}
