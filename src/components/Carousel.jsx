@@ -9,7 +9,8 @@ function Carousel() {
   useEffect(() => {
     const recentYear = Object.keys(events.past)[0];
     const image = events.past[recentYear]
-      .map((event) => event.pics[1] || event.pics[0])
+      .map((event) => event.pics[1] || null)
+      .filter((image) => image)
       .slice(0, 6);
     setCarouselImages(image);
   }, []);
