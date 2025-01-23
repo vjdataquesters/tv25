@@ -32,7 +32,7 @@ const TeamCard = ({ person }) => {
           <p className="text-center text-black text-xl font-semibold tracking-wide">
             {person.name}
           </p>
-          <p className="text-center font-['roboto'] text-base text-gray-600 pb-4 font-light">
+          <p className="text-center font-['Roboto'] text-base text-gray-600 pb-4 font-light">
             {person.role}
           </p>
         </div>
@@ -145,7 +145,7 @@ export default function Home() {
       </div>
 
       {/* Glimpses section */}
-      <div className="clip-art-combined py-12">
+      <div className="clip-art-combined pt-16 pb-14">
         <section className="max-w-7xl md:max-w-[90%] h-full mx-auto">
           <div className="w-full">
             <h2 className="text-center text-3xl font-semibold text-white">

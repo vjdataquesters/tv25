@@ -1,19 +1,28 @@
 import React from "react";
 import "./Home.css";
 import events from "../data/events";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 function Carousel() {
-  const [carouselImages, setCarouselImages] = useState([]);
+  const carouselImages = [
+    "/home-1.jpg",
+    "/home-2.jpg",
+    "/home-3.jpg",
+    "/home-4.png",
+    "/home-5.jpg",
+    "/home-6.jpg",
+  ];
 
-  useEffect(() => {
-    const recentYear = Object.keys(events.past)[0];
-    const image = events.past[recentYear]
-      .map((event) => event.pics[1] || null)
-      .filter((image) => image)
-      .slice(0, 6);
-    setCarouselImages(image);
-  }, []);
+  // to dynamically load 2nd image from event data.
+  // const [carouselImages, setCarouselImages] = useState([]);
+  // useEffect(() => {
+  //   const recentYear = Object.keys(events.past)[0];
+  //   const image = events.past[recentYear]
+  //     .map((event) => event.pics[1] || null)
+  //     .filter((image) => image)
+  //     .slice(0, 6);
+  //   setCarouselImages(image);
+  // }, []);
 
   return (
     <div className="c-div">
@@ -26,7 +35,6 @@ function Carousel() {
                   src={img}
                   alt="Carousel image"
                   draggable={false}
-                  className="aspect-auto"
                 />
               </div>
             ))}

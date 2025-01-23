@@ -347,7 +347,7 @@
     transform: translateX(0);
   }
   50% {
-    transform: translateX(calc(-250px * 3));
+    transform: translateX(calc(-325px * 3));
   }
   100% {
     transform: translateX(0);
@@ -373,7 +373,7 @@
 
 .slide > img {
   width: 100%;
-  height: 60%;
+  height: 65%;
   border-radius: 5px;
 }
 
