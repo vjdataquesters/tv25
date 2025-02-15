@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
-import events from "../../data/events.js";
+import events from "../data/events.js";
 
 export default function Event() {
   const { eventname } = useParams();
@@ -86,7 +86,7 @@ export default function Event() {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
               }}
-              className="w-full max-w-4xl md:h-[32rem] mx-auto rounded-lg overflow-hidden py-8"
+              className="w-full max-w-5xl md:h-[38rem] mx-auto rounded-lg overflow-hidden py-8"
             >
               {event.pics.map((pic, index) => (
                 <SwiperSlide key={index}>
@@ -101,8 +101,8 @@ export default function Event() {
             </Swiper>
             {event.pics?.length > 1 && (
               <>
-                <div className="swiper-button-next hidden md:flex text-gray-800 bg-transparent shadow-md hover:shadow-black transition-all duration-300 rounded-lg w-12 h-12 right-4"></div>
-                <div className="swiper-button-prev hidden md:flex text-gray-800 bg-transparent shadow-md hover:shadow-black transition-all duration-300 rounded-lg w-12 h-12 left-4"></div>
+                <div className="swiper-button-next hidden md:flex text-white bg-[#0f323f] shadow-md hover:shadow-black transition-all duration-300 rounded-full w-10 h-10 right-4"></div>
+                <div className="swiper-button-prev hidden md:flex text-white bg-[#0f323f] shadow-md hover:shadow-black transition-all duration-300 rounded-full w-10 h-10 left-4"></div>
               </>
             )}
           </div>

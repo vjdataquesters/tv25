@@ -4,19 +4,16 @@ import Reveal from "../components/Reveal";
 const Image = ({ name, role, image, linkedin }) => {
   return (
     <div className="flex flex-col justify-around px-6 py-4 rounded-2xl bg-gray-100 hover:bg-gray-200 transition-all duration-300">
-      <p className="text-left w-full mb-1 text-lg font-medium">
-        {role}
-      </p>
+      <p className="text-left w-full mb-1 text-lg font-medium">{role}</p>
       <img
         className="w-52 h-52 rounded-3xl mx-auto transition-all duration-300"
         src={image ? image : "https://picsum.photos/200"}
         alt={name + " image"}
         draggable={false}
+        loading="lazy"
       />
       <a href={linkedin} target="_blank">
-        <p className="text-right w-full mt-1 hover:underline">
-          {name}
-        </p>
+        <p className="text-right w-full mt-1 hover:underline">{name}</p>
       </a>
     </div>
   );
@@ -69,11 +66,7 @@ export default function Team() {
               <Image
                 name={member.name}
                 role={member.domain || "Team Member"}
-                image={
-                  member.image
-                    ? `teamImages/${member.image}`
-                    : undefined
-                }
+                image={member.image ? `teamImages/${member.image}` : undefined}
                 linkedin={member.linkedin}
               />
             </Reveal>

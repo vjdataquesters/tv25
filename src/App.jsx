@@ -4,12 +4,10 @@ import { Analytics } from "@vercel/analytics/react";
 
 import router from "./pages";
 
-import Header from "./components/Header/Header";
+import Header from "./components/Header";
 import ScrollToTop from "./components/ScrollToTop";
 import Loading from "./components/Loading";
 import Footer from "./components/Footer";
-
-
 
 function App() {
   const [load, setLoad] = useState(true);
@@ -24,7 +22,7 @@ function App() {
   return (
     <Router>
       <Analytics />
-      <Loading load ={load} />
+      <Loading load={load} />
       <Header />
       <ScrollToTop />
       <div className="flex flex-col min-h-screen bg-blue-50/70">
@@ -33,9 +31,7 @@ function App() {
             <Route
               key={index}
               path={route.path}
-              element={
-                <route.component />
-              }
+              element={<route.component />}
             />
           ))}
         </Routes>

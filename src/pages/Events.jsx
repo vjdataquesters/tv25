@@ -1,7 +1,8 @@
-import "../components/Events/Events.css";
-import events from "../data/events.js";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import "../clip-art.css";
+
+import events from "../data/events.js";
 import Reveal from "../components/Reveal.jsx";
 
 export default function Events() {
@@ -18,8 +19,8 @@ export default function Events() {
   return (
     <>
       {/*Event highlights*/}
-      <section className="clip-art-1 min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] flex items-center justify-center px-4 sm:px-6 md:px-8">
-        <div className=" w-full md:w-2/3 pb-5">
+      <section className="clip-art-1 bg-gradient-to-b from-[#0f323f] via-[#0f323f] to-[#0f323f]/85 min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] flex items-center justify-center px-4 sm:px-6 md:px-8">
+        <div className="w-full pt-10 md:pt-0 md:w-2/3 pb-5">
           <h1 className="text-4xl sm:text-5xl pb-4 sm:pb-4 md:text-6xl md:pb-3 font-bold text-white">
             Discover Amazing Events we Organized
           </h1>

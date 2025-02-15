@@ -6,6 +6,7 @@ import { whatwedo } from "../data/whatwedo";
 import { ArrowRight } from "lucide-react";
 import { faculty } from "../data/team";
 import Reveal from "../components/Reveal";
+import "../clip-art.css";
 
 const TeamCard = ({ person }) => {
   return (
@@ -15,24 +16,20 @@ const TeamCard = ({ person }) => {
         target="_blank"
         aria-label={`View ${person.name}'s LinkedIn profile`}
       >
-        <div className="w-full max-w-[300px] flex flex-col gap-y-4 bg-[#EEEEEE] hover:scale-[105%] transition-all duration-[400ms] rounded-lg cursor-pointer place-self-center">
-          <div className="flex justify-center p-4">
-            <div className="w-[200px] h-[200px] relative overflow-hidden rounded-full bg-white">
-              <img
-                className="w-full h-full object-cover absolute"
-                src={
-                  person.image
-                    ? `teamImages/${person.image}`
-                    : "https://picsum.photos/200"
-                }
-                alt={person.name + " image"}
-              />
-            </div>
-          </div>
+        <div className="py-6 w-full max-w-[280px] mx-auto flex flex-col justify-center items-center bg-[#EEEEEE] hover:scale-[103%] hover:shadow-lg transition-all duration-[300ms] rounded-lg cursor-pointer">
+          <img
+            className="w-[200px] h-[200px] object-cover rounded-full"
+            src={
+              person.image
+                ? `teamImages/${person.image}`
+                : "https://picsum.photos/200"
+            }
+            alt={person.name + " image"}
+          />
           <p className="text-center text-black text-xl font-semibold tracking-wide">
             {person.name}
           </p>
-          <p className="text-center font-['Roboto'] text-base text-gray-600 pb-4 font-light">
+          <p className="text-center text-base text-gray-600 font-light">
             {person.role}
           </p>
         </div>
@@ -95,7 +92,7 @@ export default function Home() {
             </p>
 
             <Link to="/about">
-              <button className="rounded-sm w-32 h-10 font-['Roboto'] bg-white text-black border-none hover:bg-white/65  mt-8 group-hover:scale-105 transition-all duration-[300ms] ease-in-out">
+              <button className="rounded-sm w-32 h-10 bg-white text-black border-none hover:bg-white/65  mt-8 group-hover:scale-105 transition-all duration-[300ms] ease-in-out">
                 Know More
               </button>
             </Link>
@@ -105,7 +102,7 @@ export default function Home() {
       {/* what we do section*/}
       <div className="w-full max-w-3xl mx-auto my-6 text-center">
         <h2 className="text-3xl font-semibold">What we do?</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 my-8 mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 my-8 mx-auto px-2 sm:px-0">
           {whatwedo.map((d, index) => (
             <Reveal key={index}>
               <Link to={d?.example} key={index} className="flex justify-center">
@@ -144,7 +141,7 @@ export default function Home() {
       </div>
 
       {/* Glimpses section */}
-      <div className="clip-art-combined pt-16 pb-14">
+      <div className="clip-art-combined pt-16 pb-20">
         <section className="max-w-7xl md:max-w-[90%] h-full mx-auto">
           <div className="w-full">
             <h2 className="text-center text-3xl font-semibold text-white">
@@ -165,10 +162,10 @@ export default function Home() {
       <section className="max-w-7xl md:max-w-[90%] h-full py-6 px-4 mx-auto">
         <div className="w-full">
           <h1 className="text-center text-3xl font-semibold text-black mb-8">
-            Our Team
+            Our Coordinators
           </h1>
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-6  max-w-5xl mx-auto px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-4 max-w-5xl mx-auto px-4">
               {topTeam &&
                 topTeam.map((person, index) => (
                   <TeamCard key={index} person={person} />

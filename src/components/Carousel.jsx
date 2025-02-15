@@ -1,9 +1,12 @@
 import React from "react";
-import "./Home.css";
-import events from "../data/events";
-// import { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade } from "swiper/modules";
 
-function Carousel() {
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/effect-fade";
+
+const Carousel = () => {
   const carouselImages = [
     "/home-1.jpg",
     "/home-2.jpg",
@@ -13,35 +16,51 @@ function Carousel() {
     "/home-6.jpg",
   ];
 
-  // to dynamically load 2nd image from event data.
-  // const [carouselImages, setCarouselImages] = useState([]);
-  // useEffect(() => {
-  //   const recentYear = Object.keys(events.past)[0];
-  //   const image = events.past[recentYear]
-  //     .map((event) => event.pics[1] || null)
-  //     .filter((image) => image)
-  //     .slice(0, 6);
-  //   setCarouselImages(image);
-  // }, []);
-
   return (
-    <div className="c-div">
-      <div className="slider-carousel">
-        <div className="slider-track">
-          {carouselImages &&
-            carouselImages.map((img, index) => (
-              <div key={index} className="slide">
-                <img
-                  src={img}
-                  alt="Carousel image"
-                  draggable={false}
-                />
-              </div>
-            ))}
-        </div>
-      </div>
+    <div className="w-full overflow-hidden">
+      <Swiper
+        modules={[Autoplay, EffectFade]}
+        spaceBetween={30}
+        slidesPerView={3}
+        loop={true}
+        autoplay={{
+          delay: 1000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: false,
+        }}
+        className="w-full"
+        breakpoints={{
+          320: {
+            slidesPerView: 1.2,
+            spaceBetween: 10,
+          },
+          // when window width is >= 640px
+          640: {
+            slidesPerView: 2.3,
+            spaceBetween: 15,
+          },
+          // when window width is >= 868px
+          868: {
+            slidesPerView: 3.5,
+            spaceBetween: 20,
+          },
+        }}
+      >
+        {carouselImages.map((img, index) => (
+          <SwiperSlide key={index} className="py-8 px-2">
+            <div className="group relative">
+              <img
+                src={img}
+                alt={`Carousel image ${index + 1}`}
+                className="h-[200px] w-full rounded-lg object-cover"
+                draggable={false}
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
-}
+};
 
 export default Carousel;
