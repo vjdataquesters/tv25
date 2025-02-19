@@ -25,9 +25,9 @@ function Hit() {
       const res = data.find((obj) => obj.qr === key);
       if (res) {
         setQueryRes(res);
-        // setTimeout(() => {
-        //   navigate('/hit', { replace: true });
-        // }, 5000); 
+        setTimeout(() => {
+          navigate('/hit', { replace: true });
+        }, 5000); 
       }
     }
     setLoading(false);
