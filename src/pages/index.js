@@ -19,7 +19,7 @@ const router = [
   { path: "/team", component: Team },
   { path: "/newsletter", component: NewsLetter },
   { path: "/hit", component: Hit },
-  { path: "/hit-qrs", component: GenerateAllQrs },
+  { path: "/hitreloadedultrasecretendpoint", component: GenerateAllQrs },
   { path: "*", component: Home },
 ];
 
