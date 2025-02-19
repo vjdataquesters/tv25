@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import data from "../data/hit.json";
-
+import bg_img from "../assets/bg_img.jpg";
 /**
  * format for each question in json
  * {  
@@ -12,7 +12,6 @@ import data from "../data/hit.json";
  *   "image": "link to drive image" | null, - if not null, then question is "" to redirect to image link
  * }
  */
-
 function Hit() {
   const [params, setParams] = useSearchParams({ q: "" });
   const navigate = useNavigate();
@@ -55,15 +54,21 @@ function Hit() {
         <h2 className="text-2xl font-bold text-gray-700 mb-4">How to Play</h2>
         <ol className="text-left text-gray-600 space-y-3">
           <li className="flex items-start">
-            <span className="flex-shrink-0 bg-indigo-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-2 mt-0.5">1</span>
+            <span className="flex-shrink-0 bg-indigo-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-2 mt-0.5">
+              1
+            </span>
             <span>Find QR codes hidden throughout the game area</span>
           </li>
           <li className="flex items-start">
-            <span className="flex-shrink-0 bg-indigo-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-2 mt-0.5">2</span>
+            <span className="flex-shrink-0 bg-indigo-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-2 mt-0.5">
+              2
+            </span>
             <span>Scan them with your phone's camera</span>
           </li>
           <li className="flex items-start">
-            <span className="flex-shrink-0 bg-indigo-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-2 mt-0.5">3</span>
+            <span className="flex-shrink-0 bg-indigo-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-2 mt-0.5">
+              3
+            </span>
             <span>Answer the questions to go to next step</span>
           </li>
         </ol>
@@ -80,15 +85,16 @@ function Hit() {
 
     return (
       <div
-        className={`max-w-xl mt-10 w-full mx-auto text-center transition-opacity duration-500 ${animation ? 'opacity-100' : 'opacity-0'}`}
+        className={`max-w-xl mt-10 w-full mx-auto text-center transition-opacity duration-500 ${
+          animation ? "opacity-100" : "opacity-0"
+        }`}
       >
-        <div className={`bg-white rounded-lg shadow-xl p-6 border-t-4 border-${pathColor}-500`}>
+        <div
+          className={`bg-white rounded-lg shadow-xl p-6 border-t-4`}
+        >
           <div className="mb-6">
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">
-              Question
-            </h1>
-            <div className={`w-16 h-1 bg-${pathColor}-500 mx-auto rounded-full`}></div>
-            <p className="text-sm text-gray-500 mt-2">Path: {queryRes.color.toUpperCase()[0]}{queryRes.path}</p>
+            <h1 className="text-3xl font-bold text-gray-800 mb-2">Question</h1>
+            <div className={`w-16 h-1 mx-auto rounded-full`}></div>
           </div>
 
           <div className="bg-gray-50 p-5 rounded-lg mb-6">
@@ -101,8 +107,9 @@ function Hit() {
           </div>
         </div>
 
-        <div className="mt-6 text-gray-500 text-sm">
-          Part of <span className="font-semibold">Hit - Reloaded</span> • Keep hunting!
+        <div className="mt-6 text-black text-sm">
+          Part of <span className="font-semibold">Hit - Reloaded</span> • Keep
+          hunting!
         </div>
       </div>
     );
@@ -111,9 +118,17 @@ function Hit() {
   if (loading) return null;
 
   return (
-    <section className="py-10 px-4 bg-gradient-to-br from-indigo-50 to-gray-100 min-h-screen flex justify-center items-center">
-      {queryRes ? renderQuestion() : renderHomePage()}
-    </section>
+<section 
+  className="fixed inset-0 py-10 px-4 flex justify-center items-center bg-cover bg-center bg-no-repeat overflow-y-auto"
+  style={{
+    backgroundImage: `url(${bg_img})`,
+    // backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundBlendMode: 'overlay',
+    backgroundSize: "cover"
+  }}
+>
+  {queryRes ? renderQuestion() : renderHomePage()}
+</section>
   );
 }
 

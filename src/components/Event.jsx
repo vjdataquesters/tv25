@@ -58,18 +58,17 @@ export default function Event() {
             <ArrowLeft size={24} className="text-gray-700" />
           </Link>
         </div>
-
-        <div className="bg-white rounded-2xl p-6 shadow-sm space-y-6 flex flex-col">
-          <div className="grid gap-4 sm:grid-cols-3">
-            <div className="p-4 rounded-xl">
+        <div className="rounded-2xl p-4 shadow-sm space-y-4 flex flex-col">
+          <div className="grid gap-2 sm:grid-cols-3 sm:gap-4">
+            <div className="p-4 rounded-xl bg-[#dadce176]">
               <p className="text-lg font-semibold  mb-1">Date</p>
               <p className="font-medium text-gray-700">{event.date}</p>
             </div>
-            <div className="p-4 rounded-xl">
+            <div className="p-4 rounded-xl bg-[#dadce176]">
               <p className="text-lg font-semibold  mb-1">Time</p>
               <p className="font-medium text-gray-700">{event.timings}</p>
             </div>
-            <div className="p-4 rounded-xl">
+            <div className="p-4 rounded-xl bg-[#dadce176]">
               <p className="text-lg font-semibold  mb-1">Venue</p>
               <p className="font-medium text-gray-700">{event.venue}</p>
             </div>

@@ -18,9 +18,12 @@ export default function Events() {
   const colors = [
     "bg-gray-900",
     "bg-indigo-900",
-    "bg-blue-950",
+    "bg-blue-900",
     "bg-emerald-900",
     "bg-purple-950",
+    "bg-violet-600",
+    "bg-sky-600",
+    "bg-slate-600"
   ];
 
   return (
@@ -132,7 +135,7 @@ export default function Events() {
                           style={{ maxWidth: "100%" }}
                           alt={event.name}
                           draggable={false}
-                          className="w-full rounded-t-lg"
+                          className="w-full rounded-t-lg h-64"
                         />
 
                         <div className="p-7 pt-0">
@@ -157,7 +160,7 @@ export default function Events() {
                           <h2 className="text-2xl font-semibold mb-2 ">
                             {event.name}
                           </h2>
-                          <p className="text-gray-500 font-light font-['Roboto']">
+                          <p className="text-gray-700 font-light">
                             {event.date}
                           </p>
                           <p className="text-lg mt-2">{event.description}</p>

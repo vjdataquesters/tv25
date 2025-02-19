@@ -103,8 +103,7 @@ const events = {
         eventId: "langvision2025",
         image: "/events/LangVision/img1.jpg",
         date: "February 14th & 15th 2025",
-        venue:
-          "E-238 & 239, VNR Vignan Jyothi Institute of Engineering and Technology",
+        venue: "E-238 & 239, VNRVJIET",
         timings: "10:00 AM to 4:30 PM",
         pics: [
           "/events/LangVision/img1.jpg",
@@ -116,7 +115,7 @@ const events = {
           "LANGVISION - Exploring Large Language Models and Vector Search was an exciting two-day hands-on workshop that brought together students from all years to explore the power of Large Language Models (LLMs),Retrieval-Augmented Generation (RAG), and Vector Search.The objectives of the event were:\n\n● To introduce students to the fundamentals of LLMs, transformers, and tokenization\n● To explore real-world applications like ChatGPT and Gemini.\n● To Deploy a fine-tuned model on Hugging Face and build a Streamlit app using it.\n● To familiarize participants with accessing pre-trained LLMs via the Hugging Face access tokens.\n● To introduce LoRA (Low-Rank Adaptation) for efficient fine-tuning of LLMs.\n● To guide participants in preprocessing resume data to train an AI model for resume evaluation.\n● To explain the limitations of LLMs alone and the role of RAG in retrieving external knowledge.\n● To familiarize participants with relevant interview questions on LLMs and RAG.",
         // register: "https://forms.gle/imgsks2miQkZWHvu5",
         isGFormEmbeddable: false,
-        event_tags: ["AI", "LLMs", "RAG", "Workshop"],
+        event_tags: ["Artificial Intelligence", "LLMs", "Workshop"],
         description:
           "The event “LANGVISION - Shaping the Future of Gen AI & LLMs” will be held on February 14th and 15th. This hands-on workshop features Pranali Bose, a Machine Learning Engineer at DBS Bank, providing insights into Generative AI and Large Language Models",
         link: "/events/langvision2025",
@@ -266,7 +265,7 @@ const events = {
         name: "DATA VISUALIZATION USING TABLEAU",
         eventId: "tableau2k24",
         image: "/events/Tableau2k24/img1.png",
-        date: "21-03-2024",
+        date: "March 21st 2024",
         venue: "P Block, p-401,402",
         timings: "10:00 am - 4:30 pm",
         pics: [
@@ -286,7 +285,7 @@ const events = {
         name: "LTI Mind Tree DS Guest Lecture",
         eventId: "ltiGuestLecture2024",
         image: "/events/LtiMindTreeDS2024/img1.png",
-        date: "20-03-2024",
+        date: "March 20th 2024",
         venue: "APJ Abdul kalam Auditorium",
         timings: "11:00 am - 12:30 pm",
         pics: [
@@ -306,7 +305,7 @@ const events = {
         name: "HIT -  THE SECOND CHASE",
         eventId: "hitThe2ndChase",
         image: "/events/HitThe2ndChase/img1.png",
-        date: "11-02-2024",
+        date: "February 11th 2024",
         venue: "online",
         timings: "4:00 pm - 7:00 pm",
         pics: [
@@ -329,7 +328,7 @@ const events = {
         name: "BLOG-A-THON",
         eventId: "blogAThon",
         image: "/events/BlogAThon2023/img1.png",
-        date: "15-12-2023",
+        date: "December 15th 2023",
         venue: "A201, C106, B112/1",
         timings: "10:00am to 12:00pm",
         pics: [
@@ -350,7 +349,7 @@ const events = {
         name: "VJ DATA QUESTERS ORIENTATION 2023",
         eventId: "vjdqOrientation2023",
         image: "/events/VjdqOrientation2023/image.png",
-        date: "23-11-2023",
+        date: "November 23rd 2023",
         venue: "APJ AUDITORIUM",
         timings: "9:00 am - 2:00 pm",
         pics: [
@@ -370,7 +369,7 @@ const events = {
         name: "HIT - THE 1ST CHASE ",
         eventId: "hitThe1stChase",
         image: "/events/HitThe1stChase/img1.png",
-        date: "11-02-2023",
+        date: "February 11th 2023",
         venue: "online",
         timings: "3:00 pm - 4:00 pm",
         pics: [
@@ -392,7 +391,7 @@ const events = {
         name: "A GUEST LECTURE ON DATA SCIENCE JOURNEY IN 2023",
         eventId: "guestLecture2023",
         image: "/events/GuestLectureDS2023/img1.png",
-        date: "08-02-2023",
+        date: "February 8th 2023",
         venue: "KS Auditorium",
         timings: "10:00 am - 12:00 pm",
         pics: [

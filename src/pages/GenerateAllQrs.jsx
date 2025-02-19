@@ -2,17 +2,14 @@ import React from "react";
 import { QRCode } from "react-qrcode-logo";
 import qrData from "../data/hit.json";
 
-function GenerateAllQrs() {
-  // Map color names to hex values
+const GenerateAllQrs = () => {
   const colorMap = {
     'red': '#ff6600',
     'yellow': '#ffcc00',
     'blue': '#3399ff',
   };
   
-  // Get eye color - matching main color but slightly darker for contrast
   const getEyeColor = (color) => {
-    // Simple darkening function
     const darken = (hex, percent) => {
       let r = parseInt(hex.slice(1, 3), 16);
       let g = parseInt(hex.slice(3, 5), 16);
@@ -27,17 +24,66 @@ function GenerateAllQrs() {
     return darken(color, 0.2);
   };
 
-  const handleQrDownload = (obj, index) => {
-    const qrCanvas = document.getElementById(`qr-${index}`);
-    if (qrCanvas) {
-      const url = qrCanvas.toDataURL("image/png", 1.0); 
-      const a = document.createElement("a");
-      a.href = url;
-      // Create filename based on path and question details
-      const questionPreview = obj.image ? "image-question" : obj.question.substring(0, 15).replace(/\s+/g, '-');
-      const filename = `qr-${obj.color}-path${obj.path}-${questionPreview}-${index}.png`;
-      a.download = filename;
-      a.click();
+  const handleQrDownload = async (obj, globalIndex) => {
+    try {
+      // Validate if this is a special path QR code
+      if (obj.path === 'final' || obj.path === 'fooled') {
+        // Get the actual QR container for THIS specific QR
+        const qrContainer = document.getElementById(`qr-${obj.color}-${obj.path}-${obj.qr}`);
+        if (!qrContainer) {
+          throw new Error('QR container not found');
+        }
+        const canvas = qrContainer.getElementsByTagName('canvas')[0];
+        if (canvas) {
+          const dataUrl = canvas.toDataURL('image/png', 1.0);
+          const questionPreview = obj.image 
+            ? "image-question" 
+            : obj.question
+                .substring(0, 15)
+                .replace(/[^a-zA-Z0-9]/g, '-')
+                .toLowerCase();
+          
+          const filename = `qr-${obj.color}-path${obj.path}-${questionPreview}.png`;
+          
+          const link = document.createElement('a');
+          link.href = dataUrl;
+          link.download = filename;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
+      } else {
+        // Regular path QR code - use the original globalIndex method
+        const qrContainer = document.getElementById(`qr-${globalIndex}`);
+        if (!qrContainer) {
+          throw new Error('QR container not found');
+        }
+        
+        const canvas = qrContainer.getElementsByTagName('canvas')[0];
+        if (!canvas) {
+          throw new Error('Canvas element not found');
+        }
+        
+        const dataUrl = canvas.toDataURL('image/png', 1.0);
+        const questionPreview = obj.image 
+          ? "image-question" 
+          : obj.question
+              .substring(0, 15)
+              .replace(/[^a-zA-Z0-9]/g, '-')
+              .toLowerCase();
+        
+        const filename = `qr-${obj.color}-path${obj.path}-${questionPreview}.png`;
+        
+        const link = document.createElement('a');
+        link.href = dataUrl;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    } catch (error) {
+      console.error('Failed to download QR code:', error);
+      alert('Failed to download QR code. Please try again.');
     }
   };
 
@@ -53,12 +99,11 @@ function GenerateAllQrs() {
 
   return (
     <div className="py-8 px-4 mx-auto max-w-7xl">
-      <h1 className="text-3xl font-bold text-center mb-8">QR Code Generator</h1>
+      <h1 className="text-3xl font-bold text-center mb-8 pt-16">QR Code Generator</h1>
       
       {Object.entries(groupedQrs).map(([groupKey, items], groupIndex) => {
         const [color, path] = groupKey.split('-');
         const colorHex = colorMap[color] || '#000000';
-        
         return (
           <div key={groupKey} className="mb-10">
             <div className="flex items-center mb-4 border-b pb-2">
@@ -76,26 +121,29 @@ function GenerateAllQrs() {
                 const qrColor = colorMap[obj.color] || '#000000';
                 const eyeColor = getEyeColor(qrColor);
                 const globalIndex = groupIndex * items.length + index;
+                const qrId = obj.path === 'final' || obj.path === 'fooled' 
+                  ? `qr-${obj.color}-${obj.path}-${obj.qr}`
+                  : `qr-${globalIndex}`;
                 
                 return (
                   <div key={globalIndex} className="w-full bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
                     <div className="flex justify-center mb-3">
-                      <QRCode
-                        value={`https://vjdataquesters.vercel.app/hit?q=${obj.qr}`}
-                        size={350}
-                        fgColor={qrColor}
-                        eyeColor={eyeColor}
-                        qrStyle="squares"
-                        quietZone={10}
-                        ecLevel="H" 
-                        enableCORS={true}
-                        id={`qr-${globalIndex}`}
-                        removeQrCodeBehindLogo={true}
-                      />
+                      <div id={qrId}>
+                        <QRCode
+                          value={`https://vjdataquesters.vercel.app/hit?q=${obj.qr}`}
+                          size={350}
+                          fgColor={qrColor}
+                          eyeColor={eyeColor}
+                          qrStyle="squares"
+                          quietZone={10}
+                          ecLevel="H"
+                          enableCORS={true}
+                          removeQrCodeBehindLogo={true}
+                        />
+                      </div>
                     </div>
                     
                     <div className="flex flex-col items-center space-y-3">
-                      {/* Display content preview based on type */}
                       <div className="bg-gray-50 p-3 rounded-md w-full">
                         {obj.image ? (
                           <div className="flex flex-col items-center">
@@ -118,7 +166,6 @@ function GenerateAllQrs() {
                         </svg>
                         <span>Download QR Code</span>
                       </button>
-                      
                     </div>
                   </div>
                 );
@@ -129,6 +176,6 @@ function GenerateAllQrs() {
       })}
     </div>
   );
-}
+};
 
 export default GenerateAllQrs;
