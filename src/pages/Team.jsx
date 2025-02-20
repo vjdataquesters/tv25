@@ -13,7 +13,7 @@ const Image = ({ name, role, image, linkedin }) => {
         draggable={false}
         loading="lazy"
       />
-      <a href={linkedin} target="_blank" className="text-right w-full mt-1 text-black no-underline hover:underline">
+      <a href={linkedin} target="_blank" className="text-lg text-right w-full mt-1 text-black no-underline hover:underline">
         <p>{name}</p>
       </a>
     </div>
@@ -53,7 +53,7 @@ export default function Team() {
           Core Team
         </h1>
         <div className="mx-auto flex flex-wrap justify-center gap-3 max-w-7xl">
-          {currentteam.coreteam.map((member, index) => (
+          {currentteam.map((member, index) => (
             <Reveal key={index} className="w-full flex justify-center p-4">
               <Image
                 name={member.name}
@@ -66,24 +66,6 @@ export default function Team() {
         </div>
       </section>
 
-      <section className="mb-16">
-        {/* Uncomment and adjust this section as needed */}
-        {/* <h1 className="font-semibold text-3xl mb-8" id="actionteam">
-          Action Team
-        </h1>
-        <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 max-w-7xl">
-          {actionteam.map((member, index) => (
-            <Reveal key={index} className="w-full flex justify-center p-4">
-              <Image
-                name={member.name}
-                role={member.domain || "Team Member"}
-                image={member.image ? `teamImages/${member.image}` : undefined}
-                linkedin={member.linkedin}
-              />
-            </Reveal>
-          ))}
-        </div> */}
-      </section>
       <section className='mb-16'>
         <h1 className='mt-5 mb-4'>View Past Teams</h1>
         <div className='mb-4'>
@@ -108,26 +90,11 @@ export default function Team() {
             Core Team
           </h1>
           <div className="mx-auto flex flex-wrap justify-center gap-3 max-w-7xl">
-            {pastMembers.coreteam.map((member, index) => (
+            {pastMembers.map((member, index) => (
               <Reveal key={index} className="w-full flex justify-center p-4">
                 <Image
                   name={member.name}
                   role={member.role || "Team Member"}
-                  image={member.image ? `teamImages/${member.image}` : undefined}
-                  linkedin={member.linkedin}
-                />
-              </Reveal>
-            ))}
-          </div>
-          <h1 className="font-semibold text-3xl mb-12 mt-12" id="actionteam">
-            Action Team
-          </h1>
-          <div className="mx-auto flex flex-wrap justify-center gap-3 max-w-7xl">
-            {pastMembers.actionteam.map((member, index) => (
-              <Reveal key={index} className="w-full flex justify-center p-4">
-                <Image
-                  name={member.name}
-                  role={member.domain || "Team Member"}
                   image={member.image ? `teamImages/${member.image}` : undefined}
                   linkedin={member.linkedin}
                 />

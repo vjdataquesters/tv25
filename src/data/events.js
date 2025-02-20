@@ -88,7 +88,6 @@ const events = {
       event_tags: [
         "Limited Registrations",
         "App Development",
-        "Problem Solving",
       ],
       description:
         "MAP-AN-APP at Convergence 2k25 is on February 22, 2025, at VNRVJIET's APJ Abdul Kalam Auditorium (9:30 AM-1:00 PM). Teams of two will develop apps in Healthcare & Fintech themes for a ₹3500 prize pool and internship opportunities. Convergence pass required",
@@ -256,7 +255,7 @@ const events = {
           "/events/Technovista2024/img3.png",
         ],
         outcome: "",
-        event_tags: ["Technical Fest", "Coding", "Cyber Security", "Hackathon"],
+        event_tags: ["Technical Fest", "Coding", "Hackathon"],
         description:
           "TechnoVista is a premier collaborative event organized by the Data Science and Cyber Security Clubs, offering a diverse range of activities including a coding contest, cyber hunt, red teaming exercise, case study competition, hackathon, project expo, tech elocution, and guest lectures.",
         link: "/events/tv24",

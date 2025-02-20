@@ -5,26 +5,66 @@ import "../clip-art.css";
 import events from "../data/events.js";
 import Reveal from "../components/Reveal.jsx";
 
+const EventCard = ({ event }) => {
+  const navigate = useNavigate();
+  const colors = [
+    "bg-gray-900",
+    "bg-indigo-500",
+    "bg-blue-900",
+    "bg-emerald-400",
+    "bg-violet-500",
+    "bg-sky-500",
+    "bg-slate-600"
+  ];
+  return (
+    <div 
+      className="max-w-[400px] rounded-lg h-full shadow-2xl bg-gray-100 hover:shadow-[0px_25px_50px_-12px] transition-all duration-500 hover:backdrop-blur-sm hover:bg-gray-200 cursor-pointer"
+      onClick={() => navigate(event.link)}
+    >
+      <img
+        src={event.image}
+        style={{ maxWidth: "100%" }}
+        alt={event.name}
+        draggable={false}
+        className="w-full rounded-t-lg h-64"
+      />
+      
+      <div className="p-1 md:p-2 pt-0">
+        <div className="flex flex-row gap-2 my-4 overflow-x-auto scrollbar-hidden">
+          {event.event_tags.map((obj, index) => (
+            <div
+              key={index}
+              className={`inline-block  ${obj === "Limited Registrations"
+                  ? "bg-red-800"
+                  : colors[
+                  Math.floor(
+                    Math.random() * colors.length
+                  )
+                  ]
+                }  text-white text-sm rounded-xl text-center content-center py-1 px-[0.5rem]`}
+            >
+              <p className="text-sm">{obj}</p>
+            </div>
+          ))}
+        </div>
+        <h2 className="text-2xl font-semibold mb-2 ">{event.name}</h2>
+        <p className="text-gray-700 font-light">{event.date}</p>
+        <p className="text-lg mt-2">{event.description}</p>
+      </div>
+    </div>
+  );
+}
+
 export default function Events() {
   const recentYear = Object.keys(events.past)[0];
   const [pastevents, setPastevents] = useState(events.past[recentYear]);
   const [year, setyear] = useState(recentYear.slice(1));
-  const navigate = useNavigate();
 
   const handleYearChange = (e) => {
     setPastevents(events.past[e]);
     setyear(e.slice(1));
   };
-  const colors = [
-    "bg-gray-900",
-    "bg-indigo-900",
-    "bg-blue-900",
-    "bg-emerald-900",
-    "bg-purple-950",
-    "bg-violet-600",
-    "bg-sky-600",
-    "bg-slate-600"
-  ];
+
 
   return (
     <>
@@ -53,46 +93,8 @@ export default function Events() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pb-8">
                   {events.upcoming.map((event, index) => (
                     <Reveal key={index}>
-                      <div
-                        className="max-w-[400px] rounded-lg h-full shadow-2xl bg-gray-100 hover:shadow-[0px_25px_50px_-12px] transition-all duration-500 hover:backdrop-blur-sm hover:bg-gray-200 cursor-pointer"
-                        onClick={() => navigate(event.link)}
-                      >
-                        <img
-                          src={event.image}
-                          style={{ maxWidth: "100%" }}
-                          alt={event.name}
-                          draggable={false}
-                          className="w-full rounded-t-lg"
-                        />
 
-                        <div className="p-2 pt-0">
-                          <div className="flex flex-row gap-2 my-4 overflow-x-auto scrollbar-hidden">
-                            {event.event_tags.map((obj, index) => (
-                              <div
-                                key={index}
-                                className={`inline-block  ${
-                                  obj === "Limited Registrations"
-                                    ? "bg-red-800"
-                                    : colors[
-                                        Math.floor(
-                                          Math.random() * colors.length
-                                        )
-                                      ]
-                                }  text-white text-sm rounded-xl text-center content-center py-1 px-[0.5rem]`}
-                              >
-                                <p className="text-sm">{obj}</p>
-                              </div>
-                            ))}
-                          </div>
-                          <h2 className="text-2xl font-semibold mb-2 ">
-                            {event.name}
-                          </h2>
-                          <p className="text-gray-500 font-light font-['Roboto']">
-                            {event.date}
-                          </p>
-                          <p className="text-lg mt-2">{event.description}</p>
-                        </div>
-                      </div>
+                      <EventCard event={event} />
                     </Reveal>
                   ))}
                 </div>
@@ -106,11 +108,10 @@ export default function Events() {
               {Object.keys(events.past).map((eventyear) => (
                 <button
                   key={eventyear}
-                  className={`text-center w-24 h-9 font-bold text-lg border-2 border-black text-black shadow-[5px_5px_5px_0px] hover:shadow-none  transition-all rounded-md  ${
-                    year.toString() === eventyear.slice(1)
+                  className={`text-center w-24 h-9 font-bold text-lg border-2 border-black text-black shadow-[5px_5px_5px_0px] hover:shadow-none  transition-all rounded-md  ${year.toString() === eventyear.slice(1)
                       ? "bg-[#0f323f] text-white"
                       : "bg-white"
-                  } `}
+                    } `}
                   onClick={() => handleYearChange(eventyear)}
                 >
                   {eventyear.slice(1)}
@@ -126,46 +127,7 @@ export default function Events() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pb-8">
                   {pastevents.map((event, index) => (
                     <Reveal key={index}>
-                      <div
-                        className="max-w-[400px] rounded-lg h-full shadow-2xl bg-gray-100 hover:shadow-[0px_25px_50px_-12px] transition-all duration-500 hover:backdrop-blur-sm hover:bg-gray-200 cursor-pointer"
-                        onClick={() => navigate(event.link)}
-                      >
-                        <img
-                          src={event.image}
-                          style={{ maxWidth: "100%" }}
-                          alt={event.name}
-                          draggable={false}
-                          className="w-full rounded-t-lg h-64"
-                        />
-
-                        <div className="p-7 pt-0">
-                          <div className="flex flex-row gap-2 my-4 overflow-x-auto scrollbar-hidden">
-                            {event.event_tags.map((obj, index) => (
-                              <div
-                                key={index}
-                                className={`inline-block  ${
-                                  obj === "Limited Registrations"
-                                    ? "bg-red-800"
-                                    : colors[
-                                        Math.floor(
-                                          Math.random() * colors.length
-                                        )
-                                      ]
-                                }  text-white text-sm rounded-xl text-center content-center py-1 px-[0.5rem]`}
-                              >
-                                <p className="text-sm">{obj}</p>
-                              </div>
-                            ))}
-                          </div>
-                          <h2 className="text-2xl font-semibold mb-2 ">
-                            {event.name}
-                          </h2>
-                          <p className="text-gray-700 font-light">
-                            {event.date}
-                          </p>
-                          <p className="text-lg mt-2">{event.description}</p>
-                        </div>
-                      </div>
+                      <EventCard event={event} />
                     </Reveal>
                   ))}
                 </div>

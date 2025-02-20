@@ -121,7 +121,7 @@ export default function Event() {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
               }}
-              className="w-full max-w-5xl md:h-[38rem] mx-auto rounded-lg overflow-hidden py-8"
+              className="w-full max-w-5xl md:h-[42rem] mx-auto rounded-lg overflow-hidden py-8"
             >
               {event.pics.map((pic, index) => (
                 <SwiperSlide key={index}>
