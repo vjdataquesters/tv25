@@ -121,7 +121,7 @@ export default function Event() {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
               }}
-              className="w-full max-w-5xl md:h-[42rem] mx-auto rounded-lg overflow-hidden py-8"
+              className="w-full md:h-[42rem] mx-auto rounded-lg overflow-hidden py-8"
             >
               {event.pics.map((pic, index) => (
                 <SwiperSlide key={index}>
@@ -136,8 +136,8 @@ export default function Event() {
             </Swiper>
             {event.pics?.length > 1 && (
               <>
-                <div className="swiper-button-next hidden md:flex text-white bg-[#0f323f] shadow-md hover:shadow-black transition-all duration-300 rounded-full w-10 h-10 right-4"></div>
-                <div className="swiper-button-prev hidden md:flex text-white bg-[#0f323f] shadow-md hover:shadow-black transition-all duration-300 rounded-full w-10 h-10 left-4"></div>
+                <div className="swiper-button-next hidden md:flex text-black bg-white shadow-md hover:shadow-black transition-all duration-300 rounded-full w-10 h-10 right-4"></div>
+                <div className="swiper-button-prev hidden md:flex text-black bg-white shadow-md hover:shadow-black transition-all duration-300 rounded-full w-10 h-10 left-4"></div>
               </>
             )}
           </div>
