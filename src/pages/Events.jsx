@@ -9,12 +9,21 @@ const EventCard = ({ event }) => {
   const navigate = useNavigate();
   const colors = [
     "bg-gray-900",
-    "bg-indigo-500",
-    "bg-blue-900",
-    "bg-emerald-400",
-    "bg-violet-500",
-    "bg-sky-500",
-    "bg-slate-600"
+    "bg-indigo-600",
+    "bg-blue-800",
+    "bg-emerald-600",
+    "bg-violet-700",
+    "bg-sky-600",
+    "bg-slate-700",
+    "bg-teal-600",
+    "bg-purple-600",
+    "bg-cyan-600",
+    "bg-rose-600",
+    "bg-green-700",
+    "bg-amber-600",
+    "bg-pink-600",
+    "bg-orange-600",
+    "bg-lime-600"
   ];
   return (
     <div 
@@ -30,7 +39,7 @@ const EventCard = ({ event }) => {
       />
       
       <div className="p-1 md:p-2 pt-0">
-        <div className="flex flex-row gap-2 my-4 overflow-x-auto scrollbar-hidden">
+        <div className="w-full flex flex-row gap-2 my-2 overflow-x-auto small-scrollbar-y">
           {event.event_tags.map((obj, index) => (
             <div
               key={index}
@@ -41,7 +50,7 @@ const EventCard = ({ event }) => {
                     Math.random() * colors.length
                   )
                   ]
-                }  text-white text-sm rounded-xl text-center content-center py-1 px-[0.5rem]`}
+                }  text-white text-sm rounded-xl text-nowrap text-center content-center py-[2px] px-2 mb-2`}
             >
               <p className="text-sm">{obj}</p>
             </div>
@@ -90,7 +99,7 @@ export default function Events() {
                 <h2 className="text-4xl text-center font-bold mb-7 ">
                   Upcoming Events
                 </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-8">
                   {events.upcoming.map((event, index) => (
                     <Reveal key={index}>
 
@@ -124,7 +133,7 @@ export default function Events() {
               <>
                 {/* Past events */}
                 <h2 className="text-2xl">Events of year {year}</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-8">
                   {pastevents.map((event, index) => (
                     <Reveal key={index}>
                       <EventCard event={event} />

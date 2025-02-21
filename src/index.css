@@ -243,6 +243,14 @@ body::-webkit-scrollbar {
   border-radius: 3px;
 }
 
+.small-scrollbar-y::-webkit-scrollbar {
+  height: 2px;
+}
+.small-scrollbar-y::-webkit-scrollbar-thumb {
+  background-color: rgba(104, 96, 96, 0.426);
+  border-radius: 3px;
+}
+
 /* Event.jsx */
 
 .swiper-button-next::after,
