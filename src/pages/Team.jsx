@@ -22,10 +22,15 @@ const Image = ({ name, role, image, linkedin }) => {
 
 export default function Team() {
 
-  const [pastMembers,setPastMembers]=useState([]);
-  const [selectedYear,setSelectedYear]=useState(null)
+  const [pastMembers, setPastMembers] = useState([]);
+  const [selectedYear, setSelectedYear] = useState(null)
 
-  const handleYearChange=(year)=>{
+  const handleYearChange = (year) => {
+    if(selectedYear === year){
+      setPastMembers([])
+      setSelectedYear(null)
+      return
+    }
     setPastMembers(pastteams[year])
     setSelectedYear(year)
   }
@@ -69,39 +74,39 @@ export default function Team() {
       <section className='mb-16'>
         <h1 className='mt-5 mb-4'>View Past Teams</h1>
         <div className='mb-4'>
-          {Object.keys(pastteams).map((year)=>(
+          {Object.keys(pastteams).map((year) => (
             <button
               key={year}
-              className={`text-center mx-4 w-24 h-11 font-bold text-lg border-2 border-black text-black shadow-[5px_5px_5px_0px] hover:shadow-none  transition-all rounded-md  ${
-                selectedYear===year
+              className={`text-center mx-4 w-24 h-11 font-bold text-lg border-2 border-black text-black shadow-[5px_5px_5px_0px] hover:shadow-none  transition-all rounded-md  ${selectedYear === year
                   ? "bg-[#0f323f] text-white"
                   : "bg-white"
-              } `}
-              onClick={()=>handleYearChange(year)}
+                } `}
+              onClick={() => {
+                handleYearChange(year)
+              }}
             >
               {year}
             </button>
           ))}
         </div>
-        {selectedYear===null?<div></div>
-        :
-        <div>
-          <h1 className="font-semibold text-3xl mb-8" id="coreteam">
-            Core Team
-          </h1>
-          <div className="mx-auto flex flex-wrap justify-center gap-3 max-w-7xl">
-            {pastMembers.map((member, index) => (
-              <Reveal key={index} className="w-full flex justify-center p-4">
-                <Image
-                  name={member.name}
-                  role={member.role || "Team Member"}
-                  image={member.image ? `teamImages/${member.image}` : undefined}
-                  linkedin={member.linkedin}
-                />
-              </Reveal>
-            ))}
+        {selectedYear &&
+          <div>
+            <h1 className="font-semibold text-3xl mb-8" id="coreteam">
+              Core Team
+            </h1>
+            <div className="mx-auto flex flex-wrap justify-center gap-3 max-w-7xl">
+              {pastMembers.map((member, index) => (
+                <Reveal key={index} className="w-full flex justify-center p-4">
+                  <Image
+                    name={member.name}
+                    role={member.role || "Team Member"}
+                    image={member.image ? `teamImages/${member.image}` : undefined}
+                    linkedin={member.linkedin}
+                  />
+                </Reveal>
+              ))}
+            </div>
           </div>
-        </div>
         }
 
       </section>
