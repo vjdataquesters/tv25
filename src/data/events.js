@@ -125,7 +125,7 @@ const events = {
         timings: "10:00 AM to 4:30 PM",
         pics: [
           "/events/LangVision/img1.jpg",
-          "/events/LangVision/img2.jpg",
+          "/events/LangVision/img5.jpg",
           "/events/LangVision/img3.jpg",
           "/events/LangVision/img4.jpg",
         ],
