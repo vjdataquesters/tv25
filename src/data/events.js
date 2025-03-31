@@ -43,7 +43,7 @@ const events = {
       image: "/events/CloudCraft2025/img1.png",
       date: "April 7th & 8th 2025",
       venue: "APJ Abdul Kalam Auditorium",
-      timings: "10:00 AM to 4:00 PM",
+      timings: "9:30 AM to 4:00 PM",
       pics: ["/events/CloudCraft2025/img1.png"],
       // winners:"",
       // outcome:
@@ -52,7 +52,7 @@ const events = {
       isGFormEmbeddable: false,
       event_tags: ["Workshop", "Cloud", "AWS"],
       description:
-        "A 2 day workshop on Cloud computing concepts,with hands-on practice of AWS",
+        "Hands-On AWS Workshop-Boost up your cloud skills being a part of this engaging 2-day Workshop conducted on 7th & 8th of April, where ideas take flight in the CLOUD.Guided by Industry experts. This fully interactive session ensures you don't just learn but implement real world cloud solutions.",
       link: "/events/cloud-craft",
     },
   ],

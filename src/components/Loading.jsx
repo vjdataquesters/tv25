@@ -16,7 +16,7 @@ export default function Loading(props) {
     <div className="loading" id={props.load ? "loading" : "loading-none"}>
       <motion.img
         src="/logo.png"
-        className="size-80"
+        className="size-56 md:size-72"
         variants={loadingVariants}
         animate={loadingVariants.animate}
         draggable={false}

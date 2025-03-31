@@ -31,9 +31,12 @@ const transitionVariants = {
 };
 const pulseVariants = {
   animate: {
-    // scale: [1, 1.1, 1],
-    opacity: [0.5, 1, 0.5],
-    transition: { duration: 0.8, repeat: Infinity, ease: "easeInOut" },
+    opacity: [0.2, 0.6, 1, 0.6, 0.2],
+    transition: {
+      duration: 1.2,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
   },
 };
 
@@ -241,7 +244,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus, formStatus }) => {
             Account Holder: <span id="accountHolder">K. Adithya</span>
           </p>
           <img
-            src="/paymentsQR.png"
+            src="/paymentsQR.jpg"
             alt="Payment QR Code"
             className="max-w-[200px] mx-auto rounded shadow"
           />
