@@ -10,7 +10,7 @@ const RegistrationForm = () => {
       </div>
       <div className="hidden md:flex justify-center items-center py-20 min-h-screen">
         {/* Main Container */}
-        <div className="flex flex-col md:flex-row w-full md:max-w-6xl bg-white  ">
+        <div className="flex flex-col md:flex-row w-full md:max-w-6xl bg-white rounded-lg ">
           {/* Left Section (Hidden on small screens) */}
           <div className="hidden md:flex md:w-1/2  text-white justify-center items-center rounded-l-lg">
             <Leftside />
