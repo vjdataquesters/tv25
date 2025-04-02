@@ -91,16 +91,17 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus, formStatus }) => {
       className="md:h-[80vh]"
     >
       <div className="flex flex-col justify-center">
-        <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-gray-900">
-            <span className="text-blue-500">&lt;/&gt;</span> Cloud Craft
-          </h1>
-
-          <div className="flex flex-wrap items-center gap-2 bg-gray-100 px-3 py-1.5 rounded-lg shadow-sm border w-fit">
+        <div className="flex items-center justify-between w-full">
+          <div>
+            <h1 className="text-lg md:text-2xl font-bold text-gray-900">
+              <span className="text-blue-500">&lt;/&gt;</span> Cloud Craft
+            </h1>
+          </div>
+          <div className="flex items-center gap-2 bg-gray-100 px-1 md:px-3 py-1 md:py-1.5 rounded-lg shadow-sm border w-fit">
             <span className="text-xs sm:text-sm font-medium text-gray-800">
               Slots Left:
             </span>
-            <span className="px-3 py-1 text-xs sm:text-sm font-semibold text-white bg-[#236e9c] rounded-md shadow">
+            <span className="px-1 md:px-3 py-1 text-xs sm:text-sm font-semibold text-white bg-[#236e9c] rounded-md shadow">
               {formStatus.maxRegistrations - formStatus.currentRegistrations}
             </span>
           </div>

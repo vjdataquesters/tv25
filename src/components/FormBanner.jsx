@@ -20,7 +20,13 @@ const Leftside = () => {
         >
           CloudCraft
         </motion.h1>
-        <Cloud size={40} className="text-white" />
+        <motion.div
+          initial={{ y: 0 }}
+          animate={{ y: [0, -15, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+        >
+          <Cloud size={40} className="text-white" />
+        </motion.div>
       </div>
 
       {/* Subtitle */}
