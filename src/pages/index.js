@@ -8,9 +8,9 @@ import Technovista from "../components/Technovista";
 import NewsLetter from "./NewsLetter";
 import Gallery from "./Gallery";
 import RegistrationForm from "./RegistrationForm";
-
+import EventTimeTV from "../components/EventTimeTV";
 const router = [
-  { path: "/", component: Technovista },
+  { path: "/", component: EventTimeTV },
   { path: "/home", component: Home },
   { path: "/about", component: About },
   { path: "/testimonials", component: Testimonials },
