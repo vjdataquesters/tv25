@@ -8,6 +8,8 @@ import Technovista from "../components/Technovista";
 import NewsLetter from "./NewsLetter";
 import Gallery from "./Gallery";
 import RegistrationForm from "./RegistrationForm";
+import Technovistaform from '../components/TechnovistaForm.jsx'
+
 
 const router = [
   { path: "/", component: Technovista },
@@ -21,6 +23,7 @@ const router = [
   { path: "/newsletter", component: NewsLetter },
   { path: "/gallery", component: Gallery },
   { path: "/register", component: RegistrationForm },
+  { path: "/TVForm", component: Technovistaform },
   { path: "*", component: Home },
 ];
 
