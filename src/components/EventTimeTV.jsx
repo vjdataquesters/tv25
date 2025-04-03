@@ -1,17 +1,17 @@
 import React from 'react';
 import day2Bg from '../assets/designs/Layout.svg';
 import Image from '../../public/events/BlogAThon2023/img1.png'
-
+import bgImage from '../assets/designs/backgroung.gif'
 function EventTimeTV() {
   return (
-    <div>
-    <div className="py-8 pl-8 bg-black pb-2">
+    <div >
+    <div className="py-8 pl-8 bg-black pb-2 "  style={{ backgroundImage: `url(${bgImage})` }}>
               <span className="bg-yellow-400 px-6 text-3xl font-bold rounded-sm md:rounded-md">TechnoVista</span>
               <p className="text-white text-6xl  leading-none">EVENTS</p>
             </div>
             <hr className="border-t-2  border-white" />
             
-    <div className="min-h-fit bg-black overflow-hidden relative flex flex-row justify-around flex-wrap p-4">
+    <div className="min-h-fit bg-black overflow-hidden relative flex flex-row justify-around flex-wrap p-4" style={{ backgroundImage: `url(${bgImage})` }}>
       {/* Day 1 */}
       <div className="relative w-[300px] h-[600px] bg-black text-white font-mono mb-8">
         <img src={day2Bg} alt="Day 2 Background"  style={{ height: '600px', width: '700px', objectFit: 'cover' }}/>
@@ -78,6 +78,7 @@ function EventTimeTV() {
         </div>
         </div>
     </div>
+    
     </div>
   );
 }
