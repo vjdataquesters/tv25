@@ -14,7 +14,7 @@ function EventTimeTV() {
     <div className="min-h-fit bg-black overflow-hidden relative flex flex-row justify-around flex-wrap p-4">
       {/* Day 1 */}
       <div className="relative w-[300px] h-[600px] bg-black text-white font-mono mb-8">
-        <img src={day2Bg} alt="Day 2 Background"  style={{ height: '600px', width: '550px', objectFit: 'contain' }}/>
+        <img src={day2Bg} alt="Day 2 Background"  style={{ height: '600px', width: '700px', objectFit: 'cover' }}/>
         <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-6xl font-bold tracking-widest text-white">
           DAY1
         </div>
@@ -35,7 +35,7 @@ function EventTimeTV() {
 
       {/* Day 2 */}
       <div className="relative w-[300px] h-[600px] bg-black  text-white font-mono mb-8">
-        <img src={day2Bg} alt="Day 2 Background" style={{ height: '600px', width: '550px', objectFit: 'contain' }} />
+        <img src={day2Bg} alt="Day 2 Background" style={{ height: '600px', width: '700px', objectFit: 'cover' }} />
         <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-6xl font-bold tracking-widest text-white">
           DAY2
         </div>
@@ -59,7 +59,7 @@ function EventTimeTV() {
 
       {/* Day 3 */}
       <div className="relative w-[300px] h-[600px] bg-black  text-white font-mono mb-8">
-        <img src={day2Bg} alt="Day 2 Background" style={{ height: '600px', width: '550px', objectFit: 'contain' }} />
+        <img src={day2Bg} alt="Day 2 Background" style={{ height: '600px', width: '700px', objectFit: 'cover' }} />
         <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-6xl font-bold tracking-widest text-white">
           DAY3
         </div>
