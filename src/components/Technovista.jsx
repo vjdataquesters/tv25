@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 import Reveal from "./Reveal";
+import { House } from "lucide-react";
 
 const data = [
   {
@@ -74,14 +76,15 @@ const data = [
 ];
 
 export default function Technovista() {
-
+  const navigate = useNavigate();
   return (
     <div className="w-full">
+      <div className="p-1 bg-gray-300 w-10 h-10 flex justify-center items-center m-3 rounded-lg">
+        <House onClick={() => navigate("/home")} />
+      </div>
       <div className="w-[90%] sm:w-[80%] min-h-screen mt-20 m-auto ">
         <div className="flex flex-col justify-center items-center gap-10 min-h-[calc(100vh-4.5rem)]">
-          <h1 className="text-center text-5xl sm:text-7xl">
-            𝕋𝔼ℂℍℕ𝕆𝕍𝕀𝕊𝕋𝔸 2024
-          </h1>
+          <h1 className="text-center text-5xl sm:text-7xl">𝕋𝔼ℂℍℕ𝕆𝕍𝕀𝕊𝕋𝔸 2024</h1>
           <div className="mt-4 w-full flex flex-col lg:flex-row gap-8 sm:gap-12 items-center lg:items-start">
             <img
               src="/events/Technovista2024/img1.png"
@@ -92,7 +95,9 @@ export default function Technovista() {
             <div>
               <h2 className="text-2xl py-2">
                 Conducted on 10th, 11th, 12th of June 2024 at{" "}
-                <span className="font-semibold">VNR Vignan Jyothi Institute of Engineering and Technology </span>
+                <span className="font-semibold">
+                  VNR Vignan Jyothi Institute of Engineering and Technology{" "}
+                </span>
               </h2>
               <p className="text-black text-[18px] leading-normal">
                 TechnoVista is a premier collaborative event organized by the

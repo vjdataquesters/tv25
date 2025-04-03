@@ -10,7 +10,8 @@ import Gallery from "./Gallery";
 import RegistrationForm from "./RegistrationForm";
 
 const router = [
-  { path: "/", component: Home },
+  { path: "/", component: Technovista },
+  { path: "/home", component: Home },
   { path: "/about", component: About },
   { path: "/testimonials", component: Testimonials },
   { path: "/events", component: Events },

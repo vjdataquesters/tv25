@@ -45,11 +45,15 @@ function App() {
       )
     );
   }
+  function HeaderComp() {
+    const { pathname } = useLocation();
+    return pathname !== "/" && <Header />;
+  }
   return (
     <Router>
       <Analytics />
       <Loading load={load} />
-      <Header />
+      <HeaderComp />
       <ScrollToTop />
       <div className="flex flex-col min-h-screen bg-blue-50/70">
         <Routes>
