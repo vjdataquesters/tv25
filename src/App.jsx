@@ -31,7 +31,8 @@ function App() {
     return (
       pathname !== "/hit" &&
       pathname !== "/hitreloadedultrasecretendpoint" &&
-      pathname !== "/register" && (
+      pathname !== "/register" &&
+      pathname !== "/" && (
         <div className="fixed bottom-2 md:bottom-14 right-2 flex flex-col gap-2 z-10">
           {events.upcoming.map((e, i) => (
             <PromoDiv
@@ -48,6 +49,10 @@ function App() {
   function HeaderComp() {
     const { pathname } = useLocation();
     return pathname !== "/" && <Header />;
+  }
+  function FooterComp() {
+    const { pathname } = useLocation();
+    return pathname !== "/" && <Footer />;
   }
   return (
     <Router>
@@ -67,7 +72,7 @@ function App() {
         </Routes>
       </div>
       <PromoSection />
-      <Footer />
+      <FooterComp />
     </Router>
   );
 }

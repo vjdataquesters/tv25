@@ -4,10 +4,11 @@ import Events from "./Events";
 import Team from "./Team";
 import Testimonials from "./Testimonials";
 import Event from "../components/Event";
-import Technovista from "../components/Technovista";
+import Technovista from "./Technovista";
 import NewsLetter from "./NewsLetter";
 import Gallery from "./Gallery";
 import RegistrationForm from "./RegistrationForm";
+
 
 const router = [
   { path: "/", component: Technovista },
