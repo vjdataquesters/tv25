@@ -10,7 +10,6 @@ const FormBanner = () => {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 1 }}
     >
-      {/* Rocket Animation - To Top Right */}
       <motion.div
         className="absolute"
         initial={{ x: "50%", y: "50%", rotate: -45 }}

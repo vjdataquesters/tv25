@@ -1,24 +1,21 @@
-import React, { useEffect } from "react";
-import { motion } from "framer-motion";
-// import TechnovistaForm from "./TechnovistaForm";
+import React, { useEffect, useState } from "react";
+import { motion, useScroll, useTransform, useAnimation } from "framer-motion";
+import WhatWeGot from "../components/TVComponents/WhatWeGot";
+import Intro from "../components/TVComponents/Intro";
 
-const Technovista = ({ onComplete }) => {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (onComplete) onComplete();
-    }, 4000);
+const Technovista = () => {
+  const { scrollY } = useScroll();
+  const [introDone, setIntroDone] = useState(false);
+  const controls = useAnimation();
 
-    return () => clearTimeout(timer);
-  }, [onComplete]);
+  const scale = useTransform(scrollY, [0, 300], [1, 3]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
-  // Split text animation for the title
   const titleVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-      },
+      transition: { staggerChildren: 0.08 },
     },
   };
 
@@ -31,30 +28,27 @@ const Technovista = ({ onComplete }) => {
     },
   };
 
-  const letters = Array.from("TECHNOVISTA");
+  const letters = Array.from("TECHNOVISTA     2k25");
+
+  // Delay before triggering scroll-based transition
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIntroDone(true);
+      controls.start({ scale: 3, opacity: 0, transition: { duration: 1 } });
+    }, 2000); // wait for 2 seconds
+    return () => clearTimeout(timer);
+  }, [controls]);
 
   return (
-    <div className="fixed inset-0 bg-black flex flex-col items-center justify-center z-50">
-      <div className="relative z-10 flex flex-col items-center">
-        <motion.div
-          variants={titleVariants}
-          initial="hidden"
-          animate="visible"
-          className="flex items-center justify-center"
-        >
-          {letters.map((letter, index) => (
-            <motion.span
-              key={index}
-              variants={letterVariants}
-              className={`text-7xl font-semibold md:text-5xl p-1 font-orbitron ${
-                index >= 6 ? "text-amber-400" : "text-white"
-              }`}
-            >
-              {letter}
-            </motion.span>
-          ))}
-        </motion.div>
-      </div>
+    <div className="bg-black min-h-[200vh] relative">
+      {/* Intro Section */}
+      <Intro />
+
+      {introDone && (
+        <div className="relative z-10">
+          <WhatWeGot />
+        </div>
+      )}
     </div>
   );
 };

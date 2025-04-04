@@ -30,7 +30,7 @@ function Countdown() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white p-6">
+    <div className="flex flex-col items-center justify-center bg-black text-white p-10">
       
       {/* Countdown Section */}
       <div className="w-full flex flex-col items-center">
