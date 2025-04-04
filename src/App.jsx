@@ -15,43 +15,47 @@ import Loading from "./components/Loading";
 import Footer from "./components/Footer";
 import { PromoDiv } from "./components/PromoDiv";
 import events from "./data/events";
-import TechnovistaLayout from "./TechnovistaLayout";
 
-function PromoSection({ pathname }) {
-  if (
-    pathname === "/hit" ||
-    pathname === "/hitreloadedultrasecretendpoint" ||
-    pathname === "/register"
-  ) {
-    return null;
-  }
-
-  return (
-    <div className="fixed bottom-2 md:bottom-14 right-2 flex flex-col gap-2 z-10">
-      {events.upcoming.map((e, i) => (
-        <PromoDiv
-          key={i}
-          eventName={e.name}
-          eventLink={e.link}
-          eventStatus="upcoming"
-        />
-      ))}
-    </div>
-  );
-}
-
-function LayoutManager({ load }) {
+function LayoutWrapper() {
   const { pathname } = useLocation();
+  const [load, setLoad] = useState(true);
 
-  if (pathname === "/") {
-    return <TechnovistaLayout />;
+  // Add paths where layout should be hidden
+  const noLayoutRoutes = ["/", "/tv25/register"];
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoad(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const notTV = !noLayoutRoutes.includes(pathname);
+
+  function PromoSection() {
+    return (
+      pathname !== "/hit" &&
+      pathname !== "/hitreloadedultrasecretendpoint" &&
+      pathname !== "/register" && (
+        <div className="fixed bottom-2 md:bottom-14 right-2 flex flex-col gap-2 z-10">
+          {events.upcoming.map((e, i) => (
+            <PromoDiv
+              key={i}
+              eventName={e.name}
+              eventLink={e.link}
+              eventStatus="upcoming"
+            />
+          ))}
+        </div>
+      )
+    );
   }
 
   return (
     <>
       <Analytics />
-      <Loading load={load} />
-      <Header />
+      {notTV && <Loading load={load} />}
+      {notTV && <Header />}
       <ScrollToTop />
       <div className="flex flex-col min-h-screen bg-blue-50/70">
         <Routes>
@@ -64,26 +68,16 @@ function LayoutManager({ load }) {
           ))}
         </Routes>
       </div>
-      <PromoSection pathname={pathname} />
-      <Footer />
+      {notTV && <PromoSection />}
+      {notTV && <Footer />}
     </>
   );
 }
 
 function App() {
-  const [load, setLoad] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoad(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <Router>
-      <LayoutManager load={load} />
+      <LayoutWrapper />
     </Router>
   );
 }

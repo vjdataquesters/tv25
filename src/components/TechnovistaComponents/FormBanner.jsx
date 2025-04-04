@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Cloud, Server, Database, Rocket, Flame } from "lucide-react";
 
-const Leftside = () => {
+const FormBanner = () => {
   return (
     <motion.div
       className="text-white text-center w-full flex flex-col justify-center items-center h-full rounded-l-lg bg-gradient-to-r from-yellow-500 to-orange-400 relative overflow-hidden"
@@ -15,39 +15,39 @@ const Leftside = () => {
         className="absolute"
         initial={{ x: "50%", y: "50%", rotate: -45 }}
         animate={{ x: "120%", y: "-20%" }}
-        transition={{ 
-          delay: 1, 
-          duration: 2, 
-          ease: "easeOut" 
+        transition={{
+          delay: 1,
+          duration: 2,
+          ease: "easeOut",
         }}
       >
         <div className="relative">
           <Rocket size={36} className="text-white" />
           {/* Fire/Exhaust Effect */}
-          <motion.div 
+          <motion.div
             className="absolute -bottom-4 -left-2 rotate-45"
-            animate={{ 
+            animate={{
               scale: [1, 1.2, 1],
               opacity: [0.7, 1, 0.7],
             }}
             transition={{
               duration: 0.5,
               repeat: Infinity,
-              repeatType: "reverse"
+              repeatType: "reverse",
             }}
           >
             <Flame size={24} className="text-orange-500" />
           </motion.div>
-          <motion.div 
+          <motion.div
             className="absolute -bottom-6 -left-3 rotate-45"
-            animate={{ 
+            animate={{
               scale: [1, 1.3, 1],
               opacity: [0.7, 1, 0.7],
             }}
             transition={{
               duration: 0.4,
               repeat: Infinity,
-              repeatType: "reverse"
+              repeatType: "reverse",
             }}
           >
             <Flame size={20} className="text-yellow-500" />
@@ -60,39 +60,39 @@ const Leftside = () => {
         className="absolute"
         initial={{ x: "50%", y: "50%", rotate: -135 }}
         animate={{ x: "-20%", y: "-20%" }}
-        transition={{ 
-          delay: 1, 
-          duration: 2, 
-          ease: "easeOut" 
+        transition={{
+          delay: 1,
+          duration: 2,
+          ease: "easeOut",
         }}
       >
         <div className="relative">
           <Rocket size={36} className="text-white" />
           {/* Fire/Exhaust Effect */}
-          <motion.div 
+          <motion.div
             className="absolute -bottom-4 -left-2 rotate-135"
-            animate={{ 
+            animate={{
               scale: [1, 1.2, 1],
               opacity: [0.7, 1, 0.7],
             }}
             transition={{
               duration: 0.5,
               repeat: Infinity,
-              repeatType: "reverse"
+              repeatType: "reverse",
             }}
           >
             <Flame size={24} className="text-orange-500" />
           </motion.div>
-          <motion.div 
+          <motion.div
             className="absolute -bottom-6 -left-3 rotate-135"
-            animate={{ 
+            animate={{
               scale: [1, 1.3, 1],
               opacity: [0.7, 1, 0.7],
             }}
             transition={{
               duration: 0.4,
               repeat: Infinity,
-              repeatType: "reverse"
+              repeatType: "reverse",
             }}
           >
             <Flame size={20} className="text-yellow-500" />
@@ -176,4 +176,4 @@ const Leftside = () => {
   );
 };
 
-export default Leftside;
+export default FormBanner;

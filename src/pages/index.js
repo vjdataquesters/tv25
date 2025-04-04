@@ -6,9 +6,12 @@ import Testimonials from "./Testimonials";
 import Event from "../components/Event";
 import NewsLetter from "./NewsLetter";
 import Gallery from "./Gallery";
-import RegistrationForm from "./RegistrationForm";
+import Technovista from "./Technovista";
+import TechnovistaForm from "./TechnovistaForm";
 
 const router = [
+  { path: "/", component: Technovista },
+  { path: "/tv25/register", component: TechnovistaForm },
   { path: "/home", component: Home },
   { path: "/about", component: About },
   { path: "/testimonials", component: Testimonials },
@@ -17,7 +20,6 @@ const router = [
   { path: "/team", component: Team },
   { path: "/newsletter", component: NewsLetter },
   { path: "/gallery", component: Gallery },
-  { path: "/register", component: RegistrationForm },
   { path: "*", component: Home },
 ];
 

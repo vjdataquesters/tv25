@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+// import TechnovistaForm from "./TechnovistaForm";
 
-const TechnovistaLayout = ({ onComplete }) => {
+const Technovista = ({ onComplete }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       if (onComplete) onComplete();
@@ -58,4 +59,4 @@ const TechnovistaLayout = ({ onComplete }) => {
   );
 };
 
-export default TechnovistaLayout;
+export default Technovista;
