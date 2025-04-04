@@ -3,7 +3,7 @@ import { Calendar } from "lucide-react";
 
 function Countdown() {
     const calculateTimeLeft = () => {
-    const targetDate = new Date("April 13, 2025 00:00:00").getTime();
+    const targetDate = new Date("April 25, 2025 00:00:00").getTime();
     const now = new Date().getTime();
     const difference = targetDate - now;
 

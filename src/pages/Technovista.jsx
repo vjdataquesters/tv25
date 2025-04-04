@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform, useAnimation } from "framer-motion";
 import WhatWeGot from "../components/TVComponents/WhatWeGot";
 import Intro from "../components/TVComponents/Intro";
+import EventTimeTV from "../components/TVComponents/EventTimeTV";
 
 const Technovista = () => {
   const { scrollY } = useScroll();
@@ -47,6 +48,7 @@ const Technovista = () => {
       {introDone && (
         <div className="relative z-10">
           <WhatWeGot />
+          <EventTimeTV />
         </div>
       )}
     </div>
