@@ -438,7 +438,7 @@ const FormClosedComp = () => {
         </motion.div>
     );
 };
-const TForm = () => {
+const TechnovistaMainForm = () => {
     const [loadingStatus, setLoadingStatus] = useState(false);
     const [submitStatus, setSubmitStatus] = useState(false);
     const [formStatus, setFormStatus] = useState({
@@ -517,4 +517,4 @@ const TForm = () => {
     );
 };
 
-export default TForm;
+export default TechnovistaMainForm;

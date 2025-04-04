@@ -6,7 +6,7 @@ const TechnovistaForm = () => {
   return (
     <>
       <div className="flex md:hidden pt-20">
-       
+        <TForm />
       </div>
       <div className="hidden md:flex justify-center items-center py-20 min-h-screen bg-black">
         {/* Main Container */}
