@@ -241,7 +241,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus, formStatus }) => {
         <div className="text-center">
           <label className="text-md text-gray-950 block">Payment QR Code</label>
           <p>
-            Account Holder: <span id="accountHolder">K. Adithya</span>
+            Account Holder: <span id="accountHolder">Bandi Bindu Sree</span>
           </p>
           <img
             src="/paymentsQR.jpg"
