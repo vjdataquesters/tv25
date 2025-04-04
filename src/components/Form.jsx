@@ -390,7 +390,7 @@ const Form = () => {
   const [loadingStatus, setLoadingStatus] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(false);
   const [formStatus, setFormStatus] = useState({
-    isFormOpen: true,
+    isFormOpen: false,
     // currentRegistrations: 0,
     // maxRegistrations: 150,
     // lastUpdated: "",
