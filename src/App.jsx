@@ -16,18 +16,23 @@ import Footer from "./components/Footer";
 import { PromoDiv } from "./components/PromoDiv";
 import events from "./data/events";
 
-function App() {
+function LayoutWrapper() {
+  const { pathname } = useLocation();
   const [load, setLoad] = useState(true);
+
+  // Add paths where layout should be hidden
+  const noLayoutRoutes = ["/", "/tv25/register"];
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoad(false);
     }, 3000);
-
     return () => clearTimeout(timer);
   }, []);
 
+  const notTV = !noLayoutRoutes.includes(pathname);
+
   function PromoSection() {
-    const { pathname } = useLocation();
     return (
       pathname !== "/hit" &&
       pathname !== "/hitreloadedultrasecretendpoint" &&
@@ -45,15 +50,12 @@ function App() {
       )
     );
   }
-  function HeaderComp() {
-    const { pathname } = useLocation();
-    return pathname !== "/" && <Header />;
-  }
+
   return (
-    <Router>
+    <>
       <Analytics />
-      <Loading load={load} />
-      <HeaderComp />
+      {notTV && <Loading load={load} />}
+      {notTV && <Header />}
       <ScrollToTop />
       <div className="flex flex-col min-h-screen bg-blue-50/70">
         <Routes>
@@ -66,8 +68,16 @@ function App() {
           ))}
         </Routes>
       </div>
-      <PromoSection />
-      <Footer />
+      {notTV && <PromoSection />}
+      {notTV && <Footer />}
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <LayoutWrapper />
     </Router>
   );
 }
