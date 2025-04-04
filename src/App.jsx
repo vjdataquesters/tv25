@@ -15,50 +15,43 @@ import Loading from "./components/Loading";
 import Footer from "./components/Footer";
 import { PromoDiv } from "./components/PromoDiv";
 import events from "./data/events";
+import TechnovistaLayout from "./TechnovistaLayout";
 
-function App() {
-  const [load, setLoad] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoad(false);
-    }, 3000);
+function PromoSection({ pathname }) {
+  if (
+    pathname === "/hit" ||
+    pathname === "/hitreloadedultrasecretendpoint" ||
+    pathname === "/register"
+  ) {
+    return null;
+  }
 
-    return () => clearTimeout(timer);
-  }, []);
-
-  function PromoSection() {
-    const { pathname } = useLocation();
-    return (
-      pathname !== "/hit" &&
-      pathname !== "/hitreloadedultrasecretendpoint" &&
-      pathname !== "/register" &&
-      pathname !== "/" && (
-        <div className="fixed bottom-2 md:bottom-14 right-2 flex flex-col gap-2 z-10">
-          {events.upcoming.map((e, i) => (
-            <PromoDiv
-              key={i}
-              eventName={e.name}
-              eventLink={e.link}
-              eventStatus="upcoming"
-            />
-          ))}
-        </div>
-      )
-    );
-  }
-  function HeaderComp() {
-    const { pathname } = useLocation();
-    return pathname !== "/" && <Header />;
-  }
-  function FooterComp() {
-    const { pathname } = useLocation();
-    return pathname !== "/" && <Footer />;
-  }
   return (
-    <Router>
+    <div className="fixed bottom-2 md:bottom-14 right-2 flex flex-col gap-2 z-10">
+      {events.upcoming.map((e, i) => (
+        <PromoDiv
+          key={i}
+          eventName={e.name}
+          eventLink={e.link}
+          eventStatus="upcoming"
+        />
+      ))}
+    </div>
+  );
+}
+
+function LayoutManager({ load }) {
+  const { pathname } = useLocation();
+
+  if (pathname === "/") {
+    return <TechnovistaLayout />;
+  }
+
+  return (
+    <>
       <Analytics />
       <Loading load={load} />
-      <HeaderComp />
+      <Header />
       <ScrollToTop />
       <div className="flex flex-col min-h-screen bg-blue-50/70">
         <Routes>
@@ -71,8 +64,26 @@ function App() {
           ))}
         </Routes>
       </div>
-      <PromoSection />
-      <FooterComp />
+      <PromoSection pathname={pathname} />
+      <Footer />
+    </>
+  );
+}
+
+function App() {
+  const [load, setLoad] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoad(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <Router>
+      <LayoutManager load={load} />
     </Router>
   );
 }
