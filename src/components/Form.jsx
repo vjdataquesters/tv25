@@ -373,16 +373,32 @@ const FormClosedComp = () => {
       initial={{ opacity: 0, filter: "blur(10px)" }}
       animate={{ opacity: 1, filter: "blur(0px)" }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="flex flex-col items-center justify-center min-h-[80vh] p-6 "
+      className="flex flex-col items-center justify-center min-h-[80vh] p-6"
     >
       <Lock size={48} className="text-gray-500 mb-4" />
-      <h2 className="text-xl font-bold text-gray-800">Registration Closed</h2>
+      <h2 className="text-xl font-bold text-gray-800 mb-2">Registration Closed</h2>
       <p className="text-gray-600 text-center">
         Thank you for your interest in our event!
       </p>
-      <p className="text-gray-600 text-center">
+      <p className="text-gray-600 text-center mb-6">
         Registration is no longer being accepted.
       </p>
+      
+      <div className="mt-6 border-t pt-6 w-full max-w-md">
+        <p className="text-gray-800 font-medium text-center mb-3">
+          In case of any queries contact our student coordinators!
+        </p>
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <div className="bg-gray-100 px-4 py-3 rounded-lg text-center w-full sm:w-auto">
+            <p className="font-medium text-gray-800">RICHARD LUKE</p>
+            <p className="text-gray-600">72072 58403</p>
+          </div>
+          <div className="bg-gray-100 px-4 py-3 rounded-lg text-center w-full sm:w-auto">
+            <p className="font-medium text-gray-800">RENUKA SAI</p>
+            <p className="text-gray-600">90631 08170</p>
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 };
