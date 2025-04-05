@@ -82,6 +82,10 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus, formStatus }) => {
     }
   };
 
+
+  // TECH NOTE -> REGISTRATION FORM FOR TECHNOVISTA SHALL NOT BE LIKE CLOUD CRAFT, 
+  // MAKE IT SIMPLE WITH THEME OF BLACK AND GOLD -> BG BLACK, AND EVERYTHING GOLD -- KARTHIKEYA
+
   return (
     <motion.div
       key="form"

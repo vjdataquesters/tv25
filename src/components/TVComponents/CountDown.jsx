@@ -44,7 +44,7 @@ function Countdown({ isVisible }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="text-6xl md:text-7xl font-bold text-center mb-8 text-yellow-400"
+            className="text-3xl md:text-7xl font-bold text-center mb-8 text-yellow-400"
             style={{
               textShadow: '0 2px 8px rgba(234, 179, 8, 0.3)'
             }}

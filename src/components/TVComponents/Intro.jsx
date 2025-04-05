@@ -44,7 +44,7 @@ const Intro = () => {
     },
   };
 
-  const letters = Array.from("TECHNOVISTA     2k25");
+  const letters = Array.from("TECHNOVISTA  2k25");
 
   return (
     <motion.div
@@ -63,7 +63,7 @@ const Intro = () => {
           <motion.span
             key={index}
             variants={letterVariants}
-            className={`text-7xl font-semibold md:text-5xl p-1 font-orbitron ${
+            className={`font-semibold text-base md:text-7xl p-1 font-orbitron ${
               index >= 6 ? "text-amber-400" : "text-white"
             }`}
           >

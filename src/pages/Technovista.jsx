@@ -24,14 +24,14 @@ const Technovista = () => {
   }, []);
 
   const titleVariants = {
-    hidden: { 
+    hidden: {
       opacity: 1,
-      y: 0 
+      y: 0
     },
     visible: {
       opacity: 1,
       y: isMobile ? "20vh" : "35vh",
-      transition: { 
+      transition: {
         duration: 0.8,
         ease: "easeOut"
       },
@@ -39,16 +39,16 @@ const Technovista = () => {
   };
 
   const letterVariants = {
-    hidden: { 
-      opacity: 0, 
-      scale: 0.5, 
-      y: 100 
+    hidden: {
+      opacity: 0,
+      scale: 0.5,
+      y: 100
     },
     visible: {
       opacity: 1,
       scale: 1,
       y: 0,
-      transition: { 
+      transition: {
         duration: 0.8,
         ease: "easeOut"
       },
@@ -88,7 +88,7 @@ const Technovista = () => {
           <WhatWeGot />
           <div ref={sectionRef} className="relative h-[90vh] overflow-hidden">
             {/* Carousel */}
-            <motion.div 
+            <motion.div
               variants={titleVariants}
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
@@ -97,9 +97,9 @@ const Technovista = () => {
             >
               <Carousel3D />
             </motion.div>
-            
+
             {/* Countdown */}
-            <motion.div 
+            <motion.div
               variants={letterVariants}
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
@@ -111,6 +111,11 @@ const Technovista = () => {
             </motion.div>
           </div>
           <EventTimeTV />
+          <div className="w-screen  text-center">
+            <h1 className="text-[0px] sm:text-[100px] md:text-[130px] lg:text-[160px] xl:text-[230px] leading-none font-bold text-amber-500/30 tracking-wide">
+              TECHNOVISTA
+            </h1>
+          </div>
           <FooterTV />
         </div>
       )}

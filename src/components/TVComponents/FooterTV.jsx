@@ -3,7 +3,7 @@ import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa'
 
 const FooterTV = () => {
   return (
-    <footer className="relative bg-black text-white w-full overflow-hidden border-t mt-5 border-yellow-400/30">
+    <footer className="relative bg-black text-white w-full overflow-hidden border-t  border-yellow-400/30">
       {/* Top Golden Line */}
       <div className="absolute top-0 left-0 w-full">
         <div className="golden-line-horizontal top-line"></div>

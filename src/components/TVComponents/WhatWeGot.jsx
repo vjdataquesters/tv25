@@ -57,8 +57,7 @@ function WhatWeGot() {
 
   return (
     <div 
-      className="min-h-screen flex flex-col items-center justify-center text-white text-center"
-      style={{ padding: '0 16px', overflow: 'hidden', background: 'none' }}
+      className="min-h-screen bg-none overflow-hidden px-4 pt-10 md:pt-0 flex flex-col items-center justify-center text-white text-center"
     >
       <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-6 leading-tight">
         WHAT WE'VE GOT FOR YOU
@@ -77,7 +76,7 @@ function WhatWeGot() {
         libero ut tempore nostrum.
       </p>
       <div 
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12 w-full max-w-6xl"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-8 mt-8 md:mt-12 w-full max-w-6xl"
         style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}
       >
         {stats.map((stat, index) => (

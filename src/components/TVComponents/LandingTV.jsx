@@ -281,7 +281,7 @@ const LandingTV = () => {
     // Initial animations
     setTimeout(() => {
       createMajorExplosion(window.innerWidth / 2, window.innerHeight / 2, 300);
-      createDecorativeCircuits();
+      // createDecorativeCircuits();
 
       setTimeout(() => {
         gsap.to('.nav', {
@@ -366,7 +366,7 @@ const LandingTV = () => {
 
     createDebris(x, y, 10 + Math.floor(size/10));
     createCracks(x, y, 3 + Math.floor(size/50));
-    createPulseRings(x, y);
+    // createPulseRings(x, y);
   };
 
   const createMajorExplosion = (x, y, size) => {

@@ -23,7 +23,7 @@ const Carousel3D = () => {
 
   const images = imageFiles;
   const totalImages = images.length;  
-  const rotationSpeed = 0.5;
+  const rotationSpeed = 0.2;
   const [angle, setAngle] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isAnimating, setIsAnimating] = useState(true);
