@@ -18,6 +18,7 @@ import events from "./data/events";
 
 function App() {
   const [load, setLoad] = useState(true);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoad(false);
