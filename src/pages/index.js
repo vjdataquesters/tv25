@@ -12,7 +12,7 @@ import LandingTV from "../components/TVComponents/LandingTV";
 
 const router = [
   { path: "/", component: LandingTV },
-  { path: "/tv25/register", component: TechnovistaForm },
+  { path: "/technovista/register", component: TechnovistaForm },
   { path: "/technovista", component: Technovista },
   { path: "/home", component: Home },
   { path: "/about", component: About },

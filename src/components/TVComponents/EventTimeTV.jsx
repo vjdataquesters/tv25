@@ -17,7 +17,7 @@ function EventTimeTV() {
   };
 
   return (
-    <div className="bg-black mx-auto md:w-2/3">
+    <div className="bg-black mx-auto md:w-2/3" id="event-time-line">
       <div className="py-8 pl-4 md:pl-8 bg-black pb-2">
         <span className="bg-yellow-400  px-4 md:px-6 text-xl md:text-3xl font-bold rounded-sm md:rounded-md">
           Event Timeline

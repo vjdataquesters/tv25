@@ -19,21 +19,21 @@ const Technovista = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 480);
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const titleVariants = {
     hidden: {
       opacity: 1,
-      y: 0
+      y: 0,
     },
     visible: {
       opacity: 1,
       y: isMobile ? "20vh" : "35vh",
       transition: {
         duration: 0.8,
-        ease: "easeOut"
+        ease: "easeOut",
       },
     },
   };
@@ -42,7 +42,7 @@ const Technovista = () => {
     hidden: {
       opacity: 0,
       scale: 0.5,
-      y: 100
+      y: 100,
     },
     visible: {
       opacity: 1,
@@ -50,7 +50,7 @@ const Technovista = () => {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
+        ease: "easeOut",
       },
     },
   };
@@ -68,36 +68,27 @@ const Technovista = () => {
       if (!sectionRef.current) return;
 
       const rect = sectionRef.current.getBoundingClientRect();
-      const triggerPoint = window.innerHeight - (rect.height * 0.65);
+      const triggerPoint = window.innerHeight - rect.height * 0.65;
       const isInView = rect.top <= triggerPoint;
-      setIsVisible(isInView);
+      if (isInView && !isVisible) {
+        setIsVisible(true);
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [isMobile]);
 
   return (
-    <div className="bg-black min-h-[200vh] relative">
+    <div className="bg-black min-h-[250vh] relative">
       <Intro />
 
       {introDone && (
-        <div className="relative z-10 flex flex-col">
+        <div className="relative z-10 flex flex-col pt-10">
           <WhatWeGot />
           <div ref={sectionRef} className="relative h-[90vh] overflow-hidden">
-            {/* Carousel */}
-            <motion.div
-              variants={titleVariants}
-              initial="hidden"
-              animate={isVisible ? "visible" : "hidden"}
-              whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-              className="absolute inset-0 mt-20 md:mt-24"
-            >
-              <Carousel3D />
-            </motion.div>
-
             {/* Countdown */}
             <motion.div
               variants={letterVariants}
@@ -109,9 +100,19 @@ const Technovista = () => {
                 <Countdown isVisible={isVisible} />
               </div>
             </motion.div>
+            {/* Carousel */}
+            <motion.div
+              variants={titleVariants}
+              initial="hidden"
+              animate={isVisible ? "visible" : "hidden"}
+              whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+              className="absolute inset-0 mt-20 md:mt-24"
+            >
+              <Carousel3D />
+            </motion.div>
           </div>
           <EventTimeTV />
-          <div className="w-screen  text-center">
+          <div className="w-screen  text-center select-none">
             <h1 className="text-[0px] sm:text-[100px] md:text-[130px] lg:text-[160px] xl:text-[230px] leading-none font-bold text-amber-500/30 tracking-wide">
               TECHNOVISTA
             </h1>

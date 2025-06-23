@@ -1,10 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Carousel3D = () => {
   const navigate = useNavigate();
-  const imageFiles = Object.keys(import.meta.glob('/public/events/Technovista2024/*.png', { eager: true }))
-    .map(path => path.replace('/public', ''))
+  const imageFiles = Object.keys(
+    import.meta.glob("/public/events/Technovista2024/*.png", { eager: true })
+  )
+    .map((path) => path.replace("/public", ""))
     .sort((a, b) => {
       const aNum = a.match(/img(\d+)/);
       const bNum = b.match(/img(\d+)/);
@@ -15,14 +17,14 @@ const Carousel3D = () => {
     });
 
   const eventPaths = {
-    'img1': '/events/technovista/coding',
-    'img2': '/events/technovista/robotics',
-    'img3': '/events/technovista/gaming',
-    'img4': '/events/technovista/workshops',
+    img1: "/events/technovista/coding",
+    img2: "/events/technovista/robotics",
+    img3: "/events/technovista/gaming",
+    img4: "/events/technovista/workshops",
   };
 
   const images = imageFiles;
-  const totalImages = images.length;  
+  const totalImages = images.length;
   const rotationSpeed = 0.2;
   const [angle, setAngle] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -32,39 +34,39 @@ const Carousel3D = () => {
   const [startAngle, setStartAngle] = useState(0);
   const [dimensions, setDimensions] = useState({
     width: window.innerWidth,
-    height: window.innerHeight
+    height: window.innerHeight,
   });
   const requestRef = useRef(null);
   const containerRef = useRef(null);
-  
+
   const isPhone = dimensions.width <= 480;
   const isTablet = dimensions.width <= 768 && dimensions.width > 480;
   const angleStep = 360 / totalImages;
 
   const colorPalette = {
     black: "#0B0B0B",
-    darkGray: "#333533", 
+    darkGray: "#333533",
     cream: "#F2ECDD",
     gold: "#F5CB5C",
-    deepGold: "#CD9C20"
+    deepGold: "#CD9C20",
   };
 
   useEffect(() => {
     const handleResize = () => {
       setDimensions({
         width: window.innerWidth,
-        height: window.innerHeight
+        height: window.innerHeight,
       });
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
     if (isAnimating && !isDragging && hoveredIndex === null) {
       const animate = () => {
-        setAngle(prevAngle => (prevAngle + rotationSpeed) % 360);
+        setAngle((prevAngle) => (prevAngle + rotationSpeed) % 360);
         requestRef.current = requestAnimationFrame(animate);
       };
       requestRef.current = requestAnimationFrame(animate);
@@ -79,7 +81,7 @@ const Carousel3D = () => {
       radius: dimensions.width <= 380 ? 280 : 320,
       perspective: 1000,
       transitionSpeed: 0.7,
-      gridSize: 40
+      gridSize: 40,
     },
     tablet: {
       imageWidth: 180,
@@ -87,7 +89,7 @@ const Carousel3D = () => {
       radius: 360,
       perspective: 1100,
       transitionSpeed: 0.7,
-      gridSize: 50
+      gridSize: 50,
     },
     desktop: {
       imageWidth: 240,
@@ -95,11 +97,15 @@ const Carousel3D = () => {
       radius: 540,
       perspective: 1200,
       transitionSpeed: 0.7,
-      gridSize: 60
-    }
+      gridSize: 60,
+    },
   };
 
-  const currentConfig = isPhone ? config.phone : isTablet ? config.tablet : config.desktop;
+  const currentConfig = isPhone
+    ? config.phone
+    : isTablet
+    ? config.tablet
+    : config.desktop;
 
   const handleTouchStart = (e) => {
     if (isAnimating) setIsAnimating(false);
@@ -112,7 +118,7 @@ const Carousel3D = () => {
     if (!isDragging) return;
     const deltaX = e.touches[0].clientX - startX;
     const sensitivity = 0.5;
-    setAngle(startAngle + (deltaX * sensitivity));
+    setAngle(startAngle + deltaX * sensitivity);
   };
 
   const handleTouchEnd = () => {
@@ -133,7 +139,7 @@ const Carousel3D = () => {
     if (!isDragging) return;
     const deltaX = e.clientX - startX;
     const sensitivity = 0.5;
-    setAngle(startAngle + (deltaX * sensitivity));
+    setAngle(startAngle + deltaX * sensitivity);
   };
 
   const handleMouseUp = () => {
@@ -166,10 +172,10 @@ const Carousel3D = () => {
   };
 
   return (
-    <div 
+    <div
       className="w-full h-[35vh] flex items-center justify-center overflow-visible bg-black relative -mt-8"
-      style={{ 
-        perspective: `${currentConfig.perspective}px`
+      style={{
+        perspective: `${currentConfig.perspective}px`,
       }}
       ref={containerRef}
       onTouchStart={handleTouchStart}
@@ -181,22 +187,22 @@ const Carousel3D = () => {
       onMouseLeave={handleMouseLeave}
     >
       {/* Background Grid */}
-      <div 
-        className="absolute inset-0 w-[200%] h-[200%] left-[-50%] pointer-events-none" 
+      <div
+        className="absolute inset-0 w-[200%] h-[200%] left-[-50%] pointer-events-none"
         style={{
           backgroundImage: `
             linear-gradient(to right, ${colorPalette.gold}30 1px, transparent 1px),
             linear-gradient(to bottom, ${colorPalette.gold}30 1px, transparent 1px)
           `,
           backgroundSize: `${currentConfig.gridSize}px ${currentConfig.gridSize}px`,
-          transform: 'perspective(1000px) rotateX(35deg) translateY(-30%)',
-          transformOrigin: 'center center',
+          transform: "perspective(1000px) rotateX(35deg) translateY(-30%)",
+          transformOrigin: "center center",
           opacity: 0.3,
-          backgroundPosition: 'center',
-          animation: 'gridMove 20s linear infinite'
+          backgroundPosition: "center",
+          animation: "gridMove 20s linear infinite",
         }}
       />
-      
+
       <style>
         {`
           @keyframes gridMove {
@@ -206,12 +212,14 @@ const Carousel3D = () => {
         `}
       </style>
 
-      <div 
+      <div
         className="relative"
-        style={{ 
-          transformStyle: 'preserve-3d',
+        style={{
+          transformStyle: "preserve-3d",
           transform: `rotateY(${angle}deg)`,
-          transition: isDragging ? 'none' : `transform ${currentConfig.transitionSpeed}s ease-out`,
+          transition: isDragging
+            ? "none"
+            : `transform ${currentConfig.transitionSpeed}s ease-out`,
         }}
       >
         {images.map((image, index) => {
@@ -219,51 +227,58 @@ const Carousel3D = () => {
           const radians = (-1 * itemAngle * Math.PI) / 180;
           const x = Math.sin(radians) * currentConfig.radius;
           const z = Math.cos(radians) * currentConfig.radius;
-          
+
           const imgName = image.match(/img\d+/)?.[0];
-          const eventPath = eventPaths[imgName] || '/events/technovista';
+          const eventPath = eventPaths[imgName] || "/events/technovista";
 
           return (
             <div
               key={index}
               style={{
-                position: 'absolute',
+                position: "absolute",
                 width: `${currentConfig.imageWidth}px`,
                 height: `${currentConfig.imageHeight}px`,
-                left: '50%',
-                top: '50%',
+                left: "50%",
+                top: "50%",
                 marginLeft: `-${currentConfig.imageWidth / 2}px`,
                 marginTop: `-${currentConfig.imageHeight / 2}px`,
-                transformStyle: 'preserve-3d',
+                transformStyle: "preserve-3d",
                 transform: `translateX(${x}px) translateZ(${z}px) rotateY(${-itemAngle}deg)`,
-                transition: isDragging ? 'none' : `all ${currentConfig.transitionSpeed}s ease-out`,
-                cursor: 'pointer',
-                zIndex: hoveredIndex === index ? 10 : 'auto',
-                WebkitTapHighlightColor: 'transparent'
+                transition: isDragging
+                  ? "none"
+                  : `all ${currentConfig.transitionSpeed}s ease-out`,
+                cursor: "pointer",
+                zIndex: hoveredIndex === index ? 10 : "auto",
+                WebkitTapHighlightColor: "transparent",
               }}
               onClick={() => !isDragging && navigate(eventPath)}
               onMouseEnter={() => handleImageHover(index)}
               onMouseLeave={handleImageLeave}
             >
-              <div 
+              <div
                 className="w-full h-full rounded-lg overflow-hidden shadow-xl"
                 style={{
-                  transformStyle: 'preserve-3d',
-                  border: hoveredIndex === index 
-                    ? `2px solid ${colorPalette.gold}` 
-                    : `1px solid ${colorPalette.cream}`,
+                  transformStyle: "preserve-3d",
+                  border:
+                    hoveredIndex === index
+                      ? `2px solid ${colorPalette.gold}`
+                      : `1px solid ${colorPalette.cream}`,
                   backgroundColor: colorPalette.black,
-                  transform: hoveredIndex === index ? 'scale(1.25)' : 'scale(1)',
-                  transition: isDragging ? 'none' : `all ${currentConfig.transitionSpeed}s ease-out`,
-                  boxShadow: hoveredIndex === index 
-                    ? `0 0 20px ${colorPalette.gold}80` 
-                    : 'none'
+                  transform:
+                    hoveredIndex === index ? "scale(1.25)" : "scale(1)",
+                  transition: isDragging
+                    ? "none"
+                    : `all ${currentConfig.transitionSpeed}s ease-out`,
+                  boxShadow:
+                    hoveredIndex === index
+                      ? `0 0 20px ${colorPalette.gold}80`
+                      : "none",
                 }}
               >
-                <img 
-                  src={image} 
+                <img
+                  src={image}
                   alt={`Event ${index + 1}`}
-                  className="w-full h-full object-cover select-none"
+                  className="w-full h-full object-cover"
                   draggable="false"
                 />
               </div>

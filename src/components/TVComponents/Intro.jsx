@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useAnimation, useScroll, useTransform } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
 
 const Intro = () => {
   const { scrollY } = useScroll();
@@ -12,14 +12,16 @@ const Intro = () => {
   // Automatically transition out intro after animation completes
   useEffect(() => {
     const timer = setTimeout(() => {
-      controls.start({
-        scale: 3,
-        opacity: 0,
-        transition: { duration: 0.8, ease: "easeInOut" }
-      }).then(() => {
-        setIntroDone(true);
-      });
-    }, 3000); // Adjust timing as needed
+      controls
+        .start({
+          scale: 3,
+          opacity: 0,
+          transition: { duration: 0.8, ease: "easeInOut" },
+        })
+        .then(() => {
+          setIntroDone(true);
+        });
+    }, 2000); // Adjust timing as needed
 
     return () => clearTimeout(timer);
   }, [controls]);
@@ -69,7 +71,7 @@ const Intro = () => {
           >
             {letter}
           </motion.span>
-          ))}
+        ))}
       </motion.div>
     </motion.div>
   );

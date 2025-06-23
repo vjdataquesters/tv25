@@ -36,28 +36,33 @@
 //   | 'Guest Lecture';
 
 const events = {
-  upcoming: [
-    {
-      name: "Cloud Craft",
-      eventId: "cloud-craft",
-      image: "/events/CloudCraft2025/img1.png",
-      date: "April 7th & 8th 2025",
-      venue: "APJ Abdul Kalam Auditorium",
-      timings: "9:30 AM to 4:00 PM",
-      pics: ["/events/CloudCraft2025/img1.png"],
-      // winners:"",
-      // outcome:
-      //   "",
-      register: "/register",
-      isGFormEmbeddable: false,
-      event_tags: ["Workshop", "Cloud", "AWS"],
-      description:
-        "Hands-On AWS Workshop-Boost up your cloud skills being a part of this engaging 2-day Workshop conducted on 7th & 8th of April, where ideas take flight in the CLOUD.Guided by Industry experts. This fully interactive session ensures you don't just learn but implement real world cloud solutions.",
-      link: "/events/cloud-craft",
-    },
-  ],
+  upcoming: [],
   past: {
     e2025: [
+      {
+        name: "Cloud Craft",
+        eventId: "cloud-craft",
+        image: "/events/CloudCraft2025/img1.png",
+        date: "April 7th & 8th 2025",
+        venue: "APJ Abdul Kalam Auditorium",
+        timings: "9:30 AM to 4:00 PM",
+        pics: [
+          "/events/CloudCraft2025/img1.png",
+          "/events/CloudCraft2025/img2.jpg",
+          "/events/CloudCraft2025/img3.jpg",
+          "/events/CloudCraft2025/img4.jpg",
+        ],
+        // winners:"",
+        outcome:
+          "CloudCraft successfully introduced students to the fundamentals of cloud computing and Amazon Web Services (AWS) through hands-on experience. Participants deployed real-time projects like static website using AWS services including EC2, S3, Elastic Blockstore(EBS),Lambda, and VCP. A Quiz was also organized for the participants to test their knowledge.They also gained insights into AWS cost optimization, career opportunities, and differences between major cloud providers, leaving them well-prepared to explore cloud technologies further.",
+        //   "",
+        // register: "/register",
+        isGFormEmbeddable: false,
+        event_tags: ["Workshop", "Cloud", "AWS"],
+        description:
+          "Hands-On AWS Workshop-Boost up your cloud skills being a part of this engaging 2-day Workshop conducted on 7th & 8th of April, where ideas take flight in the CLOUD.Guided by Industry experts. This fully interactive session ensures you don't just learn but implement real world cloud solutions.",
+        link: "/events/cloud-craft",
+      },
       {
         name: "Hit Reloaded",
         eventId: "hit-reloaded",
