@@ -30,7 +30,9 @@ function LayoutWrapper() {
     return () => clearTimeout(timer);
   }, []);
 
-  const notTV = !noLayoutRoutes.includes(pathname);
+  const notTV = !noLayoutRoutes.some(
+    (route) => pathname === route || pathname.startsWith("/technovista")
+  );
 
   function PromoSection() {
     return (

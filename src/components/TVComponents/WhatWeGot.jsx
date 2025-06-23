@@ -17,17 +17,26 @@ function WhatWeGot() {
     {
       icon: "fas fa-user-graduate",
       title: "600+ Participants",
-      desc: "Over 600+ participants",
+      desc: "Engaging tech enthusiasts from across the region",
+      highlight: "from 50+ colleges",
+      color: "from-amber-500/20 to-amber-600/10",
+      border: "border-amber-500/30",
     },
     {
       icon: "fas fa-calendar-alt",
       title: "10+ Events",
-      desc: "2 years of successful execution",
+      desc: "Diverse competitions across multiple tech domains",
+      highlight: "3 days of non-stop action",
+      color: "from-purple-500/20 to-purple-600/10",
+      border: "border-purple-500/30",
     },
     {
       icon: "fas fa-award",
       title: "1.45 Lakh Prize Pool",
-      desc: "Prizes worth up to 1.45 Lakh",
+      desc: "Exciting rewards for top performers",
+      highlight: "across all events",
+      color: "from-blue-500/20 to-blue-600/10",
+      border: "border-blue-500/30",
     },
   ];
 
@@ -57,11 +66,12 @@ function WhatWeGot() {
 
   return (
     <div className="min-h-screen bg-none overflow-hidden px-4 pt-20 md:pt-0 flex flex-col items-center justify-center text-white text-center">
-      <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-6 leading-tight">
+      {" "}
+      <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-6 leading-tight font-mono">
         WHAT WE'VE GOT FOR YOU
       </h1>
       <motion.span
-        className="text-4xl sm:text-6xl md:text-7xl font-bold text-yellow-400"
+        className="text-3xl sm:text-5xl md:text-7xl font-bold text-yellow-400"
         animate={{ scale: [1, 1, 1] }}
         transition={{ duration: 1.2, repeat: Infinity }}
       >
@@ -92,32 +102,56 @@ function WhatWeGot() {
           </span>
         </p>
       </section>
-
-      <div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-8 mt-8 md:mt-12 w-full max-w-6xl"
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-        }}
-      >
+      {/* stats Section */}
+      <div className="mt-8 md:mt-12 w-full max-w-6xl px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 overflow-visible">
         {stats.map((stat, index) => (
-          <div
+          <motion.div
             key={index}
-            className="text-center p-8 bg-gray-800 rounded-lg shadow-lg"
-            style={{ flex: "1 1 30%", margin: "5px" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            whileHover={{
+              y: -5,
+              scale: 1.02,
+              boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.3)",
+            }}
+            className={`relative rounded-xl overflow-hidden p-0.5 bg-gradient-to-br ${stat.color}`}
           >
-            <i
-              className={`${stat.icon} text-6xl sm:text-7xl mb-6 text-yellow-400 animate-pulse`}
-            ></i>
-            <div className="font-bold text-xl sm:text-2xl text-white">
-              {stat.title}
+            <div
+              className={`relative bg-black/70 backdrop-blur-sm rounded-xl p-6 h-full flex flex-col items-center justify-center border ${stat.border}`}
+            >
+              {/* Animated icon with gradient */}
+              <div className="relative mb-6">
+                <div
+                  className={`absolute inset-0 rounded-full bg-gradient-to-br ${stat.color} blur-md opacity-70`}
+                ></div>
+                <i
+                  className={`${stat.icon} text-4xl sm:text-5xl relative z-10 text-amber-400`}
+                />
+              </div>
+
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                {stat.title}
+              </h3>
+
+              <p className="text-sm sm:text-base text-gray-300 mb-3">
+                {stat.desc}
+              </p>
+
+              <p className="text-xs sm:text-sm font-medium bg-gradient-to-r from-amber-500 to-amber-300 bg-clip-text text-transparent">
+                {stat.highlight}
+              </p>
+
+              {/* Animated border effect */}
+              <motion.div
+                className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                transition={{ duration: 1, delay: 0.3 }}
+                viewport={{ once: true }}
+              />
             </div>
-            <div className="text-sm sm:text-lg text-gray-400 mt-2">
-              {stat.desc}
-            </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

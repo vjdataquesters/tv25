@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import day2Bg from "../../assets/designs/Layout.svg";
 import Image from "/events/BlogAThon2023/img1.png";
+import { useNavigate } from "react-router-dom";
 
 function EventTimeTV() {
   const [buttonTexts, setButtonTexts] = useState({
@@ -9,11 +10,20 @@ function EventTimeTV() {
     day3: "Register",
   });
 
-  const handleButtonClick = (day) => {
-    setButtonTexts((prevState) => ({
-      ...prevState,
-      [day]: "Stay Tuned",
-    }));
+  const navigate = useNavigate();
+
+  const handleButtonClick = (dayKey) => {
+    const dayNumber = {
+      day1: 1,
+      day2: 2,
+      day3: 3,
+    }[dayKey];
+
+    if (dayNumber) {
+      navigate("/technovista/events", {
+        state: { day: dayNumber },
+      });
+    }
   };
 
   return (

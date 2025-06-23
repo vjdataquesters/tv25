@@ -6,9 +6,9 @@ import EventTimeTV from "../../components/TVComponents/EventTimeTV";
 import Carousel3D from "../../components/TVComponents/CarouselTV";
 import Countdown from "../../components/TVComponents/CountDown";
 import FooterTV from "../../components/TVComponents/FooterTV";
+import "./Technovista.css";
 
 const Technovista = () => {
-  const { scrollY } = useScroll();
   const [introDone, setIntroDone] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
@@ -82,9 +82,8 @@ const Technovista = () => {
   }, [isMobile]);
 
   return (
-    <div className="bg-black min-h-[250vh] relative">
+    <div className="bg-black min-h-[250vh] relative bg">
       <Intro />
-
       {introDone && (
         <div className="relative z-10 flex flex-col pt-10">
           <WhatWeGot />

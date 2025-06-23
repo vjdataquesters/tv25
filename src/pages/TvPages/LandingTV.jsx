@@ -701,26 +701,7 @@ const LandingTV = () => {
           >
             <CTAButton
               className="cta-button"
-              onClick={(e) => {
-                gsap.to(e.target, {
-                  scale: 0.95,
-                  duration: 0.1,
-                  onComplete: () => {
-                    gsap.to(e.target, {
-                      scale: 1,
-                      duration: 0.3,
-                      ease: "elastic.out(1, 0.5)",
-                    });
-                    createMajorExplosion(
-                      e.target.getBoundingClientRect().left +
-                        e.target.offsetWidth / 2,
-                      e.target.getBoundingClientRect().top +
-                        e.target.offsetHeight / 2,
-                      200
-                    );
-                  },
-                });
-              }}
+              onClick={() => navigate("/technovista/register")}
             >
               Register Now
             </CTAButton>

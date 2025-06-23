@@ -6,14 +6,16 @@ import Testimonials from "./Testimonials";
 import Event from "../components/Event";
 import NewsLetter from "./NewsLetter";
 import Gallery from "./Gallery";
+import LandingTV from "./TvPages/LandingTV";
 import Technovista from "./TvPages/Technovista";
 import TechnovistaForm from "./TvPages/TechnovistaForm";
-import LandingTV from "./TvPages/LandingTV";
+import EventsTV from "./TvPages/EventsTV";
 
 const router = [
   { path: "/", component: LandingTV },
-  { path: "/technovista/register", component: TechnovistaForm },
   { path: "/technovista", component: Technovista },
+  { path: "/technovista/register", component: TechnovistaForm },
+  { path: "/technovista/events", component: EventsTV },
   { path: "/home", component: Home },
   { path: "/about", component: About },
   { path: "/testimonials", component: Testimonials },
