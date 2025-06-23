@@ -114,7 +114,7 @@ const FooterTV = () => {
                   Events
                 </a>
                 <a
-                  href="#eventTimeLine"
+                  href="#event-time-line"
                   className="text-sm sm:text-base md:text-lg hover:text-yellow-400 transform transition-all duration-300 hover:translate-x-1 text-center"
                 >
                   Schedule
