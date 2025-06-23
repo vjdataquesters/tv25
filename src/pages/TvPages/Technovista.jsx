@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, useScroll, useTransform, useAnimation } from "framer-motion";
-import WhatWeGot from "../components/TVComponents/WhatWeGot";
-import Intro from "../components/TVComponents/Intro";
-import EventTimeTV from "../components/TVComponents/EventTimeTV";
-import Carousel3D from "../components/TVComponents/CarouselTV";
-import Countdown from "../components/TVComponents/CountDown";
-import FooterTV from "../components/TVComponents/FooterTV";
+import WhatWeGot from "../../components/TVComponents/WhatWeGot";
+import Intro from "../../components/TVComponents/Intro";
+import EventTimeTV from "../../components/TVComponents/EventTimeTV";
+import Carousel3D from "../../components/TVComponents/CarouselTV";
+import Countdown from "../../components/TVComponents/CountDown";
+import FooterTV from "../../components/TVComponents/FooterTV";
 
 const Technovista = () => {
   const { scrollY } = useScroll();

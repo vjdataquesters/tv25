@@ -1,6 +1,6 @@
 import React from "react";
-import FormBanner from "../components/TVComponents/FormBanner";
-import TForm from "../components/TVComponents/RegistrationForm";
+import FormBanner from "../../components/TVComponents/FormBanner";
+import TForm from "../../components/TVComponents/RegistrationForm";
 
 const TechnovistaForm = () => {
   return (

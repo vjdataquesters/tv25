@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import * as THREE from 'three';
-import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import * as THREE from "three";
+import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -48,7 +48,7 @@ const Nav = styled.nav`
 const Logo = styled.a`
   font-size: 1.5rem;
   font-weight: bold;
-  color: #FFD700;
+  color: #ffd700;
   text-decoration: none;
   text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 `;
@@ -65,13 +65,13 @@ const NavLink = styled.a`
   padding: 5px 0;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
-    background: #FFD700;
+    background: #ffd700;
     transition: width 0.3s ease;
   }
 
@@ -112,7 +112,7 @@ const Title = styled.h1`
   font-size: 6rem;
   font-weight: 900;
   text-transform: uppercase;
-  color: #FFD700;
+  color: #ffd700;
   text-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
   opacity: 0;
   transform: translateY(30px);
@@ -139,7 +139,7 @@ const Subtitle = styled.p`
 const Date = styled.p`
   font-size: 1.3rem;
   margin-bottom: 2rem;
-  color: #FFD700;
+  color: #ffd700;
   opacity: 0;
   transform: translateY(30px);
 `;
@@ -147,7 +147,7 @@ const Date = styled.p`
 const CTAButton = styled.button`
   padding: 1rem 2rem;
   font-size: 1.2rem;
-  background: linear-gradient(45deg, #FFD700, #DAA520);
+  background: linear-gradient(45deg, #ffd700, #daa520);
   color: black;
   border: none;
   border-radius: 50px;
@@ -170,7 +170,11 @@ const Highlight = styled.div`
   height: 100%;
   top: 0;
   left: 0;
-  background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, rgba(0,0,0,0) 60%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0) 60%
+  );
   z-index: 1;
   pointer-events: none;
 `;
@@ -192,20 +196,20 @@ const LandingTV = () => {
       gsap.to(cursorRef.current, {
         x: e.clientX,
         y: e.clientY,
-        duration: 0.1
+        duration: 0.1,
       });
-      
+
       gsap.to(cursorTrailRef.current, {
         x: e.clientX,
         y: e.clientY,
-        duration: 0.5
+        duration: 0.5,
       });
     };
 
     const handleMouseDown = (e) => {
       gsap.to(cursorRef.current, {
         scale: 0.7,
-        duration: 0.2
+        duration: 0.2,
       });
       // Create fewer lines on click
       for (let i = 0; i < 1; i++) {
@@ -219,19 +223,24 @@ const LandingTV = () => {
     const handleMouseUp = () => {
       gsap.to(cursorRef.current, {
         scale: 1,
-        duration: 0.2
+        duration: 0.2,
       });
     };
 
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mousedown', handleMouseDown);
-    document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mousedown", handleMouseDown);
+    document.addEventListener("mouseup", handleMouseUp);
 
     // Initialize Three.js
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    
+
     renderer.setSize(window.innerWidth, window.innerHeight);
     canvasContainerRef.current.appendChild(renderer.domElement);
 
@@ -248,17 +257,23 @@ const LandingTV = () => {
       posArray[i] = (Math.random() - 0.5) * 50;
     }
 
-    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+    particlesGeometry.setAttribute(
+      "position",
+      new THREE.BufferAttribute(posArray, 3)
+    );
 
     const particlesMaterial = new THREE.PointsMaterial({
       size: 0.1,
-      color: 0xFFD700,
+      color: 0xffd700,
       transparent: true,
       opacity: 0.5,
-      blending: THREE.AdditiveBlending
+      blending: THREE.AdditiveBlending,
     });
 
-    const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+    const particlesMesh = new THREE.Points(
+      particlesGeometry,
+      particlesMaterial
+    );
     scene.add(particlesMesh);
     particlesMeshRef.current = particlesMesh;
 
@@ -284,60 +299,60 @@ const LandingTV = () => {
       // createDecorativeCircuits();
 
       setTimeout(() => {
-        gsap.to('.nav', {
+        gsap.to(".nav", {
           opacity: 1,
           y: 0,
           duration: 1,
-          ease: 'power3.out'
+          ease: "power3.out",
         });
 
-        gsap.to('.title', {
+        gsap.to(".title", {
           opacity: 1,
           y: 0,
           duration: 1,
           delay: 0.3,
-          ease: 'power3.out'
+          ease: "power3.out",
         });
 
-        gsap.to('.subtitle', {
+        gsap.to(".subtitle", {
           opacity: 1,
           y: 0,
           duration: 1,
           delay: 0.5,
-          ease: 'power3.out'
+          ease: "power3.out",
         });
 
-        gsap.to('.date', {
+        gsap.to(".date", {
           opacity: 1,
           y: 0,
           duration: 1,
           delay: 0.7,
-          ease: 'power3.out'
+          ease: "power3.out",
         });
 
-        gsap.to('.cta-button', {
+        gsap.to(".cta-button", {
           opacity: 1,
           scale: 1,
           duration: 1,
           delay: 1.1,
-          ease: 'elastic.out(1, 0.5)'
+          ease: "elastic.out(1, 0.5)",
         });
       }, 800);
     }, 500);
 
     // Cleanup
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mousedown', handleMouseDown);
-      document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mousedown", handleMouseDown);
+      document.removeEventListener("mouseup", handleMouseUp);
       renderer.dispose();
     };
   }, []);
 
   // Effect functions
   const createExplosion = (x, y, size) => {
-    const explosion = document.createElement('div');
-    explosion.className = 'explosion';
+    const explosion = document.createElement("div");
+    explosion.className = "explosion";
     explosion.style.cssText = `
       position: absolute;
       border-radius: 50%;
@@ -358,14 +373,14 @@ const LandingTV = () => {
       height: size,
       opacity: 0,
       duration: 0.8,
-      ease: 'expo.out',
+      ease: "expo.out",
       onComplete: () => {
         document.body.removeChild(explosion);
-      }
+      },
     });
 
-    createDebris(x, y, 10 + Math.floor(size/10));
-    createCracks(x, y, 3 + Math.floor(size/50));
+    createDebris(x, y, 10 + Math.floor(size / 10));
+    createCracks(x, y, 3 + Math.floor(size / 50));
     // createPulseRings(x, y);
   };
 
@@ -379,7 +394,7 @@ const LandingTV = () => {
     createDebris(x, y, 50);
     createCracks(x, y, 12);
 
-    const flash = document.createElement('div');
+    const flash = document.createElement("div");
     flash.style.cssText = `
       position: fixed;
       top: 0;
@@ -395,16 +410,16 @@ const LandingTV = () => {
     gsap.to(flash, {
       opacity: 0,
       duration: 0.8,
-      ease: 'power2.out',
+      ease: "power2.out",
       onComplete: () => {
         document.body.removeChild(flash);
-      }
+      },
     });
   };
 
   const createDebris = (x, y, count) => {
     for (let i = 0; i < count; i++) {
-      const debris = document.createElement('div');
+      const debris = document.createElement("div");
       debris.style.cssText = `
         position: absolute;
         width: 2px;
@@ -428,17 +443,17 @@ const LandingTV = () => {
         y: Math.sin(angle) * distance,
         opacity: 0,
         duration: duration,
-        ease: 'power2.out',
+        ease: "power2.out",
         onComplete: () => {
           document.body.removeChild(debris);
-        }
+        },
       });
     }
   };
 
   const createCracks = (x, y, count) => {
     for (let i = 0; i < count; i++) {
-      const crack = document.createElement('div');
+      const crack = document.createElement("div");
       crack.style.cssText = `
         position: absolute;
         background-color: #FFD700;
@@ -460,25 +475,25 @@ const LandingTV = () => {
       gsap.to(crack, {
         width: length,
         duration: 0.3,
-        ease: 'power3.out',
+        ease: "power3.out",
         onComplete: () => {
           gsap.to(crack, {
             opacity: 0,
             duration: 2,
             delay: 0.5,
-            ease: 'power2.out',
+            ease: "power2.out",
             onComplete: () => {
               document.body.removeChild(crack);
-            }
+            },
           });
-        }
+        },
       });
     }
   };
 
   const createPulseRings = (x, y) => {
     for (let i = 0; i < 3; i++) {
-      const ring = document.createElement('div');
+      const ring = document.createElement("div");
       ring.style.cssText = `
         position: absolute;
         border: 2px solid rgba(255,215,0,0.5);
@@ -498,10 +513,10 @@ const LandingTV = () => {
         opacity: 0,
         duration: 1.5 + i * 0.5,
         delay: i * 0.2,
-        ease: 'power2.out',
+        ease: "power2.out",
         onComplete: () => {
           document.body.removeChild(ring);
-        }
+        },
       });
     }
   };
@@ -509,7 +524,7 @@ const LandingTV = () => {
   const createDecorativeCircuits = () => {
     for (let i = 0; i < 5; i++) {
       // Main circuit
-      const circuit = document.createElement('div');
+      const circuit = document.createElement("div");
       circuit.style.cssText = `
         position: absolute;
         width: ${100 + Math.random() * 200}px;
@@ -527,8 +542,8 @@ const LandingTV = () => {
       // Add inner circles
       const innerCircleCount = 3;
       for (let j = 0; j < innerCircleCount; j++) {
-        const innerCircle = document.createElement('div');
-        const scale = 0.8 - (j * 0.2);
+        const innerCircle = document.createElement("div");
+        const scale = 0.8 - j * 0.2;
         innerCircle.style.cssText = `
           position: absolute;
           width: 100%;
@@ -545,7 +560,7 @@ const LandingTV = () => {
       // Add orbital dots
       const dotsCount = 4 + Math.floor(Math.random() * 4);
       for (let j = 0; j < dotsCount; j++) {
-        const dot = document.createElement('div');
+        const dot = document.createElement("div");
         const angle = (j / dotsCount) * Math.PI * 2;
         const radius = parseInt(circuit.style.width) / 2;
         dot.style.cssText = `
@@ -564,17 +579,17 @@ const LandingTV = () => {
 
         // Animate orbital dots
         gsap.to(dot, {
-          rotation: '+=360',
+          rotation: "+=360",
           duration: 8 + Math.random() * 4,
           repeat: -1,
-          ease: 'none'
+          ease: "none",
         });
       }
 
       // Add connecting lines
       const linesCount = 3 + Math.floor(Math.random() * 3);
       for (let j = 0; j < linesCount; j++) {
-        const line = document.createElement('div');
+        const line = document.createElement("div");
         const angle = (j / linesCount) * Math.PI * 2;
         const length = parseInt(circuit.style.width) / 2;
         line.style.cssText = `
@@ -595,7 +610,7 @@ const LandingTV = () => {
           duration: 1 + Math.random(),
           repeat: -1,
           yoyo: true,
-          ease: 'power1.inOut'
+          ease: "power1.inOut",
         });
       }
 
@@ -604,7 +619,7 @@ const LandingTV = () => {
         opacity: 0,
         scale: 0,
         duration: 1,
-        ease: 'power2.out'
+        ease: "power2.out",
       });
 
       // Rotation animation
@@ -612,13 +627,13 @@ const LandingTV = () => {
         rotation: 360,
         duration: 30 + Math.random() * 20,
         repeat: -1,
-        ease: 'none'
+        ease: "none",
       });
 
       // Pulse animation
       const pulseInterval = setInterval(() => {
         // Create pulse effect
-        const pulse = document.createElement('div');
+        const pulse = document.createElement("div");
         pulse.style.cssText = `
           position: absolute;
           width: 100%;
@@ -635,18 +650,18 @@ const LandingTV = () => {
           scale: 1.2,
           opacity: 0,
           duration: 1.5,
-          ease: 'power2.out',
+          ease: "power2.out",
           onComplete: () => {
             circuit.removeChild(pulse);
-          }
+          },
         });
 
         // Glow effect
         gsap.to(circuit, {
-          boxShadow: '0 0 15px rgba(255,215,0,0.5)',
+          boxShadow: "0 0 15px rgba(255,215,0,0.5)",
           duration: 0.5,
           yoyo: true,
-          repeat: 1
+          repeat: 1,
         });
       }, 5000 + Math.random() * 5000);
 
@@ -676,10 +691,15 @@ const LandingTV = () => {
 
         <Content>
           <Title className="title">Technovista</Title>
-          <Subtitle className="subtitle">Where Innovation Explodes Into Reality</Subtitle>
-          <Date className="date">April 22-24, 2025</Date>
-          <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
-            <CTAButton 
+          <Subtitle className="subtitle">
+            Where Innovation Explodes Into Reality
+          </Subtitle>
+          <Date className="date">July 30 - August 1, 2025</Date>
+
+          <div
+            style={{ display: "flex", gap: "20px", justifyContent: "center" }}
+          >
+            <CTAButton
               className="cta-button"
               onClick={(e) => {
                 gsap.to(e.target, {
@@ -689,22 +709,24 @@ const LandingTV = () => {
                     gsap.to(e.target, {
                       scale: 1,
                       duration: 0.3,
-                      ease: 'elastic.out(1, 0.5)'
+                      ease: "elastic.out(1, 0.5)",
                     });
                     createMajorExplosion(
-                      e.target.getBoundingClientRect().left + e.target.offsetWidth/2,
-                      e.target.getBoundingClientRect().top + e.target.offsetHeight/2,
+                      e.target.getBoundingClientRect().left +
+                        e.target.offsetWidth / 2,
+                      e.target.getBoundingClientRect().top +
+                        e.target.offsetHeight / 2,
                       200
                     );
-                  }
+                  },
                 });
               }}
             >
               Register Now
             </CTAButton>
-            <CTAButton 
+            <CTAButton
               className="cta-button"
-              onClick={() => navigate('/technovista')}
+              onClick={() => navigate("/technovista")}
             >
               Enter the Nexus
             </CTAButton>
