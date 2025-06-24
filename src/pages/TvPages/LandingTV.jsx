@@ -685,7 +685,7 @@ const LandingTV = () => {
         </NavLinks>
       </Nav>
 
-      <HeroSection id="hero">
+      <HeroSection id="hero" className="select-none">
         <CanvasContainer ref={canvasContainerRef} />
         <Highlight />
 

@@ -1,3 +1,4 @@
+// TechnovistaForm.js
 import React from "react";
 import FormBanner from "../../components/TVComponents/FormBanner";
 import TForm from "../../components/TVComponents/RegistrationForm";
@@ -5,26 +6,24 @@ import TForm from "../../components/TVComponents/RegistrationForm";
 const TechnovistaForm = () => {
   return (
     <>
-      {/* Mobile Layout */}
-      <div className="flex md:hidden pt-20 min-h-screen">
-        <div className="w-full">
+      {/* Mobile Layout - Single column */}
+      <div className="flex md:hidden pt-20 min-h-screen bg-black">
+        <div className="w-full max-w-2xl mx-auto">
           <TForm />
         </div>
       </div>
-      
-      {/* Desktop Layout */}
+
+      {/* Desktop Layout - Two columns */}
       <div className="hidden md:flex justify-center items-center py-20 min-h-screen bg-black">
-        {/* Main Container */}
-        <div className="flex flex-col md:flex-row w-full md:max-w-6xl bg-black backdrop-blur-md rounded-lg min-h-[80vh]">
-          {/* Left Section (Hidden on small screens) */}
-          <div className="hidden md:flex md:w-1/2 text-white justify-center items-center rounded-l-lg">
+        <div className="flex w-full max-w-6xl mx-4">
+          {/* Left Section - Form Banner */}
+          <div className="w-1/2 pr-4">
             <FormBanner />
           </div>
-          {/* Right Section (Form) */}
-          <div className="w-full md:w-1/2 bg-black backdrop-blur-md flex flex-col justify-center items-center md:rounded-r-lg min-h-[80vh]">
-            <div className="w-full h-full">
-              <TForm />
-            </div>
+
+          {/* Right Section - Registration Form */}
+          <div className="w-1/2 pl-4">
+            <TForm />
           </div>
         </div>
       </div>
