@@ -34,7 +34,7 @@ const FormBanner = () => {
   const event = allEvents[activeEvent];
 
   return (
-    <div className="w-full h-[805px] bg-black rounded-2xl p-8 shadow-2xl border-2 border-yellow-500/30 relative overflow-hidden">
+    <div className="w-full h-[110vh] bg-black rounded-2xl p-8 shadow-2xl border-2 border-yellow-500/30 relative overflow-hidden">
       {/* Decorative corners */}
       <div className="absolute top-0 left-0 w-20 h-20 border-l-4 border-t-4 border-yellow-400 rounded-tl-2xl"></div>
       <div className="absolute top-0 right-0 w-20 h-20 border-r-4 border-t-4 border-yellow-400 rounded-tr-2xl"></div>

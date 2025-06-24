@@ -7,22 +7,19 @@ const TechnovistaForm = () => {
   return (
     <>
       {/* Mobile Layout - Single column */}
-      <div className="flex md:hidden pt-20 min-h-screen bg-black">
+      <div className="flex md:hidden pt-12 min-h-[calc(100vh-5rem)] bg-black">
         <div className="w-full max-w-2xl mx-auto">
           <TForm />
         </div>
       </div>
-
-      {/* Desktop Layout - Two columns */}
-      <div className="hidden md:flex justify-center items-center py-20 min-h-screen bg-black">
-        <div className="flex w-full max-w-6xl mx-4">
+      <div className="hidden md:flex justify-center items-center py-12 min-h-[calc(100vh-5rem)] bg-black">
+        <div className="flex w-full max-w-6xl mx-4 h-full">
           {/* Left Section - Form Banner */}
-          <div className="w-1/2 pr-4">
+          <div className="w-1/2 pr-4 h-full">
             <FormBanner />
           </div>
-
           {/* Right Section - Registration Form */}
-          <div className="w-1/2 pl-4">
+          <div className="w-1/2 pl-4 h-full">
             <TForm />
           </div>
         </div>

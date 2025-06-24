@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Calendar, Clock, ExternalLink, MapPin } from "lucide-react";
 import { eventTimeLine } from "../../data/tvData";
 import Reveal from "../../components/Reveal.jsx";
@@ -7,6 +7,7 @@ import "./Technovista.css";
 
 const EventsTV = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const dayRefs = useRef({});
   const scrollToDay = location.state?.day;
 
@@ -30,7 +31,17 @@ const EventsTV = () => {
           </h2>
           <div className="w-24 h-1 bg-yellow-500 mx-auto mt-2" />
         </div>
-        <div>register here before registering for events</div>
+        <div className="bg-yellow-500/10 border border-yellow-400/30 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 mb-12 shadow-md backdrop-blur-lg">
+          <p className="text-sm sm:text-base text-yellow-200 font-medium text-center sm:text-left">
+            Please register yourself before registering for individual events.
+          </p>
+          <button
+            onClick={() => navigate("/technovista/register")}
+            className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black font-semibold px-6 py-2 rounded-xl transition-all duration-300 hover:scale-105 shadow hover:shadow-yellow-500/30"
+          >
+            Register Here
+          </button>
+        </div>
 
         {eventTimeLine.map(({ day, date, events }) => (
           <div

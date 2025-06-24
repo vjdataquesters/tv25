@@ -126,6 +126,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     try {
+      console.log(data);
       const response = await api.post("/submit", data);
       setSubmitStatus(true);
     } catch (error) {
@@ -181,63 +182,63 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <div
+      ref={containerRef}
+      className="h-[110vh] text-yellow-400 relative rounded-xl"
+    >
+      {/* Background Particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        {particles.map((particle) => (
+          <ParticleShape key={particle.id} particle={particle} />
+        ))}
+      </div>
+
+      {/* Mouse Follower Effect */}
       <div
-        ref={containerRef}
-        className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-yellow-400 relative overflow-hidden"
-      >
-        {/* Background Particles */}
-        <div className="absolute inset-0 overflow-hidden">
-          {particles.map((particle) => (
-            <ParticleShape key={particle.id} particle={particle} />
-          ))}
-        </div>
+        className="absolute w-96 h-96 bg-yellow-400/5 rounded-full blur-3xl transition-all duration-1000 ease-out pointer-events-none"
+        style={{
+          left: `${mousePosition.x}%`,
+          top: `${mousePosition.y}%`,
+          transform: "translate(-50%, -50%)",
+        }}
+      />
 
-        {/* Mouse Follower Effect */}
-        <div
-          className="absolute w-96 h-96 bg-yellow-400/5 rounded-full blur-3xl transition-all duration-1000 ease-out pointer-events-none"
-          style={{
-            left: `${mousePosition.x}%`,
-            top: `${mousePosition.y}%`,
-            transform: "translate(-50%, -50%)",
-          }}
-        />
-
-        {/* Main Content */}
-        <div className="relative z-10 container mx-auto px-3">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-3 mb-4">
-              <div className="animate-spin-slow">
-                <Code className="text-yellow-500" size={32} />
-              </div>
-              <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 bg-clip-text text-transparent">
-                TechnoVista 2k25
-              </h1>
-              <div className="animate-pulse">
-                <Star className="text-yellow-500" size={32} />
-              </div>
+      {/* Main Content */}
+      <div className="relative z-10 container mx-auto px-3 py-6 h-[110vh]">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-3 mb-4">
+            <div className="animate-spin-slow">
+              <Code className="text-yellow-500" size={32} />
             </div>
-            <p className="text-yellow-300/80 text-lg">
-              Join the future of technology • Experience innovation
-            </p>
-            <div className="mt-4 flex justify-center gap-2">
-              {[...Array(5)].map((_, i) => (
-                <div
-                  key={i}
-                  className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"
-                  style={{ animationDelay: `${i * 0.2}s` }}
-                />
-              ))}
+            <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 bg-clip-text text-transparent">
+              TechnoVista 2k25
+            </h1>
+            <div className="animate-pulse">
+              <Star className="text-yellow-500" size={32} />
             </div>
           </div>
+          <p className="text-yellow-300/80 text-lg">
+            Join the future of technology • Experience innovation
+          </p>
+          <div className="mt-4 flex justify-center gap-2">
+            {[...Array(5)].map((_, i) => (
+              <div
+                key={i}
+                className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"
+                style={{ animationDelay: `${i * 0.2}s` }}
+              />
+            ))}
+          </div>
+        </div>
 
-          {/* Form */}
-          <div className="w-full max-w-4xl mx-auto px-4">
-            <div className="bg-white/5 backdrop-blur-2xl rounded-3xl p-6 md:p-8 border border-yellow-400/30 shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]">
-              <div className="grid gap-8">
+        {/* Form */}
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="w-full max-w-4xl mx-auto px-4 py-4">
+            <div className="bg-white/5 backdrop-blur-2xl rounded-3xl p-4 md:p-6 border border-yellow-400/30 shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]">
+              <div className="grid gap-4 md:gap-6">
                 {/* Full Name */}
-                <div className="transform hover:scale-105 transition-transform duration-300">
+                <div className="transform hover:opacity-90 transition-transform duration-300">
                   <div className="group relative">
                     <label className="text-sm font-medium text-yellow-300 block mb-2">
                       Full Name <span className="text-red-400">*</span>
@@ -259,7 +260,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                 </div>
 
                 {/* College Selection */}
-                <div className="transform hover:scale-105 transition-transform duration-300">
+                <div className="transform hover:opacity-90 transition-transform duration-300">
                   <div className="group relative">
                     <label className="text-sm font-medium text-yellow-300 block mb-2">
                       College <span className="text-red-400">*</span>
@@ -299,7 +300,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                 {/* Conditional College Name */}
                 {watchCollege === "Other" && (
                   <motion.div
-                    className="transform hover:scale-105 transition-all duration-300"
+                    className="transform hover:opacity-90 transition-all duration-300"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3 }}
@@ -326,7 +327,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
 
                 {/* Branch & Section */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="transform hover:scale-105 transition-transform duration-300">
+                  <div className="transform hover:opacity-90 transition-transform duration-300">
                     <label className="text-sm font-medium text-yellow-300 block mb-2">
                       Branch <span className="text-red-400">*</span>
                     </label>
@@ -359,7 +360,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                       </p>
                     )}
                   </div>
-                  <div className="transform hover:scale-105 transition-transform duration-300">
+                  <div className="transform hover:opacity-90 transition-transform duration-300">
                     <label className="text-sm font-medium text-yellow-300 block mb-2">
                       Section <span className="text-red-400">*</span>
                     </label>
@@ -386,7 +387,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
 
                 {/* Roll Number & Year */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="transform hover:scale-105 transition-transform duration-300">
+                  <div className="transform hover:opacity-90 transition-transform duration-300">
                     <label className="text-sm font-medium text-yellow-300 block mb-2">
                       Roll Number <span className="text-red-400">*</span>
                     </label>
@@ -417,7 +418,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                       </p>
                     )}
                   </div>
-                  <div className="transform hover:scale-105 transition-transform duration-300">
+                  <div className="transform hover:opacity-90 transition-transform duration-300">
                     <label className="text-sm font-medium text-yellow-300 block mb-2">
                       Year <span className="text-red-400">*</span>
                     </label>
@@ -442,7 +443,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
 
                 {/* Contact & Email */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="transform hover:scale-105 transition-transform duration-300">
+                  <div className="transform hover:opacity-90 transition-transform duration-300">
                     <label className="text-sm font-medium text-yellow-300 block mb-2">
                       Contact Number <span className="text-red-400">*</span>
                     </label>
@@ -465,7 +466,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                       </p>
                     )}
                   </div>
-                  <div className="transform hover:scale-105 transition-transform duration-300">
+                  <div className="transform hover:opacity-90 transition-transform duration-300">
                     <label className="text-sm font-medium text-yellow-300 block mb-2">
                       Email <span className="text-red-400">*</span>
                     </label>
@@ -501,7 +502,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                       K. Adithya
                     </span>
                   </p>
-                  <div className="inline-block p-4 bg-white rounded-2xl shadow-2xl transform hover:scale-110 transition-transform duration-300">
+                  <div className="inline-block p-4 bg-white rounded-2xl shadow-2xl">
                     <img
                       src="/paymentsQR.jpg"
                       alt="Payment QR Code"
@@ -512,7 +513,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
 
                 {/* Payment Platform & Transaction ID */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="transform hover:scale-105 transition-transform duration-300">
+                  <div className="transform hover:opacity-90 transition-transform duration-300">
                     <label className="text-sm font-medium text-yellow-300 block mb-2">
                       Payment Platform <span className="text-red-400">*</span>
                     </label>
@@ -541,7 +542,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                       </p>
                     )}
                   </div>
-                  <div className="transform hover:scale-105 transition-transform duration-300">
+                  <div className="transform hover:opacity-90 transition-transform duration-300">
                     <label className="text-sm font-medium text-yellow-300 block mb-2">
                       Transaction ID <span className="text-red-400">*</span>
                     </label>
@@ -563,27 +564,25 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                 </div>
 
                 {/* Submit Button */}
-                <div className="mt-8 text-center">
+                <div className="mt-6 text-center">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     type="submit"
                     disabled={isSubmitting}
-                    className="group relative inline-flex items-center gap-3 px-8 py-4 
+                    className="group relative inline-flex items-center gap-3 px-6 py-2 
                       bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 
                       text-black font-bold text-lg rounded-full
                       transform transition-all duration-300 ease-out
-                      hover:scale-110 hover:shadow-2xl hover:shadow-yellow-500/40
+                      hover:scale-105 hover:shadow-1xl hover:shadow-yellow-500/40
                       focus:outline-none focus:ring-4 focus:ring-yellow-400/50"
                   >
-                    <span>
-                      {isSubmitting ? "Submitting..." : "Submit Registration"}
-                    </span>
+                    <span>{isSubmitting ? "Submitting..." : "Submit"}</span>
                     <Send
-                      size={20}
+                      size={15}
                       className={`transition-transform duration-300 ${
                         isSubmitting
-                          ? "animate-spin"
+                          ? "animate-pulse"
                           : "group-hover:translate-x-1"
                       }`}
                     />
@@ -592,9 +591,9 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
-    </form>
+    </div>
   );
 };
 
@@ -655,9 +654,6 @@ const LoadingComp = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
-        {/* Optional Noise Overlay */}
-        <div className="absolute inset-0 rounded-2xl opacity-10 bg-[url('/textures/noise.png')] mix-blend-overlay pointer-events-none" />
-
         {/* App Title */}
         <motion.h1
           variants={pulseVariants}
@@ -721,14 +717,14 @@ const FormClosedComp = () => {
 
 const RegistrationForm = () => {
   const [loadingStatus, setLoadingStatus] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(true);
+  const [submitStatus, setSubmitStatus] = useState(false);
   const [formStatus, setFormStatus] = useState({
-    isFormOpen: false,
+    isFormOpen: true,
   });
 
   return (
     <motion.div
-      className="w-full bg-black rounded-2xl shadow-2xl border-2 border-yellow-500/30 relative h-[805px]"
+      className="w-full bg-black rounded-2xl shadow-2xl border-2 border-yellow-500/30 relative min-h-[110vh] flex items-center justify-center"
       initial={{ opacity: 0, filter: "blur(10px)" }}
       animate={{ opacity: 1, filter: "blur(0px)" }}
       transition={{ duration: 1, ease: "easeOut" }}
@@ -740,11 +736,11 @@ const RegistrationForm = () => {
       <div className="absolute bottom-0 right-0 w-20 h-20 border-r-4 border-b-4 border-yellow-400 rounded-br-2xl z-30"></div>
 
       {/* Golden glow effect */}
-      <div className="absolute inset-0 bg-gradient-radial from-yellow-400/5 via-transparent to-transparent rounded-2xl"></div>
+      <div className="absolute inset-0 h-full bg-gradient-radial from-yellow-400/5 via-transparent to-transparent rounded-2xl"></div>
 
       {/* Scrollable content container */}
       <div
-        className="relative z-10 h-full overflow-y-auto small-scrollbar flex items-center justify-center"
+        className="relative z-10 h-full small-scrollbar flex items-center justify-center overflow-y-auto"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {loadingStatus ? (
