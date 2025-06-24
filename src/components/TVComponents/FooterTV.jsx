@@ -1,6 +1,6 @@
 import React from "react";
 import { FaLinkedinIn, FaInstagram, FaGlobe } from "react-icons/fa";
-import "./FooterTv.css";
+import "./TvComponents.css";
 
 const FooterTV = () => {
   return (

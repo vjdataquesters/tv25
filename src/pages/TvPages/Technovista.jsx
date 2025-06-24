@@ -68,7 +68,7 @@ const Technovista = () => {
       if (!sectionRef.current) return;
 
       const rect = sectionRef.current.getBoundingClientRect();
-      const triggerPoint = window.innerHeight - rect.height * 0.65;
+      const triggerPoint = window.innerHeight - rect.height * 0.3;
       const isInView = rect.top <= triggerPoint;
       if (isInView && !isVisible) {
         setIsVisible(true);
@@ -89,31 +89,65 @@ const Technovista = () => {
           <WhatWeGot />
           <div
             ref={sectionRef}
-            className="relative h-[90vh] overflow-hidden select-none"
+            className=" overflow-hidden select-none flex flex-col items-center justify-center gap-12 py-8"
           >
             {/* Countdown */}
             <motion.div
               variants={letterVariants}
-              initial="hidden"
-              animate={isVisible ? "visible" : "hidden"}
-              className="absolute inset-0 flex items-start justify-center pt-10"
+              // initial="hidden"
+              // animate={isVisible ? "visible" : "hidden"}
+              className="w-full max-w-5xl px-4"
             >
-              <div className="w-full max-w-5xl px-4">
-                <Countdown isVisible={isVisible} />
-              </div>
-            </motion.div>
-            {/* Carousel */}
-            <motion.div
-              variants={titleVariants}
-              initial="hidden"
-              animate={isVisible ? "visible" : "hidden"}
-              whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-              className="absolute inset-0 mt-20 md:mt-24"
-            >
-              <Carousel3D />
+              <Countdown isVisible={isVisible} />
             </motion.div>
           </div>
+
+          {/* Carousel */}
+          <motion.div
+            variants={titleVariants}
+            // initial="hidden"
+            // animate={isVisible ? "visible" : "hidden"}
+            whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+            className="w-full"
+          >
+            <Carousel3D />
+          </motion.div>
+
           <EventTimeTV />
+
+          <div className="bg-black/80 py-10 px-4 sm:px-6 lg:px-12">
+            <div className="max-w-6xl mx-auto text-center">
+              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+                Our <span className="text-yellow-500">Sponsors</span>
+              </h2>
+              <p className="text-gray-300 mb-6 max-w-2xl mx-auto text-sm sm:text-base">
+                We extend our gratitude to the organizations supporting this
+                event.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* Sponsor 1 */}
+                <div className="bg-white/5 border border-yellow-500/20 backdrop-blur-lg p-4 rounded-xl shadow hover:scale-105 transition-all duration-300 text-left">
+                  <h3 className="text-lg font-semibold text-yellow-400 mb-1">
+                    Sponsor 1
+                  </h3>
+                  <p className="text-gray-300 text-sm">
+                    Pioneering the next-gen AI hardware solutions.
+                  </p>
+                </div>
+
+                {/* Sponsor 2 */}
+                <div className="bg-white/5 border border-yellow-500/20 backdrop-blur-lg p-4 rounded-xl shadow hover:scale-105 transition-all duration-300 text-left">
+                  <h3 className="text-lg font-semibold text-yellow-400 mb-1">
+                    Sponsor 2
+                  </h3>
+                  <p className="text-gray-300 text-sm">
+                    Leading cloud-native dev platforms.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="w-screen  text-center select-none">
             <h1 className="text-[0px] sm:text-[100px] md:text-[130px] lg:text-[160px] xl:text-[230px] leading-none font-bold text-amber-500/30 tracking-wide">
               TECHNOVISTA

@@ -1,284 +1,184 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, {
+  useEffect,
+  useState,
+  useRef,
+  useMemo,
+  useCallback,
+} from "react";
 import { useNavigate } from "react-router-dom";
+import { eventTimeLine } from "../../data/tvData";
+import "./TvComponents.css";
 
 const Carousel3D = () => {
   const navigate = useNavigate();
-  const imageFiles = Object.keys(
-    import.meta.glob("/public/events/Technovista2024/*.png", { eager: true })
-  )
-    .map((path) => path.replace("/public", ""))
-    .sort((a, b) => {
-      const aNum = a.match(/img(\d+)/);
-      const bNum = b.match(/img(\d+)/);
-      if (aNum && bNum) return parseInt(aNum[1]) - parseInt(bNum[1]);
-      if (aNum) return -1;
-      if (bNum) return 1;
-      return a.localeCompare(b);
+
+  // Gather and sort images
+  const imageFiles = useMemo(() => {
+    const images = [];
+    eventTimeLine.forEach((day) =>
+      day.events.forEach((event) => {
+        if (event.image && !images.includes(event.image))
+          images.push(event.image);
+      })
+    );
+    return images.sort((a, b) => {
+      const aNum = a.match(/img(\d+)/)?.[1];
+      const bNum = b.match(/img(\d+)/)?.[1];
+      return aNum && bNum ? aNum - bNum : a.localeCompare(b);
     });
-
-  const eventPaths = {
-    img1: "/events/technovista/coding",
-    img2: "/events/technovista/robotics",
-    img3: "/events/technovista/gaming",
-    img4: "/events/technovista/workshops",
-  };
-
-  const images = imageFiles;
-  const totalImages = images.length;
-  const rotationSpeed = 0.2;
-  const [angle, setAngle] = useState(0);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [isAnimating, setIsAnimating] = useState(true);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [startAngle, setStartAngle] = useState(0);
-  const [dimensions, setDimensions] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
-  const requestRef = useRef(null);
-  const containerRef = useRef(null);
-
-  const isPhone = dimensions.width <= 480;
-  const isTablet = dimensions.width <= 768 && dimensions.width > 480;
-  const angleStep = 360 / totalImages;
-
-  const colorPalette = {
-    black: "#0B0B0B",
-    darkGray: "#333533",
-    cream: "#F2ECDD",
-    gold: "#F5CB5C",
-    deepGold: "#CD9C20",
-  };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Map image to day
+  const eventDayMap = useMemo(() => {
+    const map = {};
+    eventTimeLine.forEach((day, i) => {
+      day.events.forEach((event) => {
+        const key = event.image.match(/img\d+/)?.[0];
+        if (key) map[key] = i + 1;
+      });
+    });
+    return map;
+  }, []);
+
+  const total = imageFiles.length;
+  const speed = 0.16;
+  const [angle, setAngle] = useState(0);
+  const angleRef = useRef(0);
+  const [hovered, setHovered] = useState(null);
+  const [dragging, setDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [startAngle, setStartAngle] = useState(0);
+  const [dims, setDims] = useState({ width: window.innerWidth });
+  const requestRef = useRef(null);
+
+  const isPhone = dims.width <= 480;
+  const isTablet = dims.width <= 768;
+  const step = 360 / total;
+
+  const config = useMemo(
+    () => ({
+      imageWidth: isPhone ? 160 : isTablet ? 200 : 240,
+      imageHeight: isPhone ? 90 : isTablet ? 112 : 134,
+      radius: isPhone ? 200 : isTablet ? 300 : 380,
+      perspective: 1200,
+      transition: 0.6,
+    }),
+    [isPhone, isTablet]
+  );
+
+  // Resize listener
   useEffect(() => {
-    if (isAnimating && !isDragging && hoveredIndex === null) {
+    const onResize = () => setDims({ width: window.innerWidth });
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  // sync ref
+  useEffect(() => {
+    angleRef.current = angle;
+  }, [angle]);
+
+  // auto rotate
+  useEffect(() => {
+    if (!dragging && hovered === null) {
       const animate = () => {
-        setAngle((prevAngle) => (prevAngle + rotationSpeed) % 360);
+        angleRef.current -= speed;
+        setAngle(angleRef.current);
         requestRef.current = requestAnimationFrame(animate);
       };
       requestRef.current = requestAnimationFrame(animate);
       return () => cancelAnimationFrame(requestRef.current);
     }
-  }, [isAnimating, isDragging, hoveredIndex]);
+  }, [dragging, hovered]);
 
-  const config = {
-    phone: {
-      imageWidth: 160,
-      imageHeight: 90,
-      radius: dimensions.width <= 380 ? 280 : 320,
-      perspective: 1000,
-      transitionSpeed: 0.7,
-      gridSize: 40,
+  const startDrag = useCallback((x) => {
+    setDragging(true);
+    setStartX(x);
+    setStartAngle(angleRef.current);
+  }, []);
+
+  const moveDrag = useCallback(
+    (x) => {
+      if (!dragging) return;
+      const delta = x - startX;
+      setAngle(startAngle + delta * 0.5);
     },
-    tablet: {
-      imageWidth: 180,
-      imageHeight: 101,
-      radius: 360,
-      perspective: 1100,
-      transitionSpeed: 0.7,
-      gridSize: 50,
-    },
-    desktop: {
-      imageWidth: 240,
-      imageHeight: 135,
-      radius: 540,
-      perspective: 1200,
-      transitionSpeed: 0.7,
-      gridSize: 60,
-    },
-  };
+    [dragging, startX, startAngle]
+  );
 
-  const currentConfig = isPhone
-    ? config.phone
-    : isTablet
-    ? config.tablet
-    : config.desktop;
-
-  const handleTouchStart = (e) => {
-    if (isAnimating) setIsAnimating(false);
-    setIsDragging(true);
-    setStartX(e.touches[0].clientX);
-    setStartAngle(angle);
-  };
-
-  const handleTouchMove = (e) => {
-    if (!isDragging) return;
-    const deltaX = e.touches[0].clientX - startX;
-    const sensitivity = 0.5;
-    setAngle(startAngle + deltaX * sensitivity);
-  };
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
-    if (hoveredIndex === null) {
-      setTimeout(() => setIsAnimating(true), 1500);
-    }
-  };
-
-  const handleMouseDown = (e) => {
-    if (isAnimating) setIsAnimating(false);
-    setIsDragging(true);
-    setStartX(e.clientX);
-    setStartAngle(angle);
-  };
-
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-    const deltaX = e.clientX - startX;
-    const sensitivity = 0.5;
-    setAngle(startAngle + deltaX * sensitivity);
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-    if (hoveredIndex === null) {
-      setTimeout(() => setIsAnimating(true), 1500);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (isDragging) {
-      setIsDragging(false);
-      if (hoveredIndex === null) {
-        setTimeout(() => setIsAnimating(true), 1500);
-      }
-    }
-    setHoveredIndex(null);
-  };
-
-  const handleImageHover = (index) => {
-    setHoveredIndex(index);
-    setIsAnimating(false);
-  };
-
-  const handleImageLeave = () => {
-    setHoveredIndex(null);
-    if (!isDragging) {
-      setIsAnimating(true);
-    }
-  };
+  const endDrag = useCallback(() => setDragging(false), []);
+  const onHover = useCallback((i) => {
+    setHovered(i);
+    setDragging(false);
+  }, []);
+  const onLeave = useCallback(() => setHovered(null), []);
 
   return (
     <div
-      className="w-full h-[35vh] flex items-center justify-center overflow-visible bg-black relative -mt-8"
+      className="technovista-carousel-container"
       style={{
-        perspective: `${currentConfig.perspective}px`,
+        width: "100%",
+        perspective: config.perspective,
+        background: "transparent",
       }}
-      ref={containerRef}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseLeave}
+      onTouchStart={(e) => startDrag(e.touches[0].clientX)}
+      onTouchMove={(e) => moveDrag(e.touches[0].clientX)}
+      onTouchEnd={endDrag}
+      onMouseDown={(e) => startDrag(e.clientX)}
+      onMouseMove={(e) => moveDrag(e.clientX)}
+      onMouseUp={endDrag}
+      onMouseLeave={endDrag}
     >
-      {/* Background Grid */}
       <div
-        className="absolute inset-0 w-[200%] h-[200%] left-[-50%] pointer-events-none"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, ${colorPalette.gold}30 1px, transparent 1px),
-            linear-gradient(to bottom, ${colorPalette.gold}30 1px, transparent 1px)
-          `,
-          backgroundSize: `${currentConfig.gridSize}px ${currentConfig.gridSize}px`,
-          transform: "perspective(1000px) rotateX(35deg) translateY(-30%)",
-          transformOrigin: "center center",
-          opacity: 0.3,
-          backgroundPosition: "center",
-          animation: "gridMove 20s linear infinite",
-        }}
-      />
-
-      <style>
-        {`
-          @keyframes gridMove {
-            0% { background-position: 0 0; }
-            100% { background-position: ${currentConfig.gridSize}px ${currentConfig.gridSize}px; }
-          }
-        `}
-      </style>
-
-      <div
-        className="relative"
+        className="technovista-carousel-inner"
         style={{
           transformStyle: "preserve-3d",
           transform: `rotateY(${angle}deg)`,
-          transition: isDragging
+          transition: dragging
             ? "none"
-            : `transform ${currentConfig.transitionSpeed}s ease-out`,
+            : `transform ${config.transition}s ease-out`,
         }}
       >
-        {images.map((image, index) => {
-          const itemAngle = angleStep * index;
-          const radians = (-1 * itemAngle * Math.PI) / 180;
-          const x = Math.sin(radians) * currentConfig.radius;
-          const z = Math.cos(radians) * currentConfig.radius;
-
-          const imgName = image.match(/img\d+/)?.[0];
-          const eventPath = eventPaths[imgName] || "/events/technovista";
-
+        {imageFiles.map((img, i) => {
+          const deg = step * i;
+          const rad = (deg * Math.PI) / 180;
+          const x = Math.sin(-rad) * config.radius;
+          const z = Math.cos(-rad) * config.radius;
+          const day = eventDayMap[img.match(/img\d+/)[0]];
           return (
             <div
-              key={index}
+              key={i}
+              className="technovista-carousel-item"
               style={{
-                position: "absolute",
-                width: `${currentConfig.imageWidth}px`,
-                height: `${currentConfig.imageHeight}px`,
-                left: "50%",
-                top: "50%",
-                marginLeft: `-${currentConfig.imageWidth / 2}px`,
-                marginTop: `-${currentConfig.imageHeight / 2}px`,
-                transformStyle: "preserve-3d",
-                transform: `translateX(${x}px) translateZ(${z}px) rotateY(${-itemAngle}deg)`,
-                transition: isDragging
+                width: config.imageWidth,
+                height: config.imageHeight,
+                marginLeft: -config.imageWidth / 2,
+                marginTop: -config.imageHeight / 2,
+                transform: `translateX(${x}px) translateZ(${z}px) rotateY(${-deg}deg)`,
+                transition: dragging
                   ? "none"
-                  : `all ${currentConfig.transitionSpeed}s ease-out`,
-                cursor: "pointer",
-                zIndex: hoveredIndex === index ? 10 : "auto",
-                WebkitTapHighlightColor: "transparent",
+                  : `all ${config.transition}s ease-out`,
+                zIndex: hovered === i ? 10 : "auto",
               }}
-              onClick={() => !isDragging && navigate(eventPath)}
-              onMouseEnter={() => handleImageHover(index)}
-              onMouseLeave={handleImageLeave}
+              onClick={() =>
+                !dragging && navigate("/technovista/events", { state: { day } })
+              }
+              onMouseEnter={() => onHover(i)}
+              onMouseLeave={onLeave}
             >
               <div
-                className="w-full h-full rounded-lg overflow-hidden shadow-xl"
+                className="technovista-image-container"
                 style={{
-                  transformStyle: "preserve-3d",
                   border:
-                    hoveredIndex === index
-                      ? `2px solid ${colorPalette.gold}`
-                      : `1px solid ${colorPalette.cream}`,
-                  backgroundColor: colorPalette.black,
-                  transform:
-                    hoveredIndex === index ? "scale(1.25)" : "scale(1)",
-                  transition: isDragging
-                    ? "none"
-                    : `all ${currentConfig.transitionSpeed}s ease-out`,
-                  boxShadow:
-                    hoveredIndex === index
-                      ? `0 0 20px ${colorPalette.gold}80`
-                      : "none",
+                    hovered === i ? "2px solid #f5cb5c" : "1px solid #f2ecdd",
+                  transform: hovered === i ? "scale(1.1)" : "scale(1)",
+                  boxShadow: hovered === i ? "0 0 10px #f5cb5c80" : "none",
                 }}
               >
                 <img
-                  src={image}
-                  alt={`Event ${index + 1}`}
-                  className="w-full h-full object-cover"
+                  src={img}
+                  alt={`Event ${i + 1}`}
+                  className="technovista-image"
                   draggable="false"
                 />
               </div>
@@ -290,4 +190,4 @@ const Carousel3D = () => {
   );
 };
 
-export default Carousel3D;
+export default React.memo(Carousel3D);
