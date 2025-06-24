@@ -7,6 +7,7 @@ import EventTimeTV from "../../components/TVComponents/EventTimeTV";
 import Carousel3D from "../../components/TVComponents/CarouselTV";
 import Countdown from "../../components/TVComponents/CountDown";
 import FooterTV from "../../components/TVComponents/FooterTV";
+import PastImages from "../../components/TVComponents/PastImages";
 import "./Technovista.css";
 
 const Technovista = () => {
@@ -185,11 +186,25 @@ const Technovista = () => {
               </div>
             </div>
           </div>
+          {/*PastEvents Gallery Section */}
+          <div>
+        <section className="max-w-7xl md:max-w-[90%] h-full mx-auto">
+          <h4 className="text-center text-[40px] md:text-[30px] lg:text-[50px] font-semibold text-yellow-500 " >TV-2k24 Glimpses</h4>
+        <div className="pt-4 pb-8">
+            <div className="flex justify-center">
+                <div className="w-full max-w-6xl mx-auto">
+                  <PastImages />
+                </div>
+              </div>
+            </div>
+            </section>
+        </div>
           <div className="w-screen  text-center select-none">
             <h1 className="text-[0px] sm:text-[100px] md:text-[130px] lg:text-[160px] xl:text-[230px] leading-none font-bold text-amber-500/30 tracking-wide">
               TECHNOVISTA
             </h1>
           </div>
+      
           <FooterTV />
         </div>
       )}
