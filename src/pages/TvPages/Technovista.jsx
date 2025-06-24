@@ -87,7 +87,10 @@ const Technovista = () => {
       {introDone && (
         <div className="relative z-10 flex flex-col pt-10">
           <WhatWeGot />
-          <div ref={sectionRef} className="relative h-[90vh] overflow-hidden">
+          <div
+            ref={sectionRef}
+            className="relative h-[90vh] overflow-hidden select-none"
+          >
             {/* Countdown */}
             <motion.div
               variants={letterVariants}

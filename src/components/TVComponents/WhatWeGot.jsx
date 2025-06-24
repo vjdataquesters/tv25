@@ -65,7 +65,7 @@ function WhatWeGot() {
   }, [index]);
 
   return (
-    <div className="min-h-screen bg-none overflow-hidden px-4 pt-20 md:pt-0 flex flex-col items-center justify-center text-white text-center">
+    <div className="min-h-screen bg-none overflow-hidden px-4 pt-20 md:pt-0 flex flex-col items-center justify-center text-white text-center select-none">
       {" "}
       <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-6 leading-tight font-mono">
         WHAT WE'VE GOT FOR YOU
