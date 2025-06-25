@@ -337,9 +337,11 @@ const LandingTV = () => {
 
         {/* Content */}
         <div className="relative z-30 text-white text-center max-w-4xl mx-auto">
-          <h1 className="title text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase text-yellow-500 opacity-0 translate-y-8 mb-4 tracking-wider">
+          {/* <h1 className="title text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase text-yellow-500 opacity-0 translate-y-8 mb-4 tracking-wider">
             Technovista
-          </h1>
+          </h1> */}
+          <img src="/events/Technovista2025/tv25-icons/new-logo.svg" className="w-[950px]"/>
+
           <p className="subtitle text-base sm:text-lg md:text-2xl mb-6 text-white/80 opacity-0 translate-y-8">
             Where Innovation Explodes Into Reality
           </p>

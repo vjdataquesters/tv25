@@ -1,15 +1,85 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Calendar, Clock, ExternalLink, MapPin } from "lucide-react";
 import { eventTimeLine } from "../../data/tvData";
 import Reveal from "../../components/Reveal.jsx";
 import "./Technovista.css";
+import { AnimatePresence, motion } from "framer-motion";
+
+const backdropVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.3 } },
+  exit: { opacity: 0, transition: { duration: 0.2 } },
+};
+
+const imageModalVariants = {
+  hidden: { opacity: 0, scale: 0.95, y: 30 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 0.3, ease: "easeOut" },
+  },
+  exit: {
+    opacity: 0,
+    scale: 0.9,
+    y: 20,
+    transition: { duration: 0.25, ease: "easeInOut" },
+  },
+};
+
+const ImageViewer = ({ image, onClose }) => {
+  return (
+    <AnimatePresence>
+      {image && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          variants={backdropVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+        >
+          {/* Backdrop */}
+          <motion.div
+            className="absolute inset-0 bg-black bg-opacity-60"
+            variants={backdropVariants}
+            onClick={onClose}
+            aria-label="Close Image Viewer"
+          />
+
+          {/* Image Content */}
+          <motion.div
+            className="relative z-10 max-w-full max-h-full"
+            variants={imageModalVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            <img
+              src={image}
+              alt="Full view"
+              className="max-w-[90vw] max-h-[90vh] rounded-xl object-contain shadow-2xl"
+            />
+            <button
+              onClick={onClose}
+              className="absolute top-3 md:top-2 right-2 md:right-[-5rem] [ w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 text-white text-3xl grid place-items-center transition-all duration-200"
+              title="Close"
+            >
+              &times;
+            </button>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
 
 const EventsTV = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const dayRefs = useRef({});
   const scrollToDay = location.state?.day;
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     if (scrollToDay) {
@@ -22,8 +92,19 @@ const EventsTV = () => {
     }
   }, [scrollToDay]);
 
+  const handleEventClick = (image) => {
+    setSelectedImage(image);
+  };
+
+  const closeViewer = () => {
+    setSelectedImage(null);
+  };
+
   return (
     <div className="min-h-screen text-white bg">
+      {selectedImage && (
+        <ImageViewer image={selectedImage} onClose={closeViewer} />
+      )}
       <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-16 py-10 max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
@@ -89,7 +170,10 @@ const EventsTV = () => {
                 ) => (
                   <Reveal key={index}>
                     <div className="max-w-[400px] w-full mx-auto rounded-lg h-full shadow-2xl bg-black border border-yellow-600/40 hover:border-yellow-500 transition-all duration-300 hover:shadow-yellow-500/20 group flex flex-col">
-                      <div className="relative h-4/6 overflow-hidden">
+                      <div
+                        onClick={() => handleEventClick(image)}
+                        className="relative h-4/6 overflow-hidden"
+                      >
                         <img
                           src={image}
                           alt={title}

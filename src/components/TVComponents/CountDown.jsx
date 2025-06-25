@@ -35,28 +35,31 @@ function Countdown({ isVisible }) {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5, y: 50 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.5, y: 50 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col items-center justify-center w-full"
-        >
-          {/* Title */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="text-5xl md:text-8xl font-bold text-center mb-8 text-yellow-400"
-            style={{
-              textShadow: "0 2px 8px rgba(234, 179, 8, 0.3)",
-            }}
+        <div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.5, y: 50 }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col items-center justify-center max-w-7xl"
           >
-            COUNTDOWN
-          </motion.h1>
+            {/* Title */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="text-5xl md:text-8xl font-bold text-center mb-8 text-yellow-400"
+              style={{
+                textShadow: "0 2px 8px rgba(234, 179, 8, 0.3)",
+              }}
+            >
+              COUNTDOWN
+            </motion.h1>
 
-          {/* Countdown Timer */}
-          <div className="grid grid-cols-4 gap-6 md:gap-8">
+            {/* Countdown Timer */}
+          </motion.div>
+
+          <div className="grid grid-cols-4 gap-6 md:gap-8 w-full">
             {Object.entries(timeLeft).map(([unit, value], index) => (
               <motion.div
                 key={unit}
@@ -68,18 +71,8 @@ function Countdown({ isVisible }) {
                 }}
                 className="flex flex-col items-center justify-center"
               >
-                <div
-                  className="bg-black/90 rounded-lg p-3 md:p-4 w-full aspect-square flex flex-col items-center justify-center"
-                  style={{
-                    boxShadow:
-                      "0 8px 32px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.1)",
-                    border: "1px solid rgba(255, 255, 255, 0.05)",
-                  }}
-                >
-                  <span
-                    className="text-5xl md:text-6xl lg:text-7xl font-bold text-yellow-400 mb-1"
-                    style={{ textShadow: "0 2px 8px rgba(234, 179, 8, 0.3)" }}
-                  >
+                <div className=" rounded-lg p-3 md:p-4 w-full aspect-square flex flex-col items-center justify-center">
+                  <span className="text-5xl md:text-6xl lg:text-7xl font-bold text-yellow-400 mb-1">
                     {value.toString().padStart(2, "0")}
                   </span>
                   <span className="text-xs md:text-sm uppercase tracking-wider text-gray-400">
@@ -89,7 +82,7 @@ function Countdown({ isVisible }) {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
       )}
     </AnimatePresence>
   );
