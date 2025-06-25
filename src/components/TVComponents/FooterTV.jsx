@@ -98,7 +98,7 @@ const FooterTV = () => {
               Quick Links
             </h2>
             <div className="w-full flex justify-center">
-              <div className="grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-xs">
+              <div className="grid grid-cols-1 gap-3 sm:gap-4 w-full max-w-xs">
                 <a
                   href="/about"
                   target="_blank"

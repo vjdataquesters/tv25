@@ -96,7 +96,6 @@ const EventsTV = () => {
                           className="w-full h-64 object-contain sm:object-cover rounded-t-lg"
                           draggable={false}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent" />
                       </div>
                       <div className="p-4 flex flex-col justify-between flex-grow">
                         <div className="space-y-2 mb-4">

@@ -99,7 +99,10 @@ const Technovista = () => {
                 <div className="flex justify-between items-center h-14">
                   {/* Left: Logos with "x" */}
                   <div className="flex items-center space-x-3">
-                    <a href="https://www.vjdataquesters.com/home" target="_blank">
+                    <a
+                      href="https://www.vjdataquesters.com/home"
+                      target="_blank"
+                    >
                       <img
                         src="/events/Technovista2025/tv25-icons/dq-vector.png"
                         alt="Logo 1"
@@ -122,7 +125,10 @@ const Technovista = () => {
 
                   {/* Right: Links */}
                   <div className="flex space-x-4">
-                    <button onClick={()=>navigate("/technovista/register")} className="bg-yellow-500 text-black px-5 py-1.5 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">
+                    <button
+                      onClick={() => navigate("/technovista/register")}
+                      className="bg-yellow-500 text-black px-5 py-1.5 rounded-lg font-semibold hover:bg-yellow-600 transition-colors"
+                    >
                       Register
                     </button>
                   </div>
@@ -134,7 +140,7 @@ const Technovista = () => {
               variants={letterVariants}
               // initial="hidden"
               // animate={isVisible ? "visible" : "hidden"}
-              className="w-full max-w-5xl px-4"
+              className="max-w-7xl px-4 py-4 flex flex-col items-center justify-center"
             >
               <Countdown isVisible={isVisible} />
             </motion.div>
@@ -188,23 +194,25 @@ const Technovista = () => {
           </div>
           {/*PastEvents Gallery Section */}
           <div>
-        <section className="max-w-7xl md:max-w-[90%] h-full mx-auto">
-          <h4 className="text-center text-[40px] md:text-[30px] lg:text-[50px] font-semibold text-yellow-500 " >TV-2k24 Glimpses</h4>
-        <div className="pt-4 pb-8">
-            <div className="flex justify-center">
-                <div className="w-full max-w-6xl mx-auto">
-                  <PastImages />
+            <section className="max-w-7xl md:max-w-[90%] h-full mx-auto">
+              <h4 className="text-center text-[40px] md:text-[30px] lg:text-[50px] font-semibold text-yellow-500 ">
+                TV-2k24 Glimpses
+              </h4>
+              <div className="pt-4 pb-8">
+                <div className="flex justify-center">
+                  <div className="w-full max-w-6xl mx-auto">
+                    <PastImages />
+                  </div>
                 </div>
               </div>
-            </div>
             </section>
-        </div>
+          </div>
           <div className="w-screen  text-center select-none">
             <h1 className="text-[0px] sm:text-[100px] md:text-[130px] lg:text-[160px] xl:text-[230px] leading-none font-bold text-amber-500/30 tracking-wide">
               TECHNOVISTA
             </h1>
           </div>
-      
+
           <FooterTV />
         </div>
       )}

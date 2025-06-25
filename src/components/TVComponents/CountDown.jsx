@@ -40,14 +40,14 @@ function Countdown({ isVisible }) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.5, y: 50 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col items-center justify-center"
+          className="flex flex-col items-center justify-center w-full"
         >
           {/* Title */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="text-3xl md:text-7xl font-bold text-center mb-8 text-yellow-400"
+            className="text-5xl md:text-8xl font-bold text-center mb-8 text-yellow-400"
             style={{
               textShadow: "0 2px 8px rgba(234, 179, 8, 0.3)",
             }}
@@ -77,7 +77,7 @@ function Countdown({ isVisible }) {
                   }}
                 >
                   <span
-                    className="text-4xl md:text-5xl lg:text-6xl font-bold text-yellow-400 mb-1"
+                    className="text-5xl md:text-6xl lg:text-7xl font-bold text-yellow-400 mb-1"
                     style={{ textShadow: "0 2px 8px rgba(234, 179, 8, 0.3)" }}
                   >
                     {value.toString().padStart(2, "0")}

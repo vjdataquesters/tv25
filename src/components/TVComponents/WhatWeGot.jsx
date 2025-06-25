@@ -7,10 +7,6 @@ function WhatWeGot() {
     { lang: "English", text: " Technovista" },
     { lang: "Hindi", text: " टेक्नोविस्टा" },
     { lang: "Telugu", text: " టెక్నోవిస్తా" },
-    { lang: "Odia", text: " ଟେକ୍ନୋଭିଷ୍ଟା" },
-    { lang: "Kannada", text: " ಟೆಕ್ನೋವಿಸ್ಟಾ" },
-    { lang: "Tamil", text: " டெக்னோவிஸ்டா" },
-    { lang: "Malayalam", text: " ടെക്നോവിസ്റ്റ" },
   ];
 
   const stats = [
@@ -65,19 +61,19 @@ function WhatWeGot() {
   }, [index]);
 
   return (
-    <div className="min-h-screen bg-none overflow-hidden px-4 pt-20 md:pt-0 flex flex-col items-center justify-center text-white text-center select-none">
+    <div className="min-h-screen bg-none overflow-hidden px-4 pt-12 md:pt-16 flex flex-col items-center justify-center text-white text-center select-none">
       {" "}
       <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-6 leading-tight font-mono">
         WHAT WE'VE GOT FOR YOU
       </h1>
       <motion.span
-        className="text-3xl sm:text-5xl md:text-7xl font-bold text-yellow-400"
+        className="text-4xl sm:text-6xl md:text-7xl font-bold text-yellow-400 py-4"
         animate={{ scale: [1, 1, 1] }}
         transition={{ duration: 1.2, repeat: Infinity }}
       >
         {displayedText} 2K25
       </motion.span>
-      <section className="mt-8 bg-gradient-to-br from-yellow-900/20 to-black/50 border border-yellow-500/20 rounded-xl p-6 sm:p-8 max-w-4xl mx-auto shadow-xl">
+      <section className="m-8 bg-gradient-to-br from-yellow-900/20 to-black/50 border border-yellow-500/20 rounded-xl p-6 sm:p-8 max-w-4xl mx-auto shadow-xl">
         <h2 className="text-2xl sm:text-3xl font-semibold text-yellow-400 mb-4 tracking-wide">
           The Ultimate Tech Carnival
         </h2>
@@ -89,10 +85,10 @@ function WhatWeGot() {
           by <span className="text-white">VJ DataQuesters</span>! This 3-day
           extravaganza fuses cutting-edge innovation, relentless challenges, and
           limitless creativity. From{" "}
-          <span className="text-yellow-300">Hackathons</span> to{" "}
-          <span className="text-yellow-300">Debug Challenges</span>,{" "}
-          <span className="text-yellow-300">Workshops</span> to{" "}
-          <span className="text-yellow-300">Tech Talks</span> — there’s
+          <span className="text-yellow-400">Hackathons</span> to{" "}
+          <span className="text-yellow-400">Debug Challenges</span>,{" "}
+          <span className="text-yellow-400">Workshops</span> to{" "}
+          <span className="text-yellow-400">Tech Talks</span> — there’s
           something for every tech enthusiast!
         </p>
 

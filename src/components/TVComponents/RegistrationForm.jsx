@@ -184,7 +184,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   return (
     <div
       ref={containerRef}
-      className="h-[110vh] text-yellow-400 relative rounded-xl"
+      className="h-[110vh] text-yellow-400 relative rounded-xl pb-10"
     >
       {/* Background Particles */}
       <div className="absolute inset-0 overflow-hidden">
@@ -204,7 +204,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
       />
 
       {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-3 py-6 h-[110vh]">
+      <div className="relative z-10 container mx-auto px-3 h-[110vh]">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-3 mb-4">
@@ -234,7 +234,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
 
         {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="w-full max-w-4xl mx-auto px-4 py-4">
+          <div className="w-full max-w-4xl mx-auto px-4">
             <div className="bg-white/5 backdrop-blur-2xl rounded-3xl p-4 md:p-6 border border-yellow-400/30 shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]">
               <div className="grid gap-4 md:gap-6">
                 {/* Full Name */}
