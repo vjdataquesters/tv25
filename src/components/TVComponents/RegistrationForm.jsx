@@ -154,14 +154,14 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
         return (
           <Circle
             {...shapeProps}
-            className={`${shapeProps.className} text-yellow-400`}
+            className={`${shapeProps.className} text-[#f2ca46]`}
           />
         );
       case "triangle":
         return (
           <Triangle
             {...shapeProps}
-            className={`${shapeProps.className} text-yellow-500`}
+            className={`${shapeProps.className} text-[#daa425]`}
           />
         );
       case "square":
@@ -175,7 +175,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
         return (
           <div
             {...shapeProps}
-            className={`${shapeProps.className} bg-yellow-400 rounded-full`}
+            className={`${shapeProps.className} bg-[#f2ca46] rounded-full`}
           />
         );
     }
@@ -184,7 +184,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   return (
     <div
       ref={containerRef}
-      className="h-[110vh] text-yellow-400 relative rounded-xl pb-10"
+      className="h-[110vh] text-[#f2ca46] relative rounded-xl pb-10"
     >
       {/* Background Particles */}
       <div className="absolute inset-0 overflow-hidden">
@@ -195,7 +195,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
 
       {/* Mouse Follower Effect */}
       <div
-        className="absolute w-96 h-96 bg-yellow-400/5 rounded-full blur-3xl transition-all duration-1000 ease-out pointer-events-none"
+        className="absolute w-96 h-96 bg-[#f2ca46]/5 rounded-full blur-3xl transition-all duration-1000 ease-out pointer-events-none"
         style={{
           left: `${mousePosition.x}%`,
           top: `${mousePosition.y}%`,
@@ -209,13 +209,13 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="animate-spin-slow">
-              <Code className="text-yellow-500" size={32} />
+              <Code className="text-[#daa425]" size={32} />
             </div>
-            <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 bg-clip-text text-transparent">
+            <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#f2ca46] via-yellow-300 to-[#daa425] bg-clip-text text-transparent">
               TechnoVista 2k25
             </h1>
             <div className="animate-pulse">
-              <Star className="text-yellow-500" size={32} />
+              <Star className="text-[#daa425]" size={32} />
             </div>
           </div>
           <p className="text-yellow-300/80 text-lg">
@@ -225,7 +225,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
             {[...Array(5)].map((_, i) => (
               <div
                 key={i}
-                className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"
+                className="w-2 h-2 bg-[#f2ca46] rounded-full animate-pulse"
                 style={{ animationDelay: `${i * 0.2}s` }}
               />
             ))}
@@ -235,7 +235,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
         {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="w-full max-w-4xl mx-auto px-4">
-            <div className="bg-white/5 backdrop-blur-2xl rounded-3xl p-4 md:p-6 border border-yellow-400/30 shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]">
+            <div className="bg-white/5 backdrop-blur-2xl rounded-3xl p-4 md:p-6 border border-[#f2ca46]/30 shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]">
               <div className="grid gap-4 md:gap-6">
                 {/* Full Name */}
                 <div className="transform hover:opacity-90 transition-transform duration-300">
@@ -247,7 +247,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                       name="name"
                       type="text"
                       placeholder="Enter your full name"
-                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-yellow-500 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent placeholder-yellow-500"
+                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent placeholder-[#daa425]"
                       {...register("name", { required: "Name is required" })}
                     />
                     {errors.name && (
@@ -280,7 +280,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                             {...register("college", {
                               required: "College selection is required",
                             })}
-                            className="w-5 h-5 text-yellow-500 border-2 border-yellow-500 focus:ring-yellow-400 focus:ring-2"
+                            className="w-5 h-5 text-[#daa425] border-2 border-[#daa425] focus:ring-[#f2ca46] focus:ring-2"
                           />
                           <span className="text-yellow-300 group-hover:text-yellow-200 transition-colors duration-300">
                             {option.label}
@@ -311,7 +311,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                     <input
                       type="text"
                       placeholder="Enter your college name"
-                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-yellow-500 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent placeholder-yellow-500"
+                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent placeholder-[#daa425]"
                       {...register("collegeName", {
                         required: "College name is required",
                       })}
@@ -332,7 +332,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                       Branch <span className="text-red-400">*</span>
                     </label>
                     <select
-                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-yellow-500 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent"
                       {...register("branch", {
                         required: "Branch is required",
                       })}
@@ -365,7 +365,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                       Section <span className="text-red-400">*</span>
                     </label>
                     <select
-                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-yellow-500 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent"
                       {...register("section", {
                         required: "Section is required",
                       })}
@@ -394,7 +394,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                     <input
                       type="text"
                       placeholder="Enter roll number"
-                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-yellow-500 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent placeholder-yellow-500"
+                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent placeholder-[#daa425]"
                       {...register("rollno", {
                         required: "Roll number is required",
                         validate: (value) => {
@@ -423,7 +423,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                       Year <span className="text-red-400">*</span>
                     </label>
                     <select
-                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-yellow-500 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent"
                       {...register("year", { required: "Year is required" })}
                     >
                       <option value="">Select Year</option>
@@ -450,7 +450,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                     <input
                       type="tel"
                       placeholder="Enter 10-digit phone number"
-                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-yellow-500 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent placeholder-yellow-500"
+                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent placeholder-[#daa425]"
                       {...register("phno", {
                         required: "Phone number is required",
                         pattern: {
@@ -473,7 +473,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                     <input
                       type="email"
                       placeholder="Enter your email"
-                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-yellow-500 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent placeholder-yellow-500"
+                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent placeholder-[#daa425]"
                       {...register("email", {
                         required: "Email is required",
                         pattern: {
@@ -492,7 +492,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                 </div>
 
                 {/* Payment QR */}
-                <div className="text-center py-8 bg-gray-900/30 rounded-2xl border border-yellow-500/10">
+                <div className="text-center py-8 bg-gray-900/30 rounded-2xl border border-[#daa425]/10">
                   <h3 className="text-xl font-semibold mb-2">
                     Payment QR Code
                   </h3>
@@ -518,7 +518,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                       Payment Platform <span className="text-red-400">*</span>
                     </label>
                     <select
-                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-yellow-500 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent"
                       {...register("paymentplatform", {
                         required: "Please select a payment platform",
                       })}
@@ -549,7 +549,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                     <input
                       type="text"
                       placeholder="Enter transaction ID"
-                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-yellow-500 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent placeholder-yellow-500"
+                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent placeholder-[#daa425]"
                       {...register("transactionid", {
                         required: "Transaction ID is required",
                       })}
@@ -570,16 +570,20 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                     whileTap={{ scale: 0.95 }}
                     type="submit"
                     disabled={isSubmitting}
-                    className="group relative inline-flex items-center gap-3 px-6 py-2 
-                      bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 
-                      text-black font-bold text-lg rounded-full
-                      transform transition-all duration-300 ease-out
-                      hover:scale-105 hover:shadow-1xl hover:shadow-yellow-500/40
-                      focus:outline-none focus:ring-4 focus:ring-yellow-400/50"
+                    aria-busy={isSubmitting}
+                    className="group relative inline-flex items-center justify-center gap-3 px-6 py-2
+      bg-gradient-to-r from-[#f2ca46] via-[#daa425] to-yellow-600
+      text-black font-bold text-lg rounded-2xl shadow-md
+      transition-all duration-300 ease-out
+      hover:shadow-xl hover:shadow-[#daa425]/40
+      focus:outline-none focus:ring-4 focus:ring-[#f2ca46]/50
+      disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <span>{isSubmitting ? "Submitting..." : "Submit"}</span>
+                    <span className="tracking-wide">
+                      {isSubmitting ? "Submitting..." : "Submit"}
+                    </span>
                     <Send
-                      size={15}
+                      size={18}
                       className={`transition-transform duration-300 ${
                         isSubmitting
                           ? "animate-pulse"
@@ -614,7 +618,7 @@ const SubmittedComp = () => {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1.2, opacity: 1 }}
         transition={{ type: "spring", stiffness: 150, damping: 10, delay: 0.2 }}
-        className="bg-yellow-400 text-black p-4 rounded-full shadow-lg"
+        className="bg-[#f2ca46] text-black p-4 rounded-full shadow-lg"
       >
         <CheckCircle size={50} />
       </motion.div>
@@ -635,8 +639,8 @@ const SubmittedComp = () => {
         whileTap={{ scale: 0.95 }}
         onClick={() => navigate("/technovista/events")}
         className="mt-8 inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-full shadow-md 
-          bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 
-          text-black hover:shadow-yellow-500/30 transition-all duration-300"
+          bg-gradient-to-r from-[#f2ca46] via-[#daa425] to-yellow-600 
+          text-black hover:shadow-[#daa425]/30 transition-all duration-300"
       >
         <ExternalLink size={18} />
         Explore Events
@@ -649,7 +653,7 @@ const LoadingComp = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-[80vh] bg-black text-yellow-300 px-4">
       <motion.div
-        className="relative bg-white/5 backdrop-blur-xl border border-yellow-500/30 shadow-[0_0_40px_rgba(255,255,255,0.05)] rounded-2xl p-10 w-full max-w-md text-center"
+        className="relative bg-white/5 backdrop-blur-xl border border-[#daa425]/30 shadow-[0_0_40px_rgba(255,255,255,0.05)] rounded-2xl p-10 w-full max-w-md text-center"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
@@ -694,11 +698,11 @@ const FormClosedComp = () => {
       className="flex flex-col items-center justify-center min-h-[80vh] bg-black text-yellow-300 px-6"
     >
       {/* Glassy box */}
-      <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl p-10 w-full max-w-md text-center border border-yellow-400/20 shadow-[0_0_40px_rgba(255,255,255,0.08)]">
+      <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl p-10 w-full max-w-md text-center border border-[#f2ca46]/20 shadow-[0_0_40px_rgba(255,255,255,0.08)]">
         {/* Optional noise texture */}
         <div className="absolute inset-0 rounded-2xl bg-[url('/textures/noise.png')] opacity-10 mix-blend-overlay pointer-events-none" />
 
-        <Lock size={48} className="text-yellow-400 mx-auto mb-4" />
+        <Lock size={48} className="text-[#f2ca46] mx-auto mb-4" />
 
         <h2 className="text-2xl font-bold text-yellow-200 mb-2">
           Registration Closed
@@ -724,19 +728,19 @@ const RegistrationForm = () => {
 
   return (
     <motion.div
-      className="w-full bg-black rounded-2xl shadow-2xl border-2 border-yellow-500/30 relative min-h-[110vh] flex items-center justify-center"
+      className="w-full bg-black rounded-2xl shadow-2xl border-2 border-[#daa425]/30 relative min-h-[110vh] flex items-center justify-center"
       initial={{ opacity: 0, filter: "blur(10px)" }}
       animate={{ opacity: 1, filter: "blur(0px)" }}
       transition={{ duration: 1, ease: "easeOut" }}
     >
       {/* Decorative golden corners */}
-      <div className="absolute top-0 left-0 w-20 h-20 border-l-4 border-t-4 border-yellow-400 rounded-tl-2xl z-30"></div>
-      <div className="absolute top-0 right-0 w-20 h-20 border-r-4 border-t-4 border-yellow-400 rounded-tr-2xl z-30"></div>
-      <div className="absolute bottom-0 left-0 w-20 h-20 border-l-4 border-b-4 border-yellow-400 rounded-bl-2xl z-30"></div>
-      <div className="absolute bottom-0 right-0 w-20 h-20 border-r-4 border-b-4 border-yellow-400 rounded-br-2xl z-30"></div>
+      <div className="absolute top-0 left-0 w-20 h-20 border-l-4 border-t-4 border-[#f2ca46] rounded-tl-2xl z-30"></div>
+      <div className="absolute top-0 right-0 w-20 h-20 border-r-4 border-t-4 border-[#f2ca46] rounded-tr-2xl z-30"></div>
+      <div className="absolute bottom-0 left-0 w-20 h-20 border-l-4 border-b-4 border-[#f2ca46] rounded-bl-2xl z-30"></div>
+      <div className="absolute bottom-0 right-0 w-20 h-20 border-r-4 border-b-4 border-[#f2ca46] rounded-br-2xl z-30"></div>
 
       {/* Golden glow effect */}
-      <div className="absolute inset-0 h-full bg-gradient-radial from-yellow-400/5 via-transparent to-transparent rounded-2xl"></div>
+      <div className="absolute inset-0 h-full bg-gradient-radial from-[#f2ca46]/5 via-transparent to-transparent rounded-2xl"></div>
 
       {/* Scrollable content container */}
       <div

@@ -7,7 +7,7 @@ const TechnovistaForm = () => {
   return (
     <>
       {/* Mobile Layout - Single column */}
-      <div className="flex md:hidden pt-12 min-h-[calc(100vh-5rem)] bg-black">
+      <div className="flex md:hidden pt-8  px-4 min-h-[calc(100vh-5rem)] bg-black">
         <div className="w-full max-w-2xl mx-auto">
           <TForm />
         </div>

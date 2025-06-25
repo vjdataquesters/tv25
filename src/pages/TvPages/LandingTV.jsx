@@ -5,6 +5,7 @@ import * as THREE from "three";
 import { useNavigate } from "react-router-dom";
 import vnrLogo from "/events/Technovista2025/tv25-icons/VNRVJIET-logo-files-03.png";
 import dqLogo from "/events/Technovista2025/tv25-icons/dq-vector.png";
+import LandingPageText from "../../components/TVComponents/LandingPageText";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -62,7 +63,7 @@ const LandingTV = () => {
 
     const flash = document.createElement("div");
     flash.className =
-      "fixed inset-0 bg-yellow-500/30 z-[999] pointer-events-none";
+      "fixed inset-0 bg-[#daa425]/30 z-[999] pointer-events-none";
     document.body.appendChild(flash);
 
     gsap.to(flash, {
@@ -77,7 +78,7 @@ const LandingTV = () => {
     for (let i = 0; i < count; i++) {
       const debris = document.createElement("div");
       debris.className =
-        "absolute w-0.5 h-0.5 bg-yellow-500 rounded-full pointer-events-none z-20";
+        "absolute w-0.5 h-0.5 bg-[#daa425] rounded-full pointer-events-none z-20";
       debris.style.left = `${x}px`;
       debris.style.top = `${y}px`;
       document.body.appendChild(debris);
@@ -101,7 +102,7 @@ const LandingTV = () => {
     for (let i = 0; i < count; i++) {
       const crack = document.createElement("div");
       crack.className =
-        "absolute h-0.5 bg-yellow-500 z-20 shadow-[0_0_8px_2px_rgba(255,215,0,0.8)]";
+        "absolute h-0.5 bg-[#daa425] z-20 shadow-[0_0_8px_2px_rgba(255,215,0,0.8)]";
       crack.style.left = `${x}px`;
       crack.style.top = `${y}px`;
       crack.style.width = "0px";
@@ -268,32 +269,32 @@ const LandingTV = () => {
       {/* Custom Cursor Elements */}
       <div
         ref={cursorRef}
-        className="fixed w-5 h-5 rounded-full bg-yellow-500/80 shadow-[0_0_15px_5px_rgba(255,215,0,0.5)] transform -translate-x-1/2 -translate-y-1/2 z-[9999] pointer-events-none mix-blend-screen"
+        className="fixed w-5 h-5 rounded-full bg-[#daa425]/80 shadow-[0_0_15px_5px_rgba(255,215,0,0.5)] transform -translate-x-1/2 -translate-y-1/2 z-[9999] pointer-events-none mix-blend-screen"
       />
       <div
         ref={cursorTrailRef}
-        className="fixed w-10 h-10 rounded-full bg-yellow-500/20 transform -translate-x-1/2 -translate-y-1/2 z-[9998] pointer-events-none transition-all duration-100 ease-linear"
+        className="fixed w-10 h-10 rounded-full bg-[#daa425]/20 transform -translate-x-1/2 -translate-y-1/2 z-[9998] pointer-events-none transition-all duration-100 ease-linear"
       />
 
       {/* Navigation */}
-      <nav className="nav fixed top-0 w-full px-4 py-2 flex items-center z-40 opacity-0 bg-transparent">
-        <div className="flex items-center gap-4">
+      <nav className="flex content-start nav fixed top-0 w-full px-4 pt-2 items-center z-40 opacity-0 bg-transparent">
+        <div className="flex items-center gap-2">
           {/* DQ Logo */}
           <a
             href="/home"
             target="_blank"
             rel="noopener noreferrer"
-            className="h-[3rem] sm:h-[4rem] md:h-[5rem] lg:h-[6rem] xl:h-[6rem] transition-transform duration-300 hover:scale-105 flex items-center"
+            className="h-[3rem] sm:h-[4rem] md:h-[5rem] lg:h-[6rem] xl:h-[5rem] transition-transform duration-300 flex items-center cursor-pointer"
           >
             <img
               src={dqLogo}
               alt="DQ Club Logo"
-              className="h-full w-auto object-contain"
+              className="h-full w-auto object-contain p-3"
             />
           </a>
 
           {/* Separator */}
-          <div className="text-white opacity-70">
+          <div className="text-white opacity-90">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -312,12 +313,12 @@ const LandingTV = () => {
 
           {/* VNR Logo */}
           <div
-            className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-[3.5rem] cursor-pointer transition-transform duration-300 hover:scale-105 flex items-center"
+            className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-[3.5rem] cursor-pointer transition-transform duration-300  flex items-center"
             onClick={() => window.open("https://vnrvjiet.ac.in", "_blank")}
           >
             <img
               src={vnrLogo}
-              alt="Technovista Logo"
+              alt="VnrVjiet Logo"
               className="h-full w-auto object-contain"
             />
           </div>
@@ -336,28 +337,33 @@ const LandingTV = () => {
         <div className="absolute inset-0 w-full h-full z-10 bg-[radial-gradient(circle,rgba(255,215,0,0.1)_0%,rgba(0,0,0,0)_60%)] pointer-events-none" />
 
         {/* Content */}
-        <div className="relative z-30 text-white text-center max-w-4xl mx-auto">
-          {/* <h1 className="title text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase text-yellow-500 opacity-0 translate-y-8 mb-4 tracking-wider">
+        <div className="z-30 text-white text-center max-w-7xl mx-auto w-full">
+          {/* <h1 className="title text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase text-[#daa425] opacity-0 translate-y-8 mb-4 tracking-wider">
             Technovista
           </h1> */}
-          <img src="/events/Technovista2025/tv25-icons/new-logo.svg" className="w-[950px]"/>
+          <img
+            src="/events/Technovista2025/tv25-icons/landing-page-text.png"
+            alt="Technovista Title"
+            className="mx-auto w-[90%] sm:w-[80%] md:w-[65%] lg:w-[55%] xl:w-[45%] max-w-[1000px] h-auto mb-6"
+          />
 
-          <p className="subtitle text-base sm:text-lg md:text-2xl mb-6 text-white/80 opacity-0 translate-y-8">
+          <p className="font-mono subtitle text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl mb-6 text-white/80 leading-snug sm:leading-normal opacity-0 translate-y-8 text-center px-4">
             Where Innovation Explodes Into Reality
           </p>
-          <p className="date text-sm sm:text-base md:text-xl lg:text-2xl mb-8 text-yellow-500 opacity-0 translate-y-8">
-            July 30 – August 1, 2025
+
+          <p className="font-mono date text-sm sm:text-base md:text-xl lg:text-2xl mb-8 text-[#daa425] opacity-0 translate-y-8">
+            July 30 - August 1, 2025
           </p>
 
-          <div className="flex gap-4 justify-center flex-wrap">
+          <div className="flex gap-6 justify-center flex-wrap">
             <button
-              className="cta-button px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg bg-gradient-to-r from-yellow-500 to-yellow-600 text-black rounded-full shadow-[0_0_20px_rgba(255,215,0,0.5)] opacity-0 scale-90 font-bold hover:scale-105 hover:shadow-[0_0_30px_rgba(255,215,0,0.8)] transition-all duration-300 ease-in-out"
+              className="font-sans cta-button px-4 sm:px-6 py-2 sm:py-3 text-base sm:text-lg md:text-lg bg-[#daa425] text-black rounded-2xl shadow-[0_0_15px_rgba(255,215,0,0.5)] opacity-0 scale-90 font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.8)] transition-all duration-300 ease-in-out"
               onClick={() => navigate("/technovista/register")}
             >
               Register Now
             </button>
             <button
-              className="cta-button px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg bg-gradient-to-r from-yellow-500 to-yellow-600 text-black rounded-full shadow-[0_0_20px_rgba(255,215,0,0.5)] opacity-0 scale-90 font-bold hover:scale-105 hover:shadow-[0_0_30px_rgba(255,215,0,0.8)] transition-all duration-300 ease-in-out"
+              className="font-sans cta-button px-4 sm:px-6 py-2 sm:py-3 text-base sm:text-lg md:text-lg text-[#daa425] rounded-2xl shadow-[0_0_15px_rgba(255,215,0,0.5)] opacity-0 scale-90 font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.8)] transition-all duration-300 ease-in-out"
               onClick={() => navigate("/technovista")}
             >
               Enter the Nexus

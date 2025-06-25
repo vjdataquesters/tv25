@@ -42,39 +42,67 @@ function WhatWeGot() {
 
   useEffect(() => {
     let charIndex = 0;
-    const newText = translations[index].text;
+    let isDeleting = false;
     let currentText = "";
+    let timeoutId;
+    const fullText = translations[index].text;
 
-    const typingEffect = setInterval(() => {
-      if (charIndex < newText.length) {
-        currentText += newText.charAt(charIndex);
+    const typeEffect = () => {
+      if (!isDeleting) {
+        currentText = fullText.substring(0, charIndex + 1);
         setDisplayedText(currentText);
         charIndex++;
-      } else {
-        clearInterval(typingEffect);
-        setTimeout(() => {
-          setIndex((prevIndex) => (prevIndex + 1) % translations.length);
-        }, 500);
-      }
-    }, 150);
 
-    return () => clearInterval(typingEffect);
+        if (charIndex === fullText.length) {
+          isDeleting = true;
+          timeoutId = setTimeout(typeEffect, 900);
+          return;
+        }
+      } else {
+        currentText = fullText.substring(0, charIndex - 1);
+        setDisplayedText(currentText);
+        charIndex--;
+
+        if (charIndex === 0) {
+          isDeleting = false;
+          setIndex((prevIndex) => (prevIndex + 1) % translations.length);
+          timeoutId = setTimeout(typeEffect, 300);
+          return;
+        }
+      }
+
+      timeoutId = setTimeout(typeEffect, 100);
+    };
+
+    timeoutId = setTimeout(typeEffect, 100);
+
+    return () => clearTimeout(timeoutId);
   }, [index]);
 
+  const isMalayalam = translations[index].lang === "Malayalam";
+
   return (
-    <div className="min-h-screen bg-none overflow-hidden px-4 pt-12 md:pt-16 flex flex-col items-center justify-center text-white text-center select-none">
+    <div className="min-h-screen bg-none overflow-hidden px-4 pt-8 md:pt-12 flex flex-col items-center justify-center text-white text-center select-none">
       {" "}
       <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-6 leading-tight font-mono">
         WHAT WE'VE GOT FOR YOU
       </h1>
       <motion.span
-        className="text-4xl sm:text-6xl md:text-7xl font-bold text-yellow-400 py-4"
-        animate={{ scale: [1, 1, 1] }}
-        transition={{ duration: 1.2, repeat: Infinity }}
+        className={`
+        inline-block text-center break-words leading-tight max-w-full px-2 font-bold text-[#daa425] py-4
+        ${
+          isMalayalam
+            ? "text-2xl sm:text-5xl md:text-7xl"
+            : "text-4xl sm:text-6xl md:text-7xl"
+        }
+      `}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
       >
-        {displayedText} 2K25
+        {displayedText}&nbsp;2K25
       </motion.span>
-         <div className="mt-8 md:mt-12 w-full max-w-6xl px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 overflow-visible">
+      <div className="mt-8 md:mt-12 w-full max-w-6xl px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 overflow-visible">
         {stats.map((stat, index) => (
           <motion.div
             key={index}
@@ -97,19 +125,19 @@ function WhatWeGot() {
                   className={`absolute inset-0 rounded-full bg-gradient-to-br ${stat.color} blur-md opacity-70`}
                 ></div>
                 <i
-                  className={`${stat.icon} text-4xl sm:text-5xl relative z-10 text-amber-400`}
+                  className={`${stat.icon} text-4xl sm:text-5xl relative z-10 text-[#daa425]`}
                 />
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+              <h3 className="font-sans text-xl sm:text-2xl font-bold text-white mb-2">
                 {stat.title}
               </h3>
 
-              <p className="text-sm sm:text-base text-gray-300 mb-3">
+              <p className="font-mono text-sm sm:text-base text-gray-300 mb-3">
                 {stat.desc}
               </p>
 
-              <p className="text-xs sm:text-sm font-medium bg-gradient-to-r from-amber-500 to-amber-300 bg-clip-text text-transparent">
+              <p className="font-mono text-xs sm:text-sm font-medium bg-gradient-to-r from-[#daa425] to-[#f2ca46] bg-clip-text text-transparent">
                 {stat.highlight}
               </p>
 
@@ -126,32 +154,31 @@ function WhatWeGot() {
         ))}
       </div>
       <section className="m-8 from-yellow-900/20 to-black/50  rounded-xl p-6 sm:p-8 max-w-6xl text-left">
-        <h2 className="text-2xl sm:text-3xl font-semibold text-yellow-400 mb-4 tracking-wide ">
+        <h2 className="font-sans text-2xl sm:text-3xl font-bold text-[#daa425] mb-4 tracking-wide ">
           The Ultimate Tech Carnival
         </h2>
-        <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
+        <p className="font-mono text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
           Gear up for the{" "}
-          <span className="text-yellow-400 font-semibold">second edition</span>{" "}
+          <span className="text-[#daa425] font-semibold">second edition</span>{" "}
           of the most electrifying tech fest of the year —{" "}
           <span className="font-bold text-white">TechnoVista 2K25</span>, hosted
           by <span className="text-white">VJ DataQuesters</span>! This 3-day
           extravaganza fuses cutting-edge innovation, relentless challenges, and
           limitless creativity. From{" "}
-          <span className="text-yellow-400">Hackathons</span> to{" "}
-          <span className="text-yellow-400">Debug Challenges</span>,{" "}
-          <span className="text-yellow-400">Workshops</span> to{" "}
-          <span className="text-yellow-400">Tech Talks</span> — there’s
-          something for every tech enthusiast!
+          <span className="text-[#daa425]">Hackathons</span> to{" "}
+          <span className="text-[#daa425]">Debug Challenges</span>,{" "}
+          <span className="text-[#daa425]">Workshops</span> to{" "}
+          <span className="text-[#daa425]">Tech Talks</span> — there’s something
+          for every tech enthusiast!
         </p>
 
-        <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-300 text-right">
-          <span className="font-medium text-yellow-400">
+        <p className=" mt-4 text-sm sm:text-base md:text-lg text-gray-300 text-right">
+          <span className="font-medium font-mono text-[#daa425]">
             Decode. Discover. Disrupt.
           </span>
         </p>
       </section>
       {/* stats Section */}
-   
     </div>
   );
 }

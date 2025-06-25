@@ -49,7 +49,7 @@ const FormBanner = () => {
         <div className="text-center mb-6">
           <div className="flex items-center justify-center mb-4">
             <Star className="text-yellow-400 mr-2 animate-pulse" size={24} />
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-[#f2ca46] via-yellow-300 to-[#daa425] bg-clip-text text-transparent">
               Featured Events
             </h2>
             <Star className="text-yellow-400 ml-2 animate-pulse" size={24} />

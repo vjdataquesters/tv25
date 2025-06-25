@@ -1,7 +1,8 @@
 .bg {
-  background-color: #0a0a0a;
-  background-image: url("https://www.transparenttextures.com/patterns/zig-zag.png");
-  opacity: 0.95;
+  background-color: black;
+  /* background-image: url("../../../public/textures/zig-zag.png"); */
+  background-image: url("../../../public/textures/bg-star.png");
+  opacity: 0.96;
 }
 @keyframes marquee {
   0% {

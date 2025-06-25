@@ -136,7 +136,7 @@ const FooterTV = () => {
             <h2 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-4 text-yellow-400">
               Location
             </h2>
-            <div className="w-full aspect-video rounded-lg overflow-hidden border-2 border-yellow-500 shadow-md max-w-md mx-auto">
+            <div className="w-full aspect-video rounded-lg overflow-hidden border-2 border-[#daa425] shadow-md max-w-md mx-auto">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11075.568485372974!2d78.3888612092676!3d17.539494326822695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8e0ab28e0975%3A0x7b048b2858fdee94!2sVallurupalli%20Nageswara%20Rao%20Vignana%20Jyothi%20Institute%20of%20Engineering%20%26Technology!5e0!3m2!1sen!2sin!4v1750646504693!5m2!1sen!2sin"
                 width="100%"
@@ -151,7 +151,7 @@ const FooterTV = () => {
               href="https://maps.app.goo.gl/69xL8NXPXzC3zQPk8"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-block px-4 py-2 rounded-md border border-yellow-500 text-yellow-400 font-medium text-sm sm:text-base hover:bg-yellow-500 hover:text-black transition duration-300 shadow-md"
+              className="mt-4 inline-block px-4 py-2 rounded-lg border border-[#daa425] text-[#f2ca46] font-medium text-sm sm:text-base hover:bg-[#daa425] hover:text-black transition duration-300 shadow-md"
             >
               Open in Google Maps →
             </a>
