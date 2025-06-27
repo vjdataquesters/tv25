@@ -36,7 +36,35 @@
 //   | 'Guest Lecture';
 
 const events = {
-  upcoming: [],
+  upcoming: [
+    {
+      name: "Technovista 2k25",
+      eventId: "tv25",
+      image: "/events/Technovista2025/main.png",
+      date: "July 30 August 1st & 2nd 2025",
+      venue: "VNR VJIET",
+      timings: "9:30 AM to 4:00 PM",
+      pics: [
+        "/events/Technovista2025/main.png",
+        "/events/Technovista2025/img1.jpg",
+        "/events/Technovista2025/img2.jpg",
+        "/events/Technovista2025/img3.jpg",
+        "/events/Technovista2025/img4.jpg",
+        "/events/Technovista2025/img5.jpg",
+        "/events/Technovista2025/img6.jpg",
+        "/events/Technovista2025/img7.jpg",
+        "/events/Technovista2025/img8.jpg",
+      ],
+      // winners:"",
+      // outcome:"",
+      // register: "/register",
+      isGFormEmbeddable: false,
+      event_tags: ["Tech Fest", "Hackathon", "Workshops"],
+      description:
+        "Join the electrifying second edition of Technovista 2K25 by VJ DataQuesters! A 3-day tech carnival packed with Hackathons, Debug Battles, Workshops, and Tech Talks — where innovation meets creativity.",
+      link: "/",
+    },
+  ],
   past: {
     e2025: [
       {
