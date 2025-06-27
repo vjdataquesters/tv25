@@ -382,6 +382,18 @@ const LandingTV = () => {
             </button>
           </div>
         </div>
+        {/* Knowledge Partner - GeeksforGeeks */}
+<div className="absolute bottom-4 right-4 flex flex-col items-center gap-1 bg-amber-500/20 border border-yellow-600/40 shadow-md shadow-yellow-900/30 pointer-events-none z-[9998] text-white px-7 py-4 rounded-xl">
+  <span className="text-xs sm:text-sm font-semibold tracking-wide text-[#d5f6e4]">
+    Knowledge Partner
+  </span>
+  <img
+    src="/landingPageIcons/GFG.png"
+    alt="GeeksforGeeks Logo"
+    className="h-10 sm:h-15 w-auto object-contain rounded"
+  />
+</div>
+
       </section>
     </>
   );
