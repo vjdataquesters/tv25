@@ -11,6 +11,7 @@ import PastImages from "../../components/TVComponents/PastImages";
 import "./Technovista.css";
 import Sponsors from "../../components/TVComponents/Sponsors";
 import NavbarTv from "../../components/TVComponents/NavbarTv";
+import ScrollingGallery from "../../components/TVComponents/ScrollingGallery";
 
 const Technovista = () => {
   const [introDone, setIntroDone] = useState(false);
@@ -126,13 +127,13 @@ const Technovista = () => {
             {/*PastEvents Gallery Section */}
             <div>
               <section className="max-w-7xl md:max-w-[90%] h-full mx-auto">
-                <h4 className="font-sans text-center text-[40px] md:text-[30px] lg:text-[50px] font-semibold text-white">
+                <h4 className="font-sans text-center text-[40px] md:text-[30px] lg:text-[50px] text-white">
                   TV-2k24 <span className="text-[#daa425]">Glimpses</span>
                 </h4>
                 <div className="pt-4 pb-8">
                   <div className="flex justify-center">
                     <div className="w-full max-w-6xl mx-auto">
-                      <PastImages />
+                      <ScrollingGallery />
                     </div>
                   </div>
                 </div>
