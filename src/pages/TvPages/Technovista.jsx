@@ -23,6 +23,23 @@ const Technovista = () => {
   // Cursor refs
   const cursorRef = useRef(null);
   const cursorTrailRef = useRef(null);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+
+      const rect = sectionRef.current.getBoundingClientRect();
+      const triggerPoint = window.innerHeight - rect.height * 0.3;
+      const isInView = rect.top <= triggerPoint;
+      if (isInView && !isVisible) {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMobile]);
 
   const handleMouseMove = (e) => {
     if (cursorRef.current && cursorTrailRef.current) {
