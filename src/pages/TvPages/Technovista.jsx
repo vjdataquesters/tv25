@@ -7,10 +7,11 @@ import EventTimeTV from "../../components/TVComponents/EventTimeTV";
 import Carousel3D from "../../components/TVComponents/CarouselTV";
 import Countdown from "../../components/TVComponents/CountDown";
 import FooterTV from "../../components/TVComponents/FooterTV";
-import PastImages from "../../components/TVComponents/PastImages";
+// import PastImages from "../../components/TVComponents/PastImages";
 import "./Technovista.css";
 import Sponsors from "../../components/TVComponents/Sponsors";
 import NavbarTv from "../../components/TVComponents/NavbarTv";
+import ScrollingGallery from "../../components/TVComponents/ScrollingGallery";
 import { gsap } from "gsap";
 
 const Technovista = () => {
@@ -134,16 +135,16 @@ const Technovista = () => {
             <EventTimeTV />
 
             <div>
-              <section className="max-w-7xl md:max-w-[90%] h-full mx-auto">
-                <h4 className="font-sans text-center text-[40px] md:text-[30px] lg:text-[50px] font-semibold text-white">
+              <section className="md:w-[90%] h-full mx-auto">
+                <h4 className="font-sans text-center text-[40px] md:text-[30px] lg:text-[50px] text-white">
                   TV-2k24 <span className="text-[#daa425]">Glimpses</span>
                 </h4>
-                <div className="pt-4 pb-8">
-                  <div className="flex justify-center">
-                    <div className="w-full max-w-6xl mx-auto">
-                      <PastImages />
-                    </div>
+                <div className="pt-4 pb-6">
+                  <div className="w-full mx-auto">
+                    <ScrollingGallery />
                   </div>
+                  {/* <div className="flex justify-center">
+                  </div> */}
                 </div>
               </section>
             </div>
@@ -152,7 +153,6 @@ const Technovista = () => {
                 TECHNOVISTA
               </h1>
             </div>
-
             <FooterTV />
           </div>
         </div>
