@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import SponsorGfgTv from "./SponsorGfgTv";
 
 function WhatWeGot() {
   const translations = [
@@ -104,7 +103,6 @@ function WhatWeGot() {
         {displayedText}&nbsp;2K25
       </motion.span>
       {/*sponsor section */}
-      <SponsorGfgTv />
       <div className="mt-4 md:mt-8 w-full max-w-6xl px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 overflow-visible">
         {stats.map((stat, index) => (
           <motion.div

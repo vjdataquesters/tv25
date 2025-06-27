@@ -13,6 +13,7 @@ import Sponsors from "../../components/TVComponents/Sponsors";
 import NavbarTv from "../../components/TVComponents/NavbarTv";
 import ScrollingGallery from "../../components/TVComponents/ScrollingGallery";
 import { gsap } from "gsap";
+import SponsorGfgTv from "../../components/TVComponents/SponsorGfgTv";
 
 const Technovista = () => {
   const [introDone, setIntroDone] = useState(false);
@@ -133,6 +134,7 @@ const Technovista = () => {
             </motion.div>
 
             <EventTimeTV />
+            <Sponsors />
 
             <div>
               <section className="md:w-[90%] h-full mx-auto">
