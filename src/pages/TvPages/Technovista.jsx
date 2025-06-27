@@ -29,7 +29,7 @@ const Technovista = () => {
       if (!sectionRef.current) return;
 
       const rect = sectionRef.current.getBoundingClientRect();
-      const triggerPoint = window.innerHeight - rect.height * 0.3;
+      const triggerPoint = window.innerHeight - rect.height * 0.6;
       const isInView = rect.top <= triggerPoint;
       if (isInView && !isVisible) {
         setIsVisible(true);

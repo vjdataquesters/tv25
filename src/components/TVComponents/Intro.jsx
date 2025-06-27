@@ -1,36 +1,38 @@
 import React, { useState, useEffect } from "react";
-import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
-const Intro = () => {
-  const { scrollY } = useScroll();
+const Intro = ({ onFinish }) => {
   const [introDone, setIntroDone] = useState(false);
   const controls = useAnimation();
   const titleControls = useAnimation();
 
-  const scale = useTransform(scrollY, [0, 300], [1, 3]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
-
-  // Animation sequence
   useEffect(() => {
+    // Disable scroll
+    document.body.style.overflow = "hidden";
+
     const sequence = async () => {
-      // First animate in the letters
       await titleControls.start("visible");
-
-      // Wait for letters to settle
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      // Then zoom out
+      await new Promise((resolve) => setTimeout(resolve, 500));
       await controls.start({
         scale: 3,
         opacity: 0,
         transition: { duration: 0.8, ease: "easeInOut" },
       });
 
+      // Re-enable scroll
+      document.body.style.overflow = "auto";
       setIntroDone(true);
+
+      if (onFinish) onFinish();
     };
 
     sequence();
-  }, [controls, titleControls]);
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [controls, titleControls, onFinish]);
 
   if (introDone) return null;
 
@@ -46,20 +48,12 @@ const Intro = () => {
   };
 
   const letterVariants = {
-    hidden: {
-      y: 20,
-      opacity: 0,
-      scale: 0.8,
-    },
+    hidden: { y: 20, opacity: 0, scale: 0.8 },
     visible: {
       y: 0,
       opacity: 1,
       scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 200,
-        damping: 12,
-      },
+      transition: { type: "spring", stiffness: 200, damping: 12 },
     },
   };
 
@@ -69,7 +63,6 @@ const Intro = () => {
     <motion.div
       animate={controls}
       initial={{ scale: 1, opacity: 1 }}
-      style={{ scale, opacity }}
       className="fixed inset-0 flex items-center justify-center bg-black z-[9999] pointer-events-none"
     >
       <motion.div
