@@ -5,44 +5,61 @@ const Intro = () => {
   const { scrollY } = useScroll();
   const [introDone, setIntroDone] = useState(false);
   const controls = useAnimation();
+  const titleControls = useAnimation();
 
   const scale = useTransform(scrollY, [0, 300], [1, 3]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
-  // Automatically transition out intro after animation completes
+  // Animation sequence
   useEffect(() => {
-    const timer = setTimeout(() => {
-      controls
-        .start({
-          scale: 3,
-          opacity: 0,
-          transition: { duration: 0.8, ease: "easeInOut" },
-        })
-        .then(() => {
-          setIntroDone(true);
-        });
-    }, 2000); // Adjust timing as needed
+    const sequence = async () => {
+      // First animate in the letters
+      await titleControls.start("visible");
 
-    return () => clearTimeout(timer);
-  }, [controls]);
+      // Wait for letters to settle
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  // Return null once intro is complete to remove from DOM
+      // Then zoom out
+      await controls.start({
+        scale: 3,
+        opacity: 0,
+        transition: { duration: 0.8, ease: "easeInOut" },
+      });
+
+      setIntroDone(true);
+    };
+
+    sequence();
+  }, [controls, titleControls]);
+
   if (introDone) return null;
 
   const titleVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.08 },
+      transition: {
+        staggerChildren: 0.06,
+        delayChildren: 0.2,
+      },
     },
   };
 
   const letterVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: {
+      y: 20,
+      opacity: 0,
+      scale: 0.8,
+    },
     visible: {
       y: 0,
       opacity: 1,
-      transition: { type: "spring", stiffness: 100 },
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 200,
+        damping: 12,
+      },
     },
   };
 
@@ -52,20 +69,20 @@ const Intro = () => {
     <motion.div
       animate={controls}
       initial={{ scale: 1, opacity: 1 }}
-      className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black z-50 overflow-hidden"
+      style={{ scale, opacity }}
+      className="fixed inset-0 flex items-center justify-center bg-black z-[9999] pointer-events-none"
     >
-      {/* Animated Title */}
       <motion.div
         variants={titleVariants}
         initial="hidden"
-        animate="visible"
-        className="flex items-center justify-center z-10"
+        animate={titleControls}
+        className="flex flex-wrap items-center justify-center max-w-[90vw]"
       >
         {letters.map((letter, index) => (
           <motion.span
             key={index}
             variants={letterVariants}
-            className={`font-semibold text-base md:text-7xl p-1 font-orbitron ${
+            className={`font-bold text-4xl md:text-7xl px-0.5 md:px-1 font-orbitron ${
               index >= 6 ? "text-amber-400" : "text-white"
             }`}
           >

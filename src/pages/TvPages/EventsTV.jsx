@@ -5,6 +5,7 @@ import { eventTimeLine } from "../../data/tvData";
 import Reveal from "../../components/Reveal.jsx";
 import "./Technovista.css";
 import { AnimatePresence, motion } from "framer-motion";
+import { gsap } from "gsap";
 
 const backdropVariants = {
   hidden: { opacity: 0 },
@@ -80,6 +81,7 @@ const EventsTV = () => {
   const dayRefs = useRef({});
   const scrollToDay = location.state?.day;
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
 
   useEffect(() => {
     if (scrollToDay) {
@@ -100,8 +102,61 @@ const EventsTV = () => {
     setSelectedImage(null);
   };
 
+  // Cursor refs
+  const cursorRef = useRef(null);
+  const cursorTrailRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    if (cursorRef.current && cursorTrailRef.current) {
+      gsap.to(cursorRef.current, {
+        x: e.clientX,
+        y: e.clientY,
+        duration: 0.1,
+      });
+      gsap.to(cursorTrailRef.current, {
+        x: e.clientX,
+        y: e.clientY,
+        duration: 0.3,
+      });
+    }
+  };
+
+  useEffect(() => {
+    // Hide cursor on mobile
+    if (isMobile) {
+      if (cursorRef.current) cursorRef.current.style.display = "none";
+      if (cursorTrailRef.current) cursorTrailRef.current.style.display = "none";
+      return;
+    }
+
+    document.addEventListener("mousemove", handleMouseMove);
+    return () => document.removeEventListener("mousemove", handleMouseMove);
+  }, [isMobile]);
   return (
     <div className="min-h-screen text-white bg">
+      {/* Custom Cursor - only on desktop */}
+      {!isMobile && (
+        <>
+          <div
+            ref={cursorRef}
+            className="fixed w-4 h-4 rounded-full bg-[#daa425] pointer-events-none z-[9999] mix-blend-difference"
+            style={{
+              transform: "translate(-50%, -50%)",
+              left: 0,
+              top: 0,
+            }}
+          />
+          <div
+            ref={cursorTrailRef}
+            className="fixed w-8 h-8 rounded-full bg-[#daa425]/30 pointer-events-none z-[9998] mix-blend-difference"
+            style={{
+              transform: "translate(-50%, -50%)",
+              left: 0,
+              top: 0,
+            }}
+          />
+        </>
+      )}
       {selectedImage && (
         <ImageViewer image={selectedImage} onClose={closeViewer} />
       )}
@@ -119,15 +174,24 @@ const EventsTV = () => {
         </div>
 
         <div className="bg-yellow-500/10 border border-yellow-400/30 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 mb-12 shadow-md backdrop-blur-lg">
-          <p className="text-sm sm:text-base text-yellow-200 font-medium text-center sm:text-left">
-            Please register yourself before registering for individual events.
-          </p>
-          <button
-            onClick={() => navigate("/technovista/register")}
-            className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black font-semibold px-6 py-2 rounded-xl transition-all duration-300 hover:scale-105 shadow hover:shadow-yellow-500/30"
-          >
-            Register Here
-          </button>
+          <div className="flex-1 text-center sm:text-left">
+            <p className="text-sm sm:text-base text-yellow-200 font-medium">
+              Please register yourself before registering for individual events.
+            </p>
+            {/* Mobile-only additional info */}
+            <p className="sm:hidden text-xs text-yellow-300/80 mt-1">
+              (Required for all events)
+            </p>
+          </div>
+
+          <div className="w-full sm:w-auto flex justify-center sm:justify-end">
+            <button
+              onClick={() => navigate("/technovista/register")}
+              className="w-full sm:w-auto bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black font-semibold px-6 py-2 rounded-xl transition-all duration-300 hover:scale-105 shadow hover:shadow-yellow-500/30 whitespace-nowrap"
+            >
+              Register Here
+            </button>
+          </div>
         </div>
 
         {eventTimeLine.map(({ day, date, events }) => (

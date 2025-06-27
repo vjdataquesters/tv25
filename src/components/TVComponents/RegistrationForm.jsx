@@ -195,7 +195,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
 
       {/* Mouse Follower Effect */}
       <div
-        className="absolute w-96 h-96 bg-[#f2ca46]/5 rounded-full blur-3xl transition-all duration-1000 ease-out pointer-events-none"
+        className="absolute w-96 h-96 bg-[#f2ca46]/5 rounded-full blur-3xl transition-all duration-1000 ease-out pointer-events-none "
         style={{
           left: `${mousePosition.x}%`,
           top: `${mousePosition.y}%`,
@@ -571,7 +571,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                     type="submit"
                     disabled={isSubmitting}
                     aria-busy={isSubmitting}
-                    className="group relative inline-flex items-center justify-center gap-3 px-6 py-2
+                    className="group relative inline-flex items-center justify-center gap-3 px-6 py-2 mb-2
       bg-gradient-to-r from-[#f2ca46] via-[#daa425] to-yellow-600
       text-black font-bold text-lg rounded-2xl shadow-md
       transition-all duration-300 ease-out

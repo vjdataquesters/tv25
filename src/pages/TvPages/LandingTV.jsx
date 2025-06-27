@@ -5,7 +5,6 @@ import * as THREE from "three";
 import { useNavigate } from "react-router-dom";
 import vnrLogo from "/events/Technovista2025/tv25-icons/VNRVJIET-logo-files-03.png";
 import dqLogo from "/events/Technovista2025/tv25-icons/dq-vector.png";
-import LandingPageText from "../../components/TVComponents/LandingPageText";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -19,6 +18,7 @@ const LandingTV = () => {
   const cameraRef = useRef(null);
   const rendererRef = useRef(null);
   const particlesMeshRef = useRef(null);
+  const contentContainerRef = useRef(null);
   const navigate = useNavigate();
 
   // Animation effect functions
@@ -218,13 +218,24 @@ const LandingTV = () => {
     };
     animate();
 
+    // Hide content initially to prevent layout shift
+    gsap.set(contentContainerRef.current, { visibility: "hidden" });
+    gsap.set(".nav", { y: -20, opacity: 0 });
+    gsap.set(".title-image", { y: 20, opacity: 0 });
+    gsap.set(".subtitle", { y: 20, opacity: 0 });
+    gsap.set(".date", { y: 20, opacity: 0 });
+    gsap.set(".cta-button", { scale: 0.9, opacity: 0 });
+
     // Initial animations
     setTimeout(() => {
       createMajorExplosion(window.innerWidth / 2, window.innerHeight / 2, 300);
 
       setTimeout(() => {
+        // Show content container
+        gsap.to(contentContainerRef.current, { visibility: "visible", duration: 0 });
+
         gsap.to(".nav", { opacity: 1, y: 0, duration: 1, ease: "power3.out" });
-        gsap.to(".title", {
+        gsap.to(".title-image", {
           opacity: 1,
           y: 0,
           duration: 1,
@@ -277,14 +288,14 @@ const LandingTV = () => {
       />
 
       {/* Navigation */}
-      <nav className="flex content-start nav fixed top-0 w-full px-4 pt-2 items-center z-40 opacity-0 bg-transparent">
-        <div className="flex items-center gap-2">
+      <nav className="flex content-start nav fixed top-0 w-full px-2 pt-2 items-center z-40 bg-transparent">
+        <div className="flex items-center">
           {/* DQ Logo */}
           <a
             href="/home"
             target="_blank"
             rel="noopener noreferrer"
-            className="h-[3rem] sm:h-[4rem] md:h-[5rem] lg:h-[6rem] xl:h-[5rem] transition-transform duration-300 flex items-center cursor-pointer"
+            className="h-[4.5rem] sm:h-[5rem] md:h-[5rem] lg:h-[5rem] xl:h-[5rem] transition-transform duration-300 flex items-center cursor-pointer"
           >
             <img
               src={dqLogo}
@@ -294,7 +305,7 @@ const LandingTV = () => {
           </a>
 
           {/* Separator */}
-          <div className="text-white opacity-90">
+          <div className="text-white opacity-90 pr-[0.5rem]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -313,7 +324,7 @@ const LandingTV = () => {
 
           {/* VNR Logo */}
           <div
-            className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-[3.5rem] cursor-pointer transition-transform duration-300  flex items-center"
+            className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-[3.5rem] cursor-pointer transition-transform duration-300 flex items-center"
             onClick={() => window.open("https://vnrvjiet.ac.in", "_blank")}
           >
             <img
@@ -326,44 +337,45 @@ const LandingTV = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen w-full relative overflow-hidden bg-black flex items-center justify-center px-4 py-16 select-none">
+      <section className="min-h-screen w-full relative overflow-hidden bg-black flex items-center justify-center px-4 py-16 select-none overflow-x-hidden">
         {/* Three.js Canvas */}
         <div
           ref={canvasContainerRef}
           className="absolute inset-0 w-full h-full z-10"
+          style={{ pointerEvents: "none" }}
         />
 
         {/* Golden Highlight */}
         <div className="absolute inset-0 w-full h-full z-10 bg-[radial-gradient(circle,rgba(255,215,0,0.1)_0%,rgba(0,0,0,0)_60%)] pointer-events-none" />
 
-        {/* Content */}
-        <div className="z-30 text-white text-center max-w-7xl mx-auto w-full">
-          {/* <h1 className="title text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase text-[#daa425] opacity-0 translate-y-8 mb-4 tracking-wider">
-            Technovista
-          </h1> */}
+        {/* Content Container - initially hidden */}
+        <div 
+          ref={contentContainerRef}
+          className="z-30 text-white text-center max-w-7xl mx-auto w-full relative"
+        >
           <img
             src="/events/Technovista2025/tv25-icons/landing-page-text.png"
             alt="Technovista Title"
-            className="mx-auto w-[90%] sm:w-[80%] md:w-[65%] lg:w-[55%] xl:w-[45%] max-w-[1000px] h-auto mb-6"
+            className="mx-auto title-image w-[90%] sm:w-[80%] md:w-[65%] lg:w-[55%] xl:w-[45%] max-w-[1000px] h-auto mb-6"
           />
 
-          <p className="font-mono subtitle text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl mb-6 text-white/80 leading-snug sm:leading-normal opacity-0 translate-y-8 text-center px-4">
+          <p className="font-mono subtitle text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl mb-6 text-white/80 leading-snug sm:leading-normal text-center px-4">
             Where Innovation Explodes Into Reality
           </p>
 
-          <p className="font-mono date text-sm sm:text-base md:text-xl lg:text-2xl mb-8 text-[#daa425] opacity-0 translate-y-8">
+          <p className="font-mono date text-sm sm:text-base md:text-xl lg:text-2xl mb-8 text-[#daa425]">
             July 30 - August 1, 2025
           </p>
 
           <div className="flex gap-6 justify-center flex-wrap">
             <button
-              className="font-sans cta-button px-4 sm:px-6 py-2 sm:py-3 text-base sm:text-lg md:text-lg bg-[#daa425] text-black rounded-2xl shadow-[0_0_15px_rgba(255,215,0,0.5)] opacity-0 scale-90 font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.8)] transition-all duration-300 ease-in-out"
+              className="font-sans cta-button px-4 sm:px-6 py-2 sm:py-3 text-base sm:text-lg md:text-lg bg-[#daa425] text-black rounded-2xl shadow-[0_0_15px_rgba(255,215,0,0.5)] font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.8)] transition-all duration-300 ease-in-out"
               onClick={() => navigate("/technovista/register")}
             >
               Register Now
             </button>
             <button
-              className="font-sans cta-button px-4 sm:px-6 py-2 sm:py-3 text-base sm:text-lg md:text-lg text-[#daa425] rounded-2xl shadow-[0_0_15px_rgba(255,215,0,0.5)] opacity-0 scale-90 font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.8)] transition-all duration-300 ease-in-out"
+              className="font-sans cta-button px-4 sm:px-6 py-2 sm:py-3 text-base sm:text-lg md:text-lg text-[#daa425] rounded-2xl shadow-[0_0_15px_rgba(255,215,0,0.5)] font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.8)] transition-all duration-300 ease-in-out"
               onClick={() => navigate("/technovista")}
             >
               Enter the Nexus
