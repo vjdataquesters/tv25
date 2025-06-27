@@ -14,8 +14,8 @@ function NavbarTv() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 pt-2  border-b border-yellow-500/10 backdrop-blur-lg">
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 left-0 w-full z-50 p-1 border-b border-yellow-500/10 backdrop-blur-lg">
+      <div className="mx-auto px-3 sm:px-5 lg:px-7">
         <div className="flex justify-between items-center h-16">
           {/* Left: Logos and cross */}
           <div className="flex items-center space-x-3">
@@ -36,7 +36,7 @@ function NavbarTv() {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                className="h-5 w-5 sm:h-6 sm:w-6 md:h-6 md:w-6 lg:h-8 lg:w-8 transition-all duration-200"
+                className="h-6 w-6 sm:h-6 sm:w-6 md:h-6 md:w-6 lg:h-8 lg:w-8"
               >
                 <path
                   strokeLinecap="round"
@@ -51,7 +51,7 @@ function NavbarTv() {
               <img
                 src="/events/Technovista2025/tv25-icons/VNRVJIET-logo-files-03.png"
                 alt="Logo 2"
-                className="h-10 w-auto object-contain"
+                className="h-12 w-auto object-contain"
               />
             </a>
           </div>

@@ -82,14 +82,14 @@ function WhatWeGot() {
   const isMalayalam = translations[index].lang === "Malayalam";
 
   return (
-    <div className="min-h-screen bg-none overflow-hidden px-4 pt-8 md:pt-12 flex flex-col items-center justify-center text-white text-center select-none">
+    <div className="min-h-screen bg-none overflow-hidden px-4 pt-4 flex flex-col items-center justify-center text-white text-center select-none">
       {" "}
-      <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-6 leading-tight font-mono">
+      <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold my-4 leading-tight font-mono">
         WHAT WE'VE GOT FOR YOU
       </h1>
       <motion.span
         className={`
-        inline-block text-center break-words leading-tight max-w-full px-2 font-bold text-[#daa425] py-4
+        inline-block text-center break-words leading-tight max-w-full px-2 font-bold text-[#daa425] pt-2
         ${
           isMalayalam
             ? "text-2xl sm:text-5xl md:text-7xl"
@@ -153,8 +153,8 @@ function WhatWeGot() {
           </motion.div>
         ))}
       </div>
-      <section className="m-8 from-yellow-900/20 to-black/50  rounded-xl p-6 sm:p-8 max-w-6xl text-left">
-        <h2 className="font-sans text-2xl sm:text-3xl font-bold text-[#daa425] mb-4 tracking-wide ">
+      <section className="from-yellow-900/20 to-black/50  rounded-xl p-6 sm:p-8 my-6 max-w-[90%] md:max-w-6xl w-full text-left">
+        <h2 className="font-sans text-2xl sm:text-3xl font-bold text-[#daa425] mb-4 tracking-wide">
           The Ultimate Tech Carnival
         </h2>
         <p className="font-mono text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
@@ -168,7 +168,7 @@ function WhatWeGot() {
           <span className="text-[#daa425]">Hackathons</span> to{" "}
           <span className="text-[#daa425]">Debug Challenges</span>,{" "}
           <span className="text-[#daa425]">Workshops</span> to{" "}
-          <span className="text-[#daa425]">Tech Talks</span> — there’s something
+          <span className="text-[#daa425]">Tech Talks</span> — there's something
           for every tech enthusiast!
         </p>
 

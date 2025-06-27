@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { motion, useScroll, useTransform, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import WhatWeGot from "../../components/TVComponents/WhatWeGot";
 import Intro from "../../components/TVComponents/Intro";
@@ -11,14 +11,45 @@ import PastImages from "../../components/TVComponents/PastImages";
 import "./Technovista.css";
 import Sponsors from "../../components/TVComponents/Sponsors";
 import NavbarTv from "../../components/TVComponents/NavbarTv";
+import { gsap } from "gsap";
 
 const Technovista = () => {
   const [introDone, setIntroDone] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
-  const controls = useAnimation();
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
   const navigate = useNavigate();
+
+  // Cursor refs
+  const cursorRef = useRef(null);
+  const cursorTrailRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    if (cursorRef.current && cursorTrailRef.current) {
+      gsap.to(cursorRef.current, {
+        x: e.clientX,
+        y: e.clientY,
+        duration: 0.1,
+      });
+      gsap.to(cursorTrailRef.current, {
+        x: e.clientX,
+        y: e.clientY,
+        duration: 0.3,
+      });
+    }
+  };
+
+  useEffect(() => {
+    // Hide cursor on mobile
+    if (isMobile) {
+      if (cursorRef.current) cursorRef.current.style.display = "none";
+      if (cursorTrailRef.current) cursorTrailRef.current.style.display = "none";
+      return;
+    }
+
+    document.addEventListener("mousemove", handleMouseMove);
+    return () => document.removeEventListener("mousemove", handleMouseMove);
+  }, [isMobile]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -28,92 +59,55 @@ const Technovista = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const titleVariants = {
-    hidden: {
-      opacity: 1,
-      y: 0,
-    },
-    visible: {
-      opacity: 1,
-      y: isMobile ? "20vh" : "35vh",
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const letterVariants = {
-    hidden: {
-      opacity: 0,
-      scale: 0.5,
-      y: 100,
-    },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIntroDone(true);
-      // controls.start({ scale: 3, opacity: 0, transition: { duration: 1 } });
-    }, 2000);
+    const timer = setTimeout(() => setIntroDone(true), 2000);
     return () => clearTimeout(timer);
-  }, [controls]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-
-      const rect = sectionRef.current.getBoundingClientRect();
-      const triggerPoint = window.innerHeight - rect.height * 0.3;
-      const isInView = rect.top <= triggerPoint;
-      if (isInView && !isVisible) {
-        setIsVisible(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isMobile]);
+  }, []);
 
   return (
-    <div className="bg-black min-h-[250vh] relative bg pt-10">
-      <Intro />
-      {introDone && (
+    <div className="bg min-h-[250vh] relative overflow-x-hidden">
+      {/* Custom Cursor - only on desktop */}
+      {!isMobile && (
         <>
-        <NavbarTv/>
-          <div className="relative z-10 flex flex-col pt-10">
+          <div
+            ref={cursorRef}
+            className="fixed w-4 h-4 rounded-full bg-[#daa425] pointer-events-none z-[9999] mix-blend-difference"
+            style={{
+              transform: "translate(-50%, -50%)",
+              left: 0,
+              top: 0,
+            }}
+          />
+          <div
+            ref={cursorTrailRef}
+            className="fixed w-8 h-8 rounded-full bg-[#daa425]/30 pointer-events-none z-[9998] mix-blend-difference"
+            style={{
+              transform: "translate(-50%, -50%)",
+              left: 0,
+              top: 0,
+            }}
+          />
+        </>
+      )}
+
+      <Intro />
+
+      {introDone && (
+        <div className="relative z-10">
+          <NavbarTv />
+          <div className="flex flex-col pt-16">
             <WhatWeGot />
+
             <div
               ref={sectionRef}
-              className=" overflow-hidden select-none flex flex-col items-center justify-center gap-12 py-6"
+              className="overflow-hidden select-none flex flex-col items-center justify-center gap-12 pb-6"
             >
-              {/* Countdown */}
-              <motion.div
-                variants={letterVariants}
-                // initial="hidden"
-                // animate={isVisible ? "visible" : "hidden"}
-                className="w-full px-4 py-2 flex flex-col items-center justify-center"
-              >
+              <motion.div className="w-full px-4 py-2 flex flex-col items-center justify-center">
                 <Countdown isVisible={isVisible} />
               </motion.div>
             </div>
 
-            {/* Carousel */}
             <motion.div
-              variants={titleVariants}
-              // initial="hidden"
-              // animate={isVisible ? "visible" : "hidden"}
               whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
               className="w-full"
             >
@@ -122,8 +116,6 @@ const Technovista = () => {
 
             <EventTimeTV />
 
-            {/* <Sponsors /> */}
-            {/*PastEvents Gallery Section */}
             <div>
               <section className="max-w-7xl md:max-w-[90%] h-full mx-auto">
                 <h4 className="font-sans text-center text-[40px] md:text-[30px] lg:text-[50px] font-semibold text-white">
@@ -138,7 +130,7 @@ const Technovista = () => {
                 </div>
               </section>
             </div>
-            <div className="w-screen  text-center select-none">
+            <div className="w-screen text-center select-none">
               <h1 className="text-[0px] sm:text-[100px] md:text-[130px] lg:text-[160px] xl:text-[230px] leading-none font-bold text-amber-500/30 tracking-wide">
                 TECHNOVISTA
               </h1>
@@ -146,7 +138,7 @@ const Technovista = () => {
 
             <FooterTV />
           </div>
-        </>
+        </div>
       )}
     </div>
   );
