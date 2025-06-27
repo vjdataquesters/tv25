@@ -408,3 +408,12 @@
     background-position: var(--grid-size) var(--grid-size);
   }
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

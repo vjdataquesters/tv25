@@ -1,138 +1,134 @@
-import React, { useState } from "react";
-import day2Bg from "../../assets/designs/Layout.svg";
-import Image from "/events/BlogAThon2023/img1.png";
-import { useNavigate } from "react-router-dom";
+import React, { useRef, useEffect } from "react";
+import "./TvComponents.css";
+import { Code, Bug, Bot, FileText, Search, BarChart, MessageSquare } from 'lucide-react';
+
 
 function EventTimeTV() {
-  const [buttonTexts, setButtonTexts] = useState({
-    day1: "Register",
-    day2: "Register",
-    day3: "Register",
-  });
+  const containerRef = useRef(null);
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    const container = containerRef.current;
 
-  const handleButtonClick = (dayKey) => {
-    const dayNumber = {
-      day1: 1,
-      day2: 2,
-      day3: 3,
-    }[dayKey];
-
-    if (dayNumber) {
-      navigate("/technovista/events", {
-        state: { day: dayNumber },
-      });
+    function isFullyVisible(el) {
+      if (!el) return false;
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
     }
-  };
+
+    function isFullyVisibleVertically(el) {
+      if (!el) return false;
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+      );
+    }
+
+    const onWheel = (e) => {
+      if (!container) return;
+      if (!isFullyVisible(container)) return; 
+      if (e.deltaY < 0 && !isFullyVisibleVertically(container)) return;
+
+      const deltaY = e.deltaY;
+      const maxScrollLeft = container.scrollWidth - container.clientWidth;
+      const atStart = container.scrollLeft <= 0;
+      const atEnd = container.scrollLeft + 1 >= maxScrollLeft;
+
+      const scrollingForward = deltaY > 0;
+      const scrollingBackward = deltaY < 0;
+
+      const shouldScrollHorizontally =
+        (scrollingForward && !atEnd) || (scrollingBackward && !atStart);
+
+      if (shouldScrollHorizontally) {
+        e.preventDefault();
+        container.scrollLeft += deltaY;
+      }
+    };
+
+    container.addEventListener("wheel", onWheel, { passive: false });
+
+    return () => {
+      container.removeEventListener("wheel", onWheel);
+    };
+  }, []);
+
+  const cardTexts = [
+    { title: "ML Challenge", subtitle: "Model the Unknown" },
+    { title: "Guest Lecture", subtitle: "The Future of AI" },
+    { title: "Blogathon", subtitle: "Tech Pen Masters" },
+    { title: "DQ Code Fest", subtitle: "Battle of Coders" },
+    { title: "Debug or Die", subtitle: "Ultimate Debugging Battle" },
+    { title: "24hr Hackathon", subtitle: "Innovate. Create. Dominate." },
+    { title: "Workshop", subtitle: "Full Stack Web Dev" },
+  ];
+
+  const icons = [
+    <img src="/events/Technovista2025/tv25-icons/ml_challenge.png" alt="ML Challenge" style={{ width: 60, height: 50 }} />,
+    <img src="/events/Technovista2025/tv25-icons/guest_lecture.png" alt="Guest Lecture" style={{  width: 60, height: 60}} />,
+    <img src="/events/Technovista2025/tv25-icons/blogathon.png" alt="Blogathon" style={{ width: 75, height: 50}} />,
+    <img src="/events/Technovista2025/tv25-icons/code_fest.png" alt="Code Fest" style={{  width: 50, height: 40}} />,
+    <img src="/events/Technovista2025/tv25-icons/debug_or_die.png" alt="Debug or Die" style={{ width: 60, height: 50}} />,
+    <img src="/events/Technovista2025/tv25-icons/hackathon.png" alt="24Hr Hackathon" style={{  width: 60, height: 50 }} />,
+    <img src="/events/Technovista2025/tv25-icons/workshop.png" alt="workshop" style={{ width: 60, height: 50}} />,
+  ];
 
   return (
-    <div className="bg-black mx-auto md:w-2/3" id="event-time-line">
-      <div className="py-8 pl-4 md:pl-8 bg-black pb-2">
-        <span className="bg-yellow-400  px-4 md:px-6 text-xl md:text-3xl font-bold rounded-sm md:rounded-md">
-          Event Timeline
-        </span>
-      </div>
-      <hr className="border-t-2 border-white w-full" />
-
-      <div className="bg-black grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 p-3 md:p-6">
-        {/* Day 1 */}
-        <div className="relative w-full h-[500px] md:h-[600px] bg-black text-white font-mono flex justify-center">
-          <img src={day2Bg} alt="Day 1 Background" className="h-full" />
-          <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-4xl md:text-6xl font-bold tracking-widest text-white">
-            DAY1
-          </div>
-          <img
-            src={Image}
-            alt=""
-            className="absolute bottom-[55%] left-1/2 transform -translate-x-1/2 h-[100px] w-[150px] md:h-[150px] md:w-[200px] object-contain"
-          />
-          <div className="absolute bottom-[35%] left-1/2 transform -translate-x-1/2 w-[80%] p-2 rounded text-center">
-            <div className="text-base md:text-xl">APRIL 25TH 2025</div>
-          </div>
-          <div className="absolute bottom-[3%] left-1/2 transform -translate-x-1/2 w-[80%] md:w-[60%] lg:w-[50%] p-2 rounded text-center">
-            <div>
-              <ul className="list-disc mt-2 text-xs md:text-sm inline-block text-left">
-                <li>Guest Lecture</li>
-                <li>ML Challenge</li>
-              </ul>
-            </div>
-            <div>
-              <button
-                onClick={() => handleButtonClick("day1")}
-                className="mt-2 md:mt-4 w-full max-w-[150px] md:max-w-[200px] bg-transparent border-2 border-yellow-400 text-yellow-400 text-sm md:text-base font-bold py-1 md:py-2 rounded hover:bg-yellow-400 hover:text-black transition duration-300"
-              >
-                {buttonTexts.day1}
-              </button>
-            </div>
-          </div>
+    <div className="mt-32 mb-20 px-2 sm:px-6">
+      <div
+        ref={containerRef}
+        className="flex gap-8 sm:gap-16 md:gap-24 lg:gap-32 overflow-x-auto no-scrollbar"
+        style={{
+          height: "auto",
+          alignItems: "center",
+          paddingRight: "30vw", // extend scroll area to allow last card to center
+        }}
+      >
+        <div className="min-w-[220px] sm:min-w-[300px] md:min-w-[350px] h-[180px] sm:h-[220px] md:h-[250px] ml-2 sm:ml-6 mt-4 sm:mt-6 flex flex-col items-start justify-center text-white text-left font-sans text-3xl sm:text-4xl md:text-5xl leading-snug font-bold">
+          <p>What can you</p>
+          <p>expect?</p>
         </div>
 
-        {/* Day 2 */}
-        <div className="relative w-full h-[500px] md:h-[600px] bg-black text-white font-mono flex justify-center">
-          <img src={day2Bg} alt="Day 2 Background" className="h-full" />
-          <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-4xl md:text-6xl font-bold tracking-widest text-white">
-            DAY2
-          </div>
-          <img
-            src={Image}
-            alt=""
-            className="absolute bottom-[55%] left-1/2 transform -translate-x-1/2 h-[100px] w-[150px] md:h-[150px] md:w-[200px] object-contain"
-          />
-          <div className="absolute bottom-[35%] left-1/2 transform -translate-x-1/2 w-[80%] p-2 rounded text-center">
-            <div className="text-base md:text-xl">APRIL 26TH 2025</div>
-          </div>
-          <div className="absolute bottom-[1%] left-1/2 transform -translate-x-1/2 w-[80%] md:w-[60%] lg:w-[50%] p-2 rounded text-center">
-            <div>
-              <ul className="list-disc mt-2 text-xs md:text-sm inline-block text-left">
-                <li>Blogathon</li>
-                <li>DQ Code Fest</li>
-                <li>Debug or Die</li>
-              </ul>
-            </div>
-
-            <div>
-              <button
-                onClick={() => handleButtonClick("day2")}
-                className="mt-2 md:mt-4 w-full max-w-[150px] md:max-w-[200px] bg-transparent border-2 border-yellow-400 text-yellow-400 text-sm md:text-base font-bold py-1 md:py-2 rounded hover:bg-yellow-400 hover:text-black transition duration-300"
+        {icons.map((icon, idx) => (
+          <div
+            key={idx}
+            className={"group min-w-[180px] sm:min-w-[240px] md:min-w-[320px] h-[180px] sm:h-[220px] md:h-[250px]"}
+            style={{
+              background: `${idx===1?"#F7F7F7":"#FCFCFC"}`,
+              boxShadow: "0 0 5px 2px #daa42588, 0 2px 8px 0 rgba(0,0,0,0.08)",
+              position: "relative",
+              display: "flex",
+              alignItems: "flex-end",
+              justifyContent: "flex-start",
+              marginTop: "1rem",
+              transition: "all 0.3s",
+              ...(idx === icons.length - 1
+                ? { marginRight: "1rem" }
+                : {}),
+            }}
+          >
+            <div className="absolute top-2 sm:top-4 right-2 sm:right-4 text-end">
+              <div
+                className="font-sans text-base sm:text-lg md:text-xl font-semibold transition-colors duration-300 group-hover:text-[#daa425]"
               >
-                {buttonTexts.day2}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Day 3 */}
-        <div className="relative w-full h-[500px] md:h-[600px] bg-black text-white font-mono flex justify-center">
-          <img src={day2Bg} alt="Day 3 Background" className="h-full" />
-          <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-4xl md:text-6xl font-bold tracking-widest text-white">
-            DAY3
-          </div>
-          <img
-            src={Image}
-            alt=""
-            className="absolute bottom-[55%] left-1/2 transform -translate-x-1/2 h-[100px] w-[150px] md:h-[150px] md:w-[200px] object-contain"
-          />
-          <div className="absolute bottom-[35%] left-1/2 transform -translate-x-1/2 w-[80%] p-2 rounded text-center">
-            <div className="text-base md:text-xl">APRIL 27TH 2025</div>
-          </div>
-          <div className="absolute bottom-[1%] left-1/2 transform -translate-x-1/2 w-[80%] md:w-[60%] lg:w-[50%] p-2 rounded text-center">
-            <div>
-              <ul className="list-disc mt-2 text-xs md:text-sm inline-block text-left">
-                <li>24hr Hackathon</li>
-                <li>Workshop</li>
-              </ul>{" "}
-            </div>
-            <div>
-              <button
-                onClick={() => handleButtonClick("day3")}
-                className="mt-2 md:mt-4 w-full max-w-[150px] md:max-w-[200px] bg-transparent border-2 border-yellow-400 text-yellow-400 text-sm md:text-base font-bold py-1 md:py-2 rounded hover:bg-yellow-400 hover:text-black transition duration-300"
+                {cardTexts[idx].title}
+              </div>
+              <div
+                className="font-mono text-xs sm:text-sm md:text-base transition-colors duration-300 group-hover:text-[#f2ca46]"
               >
-                {buttonTexts.day3}
-              </button>
+                {cardTexts[idx].subtitle}
+              </div>
+            </div>
+            <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4">
+              {icon}
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

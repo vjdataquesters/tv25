@@ -90,8 +90,9 @@ const Technovista = () => {
         <>
           <div
             ref={cursorRef}
-            className="fixed w-4 h-4 rounded-full bg-[#daa425] pointer-events-none z-[9999] mix-blend-difference"
+            className="fixed w-4 h-4 rounded-full bg-[#daa425] pointer-events-none z-[9999]"
             style={{
+              mixBlendMode: "normal",
               transform: "translate(-50%, -50%)",
               left: 0,
               top: 0,
@@ -99,8 +100,9 @@ const Technovista = () => {
           />
           <div
             ref={cursorTrailRef}
-            className="fixed w-8 h-8 rounded-full bg-[#daa425]/30 pointer-events-none z-[9998] mix-blend-difference"
+            className="fixed w-8 h-8 rounded-full bg-[#daa425]/30 pointer-events-none z-[9998]"
             style={{
+              mixBlendMode: "normal",
               transform: "translate(-50%, -50%)",
               left: 0,
               top: 0,
@@ -133,7 +135,14 @@ const Technovista = () => {
               <Carousel3D />
             </motion.div>
 
-            <EventTimeTV />
+            <section className="md:w-[90%] h-full mx-auto">
+              <div className="pt-4 pb-6">
+                <div className="w-full mx-auto">
+                  <EventTimeTV />
+                </div>
+              </div>
+            </section>
+
             <Sponsors />
 
             <div>
