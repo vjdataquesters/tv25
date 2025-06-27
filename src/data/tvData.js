@@ -118,6 +118,20 @@ export const eventTimeLine = [
         icon: "🛠️",
         image: "/events/Technovista2025/img7.png",
       },
+      {
+        id: 8,
+        title: "Tv Event",
+        subtitle: "Full Stack Web Dev",
+        date: "2025-08-03",
+        time: "10:00 AM - 1:00 PM",
+        venue: "Workshop Hall B",
+        formlink: "",
+        description:
+          "Hands-on workshop covering MERN stack development basics, deployment, and GitHub collaboration.",
+        highlights: ["React", "MongoDB", "GitHub", "Deployment"],
+        icon: "🛠️",
+        image: "/events/Technovista2025/img7.png",
+      },
     ],
   },
 ];

@@ -2,7 +2,10 @@ import { motion } from "framer-motion";
 
 const SponsorGfgTv = () => {
   return (
-    <section className="m-4 rounded-xl p-4 sm:p-6 max-w-4xl mx-auto shadow-xl">
+    <section
+      className="m-4 rounded-xl p-4 sm:p-6 max-w-4xl mx-auto shadow-xl transform [scale:1.15]"
+      style={{ transformOrigin: "center" }}
+    >
       {/* Sponsor Badge */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
