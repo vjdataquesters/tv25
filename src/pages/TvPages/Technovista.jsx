@@ -4,16 +4,15 @@ import { useNavigate } from "react-router-dom";
 import WhatWeGot from "../../components/TVComponents/WhatWeGot";
 import Intro from "../../components/TVComponents/Intro";
 import EventShowcase from "../../components/TVComponents/EventShowcase";
-import Carousel3D from "../../components/TVComponents/CarouselTV";
 import Countdown from "../../components/TVComponents/CountDown";
 import FooterTV from "../../components/TVComponents/FooterTV";
 // import PastImages from "../../components/TVComponents/PastImages";
 import "./Technovista.css";
 import Sponsors from "../../components/TVComponents/Sponsors";
 import NavbarTv from "../../components/TVComponents/NavbarTv";
+import WhatToExpectTV from "../../components/TVComponents/WhatToExpectTV";
 import ScrollingGallery from "../../components/TVComponents/ScrollingGallery";
 import { gsap } from "gsap";
-import SponsorGfgTv from "../../components/TVComponents/SponsorGfgTv";
 
 const Technovista = () => {
   const [introDone, setIntroDone] = useState(false);
@@ -127,17 +126,10 @@ const Technovista = () => {
                 <Countdown isVisible={isVisible} />
               </motion.div>
             </div>
-
-            {/* <motion.div
-              whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-              className="w-full"
-            >
-              <Carousel3D />
-            </motion.div> */}
             <section className="md:w-[90%] h-full mx-auto">
               <div className="pt-4 pb-6">
                 <div className="w-full mx-auto">
-                  <EventTimeTV />
+                  <WhatToExpectTV />
                 </div>
               </div>
             </section>
@@ -154,8 +146,6 @@ const Technovista = () => {
                   <div className="w-full mx-auto">
                     <ScrollingGallery />
                   </div>
-                  {/* <div className="flex justify-center">
-                  </div> */}
                 </div>
               </section>
             </div>

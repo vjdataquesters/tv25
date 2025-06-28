@@ -1,9 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import "./TvComponents.css";
-import { Code, Bug, Bot, FileText, Search, BarChart, MessageSquare } from 'lucide-react';
 
 
-function EventTimeTV() {
+function WhatToExpectTV() {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -15,8 +14,10 @@ function EventTimeTV() {
       return (
         rect.top >= 0 &&
         rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <=
+          (window.innerWidth || document.documentElement.clientWidth)
       );
     }
 
@@ -25,13 +26,14 @@ function EventTimeTV() {
       const rect = el.getBoundingClientRect();
       return (
         rect.top >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight)
       );
     }
 
     const onWheel = (e) => {
       if (!container) return;
-      if (!isFullyVisible(container)) return; 
+      if (!isFullyVisible(container)) return;
       if (e.deltaY < 0 && !isFullyVisibleVertically(container)) return;
 
       const deltaY = e.deltaY;
@@ -69,13 +71,41 @@ function EventTimeTV() {
   ];
 
   const icons = [
-    <img src="/events/Technovista2025/tv25-icons/ml_challenge.png" alt="ML Challenge" style={{ width: 60, height: 50 }} />,
-    <img src="/events/Technovista2025/tv25-icons/guest_lecture.png" alt="Guest Lecture" style={{  width: 60, height: 60}} />,
-    <img src="/events/Technovista2025/tv25-icons/blogathon.png" alt="Blogathon" style={{ width: 75, height: 50}} />,
-    <img src="/events/Technovista2025/tv25-icons/code_fest.png" alt="Code Fest" style={{  width: 50, height: 40}} />,
-    <img src="/events/Technovista2025/tv25-icons/debug_or_die.png" alt="Debug or Die" style={{ width: 60, height: 50}} />,
-    <img src="/events/Technovista2025/tv25-icons/hackathon.png" alt="24Hr Hackathon" style={{  width: 60, height: 50 }} />,
-    <img src="/events/Technovista2025/tv25-icons/workshop.png" alt="workshop" style={{ width: 60, height: 50}} />,
+    <img
+      src="/events/Technovista2025/tv25-icons/ml_challenge.png"
+      alt="ML Challenge"
+      style={{ width: 60, height: 50 }}
+    />,
+    <img
+      src="/events/Technovista2025/tv25-icons/guest_lecture.png"
+      alt="Guest Lecture"
+      style={{ width: 60, height: 60 }}
+    />,
+    <img
+      src="/events/Technovista2025/tv25-icons/blogathon.png"
+      alt="Blogathon"
+      style={{ width: 75, height: 50 }}
+    />,
+    <img
+      src="/events/Technovista2025/tv25-icons/code_fest.png"
+      alt="Code Fest"
+      style={{ width: 50, height: 40 }}
+    />,
+    <img
+      src="/events/Technovista2025/tv25-icons/debug_or_die.png"
+      alt="Debug or Die"
+      style={{ width: 60, height: 50 }}
+    />,
+    <img
+      src="/events/Technovista2025/tv25-icons/hackathon.png"
+      alt="24Hr Hackathon"
+      style={{ width: 60, height: 50 }}
+    />,
+    <img
+      src="/events/Technovista2025/tv25-icons/workshop.png"
+      alt="workshop"
+      style={{ width: 60, height: 50 }}
+    />,
   ];
 
   return (
@@ -97,9 +127,11 @@ function EventTimeTV() {
         {icons.map((icon, idx) => (
           <div
             key={idx}
-            className={"group min-w-[180px] sm:min-w-[240px] md:min-w-[320px] h-[180px] sm:h-[220px] md:h-[250px]"}
+            className={
+              "group min-w-[180px] sm:min-w-[240px] md:min-w-[320px] h-[180px] sm:h-[220px] md:h-[250px]"
+            }
             style={{
-              background: `${idx===1?"#F7F7F7":"#FCFCFC"}`,
+              background: `${idx === 1 ? "#F7F7F7" : "#FCFCFC"}`,
               boxShadow: "0 0 5px 2px #daa42588, 0 2px 8px 0 rgba(0,0,0,0.08)",
               position: "relative",
               display: "flex",
@@ -107,20 +139,14 @@ function EventTimeTV() {
               justifyContent: "flex-start",
               marginTop: "1rem",
               transition: "all 0.3s",
-              ...(idx === icons.length - 1
-                ? { marginRight: "1rem" }
-                : {}),
+              ...(idx === icons.length - 1 ? { marginRight: "1rem" } : {}),
             }}
           >
             <div className="absolute top-2 sm:top-4 right-2 sm:right-4 text-end">
-              <div
-                className="font-sans text-base sm:text-lg md:text-xl font-semibold transition-colors duration-300 group-hover:text-[#daa425]"
-              >
+              <div className="font-sans text-base sm:text-lg md:text-xl font-semibold transition-colors duration-300 group-hover:text-[#daa425]">
                 {cardTexts[idx].title}
               </div>
-              <div
-                className="font-mono text-xs sm:text-sm md:text-base transition-colors duration-300 group-hover:text-[#f2ca46]"
-              >
+              <div className="font-mono text-xs sm:text-sm md:text-base transition-colors duration-300 group-hover:text-[#f2ca46]">
                 {cardTexts[idx].subtitle}
               </div>
             </div>
@@ -134,4 +160,4 @@ function EventTimeTV() {
   );
 }
 
-export default EventTimeTV;
+export default WhatToExpectTV;

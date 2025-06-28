@@ -28,7 +28,6 @@ const Intro = ({ onFinish }) => {
 
     sequence();
 
-    // Cleanup on unmount
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -58,6 +57,8 @@ const Intro = ({ onFinish }) => {
   };
 
   const letters = Array.from("TECHNOVISTA  2k25");
+  const mainLetters = letters.slice(0, letters.length - 4);
+  const tailLetters = letters.slice(-4);
 
   return (
     <motion.div
@@ -71,17 +72,29 @@ const Intro = ({ onFinish }) => {
         animate={titleControls}
         className="flex flex-wrap items-center justify-center max-w-[90vw]"
       >
-        {letters.map((letter, index) => (
+        {/* Main letters wrap normally */}
+        {mainLetters.map((letter, index) => (
           <motion.span
             key={index}
             variants={letterVariants}
-            className={`font-bold text-4xl md:text-7xl px-0.5 md:px-1 font-orbitron ${
+            className={`font-bold text-3xl sm:text-5xl md:text-7xl px-0.5 sm:px-1 md:px-2 font-orbitron ${
               index >= 6 ? "text-amber-400" : "text-white"
             }`}
           >
             {letter}
           </motion.span>
         ))}
+        <motion.div className="w-full sm:w-auto flex justify-center whitespace-nowrap mt-2 sm:mt-0">
+          {tailLetters.map((letter, idx) => (
+            <motion.span
+              key={`tail-${idx}`}
+              variants={letterVariants}
+              className="font-bold text-2xl sm:text-4xl md:text-7xl px-0.5 sm:px-1 md:px-2 text-amber-400 font-orbitron"
+            >
+              {letter}
+            </motion.span>
+          ))}
+        </motion.div>
       </motion.div>
     </motion.div>
   );
