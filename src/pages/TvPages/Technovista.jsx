@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import WhatWeGot from "../../components/TVComponents/WhatWeGot";
 import Intro from "../../components/TVComponents/Intro";
-import EventTimeTV from "../../components/TVComponents/EventTimeTV";
+import EventShowcase from "../../components/TVComponents/EventShowcase";
 import Carousel3D from "../../components/TVComponents/CarouselTV";
 import Countdown from "../../components/TVComponents/CountDown";
 import FooterTV from "../../components/TVComponents/FooterTV";
@@ -128,13 +128,12 @@ const Technovista = () => {
               </motion.div>
             </div>
 
-            <motion.div
+            {/* <motion.div
               whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
               className="w-full"
             >
               <Carousel3D />
-            </motion.div>
-
+            </motion.div> */}
             <section className="md:w-[90%] h-full mx-auto">
               <div className="pt-4 pb-6">
                 <div className="w-full mx-auto">
@@ -142,6 +141,7 @@ const Technovista = () => {
                 </div>
               </div>
             </section>
+            <EventShowcase />
 
             <Sponsors />
 
