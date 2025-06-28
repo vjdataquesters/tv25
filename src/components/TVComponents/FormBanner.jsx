@@ -96,11 +96,12 @@ const FormBanner = () => {
                     </div>
                   </div>
                 </div>
-
-                <div className="flex items-center text-yellow-300 mb-4">
-                  <MapPin size={16} className="mr-2" />
-                  <span className="text-sm font-medium">{event.venue}</span>
-                </div>
+                {venue && (
+                  <div className="flex items-center text-yellow-300 mb-4">
+                    <MapPin size={16} className="mr-2" />
+                    <span className="text-sm font-medium">{event.venue}</span>
+                  </div>
+                )}
 
                 <p className="text-gray-300 text-sm mb-4 leading-relaxed font-light">
                   {event.description}
