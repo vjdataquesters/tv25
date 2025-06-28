@@ -232,7 +232,10 @@ const LandingTV = () => {
 
       setTimeout(() => {
         // Show content container
-        gsap.to(contentContainerRef.current, { visibility: "visible", duration: 0 });
+        gsap.to(contentContainerRef.current, {
+          visibility: "visible",
+          duration: 0,
+        });
 
         gsap.to(".nav", { opacity: 1, y: 0, duration: 1, ease: "power3.out" });
         gsap.to(".title-image", {
@@ -349,23 +352,23 @@ const LandingTV = () => {
         <div className="absolute inset-0 w-full h-full z-10 bg-[radial-gradient(circle,rgba(255,215,0,0.1)_0%,rgba(0,0,0,0)_60%)] pointer-events-none" />
 
         {/* Content Container - initially hidden */}
-        <div 
+        <div
           ref={contentContainerRef}
           className="z-30 text-white text-center max-w-7xl mx-auto w-full relative"
         >
-          <img
-            src="/events/Technovista2025/tv25-icons/landing-page-text.png"
-            alt="Technovista Title"
-            className="mx-auto title-image w-[90%] sm:w-[80%] md:w-[65%] lg:w-[55%] xl:w-[45%] max-w-[1000px] h-auto mb-6"
-          />
+          <div className="flex flex-col items-center">
+            <div className="w-[90%] sm:w-[75%] md:w-[70%] lg:w-[60%] xl:w-[50%] max-w-[1000px] text-center">
+              <img
+                src="/events/Technovista2025/tv25-icons/landing-page-text.png"
+                alt="Technovista Title"
+                className="w-full h-auto"
+              />
 
-          <p className="font-mono subtitle text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl mb-6 text-white/80 leading-snug sm:leading-normal text-center px-4">
-            Where Innovation Explodes Into Reality
-          </p>
-
-          <p className="font-mono date text-sm sm:text-base md:text-xl lg:text-2xl mb-8 text-[#daa425]">
-            July 30 - August 1, 2025
-          </p>
+              <p className="text-end font-mono date text-sm sm:text-base md:text-xl lg:text-2xl mb-8 text-[#daa425]">
+                July 30 - August 1, 2025
+              </p>
+            </div>
+          </div>
 
           <div className="flex gap-6 justify-center flex-wrap">
             <button
@@ -383,17 +386,16 @@ const LandingTV = () => {
           </div>
         </div>
         {/* Knowledge Partner - GeeksforGeeks */}
-<div className="absolute bottom-4 right-4 flex flex-col items-center gap-1 bg-amber-500/20 border border-yellow-600/40 shadow-md shadow-yellow-900/30 pointer-events-none z-[9998] text-white px-7 py-4 rounded-xl">
-  <span className="text-xs sm:text-sm font-semibold tracking-wide text-[#d5f6e4]">
-    Knowledge Partner
-  </span>
-  <img
-    src="/landingPageIcons/GFG.png"
-    alt="GeeksforGeeks Logo"
-    className="h-10 sm:h-15 w-auto object-contain rounded"
-  />
-</div>
-
+        <div className="absolute bottom-4 right-4 flex flex-col items-center gap-1 bg-amber-500/20 border border-yellow-600/40 shadow-md shadow-yellow-900/30 pointer-events-none z-[9998] text-white px-7 py-4 rounded-xl">
+          <span className="font-mono text-xs sm:text-sm font-semibold tracking-wide text-[#d5f6e4]">
+            Knowledge Partner
+          </span>
+          <img
+            src="events/Technovista2025/tv25-icons/GFG.png"
+            alt="GeeksforGeeks Logo"
+            className="h-10 sm:h-15 w-auto object-contain rounded"
+          />
+        </div>
       </section>
     </>
   );

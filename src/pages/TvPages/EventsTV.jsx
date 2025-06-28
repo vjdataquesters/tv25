@@ -78,21 +78,22 @@ const ImageViewer = ({ image, onClose }) => {
 const EventsTV = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const dayRefs = useRef({});
-  const scrollToDay = location.state?.day;
+  const eventRefs = useRef({});
   const [selectedImage, setSelectedImage] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
 
+  const scrollToEvent = location.state?.title;
+
   useEffect(() => {
-    if (scrollToDay) {
-      const section = dayRefs.current[`day${scrollToDay}`];
+    if (scrollToEvent) {
+      const section = eventRefs.current[scrollToEvent];
       if (section) {
         setTimeout(() => {
           section.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 100); // slight delay for smoother effect
+        }, 100);
       }
     }
-  }, [scrollToDay]);
+  }, [scrollToEvent]);
 
   const handleEventClick = (image) => {
     setSelectedImage(image);
@@ -195,11 +196,7 @@ const EventsTV = () => {
         </div>
 
         {eventTimeLine.map(({ day, date, events }) => (
-          <div
-            key={day}
-            ref={(el) => (dayRefs.current[`day${day}`] = el)}
-            className="space-y-10 mb-10"
-          >
+          <div key={day} className="space-y-10 mb-10">
             <Reveal>
               <div className="flex flex-col gap-4 items-start mb-6">
                 <div className="w-full">
@@ -239,7 +236,12 @@ const EventsTV = () => {
                   index
                 ) => (
                   <Reveal key={index}>
-                    <div className="max-w-[400px] w-full mx-auto rounded-lg h-full shadow-2xl bg-black border border-yellow-600/40 hover:border-[#daa425] transition-all duration-300 hover:shadow-yellow-500/20 group flex flex-col">
+                    <div
+                      ref={(el) => {
+                        if (el) eventRefs.current[title] = el;
+                      }}
+                      className="max-w-[400px] w-full mx-auto rounded-lg h-full shadow-2xl bg-black border border-yellow-600/40 hover:border-[#daa425] transition-all duration-300 hover:shadow-yellow-500/20 group flex flex-col"
+                    >
                       <div
                         onClick={() => handleEventClick(image)}
                         className="relative h-4/6 overflow-hidden"

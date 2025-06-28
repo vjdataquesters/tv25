@@ -14,22 +14,22 @@ function WhatWeGot() {
     {
       icon: "fas fa-user-graduate",
       title: "600+ Participants",
-      desc: "Engaging tech enthusiasts from across the region",
-      highlight: "from 50+ colleges",
+      desc: "Where Hyderabad's Brightest Minds Converge to Code, Create, and Conquer!",
+      highlight: "from 10+ colleges",
       color: "from-amber-500/20 to-amber-600/10",
       border: "border-amber-500/30",
     },
     {
       icon: "fas fa-calendar-alt",
-      title: "10+ Events",
-      desc: "Diverse competitions across multiple tech domains",
+      title: "8 Events",
+      desc: "Diverse events spanning workshops, lectures, competitions, and a 24-hour hackathon",
       highlight: "3 days of non-stop action",
       color: "from-purple-500/20 to-purple-600/10",
       border: "border-purple-500/30",
     },
     {
       icon: "fas fa-award",
-      title: "1.45 Lakh Prize Pool",
+      title: "65K+ Prize Pool",
       desc: "Exciting rewards for top performers",
       highlight: "across all events",
       color: "from-blue-500/20 to-blue-600/10",
@@ -159,24 +159,42 @@ function WhatWeGot() {
           The Ultimate Tech Carnival
         </h2>
         <p className="font-mono text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
-          Gear up for the{" "}
-          <span className="text-[#daa425] font-semibold">second edition</span>{" "}
-          of the most electrifying tech fest of the year —{" "}
-          <span className="font-bold text-white">TechnoVista 2K25</span>, hosted
-          by <span className="text-white">VJ DataQuesters</span>! This 3-day
-          extravaganza fuses cutting-edge innovation, relentless challenges, and
-          limitless creativity. From{" "}
-          <span className="text-[#daa425]">Hackathons</span> to{" "}
-          <span className="text-[#daa425]">Debug Challenges</span>,{" "}
-          <span className="text-[#daa425]">Workshops</span> to{" "}
-          <span className="text-[#daa425]">Tech Talks</span> — there's something
-          for every tech enthusiast!
-        </p>
-
-        <p className=" mt-4 text-sm sm:text-base md:text-lg text-gray-300 text-right">
-          <span className="font-medium font-mono text-[#daa425]">
-            Decode. Discover. Disrupt.
+          The annual technical fest{" "}
+          <span className="font-bold text-white">“TechnoVista”</span> is a
+          flagship initiative organized by the{" "}
+          <span className="text-[#daa425] font-semibold">
+            Data Science Branch of CSE – (CyS, DS)
+          </span>{" "}
+          <span className="text-[#daa425] font-semibold">
+            and the AI&amp;DS Department of VNRVJIET
           </span>
+          . Since its inception, it has emerged as a high-energy platform that
+          blends <span className="text-[#daa425]">innovation</span>,{" "}
+          <span className="text-[#daa425]">skill</span>, and{" "}
+          <span className="text-[#daa425]">creativity</span>. The{" "}
+          <span className="text-white font-semibold">2025 edition</span>,
+          scheduled from{" "}
+          <span className="text-white">July 31st to August 2nd</span>, showcases{" "}
+          <span className="text-white font-semibold">8 exciting events</span>{" "}
+          including{" "}
+          <span className="text-[#daa425]">machine learning challenges</span>, a{" "}
+          <span className="text-[#daa425]">creative blogathon</span>,{" "}
+          <span className="text-[#daa425]">data science problem-solving</span>,
+          a <span className="text-[#daa425]">coding contest</span>,{" "}
+          <span className="text-[#daa425]">hands-on workshops</span>,{" "}
+          <span className="text-[#daa425]">expert guest lectures</span>, and a
+          thrilling <span className="text-[#daa425]">24-hour hackathon</span>.
+          With{" "}
+          <span className="text-white font-semibold">
+            600+ tech enthusiasts
+          </span>{" "}
+          expected,{" "}
+          <span className="font-bold text-white">TechnoVista 2K25</span>{" "}
+          promises a vibrant confluence of{" "}
+          <span className="text-[#daa425]">ideas</span>,{" "}
+          <span className="text-[#daa425]">competition</span>, and{" "}
+          <span className="text-[#daa425]">collaboration</span> — celebrating
+          the spirit of technology like never before.
         </p>
       </section>
       {/* stats Section */}

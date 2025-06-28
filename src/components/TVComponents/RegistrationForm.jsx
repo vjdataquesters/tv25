@@ -206,7 +206,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-3 h-[110vh]">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-6">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="animate-spin-slow">
               <Code className="text-[#daa425]" size={32} />
@@ -218,10 +218,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
               <Star className="text-[#daa425]" size={32} />
             </div>
           </div>
-          <p className="text-yellow-300/80 text-lg">
-            Join the future of technology • Experience innovation
-          </p>
-          <div className="mt-4 flex justify-center gap-2">
+          <div className="flex justify-center gap-2">
             {[...Array(5)].map((_, i) => (
               <div
                 key={i}

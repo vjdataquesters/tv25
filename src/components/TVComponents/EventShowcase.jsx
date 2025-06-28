@@ -2,13 +2,14 @@ import { useState } from "react";
 import { Calendar, ExternalLink } from "lucide-react";
 import { eventTimeLine } from "../../data/tvData";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 // Flatten all events
 const allEvents = eventTimeLine.flatMap((day) => day.events);
 
 export default function EventShowcase() {
   const [activeEvent, setActiveEvent] = useState(allEvents[0]);
-
+  const navigate = useNavigate();
   return (
     <div className="w-full bg text-white font-mono max-w-7xl mx-auto px-4">
       <h2 className="font-sans text-4xl sm:text-5xl font-semibold text-white mb-4 py-5">
@@ -102,17 +103,28 @@ export default function EventShowcase() {
         </div>
 
         {/* Right: Event Preview */}
-        <div className="w-2/5 max-h-[550px] flex items-center justify-center text-center p-4">
+        <div
+          className="w-2/5 flex items-center justify-center text-center p-4"
+          onClick={() =>
+            navigate("/technovista/events", {
+              state: {
+                title: activeEvent.title,
+              },
+            })
+          }
+        >
           <AnimatePresence mode="wait">
             <motion.img
               key={activeEvent.image}
-              src={activeEvent.image}
+              src={activeEvent.cartoon}
               alt={activeEvent.title}
-              initial={{ opacity: 0.45 }}
+              initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              exit={{ opacity: 0.45 }}
-              transition={{ duration: 0.2, ease: "easeInOut" }}
-              className="object-cover border border-[#daa425] rounded-2xl"
+              exit={{ opacity: 0 }}
+              transition={{
+                opacity: { duration: 0.35, ease: "easeInOut" },
+              }}
+              className="rounded-2xl object-contain h-[400px] w-auto"
             />
           </AnimatePresence>
         </div>
@@ -124,11 +136,18 @@ export default function EventShowcase() {
           <div
             key={event.id}
             className="border border-white/10 p-4 flex flex-col items-center text-center hover:bg-white/5 transition duration-300"
+            onClick={() =>
+              navigate("/technovista/events", {
+                state: {
+                  title: event.title,
+                },
+              })
+            }
           >
             <img
-              src={event.image}
+              src={event.cartoon}
               alt={event.title}
-              className="w-40 h-40 object-cover grayscale rounded-xl mb-3"
+              className="w-40 h-40 object-cover rounded-xl mb-3"
             />
             <h3 className="font-bold text-white font-sans">{event.title}</h3>
             <p className="text-sm text-white/60 font-sans">{event.subtitle}</p>

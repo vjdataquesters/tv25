@@ -89,7 +89,7 @@ const Technovista = () => {
         <>
           <div
             ref={cursorRef}
-            className="fixed w-4 h-4 rounded-full bg-[#daa425] pointer-events-none z-[9999]"
+            // className="fixed w-4 h-4 rounded-full bg-[#daa425] pointer-events-none z-[9999]"
             style={{
               mixBlendMode: "normal",
               transform: "translate(-50%, -50%)",
@@ -99,7 +99,7 @@ const Technovista = () => {
           />
           <div
             ref={cursorTrailRef}
-            className="fixed w-8 h-8 rounded-full bg-[#daa425]/30 pointer-events-none z-[9998]"
+            // className="fixed w-8 h-8 rounded-full bg-[#daa425]/30 pointer-events-none z-[9998]"
             style={{
               mixBlendMode: "normal",
               transform: "translate(-50%, -50%)",
@@ -126,7 +126,7 @@ const Technovista = () => {
                 <Countdown isVisible={isVisible} />
               </motion.div>
             </div>
-            <section className="md:w-[90%] h-full mx-auto">
+            <section className=" md:w-[90%] h-full mx-auto">
               <div className="pt-4 pb-6">
                 <div className="w-full mx-auto">
                   <WhatToExpectTV />
@@ -142,7 +142,7 @@ const Technovista = () => {
                 <h4 className="font-sans text-center text-[40px] md:text-[30px] lg:text-[50px] text-white">
                   TV-2k24 <span className="text-[#daa425]">Glimpses</span>
                 </h4>
-                <div className="pt-4 pb-6">
+                <div className="pt-4">
                   <div className="w-full mx-auto">
                     <ScrollingGallery />
                   </div>
