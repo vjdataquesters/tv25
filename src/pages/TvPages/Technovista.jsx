@@ -89,7 +89,7 @@ const Technovista = () => {
         <>
           <div
             ref={cursorRef}
-            // className="fixed w-4 h-4 rounded-full bg-[#daa425] pointer-events-none z-[9999]"
+            className="fixed w-4 h-4 rounded-full bg-[#daa425] pointer-events-none z-[9999]"
             style={{
               mixBlendMode: "normal",
               transform: "translate(-50%, -50%)",
@@ -99,7 +99,7 @@ const Technovista = () => {
           />
           <div
             ref={cursorTrailRef}
-            // className="fixed w-8 h-8 rounded-full bg-[#daa425]/30 pointer-events-none z-[9998]"
+            className="fixed w-8 h-8 rounded-full bg-[#daa425]/30 pointer-events-none z-[9998]"
             style={{
               mixBlendMode: "normal",
               transform: "translate(-50%, -50%)",
