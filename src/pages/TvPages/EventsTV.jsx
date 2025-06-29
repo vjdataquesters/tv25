@@ -28,6 +28,38 @@ const imageModalVariants = {
     transition: { duration: 0.25, ease: "easeInOut" },
   },
 };
+// ✅ Superscript date formatter
+function formatCustomDate(dateStr) {
+  const date = new Date(dateStr);
+  const day = date.getDate();
+  const month = date.toLocaleString("en-US", { month: "long" });
+  const year = date.getFullYear();
+  const weekday = date.toLocaleString("en-US", { weekday: "long" });
+
+  const getOrdinalSuffix = (n) => {
+    if (n > 3 && n < 21) return "th";
+    switch (n % 10) {
+      case 1:
+        return "st";
+      case 2:
+        return "nd";
+      case 3:
+        return "rd";
+      default:
+        return "th";
+    }
+  };
+
+  const suffix = getOrdinalSuffix(day);
+
+  return (
+    <>
+      {day}
+      <sup className="text-[10px] align-super">{suffix}</sup> {month} {year},{" "}
+      {weekday}
+    </>
+  );
+}
 
 const ImageViewer = ({ image, onClose }) => {
   return (
@@ -81,7 +113,8 @@ const EventsTV = () => {
   const eventRefs = useRef({});
   const [selectedImage, setSelectedImage] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
-
+  const cursorRef = useRef(null);
+  const cursorTrailRef = useRef(null);
   const scrollToEvent = location.state?.title;
 
   useEffect(() => {
@@ -103,10 +136,6 @@ const EventsTV = () => {
     setSelectedImage(null);
   };
 
-  // Cursor refs
-  const cursorRef = useRef(null);
-  const cursorTrailRef = useRef(null);
-
   const handleMouseMove = (e) => {
     if (cursorRef.current && cursorTrailRef.current) {
       gsap.to(cursorRef.current, {
@@ -123,7 +152,6 @@ const EventsTV = () => {
   };
 
   useEffect(() => {
-    // Hide cursor on mobile
     if (isMobile) {
       if (cursorRef.current) cursorRef.current.style.display = "none";
       if (cursorTrailRef.current) cursorTrailRef.current.style.display = "none";
@@ -207,12 +235,7 @@ const EventsTV = () => {
                     </h2>
                   </div>
                   <p className="text-gray-300 text-sm sm:text-base">
-                    {new Date(date).toLocaleDateString("en-US", {
-                      weekday: "long",
-                      month: "long",
-                      day: "numeric",
-                      year: "numeric",
-                    })}
+                    {formatCustomDate(date)}
                   </p>
                   <div className="hidden md:block flex-grow h-px bg-gradient-to-r from-[#daa425] to-transparent"></div>
                 </div>
