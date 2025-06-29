@@ -114,7 +114,7 @@ export const eventTimeLine = [
     title: "24 - Hour Hackathon",
     subtitle: "Code • Create • Conquer",
     date: "2025-08-01",
-    time: "2:00 PM (Aug 1ˢᵗ) – 3:00 PM (Aug 2ⁿᵈ)",
+    time: "2:00 PM (Aug 1ˢᵗ) - 3:00 PM (Aug 2ⁿᵈ)",
     venue: "Auditorium",
     formlink: "#",
     description:
@@ -136,7 +136,7 @@ export const eventTimeLine = [
         title: "Technical Workshop",
         subtitle: "Learn • Build • Innovate",
         date: "2025-08-02",
-        time: "9:30 AM – 12:30 PM",
+        time: "9:30 AM - 12:30 PM",
         venue: "Auditorium",
         formlink: "#",
         description:
