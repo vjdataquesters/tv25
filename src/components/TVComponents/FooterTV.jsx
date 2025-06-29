@@ -114,16 +114,16 @@ const FooterTV = () => {
                   Events
                 </a>
                 <a
-                  href="#event-time-line"
-                  className="text-sm sm:text-base md:text-lg hover:text-yellow-400 transform transition-all duration-300 hover:translate-x-1 text-center"
-                >
-                  Schedule
-                </a>
-                <a
                   href="/technovista/register"
                   className="text-sm sm:text-base md:text-lg hover:text-yellow-400 transform transition-all duration-300 hover:translate-x-1 text-center"
                 >
                   Register
+                </a>
+                <a
+                  href="/technovista/devs"
+                  className="text-sm sm:text-base md:text-lg hover:text-yellow-400 transform transition-all duration-300 hover:translate-x-1 text-center"
+                >
+                  Developed by
                 </a>
               </div>
             </div>

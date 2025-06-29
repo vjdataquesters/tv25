@@ -12,7 +12,7 @@ const Intro = ({ onFinish }) => {
 
     const sequence = async () => {
       await titleControls.start("visible");
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 50000));
       await controls.start({
         scale: 3,
         opacity: 0,
@@ -72,6 +72,7 @@ const Intro = ({ onFinish }) => {
         animate={titleControls}
         className="flex flex-wrap items-center justify-center max-w-[90vw]"
       >
+        <video src="/events/Technovista2025/tv25-icons/tv-logo-ani.gif"></video>
         {/* Main letters wrap normally */}
         {mainLetters.map((letter, index) => (
           <motion.span

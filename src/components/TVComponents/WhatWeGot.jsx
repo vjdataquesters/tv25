@@ -84,7 +84,7 @@ function WhatWeGot() {
   return (
     <div className="min-h-screen bg-none overflow-hidden px-4 pt-4 flex flex-col items-center justify-center text-white text-center select-none">
       {" "}
-      <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold my-4 leading-tight font-mono">
+      <h1 className="font-sans text-3xl sm:text-5xl md:text-6xl font-extrabold my-4 leading-tight ">
         WHAT WE'VE GOT FOR YOU
       </h1>
       <motion.span
