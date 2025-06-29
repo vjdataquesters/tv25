@@ -12,7 +12,7 @@ const Intro = ({ onFinish }) => {
 
     const sequence = async () => {
       await titleControls.start("visible");
-      await new Promise((resolve) => setTimeout(resolve, 50000));
+      await new Promise((resolve) => setTimeout(resolve, 500));
       await controls.start({
         scale: 3,
         opacity: 0,

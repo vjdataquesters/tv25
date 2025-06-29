@@ -720,7 +720,7 @@ const RegistrationForm = () => {
   const [loadingStatus, setLoadingStatus] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(false);
   const [formStatus, setFormStatus] = useState({
-    isFormOpen: false,
+    isFormOpen: true,
   });
 
   return (
