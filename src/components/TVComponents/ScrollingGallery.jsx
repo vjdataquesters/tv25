@@ -27,7 +27,7 @@ const ScrollingGallery = () => {
   useEffect(() => {
     let animationFrameId;
     let lastTimestamp = null;
-    const speed = 40; // pixels per second
+    const speed = 120; // pixels per second
 
     const step = (timestamp) => {
       if (lastTimestamp === null) lastTimestamp = timestamp;
