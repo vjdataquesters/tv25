@@ -267,12 +267,12 @@ const EventsTV = () => {
                     >
                       <div
                         onClick={() => handleEventClick(image)}
-                        className="relative h-4/6 overflow-hidden"
+                        className="relative h-64 overflow-hidden"
                       >
                         <img
                           src={image}
                           alt={title}
-                          className="w-full h-64 object-contain sm:object-cover rounded-t-lg"
+                          className="w-full h-64 object-cover rounded-t-lg"
                           draggable={false}
                         />
                       </div>
