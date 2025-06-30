@@ -125,7 +125,7 @@ const Technovista = () => {
               <motion.div className="w-full px-4 py-2 flex flex-col items-center justify-center">
                 <Countdown isVisible={isVisible} />
               </motion.div>
-              <div classname="flex justify-center items-center mb-6">
+              <div className="flex justify-center items-center mb-6">
                 <button
                   className="font-sans cta-button px-4 sm:px-6 py-2 sm:py-3  text-base sm:text-lg md:text-lg bg-[#daa425] text-black rounded-2xl shadow-[0_0_15px_rgba(255,215,0,0.5)] font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.8)] transition-all duration-300 ease-in-out"
                   onClick={() => navigate("/technovista/register")}
