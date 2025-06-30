@@ -5,13 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 // Flatten all events
-const allEvents = eventTimeLine.flatMap((day) => day.events);
+const allEvents = eventTimeLine.flatMap((day) => day.events).sort((a, b) => a.priority - b.priority);
 
 export default function EventShowcase() {
   const [activeEvent, setActiveEvent] = useState(allEvents[0]);
   const navigate = useNavigate();
   return (
-    <div className="w-full bg text-white font-mono max-w-7xl mx-auto px-4">
+    <div className="w-full bg text-white font-mono max-w-[90%] mx-auto px-4">
       <h2 className="font-sans text-4xl sm:text-5xl font-semibold text-white mb-4 py-5">
         Featured <span className="text-[#daa425]">Events</span>
       </h2>
@@ -124,7 +124,7 @@ export default function EventShowcase() {
               transition={{
                 opacity: { duration: 0.35, ease: "easeInOut" },
               }}
-              className="rounded-2xl object-contain h-[400px] w-auto"
+              className="rounded-2xl object-contain h-[450px] w-auto"
             />
           </AnimatePresence>
         </div>

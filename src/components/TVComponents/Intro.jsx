@@ -7,7 +7,6 @@ const Intro = ({ onFinish }) => {
   const titleControls = useAnimation();
 
   useEffect(() => {
-    // Disable scroll
     document.body.style.overflow = "hidden";
 
     const sequence = async () => {
@@ -19,10 +18,8 @@ const Intro = ({ onFinish }) => {
         transition: { duration: 0.8, ease: "easeInOut" },
       });
 
-      // Re-enable scroll
       document.body.style.overflow = "auto";
       setIntroDone(true);
-
       if (onFinish) onFinish();
     };
 
@@ -70,27 +67,39 @@ const Intro = ({ onFinish }) => {
         variants={titleVariants}
         initial="hidden"
         animate={titleControls}
-        className="flex flex-wrap items-center justify-center max-w-[90vw]"
+        className="flex flex-col items-center justify-center gap-4 text-center"
       >
-        <video src="/events/Technovista2025/tv25-icons/tv-logo-ani.gif"></video>
-        {/* Main letters wrap normally */}
-        {mainLetters.map((letter, index) => (
-          <motion.span
-            key={index}
-            variants={letterVariants}
-            className={`font-bold text-3xl sm:text-5xl md:text-7xl px-0.5 sm:px-1 md:px-2 font-orbitron ${
-              index >= 6 ? "text-amber-400" : "text-white"
-            }`}
-          >
-            {letter}
-          </motion.span>
-        ))}
-        <motion.div className="w-full sm:w-auto flex justify-center whitespace-nowrap mt-2 sm:mt-0">
+        {/* Logo */}
+        <motion.img
+          src="/events/Technovista2025/tv25-icons/tv-logo-ani.gif"
+          className="h-40 sm:h-56 md:h-72 drop-shadow-2xl"
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        />
+
+        {/* TECHNOVISTA word in one line */}
+        <motion.div className="flex flex-row justify-center whitespace-nowrap">
+          {mainLetters.map((letter, index) => (
+            <motion.span
+              key={index}
+              variants={letterVariants}
+              className={`font-extrabold text-3xl sm:text-5xl md:text-7xl px-1 font-orbitron ${
+                index >= 6 ? "text-amber-400" : "text-white"
+              }`}
+            >
+              {letter}
+            </motion.span>
+          ))}
+        </motion.div>
+
+        {/* 2k25 word in one line */}
+        <motion.div className="flex flex-row justify-center whitespace-nowrap">
           {tailLetters.map((letter, idx) => (
             <motion.span
               key={`tail-${idx}`}
               variants={letterVariants}
-              className="font-bold text-2xl sm:text-4xl md:text-7xl px-0.5 sm:px-1 md:px-2 text-amber-400 font-orbitron"
+              className="font-bold text-2xl sm:text-4xl md:text-7xl px-1 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-500 font-orbitron animate-pulse"
             >
               {letter}
             </motion.span>

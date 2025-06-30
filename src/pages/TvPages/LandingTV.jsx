@@ -393,7 +393,7 @@ const LandingTV = () => {
           <img
             src="events/Technovista2025/tv25-icons/GFG.png"
             alt="GeeksforGeeks Logo"
-            className="h-5 sm:h-10 w-auto object-contain rounded"
+            className="h-4 sm:h-7 w-auto object-contain rounded"
           />
         </div>
       </section>
