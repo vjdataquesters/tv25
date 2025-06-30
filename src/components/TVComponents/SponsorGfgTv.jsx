@@ -32,22 +32,13 @@ const SponsorGfgTv = () => {
           </motion.div>
         </div>
         {/* Sponsor Name */}
-        <motion.h3
-          animate={{
-            scale: [1, 1.03, 1],
-            textShadow: [
-              "0 0 10px rgba(0, 137, 94, 0.5)",
-              "0 0 18px rgba(58, 178, 132, 0.6)",
-              "0 0 10px rgba(0, 137, 94, 0.5)",
-            ],
-          }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          className="mt-4 text-2xl sm:text-3xl md:text-4xl font-black tracking-tight bg-gradient-to-r from-[#00895e] via-[#3ab284] to-[#016ccc] bg-clip-text text-transparent"
-          style={{ fontFamily: "Sofia Pro, system-ui, sans-serif" }}
-        >
-          GeeksforGeeks
-        </motion.h3>
-
+        <div className="mt-6 ">
+          <img
+            src="events/Technovista2025/tv25-icons/GFG.png"
+            alt="GeeksforGeeks Logo"
+            className="h-5 sm:h-10 w-auto object-contain rounded"
+          />
+          </div>
         {/* Frame Corners */}
         <div className="absolute -top-4 -left-4 w-4 h-4 border-l-2 border-t-2 border-[#00895e]/60 rounded-tl-lg" />
         <div className="absolute -top-4 -right-4 w-4 h-4 border-r-2 border-t-2 border-[#016ccc]/60 rounded-tr-lg" />

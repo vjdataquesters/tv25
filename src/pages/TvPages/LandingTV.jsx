@@ -365,7 +365,7 @@ const LandingTV = () => {
               />
 
               <p className="text-end font-mono date text-sm sm:text-base md:text-xl lg:text-2xl mb-8 text-[#daa425]">
-                July 31 - August 2, 2025
+                31<sup>st</sup> July,1<sup>st</sup> & 2<sup>nd</sup>August
               </p>
             </div>
           </div>
