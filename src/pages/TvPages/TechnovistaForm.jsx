@@ -72,8 +72,8 @@ const TechnovistaForm = () => {
       )}
 
       {/* Mobile Layout */}
-      <div className="flex md:hidden pt-8 px-4 min-h-[calc(100vh-5rem)] bg">
-        <div className="w-full max-w-7xl mx-auto">
+      <div className="flex md:hidden pt-8 px-2 min-h-[calc(100vh-5rem)] bg">
+        <div className="w-full max-w-full mx-auto">
           <TForm />
         </div>
       </div>

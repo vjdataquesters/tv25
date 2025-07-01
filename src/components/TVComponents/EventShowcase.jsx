@@ -132,11 +132,11 @@ export default function EventShowcase() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 p-4 lg:hidden">
+      <div className="grid grid-cols-2 gap-4 p-0 lg:hidden">
         {allEvents.map((event) => (
           <div
             key={event.id}
-            className="border border-white/10 p-4 flex flex-col items-center text-center hover:bg-white/5 transition duration-300"
+            className="border border-white/10 p-4 flex flex-col items-center text-center hover:bg-white/5 transition duration-300 rounded-xl"
             onClick={() =>
               navigate("/technovista/events", {
                 state: {
