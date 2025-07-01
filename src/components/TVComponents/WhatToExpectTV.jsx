@@ -1,206 +1,193 @@
-import React, { useRef, useEffect } from "react";
-import "./TvComponents.css";
+import { motion, useTransform, useScroll } from "framer-motion";
+import React, { useRef, useState, useLayoutEffect } from "react";
 
-function WhatToExpectTV() {
-  const containerRef = useRef(null);
+const CARDS_DATA = [
+  {
+    id: 1,
+    title: "Inspiring Talks",
+    subtitle: "Ideas That Spark Innovation",
+    img: (
+      <img
+        src="/events/Technovista2025/tv25-icons/guest_lecture.png"
+        alt="Guest Lecture"
+        style={{ width: 60, height: 60 }}
+      />
+    ),
+  },
+  {
+    id: 2,
+    title: "Coding Battles",
+    subtitle: "Compete with the Best Minds",
+    img: (
+      <img
+        src="/events/Technovista2025/tv25-icons/code_fest.png"
+        alt="Code Fest"
+        style={{ width: 50, height: 40 }}
+      />
+    ),
+  },
+  {
+    id: 3,
+    title: "Creative Writing",
+    subtitle: "Pen Your Tech Vision",
+    img: (
+      <img
+        src="/events/Technovista2025/tv25-icons/blogathon.png"
+        alt="Blogathon"
+        style={{ width: 75, height: 50 }}
+      />
+    ),
+  },
+  {
+    id: 4,
+    title: "Hands-on Workshops",
+    subtitle: "Build Skills That Matter",
+    img: (
+      <img
+        src="/events/Technovista2025/tv25-icons/ml_challenge.png"
+        alt="ML Challenge"
+        style={{ width: 60, height: 50 }}
+      />
+    ),
+  },
+  {
+    id: 5,
+    title: "Networking & Fun",
+    subtitle: "Connect, Collaborate, Celebrate",
+    img: (
+      <img
+        src="/events/Technovista2025/tv25-icons/networking.png"
+        alt="Networking"
+        style={{ width: 50, height: 50 }}
+      />
+    ),
+  },
+];
 
-  useEffect(() => {
-    const container = containerRef.current;
+const CARD_DIMENSIONS = {
+  height: 400,
+  width: 400,
+};
 
-    function isFullyVisible(el) {
-      if (!el) return false;
-      const rect = el.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <=
-          (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <=
-          (window.innerWidth || document.documentElement.clientWidth)
-      );
-    }
+/**
+ * Individual card component
+ */
+const Card = ({ card }) => {
+  return (
+    <div
+      key={card.id}
+      className={`
+        group relative flex flex-col justify-between p-6 rounded-2xl 
+        transition-transform duration-300 ease-in-out 
+        border border-neutral-200
+        ${card.id % 2 === 1 ? "bg-gray-50" : "bg-white"}
+        shadow-md
+      `}
+      style={{
+        height: `${CARD_DIMENSIONS.height}px`,
+        width: `${CARD_DIMENSIONS.width}px`,
+        flexShrink: 0,
+      }}
+    >
+      {/* Title & Subtitle */}
+      <div className="flex flex-col gap-1 leading-snug">
+        <h3 className="text-3xl font-extrabold text-black">
+          {card.title}
+        </h3>
+        <p className="text-base font-medium text-black/70">
+          {card.subtitle}
+        </p>
+      </div>
 
-    function isFullyVisibleVertically(el) {
-      if (!el) return false;
-      const rect = el.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.bottom <=
-          (window.innerHeight || document.documentElement.clientHeight)
-      );
-    }
+      {/* Bottom Icon */}
+      {card.img && (
+        <div className="mt-6">
+          <div className="w-fit rounded-xl p-2">{card.img}</div>
+        </div>
+      )}
+    </div>
+  );
+};
 
-    const onWheel = (e) => {
-      if (!container) return;
-      if (!isFullyVisible(container)) return;
-      if (e.deltaY < 0 && !isFullyVisibleVertically(container)) return;
+/**
+ * Horizontal scrolling carousel component
+ */
+const HorizontalScrollCarousel = () => {
+  const targetRef = useRef(null);
+  const carouselRef = useRef(null); // Ref for the motion.div
 
-      const deltaY = e.deltaY;
-      const maxScrollLeft = container.scrollWidth - container.clientWidth;
-      const atStart = container.scrollLeft <= 0;
-      const atEnd = container.scrollLeft + 1 >= maxScrollLeft;
+  // State to store the dynamic horizontal offset
+  const [carouselEnd, setCarouselEnd] = useState(0);
 
-      const scrollingForward = deltaY > 0;
-      const scrollingBackward = deltaY < 0;
-
-      const shouldScrollHorizontally =
-        (scrollingForward && !atEnd) || (scrollingBackward && !atStart);
-
-      if (shouldScrollHorizontally) {
-        e.preventDefault();
-        container.scrollLeft += deltaY;
+  // Use useLayoutEffect to measure DOM elements after they are rendered
+  useLayoutEffect(() => {
+    const calculateCarouselEnd = () => {
+      if (targetRef.current && carouselRef.current) {
+        // The container's width (the visible part)
+        const containerWidth = targetRef.current.offsetWidth;
+        // The full scrollable width of the carousel content
+        const carouselWidth = carouselRef.current.scrollWidth;
+        // The distance to scroll is the difference
+        setCarouselEnd(containerWidth - carouselWidth);
       }
     };
 
-    container.addEventListener("wheel", onWheel, { passive: false });
+    calculateCarouselEnd(); // Calculate on initial render
 
+    // Recalculate on window resize
+    window.addEventListener("resize", calculateCarouselEnd);
+
+    // Cleanup the event listener on component unmount
     return () => {
-      container.removeEventListener("wheel", onWheel);
+      window.removeEventListener("resize", calculateCarouselEnd);
     };
-  }, []);
+  }, []); // Empty dependency array ensures this runs only once on mount
 
-  const cardTexts = [
-    { title: "ML Challenge", subtitle: "Model the Unknown" },
-    { title: "Guest Lecture", subtitle: "The Future of AI" },
-    { title: "Blogathon", subtitle: "Tech Pen Masters" },
-    { title: "DQ Code Fest", subtitle: "Battle of Coders" },
-    { title: "Debug or Die", subtitle: "Ultimate Debugging Battle" },
-    { title: "24hr Hackathon", subtitle: "Innovate. Create. Dominate." },
-    { title: "Workshop", subtitle: "Full Stack Web Dev" },
-  ];
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
 
-  const icons = [
-    <img
-      src="/events/Technovista2025/tv25-icons/ml_challenge.png"
-      alt="ML Challenge"
-      style={{ width: 60, height: 50 }}
-    />,
-    <img
-      src="/events/Technovista2025/tv25-icons/guest_lecture.png"
-      alt="Guest Lecture"
-      style={{ width: 60, height: 60 }}
-    />,
-    <img
-      src="/events/Technovista2025/tv25-icons/blogathon.png"
-      alt="Blogathon"
-      style={{ width: 75, height: 50 }}
-    />,
-    <img
-      src="/events/Technovista2025/tv25-icons/code_fest.png"
-      alt="Code Fest"
-      style={{ width: 50, height: 40 }}
-    />,
-    <img
-      src="/events/Technovista2025/tv25-icons/debug_or_die.png"
-      alt="Debug or Die"
-      style={{ width: 60, height: 50 }}
-    />,
-    <img
-      src="/events/Technovista2025/tv25-icons/hackathon.png"
-      alt="24Hr Hackathon"
-      style={{ width: 60, height: 50 }}
-    />,
-    <img
-      src="/events/Technovista2025/tv25-icons/workshop.png"
-      alt="workshop"
-      style={{ width: 60, height: 50 }}
-    />,
-  ];
+  // Transform scroll progress to horizontal movement using the dynamic value
+  const x = useTransform(scrollYProgress, [0, 1], ["0px", `${carouselEnd}px`]);
 
   return (
-    // for mobiles
-    <>
-      <div className="md:hidden w-full px-4 py-6 overflow-hidden relative">
-        {/* Heading */}
-        <div className="text-white text-3xl sm:text-4xl font-bold font-sans mb-4">
-          <p>What can you</p>
-          <p>expect?</p>
-        </div>
-
-        {/* Scrolling Wrapper */}
-        <div className="relative overflow-hidden w-full">
-          <div
-            className="flex gap-4 animate-scroll-x"
-            style={{ width: "max-content" }}
-          >
-            {[...icons, ...icons].map((icon, idx) => (
-              <div
-                key={idx}
-                className="min-w-[200px] h-[180px] bg-[#FCFCFC] shadow-md rounded-lg relative flex items-end justify-start px-4 py-2"
-                style={{
-                  background: `${idx % 2 === 1 ? "#F7F7F7" : "#FCFCFC"}`,
-                  boxShadow:
-                    "0 0 5px 2px #daa42588, 0 2px 8px 0 rgba(0,0,0,0.08)",
-                }}
-              >
-                {/* Top Text */}
-                <div className="absolute top-3 right-3 text-end">
-                  <div className="font-sans text-base font-semibold text-black">
-                    {cardTexts[idx % cardTexts.length].title}
-                  </div>
-                  <div className="font-mono text-xs text-[#555]">
-                    {cardTexts[idx % cardTexts.length].subtitle}
-                  </div>
-                </div>
-                {/* Icon */}
-                <div className="absolute bottom-3 left-3">{icon}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="hidden md:block mt-5 mb-5 px-2 sm:px-6">
-        <div
-          ref={containerRef}
-          className="flex gap-8 sm:gap-16 md:gap-24 lg:gap-32 overflow-x-auto no-scrollbar"
-          style={{
-            height: "auto",
-            alignItems: "center",
-            paddingRight: "30vw", // extend scroll area to allow last card to center
-          }}
+    <section ref={targetRef} className="relative h-[300vh]">
+      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+        {/* Add the new ref here */}
+        <motion.div
+          ref={carouselRef}
+          style={{ x }}
+          className="flex items-center gap-28 will-change-transform"
         >
-          <div className="min-w-[220px] sm:min-w-[300px] md:min-w-[350px] h-[180px] sm:h-[220px] md:h-[250px] ml-2 sm:ml-6 mt-4 sm:mt-6 flex flex-col items-start justify-center text-white text-left font-sans text-3xl sm:text-4xl md:text-5xl leading-snug font-bold">
-            <p>What can you</p>
-            <p>expect?</p>
+          {/* Enhanced Heading */}
+          <div className="text-center px-8 min-w-fit flex-shrink-0 flex items-center">
+            <div className="relative item">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#daa425]/10 to-[#f2ca46]/30 blur-3xl rounded-full transform scale-150"></div>
+              <h2 className="relative font-bold font-sans text-4xl sm:text-6xl lg:text-7xl text-white leading-tight tracking-tight">
+                <span className="block">What can you</span>
+                <span className="block">expect?</span>
+              </h2>
+            </div>
           </div>
 
-          {icons.map((icon, idx) => (
-            <div
-              key={idx}
-              className={
-                "group min-w-[180px] sm:min-w-[240px] md:min-w-[320px] h-[180px] sm:h-[220px] md:h-[250px]"
-              }
-              style={{
-                background: `${idx === 1 ? "#F7F7F7" : "#FCFCFC"}`,
-                boxShadow:
-                  "0 0 5px 2px #daa42588, 0 2px 8px 0 rgba(0,0,0,0.08)",
-                position: "relative",
-                display: "flex",
-                alignItems: "flex-end",
-                justifyContent: "flex-start",
-                marginTop: "1rem",
-                transition: "all 0.3s",
-                ...(idx === icons.length - 1 ? { marginRight: "1rem" } : {}),
-              }}
-            >
-              <div className="absolute top-2 sm:top-4 right-2 sm:right-4 text-end">
-                <div className="font-sans text-base sm:text-lg md:text-xl font-semibold transition-colors duration-300 group-hover:text-[#daa425]">
-                  {cardTexts[idx].title}
-                </div>
-                <div className="font-mono text-xs sm:text-sm md:text-base transition-colors duration-300 group-hover:text-[#f2ca46]">
-                  {cardTexts[idx].subtitle}
-                </div>
-              </div>
-              <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4">
-                {icon}
-              </div>
-            </div>
+          {/* Cards */}
+          {CARDS_DATA.map((card) => (
+            <Card card={card} key={card.id} />
           ))}
-        </div>
+          <div className="p-28"></div>
+        </motion.div>
       </div>
-    </>
+    </section>
   );
-}
+};
 
-export default WhatToExpectTV;
+// Main component to be exported and used in your application
+const WhatToExpectSection = () => {
+  return (
+    <div className="">
+      <HorizontalScrollCarousel />
+    </div>
+  );
+};
+
+export default WhatToExpectSection;

@@ -5,14 +5,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 // Flatten all events
-const allEvents = eventTimeLine.flatMap((day) => day.events).sort((a, b) => a.priority - b.priority);
+const allEvents = eventTimeLine
+  .flatMap((day) => day.events)
+  .sort((a, b) => a.priority - b.priority);
 
 export default function EventShowcase() {
   const [activeEvent, setActiveEvent] = useState(allEvents[0]);
   const navigate = useNavigate();
   return (
-    <div className="w-full bg text-white font-mono max-w-[90%] mx-auto px-4">
-      <h2 className="font-sans text-4xl sm:text-5xl font-semibold text-white mb-4 py-5">
+    <div className="flex flex-col w-full bg text-white max-w-[90%] mx-auto px-4">
+      <h2 className="text-center font-bold font-sans text-5xl sm:text-6xl  text-white mb-5 pb-5">
         Featured <span className="text-[#daa425]">Events</span>
       </h2>
 
@@ -130,7 +132,6 @@ export default function EventShowcase() {
         </div>
       </div>
 
-      {/* Mobile View (Always 2 columns) */}
       <div className="grid grid-cols-2 gap-4 p-4 lg:hidden">
         {allEvents.map((event) => (
           <div

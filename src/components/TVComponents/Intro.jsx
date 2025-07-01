@@ -73,9 +73,6 @@ const Intro = ({ onFinish }) => {
         <motion.img
           src="/events/Technovista2025/tv25-icons/tv-logo-ani.gif"
           className="h-40 sm:h-56 md:h-72 drop-shadow-2xl"
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
         />
 
         {/* TECHNOVISTA word in one line */}

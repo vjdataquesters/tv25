@@ -34,11 +34,11 @@ const SponsorGfgTv = () => {
         {/* Sponsor Name */}
         <div className="mt-6 ">
           <img
-            src="events/Technovista2025/tv25-icons/GFG.png"
+            src="/events/Technovista2025/tv25-icons/GFG.png"
             alt="GeeksforGeeks Logo"
             className="h-5 sm:h-10 w-auto object-contain rounded"
           />
-          </div>
+        </div>
         {/* Frame Corners */}
         <div className="absolute -top-4 -left-4 w-4 h-4 border-l-2 border-t-2 border-[#00895e]/60 rounded-tl-lg" />
         <div className="absolute -top-4 -right-4 w-4 h-4 border-r-2 border-t-2 border-[#016ccc]/60 rounded-tr-lg" />

@@ -14,8 +14,8 @@ function NavbarTv() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 p-1 border-b border-yellow-500/10 backdrop-blur-lg">
-      <div className="mx-auto px-3 sm:px-5 lg:px-7">
+    <nav className="fixed top-0 left-0 w-full z-50 p-1 border-b border-yellow-500/10 backdrop-blur-lg box-border">
+      <div className="mx-auto max-w-screen-xl px-3 sm:px-5 lg:px-7">
         <div className="flex justify-between items-center h-16">
           {/* Left: Logos and cross */}
           <div className="flex items-center space-x-3">
@@ -27,7 +27,7 @@ function NavbarTv() {
               <img
                 src="/events/Technovista2025/tv25-icons/dq-vector.png"
                 alt="Logo 1"
-                className="h-[4rem] w-auto object-contain p-1"
+                className="h-[4rem] max-w-[8rem] w-auto object-contain p-1"
               />
             </a>
             <div className="text-white opacity-70">
@@ -82,7 +82,7 @@ function NavbarTv() {
       {/* Mobile Slide Menu */}
       {/* Mini Dropdown Box (Mobile Only) */}
       {menuOpen && (
-        <div className="md:hidden absolute top-16 right-4 w-48 z-50 rounded-xl shadow-xl border border-yellow-500/10 backdrop-blur-lg bg-[#1a1a1a]">
+        <div className="md:hidden absolute top-16 right-4 max-w-[90vw] w-48 z-50 rounded-xl shadow-xl border border-yellow-500/10 backdrop-blur-lg bg-[#1a1a1a]">
           <div className="flex flex-col divide-y divide-yellow-500/10">
             <button
               onClick={() => handleNavigate("/technovista/events")}

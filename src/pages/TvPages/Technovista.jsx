@@ -83,7 +83,7 @@ const Technovista = () => {
   }, []);
 
   return (
-    <div className="bg min-h-[250vh] relative overflow-x-hidden">
+    <div className="bg min-h-[250vh] relative">
       {/* Custom Cursor - only on desktop */}
       {!isMobile && (
         <>
@@ -120,32 +120,23 @@ const Technovista = () => {
 
             <div
               ref={sectionRef}
-              className="overflow-hidden select-none flex flex-col items-center justify-center gap-12 pb-6"
+              className="select-none flex flex-col items-center justify-center gap-12 pb-6"
             >
               <motion.div className="w-full px-4 py-2 flex flex-col items-center justify-center">
                 <Countdown isVisible={isVisible} />
               </motion.div>
-              <div className="flex justify-center items-center mb-6">
-                <button
-                  className="font-sans cta-button px-4 sm:px-6 py-2 sm:py-3  text-base sm:text-lg md:text-lg bg-[#daa425] text-black rounded-2xl shadow-[0_0_15px_rgba(255,215,0,0.5)] font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.8)] transition-all duration-300 ease-in-out"
-                  onClick={() => navigate("/technovista/register")}
-                >
-                  Register Now
-                </button>
-              </div>
             </div>
-
-            <section className=" md:w-[90%] h-full mx-auto">
-              <div className="pt-4 pb-6">
-                <div className="w-full mx-auto">
-                  <WhatToExpectTV />
-                </div>
-              </div>
-            </section>
+            <div className="flex justify-center items-center mb-6">
+              <button
+                className="font-sans cta-button px-4 sm:px-6 py-2 sm:py-3  text-base sm:text-lg md:text-lg bg-[#daa425] text-black rounded-2xl shadow-[0_0_15px_rgba(255,215,0,0.5)] font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.8)] transition-all duration-300 ease-in-out"
+                onClick={() => navigate("/technovista/register")}
+              >
+                Register Now
+              </button>
+            </div>
+            <WhatToExpectTV />
             <EventShowcase />
-
             <Sponsors />
-
             <div>
               <section className="md:w-[90%] h-full mx-auto">
                 <h4 className="font-bold text-center text-[40px] md:text-[30px] lg:text-[50px] text-white">
@@ -159,11 +150,13 @@ const Technovista = () => {
                 </div>
               </section>
             </div>
-            <div className="w-screen text-center select-none">
-              <h1 className="text-[0px] sm:text-[100px] md:text-[130px] lg:text-[160px] xl:text-[230px] leading-none font-bold text-amber-500/30 tracking-wide">
-                TECHNOVISTA
-              </h1>
-            </div>
+<div className="w-full overflow-hidden text-center select-none px-4 box-border">
+  <h1 className="inline-block max-w-full text-[clamp(64px,16vw,230px)] leading-none font-bold text-amber-500/30 tracking-tight overflow-hidden">
+    TECHNOVISTA
+  </h1>
+</div>
+
+
             <FooterTV />
           </div>
         </div>

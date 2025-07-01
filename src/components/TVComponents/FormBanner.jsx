@@ -73,7 +73,7 @@ const FormBanner = () => {
               <div className="bg-black rounded-lg p-6 border border-yellow-400/20">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center">
-                    <div className="text-3xl mr-4 p-2 bg-yellow-400/10 rounded-lg border border-yellow-400/30">
+                    <div className="text-2xl mr-2 p-2 bg-yellow-400/10 rounded-lg border border-yellow-400/30">
                       {event.icon}
                     </div>
                     <div>
@@ -87,12 +87,14 @@ const FormBanner = () => {
                   </div>
                   <div className="text-right">
                     <div className="flex items-center text-yellow-300 mb-1">
-                      <Calendar size={16} className="mr-2" />
+                      <Calendar size={14} className="mr-2" />
                       <span className="text-sm font-medium">{event.date}</span>
                     </div>
                     <div className="flex items-center text-yellow-300">
-                      <Clock size={16} className="mr-2" />
-                      <span className="text-sm font-medium">{event.time}</span>
+                      <Clock size={16} className="mr-2 self-start" />
+                      <span className="text-sm font-medium overflow-hidden ">
+                        {event.time}
+                      </span>
                     </div>
                   </div>
                 </div>
