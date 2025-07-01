@@ -71,13 +71,13 @@ const FormBanner = () => {
           >
             <div className="bg-gradient-to-r from-yellow-400/20 via-yellow-500/10 to-yellow-400/20 p-[2px] rounded-xl shadow-2xl shadow-yellow-400/20 ">
               <div className="bg-black rounded-lg p-6 border border-yellow-400/20">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center">
-                    <div className="text-2xl mr-2 p-2 bg-yellow-400/10 rounded-lg border border-yellow-400/30">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center flex-1 min-w-0">
+                    <div className="text-2xl mr-2 p-2 bg-yellow-400/10 rounded-lg border border-yellow-400/30 flex-shrink-0">
                       {event.icon}
                     </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-yellow-400">
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-2xl font-bold text-yellow-400 leading-tight">
                         {event.title}
                       </h3>
                       <p className="text-gray-300 text-sm font-medium">
@@ -85,16 +85,16 @@ const FormBanner = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <div className="flex items-center text-yellow-300 mb-1">
-                      <Calendar size={14} className="mr-2" />
-                      <span className="text-sm font-medium">{event.date}</span>
+                  <div className="text-right flex-shrink-0 ml-4 min-w-fit">
+                    <div className="flex items-center justify-end text-yellow-300 mb-1">
+                      <Calendar size={14} className="mr-2 flex-shrink-0" />
+                      <span className="text-sm font-medium whitespace-nowrap">{event.date}</span>
                     </div>
-                    <div className="flex items-center text-yellow-300">
-                      <Clock size={16} className="mr-2 self-start" />
-                      <span className="text-sm font-medium overflow-hidden ">
+                    <div className="flex items-start justify-end text-yellow-300">
+                      <Clock size={16} className="mr-1.5 flex-shrink-0 mt-0.5" />
+                      <div className="text-sm font-medium leading-tight text-right max-w-[140px] break-words">
                         {event.time}
-                      </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -155,7 +155,9 @@ const FormBanner = () => {
                     index === activeEvent ? "text-yellow-400" : "text-gray-400"
                   }`}
                 >
-                  {event.title.split(" ")[0]}
+                  {event.title.includes("24 - Hour") || event.title.includes("24-Hour") 
+                    ? "Hack" 
+                    : event.title.split(" ")[0]}
                 </div>
               </button>
             ))}

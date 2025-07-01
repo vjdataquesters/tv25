@@ -205,29 +205,30 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
 
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-3 h-[110vh]">
+
+        
         {/* Header */}
         <div className="text-center mb-6">
           <div className="inline-flex items-center gap-3 mb-4">
-            <div className="animate-spin-slow">
-              <Code className="text-[#daa425]" size={32} />
-            </div>
-            <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#f2ca46] via-yellow-300 to-[#daa425] bg-clip-text text-transparent">
-              TechnoVista 2k25
-            </h1>
-            <div className="animate-pulse">
-              <Star className="text-[#daa425]" size={32} />
-            </div>
-          </div>
-          <div className="flex justify-center gap-2">
-            {[...Array(5)].map((_, i) => (
-              <div
-                key={i}
-                className="w-2 h-2 bg-[#f2ca46] rounded-full animate-pulse"
-                style={{ animationDelay: `${i * 0.2}s` }}
-              />
-            ))}
-          </div>
-        </div>
+    <img
+      src="/events/Technovista2025/tv25-icons/tv-logo-ani.gif"
+      alt="TechnoVista 2k25 Logo"
+      className="w-16 h-16 md:w-16 md:h-16 lg:w-20 lg:h-20 object-contain"
+    />
+    <h1 className="text-3xl md:text-3xl font-bold bg-gradient-to-r from-[#f2ca46] via-yellow-300 to-[#daa425] bg-clip-text text-transparent">
+      TechnoVista 2k25
+    </h1>
+  </div>
+  <div className="flex justify-center gap-2">
+    {[...Array(5)].map((_, i) => (
+      <div
+        key={i}
+        className="w-2 h-2 bg-[#f2ca46] rounded-full animate-pulse"
+        style={{ animationDelay: `${i * 0.2}s` }}
+      />
+    ))}
+  </div>
+</div>
 
         {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)}>
