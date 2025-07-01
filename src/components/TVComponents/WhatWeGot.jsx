@@ -158,7 +158,7 @@ function WhatWeGot() {
         <h2 className="font-sans text-2xl sm:text-3xl font-bold text-[#daa425] mb-4 tracking-wide">
           The Ultimate Tech Carnival
         </h2>
-        <p className="font-mono text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
+        <p className="text-justify font-mono text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
           The annual technical fest{" "}
           <span className="font-bold text-white">“TechnoVista”</span> is a
           flagship initiative organized by the{" "}
