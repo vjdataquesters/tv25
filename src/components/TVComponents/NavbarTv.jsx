@@ -14,11 +14,11 @@ function NavbarTv() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 p-1 border-b border-yellow-500/10 backdrop-blur-lg box-border">
+    <nav className="fixed top-0 left-0 w-full z-50  border-b border-yellow-500/10 backdrop-blur-lg box-border">
       <div className="mx-auto max-w-screen-xl px-3 sm:px-5 lg:px-1">
         <div className="flex justify-between items-center h-16">
           {/* Left: Logos and cross */}
-          <div className="flex items-center space-x-3 gap-2">
+          <div className="flex items-center space-x-3 gap-4">
             <a
               href="https://www.vjdataquesters.com/home"
               target="_blank"
@@ -42,26 +42,26 @@ function NavbarTv() {
           </div>
 
           {/* Right: Desktop Links */}
-          <div className="hidden md:flex space-x-4">
-            <button
+          <div className="hidden md:flex space-x-2">
+          <button
               onClick={() => handleNavigate("/technovista/events")}
               className="font-mono text-[#daa425] px-5 py-1.5 rounded-lg font-semibold hover:bg-[#121210] transition-all duration-300"
-            >
-              All Events
-            </button>
-            <a
-              href="/technovista/devs"
-              className="font-mono text-[#daa425]  py-1.5 rounded-lg font-semibold hover:bg-[#121210] transition-all duration-300"
-            >
-              Developed by
-            </a>
-            <button
-              onClick={() => handleNavigate("/technovista/register")}
-              className="font-mono bg-[#daa425] text-black px-5 py-1.5 rounded-lg font-semibold hover:bg-[#f2ca46] transition-colors"
-            >
-              Register
-            </button>
-          </div>
+        >
+        All Events
+        </button>
+          <a
+         href="/technovista/devs"
+        className="font-mono text-[#daa425] px-5 py-1.5 rounded-lg font-semibold hover:bg-[#121210] transition-all duration-300"
+        >
+        Developed by
+        </a>
+        <button
+        onClick={() => handleNavigate("/technovista/register")}
+         className="font-mono bg-[#daa425] text-black px-5 py-1.5 rounded-lg font-semibold hover:bg-[#f2ca46] transition-colors"
+           >
+          Register
+        </button>
+</div>
 
           {/* Mobile Menu Icon */}
           <div className="md:hidden cursor-pointer" onClick={handleMenuToggle}>

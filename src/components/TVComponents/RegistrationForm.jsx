@@ -495,7 +495,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
       whileTap={{ scale: 0.95 }}
       type="button"
       onClick={() => setShowPaymentFields(true)}
-      className="group relative inline-flex items-center justify-center gap-4 px-12 py-5
+      className="group relative inline-flex items-center justify-center gap-4 px-4 py-1
         bg-gradient-to-r from-[#f2ca46] via-[#daa425] to-yellow-600
         text-black font-bold text-xl rounded-2xl shadow-xl
         transition-all duration-500 ease-out

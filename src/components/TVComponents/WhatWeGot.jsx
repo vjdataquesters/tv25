@@ -82,9 +82,9 @@ function WhatWeGot() {
   const isMalayalam = translations[index].lang === "Malayalam";
 
   return (
-    <div className="min-h-screen bg-none overflow-hidden px-4 pt-4 flex flex-col items-center justify-center text-white text-center select-none">
+    <div className="lg:mt-6 min-h-screen bg-none overflow-hidden px-4 pt-4 flex flex-col items-center justify-center text-white text-center select-none">
       {" "}
-      <h1 className="font-sans text-3xl sm:text-5xl md:text-6xl font-extrabold my-4 leading-tight ">
+      <h1 className="lg:mt-4 font-sans text-3xl sm:text-5xl md:text-6xl font-extrabold my-4 leading-tight ">
         WHAT WE'VE GOT FOR YOU
       </h1>
       <motion.span
@@ -154,11 +154,11 @@ function WhatWeGot() {
           </motion.div>
         ))}
       </div>
-      <section className="from-yellow-900/20 to-black/50  rounded-xl p-6 sm:p-8 my-6 max-w-[90%] md:max-w-6xl w-full text-left">
+      <section className="lg:mt-10 from-yellow-900/20 to-black/50 rounded-xl p-6 sm:p-8 my-6 max-w-[90%] md:max-w-6xl w-full text-left">
         <h2 className="font-sans text-2xl sm:text-3xl font-bold text-[#daa425] mb-4 tracking-wide">
           The Ultimate Tech Carnival
         </h2>
-        <p className="text-justify font-mono text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
+        <p className="lg:mt-10 text-justify font-mono text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
           The annual technical fest{" "}
           <span className="font-bold text-white">“TechnoVista”</span> is a
           flagship initiative organized by the{" "}
@@ -203,3 +203,4 @@ function WhatWeGot() {
 }
 
 export default WhatWeGot;
+
