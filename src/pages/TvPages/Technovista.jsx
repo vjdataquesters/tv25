@@ -150,13 +150,11 @@ const Technovista = () => {
                 </div>
               </section>
             </div>
-<div className="w-full overflow-hidden text-center select-none px-4 box-border">
-  <h1 className="inline-block max-w-full text-[clamp(64px,16vw,230px)] leading-none font-bold text-amber-500/30 tracking-tight overflow-hidden">
-    TECHNOVISTA
-  </h1>
-</div>
-
-
+            <div className="w-full overflow-hidden text-center select-none px-4 box-border">
+              <h1 className="inline-block max-w-full text-[clamp(64px,16vw,230px)] leading-none font-bold text-amber-500/30 tracking-tight overflow-hidden">
+                TECHNOVISTA
+              </h1>
+            </div>
             <FooterTV />
           </div>
         </div>

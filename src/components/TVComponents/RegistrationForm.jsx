@@ -396,18 +396,6 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                       className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent placeholder-[#daa425]"
                       {...register("rollno", {
                         required: "Roll number is required",
-                        validate: (value) => {
-                          if (watchCollege === "VNRVJIET") {
-                            const isValid =
-                              /^[0-9]{2}(071A|075A)[0-9]{2}([0-9]{2}|[A-Za-z][0-9]|[0-9][A-Za-z])$/.test(
-                                value
-                              );
-                            if (!isValid || value.length !== 10) {
-                              return "Enter a valid roll number";
-                            }
-                          }
-                          return true;
-                        },
                       })}
                     />
                     {errors.rollno && (
