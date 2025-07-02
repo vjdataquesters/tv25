@@ -1,7 +1,7 @@
 import React from "react";
 import NavbarTv from "../../components/TVComponents/NavbarTv";
 import FooterTV from "../../components/TVComponents/FooterTV";
-import { RiLinkedinBoxFill, RiGithubFill } from "react-icons/ri";
+import { Linkedin, Github } from "lucide-react";
 
 const developers = [
   {
@@ -9,54 +9,49 @@ const developers = [
     name: "Jagadeeswar",
     role: "WEB DEVELOPER",
     image: "/events/Technovista2025/devs/Jagadeeswar.png",
-    linkedin: "https://linkedin.com/in/example",
-    github: "https://github.com/example",
-    fullName: "Jagadeeswar Reddy",
-    title: "Senior Web Developer",
+    linkedin: "https://www.linkedin.com/in/jagadeeswarj/",
+    github: "https://github.com/JagadeeswarJ",
+    fullName: "J. Jagadeeswar",
     location: "Hyderabad, India"
   },
   {
     id: 2,
     name: "Pranav",
-    role: "UI DESIGNER",
+    role: "Frontend DEV",
     image: "/events/Technovista2025/devs/Pranav.png",
-    linkedin: "#",
-    github: "#",
-    fullName: "Pranav Kumar",
-    title: "Lead UI Designer",
-    location: "Bangalore, India"
+    linkedin: "https://www.linkedin.com/in/pranav-babu-tungani-146707287/",
+    github: "https://github.com/PranavBabuTungani",
+    fullName: "T. Pranav Babu",
+    location: "Hyderabad, India"
   },
   {
     id: 3,
     name: "Anish",
-    role: "FRONTEND DEV",
+    role: "UI Designer",
     image: "/events/Technovista2025/devs/Anish.png",
-    linkedin: "#",
-    github: "#",
-    fullName: "Anish Patel",
-    title: "Frontend Engineer",
-    location: "Mumbai, India"
+    linkedin: "https://www.linkedin.com/in/anish-reddy2931/",
+    github: "https://github.com/Anishs2931",
+    fullName: "S. Anish Reddy",
+    location: "Hyderabad, India"
   },
   {
     id: 4,
     name: "Srishanth",
-    role: "COORDINATOR",
+    role: "Full Stack DEV",
     image: "/events/Technovista2025/devs/Srishanth.png",
-    linkedin: "#",
-    github: "#",
-    fullName: "Srishanth Iyer",
-    title: "Project Coordinator",
-    location: "Chennai, India"
+    linkedin: "https://www.linkedin.com/in/padala-srishanth-4a0a4328b/",
+    github: "https://github.com/Padala-Srishanth",
+    fullName: "P.Srishanth Patel",
+    location: "Hyderabad, India"
   },
   {
     id: 5,
     name: "Sipun",
-    role: "BACKEND DEV",
+    role: "DEV",
     image: "/events/Technovista2025/devs/Sipun.png",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/sipun-kumar-panda-8747b127b/",
     github: "#",
-    fullName: "Sipun Mohanty",
-    title: "Backend Developer",
+    fullName: "Sipun Kumar",
     location: "Bhubaneswar, India"
   },
 ];
@@ -106,7 +101,7 @@ const TvDevs = () => {
                           rel="noopener noreferrer"
                           className="text-gray-300 hover:text-[#daa425] transition-colors"
                         >
-                          <RiLinkedinBoxFill className="w-5 h-5" />
+                          <Linkedin className="w-5 h-5" />
                         </a>
                       )}
                       {dev.github && (
@@ -116,7 +111,7 @@ const TvDevs = () => {
                           rel="noopener noreferrer"
                           className="text-gray-300 hover:text-[#daa425] transition-colors"
                         >
-                          <RiGithubFill className="w-5 h-5" />
+                          <Github className="w-5 h-5" />
                         </a>
                       )}
                     </div>
@@ -151,10 +146,10 @@ const TvDevs = () => {
 
                 <div className="info__social flex gap-3">
                   <a href={dev.linkedin} target="_blank" rel="noopener noreferrer" className="info__social-link">
-                    <RiLinkedinBoxFill className="text-white text-xl" />
+                    <Linkedin className="text-white text-xl" />
                   </a>
                   <a href={dev.github} target="_blank" rel="noopener noreferrer" className="info__social-link">
-                    <RiGithubFill className="text-white text-xl" />
+                    <Github className="text-white text-xl" />
                   </a>
                 </div>
 
