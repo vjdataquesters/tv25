@@ -103,7 +103,7 @@ function WhatWeGot() {
         {displayedText}&nbsp;2K25
       </motion.span>
       {/*sponsor section */}
-      <div className="mt-4 md:mt-8 w-full max-w-6xl px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 overflow-visible">
+      <div className="mt-1 md:mt-8 w-full max-w-6xl px-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {stats.map((stat, index) => (
           <motion.div
             key={index}

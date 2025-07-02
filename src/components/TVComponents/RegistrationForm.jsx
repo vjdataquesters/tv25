@@ -49,27 +49,28 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const [focusedField, setFocusedField] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showPaymentFields, setShowPaymentFields] = useState(false); // Added this missing state
   const containerRef = useRef(null);
 
   const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    watch,
-  } = useForm({
-    defaultValues: {
-      name: "",
-      college: "",
-      collegeName: "",
-      branch: "",
-      section: "",
-      rollno: "",
-      year: "",
-      phno: "",
-      email: "",
-      paymentplatform: "",
-      transactionid: "",
-    },
+  register,
+  handleSubmit,
+  formState: { errors },
+  watch,
+} = useForm({
+  defaultValues: {
+    name: "",
+    college: "VNRVJIET", // Set VNRVJIET as default
+    collegeName: "",
+    branch: "",
+    section: "",
+    rollno: "",
+    year: "",
+    phno: "",
+    email: "",
+    paymentplatform: "",
+    transactionid: "",
+  },
   });
 
   const watchCollege = watch("college");
@@ -489,107 +490,222 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                   </div>
                 </div>
 
-                {/* Payment QR */}
-                <div className="text-center py-8 bg-gray-900/30 rounded-2xl border border-[#daa425]/10">
-                  <h3 className="text-xl font-semibold mb-2">
-                    Payment QR Code
-                  </h3>
-                  <p className="mb-4">
-                    Account Holder:{" "}
-                    <span className="font-semibold text-yellow-300">
-                      K. Adithya
-                    </span>
-                  </p>
-                  <div className="inline-block p-4 bg-white rounded-2xl shadow-2xl">
-                    <img
-                      src="/paymentsQR.jpg"
-                      alt="Payment QR Code"
-                      className="w-48 h-48 rounded-xl object-contain"
-                    />
-                  </div>
-                </div>
+                {/* Payment Button */}
+               {/* Payment Button */}
+{watchCollege && !showPaymentFields && (
+  <motion.div
+    className="text-center py-6"
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.3 }}
+  >
+    <motion.button
+      whileHover={{ 
+        scale: 1.05,
+        boxShadow: "0 20px 40px rgba(242, 202, 70, 0.3), 0 0 60px rgba(242, 202, 70, 0.2)",
+      }}
+      whileTap={{ scale: 0.95 }}
+      type="button"
+      onClick={() => setShowPaymentFields(true)}
+      className="group relative inline-flex items-center justify-center gap-4 px-12 py-5
+        bg-gradient-to-r from-[#f2ca46] via-[#daa425] to-yellow-600
+        text-black font-bold text-xl rounded-2xl shadow-xl
+        transition-all duration-500 ease-out
+        hover:shadow-2xl hover:shadow-[#f2ca46]/50
+        focus:outline-none focus:ring-4 focus:ring-[#f2ca46]/60
+        border-2 border-[#f2ca46]/30
+        before:absolute before:inset-0 before:bg-gradient-to-r before:from-yellow-300/20 before:to-transparent before:rounded-2xl before:opacity-0 before:transition-opacity before:duration-300
+        hover:before:opacity-100
+        overflow-hidden"
+    >
+      {/* Animated background sparkle effect */}
+      <div className="absolute inset-0 opacity-30">
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-white rounded-full"
+            style={{
+              left: `${20 + i * 12}%`,
+              top: `${30 + (i % 2) * 40}%`,
+            }}
+            animate={{
+              opacity: [0, 1, 0],
+              scale: [0, 1, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              delay: i * 0.3,
+            }}
+          />
+        ))}
+      </div>
+      
+     
+      
+      {/* Text with gradient */}
+      <span className="tracking-wide bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent font-extrabold">
+        Pay ₹ {watchCollege === "VNRVJIET" ? "175" : "250"} /-
+      </span>
+      
+      {/* Arrow with slide animation */}
+      <motion.span
+        className="text-2xl"
+        animate={{
+          x: [0, 5, 0],
+        }}
+        transition={{
+          duration: 1.5,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      >
+        →
+      </motion.span>
+      
+      {/* Shine effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
+    </motion.button>
+    
+    {/* Pulsing glow effect around button */}
+    <motion.div
+      className="absolute inset-0 bg-[#f2ca46]/20 rounded-2xl blur-xl -z-10"
+      animate={{
+        opacity: [0.3, 0.6, 0.3],
+        scale: [1, 1.1, 1],
+      }}
+      transition={{
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }}
+      style={{
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '200px',
+        height: '80px',
+      }}
+    />
+  </motion.div>
+                )}
 
-                {/* Payment Platform & Transaction ID */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="transform hover:opacity-90 transition-transform duration-300">
-                    <label className="text-sm font-medium text-yellow-300 block mb-2">
-                      Payment Platform <span className="text-red-400">*</span>
-                    </label>
-                    <select
-                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent"
-                      {...register("paymentplatform", {
-                        required: "Please select a payment platform",
-                      })}
-                    >
-                      <option value="">Select Payment Platform</option>
-                      <option value="Google Pay">Google Pay</option>
-                      <option value="PhonePe">PhonePe</option>
-                      <option value="Paytm">Paytm</option>
-                      <option value="Amazon Pay">Amazon Pay</option>
-                      <option value="BHIM UPI">BHIM UPI</option>
-                      <option value="FamPay">FamPay</option>
-                      <option value="Mobikwik">Mobikwik</option>
-                      <option value="WhatsApp Pay">WhatsApp Pay</option>
-                      <option value="FreeCharge">FreeCharge</option>
-                      <option value="Other">Other</option>
-                    </select>
-                    {errors.paymentplatform && (
-                      <p className="text-red-400 text-sm mt-1 animate-bounce flex items-center gap-1">
-                        <Zap size={12} />
-                        {errors.paymentplatform.message}
-                      </p>
-                    )}
-                  </div>
-                  <div className="transform hover:opacity-90 transition-transform duration-300">
-                    <label className="text-sm font-medium text-yellow-300 block mb-2">
-                      Transaction ID <span className="text-red-400">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Enter transaction ID"
-                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent placeholder-[#daa425]"
-                      {...register("transactionid", {
-                        required: "Transaction ID is required",
-                      })}
-                    />
-                    {errors.transactionid && (
-                      <p className="text-red-400 text-sm mt-1 animate-bounce flex items-center gap-1">
-                        <Zap size={12} />
-                        {errors.transactionid.message}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                {/* Submit Button */}
-                <div className="mt-6 text-center">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    type="submit"
-                    disabled={isSubmitting}
-                    aria-busy={isSubmitting}
-                    className="group relative inline-flex items-center justify-center gap-3 px-6 py-2 mb-2
-      bg-gradient-to-r from-[#f2ca46] via-[#daa425] to-yellow-600
-      text-black font-bold text-lg rounded-2xl shadow-md
-      transition-all duration-300 ease-out
-      hover:shadow-xl hover:shadow-[#daa425]/40
-      focus:outline-none focus:ring-4 focus:ring-[#f2ca46]/50
-      disabled:opacity-50 disabled:cursor-not-allowed"
+                {/* Payment QR - Only show after clicking pay button */}
+                {showPaymentFields && (
+                  <motion.div
+                    className="text-center py-8 bg-gray-900/30 rounded-2xl border border-[#daa425]/10"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
                   >
-                    <span className="tracking-wide">
-                      {isSubmitting ? "Submitting..." : "Submit"}
-                    </span>
-                    <Send
-                      size={18}
-                      className={`transition-transform duration-300 ${
-                        isSubmitting
-                          ? "animate-pulse"
-                          : "group-hover:translate-x-1"
-                      }`}
-                    />
-                  </motion.button>
-                </div>
+                    <h3 className="text-xl font-semibold mb-2 text-yellow-300">
+                      Payment QR Code
+                    </h3>
+                    <div className="inline-block bg-white rounded-2xl shadow-2xl">
+                      <img
+                        src="/VNRVJIETQR.jpg"
+                        alt="Payment QR Code"
+                        className="w-48 h-48 rounded-xl object-contain"
+                      />
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Payment Platform & Transaction ID - Only show after clicking pay button */}
+                {showPaymentFields && (
+                  <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1 }}
+                  >
+                    <div className="transform hover:opacity-90 transition-transform duration-300">
+                      <label className="text-sm font-medium text-yellow-300 block mb-2">
+                        Payment Platform <span className="text-red-400">*</span>
+                      </label>
+                      <select
+                        className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent"
+                        {...register("paymentplatform", {
+                          required: showPaymentFields ? "Please select a payment platform" : false,
+                        })}
+                      >
+                        <option value="">Select Payment Platform</option>
+                        <option value="Google Pay">Google Pay</option>
+                        <option value="PhonePe">PhonePe</option>
+                        <option value="Paytm">Paytm</option>
+                        <option value="Amazon Pay">Amazon Pay</option>
+                        <option value="BHIM UPI">BHIM UPI</option>
+                        <option value="FamPay">FamPay</option>
+                        <option value="Mobikwik">Mobikwik</option>
+                        <option value="WhatsApp Pay">WhatsApp Pay</option>
+                        <option value="FreeCharge">FreeCharge</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      {errors.paymentplatform && (
+                        <p className="text-red-400 text-sm mt-1 animate-bounce flex items-center gap-1">
+                          <Zap size={12} />
+                          {errors.paymentplatform.message}
+                        </p>
+                      )}
+                    </div>
+                    <div className="transform hover:opacity-90 transition-transform duration-300">
+                      <label className="text-sm font-medium text-yellow-300 block mb-2">
+                        Transaction ID <span className="text-red-400">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="Enter transaction ID"
+                        className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent placeholder-[#daa425]"
+                        {...register("transactionid", {
+                          required: showPaymentFields ? "Transaction ID is required" : false,
+                        })}
+                      />
+                      {errors.transactionid && (
+                        <p className="text-red-400 text-sm mt-1 animate-bounce flex items-center gap-1">
+                          <Zap size={12} />
+                          {errors.transactionid.message}
+                        </p>
+                      )}
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Submit Button - Only show after payment fields are visible */}
+                {showPaymentFields && (
+                  <motion.div
+                    className="mt-6 text-center"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.2 }}
+                  >
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      type="submit"
+                      disabled={isSubmitting}
+                      aria-busy={isSubmitting}
+                      className="group relative inline-flex items-center justify-center gap-3 px-6 py-2 mb-2
+        bg-gradient-to-r from-[#f2ca46] via-[#daa425] to-yellow-600
+        text-black font-bold text-lg rounded-2xl shadow-md
+        transition-all duration-300 ease-out
+        hover:shadow-xl hover:shadow-[#daa425]/40
+        focus:outline-none focus:ring-4 focus:ring-[#f2ca46]/50
+        disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      <span className="tracking-wide">
+                        {isSubmitting ? "Submitting..." : "Submit"}
+                      </span>
+                      <Send
+                        size={18}
+                        className={`transition-transform duration-300 ${
+                          isSubmitting
+                            ? "animate-pulse"
+                            : "group-hover:translate-x-1"
+                        }`}
+                      />
+                    </motion.button>
+                  </motion.div>
+                )}
               </div>
             </div>
           </div>
