@@ -18,6 +18,7 @@ const router = [
   { path: "/technovista/register", component: TechnovistaForm },
   { path: "/technovista/events", component: EventsTV },
   { path: "/technovista/devs", component: TvDevs },
+  
   { path: "/home", component: Home },
   { path: "/about", component: About },
   { path: "/testimonials", component: Testimonials },

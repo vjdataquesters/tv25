@@ -47,10 +47,11 @@ const pulseVariants = {
 const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   const [particles, setParticles] = useState([]);
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
-  const [focusedField, setFocusedField] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPaymentFields, setShowPaymentFields] = useState(false); // Added this missing state
   const containerRef = useRef(null);
+
+  const [file, setFile] = useState(null);
 
   const {
   register,
@@ -125,13 +126,46 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   }, []);
 
   const onSubmit = async (data) => {
+    if (!file) {
+      alert("Please upload a payment proof file.");
+      return;
+    }
     setIsSubmitting(true);
     try {
-      console.log(data);
-      const response = await api.post("/submit", data);
+      const fileName = file.name.toLowerCase().replace(/\s+/g, "-"); 
+      const fileType = file.type;
+      const getUrl = await api.post("/register/get-signed-url", {
+        fileName,
+        fileType,
+      });
+
+      if (!getUrl.data.success) {
+        alert("Failed to upload file. Please try again.");
+        return;
+      }
+
+      const { signedUrl, fileNameDB } = getUrl.data;
+      await axios.put(signedUrl, file, {
+        headers: {
+          'Content-Type': fileType,
+        },
+      })
+
+      const dbData = {
+        ...data,
+        image: fileNameDB,
+      }
+
+      const response = await api.post("/register", dbData);
+
+      if (!response.data.success) {
+        alert("Registration failed. Please try again.");
+        return;
+      }
       setSubmitStatus(true);
     } catch (error) {
-      alert("Registration failed. Please try again.");
+      console.error("Error during registration:", error);
+      alert("Registration failed. Please try again." + error.message);
     } finally {
       setIsSubmitting(false);
     }
@@ -207,29 +241,29 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-3 h-[110vh]">
 
-        
+
         {/* Header */}
         <div className="text-center mb-6">
           <div className="inline-flex items-center gap-3 mb-4">
-    <img
-      src="/events/Technovista2025/tv25-icons/tv-logo-ani.gif"
-      alt="TechnoVista 2k25 Logo"
-      className="w-16 h-16 md:w-16 md:h-16 lg:w-20 lg:h-20 object-contain"
-    />
-    <h1 className="text-3xl md:text-3xl font-bold bg-gradient-to-r from-[#f2ca46] via-yellow-300 to-[#daa425] bg-clip-text text-transparent">
-      TechnoVista 2k25
-    </h1>
-  </div>
-  <div className="flex justify-center gap-2">
-    {[...Array(5)].map((_, i) => (
-      <div
-        key={i}
-        className="w-2 h-2 bg-[#f2ca46] rounded-full animate-pulse"
-        style={{ animationDelay: `${i * 0.2}s` }}
-      />
-    ))}
-  </div>
-</div>
+            <img
+              src="/events/Technovista2025/tv25-icons/tv-logo-ani.gif"
+              alt="TechnoVista 2k25 Logo"
+              className="w-16 h-16 md:w-16 md:h-16 lg:w-20 lg:h-20 object-contain"
+            />
+            <h1 className="text-3xl md:text-3xl font-bold bg-gradient-to-r from-[#f2ca46] via-yellow-300 to-[#daa425] bg-clip-text text-transparent">
+              TechnoVista 2k25
+            </h1>
+          </div>
+          <div className="flex justify-center gap-2">
+            {[...Array(5)].map((_, i) => (
+              <div
+                key={i}
+                className="w-2 h-2 bg-[#f2ca46] rounded-full animate-pulse"
+                style={{ animationDelay: `${i * 0.2}s` }}
+              />
+            ))}
+          </div>
+        </div>
 
         {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -577,6 +611,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
     />
   </motion.div>
                 )}
+
 
                 {/* Payment QR - Only show after clicking pay button */}
                 {showPaymentFields && (
