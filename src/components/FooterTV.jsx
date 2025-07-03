@@ -100,7 +100,7 @@ const FooterTV = () => {
             <div className="w-full flex justify-center">
               <div className="grid grid-cols-1 gap-3 sm:gap-4 w-full max-w-xs">
                 <a
-                  href="/about"
+                  href="https://www.vjdataquesters.com/about"
                   target="_blank"
                   className="text-sm sm:text-base md:text-lg hover:text-yellow-400 transform transition-all duration-300 hover:translate-x-1 text-center"
                 >

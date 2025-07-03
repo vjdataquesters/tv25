@@ -11,7 +11,7 @@ export const eventTimeLine = [
         time: "10:00 AM - 12:30 PM",
         venue: "Auditorium",
         formlink:
-          "https://docs.google.com/forms/d/e/1FAIpQLSeXM4H7HPm5BrCdNITufedmVMhMw5tul_sLGsUMPCZ1IjlMhg/viewform?embedded=true",
+          "",
         description:
           "An enlightening session by Dr. Ayesha Kapoor on how Artificial Intelligence is shaping the industries of tomorrow.Discover how emerging AI trends are revolutionizing processes across diverse sectors.",
         highlights: [
