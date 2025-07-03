@@ -106,7 +106,7 @@ export default function EventShowcase() {
 
         {/* Right: Event Preview */}
         <div
-          className="w-2/5 flex items-center justify-center text-center p-4"
+          className="w-2/5 flex items-center justify-center text-center p-4 cursor-pointer"
           onClick={() =>
             navigate("/technovista/events", {
               state: {
@@ -116,27 +116,32 @@ export default function EventShowcase() {
           }
         >
           <AnimatePresence mode="wait">
-            <motion.img
+            <motion.div
               key={activeEvent.image}
-              src={activeEvent.cartoon}
-              alt={activeEvent.title}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{
                 opacity: { duration: 0.35, ease: "easeInOut" },
               }}
-              className="rounded-2xl object-contain h-[450px] w-auto"
-            />
+              className="flex flex-col space-y-4"
+            >
+              <img
+                src={activeEvent.cartoon}
+                alt={activeEvent.title}
+                className="rounded-2xl object-contain h-[350px] w-auto mx-auto"
+              />
+              <p className=" px-4 text-justify">{activeEvent.description}</p>
+            </motion.div>
           </AnimatePresence>
         </div>
       </div>
-
-      <div className="grid grid-cols-2 gap-4 p-0 lg:hidden">
+      
+      <div className="grid grid-cols-2 gap-6 p-0 lg:hidden">
         {allEvents.map((event) => (
           <div
             key={event.id}
-            className="border border-white/10 p-4 flex flex-col items-center text-center hover:bg-white/5 transition duration-300 rounded-xl"
+            className="group border border-white/10 p-2 flex flex-col items-center text-center hover:bg-white/5 hover:border-white/20 transition-all duration-300 rounded-2xl cursor-pointer hover:scale-[1.02] hover:shadow-lg hover:shadow-black/20"
             onClick={() =>
               navigate("/technovista/events", {
                 state: {
@@ -145,16 +150,31 @@ export default function EventShowcase() {
               })
             }
           >
-            <img
-              src={event.cartoon}
-              alt={event.title}
-              className="w-40 h-40 object-cover rounded-xl mb-3"
-            />
-            <h3 className="font-bold text-white font-sans">{event.title}</h3>
-            <p className="text-sm text-white/60 font-sans">{event.subtitle}</p>
-            <p className="text-xs text-white/40 mt-1 font-mono">
-              📅 {new Date(event.date).toDateString()}
-            </p>
+            <div className="relative overflow-hidden rounded-xl mb-4">
+              <img
+                src={event.cartoon}
+                alt={event.title}
+                className="w-36 h-36 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
+
+            <div className="space-y-2 flex flex-col justify-between">
+              <h3 className="font-bold text-white font-sans text-base leading-tight group-hover:text-amber-400 transition-colors duration-300">
+                {event.title}
+              </h3>
+
+              <p className="text-sm text-white/70 font-sans leading-relaxed">
+                {event.subtitle}
+              </p>
+
+              <p className="text-xs text-white/50 font-medium tracking-wide">
+                {new Date(event.date).toLocaleDateString("en-US", {
+                  month: "short",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </p>
+            </div>
           </div>
         ))}
       </div>
