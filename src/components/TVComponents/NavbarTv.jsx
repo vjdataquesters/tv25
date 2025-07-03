@@ -71,12 +71,6 @@ function NavbarTv() {
             >
               All Events
             </button>
-            <a
-              href="/technovista/devs"
-              className="font-mono text-[#daa425] px-5 py-1.5 rounded-lg font-semibold hover:bg-[#121210] transition-all duration-300"
-            >
-              Developed by
-            </a>
             <button
               onClick={() => handleNavigate("/technovista/register")}
               className="font-mono bg-[#daa425] text-black px-5 py-1.5 rounded-lg font-semibold hover:bg-[#f2ca46] transition-colors"
@@ -109,12 +103,6 @@ function NavbarTv() {
             >
               All Events
             </button>
-            <a
-              href="/technovista/devs"
-              className="px-4 py-3 text-left font-mono text-white hover:text-yellow-400 transition-all"
-            >
-              Developed by
-            </a>
             <button
               onClick={() => handleNavigate("/technovista/register")}
               className="px-4 py-3 text-left font-mono text-white hover:text-yellow-400 transition-all"
