@@ -612,7 +612,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
 
                       {/* Text with gradient */}
                       <span className="tracking-wide bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent font-extrabold">
-                        Pay ₹ {watchCollege === "VNRVJIET" ? "175" : "250"} /-
+                        Pay ₹ {watchCollege === "VNRVJIET" ? "170" : "250"} /-
                       </span>
 
                       {/* Arrow with slide animation */}
