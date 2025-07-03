@@ -863,7 +863,6 @@ const FormClosedComp = () => {
       {/* Glassy box */}
       <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl p-10 w-full max-w-md text-center border border-[#f2ca46]/20 shadow-[0_0_40px_rgba(255,255,255,0.08)]">
         {/* Optional noise texture */}
-        <div className="absolute inset-0 rounded-2xl bg-[url('/textures/noise.png')] opacity-10 mix-blend-overlay pointer-events-none" />
 
         <Lock size={48} className="text-[#f2ca46] mx-auto mb-4" />
 
