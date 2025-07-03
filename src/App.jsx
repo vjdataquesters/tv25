@@ -34,30 +34,9 @@ function LayoutWrapper() {
     (route) => pathname === route || pathname.startsWith("/technovista")
   );
 
-  function PromoSection() {
-    return (
-      pathname !== "/hit" &&
-      pathname !== "/hitreloadedultrasecretendpoint" &&
-      pathname !== "/register" && (
-        <div className="fixed bottom-2 md:bottom-14 right-2 flex flex-col gap-2 z-10">
-          {events.upcoming.map((e, i) => (
-            <PromoDiv
-              key={i}
-              eventName={e.name}
-              eventLink={e.link}
-              eventStatus="upcoming"
-            />
-          ))}
-        </div>
-      )
-    );
-  }
-
   return (
     <>
       <Analytics />
-      {notTV && <Loading load={load} />}
-      {notTV && <Header />}
       <ScrollToTop />
       <div className="flex flex-col min-h-screen bg-blue-50/70">
         <Routes>
@@ -70,8 +49,6 @@ function LayoutWrapper() {
           ))}
         </Routes>
       </div>
-      {notTV && <PromoSection />}
-      {notTV && <Footer />}
     </>
   );
 }
