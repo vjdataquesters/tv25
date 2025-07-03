@@ -91,12 +91,8 @@ const Card = ({ card }) => {
     >
       {/* Title & Subtitle */}
       <div className="flex flex-col gap-1 leading-snug">
-        <h3 className="text-3xl font-extrabold text-black">
-          {card.title}
-        </h3>
-        <p className="text-base font-medium text-black/70">
-          {card.subtitle}
-        </p>
+        <h3 className="text-3xl font-extrabold text-black">{card.title}</h3>
+        <p className="text-base font-medium text-black/70">{card.subtitle}</p>
       </div>
 
       {/* Bottom Icon */}
@@ -154,6 +150,7 @@ const HorizontalScrollCarousel = () => {
     <section ref={targetRef} className="relative h-[300vh]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         {/* Add the new ref here */}
+        <div className="w-full overflow-hidden"></div>
         <motion.div
           ref={carouselRef}
           style={{ x }}
@@ -176,6 +173,7 @@ const HorizontalScrollCarousel = () => {
           ))}
           <div className="p-28"></div>
         </motion.div>
+        <div />
       </div>
     </section>
   );
