@@ -161,7 +161,7 @@ function WhatWeGot() {
       </div>
 
       {/* Description Section */}
-      <section className="lg:m-6 from-yellow-900/20 to-black/50 rounded-xl p-4 sm:p-6 md:p-8 max-w-[90%] md:max-w-6xl w-full text-left">
+      <section className="lg:m-6 from-yellow-900/20 to-black/50 rounded-xl py-4 sm:p-6 md:p-8 max-w-[90%] md:max-w-6xl w-full text-left">
         <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-bold text-[#daa425] mb-4 tracking-wide">
           The Ultimate Tech Carnival
         </h2>
