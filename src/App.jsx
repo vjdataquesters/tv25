@@ -8,21 +8,10 @@ import {
 import { Analytics } from "@vercel/analytics/react";
 
 import router from "./pages";
-
-import Header from "./components/Header";
 import ScrollToTop from "./components/ScrollToTop";
-import Loading from "./components/Loading";
-import Footer from "./components/Footer";
-import { PromoDiv } from "./components/PromoDiv";
-import events from "./data/events";
 
 function LayoutWrapper() {
   const { pathname } = useLocation();
-  const [load, setLoad] = useState(true);
-
-  // Add paths where layout should be hidden
-  const noLayoutRoutes = ["/", "/technovista"];
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoad(false);
@@ -30,9 +19,7 @@ function LayoutWrapper() {
     return () => clearTimeout(timer);
   }, []);
 
-  const notTV = !noLayoutRoutes.some(
-    (route) => pathname === route || pathname.startsWith("/technovista")
-  );
+
 
   return (
     <>

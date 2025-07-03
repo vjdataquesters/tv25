@@ -1,7 +1,7 @@
 // TechnovistaForm.js
 import { useEffect, useRef, useState } from "react";
-import FormBanner from "../../components/TVComponents/FormBanner";
-import TForm from "../../components/TVComponents/RegistrationForm";
+import FormBanner from "../components/FormBanner";
+import TForm from "../components/RegistrationForm";
 import { gsap } from "gsap";
 
 const TechnovistaForm = () => {

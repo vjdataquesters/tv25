@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Calendar, ExternalLink } from "lucide-react";
-import { eventTimeLine } from "../../data/tvData";
+import { eventTimeLine } from "../data/tvData";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 

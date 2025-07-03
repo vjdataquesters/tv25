@@ -1,8 +1,7 @@
 // FormBanner.js
 import React, { useState, useEffect } from "react";
 import { Calendar, Clock, MapPin, Trophy, Zap, Star } from "lucide-react";
-import { eventTimeLine } from "../../data/tvData";
-import "../../index.css";
+import { eventTimeLine } from "../data/tvData";
 const allEvents = eventTimeLine.flatMap((day) => day.events);
 
 const FormBanner = () => {

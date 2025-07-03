@@ -1,8 +1,8 @@
-import LandingTV from "./TvPages/LandingTV";
-import Technovista from "./TvPages/Technovista";
-import TechnovistaForm from "./TvPages/TechnovistaForm";
-import EventsTV from "./TvPages/EventsTV";
-import TvDevs from "./TvPages/TvDevs";
+import LandingTV from "./LandingTV";
+import Technovista from "./Technovista";
+import TechnovistaForm from "./TechnovistaForm";
+import EventsTV from "./EventsTV";
+import TvDevs from "./TvDevs";
 
 const router = [
   { path: "/", component: LandingTV },

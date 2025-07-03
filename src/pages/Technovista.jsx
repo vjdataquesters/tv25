@@ -1,17 +1,16 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import WhatWeGot from "../../components/TVComponents/WhatWeGot";
-import Intro from "../../components/TVComponents/Intro";
-import EventShowcase from "../../components/TVComponents/EventShowcase";
-import Countdown from "../../components/TVComponents/CountDown";
-import FooterTV from "../../components/TVComponents/FooterTV";
-// import PastImages from "../../components/TVComponents/PastImages";
+import WhatWeGot from "../components/WhatWeGot";
+import Intro from "../components/Intro";
+import EventShowcase from "../components/EventShowcase";
+import Countdown from "../components/CountDown";
+import FooterTV from "../components/FooterTV";
 import "./Technovista.css";
-import Sponsors from "../../components/TVComponents/Sponsors";
-import NavbarTv from "../../components/TVComponents/NavbarTv";
-import WhatToExpectTV from "../../components/TVComponents/WhatToExpectTV";
-import ScrollingGallery from "../../components/TVComponents/ScrollingGallery";
+import Sponsors from "../components/Sponsors";
+import NavbarTv from "../components/NavbarTv";
+import WhatToExpectTV from "../components/WhatToExpectTV";
+import ScrollingGallery from "../components/ScrollingGallery";
 import { gsap } from "gsap";
 
 const Technovista = () => {

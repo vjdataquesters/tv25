@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import Bars from "../../assets/bars.svg"; // Make sure this path is valid
+import Bars from "../assets/bars.svg"; // Make sure this path is valid
 
 function NavbarTv() {
   const [menuOpen, setMenuOpen] = useState(false);

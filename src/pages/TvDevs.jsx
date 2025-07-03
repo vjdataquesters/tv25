@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import NavbarTv from "../../components/TVComponents/NavbarTv";
-import FooterTV from "../../components/TVComponents/FooterTV";
-import { Linkedin, Github } from "lucide-react";
-
+import NavbarTv from "../components/NavbarTv";
+import FooterTV from "../components/FooterTV";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 const developers = [
   {
     id: 1,
@@ -121,7 +120,7 @@ const TvDevs = () => {
                     rel="noopener noreferrer"
                     className="text-gray-300 hover:text-[#daa425] transition-colors"
                   >
-                    <Linkedin className="w-5 h-5" />
+                    <FaLinkedinIn className="w-5 h-5" />
                   </a>
                 )}
                 {dev.github && (
@@ -131,7 +130,8 @@ const TvDevs = () => {
                     rel="noopener noreferrer"
                     className="text-gray-300 hover:text-[#daa425] transition-colors"
                   >
-                    <Github className="w-5 h-5" />
+                    <FaGithub
+                     className="w-5 h-5" />
                   </a>
                 )}
               </div>
@@ -165,7 +165,7 @@ const TvDevs = () => {
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-[#daa425]/20 rounded-full flex items-center justify-center transition hover:bg-[#daa425]/40"
               >
-                <Linkedin className="text-white text-xl" />
+                <FaLinkedinIn className="text-white text-xl" />
               </a>
               <a
                 href={dev.github}
@@ -173,7 +173,7 @@ const TvDevs = () => {
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-[#daa425]/20 rounded-full flex items-center justify-center transition hover:bg-[#daa425]/40"
               >
-                <Github className="text-white text-xl" />
+                <FaGithub className="text-white text-xl" />
               </a>
             </div>
           </div>

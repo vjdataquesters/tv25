@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Calendar, Clock, ExternalLink, MapPin, ArrowLeft } from "lucide-react";
-import { eventTimeLine } from "../../data/tvData";
-import Reveal from "../../components/Reveal.jsx";
+import { eventTimeLine } from "../data/tvData.js";
+import Reveal from "../components/Reveal.jsx";
 import "./Technovista.css";
 import { AnimatePresence, motion } from "framer-motion";
 import { gsap } from "gsap";
