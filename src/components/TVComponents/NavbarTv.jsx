@@ -15,7 +15,7 @@ function NavbarTv() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50  border-b border-yellow-500/10 backdrop-blur-lg box-border">
-      <div className="mx-auto max-w-screen-xl px-3 sm:px-5 lg:px-1">
+      <div className="mx-auto max-w-screen px-3 sm:px-5 lg:px-4">
         <div className="flex justify-between items-center h-16">
           {/* Left: Logos and cross */}
           <div className="flex items-center space-x-3 gap-4">
@@ -27,7 +27,7 @@ function NavbarTv() {
               <img
                 src="/events/Technovista2025/tv25-icons/dq-vector.png"
                 alt="Logo 1"
-                className="h-[4rem] max-w-[8rem] w-auto object-contain p-1"
+                className="h-[4rem] w-auto object-contain p-1"
               />
             </a>
 
