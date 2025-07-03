@@ -125,13 +125,14 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   }, []);
 
   const onSubmit = async (data) => {
-    if (!file) {
-      alert("Please upload a payment proof file.");
+    if (!file || !data.transactionid || !data.rollno) {
+      alert("Please fill all required fields and upload a payment proof.");
       return;
     }
     setIsSubmitting(true);
     try {
-      const fileName = file.name.toLowerCase().replace(/\s+/g, "-"); 
+      const userId = `${data.transactionid.toLowerCase()}-${data.rollno.toLowerCase().replace(/\s+/g, "-")}-`;
+      const fileName = userId + file.name.toLowerCase().replace(/\s+/g, "-");
       const fileType = file.type;
       const getUrl = await api.post("/register/get-signed-url", {
         fileName,
@@ -143,24 +144,34 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
         return;
       }
 
-      const { signedUrl, fileNameDB } = getUrl.data;
+      const { signedUrl, fileName: fileNameStorage } = getUrl.data;
       await axios.put(signedUrl, file, {
         headers: {
           'Content-Type': fileType,
         },
       })
 
-      const dbData = {
-        ...data,
-        image: fileNameDB,
+      const finalData = {
+        name: data.name,
+        college: data.college === "Other" ? data.collegeName : data.college,
+        branch: data.branch,
+        section: data.section,
+        rollno: data.rollno,
+        year: data.year,
+        phno: data.phno,
+        email: data.email,
+        paymentplatform: data.paymentplatform,
+        transactionid: data.transactionid,
+        image: fileNameStorage,
       }
 
-      const response = await api.post("/register", dbData);
+      const response = await api.post("/register", finalData);
 
       if (!response.data.success) {
         alert("Registration failed. Please try again.");
         return;
       }
+
       setSubmitStatus(true);
     } catch (error) {
       console.error("Error during registration:", error);
@@ -534,7 +545,11 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                   <label htmlFor="payment-proof" className="text-sm font-medium text-yellow-300 block mb-2">
                     Upload screenshot of payment <span className="text-red-400">*</span>
                   </label>
-                  <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+                  <input
+                    type="file"
+                    onChange={(e) => setFile(e.target.files[0])}
+                    accept="image/*,application/pdf"
+                  />
                 </div>
 
                 {/* Payment Platform & Transaction ID */}
