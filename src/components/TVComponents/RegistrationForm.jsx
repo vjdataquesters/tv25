@@ -12,6 +12,7 @@ import {
   Triangle,
   Square,
   ExternalLink,
+  MoveRight,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -77,53 +78,53 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   const watchCollege = watch("college");
 
   // Generate floating particles
-  useEffect(() => {
-    const generateParticles = () => {
-      const newParticles = [];
-      for (let i = 0; i < 50; i++) {
-        newParticles.push({
-          id: i,
-          x: Math.random() * 100,
-          y: Math.random() * 100,
-          size: Math.random() * 4 + 1,
-          speed: Math.random() * 2 + 1,
-          opacity: Math.random() * 0.5 + 0.3,
-          type: ["circle", "triangle", "square"][Math.floor(Math.random() * 3)],
-        });
-      }
-      setParticles(newParticles);
-    };
+  // useEffect(() => {
+  //   const generateParticles = () => {
+  //     const newParticles = [];
+  //     for (let i = 0; i < 50; i++) {
+  //       newParticles.push({
+  //         id: i,
+  //         x: Math.random() * 100,
+  //         y: Math.random() * 100,
+  //         size: Math.random() * 4 + 1,
+  //         speed: Math.random() * 2 + 1,
+  //         opacity: Math.random() * 0.5 + 0.3,
+  //         type: ["circle", "triangle", "square"][Math.floor(Math.random() * 3)],
+  //       });
+  //     }
+  //     setParticles(newParticles);
+  //   };
 
-    generateParticles();
+  //   generateParticles();
 
-    const interval = setInterval(() => {
-      setParticles((prev) =>
-        prev.map((particle) => ({
-          ...particle,
-          y: particle.y > 100 ? -5 : particle.y + particle.speed * 0.1,
-          x: particle.x + Math.sin(particle.y * 0.01) * 0.1,
-        }))
-      );
-    }, 50);
+  //   const interval = setInterval(() => {
+  //     setParticles((prev) =>
+  //       prev.map((particle) => ({
+  //         ...particle,
+  //         y: particle.y > 100 ? -5 : particle.y + particle.speed * 0.1,
+  //         x: particle.x + Math.sin(particle.y * 0.01) * 0.1,
+  //       }))
+  //     );
+  //   }, 50);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   // Mouse tracking for interactive effects
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      if (containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
-        setMousePosition({
-          x: ((e.clientX - rect.left) / rect.width) * 100,
-          y: ((e.clientY - rect.top) / rect.height) * 100,
-        });
-      }
-    };
+  // useEffect(() => {
+  //   const handleMouseMove = (e) => {
+  //     if (containerRef.current) {
+  //       const rect = containerRef.current.getBoundingClientRect();
+  //       setMousePosition({
+  //         x: ((e.clientX - rect.left) / rect.width) * 100,
+  //         y: ((e.clientY - rect.top) / rect.height) * 100,
+  //       });
+  //     }
+  //   };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  //   window.addEventListener("mousemove", handleMouseMove);
+  //   return () => window.removeEventListener("mousemove", handleMouseMove);
+  // }, []);
 
   const onSubmit = async (data) => {
     if (!file || !data.transactionid || !data.rollno) {
@@ -231,30 +232,30 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   return (
     <div
       ref={containerRef}
-      className="h-[110vh] text-[#f2ca46] relative rounded-xl pb-10"
+      className="min-h-screen text-[#f2ca46] relative rounded-xl"
     >
       {/* Background Particles */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* <div className="absolute inset-0 overflow-hidden">
         {particles.map((particle) => (
           <ParticleShape key={particle.id} particle={particle} />
         ))}
-      </div>
+      </div> */}
 
       {/* Mouse Follower Effect */}
-      <div
+      {/* <div
         className="absolute w-96 h-96 bg-[#f2ca46]/5 rounded-full blur-3xl transition-all duration-1000 ease-out pointer-events-none "
         style={{
           left: `${mousePosition.x}%`,
           top: `${mousePosition.y}%`,
           transform: "translate(-50%, -50%)",
         }}
-      />
+      /> */}
 
       {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-3 h-[110vh]">
+      <div className="relative z-10 container mx-auto px-3">
         {/* Header */}
-        <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-3 mb-4">
+        <div className="text-center">
+          <div className="inline-flex items-center gap-3">
             <img
               src="/events/Technovista2025/tv25-icons/tv-logo-ani.gif"
               alt="TechnoVista 2k25 Logo"
@@ -264,7 +265,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
               TechnoVista 2k25
             </h1>
           </div>
-          <div className="flex justify-center gap-2">
+          {/* <div className="flex justify-center gap-2">
             {[...Array(5)].map((_, i) => (
               <div
                 key={i}
@@ -272,13 +273,13 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                 style={{ animationDelay: `${i * 0.2}s` }}
               />
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="w-full max-w-4xl mx-auto px-4">
-            <div className="bg-white/5 backdrop-blur-2xl rounded-3xl p-4 md:p-6 border border-[#f2ca46]/30 shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]">
+          <div className="w-full max-w-6xl mx-auto px-2 pb-4">
+            <div className="bg-white/5 backdrop-blur-2xl rounded-3xl p-4 md:p-6 border border-[#f2ca46]/30 shadow-[0_8px_32px_0_rgba(255,255,255,0.1)] my-2">
               <div className="grid gap-4 md:gap-6">
                 {/* Full Name */}
                 <div className="transform hover:opacity-90 transition-transform duration-300">
@@ -524,41 +525,73 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
 
                 {showPaymentFields && (
                   <motion.div
-                    className="text-center py-8 bg-gray-900/30 rounded-2xl border border-[#daa425]/10"
+                    className="grid gap-4 md:gap-6"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <h3 className="text-xl font-semibold mb-2 text-yellow-300">
-                      Payment QR Code
-                    </h3>
-                    <div className="inline-block bg-white rounded-2xl shadow-2xl">
-                      <img
-                        src={`/${
-                          watchCollege === "VNRVJIET"
-                            ? "VNRVJIETQR170"
-                            : "VNRVJIETQR250"
-                        }.jpg`}
-                        alt="Payment QR Code"
-                        className="w-48 h-48 rounded-xl object-contain"
-                      />
+                    {/* Payment QR Code Section */}
+                    <div className="transform hover:opacity-90 transition-transform duration-300">
+                      <div className="group relative">
+                        <label className="text-sm font-medium text-yellow-300 block mb-2">
+                          Payment QR Code{" "}
+                          <span className="text-red-400">*</span>
+                        </label>
+                        <div className="w-full p-4 bg-black/30 border border-[#daa425] rounded-md">
+                          <div className="flex flex-col items-center space-y-3">
+                            <h3 className="text-lg font-semibold text-yellow-300">
+                              Scan QR Code to Pay ₹
+                              {watchCollege === "VNRVJIET" ? "170" : "250"}
+                            </h3>
+                            <div className="bg-white rounded-xl p-3 shadow-lg">
+                              <img
+                                src={`/${
+                                  watchCollege === "VNRVJIET"
+                                    ? "VNRVJIETQR170"
+                                    : "VNRVJIETQR250"
+                                }.jpg`}
+                                alt="Payment QR Code"
+                                className="w-48 h-48 md:w-56 md:h-56 object-contain rounded-lg"
+                              />
+                            </div>
+                            <p className="text-sm text-yellow-300/80 text-center">
+                              After payment, upload screenshot below and enter
+                              transaction details
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="mt-4 text-yellow-300">
-                      <label
-                        htmlFor="payment-proof"
-                        className="text-sm font-medium text-yellow-300 block mb-2"
-                      >
-                        Upload screenshot of payment{" "}
-                        <span className="text-red-400">*</span>
-                      </label>
-                      <input
-                        type="file"
-                        onChange={(e) => setFile(e.target.files[0])}
-                      />
+
+                    {/* File Upload Section */}
+                    <div className="transform hover:opacity-90 transition-transform duration-300">
+                      <div className="group relative">
+                        <label className="text-sm font-medium text-yellow-300 block mb-2">
+                          Payment Screenshot{" "}
+                          <span className="text-red-400">*</span>
+                        </label>
+                        <div className="relative">
+                          <input
+                            type="file"
+                            accept="image/*"
+                            onChange={(e) => setFile(e.target.files[0])}
+                            className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md 
+                       focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent
+                       file:mr-4 file:py-1 file:px-3 file:rounded-md file:border-0 
+                       file:text-sm file:font-medium file:bg-[#f2ca46] file:text-black
+                       hover:file:bg-[#daa425] file:cursor-pointer cursor-pointer"
+                          />
+                          {file && (
+                            <p className="text-yellow-300/80 text-sm mt-1 flex items-center gap-1">
+                              <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                              File selected: {file.name}
+                            </p>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </motion.div>
                 )}
-
 
                 {watchCollege && !showPaymentFields && (
                   <motion.div
@@ -587,55 +620,20 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                                   hover:before:opacity-100
                                   overflow-hidden"
                     >
-                      {/* Animated background sparkle effect */}
-                      <div className="absolute inset-0 opacity-30">
-                        {[...Array(6)].map((_, i) => (
-                          <motion.div
-                            key={i}
-                            className="absolute w-1 h-1 bg-white rounded-full"
-                            style={{
-                              left: `${20 + i * 12}%`,
-                              top: `${30 + (i % 2) * 40}%`,
-                            }}
-                            animate={{
-                              opacity: [0, 1, 0],
-                              scale: [0, 1, 0],
-                            }}
-                            transition={{
-                              duration: 2,
-                              repeat: Infinity,
-                              delay: i * 0.3,
-                            }}
-                          />
-                        ))}
-                      </div>
-
                       {/* Text with gradient */}
-                      <span className="tracking-wide bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent font-extrabold">
+                      <span className="bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent font-bold font-sans">
                         Pay ₹ {watchCollege === "VNRVJIET" ? "170" : "250"} /-
                       </span>
 
                       {/* Arrow with slide animation */}
-                      <motion.span
-                        className="text-2xl"
-                        animate={{
-                          x: [0, 5, 0],
-                        }}
-                        transition={{
-                          duration: 1.5,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                        }}
-                      >
-                        →
-                      </motion.span>
+                      <MoveRight />
 
                       {/* Shine effect */}
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
                     </motion.button>
 
                     {/* Pulsing glow effect around button */}
-                    <motion.div
+                    {/* <motion.div
                       className="absolute inset-0 bg-[#f2ca46]/20 rounded-2xl blur-xl -z-10"
                       animate={{
                         opacity: [0.3, 0.6, 0.3],
@@ -653,10 +651,9 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                         width: "200px",
                         height: "80px",
                       }}
-                    />
+                    /> */}
                   </motion.div>
                 )}
-
 
                 {/* Payment Platform & Transaction ID - Only show after clicking pay button */}
                 {showPaymentFields && (
@@ -893,19 +890,19 @@ const RegistrationForm = () => {
 
   return (
     <motion.div
-      className="w-full bg-black rounded-2xl shadow-2xl border-2 border-[#daa425]/30 relative min-h-[110vh] flex items-center justify-center"
+      className="bg-black rounded-2xl shadow-2xl border-2 border-[#daa425]/30 relative min-h-screen flex items-center justify-center"
       initial={{ opacity: 0, filter: "blur(10px)" }}
       animate={{ opacity: 1, filter: "blur(0px)" }}
       transition={{ duration: 1, ease: "easeOut" }}
     >
       {/* Decorative golden corners */}
-      <div className="absolute top-0 left-0 w-20 h-20 border-l-4 border-t-4 border-[#f2ca46] rounded-tl-2xl z-30"></div>
+      {/* <div className="absolute top-0 left-0 w-20 h-20 border-l-4 border-t-4 border-[#f2ca46] rounded-tl-2xl z-30"></div>
       <div className="absolute top-0 right-0 w-20 h-20 border-r-4 border-t-4 border-[#f2ca46] rounded-tr-2xl z-30"></div>
       <div className="absolute bottom-0 left-0 w-20 h-20 border-l-4 border-b-4 border-[#f2ca46] rounded-bl-2xl z-30"></div>
-      <div className="absolute bottom-0 right-0 w-20 h-20 border-r-4 border-b-4 border-[#f2ca46] rounded-br-2xl z-30"></div>
+      <div className="absolute bottom-0 right-0 w-20 h-20 border-r-4 border-b-4 border-[#f2ca46] rounded-br-2xl z-30"></div> */}
 
       {/* Golden glow effect */}
-      <div className="absolute inset-0 h-full bg-gradient-radial from-[#f2ca46]/5 via-transparent to-transparent rounded-2xl"></div>
+      {/* <div className="absolute inset-0 h-full bg-gradient-radial from-[#f2ca46]/5 via-transparent to-transparent rounded-2xl"></div> */}
 
       {/* Scrollable content container */}
       <div
