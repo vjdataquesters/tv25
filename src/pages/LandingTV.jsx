@@ -298,7 +298,7 @@ const LandingTV = () => {
             href="/home"
             target="_blank"
             rel="noopener noreferrer"
-            className="h-[4.5rem] sm:h-[5rem] md:h-[5rem] lg:h-[5rem] xl:h-[5rem] transition-transform duration-300 flex items-center cursor-pointer"
+            className="h-[4.5rem] sm:h-[5rem] md:h-[5rem] lg:h-[5rem] xl:h-[5rem] transition-transform duration-300 flex items-center cursor-pointer mr-4"
           >
             <img
               src={dqLogo}
@@ -306,24 +306,6 @@ const LandingTV = () => {
               className="h-full w-auto object-contain p-3"
             />
           </a>
-
-          {/* Separator */}
-          <div className="text-white opacity-90 pr-[0.5rem]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="w-5 h-5 sm:w-6 sm:h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 6l12 12M6 18L18 6"
-              />
-            </svg>
-          </div>
 
           {/* VNR Logo */}
           <div
