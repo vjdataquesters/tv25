@@ -386,14 +386,14 @@ const LandingTV = () => {
           </div>
         </div>
         {/* Knowledge Partner - GeeksforGeeks */}
-        <div className="absolute bottom-4 right-4 flex flex-col items-center gap-1 bg-amber-500/20 border border-yellow-600/40 shadow-md shadow-yellow-900/30 pointer-events-none z-[9998] text-white px-7 py-4 rounded-xl">
-          <span className="font-mono text-xs sm:text-sm font-semibold tracking-wide text-[#d5f6e4]">
+        <div className="absolute bottom-4 right-4 flex flex-col items-center gap-1 bg-amber-500/20 border border-yellow-600/40 shadow-md shadow-yellow-900/30 pointer-events-none z-[9998] text-white px-4 py-3 rounded-xl">
+          <span className="-translate-y-1/2 font-mono text-[10px] sm:text-xs font-light tracking-wide text-[#d5f6e4] whitespace-nowrap">
             Knowledge Partner
           </span>
           <img
             src="events/Technovista2025/tv25-icons/GFG.png"
             alt="GeeksforGeeks Logo"
-            className="h-4 sm:h-7 w-auto object-contain rounded"
+            className="h-5 sm:h-8 w-auto object-contain"
           />
         </div>
       </section>
