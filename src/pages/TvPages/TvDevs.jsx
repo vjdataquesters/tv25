@@ -1,37 +1,58 @@
 import React from "react";
 import NavbarTv from "../../components/TVComponents/NavbarTv";
 import FooterTV from "../../components/TVComponents/FooterTV";
+import { Linkedin, Github } from "lucide-react";
 
 const developers = [
   {
+    id: 1,
     name: "Jagadeeswar",
     role: "WEB DEVELOPER",
     image: "/events/Technovista2025/devs/Jagadeeswar.png",
-    linkedin: "https://linkedin.com/in/example",
+    linkedin: "https://www.linkedin.com/in/jagadeeswarj/",
+    github: "https://github.com/JagadeeswarJ",
+    fullName: "J. Jagadeeswar",
+    location: "Hyderabad, India"
   },
   {
+    id: 2,
     name: "Pranav",
-    role: "UI DESIGNER",
+    role: "Frontend DEV",
     image: "/events/Technovista2025/devs/Pranav.png",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/pranav-babu-tungani-146707287/",
+    github: "https://github.com/PranavBabuTungani",
+    fullName: "T. Pranav Babu",
+    location: "Hyderabad, India"
   },
   {
+    id: 3,
     name: "Anish",
-    role: "FRONTEND DEV",
+    role: "UI Designer",
     image: "/events/Technovista2025/devs/Anish.png",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/anish-reddy2931/",
+    github: "https://github.com/Anishs2931",
+    fullName: "S. Anish Reddy",
+    location: "Hyderabad, India"
   },
   {
+    id: 4,
     name: "Srishanth",
-    role: "COORDINATOR",
+    role: "Full Stack DEV",
     image: "/events/Technovista2025/devs/Srishanth.png",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/padala-srishanth-4a0a4328b/",
+    github: "https://github.com/Padala-Srishanth",
+    fullName: "P.Srishanth Patel",
+    location: "Hyderabad, India"
   },
   {
+    id: 5,
     name: "Sipun",
-    role: "BACKEND DEV",
+    role: "DEV",
     image: "/events/Technovista2025/devs/Sipun.png",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/sipun-kumar-panda-8747b127b/",
+    github: "#",
+    fullName: "Sipun Kumar",
+    location: "Bhubaneswar, India"
   },
 ];
 
@@ -50,39 +71,97 @@ const TvDevs = () => {
 
         <div className="flex flex-wrap justify-center gap-10 mt-12 max-w-7xl mx-auto">
           {developers.map((dev, index) => (
-            <div
-              key={index}
-              className="w-[220px] h-[340px] rounded-3xl bg-gradient-to-br from-[#daa425] to-[#f5c645] p-[3px] relative group transition-all duration-300 ease-in-out"
-            >
-              <div className="w-full h-full bg-black rounded-3xl overflow-hidden relative">
-                {/* Image here */}
-                <img
-                  src={dev.image}
-                  alt={dev.name}
-                  className="w-full h-full object-cover rounded-3xl transition-all duration-500 ease-in-out group-hover:h-[180px]"
-                />
+            <div key={index} className="relative group">
+              {/* Main Card */}
+              <div className="w-[220px] h-[340px] rounded-3xl bg-gradient-to-br from-[#daa425] to-[#f5c645] p-[3px] relative transition-all duration-300 ease-in-out 
+                shadow-lg shadow-[#daa425]/20 hover:shadow-xl hover:shadow-[#daa425]/30">
+                <div className="w-full h-full bg-black rounded-3xl overflow-hidden relative flex flex-col">
+                  {/* Photo */}
+                  <div className="flex-1 relative">
+                    <img
+                      src={dev.image}
+                      alt={dev.name}
+                      className="w-full h-full object-cover rounded-t-3xl transition-all duration-500 ease-in-out"
+                    />
+                  </div>
 
-                {/* On hovering */}
-                <div className="absolute bottom-3 left-0 w-full text-center opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out">
-                  <h3 className="text-lg font-bold text-white tracking-wide">
-                    {dev.name}
-                  </h3>
-                  <p className="text-xs text-[#daa425]">{dev.role}</p>
-                  {dev.linkedin && (
-                    <a
-                      href={dev.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block mt-2"
-                    >
-                      <img
-                        src="/icons/linkedin.svg"
-                        alt="LinkedIn"
-                        className="w-5 h-5 mx-auto hover:scale-110 transition"
-                      />
-                    </a>
-                  )}
+                  {/* Info Section with Social Links */}
+                  <div className="p-4 text-center bg-black rounded-b-3xl">
+                    <h3 className="text-lg font-bold text-white tracking-wide">
+                      {dev.name}
+                    </h3>
+                    <p className="text-xs text-[#daa425] mb-2">{dev.role}</p>
+                    
+                    {/* Social Links - Hidden on desktop, shown on mobile */}
+                    <div className="flex justify-center space-x-4 mt-2 md:hidden">
+                      {dev.linkedin && (
+                        <a
+                          href={dev.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-300 hover:text-[#daa425] transition-colors"
+                        >
+                          <Linkedin className="w-5 h-5" />
+                        </a>
+                      )}
+                      {dev.github && (
+                        <a
+                          href={dev.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-300 hover:text-[#daa425] transition-colors"
+                        >
+                          <Github className="w-5 h-5" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
+              </div>
+
+              {/* Info Card (hidden by default) */}
+              <div className="info-card absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] rounded-3xl p-6 opacity-0 pointer-events-none transition-all duration-300 ease-in-out z-10 flex flex-col justify-center items-center text-center border border-[#daa425]
+                shadow-2xl shadow-[#daa425]/30 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:transform group-hover:scale-100">
+                <div className="info__border mb-4">
+                  <div className="info__perfil">
+                    <img 
+                      src={dev.image} 
+                      alt={dev.name} 
+                      className="info__img rounded-full"
+                    />
+                  </div>
+                </div>
+
+                <div className="info__data mb-4">
+                  <h3 className="info__name text-xl font-bold text-[#daa425] mb-1">
+                    {dev.fullName}
+                  </h3>
+                  <p className="info__profession text-sm text-white mb-1">
+                    {dev.title}
+                  </p>
+                  <p className="info__location text-xs text-gray-400">
+                    {dev.location}
+                  </p>
+                </div>
+
+                <div className="info__social flex gap-3">
+                  <a href={dev.linkedin} target="_blank" rel="noopener noreferrer" className="info__social-link">
+                    <Linkedin className="text-white text-xl" />
+                  </a>
+                  <a href={dev.github} target="_blank" rel="noopener noreferrer" className="info__social-link">
+                    <Github className="text-white text-xl" />
+                  </a>
+                </div>
+
+                <button 
+                  className="absolute top-3 right-3 text-gray-400 hover:text-[#daa425] transition-colors md:hidden"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    document.querySelectorAll('.info-card')[index].classList.remove('active');
+                  }}
+                >
+                  <i className="ri-close-line text-xl"></i>
+                </button>
               </div>
             </div>
           ))}
@@ -90,6 +169,101 @@ const TvDevs = () => {
       </div>
 
       <FooterTV />
+
+      <style jsx global>{`
+        /* Base styles with enhanced shadows */
+        .info-card {
+          transform: scale(0.9);
+          box-shadow: 0 10px 25px rgba(218, 164, 37, 0.3);
+        }
+        
+        .info-card.active {
+          opacity: 1;
+          pointer-events: auto;
+          transform: scale(1);
+          box-shadow: 0 15px 30px rgba(218, 164, 37, 0.4);
+        }
+        
+        .info__border {
+          width: 100px;
+          height: 100px;
+          background: linear-gradient(145deg, #daa425, #f5c645);
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 2px;
+          box-shadow: 0 4px 8px rgba(218, 164, 37, 0.3);
+        }
+        
+        .info__perfil {
+          width: 96px;
+          height: 96px;
+          border-radius: 50%;
+          overflow: hidden;
+          border: 2px solid #1a1a1a;
+        }
+        
+        .info__img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        
+        .info__social-link {
+          width: 36px;
+          height: 36px;
+          background: rgba(218, 164, 37, 0.2);
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: all 0.3s ease;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .info__social-link:hover {
+          background: rgba(218, 164, 37, 0.4);
+          transform: translateY(-3px);
+          box-shadow: 0 4px 8px rgba(218, 164, 37, 0.3);
+        }
+        
+        /* Show social links on main card only on mobile */
+        @media (min-width: 768px) {
+          .info-card {
+            opacity: 0;
+            pointer-events: none;
+          }
+          
+          .group:hover .info-card {
+            opacity: 1;
+            pointer-events: auto;
+            transform: scale(1);
+          }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+          .info-card {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            width: 90%;
+            max-width: 300px;
+            max-height: 90vh;
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+          }
+          
+          .info-card.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
+          }
+        }
+      `}</style>
     </div>
   );
 };
