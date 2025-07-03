@@ -61,7 +61,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   } = useForm({
     defaultValues: {
       name: "",
-      college: "", 
+      college: "",
       collegeName: "",
       branch: "",
       section: "",
@@ -132,7 +132,9 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
     }
     setIsSubmitting(true);
     try {
-      const userId = `${data.transactionid.toLowerCase()}-${data.rollno.toLowerCase().replace(/\s+/g, "-")}-`;
+      const userId = `${data.transactionid.toLowerCase()}-${data.rollno
+        .toLowerCase()
+        .replace(/\s+/g, "-")}-`;
       const fileName = userId + file.name.toLowerCase().replace(/\s+/g, "-");
       const fileType = file.type;
       const getUrl = await api.post("/register/get-signed-url", {
@@ -164,8 +166,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
         paymentplatform: data.paymentplatform,
         transactionid: data.transactionid,
         image: fileNameStorage,
-      }
-
+      };
       const response = await api.post("/register", finalData);
 
       if (!response.data.success) {
@@ -230,7 +231,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   return (
     <div
       ref={containerRef}
-      className="h-full  text-[#f2ca46] relative rounded-xl py-10"
+      className="h-[110vh] text-[#f2ca46] relative rounded-xl pb-10"
     >
       {/* Background Particles */}
       <div className="absolute inset-0 overflow-hidden">
@@ -250,7 +251,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
       />
 
       {/* Main Content */}
-      <div className="relative z-10 h-full container mx-auto px-3">
+      <div className="relative z-10 container mx-auto px-3 h-[110vh]">
         {/* Header */}
         <div className="text-center mb-6">
           <div className="inline-flex items-center gap-3 mb-4">
@@ -521,87 +522,42 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                   </div>
                 </div>
 
-                {/* Payment QR */}
-                <div className="text-center py-8 bg-gray-900/30 rounded-2xl border border-[#daa425]/10">
-                  <h3 className="text-xl font-semibold mb-2">
-                    Payment QR Code
-                  </h3>
-                  <p className="mb-4">
-                    Account Holder:{" "}
-                    <span className="font-semibold text-yellow-300">
-                      K. Adithya
-                    </span>
-                  </p>
-                  <div className="inline-block p-4 bg-white rounded-2xl shadow-2xl">
-                    <img
-                      src="/paymentsQR.jpg"
-                      alt="Payment QR Code"
-                      className="w-48 h-48 rounded-xl object-contain"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="payment-proof" className="text-sm font-medium text-yellow-300 block mb-2">
-                    Upload screenshot of payment <span className="text-red-400">*</span>
-                  </label>
-                  <input
-                    type="file"
-                    onChange={(e) => setFile(e.target.files[0])}
-                    accept="image/*,application/pdf"
-                  />
-                </div>
-
-                {/* Payment Platform & Transaction ID */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="transform hover:opacity-90 transition-transform duration-300">
-                    <label className="text-sm font-medium text-yellow-300 block mb-2">
-                      Payment Platform <span className="text-red-400">*</span>
-                    </label>
-                    <select
-                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent"
-                      {...register("paymentplatform", {
-                        required: "Please select a payment platform",
-                      })}
-                    >
-                      <option value="">Select Payment Platform</option>
-                      <option value="Google Pay">Google Pay</option>
-                      <option value="PhonePe">PhonePe</option>
-                      <option value="Paytm">Paytm</option>
-                      <option value="Amazon Pay">Amazon Pay</option>
-                      <option value="BHIM UPI">BHIM UPI</option>
-                      <option value="FamPay">FamPay</option>
-                      <option value="Mobikwik">Mobikwik</option>
-                      <option value="WhatsApp Pay">WhatsApp Pay</option>
-                      <option value="FreeCharge">FreeCharge</option>
-                      <option value="Other">Other</option>
-                    </select>
-                    {errors.paymentplatform && (
-                      <p className="text-red-400 text-sm mt-1 animate-bounce flex items-center gap-1">
-                        <Zap size={12} />
-                        {errors.paymentplatform.message}
-                      </p>
-                    )}
-                  </div>
-                  <div className="transform hover:opacity-90 transition-transform duration-300">
-                    <label className="text-sm font-medium text-yellow-300 block mb-2">
-                      Transaction ID <span className="text-red-400">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Enter transaction ID"
-                      className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent placeholder-[#daa425]"
-                      {...register("transactionid", {
-                        required: "Transaction ID is required",
-                      })}
-                    />
-                    {errors.transactionid && (
-                      <p className="text-red-400 text-sm mt-1 animate-bounce flex items-center gap-1">
-                        <Zap size={12} />
-                        {errors.transactionid.message}
-                      </p>
-                    )}
-                  </div>
-                </div>
+                {showPaymentFields && (
+                  <motion.div
+                    className="text-center py-8 bg-gray-900/30 rounded-2xl border border-[#daa425]/10"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <h3 className="text-xl font-semibold mb-2 text-yellow-300">
+                      Payment QR Code
+                    </h3>
+                    <div className="inline-block bg-white rounded-2xl shadow-2xl">
+                      <img
+                        src={`/${
+                          watchCollege === "VNRVJIET"
+                            ? "VNRVJIETQR170"
+                            : "VNRVJIETQR250"
+                        }.jpg`}
+                        alt="Payment QR Code"
+                        className="w-48 h-48 rounded-xl object-contain"
+                      />
+                    </div>
+                    <div className="mt-4 text-yellow-300">
+                      <label
+                        htmlFor="payment-proof"
+                        className="text-sm font-medium text-yellow-300 block mb-2"
+                      >
+                        Upload screenshot of payment{" "}
+                        <span className="text-red-400">*</span>
+                      </label>
+                      <input
+                        type="file"
+                        onChange={(e) => setFile(e.target.files[0])}
+                      />
+                    </div>
+                  </motion.div>
+                )}
 
 
                 {watchCollege && !showPaymentFields && (
@@ -701,41 +657,6 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                   </motion.div>
                 )}
 
-               {/* Payment QR - Only show after clicking pay button */}
-{showPaymentFields && (
-  <motion.div
-    className="text-center py-8 bg-gray-900/30 rounded-2xl border border-[#daa425]/10"
-    initial={{ opacity: 0, y: -20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.3 }}
-  >
-    <h3 className="text-xl font-semibold mb-2 text-yellow-300">
-      Payment QR Code
-    </h3>
-    <div className="inline-block bg-white rounded-2xl shadow-2xl">
-      <img
-        src={`/${
-          watchCollege === "VNRVJIET" ? "VNRVJIETQR170" : "VNRVJIETQR250"
-        }.jpg`}
-        alt="Payment QR Code"
-        className="w-48 h-48 rounded-xl object-contain"
-      />
-    </div>
-    <div className="mt-4 text-yellow-300">
-      <label
-        htmlFor="payment-proof"
-        className="text-sm font-medium text-yellow-300 block mb-2"
-      >
-        Upload screenshot of payment <span className="text-red-400">*</span>
-      </label>
-      <input
-        type="file"
-        onChange={(e) => setFile(e.target.files[0])}
-      />
-    </div>
-  </motion.div>
-)}
-
 
                 {/* Payment Platform & Transaction ID - Only show after clicking pay button */}
                 {showPaymentFields && (
@@ -827,10 +748,11 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                       </span>
                       <Send
                         size={18}
-                        className={`transition-transform duration-300 ${isSubmitting
-                          ? "animate-pulse"
-                          : "group-hover:translate-x-1"
-                          }`}
+                        className={`transition-transform duration-300 ${
+                          isSubmitting
+                            ? "animate-pulse"
+                            : "group-hover:translate-x-1"
+                        }`}
                       />
                     </motion.button>
                   </motion.div>
@@ -942,6 +864,8 @@ const FormClosedComp = () => {
     >
       {/* Glassy box */}
       <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl p-10 w-full max-w-md text-center border border-[#f2ca46]/20 shadow-[0_0_40px_rgba(255,255,255,0.08)]">
+        {/* Optional noise texture */}
+        <div className="absolute inset-0 rounded-2xl bg-[url('/textures/noise.png')] opacity-10 mix-blend-overlay pointer-events-none" />
 
         <Lock size={48} className="text-[#f2ca46] mx-auto mb-4" />
 
@@ -969,14 +893,23 @@ const RegistrationForm = () => {
 
   return (
     <motion.div
-      className="w-full h-[95vh] bg-black rounded-2xl shadow-2xl relative flex items-center justify-center"
+      className="w-full bg-black rounded-2xl shadow-2xl border-2 border-[#daa425]/30 relative min-h-[110vh] flex items-center justify-center"
       initial={{ opacity: 0, filter: "blur(10px)" }}
       animate={{ opacity: 1, filter: "blur(0px)" }}
       transition={{ duration: 1, ease: "easeOut" }}
     >
+      {/* Decorative golden corners */}
+      <div className="absolute top-0 left-0 w-20 h-20 border-l-4 border-t-4 border-[#f2ca46] rounded-tl-2xl z-30"></div>
+      <div className="absolute top-0 right-0 w-20 h-20 border-r-4 border-t-4 border-[#f2ca46] rounded-tr-2xl z-30"></div>
+      <div className="absolute bottom-0 left-0 w-20 h-20 border-l-4 border-b-4 border-[#f2ca46] rounded-bl-2xl z-30"></div>
+      <div className="absolute bottom-0 right-0 w-20 h-20 border-r-4 border-b-4 border-[#f2ca46] rounded-br-2xl z-30"></div>
 
+      {/* Golden glow effect */}
+      <div className="absolute inset-0 h-full bg-gradient-radial from-[#f2ca46]/5 via-transparent to-transparent rounded-2xl"></div>
+
+      {/* Scrollable content container */}
       <div
-        className="relative z-10 h-full small-scrollbar flex items-center justify-center lg:overflow-y-auto"
+        className="relative z-10 h-full small-scrollbar flex items-center justify-center overflow-y-auto"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {loadingStatus ? (
