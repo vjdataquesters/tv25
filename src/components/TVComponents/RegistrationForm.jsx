@@ -230,7 +230,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   return (
     <div
       ref={containerRef}
-      className="h-[110vh] text-[#f2ca46] relative rounded-xl pb-10"
+      className="h-full  text-[#f2ca46] relative rounded-xl py-10"
     >
       {/* Background Particles */}
       <div className="absolute inset-0 overflow-hidden">
@@ -250,7 +250,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
       />
 
       {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-3 h-[110vh]">
+      <div className="relative z-10 h-full container mx-auto px-3">
         {/* Header */}
         <div className="text-center mb-6">
           <div className="inline-flex items-center gap-3 mb-4">
@@ -970,23 +970,14 @@ const RegistrationForm = () => {
 
   return (
     <motion.div
-      className="w-full bg-black rounded-2xl shadow-2xl border-2 border-[#daa425]/30 relative min-h-[110vh] flex items-center justify-center"
+      className="w-full h-[95vh] bg-black rounded-2xl shadow-2xl relative flex items-center justify-center"
       initial={{ opacity: 0, filter: "blur(10px)" }}
       animate={{ opacity: 1, filter: "blur(0px)" }}
       transition={{ duration: 1, ease: "easeOut" }}
     >
-      {/* Decorative golden corners */}
-      <div className="absolute top-0 left-0 w-20 h-20 border-l-4 border-t-4 border-[#f2ca46] rounded-tl-2xl z-30"></div>
-      <div className="absolute top-0 right-0 w-20 h-20 border-r-4 border-t-4 border-[#f2ca46] rounded-tr-2xl z-30"></div>
-      <div className="absolute bottom-0 left-0 w-20 h-20 border-l-4 border-b-4 border-[#f2ca46] rounded-bl-2xl z-30"></div>
-      <div className="absolute bottom-0 right-0 w-20 h-20 border-r-4 border-b-4 border-[#f2ca46] rounded-br-2xl z-30"></div>
 
-      {/* Golden glow effect */}
-      <div className="absolute inset-0 h-full bg-gradient-radial from-[#f2ca46]/5 via-transparent to-transparent rounded-2xl"></div>
-
-      {/* Scrollable content container */}
       <div
-        className="relative z-10 h-full small-scrollbar flex items-center justify-center overflow-y-auto"
+        className="relative z-10 h-full small-scrollbar flex items-center justify-center lg:overflow-y-auto"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {loadingStatus ? (
