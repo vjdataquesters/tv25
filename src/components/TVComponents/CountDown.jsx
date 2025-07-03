@@ -35,7 +35,7 @@ function Countdown({ isVisible }) {
   return (
     <AnimatePresence>
       {isVisible && (
-        <div>
+        <div className="px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.5, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}

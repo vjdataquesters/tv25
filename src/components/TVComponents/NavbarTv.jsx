@@ -30,7 +30,6 @@ function NavbarTv() {
                 className="h-[4rem] max-w-[8rem] w-auto object-contain p-1"
               />
             </a>
-            
 
             <a href="https://vnrvjiet.ac.in/" target="_blank" rel="noreferrer">
               <img
@@ -43,25 +42,25 @@ function NavbarTv() {
 
           {/* Right: Desktop Links */}
           <div className="hidden md:flex space-x-2">
-          <button
+            <button
               onClick={() => handleNavigate("/technovista/events")}
               className="font-mono text-[#daa425] px-5 py-1.5 rounded-lg font-semibold hover:bg-[#121210] transition-all duration-300"
-        >
-        All Events
-        </button>
-          <a
-         href="/technovista/devs"
-        className="font-mono text-[#daa425] px-5 py-1.5 rounded-lg font-semibold hover:bg-[#121210] transition-all duration-300"
-        >
-        Developed by
-        </a>
-        <button
-        onClick={() => handleNavigate("/technovista/register")}
-         className="font-mono bg-[#daa425] text-black px-5 py-1.5 rounded-lg font-semibold hover:bg-[#f2ca46] transition-colors"
-           >
-          Register
-        </button>
-</div>
+            >
+              All Events
+            </button>
+            <a
+              href="/technovista/devs"
+              className="font-mono text-[#daa425] px-5 py-1.5 rounded-lg font-semibold hover:bg-[#121210] transition-all duration-300"
+            >
+              Developed by
+            </a>
+            <button
+              onClick={() => handleNavigate("/technovista/register")}
+              className="font-mono bg-[#daa425] text-black px-5 py-1.5 rounded-lg font-semibold hover:bg-[#f2ca46] transition-colors"
+            >
+              Register
+            </button>
+          </div>
 
           {/* Mobile Menu Icon */}
           <div className="md:hidden cursor-pointer" onClick={handleMenuToggle}>
