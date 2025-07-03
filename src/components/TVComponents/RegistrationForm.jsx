@@ -61,7 +61,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   } = useForm({
     defaultValues: {
       name: "",
-      college: "VNRVJIET", // Set VNRVJIET as default
+      college: "", 
       collegeName: "",
       branch: "",
       section: "",
@@ -608,40 +608,41 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                   </motion.div>
                 )}
 
-                {/* Payment QR - Only show after clicking pay button */}
-                {showPaymentFields && (
-                  <motion.div
-                    className="text-center py-8 bg-gray-900/30 rounded-2xl border border-[#daa425]/10"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <h3 className="text-xl font-semibold mb-2 text-yellow-300">
-                      Payment QR Code
-                    </h3>
-                    <div className="inline-block bg-white rounded-2xl shadow-2xl">
-                      <img
-                        src="/VNRVJIETQR.jpg"
-                        alt="Payment QR Code"
-                        className="w-48 h-48 rounded-xl object-contain"
-                      />
-                    </div>
-                    <div className="mt-4 text-yellow-300">
-                      <label
-                        htmlFor="payment-proof"
-                        className="text-sm font-medium text-yellow-300 block mb-2"
-                      >
-                        Upload screenshot of payment{" "}
-                        <span className="text-red-400">*</span>
-                      </label>
+               {/* Payment QR - Only show after clicking pay button */}
+{showPaymentFields && (
+  <motion.div
+    className="text-center py-8 bg-gray-900/30 rounded-2xl border border-[#daa425]/10"
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.3 }}
+  >
+    <h3 className="text-xl font-semibold mb-2 text-yellow-300">
+      Payment QR Code
+    </h3>
+    <div className="inline-block bg-white rounded-2xl shadow-2xl">
+      <img
+        src={`/${
+          watchCollege === "VNRVJIET" ? "VNRVJIETQR170" : "VNRVJIETQR250"
+        }.jpg`}
+        alt="Payment QR Code"
+        className="w-48 h-48 rounded-xl object-contain"
+      />
+    </div>
+    <div className="mt-4 text-yellow-300">
+      <label
+        htmlFor="payment-proof"
+        className="text-sm font-medium text-yellow-300 block mb-2"
+      >
+        Upload screenshot of payment <span className="text-red-400">*</span>
+      </label>
+      <input
+        type="file"
+        onChange={(e) => setFile(e.target.files[0])}
+      />
+    </div>
+  </motion.div>
+)}
 
-                      <input
-                        type="file"
-                        onChange={(e) => setFile(e.target.files[0])}
-                      />
-                    </div>
-                  </motion.div>
-                )}
 
                 {/* Payment Platform & Transaction ID - Only show after clicking pay button */}
                 {showPaymentFields && (
