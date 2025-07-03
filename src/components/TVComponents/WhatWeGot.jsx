@@ -107,7 +107,7 @@ function WhatWeGot() {
         </div>
 
         {/* Stats Cards Section */}
-        <div className="mb-6 md:mb-8 w-full max-w-6xl px-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="mb-6 md:mb-8 max-w-6xl px-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {stats.map((stat, index) => (
             <motion.div
               key={index}

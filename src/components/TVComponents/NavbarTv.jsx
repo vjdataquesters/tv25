@@ -1,17 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Bars from "../../assets/bars.svg"; // Make sure this path is valid
 
 function NavbarTv() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const menuRef = useRef(null);
+  const menuButtonRef = useRef(null);
 
   const handleMenuToggle = () => setMenuOpen((prev) => !prev);
-
+  
   const handleNavigate = (path) => {
     navigate(path);
-    setMenuOpen(false); // close menu after navigation
+    setMenuOpen(false);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        menuOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        menuButtonRef.current &&
+        !menuButtonRef.current.contains(event.target)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+
+    if (menuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen]);
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50  border-b border-yellow-500/10 backdrop-blur-lg box-border">
@@ -30,7 +54,6 @@ function NavbarTv() {
                 className="h-[4rem] w-auto object-contain p-1"
               />
             </a>
-
             <a href="https://vnrvjiet.ac.in/" target="_blank" rel="noreferrer">
               <img
                 src="/events/Technovista2025/tv25-icons/VNRVJIET-logo-files-03.png"
@@ -39,7 +62,7 @@ function NavbarTv() {
               />
             </a>
           </div>
-
+          
           {/* Right: Desktop Links */}
           <div className="hidden md:flex space-x-2">
             <button
@@ -61,18 +84,24 @@ function NavbarTv() {
               Register
             </button>
           </div>
-
+          
           {/* Mobile Menu Icon */}
-          <div className="md:hidden cursor-pointer" onClick={handleMenuToggle}>
+          <div 
+            ref={menuButtonRef}
+            className="md:hidden cursor-pointer" 
+            onClick={handleMenuToggle}
+          >
             <img src={Bars} alt="Menu" className="h-6 w-6" />
           </div>
         </div>
       </div>
-
+      
       {/* Mobile Slide Menu */}
-      {/* Mini Dropdown Box (Mobile Only) */}
       {menuOpen && (
-        <div className="md:hidden absolute top-16 right-4 max-w-[90vw] w-48 z-50 rounded-xl shadow-xl border border-yellow-500/10 backdrop-blur-lg bg-[#1a1a1a]">
+        <div 
+          ref={menuRef}
+          className="md:hidden absolute top-16 right-4 max-w-[90vw] w-48 z-50 rounded-xl shadow-xl border border-yellow-500/10 backdrop-blur-lg bg-[#1a1a1a]"
+        >
           <div className="flex flex-col divide-y divide-yellow-500/10">
             <button
               onClick={() => handleNavigate("/technovista/events")}
