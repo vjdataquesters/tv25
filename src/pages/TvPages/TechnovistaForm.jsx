@@ -1,5 +1,5 @@
 // TechnovistaForm.js
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import FormBanner from "../../components/TVComponents/FormBanner";
 import TForm from "../../components/TVComponents/RegistrationForm";
 import { gsap } from "gsap";
@@ -44,7 +44,7 @@ const TechnovistaForm = () => {
   }, [isMobile]);
 
   return (
-    <>
+    <div className="bg-black text-white min-h-screen">
       {/* Custom Cursor - Only for desktop */}
       {!isMobile && (
         <>
@@ -72,14 +72,12 @@ const TechnovistaForm = () => {
       )}
 
       {/* Mobile Layout */}
-      <div className="flex lg:hidden pt-4 px-2 bg">
-        <div className="max-w-full pb-4 mx-auto">
+      <div className="lg:hidden pt-4 px-2 mt-16 mb-6">
           <TForm />
-        </div>
       </div>
 
-      <div className="hidden lg:flex justify-center items-center pt-8 pb-12 min-h-[calc(100vh-5rem)] bg">
-        <div className="flex w-full max-w-6xl mx-4 h-full">
+      <div className="hidden lg:flex justify-center items-center pt-8 min-h-[calc(100vh-5rem)]">
+        <div className="flex w-full max-w-6xl mx-4 h-full mt-16 mb-6">
           {/* Left Section - Form Banner */}
           <div className="w-1/2 pr-4 h-full">
             <FormBanner />
@@ -90,7 +88,7 @@ const TechnovistaForm = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

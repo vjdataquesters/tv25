@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import NavbarTv from "./NavbarTv";
 
 const SERVER_URL =
   import.meta.env.MODE === "development"
@@ -232,7 +233,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   return (
     <div
       ref={containerRef}
-      className="min-h-screen text-[#f2ca46] relative rounded-xl"
+      className="text-[#f2ca46] relative rounded-xl"
     >
       {/* Background Particles */}
       {/* <div className="absolute inset-0 overflow-hidden">
@@ -278,7 +279,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
 
         {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="w-full max-w-6xl mx-auto px-2 pb-4">
+          <div className="mx-auto px-2 pb-4">
             <div className="bg-white/5 backdrop-blur-2xl rounded-3xl p-4 md:p-6 border border-[#f2ca46]/30 shadow-[0_8px_32px_0_rgba(255,255,255,0.1)] my-2">
               <div className="grid gap-4 md:gap-6">
                 {/* Full Name */}
@@ -433,14 +434,14 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="transform hover:opacity-90 transition-transform duration-300">
                     <label className="text-sm font-medium text-yellow-300 block mb-2">
-                      Roll Number <span className="text-red-400">*</span>
+                     College ID <span className="text-red-400">*</span>
                     </label>
                     <input
                       type="text"
-                      placeholder="Enter roll number"
+                      placeholder="Enter college ID"
                       className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent placeholder-[#daa425]"
-                      {...register("rollno", {
-                        required: "Roll number is required",
+                      {...register("collegeId", {
+                        required: "College ID is required",
                       })}
                     />
                     {errors.rollno && (
@@ -889,8 +890,10 @@ const RegistrationForm = () => {
   });
 
   return (
+    <>
+    <NavbarTv />
     <motion.div
-      className="bg-black rounded-2xl shadow-2xl border-2 border-[#daa425]/30 relative min-h-screen flex items-center justify-center"
+      className="bg-black rounded-2xl shadow-2xl lg:border-2 border-[#daa425]/30 relative lg:h-[90vh]"
       initial={{ opacity: 0, filter: "blur(10px)" }}
       animate={{ opacity: 1, filter: "blur(0px)" }}
       transition={{ duration: 1, ease: "easeOut" }}
@@ -906,7 +909,7 @@ const RegistrationForm = () => {
 
       {/* Scrollable content container */}
       <div
-        className="relative z-10 h-full small-scrollbar flex items-center justify-center overflow-y-auto"
+        className="relative z-10 h-full small-scrollbar overflow-y-auto"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {loadingStatus ? (
@@ -923,6 +926,7 @@ const RegistrationForm = () => {
         )}
       </div>
     </motion.div>
+    </>
   );
 };
 

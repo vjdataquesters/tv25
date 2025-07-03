@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import Bars from "../../assets/bars.svg"; // Make sure this path is valid
 
 function NavbarTv() {
@@ -7,7 +7,7 @@ function NavbarTv() {
   const navigate = useNavigate();
   const menuRef = useRef(null);
   const menuButtonRef = useRef(null);
-
+  const location = useLocation();
   const handleMenuToggle = () => setMenuOpen((prev) => !prev);
   
   const handleNavigate = (path) => {
@@ -64,6 +64,7 @@ function NavbarTv() {
           </div>
           
           {/* Right: Desktop Links */}
+       {location.pathname !== "/technovista/register" && (    
           <div className="hidden md:flex space-x-2">
             <button
               onClick={() => handleNavigate("/technovista/events")}
@@ -71,14 +72,15 @@ function NavbarTv() {
             >
               All Events
             </button>
-            <button
+         <button
               onClick={() => handleNavigate("/technovista/register")}
               className="font-mono bg-[#daa425] text-black px-5 py-1.5 rounded-lg font-semibold hover:bg-[#f2ca46] transition-colors"
             >
               Register
             </button>
           </div>
-          
+        )}
+
           {/* Mobile Menu Icon */}
           <div 
             ref={menuButtonRef}
@@ -103,12 +105,12 @@ function NavbarTv() {
             >
               All Events
             </button>
-            <button
+         { location.pathname !== "/technovista/register" &&  <button
               onClick={() => handleNavigate("/technovista/register")}
               className="px-4 py-3 text-left font-mono text-white hover:text-yellow-400 transition-all"
             >
               Register
-            </button>
+            </button>}
           </div>
         </div>
       )}
