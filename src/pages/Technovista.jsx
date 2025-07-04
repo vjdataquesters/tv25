@@ -22,7 +22,7 @@ const Technovista = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIntroLoad(false);
+      setIntroPlay(false);
     }, 2000);
 
     return () => clearTimeout(timer);

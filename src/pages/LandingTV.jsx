@@ -55,7 +55,7 @@ const LandingTV = () => {
 
   const createMajorExplosion = (x, y, size) => {
     for (let i = 0; i < 3; i++) {
-      setTimeout(() => createExplosion(x, y, size * (1 - i * 0.2)), i * 200);
+      setTimeout(() => createExplosion(x, y, size * (1 - i * 0.2)), i * 100);
     }
 
     createDebris(x, y, 50);

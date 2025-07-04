@@ -67,7 +67,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
       collegeName: "",
       branch: "",
       section: "",
-      rollno: "",
+      collegeId: "",
       year: "",
       phno: "",
       email: "",
@@ -78,63 +78,15 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
 
   const watchCollege = watch("college");
 
-  // Generate floating particles
-  // useEffect(() => {
-  //   const generateParticles = () => {
-  //     const newParticles = [];
-  //     for (let i = 0; i < 50; i++) {
-  //       newParticles.push({
-  //         id: i,
-  //         x: Math.random() * 100,
-  //         y: Math.random() * 100,
-  //         size: Math.random() * 4 + 1,
-  //         speed: Math.random() * 2 + 1,
-  //         opacity: Math.random() * 0.5 + 0.3,
-  //         type: ["circle", "triangle", "square"][Math.floor(Math.random() * 3)],
-  //       });
-  //     }
-  //     setParticles(newParticles);
-  //   };
-
-  //   generateParticles();
-
-  //   const interval = setInterval(() => {
-  //     setParticles((prev) =>
-  //       prev.map((particle) => ({
-  //         ...particle,
-  //         y: particle.y > 100 ? -5 : particle.y + particle.speed * 0.1,
-  //         x: particle.x + Math.sin(particle.y * 0.01) * 0.1,
-  //       }))
-  //     );
-  //   }, 50);
-
-  //   return () => clearInterval(interval);
-  // }, []);
-
-  // Mouse tracking for interactive effects
-  // useEffect(() => {
-  //   const handleMouseMove = (e) => {
-  //     if (containerRef.current) {
-  //       const rect = containerRef.current.getBoundingClientRect();
-  //       setMousePosition({
-  //         x: ((e.clientX - rect.left) / rect.width) * 100,
-  //         y: ((e.clientY - rect.top) / rect.height) * 100,
-  //       });
-  //     }
-  //   };
-
-  //   window.addEventListener("mousemove", handleMouseMove);
-  //   return () => window.removeEventListener("mousemove", handleMouseMove);
-  // }, []);
 
   const onSubmit = async (data) => {
-    if (!file || !data.transactionid || !data.rollno) {
+    if (!file || !data.transactionid || !data.collegeId) {
       alert("Please fill all required fields and upload a payment proof.");
       return;
     }
     setIsSubmitting(true);
     try {
-      const userId = `${data.transactionid.toLowerCase()}-${data.rollno
+      const userId = `${data.transactionid.toLowerCase()}-${data.collegeId
         .toLowerCase()
         .replace(/\s+/g, "-")}-`;
       const fileName = userId + file.name.toLowerCase().replace(/\s+/g, "-");
@@ -161,7 +113,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
         college: data.college === "Other" ? data.collegeName : data.college,
         branch: data.branch,
         section: data.section,
-        rollno: data.rollno,
+        collegeId: data.collegeId,
         year: data.year,
         phno: data.phno,
         email: data.email,
@@ -170,7 +122,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
         image: fileNameStorage,
       };
       const response = await api.post("/register", finalData);
-
+      console.log(finalData)
       if (!response.data.success) {
         alert("Registration failed. Please try again.");
         return;
@@ -185,73 +137,8 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
     }
   };
 
-  const ParticleShape = ({ particle }) => {
-    const shapeProps = {
-      className: `absolute transition-all duration-1000 ease-out`,
-      style: {
-        left: `${particle.x}%`,
-        top: `${particle.y}%`,
-        width: `${particle.size}px`,
-        height: `${particle.size}px`,
-        opacity: particle.opacity,
-        transform: `rotate(${particle.y * 2}deg)`,
-      },
-    };
-
-    switch (particle.type) {
-      case "circle":
-        return (
-          <Circle
-            {...shapeProps}
-            className={`${shapeProps.className} text-[#f2ca46]`}
-          />
-        );
-      case "triangle":
-        return (
-          <Triangle
-            {...shapeProps}
-            className={`${shapeProps.className} text-[#daa425]`}
-          />
-        );
-      case "square":
-        return (
-          <Square
-            {...shapeProps}
-            className={`${shapeProps.className} text-yellow-300`}
-          />
-        );
-      default:
-        return (
-          <div
-            {...shapeProps}
-            className={`${shapeProps.className} bg-[#f2ca46] rounded-full`}
-          />
-        );
-    }
-  };
-
   return (
-    <div
-      ref={containerRef}
-      className="text-[#f2ca46] relative rounded-xl"
-    >
-      {/* Background Particles */}
-      {/* <div className="absolute inset-0 overflow-hidden">
-        {particles.map((particle) => (
-          <ParticleShape key={particle.id} particle={particle} />
-        ))}
-      </div> */}
-
-      {/* Mouse Follower Effect */}
-      {/* <div
-        className="absolute w-96 h-96 bg-[#f2ca46]/5 rounded-full blur-3xl transition-all duration-1000 ease-out pointer-events-none "
-        style={{
-          left: `${mousePosition.x}%`,
-          top: `${mousePosition.y}%`,
-          transform: "translate(-50%, -50%)",
-        }}
-      /> */}
-
+    <div ref={containerRef} className="text-[#f2ca46] relative rounded-xl">
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-3">
         {/* Header */}
@@ -266,15 +153,6 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
               TechnoVista 2k25
             </h1>
           </div>
-          {/* <div className="flex justify-center gap-2">
-            {[...Array(5)].map((_, i) => (
-              <div
-                key={i}
-                className="w-2 h-2 bg-[#f2ca46] rounded-full animate-pulse"
-                style={{ animationDelay: `${i * 0.2}s` }}
-              />
-            ))}
-          </div> */}
         </div>
 
         {/* Form */}
@@ -434,7 +312,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="transform hover:opacity-90 transition-transform duration-300">
                     <label className="text-sm font-medium text-yellow-300 block mb-2">
-                     College ID <span className="text-red-400">*</span>
+                      College ID <span className="text-red-400">*</span>
                     </label>
                     <input
                       type="text"
@@ -632,27 +510,6 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                       {/* Shine effect */}
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
                     </motion.button>
-
-                    {/* Pulsing glow effect around button */}
-                    {/* <motion.div
-                      className="absolute inset-0 bg-[#f2ca46]/20 rounded-2xl blur-xl -z-10"
-                      animate={{
-                        opacity: [0.3, 0.6, 0.3],
-                        scale: [1, 1.1, 1],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                      style={{
-                        left: "50%",
-                        top: "50%",
-                        transform: "translate(-50%, -50%)",
-                        width: "200px",
-                        height: "80px",
-                      }}
-                    /> */}
                   </motion.div>
                 )}
 
@@ -788,12 +645,13 @@ const SubmittedComp = () => {
 
       {/* Title */}
       <h2 className="text-3xl font-bold mt-6 text-yellow-200 drop-shadow-sm">
-        🎉 Submission Successful!
+        Submission Successful!
       </h2>
 
       {/* Subtitle */}
       <p className="text-yellow-100 mt-2 text-sm sm:text-base max-w-md">
-        Thank you for registering. You’ll receive a confirmation email shortly.
+        Thank you for registering. You'll receive your pass through email within
+        the next 24 hours.
       </p>
 
       {/* Button */}
@@ -814,21 +672,21 @@ const SubmittedComp = () => {
 
 const LoadingComp = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[80vh] bg-black text-yellow-300 px-4">
+    <div className="flex flex-col items-center justify-center text-yellow-300 h-full min-h-screen">
       <motion.div
-        className="relative bg-white/5 backdrop-blur-xl border border-[#daa425]/30 shadow-[0_0_40px_rgba(255,255,255,0.05)] rounded-2xl p-10 w-full max-w-md text-center"
+        className="relative bg-white/5 backdrop-blur-xl border h-full border-[#daa425]/30 shadow-[0_0_40px_rgba(255,255,255,0.05)] rounded-2xl p-10 min-w-[80%]  lg:w-full text-center flex flex-col items-center justify-center"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
         {/* App Title */}
-        <motion.h1
-          variants={pulseVariants}
-          animate="animate"
-          className="text-3xl font-extrabold text-yellow-300 tracking-wide drop-shadow-md"
-        >
-          Technovista
-        </motion.h1>
+        <div className="flex items-center justify-center">
+          <img
+            src="/events/Technovista2025/tv25-icons/tv-logo-ani.gif"
+            alt="TechnoVista 2k25 Logo"
+            className="w-14 h-14 md:w-24 md:h-24 lg:w-24 lg:h-24 object-contain bg-white rounded-xl"
+          />
+        </div>
 
         {/* Subtext */}
         <motion.p
@@ -890,41 +748,32 @@ const RegistrationForm = () => {
 
   return (
     <>
-    <NavbarTv />
-    <motion.div
-      className="bg-black rounded-2xl shadow-2xl lg:border-2 border-[#daa425]/30 relative lg:h-[90vh]"
-      initial={{ opacity: 0, filter: "blur(10px)" }}
-      animate={{ opacity: 1, filter: "blur(0px)" }}
-      transition={{ duration: 1, ease: "easeOut" }}
-    >
-      {/* Decorative golden corners */}
-      {/* <div className="absolute top-0 left-0 w-20 h-20 border-l-4 border-t-4 border-[#f2ca46] rounded-tl-2xl z-30"></div>
-      <div className="absolute top-0 right-0 w-20 h-20 border-r-4 border-t-4 border-[#f2ca46] rounded-tr-2xl z-30"></div>
-      <div className="absolute bottom-0 left-0 w-20 h-20 border-l-4 border-b-4 border-[#f2ca46] rounded-bl-2xl z-30"></div>
-      <div className="absolute bottom-0 right-0 w-20 h-20 border-r-4 border-b-4 border-[#f2ca46] rounded-br-2xl z-30"></div> */}
-
-      {/* Golden glow effect */}
-      {/* <div className="absolute inset-0 h-full bg-gradient-radial from-[#f2ca46]/5 via-transparent to-transparent rounded-2xl"></div> */}
-
-      {/* Scrollable content container */}
-      <div
-        className="relative z-10 h-full small-scrollbar overflow-y-auto"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      <NavbarTv />
+      <motion.div
+        className="bg-black rounded-2xl shadow-2xl lg:border-2 border-[#daa425]/30 relative lg:h-[90vh]"
+        initial={{ opacity: 0, filter: "blur(10px)" }}
+        animate={{ opacity: 1, filter: "blur(0px)" }}
+        transition={{ duration: 1, ease: "easeOut" }}
       >
-        {loadingStatus ? (
-          <LoadingComp />
-        ) : !formStatus.isFormOpen ? (
-          <FormClosedComp />
-        ) : submitStatus ? (
-          <SubmittedComp />
-        ) : (
-          <FormComp
-            setLoadingStatus={setLoadingStatus}
-            setSubmitStatus={setSubmitStatus}
-          />
-        )}
-      </div>
-    </motion.div>
+        {/* Scrollable content container */}
+        <div
+          className="relative z-10 h-full small-scrollbar overflow-y-auto"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          {loadingStatus ? (
+            <LoadingComp />
+          ) : !formStatus.isFormOpen ? (
+            <FormClosedComp />
+          ) : submitStatus ? (
+            <SubmittedComp />
+          ) : (
+            <FormComp
+              setLoadingStatus={setLoadingStatus}
+              setSubmitStatus={setSubmitStatus}
+            />
+          )}
+        </div>
+      </motion.div>
     </>
   );
 };
