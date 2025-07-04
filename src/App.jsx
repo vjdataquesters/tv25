@@ -11,15 +11,6 @@ import router from "./pages";
 import ScrollToTop from "./components/ScrollToTop";
 
 function LayoutWrapper() {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoad(false);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
-
 
   return (
     <>

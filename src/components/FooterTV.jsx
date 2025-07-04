@@ -46,21 +46,42 @@ const FooterTV = () => {
             <h2 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-4 text-yellow-400">
               Contact Us
             </h2>
-            <div className="text-white space-y-1 sm:space-y-2 text-center lg:text-left w-full">
+            <div className="text-white w-full text-center lg:text-left space-y-4">
+              {/* Email */}
               <p className="text-sm sm:text-base md:text-lg">
                 <span className="font-semibold text-yellow-400">Email:</span>{" "}
-                vjdataquesters@gmail.com
+                vjdataquesters.club@gmail.com
               </p>
-              <p className="text-sm sm:text-base md:text-lg">
-                <span className="font-semibold text-yellow-400">Phone:</span>{" "}
-                +91 93467 06032
-              </p>
-              <div className="flex flex-col items-center lg:items-start justify-center space-y-1 sm:space-y-2 mt-2">
-                <p className="text-sm sm:text-base md:text-lg">VNR VJIET</p>
-                <p className="text-sm sm:text-base md:text-lg">Bachupally</p>
-                <p className="text-sm sm:text-base md:text-lg">Hyderabad</p>
+
+              {/* Contact Persons */}
+              <div>
+                <p className="font-semibold text-yellow-400 text-sm sm:text-base md:text-lg mb-2">
+                  Mobile Contacts:
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-1 gap-1">
+                  <p className="text-sm sm:text-base md:text-lg">
+                    <span className="font-medium text-white">Avinash :</span>{" "}
+                    +91 89194 09686
+                  </p>
+                  <p className="text-sm sm:text-base md:text-lg">
+                    <span className="font-medium text-white">Vardhan :</span>{" "}
+                    +91 93467 06032
+                  </p>
+                  <p className="text-sm sm:text-base md:text-lg">
+                    <span className="font-medium text-white">Sai Charan :</span>
+                    +91 73966 31151
+                  </p>
+                </div>
+              </div>
+
+              {/* Address */}
+              <div className="flex flex-col items-center lg:items-start justify-center mt-2">
+                <p className="text-sm sm:text-base md:text-lg">
+                  VNR VJIET, Bachupally, Hyderabad
+                </p>
               </div>
             </div>
+
             {/* Social Icons */}
             <div className="flex justify-center space-x-4 sm:space-x-6 mt-4">
               <a
@@ -80,7 +101,7 @@ const FooterTV = () => {
                 <FaLinkedinIn className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
               </a>
               <a
-                href="/home"
+                href="https://www.vjdataquesters.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-yellow-400 hover:text-yellow-300 transform transition-transform hover:scale-110"
@@ -108,7 +129,6 @@ const FooterTV = () => {
                 </a>
                 <a
                   href="/technovista/events"
-                  target="_blank"
                   className="text-sm sm:text-base md:text-lg hover:text-yellow-400 transform transition-all duration-300 hover:translate-x-1 text-center"
                 >
                   Events
