@@ -1,4 +1,4 @@
-import { motion, useTransform, useScroll } from "framer-motion";
+import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import React, { useRef, useState, useLayoutEffect } from "react";
 
 const CARDS_DATA = [
@@ -145,6 +145,11 @@ const HorizontalScrollCarousel = () => {
 
   // Transform scroll progress to horizontal movement using the dynamic value
   const x = useTransform(scrollYProgress, [0, 1], ["0px", `${carouselEnd}px`]);
+  const smoothX = useSpring(x, {
+    stiffness: 80,
+    damping: 35,
+    mass: 1,
+  });
 
   return (
     <section ref={targetRef} className="relative h-[300vh]">
@@ -153,7 +158,7 @@ const HorizontalScrollCarousel = () => {
         <div className="w-full overflow-hidden"></div>
         <motion.div
           ref={carouselRef}
-          style={{ x }}
+          style={{ x: smoothX }}
           className="flex items-center gap-28 will-change-transform"
         >
           {/* Enhanced Heading */}

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 
-const Intro = ({ onFinish }) => {
-  const [introDone, setIntroDone] = useState(false);
+const Intro = ({ introPlay }) => {
   const controls = useAnimation();
   const titleControls = useAnimation();
 
@@ -19,8 +18,6 @@ const Intro = ({ onFinish }) => {
       });
 
       document.body.style.overflow = "auto";
-      setIntroDone(true);
-      if (onFinish) onFinish();
     };
 
     sequence();
@@ -28,9 +25,7 @@ const Intro = ({ onFinish }) => {
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [controls, titleControls, onFinish]);
-
-  if (introDone) return null;
+  }, [controls, titleControls]);
 
   const titleVariants = {
     hidden: { opacity: 0 },
@@ -58,52 +53,54 @@ const Intro = ({ onFinish }) => {
   const tailLetters = letters.slice(-4);
 
   return (
-    <motion.div
-      animate={controls}
-      initial={{ scale: 1, opacity: 1 }}
-      className="fixed inset-0 flex items-center justify-center bg-black z-[9999] pointer-events-none"
-    >
+    <div className="loading" id={introPlay ? "loading" : "loading-none"}>
       <motion.div
-        variants={titleVariants}
-        initial="hidden"
-        animate={titleControls}
-        className="flex flex-col items-center justify-center gap-4 text-center"
+        animate={controls}
+        initial={{ scale: 1, opacity: 1 }}
+        className="fixed inset-0 flex items-center justify-center bg-black z-[9999] pointer-events-none"
       >
-        {/* Logo */}
-        <motion.img
-          src="/events/Technovista2025/tv25-icons/tv-logo-ani.gif"
-          className="h-40 sm:h-56 md:h-72 drop-shadow-2xl"
-        />
+        <motion.div
+          variants={titleVariants}
+          initial="hidden"
+          animate={titleControls}
+          className="flex flex-col items-center justify-center gap-4 text-center"
+        >
+          {/* Logo */}
+          <motion.img
+            src="/events/Technovista2025/tv25-icons/tv-logo-ani.gif"
+            className="h-24 sm:h-28 md:h-40 drop-shadow-2xl bg-white rounded-2xl"
+          />
 
-        {/* TECHNOVISTA word in one line */}
-        <motion.div className="flex flex-row justify-center whitespace-nowrap">
-          {mainLetters.map((letter, index) => (
-            <motion.span
-              key={index}
-              variants={letterVariants}
-              className={`font-extrabold text-3xl sm:text-5xl md:text-7xl px-1 font-orbitron ${
-                index >= 6 ? "text-amber-400" : "text-white"
-              }`}
-            >
-              {letter}
-            </motion.span>
-          ))}
-        </motion.div>
+          {/* TECHNOVISTA word in one line */}
+          <motion.div className="flex flex-row justify-center whitespace-nowrap">
+            {mainLetters.map((letter, index) => (
+              <motion.span
+                key={index}
+                variants={letterVariants}
+                className={`font-extrabold text-3xl sm:text-5xl md:text-7xl px-1 font-orbitron ${
+                  index >= 6 ? "text-amber-400" : "text-white"
+                }`}
+              >
+                {letter}
+              </motion.span>
+            ))}
+          </motion.div>
 
-        {/* 2k25 word in one line */}
-        <motion.div className="flex flex-row justify-center whitespace-nowrap">
-          {tailLetters.map((letter, idx) => (
-            <motion.span
-              key={`tail-${idx}`}
-              variants={letterVariants}
-              className="font-bold text-2xl sm:text-4xl md:text-7xl px-1 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-500 font-orbitron animate-pulse"
-            >
-              {letter}
-            </motion.span>
-          ))}
+          {/* 2k25 word in one line */}
+          <motion.div className="flex flex-row justify-center whitespace-nowrap">
+            {tailLetters.map((letter, idx) => (
+              <motion.span
+                key={`tail-${idx}`}
+                variants={letterVariants}
+                className="font-bold text-2xl sm:text-4xl md:text-7xl px-1 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-500 font-orbitron animate-pulse"
+              >
+                {letter}
+              </motion.span>
+            ))}
+          </motion.div>
         </motion.div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 

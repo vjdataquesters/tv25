@@ -262,7 +262,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
               alt="TechnoVista 2k25 Logo"
               className="w-12 h-12 m:w-114 md:h-114 lg:w-16 lg:h-16 object-contain bg-white rounded-xl"
             />
-            <h1 className="text-3xl md:text-3xl font-bold bg-gradient-to-r from-[#f2ca46] via-yellow-300 to-[#daa425] bg-clip-text text-transparent">
+            <h1 className="text-2xl sm:text-4xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#f2ca46] via-yellow-300 to-[#daa425] bg-clip-text text-transparent">
               TechnoVista 2k25
             </h1>
           </div>

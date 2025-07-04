@@ -218,14 +218,6 @@ const LandingTV = () => {
     };
     animate();
 
-    // Hide content initially to prevent layout shift
-    gsap.set(contentContainerRef.current, { visibility: "hidden" });
-    gsap.set(".nav", { y: -20, opacity: 0 });
-    gsap.set(".title-image", { y: 20, opacity: 0 });
-    gsap.set(".subtitle", { y: 20, opacity: 0 });
-    gsap.set(".date", { y: 20, opacity: 0 });
-    gsap.set(".cta-button", { scale: 0.9, opacity: 0 });
-
     // Initial animations
     setTimeout(() => {
       createMajorExplosion(window.innerWidth / 2, window.innerHeight / 2, 300);
@@ -291,7 +283,7 @@ const LandingTV = () => {
       />
 
       {/* Navigation */}
-      <nav className="flex content-start nav fixed top-0 w-full px-2 pt-2 items-center z-40 bg-transparent">
+      <nav className="flex content-start nav fixed top-0 w-full px-2 pt-2 items-center z-40 bg-transparent opacity-0 -translate-y-5">
         <div className="flex items-center">
           {/* DQ Logo */}
           <a
@@ -336,17 +328,17 @@ const LandingTV = () => {
         {/* Content Container - initially hidden */}
         <div
           ref={contentContainerRef}
-          className="z-30 text-white text-center max-w-7xl mx-auto w-full relative"
+          className="z-30 text-white text-center max-w-7xl mx-auto w-full relative invisible"
         >
           <div className="flex flex-col items-center">
             <div className="w-[90%] sm:w-[75%] md:w-[70%] lg:w-[60%] xl:w-[50%] max-w-[1000px] text-center">
               <img
                 src="/events/Technovista2025/tv25-icons/landing-page-text.png"
                 alt="Technovista Title"
-                className="w-full h-auto"
+                className="w-full h-auto title-image opacity-0 translate-y-5"
               />
 
-              <p className="text-end font-mono date text-sm sm:text-base md:text-xl lg:text-2xl mb-8 text-[#daa425]">
+              <p className="text-end font-mono date text-sm sm:text-base md:text-xl lg:text-2xl mb-8 text-[#daa425] opacity-0 translate-y-5">
                 31<sup>st</sup> July,1<sup>st</sup> & 2<sup>nd</sup>August
               </p>
             </div>
@@ -354,19 +346,20 @@ const LandingTV = () => {
 
           <div className="flex gap-6 justify-center flex-wrap">
             <button
-              className="font-sans cta-button px-4 sm:px-6 py-2 sm:py-3 text-base sm:text-lg md:text-lg bg-[#daa425] text-black rounded-2xl shadow-[0_0_15px_rgba(255,215,0,0.5)] font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.8)] transition-all duration-300 ease-in-out"
+              className="font-sans cta-button px-4 sm:px-6 py-2 sm:py-3 text-base sm:text-lg md:text-lg bg-[#daa425] text-black rounded-2xl shadow-[0_0_15px_rgba(255,215,0,0.5)] font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.8)] transition-all duration-300 ease-in-out opacity-0 scale-90"
               onClick={() => navigate("/technovista/register")}
             >
               Register Now
             </button>
             <button
-              className="font-sans cta-button px-4 sm:px-6 py-2 sm:py-3 text-base sm:text-lg md:text-lg text-[#daa425] rounded-2xl shadow-[0_0_15px_rgba(255,215,0,0.5)] font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.8)] transition-all duration-300 ease-in-out"
+              className="font-sans cta-button px-4 sm:px-6 py-2 sm:py-3 text-base sm:text-lg md:text-lg text-[#daa425] rounded-2xl shadow-[0_0_15px_rgba(255,215,0,0.5)] font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.8)] transition-all duration-300 ease-in-out opacity-0 scale-90"
               onClick={() => navigate("/technovista")}
             >
               Enter the Nexus
             </button>
           </div>
         </div>
+
         {/* Knowledge Partner - GeeksforGeeks */}
         <div className="absolute bottom-4 right-4 flex flex-col items-center gap-1 bg-amber-500/20 border border-yellow-600/40 shadow-md shadow-yellow-900/30 pointer-events-none z-[9998] text-white px-4 py-3 rounded-xl">
           <span className="-translate-y-1/2 font-mono text-[10px] sm:text-xs font-light tracking-wide text-[#d5f6e4] whitespace-nowrap">

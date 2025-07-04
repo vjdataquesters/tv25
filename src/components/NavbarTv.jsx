@@ -9,7 +9,7 @@ function NavbarTv() {
   const menuButtonRef = useRef(null);
   const location = useLocation();
   const handleMenuToggle = () => setMenuOpen((prev) => !prev);
-  
+
   const handleNavigate = (path) => {
     navigate(path);
     setMenuOpen(false);
@@ -62,55 +62,73 @@ function NavbarTv() {
               />
             </a>
           </div>
-          
+
           {/* Right: Desktop Links */}
-       {location.pathname !== "/technovista/register" && (    
           <div className="hidden md:flex space-x-2">
+            {location.pathname !== "/technovista" && (
+              <button
+                onClick={() => handleNavigate("/technovista")}
+                className="font-mono text-[#daa425] px-5 py-1.5 rounded-lg font-semibold hover:bg-[#121210] transition-all duration-300"
+              >
+                Home
+              </button>
+            )}
             <button
               onClick={() => handleNavigate("/technovista/events")}
               className="font-mono text-[#daa425] px-5 py-1.5 rounded-lg font-semibold hover:bg-[#121210] transition-all duration-300"
             >
               All Events
             </button>
-         <button
-              onClick={() => handleNavigate("/technovista/register")}
-              className="font-mono bg-[#daa425] text-black px-5 py-1.5 rounded-lg font-semibold hover:bg-[#f2ca46] transition-colors"
-            >
-              Register
-            </button>
+            {location.pathname !== "/technovista/register" && (
+              <button
+                onClick={() => handleNavigate("/technovista/register")}
+                className="font-mono bg-[#daa425] text-black px-5 py-1.5 rounded-lg font-semibold hover:bg-[#f2ca46] transition-colors"
+              >
+                Register
+              </button>
+            )}
           </div>
-        )}
 
           {/* Mobile Menu Icon */}
-          <div 
+          <div
             ref={menuButtonRef}
-            className="md:hidden cursor-pointer" 
+            className="md:hidden cursor-pointer"
             onClick={handleMenuToggle}
           >
             <img src={Bars} alt="Menu" className="h-6 w-6" />
           </div>
         </div>
       </div>
-      
+
       {/* Mobile Slide Menu */}
       {menuOpen && (
-        <div 
+        <div
           ref={menuRef}
           className="md:hidden absolute top-16 right-4 max-w-[90vw] w-48 z-50 rounded-xl shadow-xl border border-yellow-500/10 backdrop-blur-lg bg-[#1a1a1a]"
         >
           <div className="flex flex-col divide-y divide-yellow-500/10">
+            {location.pathname !== "/technovista" && (
+              <button
+                onClick={() => handleNavigate("/technovista")}
+                className="px-4 py-3 text-left font-mono text-white hover:text-yellow-400 transition-all"
+              >
+                Home
+              </button>
+            )}
             <button
               onClick={() => handleNavigate("/technovista/events")}
               className="px-4 py-3 text-left font-mono text-white hover:text-yellow-400 transition-all"
             >
               All Events
             </button>
-         { location.pathname !== "/technovista/register" &&  <button
-              onClick={() => handleNavigate("/technovista/register")}
-              className="px-4 py-3 text-left font-mono text-white hover:text-yellow-400 transition-all"
-            >
-              Register
-            </button>}
+            {location.pathname !== "/technovista/register" && (
+              <button
+                onClick={() => handleNavigate("/technovista/register")}
+                className="px-4 py-3 text-left font-mono text-white hover:text-yellow-400 transition-all"
+              >
+                Register
+              </button>
+            )}
           </div>
         </div>
       )}

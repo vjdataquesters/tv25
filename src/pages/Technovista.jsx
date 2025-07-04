@@ -14,11 +14,19 @@ import ScrollingGallery from "../components/ScrollingGallery";
 import { gsap } from "gsap";
 
 const Technovista = () => {
-  const [introDone, setIntroDone] = useState(false);
+  const [introPlay, setIntroPlay] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIntroLoad(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // Cursor refs
   const cursorRef = useRef(null);
@@ -76,13 +84,10 @@ const Technovista = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setIntroDone(true), 2000);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <div className="bg min-h-[250vh] relative">
+      <Intro introPlay={introPlay} />
+
       {/* Custom Cursor - only on desktop */}
       {!isMobile && (
         <>
@@ -109,55 +114,51 @@ const Technovista = () => {
         </>
       )}
 
-      <Intro />
+      <div className="relative z-10">
+        <NavbarTv />
+        <div className="flex flex-col pt-16">
+          <WhatWeGot />
 
-      {introDone && (
-        <div className="relative z-10">
-          <NavbarTv />
-          <div className="flex flex-col pt-16">
-            <WhatWeGot />
-
-            <div
-              ref={sectionRef}
-              className="select-none flex flex-col items-center justify-center gap-12 pb-6"
-            >
-              <motion.div className="w-full px-4 py-2 flex flex-col items-center justify-center">
-                <Countdown isVisible={isVisible} />
-              </motion.div>
-            </div>
-            <div className="flex justify-center items-center mb-6">
-              <button
-                className="font-sans cta-button px-4 sm:px-6 py-2 sm:py-3  text-base sm:text-lg md:text-lg bg-[#daa425] text-black rounded-2xl shadow-[0_0_15px_rgba(255,215,0,0.5)] font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.8)] transition-all duration-300 ease-in-out"
-                onClick={() => navigate("/technovista/register")}
-              >
-                Register Now
-              </button>
-            </div>
-            <WhatToExpectTV />
-            <EventShowcase />
-            <Sponsors />
-            <div>
-              <section className="md:w-[90%] h-full mx-auto">
-                <h4 className="font-bold text-center text-[40px] md:text-[30px] lg:text-[50px] text-white">
-                  Technovista-2k24{" "}
-                  <span className="text-[#daa425]">Glimpses</span>
-                </h4>
-                <div className="pt-4">
-                  <div className="w-full mx-auto">
-                    <ScrollingGallery />
-                  </div>
-                </div>
-              </section>
-            </div>
-            <div className="w-full overflow-hidden text-center select-none px-4 box-border">
-              <h1 className="inline-block max-w-full text-[clamp(48px,14vw,230px)] leading-none font-bold text-amber-500/30 tracking-tight overflow-hidden">
-                TECHNOVISTA
-              </h1>
-            </div>
-            <FooterTV />
+          <div
+            ref={sectionRef}
+            className="select-none flex flex-col items-center justify-center gap-12 pb-6"
+          >
+            <motion.div className="w-full px-4 py-2 flex flex-col items-center justify-center">
+              <Countdown isVisible={isVisible} />
+            </motion.div>
           </div>
+          <div className="flex justify-center items-center mb-6">
+            <button
+              className="font-sans cta-button px-4 sm:px-6 py-2 sm:py-3  text-base sm:text-lg md:text-lg bg-[#daa425] text-black rounded-2xl shadow-[0_0_15px_rgba(255,215,0,0.5)] font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.8)] transition-all duration-300 ease-in-out"
+              onClick={() => navigate("/technovista/register")}
+            >
+              Register Now
+            </button>
+          </div>
+          <WhatToExpectTV />
+          <EventShowcase />
+          <Sponsors />
+          <div>
+            <section className="md:w-[90%] h-full mx-auto">
+              <h4 className="font-bold text-center text-[40px] md:text-[30px] lg:text-[50px] text-white">
+                Technovista-2k24{" "}
+                <span className="text-[#daa425]">Glimpses</span>
+              </h4>
+              <div className="pt-4">
+                <div className="w-full mx-auto">
+                  <ScrollingGallery />
+                </div>
+              </div>
+            </section>
+          </div>
+          <div className="w-full overflow-hidden text-center select-none px-4 box-border">
+            <h1 className="inline-block max-w-full text-[clamp(48px,14vw,230px)] leading-none font-bold text-amber-500/30 tracking-tight overflow-hidden">
+              TECHNOVISTA
+            </h1>
+          </div>
+          <FooterTV />
         </div>
-      )}
+      </div>
     </div>
   );
 };
