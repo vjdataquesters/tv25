@@ -285,20 +285,6 @@ const LandingTV = () => {
       {/* Navigation */}
       <nav className="flex content-start nav fixed top-0 w-full px-2 pt-2 items-center z-40 bg-transparent opacity-0 -translate-y-5">
         <div className="flex items-center">
-          {/* DQ Logo */}
-          <a
-            href="/home"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="h-[4.5rem] sm:h-[5rem] md:h-[5rem] lg:h-[5rem] xl:h-[5rem] transition-transform duration-300 flex items-center cursor-pointer mr-4"
-          >
-            <img
-              src={dqLogo}
-              alt="DQ Club Logo"
-              className="h-full w-auto object-contain p-3"
-            />
-          </a>
-
           {/* VNR Logo */}
           <div
             className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-[3.5rem] cursor-pointer transition-transform duration-300 flex items-center"
@@ -310,6 +296,19 @@ const LandingTV = () => {
               className="h-full w-auto object-contain"
             />
           </div>
+          {/* DQ Logo */}
+          <a
+            href="/home"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="h-[4.5rem] sm:h-[5rem] md:h-[5rem] lg:h-[5rem] xl:h-[5rem] transition-transform duration-300 flex items-center cursor-pointer ml-4"
+          >
+            <img
+              src={dqLogo}
+              alt="DQ Club Logo"
+              className="h-full w-auto object-contain p-3"
+            />
+          </a>
         </div>
       </nav>
 
