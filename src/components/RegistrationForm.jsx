@@ -67,7 +67,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
       collegeName: "",
       branch: "",
       section: "",
-      collegeId: "",
+      rollno: "",
       year: "",
       phno: "",
       email: "",
@@ -80,13 +80,13 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
 
 
   const onSubmit = async (data) => {
-    if (!file || !data.transactionid || !data.collegeId) {
+    if (!file || !data.transactionid || !data.rollno) {
       alert("Please fill all required fields and upload a payment proof.");
       return;
     }
     setIsSubmitting(true);
     try {
-      const userId = `${data.transactionid.toLowerCase()}-${data.collegeId
+      const userId = `${data.transactionid.toLowerCase()}-${data.rollno
         .toLowerCase()
         .replace(/\s+/g, "-")}-`;
       const fileName = userId + file.name.toLowerCase().replace(/\s+/g, "-");
@@ -113,7 +113,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
         college: data.college === "Other" ? data.collegeName : data.college,
         branch: data.branch,
         section: data.section,
-        collegeId: data.collegeId,
+        rollno: data.rollno,
         year: data.year,
         phno: data.phno,
         email: data.email,
@@ -318,7 +318,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                       type="text"
                       placeholder="Enter college ID"
                       className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent placeholder-[#daa425]"
-                      {...register("collegeId", {
+                      {...register("rollno", {
                         required: "College ID is required",
                       })}
                     />

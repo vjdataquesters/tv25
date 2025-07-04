@@ -43,6 +43,13 @@ function NavbarTv() {
         <div className="flex justify-between items-center h-16">
           {/* Left: Logos and cross */}
           <div className="flex items-center space-x-3 gap-4">
+            <a href="https://vnrvjiet.ac.in/" target="_blank" rel="noreferrer">
+              <img
+                src="/events/Technovista2025/tv25-icons/VNRVJIET-logo-files-03.png"
+                alt="Logo 2"
+                className="h-12 w-auto object-contain"
+              />
+            </a>
             <a
               href="https://www.vjdataquesters.com/home"
               target="_blank"
@@ -52,13 +59,6 @@ function NavbarTv() {
                 src="/events/Technovista2025/tv25-icons/dq-vector.png"
                 alt="Logo 1"
                 className="h-[4rem] w-auto object-contain p-1"
-              />
-            </a>
-            <a href="https://vnrvjiet.ac.in/" target="_blank" rel="noreferrer">
-              <img
-                src="/events/Technovista2025/tv25-icons/VNRVJIET-logo-files-03.png"
-                alt="Logo 2"
-                className="h-12 w-auto object-contain"
               />
             </a>
           </div>
