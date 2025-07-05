@@ -1,16 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import {
   CheckCircle,
-  Lock,
+  // Lock,
   Send,
-  Code,
   Zap,
-  Star,
-  Circle,
-  Triangle,
-  Square,
   ExternalLink,
   MoveRight,
 } from "lucide-react";
@@ -47,12 +42,35 @@ const pulseVariants = {
 };
 
 const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
-  const [particles, setParticles] = useState([]);
-  const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPaymentFields, setShowPaymentFields] = useState(false); // Added this missing state
   const containerRef = useRef(null);
+  const compressImageWithCanvas = (file) =>
+  new Promise((resolve, reject) => {
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.src = url;
 
+    img.onload = () => {
+      const canvas = document.createElement("canvas");
+      const maxSize = 1920;
+      const scale = Math.min(maxSize / img.width, maxSize / img.height, 1);
+      canvas.width = img.width * scale;
+      canvas.height = img.height * scale;
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      canvas.toBlob(
+        (blob) => {
+          if (!blob) return reject(new Error("Canvas compression failed"));
+          resolve(new File([blob], file.name, { type: "image/jpeg" }));
+        },
+        "image/jpeg",
+        0.8
+      );
+    };
+
+    img.onerror = (e) => reject(e);
+  });
   const [file, setFile] = useState(null);
 
   const {
@@ -77,7 +95,6 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   });
 
   const watchCollege = watch("college");
-
 
   const onSubmit = async (data) => {
     if (!file || !data.transactionid || !data.rollno) {
@@ -446,19 +463,36 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                     <div className="transform hover:opacity-90 transition-transform duration-300">
                       <div className="group relative">
                         <label className="text-sm font-medium text-yellow-300 block mb-2">
-                          Payment Screenshot{" "}
-                          <span className="text-red-400">*</span>
+                          Payment Screenshot <span className="text-red-400">*</span>
                         </label>
                         <div className="relative">
                           <input
                             type="file"
-                            accept="image/*"
-                            onChange={(e) => setFile(e.target.files[0])}
+                            accept="image/png, image/jpeg, image/jpg"
+                            onChange={async (e) => {
+                              const imageFile = e.target.files[0];
+                              if (!imageFile) return;
+
+                              // Only allow PNG, JPEG, JPG
+                              const allowedTypes = ["image/png", "image/jpeg", "image/jpg"];
+                              if (!allowedTypes.includes(imageFile.type)) {
+                                alert("Only PNG, JPEG, or JPG files are allowed.");
+                                e.target.value = "";
+                                return;
+                              }
+
+                              try {
+                                const compressedFile = await compressImageWithCanvas(imageFile);
+                                setFile(compressedFile);
+                              } catch (error) {
+                                setFile(imageFile); // Fallback to original file
+                              }
+                            }}
                             className="w-full px-4 py-2 bg-black text-yellow-300 border border-[#daa425] rounded-md 
-                       focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent
-                       file:mr-4 file:py-1 file:px-3 file:rounded-md file:border-0 
-                       file:text-sm file:font-medium file:bg-[#f2ca46] file:text-black
-                       hover:file:bg-[#daa425] file:cursor-pointer cursor-pointer"
+                               focus:outline-none focus:ring-2 focus:ring-[#f2ca46] focus:border-transparent
+                               file:mr-4 file:py-1 file:px-3 file:rounded-md file:border-0 
+                               file:text-sm file:font-medium file:bg-[#f2ca46] file:text-black
+                               hover:file:bg-[#daa425] file:cursor-pointer cursor-pointer"
                           />
                           {file && (
                             <p className="text-yellow-300/80 text-sm mt-1 flex items-center gap-1">
@@ -469,49 +503,46 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                         </div>
                       </div>
                     </div>
-                  </motion.div>
-                )}
-
-                {watchCollege && !showPaymentFields && (
-                  <motion.div
-                    className="text-center py-6"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <motion.button
-                      whileHover={{
-                        scale: 1.05,
-                        boxShadow:
-                          "0 20px 40px rgba(242, 202, 70, 0.3), 0 0 60px rgba(242, 202, 70, 0.2)",
-                      }}
-                      whileTap={{ scale: 0.95 }}
-                      type="button"
-                      onClick={() => setShowPaymentFields(true)}
-                      className="group relative inline-flex items-center justify-center gap-4 px-4 py-1
-                                  bg-gradient-to-r from-[#f2ca46] via-[#daa425] to-yellow-600
-                                  text-black font-bold text-xl rounded-2xl shadow-xl
-                                  transition-all duration-500 ease-out
-                                  hover:shadow-2xl hover:shadow-[#f2ca46]/50
-                                  focus:outline-none focus:ring-4 focus:ring-[#f2ca46]/60
-                                  border-2 border-[#f2ca46]/30
-                                  before:absolute before:inset-0 before:bg-gradient-to-r before:from-yellow-300/20 before:to-transparent before:rounded-2xl before:opacity-0 before:transition-opacity before:duration-300
-                                  hover:before:opacity-100
-                                  overflow-hidden"
-                    >
-                      {/* Text with gradient */}
-                      <span className="bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent font-bold font-sans">
-                        Pay ₹ {watchCollege === "VNRVJIET" ? "170" : "250"} /-
-                      </span>
-
-                      {/* Arrow with slide animation */}
-                      <MoveRight />
-
-                      {/* Shine effect */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
-                    </motion.button>
-                  </motion.div>
-                )}
+                    </motion.div>
+                    )}
+                    {watchCollege && !showPaymentFields && (
+                      <motion.div
+                        className="text-center py-6"
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <motion.button
+                          whileHover={{
+                            scale: 1.05,
+                            boxShadow:
+                              "0 20px 40px rgba(242, 202, 70, 0.3), 0 0 60px rgba(242, 202, 70, 0.2)",
+                          }}
+                          whileTap={{ scale: 0.95 }}
+                          type="button"
+                          onClick={() => setShowPaymentFields(true)}
+                          className="group relative inline-flex items-center justify-center gap-4 px-4 py-1
+                                      bg-gradient-to-r from-[#f2ca46] via-[#daa425] to-yellow-600
+                                      text-black font-bold text-xl rounded-2xl shadow-xl
+                                      transition-all duration-500 ease-out
+                                      hover:shadow-2xl hover:shadow-[#f2ca46]/50
+                                      focus:outline-none focus:ring-4 focus:ring-[#f2ca46]/60
+                                      border-2 border-[#f2ca46]/30
+                                      before:absolute before:inset-0 before:bg-gradient-to-r before:from-yellow-300/20 before:to-transparent before:rounded-2xl before:opacity-0 before:transition-opacity before:duration-300
+                                      hover:before:opacity-100
+                                      overflow-hidden"
+                        >
+                          {/* Text with gradient */}
+                          <span className="bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent font-bold font-sans">
+                            Pay ₹ {watchCollege === "VNRVJIET" ? "170" : "250"} /-
+                          </span>
+                          {/* Arrow with slide animation */}
+                          <MoveRight />
+                          {/* Shine effect */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
+                        </motion.button>
+                      </motion.div>
+                    )}
 
                 {/* Payment Platform & Transaction ID - Only show after clicking pay button */}
                 {showPaymentFields && (
@@ -650,7 +681,7 @@ const SubmittedComp = () => {
 
       {/* Subtitle */}
       <p className="text-yellow-100 mt-2 text-sm sm:text-base max-w-md">
-        Thank you for registering. You'll receive your pass via email.
+        Thank you for registering. You{"'"}ll receive your pass via email.
       </p>
 
       {/* Button */}
@@ -709,41 +740,38 @@ const LoadingComp = () => {
   );
 };
 
-const FormClosedComp = () => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, filter: "blur(10px)" }}
-      animate={{ opacity: 1, filter: "blur(0px)" }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="flex flex-col items-center justify-center min-h-[80vh] bg-black text-yellow-300 px-6"
-    >
-      {/* Glassy box */}
-      <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl p-10 w-full max-w-md text-center border border-[#f2ca46]/20 shadow-[0_0_40px_rgba(255,255,255,0.08)]">
-        {/* Optional noise texture */}
+// const FormClosedComp = () => {
+//   return (
+//     <motion.div
+//       initial={{ opacity: 0, filter: "blur(10px)" }}
+//       animate={{ opacity: 1, filter: "blur(0px)" }}
+//       transition={{ duration: 0.8, ease: "easeOut" }}
+//       className="flex flex-col items-center justify-center min-h-[80vh] bg-black text-yellow-300 px-6"
+//     >
+//       {/* Glassy box */}
+//       <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl p-10 w-full max-w-md text-center border border-[#f2ca46]/20 shadow-[0_0_40px_rgba(255,255,255,0.08)]">
+//         {/* Optional noise texture */}
 
-        <Lock size={48} className="text-[#f2ca46] mx-auto mb-4" />
+//         <Lock size={48} className="text-[#f2ca46] mx-auto mb-4" />
 
-        <h2 className="text-2xl font-bold text-yellow-200 mb-2">
-          Registration Closed
-        </h2>
+//         <h2 className="text-2xl font-bold text-yellow-200 mb-2">
+//           Registration Closed
+//         </h2>
 
-        <p className="text-yellow-100 mb-1">
-          Thank you for your interest in our event!
-        </p>
-        <p className="text-yellow-100">
-          Registration is no longer being accepted.
-        </p>
-      </div>
-    </motion.div>
-  );
-};
+//         <p className="text-yellow-100 mb-1">
+//           Thank you for your interest in our event!
+//         </p>
+//         <p className="text-yellow-100">
+//           Registration is no longer being accepted.
+//         </p>
+//       </div>
+//     </motion.div>
+//   );
+// };
 
 const RegistrationForm = () => {
   const [loadingStatus, setLoadingStatus] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(false);
-  const [formStatus, setFormStatus] = useState({
-    isFormOpen: true,
-  });
+  const [submitStatus, setSubmitStatus] = useState(false); 
 
   return (
     <>
@@ -761,8 +789,6 @@ const RegistrationForm = () => {
         >
           {loadingStatus ? (
             <LoadingComp />
-          ) : !formStatus.isFormOpen ? (
-            <FormClosedComp />
           ) : submitStatus ? (
             <SubmittedComp />
           ) : (
