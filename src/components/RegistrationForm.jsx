@@ -681,7 +681,7 @@ const SubmittedComp = () => {
 
       {/* Subtitle */}
       <p className="text-yellow-100 mt-2 text-sm sm:text-base max-w-md">
-        Thank you for registering. You{"'"}ll receive your pass via email.
+        Thank you for registering. You{"'"}ll receive your pass via email within 48hrs.
       </p>
 
       {/* Button */}
