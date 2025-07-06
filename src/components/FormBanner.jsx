@@ -167,7 +167,7 @@ const FormBanner = () => {
                   }`}
                 >
                   {event.title.includes("24 - Hour") || event.title.includes("24-Hour") 
-                    ? "Hack" 
+                    ? "Hackathon" 
                     : event.title.split(" ")[0]}
                 </div>
               </button>
