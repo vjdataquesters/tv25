@@ -20,14 +20,6 @@ const Technovista = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIntroPlay(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   // Cursor refs
   const cursorRef = useRef(null);
   const cursorTrailRef = useRef(null);
@@ -86,7 +78,9 @@ const Technovista = () => {
 
   return (
     <div className="bg min-h-[250vh] relative">
-      <Intro introPlay={introPlay} />
+      {introPlay && (
+        <Intro introPlay={introPlay} onFinish={() => setIntroPlay(false)} />
+      )}
 
       {/* Custom Cursor - only on desktop */}
       {!isMobile && (
