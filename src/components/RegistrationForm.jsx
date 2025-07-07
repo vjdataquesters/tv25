@@ -456,6 +456,10 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                         <label className="text-sm font-medium text-yellow-300 block mb-2">
                           Payment Screenshot{" "}
                           <span className="text-red-400">*</span>
+                          <span className="block text-xs font-normal text-yellow-200 mt-1">
+                            (Make sure that the transaction ID is present in the
+                            uploaded screenshot)
+                          </span>
                         </label>
                         <div className="relative">
                           <input
