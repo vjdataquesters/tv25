@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Calendar, Clock, ExternalLink, MapPin, ArrowLeft } from "lucide-react";
 import { eventTimeLine } from "../data/tvData.js";
 import Reveal from "../components/Reveal.jsx";
@@ -278,6 +278,7 @@ const EventsTV = () => {
                     venue,
                     highlights,
                     icon,
+                    url
                   },
                   index
                 ) => (
@@ -369,7 +370,18 @@ const EventsTV = () => {
                                   </button>
                                 );
                               }
-                            } else {
+                            } 
+                            else if(url) {
+                              return (
+                                <Link
+                                  to={url}
+                                  className="block w-full text-center bg-gradient-to-r from-[#daa425] to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black font-bold px-4 py-2 rounded-2xl transition-all duration-[400ms] hover:scale-105 hover:shadow-yellow-500/20 shadow"
+                                >
+                                  Know more
+                                </Link>
+                              )
+                            }
+                            else {
                               return (
                                 <span className="block w-full text-center border border-yellow-300 text-yellow-400 font-medium px-4 py-2 rounded-2xl backdrop-blur-2xl bg-white/5">
                                   Stay Tuned

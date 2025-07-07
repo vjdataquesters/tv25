@@ -114,6 +114,7 @@ export const eventTimeLine = [
         image: "/events/Technovista2025/Hackathon/Cartoon.jpg",
         cartoon: "/events/Technovista2025/Hackathon/Cartoon.jpg",
         priority: 1,
+        url: "/technovista/events/hackathon",
       },
     ],
   },
