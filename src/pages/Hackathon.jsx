@@ -1,8 +1,8 @@
 import React from "react";
 // import {motion} from "framer-motion";
-
+import FooterTV from "../components/FooterTV";
 const Hackathon = () => {
-  const [showVideo, setShowVideo] = React.useState(false);
+  const [showVideo, setShowVideo] = React.useState(true); // Show video by default
   return (
     <div className="bg-black min-h-screen text-white font-sans">
       <div className="max-w-4xl mx-auto px-4 py-12">
@@ -20,58 +20,53 @@ const Hackathon = () => {
                 href="https://www.youtube.com/watch?v=zjkBMFhNj_g"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline text-yellow-300 hover:text-yellow-400 transition"
+                className=" text-yellow-300 hover:text-yellow-400 transition"
               >
                 Watch Andrej Karpathy{"'"}s talk at YCombinator
               </a>
             </p>
-              <p className="text-gray-200 mb-2">
-            This isn’t a regular hackathon — it’s a{" "}
-            <span className="text-yellow-300 font-semibold">
-              Software 3.0 Hackathon
-            </span>
-            . The software industry is changing: LLMs are junior devs, AI is
-            building everything. In this era, focus on the{" "}
-            <span className="text-yellow-300">core problem</span> you’re solving,
-            not just the frontend!
-          </p>
+              
             <div className="mt-4">
               <button
                 onClick={() => setShowVideo(!showVideo)}
                 className="bg-yellow-900`/20 hover:bg-yellow-900/30 border border-yellow-600/50 text-yellow-300 px-6 py-2 rounded-lg font-medium transition-all duration-200 hover:scale-105"
               >
-                {showVideo ? "Hide Video" : "Watch Video"}
+                {showVideo ? "Hide Video" : "Show Video"}
               </button>
             </div>
             {showVideo && (
-          <div className="mt-6 bg-yellow-900/10 border border-yellow-600/30 rounded-xl p-6 shadow-lg">
-            <div className="relative w-full h-0 pb-[56.25%]">
-              <iframe 
-                className="absolute top-0 left-0 w-full h-full rounded-lg"
-                src="https://www.youtube.com/embed/LCEmiRjPEtQ?si=-7C0O-UcfuTen-ny&amp;start=15" 
-                title="YouTube video player" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
+              <div className="mt-6 bg-yellow-900/10 border border-yellow-600/30 rounded-xl p-6 shadow-lg">
+                <div className="relative w-full h-0 pb-[56.25%]">
+                  <iframe 
+                    className="absolute top-0 left-0 w-full h-full rounded-lg"
+                    src="https://www.youtube.com/embed/LCEmiRjPEtQ?si=-7C0O-UcfuTen-ny&amp;start=15" 
+                    title="YouTube video player" 
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
             )}
+            <p className="text-gray-200 text-lg leading-relaxed p-4">
+            This isn't a regular hackathon — it's a{" "}
+            <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">
+              Software 3.0 Hackathon
+            </span>
+            . The software industry is changing: LLMs are junior devs, AI is
+            building everything. In this era, focus on the{" "}
+            <span className="text-yellow-300 font-semibold">core problem</span> you're solving,
+            not just the frontend!
+          </p>
           </div>
 
-          {/* Theme */}
-        <div className="bg-yellow-900/10 border border-yellow-600/30 rounded-xl p-6 mb-8 shadow-lg">
-          <h2 className="text-2xl font-bold text-[#daa425] mb-2">
-            What’s Different?
-          </h2>
-        
-        </div>
+       
 
         {/* Team Formation */}
         <div className="mb-12">
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl hover:bg-white/10 transition-all duration-300">
             <h3 className="text-2xl font-bold text-[#daa425] mb-6 flex items-center">
-              <span className="mr-3">👥</span>
+              <span className="mr-3"></span>
               Team Formation
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -100,7 +95,7 @@ const Hackathon = () => {
           {/* Phase 1 */}
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl hover:bg-white/10 transition-all duration-300">
             <h3 className="text-2xl font-bold text-[#daa425] mb-6 flex items-center">
-              <span className="mr-3">🔍</span>
+              <span className="mr-3"></span>
               Phase 1: Ideation Round
             </h3>
             
@@ -127,7 +122,7 @@ const Hackathon = () => {
 
             <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6">
               <p className="text-yellow-200 font-semibold mb-4 text-lg flex items-center">
-                <span className="mr-2">📌</span>
+                <span className="mr-2"></span>
                 What You Need to Do:
               </p>
               <ol className="space-y-3 text-gray-200">
@@ -164,7 +159,7 @@ const Hackathon = () => {
           {/* Phase 2 */}
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl hover:bg-white/10 transition-all duration-300">
             <h3 className="text-2xl font-bold text-[#daa425] mb-6 flex items-center">
-              <span className="mr-3">⚙️</span>
+              <span className="mr-3"></span>
               Phase 2: Build & Solve
             </h3>
             
@@ -195,7 +190,7 @@ const Hackathon = () => {
 
             <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6">
               <p className="text-yellow-200 font-semibold mb-4 text-lg flex items-center">
-                <span className="mr-2">📌</span>
+                <span className="mr-2"></span>
                 Key Info:
               </p>
               <div className="space-y-3">
@@ -213,7 +208,7 @@ const Hackathon = () => {
           </div>
         </div>
 
-        {/* Finale */}
+        {/* Finale
         <div className="mb-12">
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl hover:bg-white/10 transition-all duration-300">
             <h3 className="text-2xl font-bold text-[#daa425] mb-6 flex items-center">
@@ -243,45 +238,8 @@ const Hackathon = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        {/* Summary Table */}
-        <div className="mb-12">
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl hover:bg-white/10 transition-all duration-300">
-            <h3 className="text-2xl font-bold text-[#daa425] mb-6 flex items-center">
-              <span className="mr-3">✅</span>
-              Summary
-            </h3>
-            <div className="overflow-x-auto">
-              <table className="min-w-full text-left text-gray-200">
-                <thead>
-                  <tr className="border-b border-white/20">
-                    <th className="px-6 py-4 text-yellow-300 font-semibold text-lg">Phase</th>
-                    <th className="px-6 py-4 text-yellow-300 font-semibold text-lg">Key Dates</th>
-                    <th className="px-6 py-4 text-yellow-300 font-semibold text-lg">Deliverables</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-white/10 hover:bg-white/5 transition-colors duration-200">
-                    <td className="px-6 py-4 font-semibold">Phase 1</td>
-                    <td className="px-6 py-4">10–27 July</td>
-                    <td className="px-6 py-4">PPT + 6–8 min Zoom video</td>
-                  </tr>
-                  <tr className="border-b border-white/10 hover:bg-white/5 transition-colors duration-200">
-                    <td className="px-6 py-4 font-semibold">Phase 2</td>
-                    <td className="px-6 py-4">28 July – 1 Aug (starts)</td>
-                    <td className="px-6 py-4">Problem statement-based solution</td>
-                  </tr>
-                  <tr className="hover:bg-white/5 transition-colors duration-200">
-                    <td className="px-6 py-4 font-semibold">Finale</td>
-                    <td className="px-6 py-4">On-site at VNR</td>
-                    <td className="px-6 py-4">Live build with mentor support</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
 
         {/* Call to Action */}
         <div className="text-center">
@@ -305,6 +263,7 @@ const Hackathon = () => {
             </p>
           </div>
         </div>
+        <FooterTV/>
       </div>
     </div>
   );
