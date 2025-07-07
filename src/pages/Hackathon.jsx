@@ -7,61 +7,73 @@ const Hackathon = () => {
     <div className="bg-black min-h-screen text-white font-sans pt-12">
       <NavbarTv />
       <div className="max-w-6xl mx-auto px-4 py-12">
-          <div className="mb-10">
-            <h1 className="text-center text-4xl sm:text-5xl font-extrabold text-[#daa425] mb-2 drop-shadow-lg">
-               Technovista Hackathon 2025
-            </h1>              
-            <div className="mt-4">
-<p className="text-gray-200 text-lg leading-relaxed p-4">
-            This isn&apos;t a regular hackathon — it&apos;s a{" "}
-            <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">
-              Software 3.0 Hackathon
-            </span>
-            . The software industry is changing: LLMs are junior devs, AI is
-            building everything. In this era, focussing on the{" "}
-            <span className="text-yellow-300 font-semibold">core problem</span> that you are solving is important
-          </p>
-                    {/* Info about Software 3.0 */}
-          <div className="mt-6 rounded-xl p-6 shadow-lg">
-            <div className="flex items-start space-x-3">
-              <div className="text-blue-400 text-2xl mt-1">
-                ℹ️
-              </div>
-              <div>
-                <h4 className="text-blue-300 font-semibold text-lg mb-2">Don't know about Software 3.0?</h4>
-                <p className="text-gray-200 leading-relaxed">
-                  I don't know what about software 3.0, I wanna learn about it
-                </p>
-              </div>
-            </div>
-          </div>
+        <div className="mb-10">
+          <h1 className="text-center text-4xl sm:text-5xl font-extrabold text-[#daa425] mb-2 drop-shadow-lg">
+            Technovista Hackathon 2025
+          </h1>
+          <div className="mt-4">
+            <p className="text-gray-200 text-lg leading-relaxed p-4">
+              The software industry is undergoing a monumental shift, evolving from traditional code to{" "}
+              <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">
+                AI-driven systems
+              </span>
+              . We are now entering the era of{" "}
+              <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">
+                Software 3.0
+              </span>
+              , where{" "}
+              <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">
+                Large Language Models
+              </span>{" "}
+              are emerging as a new computing paradigm, programmable with natural language. This hackathon is your opportunity to be at the forefront of this transformation, building innovative applications on this new platform. Join us to explore the limitless possibilities of{" "}
+              <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">
+                vibe coding
+              </span>{" "}
+              and create the{" "}
+              <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">
+                next generation
+              </span>{" "}
+              of software. Let’s build the future together, where{" "}
+              <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">
+                everyone can be a programmer
+              </span>
+              .
+            </p>
+
+            {!showVideo && (
               <button
                 onClick={() => setShowVideo(!showVideo)}
-                className="bg-yellow-900`/20 hover:bg-yellow-900/30 border border-yellow-600/50 text-yellow-300 px-6 py-2 rounded-lg font-medium transition-all duration-200 hover:scale-105"
+                className="bg-black text-yellow-400 px-4 py-2 rounded-lg font-semibold underline transition-colors duration-300"
               >
-                {showVideo ? "Hide Video" : "Show Video"}
+                Know more
               </button>
-            </div>
+            )}
             {showVideo && (
-              <div className="mt-6 bg-yellow-900/10 border border-yellow-600/30 rounded-xl p-6 shadow-lg">
+              <div className="mt-3 rounded-xl px-4">
+                <div className="py-3">
+                  <h4 className="text-blue-300 font-semibold text-lg mb-2">Watch Andrej Karpathy talk about Software 3.0 at YCombinator</h4>
+                </div>
                 <div className="relative w-full h-0 pb-[56.25%]">
-                  <iframe 
+                  <iframe
                     className="absolute top-0 left-0 w-full h-full rounded-lg"
-                    src="https://www.youtube.com/embed/LCEmiRjPEtQ?si=-7C0O-UcfuTen-ny&amp;start=15" 
-                    title="YouTube video player" 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    src="https://www.youtube.com/embed/LCEmiRjPEtQ?si=-7C0O-UcfuTen-ny&amp;start=15"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                   ></iframe>
                 </div>
               </div>
-            )}
-          </div>
 
-       
+            )}
+
+          </div>
+        </div>
+
+
 
         {/* Team Formation */}
-         <div className="mb-12 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl hover:bg-white/10 transition-all duration-300">
+        <div className="mb-12 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl hover:bg-white/10 transition-all duration-300">
           <h3 className="text-2xl font-bold text-[#daa425] mb-6 flex items-center">
             <span className="mr-3">💰</span>
             Prize Pool
@@ -116,7 +128,7 @@ const Hackathon = () => {
               <span className="mr-3"></span>
               Phase 1: Ideation Round
             </h3>
-            
+
             <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6 mb-6">
               <p className="text-yellow-200 font-semibold mb-3 text-lg flex items-center">
                 <span className="mr-2">🗓</span>
@@ -183,7 +195,7 @@ const Hackathon = () => {
               <span className="mr-3"></span>
               Phase 2: Build & Solve
             </h3>
-            
+
             <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6 mb-6">
               <p className="text-yellow-200 font-semibold mb-3 text-lg flex items-center">
                 <span className="mr-2">🗓</span>
@@ -282,8 +294,8 @@ const Hackathon = () => {
         </div>
       </div>
     </div>
-        <FooterTV/>
-        </>
+    <FooterTV />
+  </>
   );
 };
 
