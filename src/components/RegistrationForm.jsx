@@ -12,6 +12,8 @@ import {
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import NavbarTv from "./NavbarTv";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 const SERVER_URL =
   import.meta.env.MODE === "development"
@@ -31,46 +33,35 @@ const transitionVariants = {
   exit: { opacity: 0, y: -20 },
 };
 
-const pulseVariants = {
-  animate: {
-    opacity: [1, 0.8, 0.5, 0.8, 1],
-    transition: {
-      duration: 1.6,
-      repeat: Infinity,
-    },
-  },
-};
-
 const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPaymentFields, setShowPaymentFields] = useState(false); // Added this missing state
   const containerRef = useRef(null);
   const compressImageWithCanvas = (file) =>
-  new Promise((resolve, reject) => {
-    const img = new Image();
-    const url = URL.createObjectURL(file);
-    img.src = url;
+    new Promise((resolve, reject) => {
+      const img = new Image();
+      const url = URL.createObjectURL(file);
+      img.src = url;
 
-    img.onload = () => {
-      const canvas = document.createElement("canvas");
-      const maxSize = 1920;
-      const scale = Math.min(maxSize / img.width, maxSize / img.height, 1);
-      canvas.width = img.width * scale;
-      canvas.height = img.height * scale;
-      const ctx = canvas.getContext("2d");
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-      canvas.toBlob(
-        (blob) => {
-          if (!blob) return reject(new Error("Canvas compression failed"));
-          resolve(new File([blob], file.name, { type: "image/jpeg" }));
-        },
-        "image/jpeg",
-        0.8
-      );
-    };
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        const maxSize = 1920;
+        const scale = Math.min(maxSize / img.width, maxSize / img.height, 1);
+        canvas.width = img.width * scale;
+        canvas.height = img.height * scale;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        canvas.toBlob(
+          (blob) => {
+            if (!blob) return reject(new Error("Canvas compression failed"));
+            resolve(new File([blob], file.name, { type: "image/jpeg" }));
+          },
+          "image/jpeg",
+          0.8
+        );
+      };
 
-    img.onerror = (e) => reject(e);
-  });
+      img.onerror = (e) => reject(e);
+    });
   const [file, setFile] = useState(null);
 
   const {
@@ -101,7 +92,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
       alert("Please fill all required fields and upload a payment proof.");
       return;
     }
-    setIsSubmitting(true);
+    setLoadingStatus(true);
     try {
       const userId = `${data.transactionid.toLowerCase()}-${data.rollno
         .toLowerCase()
@@ -139,7 +130,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
         image: fileNameStorage,
       };
       const response = await api.post("/register", finalData);
-      console.log(finalData)
+      console.log(finalData);
       if (!response.data.success) {
         alert("Registration failed. Please try again.");
         return;
@@ -150,7 +141,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
       console.error("Error during registration:", error);
       alert("Registration failed. Please try again." + error.message);
     } finally {
-      setIsSubmitting(false);
+      setLoadingStatus(false);
     }
   };
 
@@ -463,7 +454,8 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                     <div className="transform hover:opacity-90 transition-transform duration-300">
                       <div className="group relative">
                         <label className="text-sm font-medium text-yellow-300 block mb-2">
-                          Payment Screenshot <span className="text-red-400">*</span>
+                          Payment Screenshot{" "}
+                          <span className="text-red-400">*</span>
                         </label>
                         <div className="relative">
                           <input
@@ -474,15 +466,22 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                               if (!imageFile) return;
 
                               // Only allow PNG, JPEG, JPG
-                              const allowedTypes = ["image/png", "image/jpeg", "image/jpg"];
+                              const allowedTypes = [
+                                "image/png",
+                                "image/jpeg",
+                                "image/jpg",
+                              ];
                               if (!allowedTypes.includes(imageFile.type)) {
-                                alert("Only PNG, JPEG, or JPG files are allowed.");
+                                alert(
+                                  "Only PNG, JPEG, or JPG files are allowed."
+                                );
                                 e.target.value = "";
                                 return;
                               }
 
                               try {
-                                const compressedFile = await compressImageWithCanvas(imageFile);
+                                const compressedFile =
+                                  await compressImageWithCanvas(imageFile);
                                 setFile(compressedFile);
                               } catch (error) {
                                 setFile(imageFile); // Fallback to original file
@@ -503,25 +502,25 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                         </div>
                       </div>
                     </div>
-                    </motion.div>
-                    )}
-                    {watchCollege && !showPaymentFields && (
-                      <motion.div
-                        className="text-center py-6"
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <motion.button
-                          whileHover={{
-                            scale: 1.05,
-                            boxShadow:
-                              "0 20px 40px rgba(242, 202, 70, 0.3), 0 0 60px rgba(242, 202, 70, 0.2)",
-                          }}
-                          whileTap={{ scale: 0.95 }}
-                          type="button"
-                          onClick={() => setShowPaymentFields(true)}
-                          className="group relative inline-flex items-center justify-center gap-4 px-4 py-1
+                  </motion.div>
+                )}
+                {watchCollege && !showPaymentFields && (
+                  <motion.div
+                    className="text-center py-6"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <motion.button
+                      whileHover={{
+                        scale: 1.05,
+                        boxShadow:
+                          "0 20px 40px rgba(242, 202, 70, 0.3), 0 0 60px rgba(242, 202, 70, 0.2)",
+                      }}
+                      whileTap={{ scale: 0.95 }}
+                      type="button"
+                      onClick={() => setShowPaymentFields(true)}
+                      className="group relative inline-flex items-center justify-center gap-2 px-4 py-1
                                       bg-gradient-to-r from-[#f2ca46] via-[#daa425] to-yellow-600
                                       text-black font-bold text-xl rounded-2xl shadow-xl
                                       transition-all duration-500 ease-out
@@ -531,18 +530,18 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                                       before:absolute before:inset-0 before:bg-gradient-to-r before:from-yellow-300/20 before:to-transparent before:rounded-2xl before:opacity-0 before:transition-opacity before:duration-300
                                       hover:before:opacity-100
                                       overflow-hidden"
-                        >
-                          {/* Text with gradient */}
-                          <span className="bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent font-bold font-sans">
-                            Pay ₹ {watchCollege === "VNRVJIET" ? "170" : "250"} /-
-                          </span>
-                          {/* Arrow with slide animation */}
-                          <MoveRight />
-                          {/* Shine effect */}
-                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
-                        </motion.button>
-                      </motion.div>
-                    )}
+                    >
+                      {/* Text with gradient */}
+                      <span className="bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent font-bold font-sans">
+                        Pay ₹ {watchCollege === "VNRVJIET" ? "170" : "250"} /-
+                      </span>
+                      {/* Arrow with slide animation */}
+                      <MoveRight className="scale-75" />
+                      {/* Shine effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
+                    </motion.button>
+                  </motion.div>
+                )}
 
                 {/* Payment Platform & Transaction ID - Only show after clicking pay button */}
                 {showPaymentFields && (
@@ -619,8 +618,6 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       type="submit"
-                      disabled={isSubmitting}
-                      aria-busy={isSubmitting}
                       className="group relative inline-flex items-center justify-center gap-3 px-6 py-2 mb-2
         bg-gradient-to-r from-[#f2ca46] via-[#daa425] to-yellow-600
         text-black font-bold text-lg rounded-2xl shadow-md
@@ -629,16 +626,10 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
         focus:outline-none focus:ring-4 focus:ring-[#f2ca46]/50
         disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      <span className="tracking-wide">
-                        {isSubmitting ? "Submitting..." : "Submit"}
-                      </span>
+                      <span className="tracking-wide">Submit</span>
                       <Send
                         size={18}
-                        className={`transition-transform duration-300 ${
-                          isSubmitting
-                            ? "animate-pulse"
-                            : "group-hover:translate-x-1"
-                        }`}
+                        className={`transition-transform duration-300`}
                       />
                     </motion.button>
                   </motion.div>
@@ -680,8 +671,13 @@ const SubmittedComp = () => {
       </h2>
 
       {/* Subtitle */}
-      <p className="text-yellow-100 mt-2 text-sm sm:text-base max-w-md">
-        Thank you for registering. You{"'"}ll receive your pass via email within 48hrs.
+      <p className="text-yellow-100 text-sm text-center mt-4">
+        Thank you for registering. You{"'"}ll receive your pass via email within
+        48 hours.
+        <br />
+        <span className="text-yellow-300 font-medium">
+          Please check your spam folder as well.
+        </span>
       </p>
 
       {/* Button */}
@@ -702,34 +698,23 @@ const SubmittedComp = () => {
 
 const LoadingComp = () => {
   return (
-    <div className="flex flex-col items-center justify-center text-yellow-300 h-full min-h-screen">
+    <div className="flex flex-col items-center justify-center text-yellow-300 h-full min-h-[90vh]">
       <motion.div
-        className="relative bg-white/5 backdrop-blur-xl border h-full border-[#daa425]/30 shadow-[0_0_40px_rgba(255,255,255,0.05)] rounded-2xl p-10 min-w-[80%]  lg:w-full text-center flex flex-col items-center justify-center"
+        className="relative backdrop-blur-xl border h-full border-[#daa425]/30 shadow-[0_0_40px_rgba(255,255,255,0.05)] rounded-2xl p-10 min-w-[80%]  lg:w-full text-center flex flex-col items-center justify-center min-h-[90vh]"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
-        {/* App Title */}
-        <div className="flex items-center justify-center">
-          <img
-            src="/events/Technovista2025/tv25-icons/tv-logo-ani.gif"
-            alt="TechnoVista 2k25 Logo"
-            className="w-14 h-14 md:w-24 md:h-24 lg:w-24 lg:h-24 object-contain bg-white rounded-xl"
-          />
-        </div>
-
-        {/* Subtext */}
-        <motion.p
-          variants={pulseVariants}
-          animate="animate"
-          className="mt-2 text-yellow-100 text-sm uppercase tracking-wider"
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
         >
-          Powered by VJDQ
-        </motion.p>
-
-        {/* Loading Text */}
+          <CircularProgress sx={{ color: "#facc15" }} />
+        </Box>
         <motion.p
-          variants={pulseVariants}
           animate="animate"
           className="mt-6 text-yellow-200 font-medium text-base"
         >
@@ -740,38 +725,9 @@ const LoadingComp = () => {
   );
 };
 
-// const FormClosedComp = () => {
-//   return (
-//     <motion.div
-//       initial={{ opacity: 0, filter: "blur(10px)" }}
-//       animate={{ opacity: 1, filter: "blur(0px)" }}
-//       transition={{ duration: 0.8, ease: "easeOut" }}
-//       className="flex flex-col items-center justify-center min-h-[80vh] bg-black text-yellow-300 px-6"
-//     >
-//       {/* Glassy box */}
-//       <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl p-10 w-full max-w-md text-center border border-[#f2ca46]/20 shadow-[0_0_40px_rgba(255,255,255,0.08)]">
-//         {/* Optional noise texture */}
-
-//         <Lock size={48} className="text-[#f2ca46] mx-auto mb-4" />
-
-//         <h2 className="text-2xl font-bold text-yellow-200 mb-2">
-//           Registration Closed
-//         </h2>
-
-//         <p className="text-yellow-100 mb-1">
-//           Thank you for your interest in our event!
-//         </p>
-//         <p className="text-yellow-100">
-//           Registration is no longer being accepted.
-//         </p>
-//       </div>
-//     </motion.div>
-//   );
-// };
-
 const RegistrationForm = () => {
   const [loadingStatus, setLoadingStatus] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(false); 
+  const [submitStatus, setSubmitStatus] = useState(false);
 
   return (
     <>

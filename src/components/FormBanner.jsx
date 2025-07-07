@@ -85,17 +85,29 @@ const FormBanner = () => {
                     </div>
                   </div>
                   <div className="text-right flex-shrink-0 ml-4 min-w-fit">
-                    <div className="flex items-center justify-end text-yellow-300 mb-1">
-                      <Calendar size={14} className="mr-2 flex-shrink-0" />
-                      <span className="text-sm font-medium whitespace-nowrap">{event.date}</span>
-                    </div>
-                    <div className="flex items-start justify-end text-yellow-300">
-                      <Clock size={16} className="mr-1.5 flex-shrink-0 mt-0.5" />
-                      <div className="text-sm font-medium leading-tight text-right max-w-[140px] break-words">
-                        {event.time}
-                      </div>
-                    </div>
-                  </div>
+  <div className="flex items-center justify-end text-yellow-300 mb-1">
+    <Calendar size={14} className="mr-2 flex-shrink-0" />
+    <span className="text-sm font-medium whitespace-nowrap">{event.date}</span>
+  </div>
+
+  {event.title.includes("24-Hour") || event.title.includes("24 - Hour") ? (
+    <div className="flex items-center text-yellow-300 overflow-hidden">
+      <Clock size={16} className="mr-1.5 flex-shrink-0 mt-0.5" />
+      <div className="relative w-[160px] overflow-hidden whitespace-nowrap">
+        <div className="inline-block animate-marquee text-sm font-medium">
+          {event.time}
+        </div>
+      </div>
+    </div>
+  ) : (
+    <div className="flex items-start justify-end text-yellow-300">
+      <Clock size={16} className="mr-1.5 flex-shrink-0 mt-0.5" />
+      <div className="text-sm font-medium leading-tight text-right max-w-[140px] break-words">
+        {event.time}
+      </div>
+    </div>
+  )}
+</div>
                 </div>
                 {event.venue && (
                   <div className="flex items-center text-yellow-300 mb-4">
@@ -155,7 +167,7 @@ const FormBanner = () => {
                   }`}
                 >
                   {event.title.includes("24 - Hour") || event.title.includes("24-Hour") 
-                    ? "Hack" 
+                    ? "Hackathon" 
                     : event.title.split(" ")[0]}
                 </div>
               </button>

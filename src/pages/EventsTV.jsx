@@ -6,6 +6,7 @@ import Reveal from "../components/Reveal.jsx";
 import "./Technovista.css";
 import { AnimatePresence, motion } from "framer-motion";
 import { gsap } from "gsap";
+import mainPoster from "/events/Technovista2025/main.jpg";
 
 const backdropVariants = {
   hidden: { opacity: 0 },
@@ -222,7 +223,29 @@ const EventsTV = () => {
             </button>
           </div>
         </div>
+        <div className="w-[90%] lg:w-full flex flex-col lg:flex-row gap-4 mb-12 bg-gradient-to-r from-black/60 via-black/40 to-transparent rounded-2xl border border-yellow-500/20 backdrop-blur-sm mx-auto">
+          <div className="w-full lg:w-1/2 sm:p-4">
+            <img
+              src={mainPoster}
+              alt="Technovista 2025 Event"
+              className="h-[40%] lg:h-full object-cover rounded-xl shadow-2xl hover:shadow-yellow-500/20 transition-shadow duration-300"
+              onClick={() => handleEventClick(mainPoster)}
+            />
+          </div>
+          <div className="w-full lg:w-1/2 flex flex-col justify-center p-4">
+            <h3 className="font-sans text-3xl sm:text-5xl md:text-6xl lg:text-5xl text-white mb-6 scroll-m-20 text-center font-extrabold tracking-tight text-balance">
+              We have some{" "}
+              <span className="text-[#daa425]">incredible events</span> lined up
+              for you!
+            </h3>
 
+            <p className="leading-7 [&:not(:first-child)]">
+              Dive into a world where innovation meets creativity. Experience
+              thrilling challenges, connect with brilliant minds, and discover
+              opportunities that will redefine your tomorrow.
+            </p>
+          </div>
+        </div>
         {eventTimeLine.map(({ day, date, events }) => (
           <div key={day} className="space-y-10 mb-10">
             <Reveal>

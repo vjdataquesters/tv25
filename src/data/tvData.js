@@ -10,8 +10,12 @@ export const eventTimeLine = [
         time: "10:00 AM - 12:30 PM",
         formlink: "",
         description:
-          "An enlightening session on how Artificial Intelligence is shaping the industries of tomorrow.Discover how emerging AI trends are revolutionizing processes across diverse sectors.",
-        highlights: ["Industry Trends", "Q&A Session", "Networking Opportunity"],
+          "An insightful session exploring how modern technologies are transforming industries and driving innovation. Learn about the latest trends, impactful developments, and opportunities shaping the future of various sectors.",
+        highlights: [
+          "Industry Trends",
+          "Q&A Session",
+          "Networking Opportunity",
+        ],
         icon: "🎙️",
         image: "/events/Technovista2025/GuestLecture/Cartoon.jpg",
         cartoon: "/events/Technovista2025/GuestLecture/Cartoon.jpg",
@@ -25,7 +29,11 @@ export const eventTimeLine = [
         formlink: "",
         description:
           "An investigative data analytics challenge where participants dive into messy datasets, uncover patterns, and solve hidden mysteries using logic and data skills.",
-        highlights: ["Data Cleaning", "Pattern Recognition", "Storytelling with Data"],
+        highlights: [
+          "Data Cleaning",
+          "Pattern Recognition",
+          "Storytelling with Data",
+        ],
         icon: "🕵️‍♂️",
         image: "/events/Technovista2025/DataDetective/Cartoon.jpg",
         cartoon: "/events/Technovista2025/DataDetective/Cartoon.jpg",
@@ -121,7 +129,11 @@ export const eventTimeLine = [
         formlink: "",
         description:
           "An engaging hands-on workshop designed to equip participants with practical skills in trending technologies. Whether you're a beginner or an enthusiast, dive deep into tools, frameworks, and real-world applications through live demos and guided sessions.",
-        highlights: ["Expert-Led Sessions", "Hands-On Demos", "Certificate of Participation"],
+        highlights: [
+          "Expert-Led Sessions",
+          "Hands-On Demos",
+          "Certificate of Participation",
+        ],
         icon: "⚙️",
         image: "/events/Technovista2025/Workshop/Cartoon.jpg",
         cartoon: "/events/Technovista2025/Workshop/Cartoon.jpg",
