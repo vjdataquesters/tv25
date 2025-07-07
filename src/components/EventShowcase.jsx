@@ -36,26 +36,30 @@ export default function EventShowcase() {
                             overflow-hidden relative
                             ${isActive ? "text-white h-[75px]" : ""}
                             last:border-b-0
+                            ${event.url ? "cursor-pointer hover:underline" : ""}
                           `}
+                onClick={() => {
+                  if (event.url) {
+                    navigate(event.url);
+                  }
+                }}
               >
                 {/* Left: Title and Subtitle */}
                 <div className="flex flex-col justify-center font-sans transition-all duration-300 ease-in-out py-2">
                   <h3
-                    className={`text-lg mt-1 transition-all duration-300 ease-in-out ${
-                      isActive
-                        ? "translate-y-[4px] text-white font-semibold"
-                        : "group-hover:translate-y-0 translate-y-[4px] font-light"
-                    }`}
+                    className={`text-lg mt-1 transition-all duration-300 ease-in-out ${isActive
+                      ? "translate-y-[4px] text-white font-semibold"
+                      : "group-hover:translate-y-0 translate-y-[4px] font-light"
+                      }`}
                   >
                     {event.title}
                   </h3>
 
                   <p
-                    className={`text-sm text-white/60 leading-tight mt-1 ${
-                      isActive
-                        ? "opacity-100 translate-y-0"
-                        : "opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0"
-                    } transition-all duration-300 ease-in-out`}
+                    className={`text-sm text-white/60 leading-tight mt-1 ${isActive
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0"
+                      } transition-all duration-300 ease-in-out`}
                   >
                     {event.subtitle}
                   </p>
@@ -136,7 +140,7 @@ export default function EventShowcase() {
           </AnimatePresence>
         </div>
       </div>
-      
+
       <div className="grid grid-cols-2 gap-6 p-0 lg:hidden">
         {allEvents.map((event) => (
           <div
