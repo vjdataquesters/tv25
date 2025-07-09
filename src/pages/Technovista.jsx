@@ -132,7 +132,7 @@ const Technovista = () => {
           <WhatToExpectTV />
           <EventShowcase />
           <Sponsors />
-          <div>
+          <div className="py-16">
             <section className="md:w-[90%] h-full mx-auto">
               <h4 className="font-bold text-center text-[40px] md:text-[30px] lg:text-[50px] text-white">
                 Technovista-2k24{" "}
@@ -145,8 +145,9 @@ const Technovista = () => {
               </div>
             </section>
           </div>
-          <div className="w-full overflow-hidden text-center select-none px-4 box-border">
-            <h1 className="inline-block max-w-full text-[clamp(48px,14vw,230px)] leading-none font-bold text-amber-500/30 tracking-tight overflow-hidden">
+
+          <div className="w-full overflow-hidden text-center select-none box-border">
+            <h1 className="inline-block max-w-full text-[clamp(48px,14vw,200px)] sm:text-[clamp(64px,16vw,280px)] leading-none font-bold text-yellow-600/40 tracking-tight overflow-hidden">
               TECHNOVISTA
             </h1>
           </div>

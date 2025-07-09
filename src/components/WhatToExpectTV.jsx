@@ -123,8 +123,10 @@ const HorizontalScrollCarousel = () => {
         const containerWidth = targetRef.current.offsetWidth;
         // The full scrollable width of the carousel content
         const carouselWidth = carouselRef.current.scrollWidth;
-        // The distance to scroll is the difference
-        setCarouselEnd(containerWidth - carouselWidth);
+        // Calculate position to center the last card
+        const lastCardCenterOffset = (containerWidth - CARD_DIMENSIONS.width) / 2;
+        // The distance to scroll is the difference minus the center offset
+        setCarouselEnd(containerWidth - carouselWidth - lastCardCenterOffset);
       }
     };
 
