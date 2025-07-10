@@ -12,6 +12,11 @@
   line-height: 1.6;
 }
 
+::selection {
+  background-color: #e4b64be7;
+  color: black;
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -372,3 +377,14 @@ body::-webkit-scrollbar {
 .scrollbar-hidden {
   scrollbar-width: none;
 }
+
+/* TechnoVista Skeleton Animation */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
