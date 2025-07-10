@@ -3,7 +3,7 @@ import SponsorGfgTv from "./SponsorGfgTv";
 
 function Sponsors() {
   return (
-    <div className="py-10 px-4 sm:px-6 lg:px-12">
+    <div className="py-10 px-4 sm:px-6 lg:px-12 select-none">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
           Our <span className="text-[#daa425]">Sponsors</span>

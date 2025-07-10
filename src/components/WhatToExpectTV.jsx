@@ -164,7 +164,7 @@ const HorizontalScrollCarousel = () => {
           className="flex items-center gap-28 will-change-transform"
         >
           {/* Enhanced Heading */}
-          <div className="text-center px-8 min-w-fit flex-shrink-0 flex items-center">
+          <div className="text-center px-8 min-w-fit flex-shrink-0 flex items-center select-none">
             <div className="relative item">
               <div className="absolute inset-0 bg-gradient-to-r from-[#daa425]/10 to-[#f2ca46]/30 blur-3xl rounded-full transform scale-150"></div>
               <h2 className="relative font-bold font-sans text-4xl sm:text-6xl lg:text-7xl text-white leading-tight tracking-tight">

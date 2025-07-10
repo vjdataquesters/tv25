@@ -13,7 +13,7 @@ export default function EventShowcase() {
   const [activeEvent, setActiveEvent] = useState(allEvents[0]);
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col w-full bg text-white max-w-[90%] mx-auto px-4">
+    <div className="flex flex-col w-full bg text-white max-w-[90%] mx-auto px-4 select-none">
       <h2 className="text-center font-bold font-sans text-5xl sm:text-6xl  text-white mb-5 pb-5">
         Featured <span className="text-[#daa425]">Events</span>
       </h2>

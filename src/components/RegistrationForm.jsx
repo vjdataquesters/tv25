@@ -35,6 +35,7 @@ const transitionVariants = {
 
 const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   const [showPaymentFields, setShowPaymentFields] = useState(false); // Added this missing state
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
   const containerRef = useRef(null);
   const compressImageWithCanvas = (file) =>
     new Promise((resolve, reject) => {
@@ -90,6 +91,10 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   const onSubmit = async (data) => {
     if (!file || !data.transactionid || !data.rollno) {
       alert("Please fill all required fields and upload a payment proof.");
+      return;
+    }
+    if (!acceptedTerms) {
+      alert("Please accept the Terms & Conditions to continue.");
       return;
     }
     setLoadingStatus(true);
@@ -211,7 +216,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                             {...register("college", {
                               required: "College selection is required",
                             })}
-                            className="w-5 h-5 text-[#daa425] border-2 border-[#daa425] focus:ring-[#f2ca46] focus:ring-2"
+                            className="w-5 h-5 rounded-full border-2 border-[#daa425] accent-[#daa425] focus:ring-[#f2ca46] focus:outline-none transition duration-200 ease-in-out hover:scale-105"
                           />
                           <span className="text-yellow-300 group-hover:text-yellow-200 transition-colors duration-300">
                             {option.label}
@@ -612,31 +617,58 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
 
                 {/* Submit Button - Only show after payment fields are visible */}
                 {showPaymentFields && (
-                  <motion.div
-                    className="mt-6 text-center"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.2 }}
-                  >
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      type="submit"
-                      className="group relative inline-flex items-center justify-center gap-3 px-6 py-2 mb-2
+                  <>
+                    <div className="flex items-start gap-3 mt-4 p-4 bg-black/20 border border-[#daa425]/40 rounded-xl">
+                      <input
+                        type="checkbox"
+                        id="terms-checkbox"
+                        checked={acceptedTerms}
+                        onChange={(e) => setAcceptedTerms(e.target.checked)}
+                        className="mt-1 w-4 h-4 text-black bg-black border-[#daa425] rounded focus:ring-[#f2ca46] focus:ring-0 focus:outline-none accent-[#f2ca46] cursor-pointer"
+                      />
+                      <label
+                        htmlFor="terms-checkbox"
+                        className="text-sm text-yellow-300 leading-relaxed  "
+                      >
+                        I agree to the{" "}
+                        <a
+                          href="/technovista/terms-and-conditions"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#f2ca46] underline hover:text-yellow-200 transition-colors duration-200 font-medium"
+                        >
+                          Terms & Conditions
+                        </a>
+                        <span className="text-red-400 ml-1">*</span>
+                      </label>
+                    </div>
+                    <motion.div
+                      className="mt-3 text-center"
+                      initial={{ opacity: 0, y: -20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: 0.2 }}
+                    >
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        disabled={!acceptedTerms}
+                        type="submit"
+                        className="group relative inline-flex items-center justify-center gap-3 px-6 py-2 mb-2
         bg-gradient-to-r from-[#f2ca46] via-[#daa425] to-yellow-600
         text-black font-bold text-lg rounded-2xl shadow-md
         transition-all duration-300 ease-out
         hover:shadow-xl hover:shadow-[#daa425]/40
         focus:outline-none focus:ring-4 focus:ring-[#f2ca46]/50
         disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      <span className="tracking-wide">Submit</span>
-                      <Send
-                        size={18}
-                        className={`transition-transform duration-300`}
-                      />
-                    </motion.button>
-                  </motion.div>
+                      >
+                        <span className="tracking-wide">Submit</span>
+                        <Send
+                          size={18}
+                          className={`transition-transform duration-300`}
+                        />
+                      </motion.button>
+                    </motion.div>
+                  </>
                 )}
               </div>
             </div>

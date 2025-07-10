@@ -1,23 +1,12 @@
 import React, { useRef, useState, useEffect } from "react";
 
-const images = [
-  "/events/Technovista2024/tv2k24gallery/img-1.png",
-  "/events/Technovista2024/tv2k24gallery/img-2.png",
-  "/events/Technovista2024/tv2k24gallery/img-3.png",
-  "/events/Technovista2024/tv2k24gallery/img-4.png",
-  "/events/Technovista2024/tv2k24gallery/img-5.png",
-  "/events/Technovista2024/tv2k24gallery/img-6.png",
-  "/events/Technovista2024/tv2k24gallery/img-7.png",
-  "/events/Technovista2024/tv2k24gallery/img-8.png",
-  "/events/Technovista2024/tv2k24gallery/img-9.png",
-  "/events/Technovista2024/tv2k24gallery/img-10.png",
-  "/events/Technovista2024/tv2k24gallery/img-11.png",
-  "/events/Technovista2024/tv2k24gallery/img-12.png",
-  "/events/Technovista2024/tv2k24gallery/img-13.png",
-  "/events/Technovista2024/tv2k24gallery/img-14.png",
-  "/events/Technovista2024/tv2k24gallery/img-15.png",
-  "/events/Technovista2024/tv2k24gallery/img-16.png",
-];
+const images = Array.from(
+  { length: 16 },
+  (_, i) =>
+    `https://cdn.jsdelivr.net/gh/vjdataquesters/cdnstorage@main/tv2k24gallery/img-${
+      i + 1
+    }.png`
+);
 
 const ScrollingGallery = () => {
   const galleryRef = useRef(null);
@@ -50,7 +39,7 @@ const ScrollingGallery = () => {
   }, [isHovered]);
 
   return (
-    <div className="overflow-hidden relative w-full">
+    <div className="overflow-hidden relative w-full select-none">
       <div className="w-full overflow-hidden">
         <div
           ref={galleryRef}

@@ -217,6 +217,13 @@ const FooterTV = () => {
                 >
                   Developed by
                 </a>
+                <a
+                  href="/technovista/terms-and-conditions"
+                  target="_blank"
+                  className="font-mono text-sm sm:text-base lg:text-lg hover:text-yellow-400 transform transition-all duration-300 hover:translate-x-1 text-center"
+                >
+                  Terms and Conditions
+                </a>
               </div>
             </div>
             <div className="golden-corner-bottom-right" />
@@ -253,8 +260,8 @@ const FooterTV = () => {
 
         {/* --- Footer Bottom Copyright */}
         <div className="text-center mt-8 pt-6 w-full relative">
-          <div className="golden-line-horizontal mb-4" />
-          <p className="font-mono text-base sm:text-lg lg:text-xl mt-4 text-yellow-400/80">
+          <div className="golden-line-horizontal" />
+          <p className="font-mono text-base sm:text-lg lg:text-xl mt-5 text-yellow-400/80">
             © 2025 TechnoVista. All rights reserved.
           </p>
         </div>

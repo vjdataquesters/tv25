@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import NavbarTv from "../components/NavbarTv";
 import FooterTV from "../components/FooterTV";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { Skeleton } from "../components/ui/Skeleton"; // Custom skeleton component
+
 const developers = [
   {
     id: 1,
     name: "Praneesh",
     role: "Full Stack Developer",
-    image: "/events/Technovista2025/devs/Praneesh.png",
+    image:
+      "https://cdn.jsdelivr.net/gh/vjdataquesters/cdnstorage@main/devs/Praneesh.png",
     linkedin: "https://www.linkedin.com/in/parshipraneesh/",
     github: "https://github.com/PPraneesh",
     fullName: "Parshi Praneesh",
@@ -16,7 +19,8 @@ const developers = [
     id: 2,
     name: "Karthikeya",
     role: "Full Stack Developer",
-    image: "/events/Technovista2025/devs/Karthikeya.png",
+    image:
+      "https://cdn.jsdelivr.net/gh/vjdataquesters/cdnstorage@main/devs/Karthikeya.png",
     linkedin: "https://www.linkedin.com/in/karthikeyaveruturi/",
     github: "https://github.com/karthikeyaspace/",
     fullName: "Karthikeya",
@@ -25,7 +29,8 @@ const developers = [
     id: 3,
     name: "Jagadeeswar",
     role: "Full Stack Developer",
-    image: "/events/Technovista2025/devs/Jagadeeswar.png",
+    image:
+      "https://cdn.jsdelivr.net/gh/vjdataquesters/cdnstorage@main/devs/Jagadeeswar.png",
     linkedin: "https://www.linkedin.com/in/jagadeeswarj/",
     github: "https://github.com/JagadeeswarJ",
     fullName: "J. Jagadeeswar",
@@ -34,7 +39,8 @@ const developers = [
     id: 4,
     name: "Pranav",
     role: "Frontend Developer",
-    image: "/events/Technovista2025/devs/Pranav.png",
+    image:
+      "https://cdn.jsdelivr.net/gh/vjdataquesters/cdnstorage@main/devs/Pranav.png",
     linkedin: "https://www.linkedin.com/in/pranav-babu-tungani-146707287/",
     github: "https://github.com/PranavBabuTungani",
     fullName: "T. Pranav Babu",
@@ -43,7 +49,8 @@ const developers = [
     id: 5,
     name: "Anish",
     role: "UI Designer",
-    image: "/events/Technovista2025/devs/Anish.png",
+    image:
+      "https://cdn.jsdelivr.net/gh/vjdataquesters/cdnstorage@main/devs/Anish.png",
     linkedin: "https://www.linkedin.com/in/anish-reddy2931/",
     github: "https://github.com/Anishs2931",
     fullName: "S. Anish Reddy",
@@ -52,16 +59,18 @@ const developers = [
     id: 6,
     name: "Srishanth",
     role: "Full Stack Developer",
-    image: "/events/Technovista2025/devs/Srishanth.png",
+    image:
+      "https://cdn.jsdelivr.net/gh/vjdataquesters/cdnstorage@main/devs/Srishanth.png",
     linkedin: "https://www.linkedin.com/in/padala-srishanth-4a0a4328b/",
     github: "https://github.com/Padala-Srishanth",
-    fullName: "P.Srishanth",
+    fullName: "P. Srishanth",
   },
   {
     id: 7,
     name: "Sipun",
     role: "UI Designer",
-    image: "/events/Technovista2025/devs/Sipun.png",
+    image:
+      "https://cdn.jsdelivr.net/gh/vjdataquesters/cdnstorage@main/devs/Sipun.png",
     linkedin: "https://www.linkedin.com/in/sipun-kumar-panda-8747b127b/",
     github: "#",
     fullName: "Sipun Kumar",
@@ -71,6 +80,7 @@ const developers = [
 const TvDevs = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [loadedImages, setLoadedImages] = useState({});
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -79,14 +89,34 @@ const TvDevs = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const handleImageLoad = (index) => {
+    setLoadedImages((prev) => ({ ...prev, [index]: true }));
+  };
+
   const firstRow = developers.filter((dev) => dev.id === 1 || dev.id === 2);
   const secondRow = developers.filter((dev) =>
     [3, 4, 5, 6, 7].includes(dev.id)
   );
 
-  const renderDevCard = (dev, index) => {
-    const isActive = activeIndex === index;
+  const DevCardSkeleton = () => (
+    <div className="w-[220px] h-[340px] rounded-3xl bg-gradient-to-br from-[#daa425] to-[#f5c645] p-[1px] shadow-lg shadow-[#daa425]/20">
+      <div className="w-full h-full bg-black rounded-3xl overflow-hidden flex flex-col">
+        <div className="flex-1 relative">
+          <Skeleton variant="technovista" className="w-full h-full rounded-t-3xl" />
+        </div>
+        <div className="p-4 text-center bg-black rounded-b-3xl space-y-3">
+          <Skeleton variant="technovista" className="h-5 w-[120px] mx-auto" />
+          <Skeleton variant="technovista" className="h-3 w-[100px] mx-auto" />
+          <div className="flex justify-center space-x-4 mt-3 md:hidden">
+            <Skeleton variant="technovista" className="w-5 h-5 rounded-full" />
+            <Skeleton variant="technovista" className="w-5 h-5 rounded-full" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 
+  const renderDevCard = (dev, index) => {
     return (
       <div
         key={dev.id}
@@ -97,17 +127,26 @@ const TvDevs = () => {
           }
         }}
       >
-        {/* Main Card */}
-        <div className="w-[220px] h-[340px] rounded-3xl bg-gradient-to-br from-[#daa425] to-[#f5c645] p-[3px] transition-all duration-300 ease-in-out shadow-lg shadow-[#daa425]/20 hover:shadow-xl hover:shadow-[#daa425]/30">
+        {!loadedImages[index] && <DevCardSkeleton />}
+
+        {/* Main Card - hide until image is loaded */}
+        <div
+          className={`w-[220px] h-[340px] rounded-3xl bg-gradient-to-br from-[#daa425] to-[#f5c645] p-[1px] transition-all duration-300 ease-in-out shadow-lg shadow-[#daa425]/20 hover:shadow-xl hover:shadow-[#daa425]/30 ${
+            !loadedImages[index] ? "absolute opacity-0 pointer-events-none" : ""
+          }`}
+        >
           <div className="w-full h-full bg-black rounded-3xl overflow-hidden flex flex-col">
             <div className="flex-1 relative">
               <img
                 src={dev.image}
                 alt={dev.name}
-                className="w-full h-full object-cover rounded-t-3xl transition-all duration-500 ease-in-out"
+                loading="lazy"
+                onLoad={() => handleImageLoad(index)}
+                className="w-full h-full object-cover rounded-t-3xl"
               />
             </div>
-            <div className="p-4 text-center bg-black rounded-b-3xl">
+
+            <div className="p-2 text-center bg-black rounded-b-3xl">
               <h3 className="text-lg font-bold text-white tracking-wide">
                 {dev.name}
               </h3>
@@ -130,8 +169,7 @@ const TvDevs = () => {
                     rel="noopener noreferrer"
                     className="text-gray-300 hover:text-[#daa425] transition-colors"
                   >
-                    <FaGithub
-                     className="w-5 h-5" />
+                    <FaGithub className="w-5 h-5" />
                   </a>
                 )}
               </div>
@@ -139,7 +177,7 @@ const TvDevs = () => {
           </div>
         </div>
 
-        {!isMobile && (
+        {!isMobile && loadedImages[index] && (
           <div className="absolute top-0 left-0 w-full h-full opacity-0 pointer-events-none scale-90 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:scale-100 z-10 flex flex-col justify-center items-center text-center border border-[#daa425] shadow-2xl shadow-[#daa425]/30 bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] rounded-3xl p-6 transition-all duration-300 ease-in-out">
             <div className="w-[100px] h-[100px] bg-gradient-to-br from-[#daa425] to-[#f5c645] rounded-full flex justify-center items-center p-[2px] mb-4 shadow-md">
               <div className="w-[96px] h-[96px] rounded-full overflow-hidden border-2 border-[#1a1a1a]">
