@@ -38,6 +38,7 @@ export const eventTimeLine = [
         image: "/events/Technovista2025/DataDetective/Cartoon.jpg",
         cartoon: "/events/Technovista2025/DataDetective/Cartoon.jpg",
         priority: 4,
+        url: "/technovista/events/DataDetective",
       },
       {
         id: 3,
