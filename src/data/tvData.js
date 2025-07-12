@@ -101,6 +101,7 @@ export const eventTimeLine = [
         image: "/events/Technovista2025/DebugOrDie/Cartoon.jpg",
         cartoon: "/events/Technovista2025/DebugOrDie/Cartoon.jpg",
         priority: 5,
+        url: "/technovista/events/DebugOrDie",
       },
       {
         id: 7,
