@@ -1,13 +1,23 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 import FooterTV from "../components/FooterTV";
 
 const DebugOrDie = () => {
+  const navigate = useNavigate();
+  
   return (
     <>
     <div className="bg-black min-h-screen text-white font-sans pt-12">
       {/* Header Section */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="mb-10">
+          <div className="relative text-center mb-4">
+            <ArrowLeft
+              onClick={() => navigate("/technovista/events")}
+              className="absolute right-0 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400 hover:text-yellow-500 hover:scale-110 transition-transform duration-300 cursor-pointer"
+            />
+          </div>
           <h1 className="text-center text-4xl sm:text-5xl font-extrabold text-[#daa425] mb-2 drop-shadow-lg">
             🕵️‍♂️ Debug or Die
           </h1>
@@ -15,7 +25,7 @@ const DebugOrDie = () => {
             As part of Technovista – The Technical Fest
           </p>
           <div className="mt-4">
-            <p className="text-gray-200 text-lg leading-relaxed p-4">
+            <p className="text-gray-200 text-lg leading-relaxed p-4 text-justify">
               Step into the world of mystery, code, and logic with Debug or Die, a thrilling escape-room-style tech challenge where participants act as{" "}
               <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">
                 "code detectives"
@@ -218,7 +228,7 @@ const DebugOrDie = () => {
               <span className="mr-3">⚡</span>
               Ready for the Challenge?
             </p>
-            <p className="text-gray-300 mb-6 text-lg leading-relaxed">
+            <p className="text-gray-300 mb-6 text-lg leading-relaxed text-justify">
               Test your <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">problem-solving skills</span>,{" "}
               <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">coding abilities</span>, and{" "}
               <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">teamwork</span> in this high-pressure escape-room challenge!

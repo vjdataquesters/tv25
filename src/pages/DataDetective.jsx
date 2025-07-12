@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 const DataDetective = () => {
+  const navigate = useNavigate();
   const [showVideo, setShowVideo] = React.useState(false);
 
   return (
@@ -8,6 +11,12 @@ const DataDetective = () => {
       {/* Header Section */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="mb-10">
+          <div className="relative text-center mb-4">
+            <ArrowLeft
+              onClick={() => navigate("/technovista/events")}
+              className="absolute right-0 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400 hover:text-yellow-500 hover:scale-110 transition-transform duration-300 cursor-pointer"
+            />
+          </div>
           <h1 className="text-center text-4xl sm:text-5xl font-extrabold text-[#daa425] mb-2 drop-shadow-lg">
             🕵️‍♀️ Data Detective
           </h1>
@@ -15,7 +24,7 @@ const DataDetective = () => {
             As part of Technovista – The Technical Fest
           </p>
           <div className="mt-4">
-            <p className="text-gray-200 text-lg leading-relaxed p-4">
+            <p className="text-gray-200 text-lg leading-relaxed p-4 text-justify">
               Data Detective is a hands-on, problem-solving challenge where
               participants act as{" "}
               <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">
@@ -506,7 +515,7 @@ const DataDetective = () => {
               <span className="mr-3">🔍</span>
               Ready to Solve the Mystery?
             </p>
-            <p className="text-gray-300 mb-6 text-lg leading-relaxed">
+            <p className="text-gray-300 mb-6 text-lg leading-relaxed text-justify">
               Put on your detective hat and bring your{" "}
               <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">
                 analytical skills

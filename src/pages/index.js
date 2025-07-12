@@ -16,8 +16,8 @@ const router = [
   {path: "/technovista/events/hackathon", component: Hackathon},
   { path: "/technovista/terms-and-conditions", component: TermsAndConditions },
   { path: "/technovista/devs", component: TvDevs },
-  { path: "/technovista/events/DataDetective", component: DataDetective },
-  { path: "/technovista/events/DebugOrDie", component: DebugOrDie },
+  { path: "/technovista/events/data-detective", component: DataDetective },
+  { path: "/technovista/events/debug-or-die", component: DebugOrDie },
   { path: "*", component: LandingTV },
 ];
 
