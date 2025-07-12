@@ -6,7 +6,7 @@ import Reveal from "../components/Reveal.jsx";
 import "./Technovista.css";
 import { AnimatePresence, motion } from "framer-motion";
 import { gsap } from "gsap";
-import mainPoster from "/events/Technovista2025/main.jpg";
+import mainPoster from "/events/Technovista2025/main.png";
 
 const backdropVariants = {
   hidden: { opacity: 0 },

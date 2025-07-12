@@ -38,6 +38,7 @@ export const eventTimeLine = [
         image: "/events/Technovista2025/DataDetective/Cartoon.jpg",
         cartoon: "/events/Technovista2025/DataDetective/Cartoon.jpg",
         priority: 4,
+        url: "/technovista/events/data-detective",
       },
       {
         id: 3,
@@ -100,6 +101,7 @@ export const eventTimeLine = [
         image: "/events/Technovista2025/DebugOrDie/Cartoon.jpg",
         cartoon: "/events/Technovista2025/DebugOrDie/Cartoon.jpg",
         priority: 5,
+        url: "/technovista/events/debug-or-die",
       },
       {
         id: 7,
