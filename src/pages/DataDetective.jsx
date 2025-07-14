@@ -1,12 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import FooterTV from "../components/FooterTV";
 
 const DataDetective = () => {
   const navigate = useNavigate();
   const [showVideo, setShowVideo] = React.useState(false);
 
   return (
+    <>
     <div className="bg-black min-h-screen text-white font-sans pt-12">
       {/* Header Section */}
       <div className="max-w-6xl mx-auto px-4 py-12">
@@ -537,6 +539,8 @@ const DataDetective = () => {
         </div>
       </div>
     </div>
+    <FooterTV />
+    </>
   );
 };
 
