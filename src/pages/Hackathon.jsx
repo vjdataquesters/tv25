@@ -1,11 +1,12 @@
 import React from "react";
 import FooterTV from "../components/FooterTV";
-import NavbarTv from "../components/NavbarTv";
+
+
 const Hackathon = () => {
-  const [showVideo, setShowVideo] = React.useState(false); // Show video by default
-  return (<>
+  const [showVideo, setShowVideo] = React.useState(false); 
+  return (
+    <>
     <div className="bg-black min-h-screen text-white font-sans pt-12">
-      <NavbarTv />
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="mb-10">
           <h1 className="text-center text-4xl sm:text-5xl font-extrabold text-[#daa425] mb-2 drop-shadow-lg">
@@ -33,7 +34,7 @@ const Hackathon = () => {
               <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">
                 next generation
               </span>{" "}
-              of software. Let’s build the future together, where{" "}
+              of software. Let's build the future together, where{" "}
               <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">
                 everyone can be a programmer
               </span>
@@ -64,13 +65,34 @@ const Hackathon = () => {
                   ></iframe>
                 </div>
               </div>
-
             )}
-
           </div>
         </div>
 
-
+        {/* Problem Statements Section */}
+        <div className="mb-10">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-xl hover:bg-white/10 hover:from-[#daa425]/30 hover:to-yellow-400/20 transition-all duration-300 hover:scale-102 hover:shadow-2xl">
+            <h3 className="text-2xl font-bold text-[#daa425] mb-4 flex items-center justify-center">
+              <span className="mr-2 text-2xl">📋</span>
+              Problem Statements Released!
+            </h3>
+            <div className="text-center">
+              <p className="text-gray-200 text-base mb-4 leading-relaxed">
+                The hackathon problem statements are now available. Click below to view all the exciting challenges waiting for you!
+              </p>
+              <a
+                href="https://drive.google.com/file/d/1BtYjuKpWoWRf0TXRuJ1HnLi1hGAaBsbK/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-gradient-to-r from-[#daa425] to-yellow-400 text-black px-6 py-3 rounded-lg font-bold text-base shadow-lg hover:from-yellow-400 hover:to-[#daa425] transition-all duration-300 hover:scale-105 hover:shadow-xl transform"
+              >
+                <span className="mr-2 text-lg">🔗</span>
+                View Problem Statements
+                {/* <span className="ml-2 text-lg">📄</span> */}
+              </a>
+            </div>
+          </div>
+        </div>
 
         {/* Team Formation */}
         <div className="mb-12 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl hover:bg-white/10 transition-all duration-300">
@@ -175,15 +197,6 @@ const Hackathon = () => {
                 <li className="flex items-start">
                   <span className="bg-[#daa425] text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3 mt-0.5 flex-shrink-0">3</span>
                   <div><p className="mb-2">Wait for the results</p></div>
-                  {/*
-                  MEtrics phase 1
-                  <div>
-                    <ul className="ml-4 space-y-1">
-                      <li>• Clarity of the idea</li>
-                      <li>• Supporting points in PPT</li>
-                      <li>• Presentation & communication skills</li>
-                    </ul>
-                  </div> */}
                 </li>
               </ol>
             </div>
@@ -241,38 +254,6 @@ const Hackathon = () => {
           </div>
         </div>
 
-        {/* Finale
-        <div className="mb-12">
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl hover:bg-white/10 transition-all duration-300">
-            <h3 className="text-2xl font-bold text-[#daa425] mb-6 flex items-center">
-              <span className="mr-3">🏁</span>
-              Final Hackathon VNR VJIET Campus
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6 text-center">
-                <div className="text-3xl mb-3">🏢</div>
-                <p className="text-yellow-300 font-semibold mb-2">Location</p>
-                <p className="text-gray-200">On-site at VNR Campus</p>
-              </div>
-              <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6 text-center">
-                <div className="text-3xl mb-3">🎯</div>
-                <p className="text-yellow-300 font-semibold mb-2">Problems</p>
-                <p className="text-gray-200">4 distinct problem statements</p>
-              </div>
-              <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6 text-center">
-                <div className="text-3xl mb-3">🎓</div>
-                <p className="text-yellow-300 font-semibold mb-2">Support</p>
-                <p className="text-gray-200">Dedicated mentor for every team</p>
-              </div>
-              <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6 text-center">
-                <div className="text-3xl mb-3">🏆</div>
-                <p className="text-yellow-300 font-semibold mb-2">Winners</p>
-                <p className="text-gray-200">1 winner per problem statement</p>
-              </div>
-            </div>
-          </div>
-        </div> */}
-
         {/* Call to Action */}
         <div className="text-center">
           <div className="bg-gradient-to-r from-[#daa425]/10 to-yellow-400/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
@@ -295,7 +276,7 @@ const Hackathon = () => {
       </div>
     </div>
     <FooterTV />
-  </>
+    </>
   );
 };
 
