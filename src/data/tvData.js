@@ -113,7 +113,7 @@ export const eventTimeLine = [
           "Join a 24-hour coding marathon where teams innovate, prototype, and present impactful tech solutions. From late-night brainstorming to sunrise demos, build something amazing and push your creative boundaries to the limit!",
         highlights: ["Ideation Blitz", "Rapid Prototyping", "Sunrise Demos"],
         icon: "👨‍💻",
-        image: "/events/Technovista2025/Hackathon/Cartoon.jpg",
+        image: "/events/Technovista2025/Hackathon/Poster.png",
         cartoon: "/events/Technovista2025/Hackathon/Cartoon.jpg",
         priority: 1,
         url: "/technovista/events/hackathon",
