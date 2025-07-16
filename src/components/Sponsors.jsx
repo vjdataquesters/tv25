@@ -49,7 +49,7 @@ function Sponsors() {
         </div>
 
         {/* Desktop Grid - No Boxes */}
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           {/* I20fever Sponsor */}
           <div className="text-center">
             <div className="text-[#daa425] font-mono font-semibold mb-2 text-base tracking-wide">
@@ -83,6 +83,22 @@ function Sponsors() {
           <div className="text-center">
             <SponsorGfgTv />
           </div>
+          {/* Barkaas Sponsor */}
+          <div className="text-center">
+            <div className="text-[#daa425] font-mono font-semibold mb-2 text-base tracking-wide">
+              Special Partner
+            </div>
+            <div
+              className={`${sponsorBgColor} p-2 rounded flex justify-center`}
+            >
+              <img
+                src="/Barkaas.png"
+                alt="Barkaas Logo"
+                className="h-10 lg:h-12 w-auto object-contain"
+              />
+            </div>
+          </div>
+
           {/* AlumnX Sponsor */}
         </div>
 
@@ -98,11 +114,11 @@ function Sponsors() {
               }}
             >
               {/* Duplicate sponsors for seamless loop */}
-              {Array(6)
+              {Array(8)
                 .fill(null)
                 .map((_, idx) => (
                   <div key={idx} className="flex-shrink-0">
-                    {idx % 3 === 0 && (
+                    {idx % 4 === 0 && (
                       <div className="w-64 text-center">
                         <div className="text-[#daa425] font-mono font-semibold mb-1 text-base tracking-wide">
                           Title Sponsor
@@ -118,7 +134,7 @@ function Sponsors() {
                         </div>
                       </div>
                     )}
-                    {idx % 3 === 1 && (
+                    {idx % 4 === 1 && (
                       <div className="w-64 text-center">
                         <div className="text-[#daa425] font-mono font-semibold mb-1 text-base tracking-wide">
                           Silver Sponsor
@@ -134,9 +150,25 @@ function Sponsors() {
                         </div>
                       </div>
                     )}
-                    {idx % 3 === 2 && (
+                    {idx % 4 === 2 && (
                       <div className="w-64 text-center">
                         <SponsorGfgTv />
+                      </div>
+                    )}
+                    {idx % 4 === 3 && (
+                      <div className="w-64 text-center">
+                        <div className="text-[#daa425] font-mono font-semibold mb-1 text-base tracking-wide">
+                          Special Partner
+                        </div>
+                        <div
+                          className={`${sponsorBgColor} p-2 rounded flex justify-center`}
+                        >
+                          <img
+                            src="/Barkaas.png"
+                            alt="Barkaas Logo"
+                            className="h-10 w-auto object-contain"
+                          />
+                        </div>
                       </div>
                     )}
                   </div>
