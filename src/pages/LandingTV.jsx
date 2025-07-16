@@ -360,7 +360,7 @@ const LandingTV = () => {
         </div>
 
         {/* Knowledge Partner - GeeksforGeeks */}
-        <div className="absolute bottom-4 right-4 bg-amber-500/20 border border-yellow-600/40 shadow-md shadow-yellow-900/30 pointer-events-none z-[9998] text-white px-5 pb-4 pt-1 rounded-xl">
+        {/* <div className="absolute bottom-4 right-4 bg-amber-500/20 border border-yellow-600/40 shadow-md shadow-yellow-900/30 pointer-events-none z-[9998] text-white px-5 pb-4 pt-1 rounded-xl">
           <div className="flex flex-col items-center">
             <span className="font-mono text-[10px] sm:text-xs font-light tracking-wide text-[#d5f6e4] whitespace-nowrap mb-2">
               Knowledge Partner
@@ -371,7 +371,7 @@ const LandingTV = () => {
               className="h-6 sm:h-8 w-auto object-contain"
             />
           </div>
-        </div>
+        </div> */}
       </section>
     </>
   );
