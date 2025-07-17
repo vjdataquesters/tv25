@@ -13,10 +13,13 @@ const DebugOrDie = () => {
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="mb-10">
           <div className="relative text-center mb-4">
-            <ArrowLeft
+            <button
               onClick={() => navigate("/technovista/events")}
-              className="absolute right-0 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400 hover:text-yellow-500 hover:scale-110 transition-transform duration-300 cursor-pointer"
-            />
+              className="absolute right-0 top-1/2 -translate-y-1/2 p-2 rounded-full text-gray-400 hover:text-yellow-500 hover:bg-gray-950 transition duration-150 ease-in-out cursor-pointer flex items-center justify-center"
+              aria-label="Go Back"
+            >
+              <ArrowLeft className="w-6 h-6" />
+            </button>
           </div>
           <h1 className="text-center text-4xl sm:text-5xl font-extrabold text-[#daa425] mb-2 drop-shadow-lg">
             🕵️‍♂️ Debug or Die
