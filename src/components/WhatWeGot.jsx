@@ -6,7 +6,7 @@ function WhatWeGot() {
   const translations = [
     { lang: "English", text: " Technovista" },
     { lang: "Hindi", text: " टेक्नोविस्टा" },
-    { lang: "Telugu", text: " టెక్నోవిస్తా" },
+    { lang: "Telugu", text: " టెక్నోవిస్టా" },
     { lang: "Malayalam", text: " ടെക്നോവിസ്റ്റ" },
   ];
 
