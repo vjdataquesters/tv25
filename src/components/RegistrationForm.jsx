@@ -27,6 +27,9 @@ const api = axios.create({
   },
 });
 
+const hour = new Date().getHours();
+const qr = hour >= 9 && hour < 17 ? "VNRVJIETQR" : "ADITYAQR";
+
 const transitionVariants = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
@@ -439,9 +442,9 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                               <img
                                 src={`/${
                                   watchCollege === "VNRVJIET"
-                                    ? "ADITYAQR170"
-                                    : "ADITYAQR250"
-                                }.jpg`}
+                                    ? `${qr}170.jpg`
+                                    : `${qr}250.jpg`
+                                }`}
                                 alt="Payment QR Code"
                                 className="w-48 h-48 md:w-56 md:h-56 object-contain rounded-lg"
                               />
