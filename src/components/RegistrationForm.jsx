@@ -442,8 +442,8 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                               <img
                                 src={`/${
                                   watchCollege === "VNRVJIET"
-                                    ? `${qr}170.jpg`
-                                    : `${qr}250.jpg`
+                                    ? `VNRVJIETQR170.jpg`
+                                    : `VNRVJIETQR250.jpg`
                                 }`}
                                 alt="Payment QR Code"
                                 className="w-48 h-48 md:w-56 md:h-56 object-contain rounded-lg"
