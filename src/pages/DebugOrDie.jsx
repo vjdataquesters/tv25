@@ -15,7 +15,7 @@ const DebugOrDie = () => {
           <div className="relative text-center mb-4">
             <button
               onClick={() => navigate("/technovista/events")}
-              className="absolute right-0 top-1/2 -translate-y-1/2 p-2 rounded-full text-gray-400 hover:text-yellow-500 hover:bg-gray-950 transition duration-150 ease-in-out cursor-pointer flex items-center justify-center"
+              className="absolute right-0 top-1/2 -translate-y-1/2 p-2 rounded-full text-gray-400 hover:text-yellow-500 hover:bg-gray-950 cursor-pointer flex items-center justify-center"
               aria-label="Go Back"
             >
               <ArrowLeft className="w-6 h-6" />
