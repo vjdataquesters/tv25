@@ -123,7 +123,14 @@ const EventsTV = () => {
       const section = eventRefs.current[scrollToEvent];
       if (section) {
         setTimeout(() => {
-          section.scrollIntoView({ behavior: "smooth", block: "start" });
+          const offsetTop =
+            section.getBoundingClientRect().top + window.scrollY;
+          const offset = 100;
+
+          window.scrollTo({
+            top: offsetTop - offset,
+            behavior: "smooth",
+          });
         }, 100);
       }
     }
@@ -278,7 +285,7 @@ const EventsTV = () => {
                     venue,
                     highlights,
                     icon,
-                    url
+                    url,
                   },
                   index
                 ) => (
@@ -370,8 +377,7 @@ const EventsTV = () => {
                                   </button>
                                 );
                               }
-                            } 
-                            else if(url) {
+                            } else if (url) {
                               return (
                                 <Link
                                   to={url}
@@ -379,9 +385,8 @@ const EventsTV = () => {
                                 >
                                   Know more
                                 </Link>
-                              )
-                            }
-                            else {
+                              );
+                            } else {
                               return (
                                 <span className="block w-full text-center border border-yellow-300 text-yellow-400 font-medium px-4 py-2 rounded-2xl backdrop-blur-2xl bg-white/5">
                                   Stay Tuned

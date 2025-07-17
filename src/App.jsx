@@ -9,9 +9,21 @@ import { Analytics } from "@vercel/analytics/react";
 
 import router from "./pages";
 import ScrollToTop from "./components/ScrollToTop";
+import { PromoDiv } from "./components/PromoDiv";
+
+function PromoSection() {
+  const { pathname } = useLocation();
+  return (
+    pathname !== "/technovista/register" &&
+    pathname !== "/technovista/updates" && (
+      <div className="fixed bottom-2 md:bottom-6 right-2 flex flex-col gap-2 z-[99999]">
+        <PromoDiv link="/technovista/updates" />
+      </div>
+    )
+  );
+}
 
 function LayoutWrapper() {
-
   return (
     <>
       <Analytics />
@@ -27,6 +39,7 @@ function LayoutWrapper() {
           ))}
         </Routes>
       </div>
+      <PromoSection />
     </>
   );
 }
