@@ -50,7 +50,7 @@ export const eventTimeLine = [
           "Showcase your writing skills and tech knowledge by penning powerful blogs on emerging tech topics.Share your insights and perspectives on innovations shaping tomorrow.",
         highlights: ["Creativity", "Technical Accuracy", "Publication Chance"],
         icon: "✍️",
-        image: "/events/Technovista2025/Blogathon/Cartoon.jpg",
+        image: "/events/Technovista2025/Blogathon/Poster.png",
         cartoon: "/events/Technovista2025/Blogathon/Cartoon.jpg",
         priority: 7,
       },
