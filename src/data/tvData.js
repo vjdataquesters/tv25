@@ -45,7 +45,7 @@ export const eventTimeLine = [
         title: "Blogathon",
         date: "2025-07-31",
         time: "1:30 PM - 3:30 PM",
-        formlink: "",
+        formlink: "https://docs.google.com/forms/d/e/1FAIpQLSfUohZh_CGQtHAmlzRYnpCZ5EgUnBNsfAaJbV75vZEdIvitvw/viewform",
         description:
           "Showcase your writing skills and tech knowledge by penning powerful blogs on emerging tech topics.Share your insights and perspectives on innovations shaping tomorrow.",
         highlights: ["Creativity", "Technical Accuracy", "Publication Chance"],
