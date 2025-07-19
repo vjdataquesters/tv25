@@ -92,11 +92,15 @@ export const eventTimeLine = [
         id: 6,
         title: "Debug (or) Die",
         date: "2025-08-01",
-        time: "10:00 AM - 12:30 PM",
+        time: "10:00 AM - 4:30 PM",
         formlink: "",
         description:
-          "Fix buggy code faster than your rivals in a high-stakes debugging battle. Think like a compiler, race against time, and prove your eye for errors in a game of logic and speed—where precision, focus, and quick thinking are everything.",
-        highlights: ["Real Bugs", "Speed Test", "Logic Puzzles"],
+          "Escape-room-style challenge where code detectives race against time to debug, decode, and escape! A thrilling test of logic, technical skills, and critical thinking.",
+        highlights: [
+          "Escape-Room Challenge",
+          "Code & Logic Puzzles",
+          "Team-Based Competition"
+        ],
         icon: "🔍",
         image: "/events/Technovista2025/DebugOrDie/Cartoon.jpg",
         cartoon: "/events/Technovista2025/DebugOrDie/Cartoon.jpg",
