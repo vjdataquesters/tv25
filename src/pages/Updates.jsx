@@ -34,6 +34,18 @@ export default function UpdatesSection() {
           },
         }),
     },
+    {
+      date: "18th July 2025",
+      title: "Blogathon Registrations",
+      description:
+        "Blogathon registrations are now open. Unleash your creativity and let your words inspire!",
+      handler: () =>
+        navigate("/technovista/events", {
+          state: {
+            title: "Blogathon"
+          },
+        }),
+    },
   ];
 
   return (
