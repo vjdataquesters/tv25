@@ -45,12 +45,12 @@ export const eventTimeLine = [
         title: "Blogathon",
         date: "2025-07-31",
         time: "1:30 PM - 3:30 PM",
-        formlink: "",
+        formlink: "https://docs.google.com/forms/d/e/1FAIpQLSfUohZh_CGQtHAmlzRYnpCZ5EgUnBNsfAaJbV75vZEdIvitvw/viewform",
         description:
           "Showcase your writing skills and tech knowledge by penning powerful blogs on emerging tech topics.Share your insights and perspectives on innovations shaping tomorrow.",
         highlights: ["Creativity", "Technical Accuracy", "Publication Chance"],
         icon: "✍️",
-        image: "/events/Technovista2025/Blogathon/Cartoon.jpg",
+        image: "/events/Technovista2025/Blogathon/Poster.png",
         cartoon: "/events/Technovista2025/Blogathon/Cartoon.jpg",
         priority: 7,
       },
@@ -92,11 +92,15 @@ export const eventTimeLine = [
         id: 6,
         title: "Debug (or) Die",
         date: "2025-08-01",
-        time: "10:00 AM - 12:30 PM",
+        time: "10:00 AM - 4:30 PM",
         formlink: "",
         description:
-          "Fix buggy code faster than your rivals in a high-stakes debugging battle. Think like a compiler, race against time, and prove your eye for errors in a game of logic and speed—where precision, focus, and quick thinking are everything.",
-        highlights: ["Real Bugs", "Speed Test", "Logic Puzzles"],
+          "Escape-room-style challenge where code detectives race against time to debug, decode, and escape! A thrilling test of logic, technical skills, and critical thinking.",
+        highlights: [
+          "Escape-Room Challenge",
+          "Code & Logic Puzzles",
+          "Team-Based Competition"
+        ],
         icon: "🔍",
         image: "/events/Technovista2025/DebugOrDie/Cartoon.jpg",
         cartoon: "/events/Technovista2025/DebugOrDie/Cartoon.jpg",
