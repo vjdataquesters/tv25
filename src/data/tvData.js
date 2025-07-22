@@ -111,7 +111,7 @@ export const eventTimeLine = [
         id: 7,
         title: "24 - Hour Hackathon",
         date: "2025-08-01",
-        time: "2:00 PM (Aug 1ˢᵗ) - 3:00 PM (Aug 2ⁿᵈ)",
+        time: "1:00 PM (Aug 1ˢᵗ) - 1:00 PM (Aug 2ⁿᵈ)",
         formlink: "",
         description:
           "Join a 24-hour coding marathon where teams innovate, prototype, and present impactful tech solutions. From late-night brainstorming to sunrise demos, build something amazing and push your creative boundaries to the limit!",
