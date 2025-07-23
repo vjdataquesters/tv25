@@ -136,9 +136,9 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
         paymentplatform: data.paymentplatform,
         transactionid: data.transactionid,
         image: fileNameStorage,
+        qr
       };
       const response = await api.post("/register", finalData);
-      console.log(finalData);
       if (!response.data.success) {
         alert("Registration failed. Please try again.");
         return;
@@ -440,11 +440,10 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                             </h3>
                             <div className="bg-white rounded-xl p-3 shadow-lg">
                               <img
-                                src={`/${
-                                  watchCollege === "VNRVJIET"
+                                src={`/${watchCollege === "VNRVJIET"
                                     ? `${qr}170.jpg`
                                     : `${qr}250.jpg`
-                                }`}
+                                  }`}
                                 alt="Payment QR Code"
                                 className="w-48 h-48 md:w-56 md:h-56 object-contain rounded-lg"
                               />
