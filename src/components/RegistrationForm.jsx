@@ -28,7 +28,8 @@ const api = axios.create({
 });
 
 const hour = new Date().getHours();
-const qr = (hour >= 9 && hour < 19) ? "VNRVJIETQR" : "ADITYAQR";
+// const qr = (hour >= 9 && hour < 19) ? "VNRVJIETQR" : "ADITYAQR";
+const qr = (true) ? "VNRVJIETQR" : "ADITYAQR";
 
 const transitionVariants = {
   initial: { opacity: 0, y: 20 },
