@@ -35,7 +35,7 @@ export const eventTimeLine = [
           "Storytelling with Data",
         ],
         icon: "🕵️‍♂️",
-        image: "/events/Technovista2025/DataDetective/Cartoon.jpg",
+        image: "/events/Technovista2025/DataDetective/Poster.png",
         cartoon: "/events/Technovista2025/DataDetective/Cartoon.jpg",
         priority: 4,
         url: "/technovista/events/data-detective",
