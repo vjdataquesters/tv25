@@ -16,8 +16,11 @@ import NavbarTv from "./NavbarTv";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 
-const SERVER_URL = "https://api.vjdataquesters.com";
-
+const SERVER_URL =
+  import.meta.env.MODE === "development"
+    ? "http://localhost:3000"
+    : "https://api.vjdataquesters.com";
+    
 const api = axios.create({
   baseURL: SERVER_URL,
   headers: {
