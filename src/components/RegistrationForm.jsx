@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from "react";
+import { Lock } from "lucide-react";
+
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import {
@@ -710,58 +712,58 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   );
 };
 
-const SubmittedComp = () => {
-  const navigate = useNavigate();
+// const SubmittedComp = () => {
+//   const navigate = useNavigate();
 
-  return (
-    <motion.div
-      key="submitted"
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={transitionVariants}
-      className="flex flex-col items-center justify-center min-h-[80vh] text-center bg-black text-yellow-300 px-4"
-    >
-      {/* Check Icon Container */}
-      <motion.div
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1.2, opacity: 1 }}
-        transition={{ type: "spring", stiffness: 150, damping: 10, delay: 0.2 }}
-        className="bg-[#f2ca46] text-black p-4 rounded-full shadow-lg"
-      >
-        <CheckCircle size={50} />
-      </motion.div>
+//   return (
+//     <motion.div
+//       key="submitted"
+//       initial="initial"
+//       animate="animate"
+//       exit="exit"
+//       variants={transitionVariants}
+//       className="flex flex-col items-center justify-center min-h-[80vh] text-center bg-black text-yellow-300 px-4"
+//     >
+//       {/* Check Icon Container */}
+//       <motion.div
+//         initial={{ scale: 0, opacity: 0 }}
+//         animate={{ scale: 1.2, opacity: 1 }}
+//         transition={{ type: "spring", stiffness: 150, damping: 10, delay: 0.2 }}
+//         className="bg-[#f2ca46] text-black p-4 rounded-full shadow-lg"
+//       >
+//         <CheckCircle size={50} />
+//       </motion.div>
 
-      {/* Title */}
-      <h2 className="text-3xl font-bold mt-6 text-yellow-200 drop-shadow-sm">
-        Submission Successful!
-      </h2>
+//       {/* Title */}
+//       <h2 className="text-3xl font-bold mt-6 text-yellow-200 drop-shadow-sm">
+//         Submission Successful!
+//       </h2>
 
-      {/* Subtitle */}
-      <p className="text-yellow-100 text-sm text-center mt-4">
-        Thank you for registering. You{"'"}ll receive your pass via email within
-        48 hours.
-        <br />
-        <span className="text-yellow-300 font-medium">
-          Please check your spam folder as well.
-        </span>
-      </p>
+//       {/* Subtitle */}
+//       <p className="text-yellow-100 text-sm text-center mt-4">
+//         Thank you for registering. You{"'"}ll receive your pass via email within
+//         48 hours.
+//         <br />
+//         <span className="text-yellow-300 font-medium">
+//           Please check your spam folder as well.
+//         </span>
+//       </p>
 
-      {/* Button */}
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={() => navigate("/technovista/events")}
-        className="mt-8 inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-full shadow-md 
-          bg-gradient-to-r from-[#f2ca46] via-[#daa425] to-yellow-600 
-          text-black hover:shadow-[#daa425]/30 transition-all duration-300"
-      >
-        <ExternalLink size={18} />
-        Explore Events
-      </motion.button>
-    </motion.div>
-  );
-};
+//       {/* Button */}
+//       <motion.button
+//         whileHover={{ scale: 1.05 }}
+//         whileTap={{ scale: 0.95 }}
+//         onClick={() => navigate("/technovista/events")}
+//         className="mt-8 inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-full shadow-md 
+//           bg-gradient-to-r from-[#f2ca46] via-[#daa425] to-yellow-600 
+//           text-black hover:shadow-[#daa425]/30 transition-all duration-300"
+//       >
+//         <ExternalLink size={18} />
+//         Explore Events
+//       </motion.button>
+//     </motion.div>
+//   );
+// };
 
 const LoadingComp = () => {
   return (
@@ -792,9 +794,34 @@ const LoadingComp = () => {
   );
 };
 
+
+const FormClosedComp = () => {
+  return (
+    <div className="flex flex-col items-center justify-center text-yellow-300 h-full min-h-[90vh]">
+      <motion.div
+        className="relative backdrop-blur-xl border border-[#daa425]/30 shadow-[0_0_40px_rgba(255,255,255,0.05)] rounded-2xl p-10 min-w-[80%] lg:w-full text-center flex flex-col items-center justify-center min-h-[90vh]"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Lock size={48} className="text-yellow-300 mb-4" />
+        <motion.p
+          animate="animate"
+          className="text-yellow-200 font-medium text-base"
+        >
+          This form is currently closed.
+        </motion.p>
+        <p className="text-yellow-200/70 text-sm mt-2">
+          Please check back later or contact support.
+        </p>
+      </motion.div>
+    </div>
+  );
+};
+
 const RegistrationForm = () => {
   const [loadingStatus, setLoadingStatus] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(true);
 
   return (
     <>
@@ -813,7 +840,7 @@ const RegistrationForm = () => {
           {loadingStatus ? (
             <LoadingComp />
           ) : submitStatus ? (
-            <SubmittedComp />
+            <FormClosedComp />
           ) : (
             <FormComp
               setLoadingStatus={setLoadingStatus}
