@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import {
@@ -8,6 +8,7 @@ import {
   Zap,
   ExternalLink,
   MoveRight,
+  Loader2,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -15,10 +16,7 @@ import NavbarTv from "./NavbarTv";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 
-const SERVER_URL =
-  import.meta.env.MODE === "development"
-    ? "http://localhost:3000"
-    : "https://api.vjdataquesters.com";
+const SERVER_URL = "https://api.vjdataquesters.com";
 
 const api = axios.create({
   baseURL: SERVER_URL,
@@ -27,9 +25,6 @@ const api = axios.create({
   },
 });
 
-const hour = new Date().getHours();
-// const qr = (hour >= 9 && hour < 19) ? "VNRVJIETQR" : "ADITYAQR";
-const qr = (true) ? "VNRVJIETQR" : "ADITYAQR";
 
 const transitionVariants = {
   initial: { opacity: 0, y: 20 },
@@ -41,6 +36,11 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   const [showPaymentFields, setShowPaymentFields] = useState(false); // Added this missing state
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const containerRef = useRef(null);
+  const [file, setFile] = useState(null);
+  const [qr, setQr] = useState("VNRVJIETQR");
+  const [qrLoading, setQrLoading] = useState(false);
+
+
   const compressImageWithCanvas = (file) =>
     new Promise((resolve, reject) => {
       const img = new Image();
@@ -67,7 +67,26 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
 
       img.onerror = (e) => reject(e);
     });
-  const [file, setFile] = useState(null);
+
+  const fetchQrCode = async () => {
+    setQrLoading(true);
+    api
+      .get("/register/get-payment-qr")
+      .then(({ data }) => {
+        if (data.success) {
+          setQr(data.qr);
+        }
+        else setQr("VNRVJIETQR");
+        setQrLoading(false);
+        setShowPaymentFields(true);
+      })
+      .catch((error) => {
+        console.error("Error fetching QR code:", error);
+        setQr("VNRVJIETQR");
+        setQrLoading(false);
+        setShowPaymentFields(true);
+      });
+  }
 
   const {
     register,
@@ -442,8 +461,8 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                             <div className="bg-white rounded-xl p-3 shadow-lg">
                               <img
                                 src={`/${watchCollege === "VNRVJIET"
-                                    ? `${qr}170.jpg`
-                                    : `${qr}250.jpg`
+                                  ? `${qr}170.jpg`
+                                  : `${qr}250.jpg`
                                   }`}
                                 alt="Payment QR Code"
                                 className="w-48 h-48 md:w-56 md:h-56 object-contain rounded-lg"
@@ -531,7 +550,9 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                       }}
                       whileTap={{ scale: 0.95 }}
                       type="button"
-                      onClick={() => setShowPaymentFields(true)}
+                      onClick={async () => {
+                        await fetchQrCode();
+                      }}
                       className="group relative inline-flex items-center justify-center gap-2 px-4 py-1
                                       bg-gradient-to-r from-[#f2ca46] via-[#daa425] to-yellow-600
                                       text-black font-bold text-xl rounded-2xl shadow-xl
@@ -548,7 +569,11 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                         Pay ₹ {watchCollege === "VNRVJIET" ? "170" : "250"} /-
                       </span>
                       {/* Arrow with slide animation */}
-                      <MoveRight className="scale-75" />
+                      {qrLoading ? (
+                        <Loader2 className="animate-spin"/>
+                      ) : (
+                        <MoveRight className="scale-75" />
+                      )}
                       {/* Shine effect */}
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
                     </motion.button>
