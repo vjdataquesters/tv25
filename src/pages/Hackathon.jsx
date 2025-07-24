@@ -218,7 +218,7 @@ const Hackathon = () => {
                   <div className="flex justify-between items-center bg-white/5 rounded-lg p-3">
                     <span className="text-gray-300">Submission Deadline:</span>
                     <span className="text-yellow-300 font-semibold">
-                      25th July
+                      26th July (extended)
                     </span>
                   </div>
                   <div className="flex justify-between items-center bg-white/5 rounded-lg p-3">

@@ -22,14 +22,13 @@ const SERVER_URL =
   import.meta.env.MODE === "development"
     ? "http://localhost:3000"
     : "https://api.vjdataquesters.com";
-    
+
 const api = axios.create({
   baseURL: SERVER_URL,
   headers: {
     "Content-Type": "application/json",
   },
 });
-
 
 const transitionVariants = {
   initial: { opacity: 0, y: 20 },
@@ -44,7 +43,6 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   const [file, setFile] = useState(null);
   const [qr, setQr] = useState("VNRVJIETQR");
   const [qrLoading, setQrLoading] = useState(false);
-
 
   const compressImageWithCanvas = (file) =>
     new Promise((resolve, reject) => {
@@ -80,8 +78,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
       .then(({ data }) => {
         if (data.success) {
           setQr(data.qr);
-        }
-        else setQr("VNRVJIETQR");
+        } else setQr("VNRVJIETQR");
         setQrLoading(false);
         setShowPaymentFields(true);
       })
@@ -91,7 +88,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
         setQrLoading(false);
         setShowPaymentFields(true);
       });
-  }
+  };
 
   const {
     register,
@@ -161,7 +158,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
         paymentplatform: data.paymentplatform,
         transactionid: data.transactionid,
         image: fileNameStorage,
-        qr
+        qr,
       };
       const response = await api.post("/register", finalData);
       if (!response.data.success) {
@@ -465,10 +462,11 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                             </h3>
                             <div className="bg-white rounded-xl p-3 shadow-lg">
                               <img
-                                src={`/${watchCollege === "VNRVJIET"
-                                  ? `${qr}170.jpg`
-                                  : `${qr}250.jpg`
-                                  }`}
+                                src={`/${
+                                  watchCollege === "VNRVJIET"
+                                    ? `${qr}170.jpg`
+                                    : `${qr}250.jpg`
+                                }`}
                                 alt="Payment QR Code"
                                 className="w-48 h-48 md:w-56 md:h-56 object-contain rounded-lg"
                               />
@@ -575,7 +573,7 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
                       </span>
                       {/* Arrow with slide animation */}
                       {qrLoading ? (
-                        <Loader2 className="animate-spin"/>
+                        <Loader2 className="animate-spin" />
                       ) : (
                         <MoveRight className="scale-75" />
                       )}
@@ -712,58 +710,58 @@ const FormComp = ({ setLoadingStatus, setSubmitStatus }) => {
   );
 };
 
-// const SubmittedComp = () => {
-//   const navigate = useNavigate();
+const SubmittedComp = () => {
+  const navigate = useNavigate();
 
-//   return (
-//     <motion.div
-//       key="submitted"
-//       initial="initial"
-//       animate="animate"
-//       exit="exit"
-//       variants={transitionVariants}
-//       className="flex flex-col items-center justify-center min-h-[80vh] text-center bg-black text-yellow-300 px-4"
-//     >
-//       {/* Check Icon Container */}
-//       <motion.div
-//         initial={{ scale: 0, opacity: 0 }}
-//         animate={{ scale: 1.2, opacity: 1 }}
-//         transition={{ type: "spring", stiffness: 150, damping: 10, delay: 0.2 }}
-//         className="bg-[#f2ca46] text-black p-4 rounded-full shadow-lg"
-//       >
-//         <CheckCircle size={50} />
-//       </motion.div>
+  return (
+    <motion.div
+      key="submitted"
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={transitionVariants}
+      className="flex flex-col items-center justify-center min-h-[80vh] text-center bg-black text-yellow-300 px-4"
+    >
+      {/* Check Icon Container */}
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1.2, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 150, damping: 10, delay: 0.2 }}
+        className="bg-[#f2ca46] text-black p-4 rounded-full shadow-lg"
+      >
+        <CheckCircle size={50} />
+      </motion.div>
 
-//       {/* Title */}
-//       <h2 className="text-3xl font-bold mt-6 text-yellow-200 drop-shadow-sm">
-//         Submission Successful!
-//       </h2>
+      {/* Title */}
+      <h2 className="text-3xl font-bold mt-6 text-yellow-200 drop-shadow-sm">
+        Submission Successful!
+      </h2>
 
-//       {/* Subtitle */}
-//       <p className="text-yellow-100 text-sm text-center mt-4">
-//         Thank you for registering. You{"'"}ll receive your pass via email within
-//         48 hours.
-//         <br />
-//         <span className="text-yellow-300 font-medium">
-//           Please check your spam folder as well.
-//         </span>
-//       </p>
+      {/* Subtitle */}
+      <p className="text-yellow-100 text-sm text-center mt-4">
+        Thank you for registering. You{"'"}ll receive your pass via email within
+        48 hours.
+        <br />
+        <span className="text-yellow-300 font-medium">
+          Please check your spam folder as well.
+        </span>
+      </p>
 
-//       {/* Button */}
-//       <motion.button
-//         whileHover={{ scale: 1.05 }}
-//         whileTap={{ scale: 0.95 }}
-//         onClick={() => navigate("/technovista/events")}
-//         className="mt-8 inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-full shadow-md 
-//           bg-gradient-to-r from-[#f2ca46] via-[#daa425] to-yellow-600 
-//           text-black hover:shadow-[#daa425]/30 transition-all duration-300"
-//       >
-//         <ExternalLink size={18} />
-//         Explore Events
-//       </motion.button>
-//     </motion.div>
-//   );
-// };
+      {/* Button */}
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={() => navigate("/technovista/events")}
+        className="mt-8 inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-full shadow-md 
+          bg-gradient-to-r from-[#f2ca46] via-[#daa425] to-yellow-600 
+          text-black hover:shadow-[#daa425]/30 transition-all duration-300"
+      >
+        <ExternalLink size={18} />
+        Explore Events
+      </motion.button>
+    </motion.div>
+  );
+};
 
 const LoadingComp = () => {
   return (
@@ -794,7 +792,6 @@ const LoadingComp = () => {
   );
 };
 
-
 const FormClosedComp = () => {
   return (
     <div className="flex flex-col items-center justify-center text-yellow-300 h-full min-h-[90vh]">
@@ -821,7 +818,8 @@ const FormClosedComp = () => {
 
 const RegistrationForm = () => {
   const [loadingStatus, setLoadingStatus] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(true);
+  const [submitStatus, setSubmitStatus] = useState(false);
+  const [isFormClosed, setIsFormClosed] = useState(true);
 
   return (
     <>
@@ -839,8 +837,10 @@ const RegistrationForm = () => {
         >
           {loadingStatus ? (
             <LoadingComp />
-          ) : submitStatus ? (
+          ) : isFormClosed ? (
             <FormClosedComp />
+          ) : submitStatus ? (
+            <SubmittedComp />
           ) : (
             <FormComp
               setLoadingStatus={setLoadingStatus}
