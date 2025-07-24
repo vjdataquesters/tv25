@@ -38,7 +38,7 @@ const FooterTV = () => {
       </div>
 
       {/* Coordinators Section - Above Footer */}
-      <div className="relative z-10 w-full px-3 sm:px-6 py-8 border-b border-yellow-400/20">
+      <div className="relative z-10 w-full px-3 sm:px-6 py-8 border-b border-yellow-400/20" id="coordinators">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-mono text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-yellow-400 text-center">
             Coordinators

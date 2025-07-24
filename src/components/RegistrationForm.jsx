@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Lock } from "lucide-react";
-
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import {
@@ -793,6 +793,8 @@ const LoadingComp = () => {
 };
 
 const FormClosedComp = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col items-center justify-center text-yellow-300 h-full min-h-[90vh]">
       <motion.div
@@ -809,7 +811,10 @@ const FormClosedComp = () => {
           This form is currently closed.
         </motion.p>
         <p className="text-yellow-200/70 text-sm mt-2">
-          Please check back later or contact support.
+          For any queries, please contact the{" "}
+          <Link to="/technovista#coordinators" className="underline">
+            student coordinators
+          </Link>
         </p>
       </motion.div>
     </div>

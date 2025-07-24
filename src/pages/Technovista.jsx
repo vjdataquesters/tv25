@@ -69,6 +69,18 @@ const Technovista = () => {
   }, [isMobile]);
 
   useEffect(() => {
+    if (!introPlay) {
+      const hash = window.location.hash;
+      if (hash) {
+        const el = document.querySelector(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "instant" });
+        }
+      }
+    }
+  }, [introPlay]);
+
+  useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 480);
     };
