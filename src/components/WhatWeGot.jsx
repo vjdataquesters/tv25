@@ -13,7 +13,7 @@ function WhatWeGot() {
   const stats = [
     {
       icon: "fas fa-user-graduate",
-      title: "600+ Participants",
+      title: "500+ Participants",
       desc: "Where Hyderabad's Brightest Minds Converge to Code, Create, and Conquer!",
       highlight: "from 10+ colleges",
       color: "from-amber-500/20 to-amber-600/10",
@@ -29,7 +29,7 @@ function WhatWeGot() {
     },
     {
       icon: "fas fa-award",
-      title: "65K+ Prize Pool",
+      title: "50K+ Prize Pool",
       desc: "Exciting rewards for top performers",
       highlight: "across all events",
       color: "from-blue-500/20 to-blue-600/10",
