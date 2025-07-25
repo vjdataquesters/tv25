@@ -30,7 +30,7 @@ export default function UpdatesSection() {
       handler: () =>
         navigate("/technovista/events", {
           state: {
-            title: "DQ Code Fest"
+            title: "DQ Code Fest",
           },
         }),
     },
@@ -42,7 +42,31 @@ export default function UpdatesSection() {
       handler: () =>
         navigate("/technovista/events", {
           state: {
-            title: "Blogathon"
+            title: "Blogathon",
+          },
+        }),
+    },
+    {
+      date: "21st July 2025",
+      title: "ML Challenge Registrations",
+      description:
+        "ML Challenge registration is now open. Get ready to build, train, and optimize your models!",
+      handler: () =>
+        navigate("/technovista/events", {
+          state: {
+            title: "ML Challenge",
+          },
+        }),
+    },
+    {
+      date: "23rd July 2025",
+      title: "Data Detective Registrations",
+      description:
+        "Data Detective registration is now open. Get ready to solve the mystery!",
+      handler: () =>
+        navigate("/technovista/events", {
+          state: {
+            title: "Data Detective",
           },
         }),
     },
@@ -59,30 +83,33 @@ export default function UpdatesSection() {
             </h2>
           </Reveal>
           <div className="space-y-4 sm:space-y-6 md:space-y-8">
-            {updates.slice().reverse().map((update, index) => (
-              <Reveal key={index}>
-                <div className="border-l-4 border-yellow-500 pl-4 sm:pl-6 py-3 sm:py-4 rounded shadow-md relative">
-                  <p className="text-xs sm:text-sm text-yellow-300 uppercase tracking-wider mb-1">
-                    {update.date}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
-                      {update.title}
-                    </h3>
-                    <button
-                      onClick={update.handler}
-                      className="flex items-center gap-1 text-xs sm:text-sm text-yellow-400 hover:text-yellow-300 hover:bg-yellow-400/10 px-2 py-1 rounded transition-all duration-200"
-                    >
-                      <span>View</span>
-                      <ExternalLink size={14} />
-                    </button>
+            {updates
+              .slice()
+              .reverse()
+              .map((update, index) => (
+                <Reveal key={index}>
+                  <div className="border-l-4 border-yellow-500 pl-4 sm:pl-6 py-3 sm:py-4 rounded shadow-md relative">
+                    <p className="text-xs sm:text-sm text-yellow-300 uppercase tracking-wider mb-1">
+                      {update.date}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
+                        {update.title}
+                      </h3>
+                      <button
+                        onClick={update.handler}
+                        className="flex items-center gap-1 text-xs sm:text-sm text-yellow-400 hover:text-yellow-300 hover:bg-yellow-400/10 px-2 py-1 rounded transition-all duration-200"
+                      >
+                        <span>View</span>
+                        <ExternalLink size={14} />
+                      </button>
+                    </div>
+                    <p className="text-sm sm:text-base text-gray-300">
+                      {update.description}
+                    </p>
                   </div>
-                  <p className="text-sm sm:text-base text-gray-300">
-                    {update.description}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              ))}
           </div>
         </div>
       </div>
