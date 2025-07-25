@@ -46,6 +46,30 @@ export default function UpdatesSection() {
           },
         }),
     },
+    {
+      date: "21st July 2025",
+      title: "ML Challenge Registrations",
+      description:
+        "ML Challenge registration is now open. Get ready to build, train, and optimize your models!",
+      handler: () =>
+        navigate("/technovista/events", {
+          state: {
+            title: "ML Challenge"
+          },
+        }),
+    },
+    {
+      date: "23rd July 2025",
+      title: "Data Detective Registrations",
+      description:
+        "Data Detective registration is now open. Get ready to solve the mystery!",
+      handler: () =>
+        navigate("/technovista/events", {
+          state: {
+            title: "Data Detective"
+          },
+        }),
+    },
   ];
 
   return (

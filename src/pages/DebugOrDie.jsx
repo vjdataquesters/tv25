@@ -54,31 +54,40 @@ const DebugOrDie = () => {
             </div>
           </div>
           {/* Call to Action */}
-<div className="text-center mb-16 px-4 sm:px-0">
-  <div className="bg-gradient-to-r from-[#daa425]/10 to-yellow-400/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl max-w-6xl mx-auto">
-    <p className="text-lg sm:text-2xl text-yellow-200 font-bold mb-4 flex items-center justify-center">
-      <span className="mr-2 sm:mr-3">⚡</span>
-      Ready for the Challenge?
-    </p>
-    <p className="text-gray-300 mb-6 text-sm sm:text-lg leading-relaxed text-left sm:text-justify">
-      Test your <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-1.5 py-0.5 rounded-md">problem-solving skills</span>,{" "}
-      <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-1.5 py-0.5 rounded-md">coding abilities</span>, and{" "}
-      <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-1.5 py-0.5 rounded-md">teamwork</span> in this high-pressure escape-room challenge!
-    </p>
-    <p className="text-base sm:text-xl font-bold text-[#daa425] mb-6">
-      🕵️‍♂️ Debug or Die - Technovista 2025
-    </p>
-    <a
-      href="https://docs.google.com/forms/d/e/1FAIpQLSeHLiqUCi0CIQaGfUdryvyWvJNIk-yVxtfqSgpGsTmCZ41lBg/closedform"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-block bg-[#daa425] text-black font-semibold text-sm sm:text-lg px-5 py-2 sm:px-6 sm:py-3 rounded-full shadow-md hover:bg-yellow-500 transition-all duration-300"
-    >
-      Register Now
-    </a>
-  </div>
-</div>
-
+          <div className="text-center mb-16 px-4 sm:px-0">
+            <div className="bg-gradient-to-r from-[#daa425]/10 to-yellow-400/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl max-w-6xl mx-auto">
+              <p className="text-lg sm:text-2xl text-yellow-200 font-bold mb-4 flex items-center justify-center">
+                <span className="mr-2 sm:mr-3">⚡</span>
+                Ready for the Challenge?
+              </p>
+              <p className="text-gray-300 mb-6 text-sm sm:text-lg leading-relaxed text-left sm:text-justify">
+                Test your{" "}
+                <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-1.5 py-0.5 rounded-md">
+                  problem-solving skills
+                </span>
+                ,{" "}
+                <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-1.5 py-0.5 rounded-md">
+                  coding abilities
+                </span>
+                , and{" "}
+                <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-1.5 py-0.5 rounded-md">
+                  teamwork
+                </span>{" "}
+                in this high-pressure escape-room challenge!
+              </p>
+              <p className="text-base sm:text-xl font-bold text-[#daa425] mb-6">
+                🕵️‍♂️ Debug or Die - Technovista 2025
+              </p>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeHLiqUCi0CIQaGfUdryvyWvJNIk-yVxtfqSgpGsTmCZ41lBg/closedform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#daa425] text-black font-semibold text-sm sm:text-lg px-5 py-2 sm:px-6 sm:py-3 rounded-full shadow-md hover:bg-yellow-500 transition-all duration-300"
+              >
+                Register Now
+              </a>
+            </div>
+          </div>
 
           {/* Event Details */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -100,7 +109,7 @@ const DebugOrDie = () => {
               <p className="text-yellow-300 font-semibold mb-2 text-xl">
                 Prize Pool
               </p>
-              <p className="text-gray-200 text-lg font-bold">₹4,500</p>
+              <p className="text-gray-200 text-lg font-bold">₹3,500</p>
             </div>
           </div>
 
@@ -152,43 +161,57 @@ const DebugOrDie = () => {
             </div>
           </div>
 
-        {/* Tools & Skills */}
-        <div className="mb-12 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl hover:bg-white/10 transition-all duration-300">
-          <h3 className="text-2xl font-bold text-[#daa425] mb-6 flex items-center">
-            <span className="mr-3">🧰</span>
-            Tools & Skills You Can Use
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6">
-              <div className="flex items-center mb-3">
-                <span className="text-2xl mr-3">💻</span>
-                <span className="font-semibold text-yellow-300 text-lg">Basic Programming Knowledge</span>
+          {/* Tools & Skills */}
+          <div className="mb-12 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl hover:bg-white/10 transition-all duration-300">
+            <h3 className="text-2xl font-bold text-[#daa425] mb-6 flex items-center">
+              <span className="mr-3">🧰</span>
+              Tools & Skills You Can Use
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6">
+                <div className="flex items-center mb-3">
+                  <span className="text-2xl mr-3">💻</span>
+                  <span className="font-semibold text-yellow-300 text-lg">
+                    Basic Programming Knowledge
+                  </span>
+                </div>
+                <p className="text-gray-200">
+                  Essential coding skills to solve challenges
+                </p>
               </div>
-              <p className="text-gray-200">Essential coding skills to solve challenges</p>
-            </div>
-            <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6">
-              <div className="flex items-center mb-3">
-                <span className="text-2xl mr-3">🔐</span>
-                <span className="font-semibold text-yellow-300 text-lg">Cryptography & Decoding</span>
+              <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6">
+                <div className="flex items-center mb-3">
+                  <span className="text-2xl mr-3">🔐</span>
+                  <span className="font-semibold text-yellow-300 text-lg">
+                    Cryptography & Decoding
+                  </span>
+                </div>
+                <p className="text-gray-200">
+                  Code breaking and cipher solving
+                </p>
               </div>
-              <p className="text-gray-200">Code breaking and cipher solving</p>
-            </div>
-            <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6">
-              <div className="flex items-center mb-3">
-                <span className="text-2xl mr-3">⚡</span>
-                <span className="font-semibold text-yellow-300 text-lg">Circuit Building</span>
+              <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6">
+                <div className="flex items-center mb-3">
+                  <span className="text-2xl mr-3">⚡</span>
+                  <span className="font-semibold text-yellow-300 text-lg">
+                    Circuit Building
+                  </span>
+                </div>
+                <p className="text-gray-200">Basic electronics knowledge</p>
               </div>
-              <p className="text-gray-200">Basic electronics knowledge</p>
-            </div>
-            <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6">
-              <div className="flex items-center mb-3">
-                <span className="text-2xl mr-3">🖼️</span>
-                <span className="font-semibold text-yellow-300 text-lg">Steganography Tools</span>
+              <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6">
+                <div className="flex items-center mb-3">
+                  <span className="text-2xl mr-3">🖼️</span>
+                  <span className="font-semibold text-yellow-300 text-lg">
+                    Steganography Tools
+                  </span>
+                </div>
+                <p className="text-gray-200">
+                  Finding hidden messages in files
+                </p>
               </div>
-              <p className="text-gray-200">Finding hidden messages in files</p>
             </div>
           </div>
-        </div>
 
           {/* Event Process */}
           <div className="mb-12 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl hover:bg-white/10 transition-all duration-300">
@@ -288,26 +311,36 @@ const DebugOrDie = () => {
             </div>
           </div>
 
-        {/* Call to Action */}
-        <div className="text-center">
-          <div className="bg-gradient-to-r from-[#daa425]/10 to-yellow-400/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
-            <p className="text-2xl text-yellow-200 font-bold mb-4 flex items-center justify-center">
-              <span className="mr-3">⚡</span>
-              Ready for the Challenge?
-            </p>
-            <p className="text-gray-300 mb-6 text-lg leading-relaxed text-justify">
-              Test your <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">problem-solving skills</span>,{" "}
-              <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">coding abilities</span>, and{" "}
-              <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">teamwork</span> in this high-pressure escape-room challenge!
-            </p>
-            <p className="text-xl font-bold text-[#daa425] mb-4">
-              🕵️‍♂️ Debug or Die - Technovista 2025
-            </p>
+          {/* Call to Action */}
+          <div className="text-center">
+            <div className="bg-gradient-to-r from-[#daa425]/10 to-yellow-400/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
+              <p className="text-2xl text-yellow-200 font-bold mb-4 flex items-center justify-center">
+                <span className="mr-3">⚡</span>
+                Ready for the Challenge?
+              </p>
+              <p className="text-gray-300 mb-6 text-lg leading-relaxed text-justify">
+                Test your{" "}
+                <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">
+                  problem-solving skills
+                </span>
+                ,{" "}
+                <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">
+                  coding abilities
+                </span>
+                , and{" "}
+                <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">
+                  teamwork
+                </span>{" "}
+                in this high-pressure escape-room challenge!
+              </p>
+              <p className="text-xl font-bold text-[#daa425] mb-4">
+                🕵️‍♂️ Debug or Die - Technovista 2025
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <FooterTV />
+      <FooterTV />
     </>
   );
 };

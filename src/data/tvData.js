@@ -82,7 +82,7 @@ export const eventTimeLine = [
         formlink: "https://docs.google.com/forms/d/e/1FAIpQLSeVOdEdWNs3OkSunokTulQt0ku3KmMkotq51izizBS22uXbAQ/viewform",
         description:
           "Compete in thrilling algorithmic and logic-based coding rounds. Tackle problems that demand fast thinking, sharp logic, and clean code to climb the leaderboard, every second counts!",
-        highlights: ["Timed Rounds", "Live Leaderboard", "Solo & Teams"],
+        highlights: ["Timed Rounds", "Live Leaderboard", "Solo"],
         icon: "💻",
         image: "/events/Technovista2025/CodingContest/Poster.png",
         cartoon: "/events/Technovista2025/CodingContest/Cartoon.jpg",
