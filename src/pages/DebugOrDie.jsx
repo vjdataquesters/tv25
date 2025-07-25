@@ -100,7 +100,7 @@ const DebugOrDie = () => {
               <p className="text-yellow-300 font-semibold mb-2 text-xl">
                 Prize Pool
               </p>
-              <p className="text-gray-200 text-lg font-bold">₹1,500</p>
+              <p className="text-gray-200 text-lg font-bold">₹4,500</p>
             </div>
           </div>
 
