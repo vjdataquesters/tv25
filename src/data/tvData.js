@@ -25,7 +25,7 @@ export const eventTimeLine = [
         id: 2,
         title: "Data Detective",
         date: "2025-07-31",
-        time: "10:00 AM - 12:30 PM",
+        time: "10:00 AM - 1:00 PM",
         formlink: "",
         description:
           "An investigative data analytics challenge where participants dive into messy datasets, uncover patterns, and solve hidden mysteries using logic and data skills.",
@@ -58,7 +58,7 @@ export const eventTimeLine = [
         id: 4,
         title: "ML Challenge",
         date: "2025-07-31",
-        time: "1:30 PM - 4:30 PM",
+        time: "1:30 PM - 3:30 PM",
         formlink: "https://forms.gle/CfJyPCcUVtHuUMbT8",
         description:
           "Gear up for a thrilling machine learning sprint! Participants will receive limited and noisy datasets, and must build, train, and optimize predictive models to climb the live leaderboard. Adaptability, speed, and model accuracy are the keys to victory.",
