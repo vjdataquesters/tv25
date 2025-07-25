@@ -113,34 +113,20 @@ const DebugOrDie = () => {
             Tools & Skills You Can Use
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6">
-              <div className="flex items-center mb-3">
-                <span className="text-2xl mr-3">💻</span>
-                <span className="font-semibold text-yellow-300 text-lg">Basic Programming Knowledge</span>
+            {[
+              { icon: "💻", title: "Basic Programming Knowledge", desc: "Essential coding skills to solve challenges" },
+              { icon: "🔐", title: "Cryptography & Decoding", desc: "Code breaking and cipher solving" },
+              { icon: "⚡", title: "Circuit Building", desc: "Basic electronics knowledge" },
+              { icon: "🖼️", title: "Steganography Tools", desc: "Finding hidden messages in files" }
+            ].map((item, index) => (
+              <div key={index} className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6">
+                <div className="flex items-center mb-3">
+                  <span className="text-2xl mr-3">{item.icon}</span>
+                  <span className="font-semibold text-yellow-300 text-lg">{item.title}</span>
+                </div>
+                <p className="text-gray-200">{item.desc}</p>
               </div>
-              <p className="text-gray-200">Essential coding skills to solve challenges</p>
-            </div>
-            <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6">
-              <div className="flex items-center mb-3">
-                <span className="text-2xl mr-3">🔐</span>
-                <span className="font-semibold text-yellow-300 text-lg">Cryptography & Decoding</span>
-              </div>
-              <p className="text-gray-200">Code breaking and cipher solving</p>
-            </div>
-            <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6">
-              <div className="flex items-center mb-3">
-                <span className="text-2xl mr-3">⚡</span>
-                <span className="font-semibold text-yellow-300 text-lg">Circuit Building</span>
-              </div>
-              <p className="text-gray-200">Basic electronics knowledge</p>
-            </div>
-            <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6">
-              <div className="flex items-center mb-3">
-                <span className="text-2xl mr-3">🖼️</span>
-                <span className="font-semibold text-yellow-300 text-lg">Steganography Tools</span>
-              </div>
-              <p className="text-gray-200">Finding hidden messages in files</p>
-            </div>
+            ))}
           </div>
         </div>
 
@@ -236,9 +222,17 @@ const DebugOrDie = () => {
               <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">coding abilities</span>, and{" "}
               <span className="text-yellow-300 font-semibold bg-yellow-300/20 px-2 py-1 rounded-lg">teamwork</span> in this high-pressure escape-room challenge!
             </p>
-            <p className="text-xl font-bold text-[#daa425] mb-4">
+            <p className="text-xl font-bold text-[#daa425] mb-6">
               🕵️‍♂️ Debug or Die - Technovista 2025
             </p>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeHLiqUCi0CIQaGfUdryvyWvJNIk-yVxtfqSgpGsTmCZ41lBg/closedform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-4 bg-[#daa425] hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-xl shadow-lg transition duration-300"
+            >
+              📋 View Registration Form
+            </a>
           </div>
         </div>
       </div>
