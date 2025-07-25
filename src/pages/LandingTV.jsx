@@ -332,7 +332,7 @@ const LandingTV = () => {
           <div className="flex flex-col items-center">
             <div className="w-[90%] sm:w-[75%] md:w-[70%] lg:w-[60%] xl:w-[50%] max-w-[1000px] text-center">
               <img
-                src="/events/Technovista2025/tv25-icons/landing-page-text.png"
+                src="/events/Technovista2025/tv25-icons/landing-page-text.svg"
                 alt="Technovista Title"
                 className="w-full h-auto title-image opacity-0 translate-y-5"
               />
