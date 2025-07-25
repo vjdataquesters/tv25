@@ -135,7 +135,7 @@ const DebugOrDie = () => {
                   </span>
                 </div>
                 <p className="text-gray-200 text-2xl font-bold">
-                  3-4 members per team
+                  3 members per team
                 </p>
               </div>
               <div className="bg-gradient-to-br from-yellow-600/10 to-yellow-400/5 backdrop-blur-lg border border-yellow-400/20 rounded-xl p-6">
