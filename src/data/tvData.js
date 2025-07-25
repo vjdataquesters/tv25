@@ -102,7 +102,7 @@ export const eventTimeLine = [
           "Team-Based Competition"
         ],
         icon: "🔍",
-        image: "/events/Technovista2025/DebugOrDie/Cartoon.jpg",
+        image: "/events/Technovista2025/DebugOrDie/Poster.png",
         cartoon: "/events/Technovista2025/DebugOrDie/Cartoon.jpg",
         priority: 5,
         url: "/technovista/events/debug-or-die",
