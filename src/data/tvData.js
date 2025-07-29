@@ -1,3 +1,18 @@
+export const EVENT_START = new Date("July 31, 2025 10:00:00").getTime();
+export const EVENT_END = new Date("August 2, 2025 5:00:00").getTime();
+
+export const getEventState = () => {
+  const now = new Date().getTime();
+  
+  if (now < EVENT_START) {
+    return "pre-event";
+  } else if (now >= EVENT_START && now <= EVENT_END) {
+    return "live-event";
+  } else {
+    return "post-event";
+  }
+};
+
 export const eventTimeLine = [
   {
     day: 1,
@@ -26,7 +41,7 @@ export const eventTimeLine = [
         title: "Data Detective",
         date: "2025-07-31",
         time: "10:00 AM - 1:00 PM",
-        formlink: "",
+        formlink: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfLxT-qF8STcoPTCK_IvJV-5nNJ_IwX8lKNuA92_tJCEN_32w/viewform",
         description:
           "An investigative data analytics challenge where participants dive into messy datasets, uncover patterns, and solve hidden mysteries using logic and data skills.",
         highlights: [
@@ -93,7 +108,7 @@ export const eventTimeLine = [
         title: "Debug (or) Die",
         date: "2025-08-01",
         time: "10:00 AM - 4:30 PM",
-        formlink: "",
+        formlink: "https://docs.google.com/forms/d/e/1FAIpQLSeHLiqUCi0CIQaGfUdryvyWvJNIk-yVxtfqSgpGsTmCZ41lBg/viewform",
         description:
           "Escape-room-style challenge where code detectives race against time to debug, decode, and escape! A thrilling test of logic, technical skills, and critical thinking.",
         highlights: [
@@ -112,7 +127,7 @@ export const eventTimeLine = [
         title: "24 - Hour Hackathon",
         date: "2025-08-01",
         time: "1:00 PM (Aug 1ˢᵗ) - 1:00 PM (Aug 2ⁿᵈ)",
-        formlink: "",
+        formlink: "https://docs.google.com/forms/d/e/1FAIpQLSetieR4PdZLpUl0UqUd9lE0Quypwcym4BHGkFss2exhOzgLhg/viewform",
         description:
           "Join a 24-hour coding marathon where teams innovate, prototype, and present impactful tech solutions. From late-night brainstorming to sunrise demos, build something amazing and push your creative boundaries to the limit!",
         highlights: ["Ideation Blitz", "Rapid Prototyping", "Sunrise Demos"],
