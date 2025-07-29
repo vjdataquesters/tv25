@@ -278,6 +278,7 @@ const EventsTV = () => {
                   {
                     title,
                     subtitle,
+                    date,
                     time,
                     description,
                     image,
@@ -354,30 +355,11 @@ const EventsTV = () => {
                           {(() => {
                             const today = new Date();
                             const eventDate = new Date(date);
-
-                            if (formlink) {
-                              if (eventDate < today) {
-                                return (
-                                  <span className="block w-full text-center bg-gray-800 text-gray-400 font-semibold px-4 py-2 rounded-xl">
-                                    Register Closed
-                                  </span>
-                                );
-                              } else {
-                                return (
-                                  <button
-                                    onClick={() =>
-                                      window.open(formlink, "_blank")
-                                    }
-                                    className="w-full bg-gradient-to-r from-[#daa425] to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black font-bold px-4 py-2 rounded-2xl transition-all duration-[400ms] hover:scale-105 hover:shadow-yellow-500/20 shadow"
-                                  >
-                                    <div className="flex items-center justify-center gap-2">
-                                      <ExternalLink className="w-4 h-4" />
-                                      Register Now
-                                    </div>
-                                  </button>
-                                );
-                              }
-                            } else if (url) {
+                            const [startTime] = time.split(" - ");
+                            const eventDateTime = new Date(
+                              `${date} ${startTime}`
+                            );
+                            if (url) {
                               return (
                                 <Link
                                   to={url}
@@ -386,11 +368,33 @@ const EventsTV = () => {
                                   Know more
                                 </Link>
                               );
-                            } else {
+                            } else if (!formlink) {
                               return (
                                 <span className="block w-full text-center border border-yellow-300 text-yellow-400 font-medium px-4 py-2 rounded-2xl backdrop-blur-2xl bg-white/5">
                                   Stay Tuned
                                 </span>
+                              );
+                            } else if (eventDateTime < today) {
+                              return (
+                                <span
+                                  className="block w-full text-center border border-yellow-300 text-yellow-400 font-medium px-4 py-2 rounded-2xl backdrop-blur-2xl bg-white/5"
+                                >
+                                  Event concluded
+                                </span>
+                              );
+                            } else {
+                              return (
+                                <button
+                                  onClick={() =>
+                                    window.open(formlink, "_blank")
+                                  }
+                                  className="w-full bg-gradient-to-r from-[#daa425] to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black font-bold px-4 py-2 rounded-2xl transition-all duration-[400ms] hover:scale-105 hover:shadow-yellow-500/20 shadow"
+                                >
+                                  <div className="flex items-center justify-center gap-2">
+                                    <ExternalLink className="w-4 h-4" />
+                                    Register Now
+                                  </div>
+                                </button>
                               );
                             }
                           })()}

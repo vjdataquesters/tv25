@@ -86,8 +86,21 @@ export default function EventShowcase() {
                         </span>
                       </div>
 
-                      {/* Register link */}
-                      {event.formlink && (
+                      {/* Register/Know more link */}
+                      {event.url ? (
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            navigate(event.url);
+                          }}
+                          className="flex items-center justify-end gap-1 text-white/60 hover:underline mt-1"
+                        >
+                          <ExternalLink size={14} className="text-[#daa425]" />
+                          <span className="font-mono leading-none pt-[1px]">
+                            Know more
+                          </span>
+                        </button>
+                      ) : event.formlink && (
                         <a
                           href={event.formlink}
                           target="_blank"
