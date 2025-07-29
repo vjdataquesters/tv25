@@ -23,7 +23,7 @@ export const eventTimeLine = [
         title: "Guest Lecture",
         date: "2025-07-31",
         time: "10:00 AM - 12:30 PM",
-        formlink: "",
+        formlink: "https://forms.gle/UL8CH24sVHd8f2k86",
         description:
           "An insightful session exploring how modern technologies are transforming industries and driving innovation. Learn about the latest trends, impactful developments, and opportunities shaping the future of various sectors.",
         highlights: [
@@ -32,7 +32,7 @@ export const eventTimeLine = [
           "Networking Opportunity",
         ],
         icon: "🎙️",
-        image: "/events/Technovista2025/GuestLecture/Cartoon.jpg",
+        image: "/events/Technovista2025/GuestLecture/Poster.png",
         cartoon: "/events/Technovista2025/GuestLecture/Cartoon.jpg",
         priority: 6,
       },
@@ -148,7 +148,7 @@ export const eventTimeLine = [
         title: "Technical Workshop",
         date: "2025-08-02",
         time: "9:30 AM - 12:30 PM",
-        formlink: "",
+        formlink: "https://docs.google.com/forms/d/e/1FAIpQLSf4aYghkZ3D2cas4jH9QrOvOHQuUt5urelwOC1LaWEphtWvFQ/viewform",
         description:
           "An engaging hands-on workshop designed to equip participants with practical skills in trending technologies. Whether you're a beginner or an enthusiast, dive deep into tools, frameworks, and real-world applications through live demos and guided sessions.",
         highlights: [
@@ -157,7 +157,7 @@ export const eventTimeLine = [
           "Certificate of Participation",
         ],
         icon: "⚙️",
-        image: "/events/Technovista2025/Workshop/Cartoon.jpg",
+        image: "/events/Technovista2025/Workshop/Poster.png",
         cartoon: "/events/Technovista2025/Workshop/Cartoon.jpg",
         priority: 8,
       },
